@@ -2,7 +2,17 @@ import { site, work } from '../site.config';
 
 export default function sitemap() {
   const now = new Date();
-  const routes = ['', '/services', '/work', '/contact', ...work.map((w) => `/work/${w.slug}`)];
+  const routes = [
+    '',
+    '/services',
+    '/work',
+    '/contact',
+    ...work.map((w) => `/work/${w.slug}`),
+    '/privacy',
+    '/terms',
+    '/cookies',
+    '/cookies/manage',
+  ];
 
   return routes.map((route) => ({
     url: `${site.url}${route}`,

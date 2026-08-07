@@ -12,6 +12,12 @@ export default function Footer() {
           <a href={`mailto:${site.email}`}>{site.email}</a>
         </span>
       </div>
+      <div className="wrap foot-legal">
+        <Link href="/privacy">Privacy</Link>
+        <Link href="/terms">Terms</Link>
+        <Link href="/cookies">Cookies</Link>
+        <Link href="/cookies/manage">Manage cookies</Link>
+      </div>
     </footer>
   );
 }

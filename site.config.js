@@ -15,6 +15,35 @@ export const site = {
   reelUrl: '',
 };
 
+// True while a legal field is still a placeholder. Pages use it so raw "TODO"
+// text can never reach a visitor, and so an unmistakable notice appears until
+// the real details are filled in.
+export const isPlaceholder = (v) => typeof v === 'string' && v.trimStart().startsWith('TODO');
+
+// The legal pages are worthless without a real identifiable controller.
+// These MUST be filled in before the policies mean anything - they are the one
+// thing that cannot be inferred from the code.
+export const legal = {
+  // TODO: exact registered name, e.g. "Lumenta Labs j.d.o.o." or your obrt name.
+  entity: 'TODO — registered business name',
+  // TODO: registered address as it appears in the court/craft register.
+  address: 'TODO — registered address',
+  // TODO: OIB (Croatian personal identification number of the business).
+  oib: 'TODO — OIB',
+  // Jurisdiction whose law governs the terms.
+  jurisdiction: 'Croatia',
+  // Date these documents last changed. Update it whenever you edit them.
+  updated: '2026-08-07',
+};
+
+// Flip `enabled` to true only when a measurement tool is actually installed.
+// Every cookie page reads from here, so the wording can never drift from reality.
+export const analytics = {
+  enabled: false,
+  // e.g. { name: 'Plausible', cookieless: true, host: 'plausible.io' }
+  provider: null,
+};
+
 export const services = [
   {
     slug: 'platforms',
