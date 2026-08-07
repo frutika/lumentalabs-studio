@@ -63,7 +63,8 @@ export default function Home() {
           <h2>We don&apos;t just recommend this. We run on it.</h2>
           <p className="section-lede">
             Everything we offer clients, we built and proved on our own projects first — the same
-            architecture, the same pipelines, the same standards.
+            architecture, the same pipelines, the same standards. All four are live, and you can
+            open any of them right now.
           </p>
           <div className="grid">
             {work.map((w) => (

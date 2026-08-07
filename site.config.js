@@ -83,10 +83,9 @@ export const work = [
   {
     slug: 'lumenta-ai',
     name: 'Lumenta AI',
-    kind: 'Product',
+    kind: 'Live product',
     short: 'AI copywriting for e-commerce — product descriptions and category pages at catalogue scale.',
-    // TODO: add the public URL once you want it linked.
-    href: '',
+    href: 'https://lumenta.shop',
     problem:
       'Online shops need thousands of descriptions that sound like the brand rather than like a generic model, in a language most tools handle badly.',
     built: [
@@ -100,25 +99,26 @@ export const work = [
   {
     slug: 'the-dog-habit',
     name: 'The Dog Habit',
-    kind: 'Product',
-    short: 'A publication that researches, writes and illustrates itself on a schedule.',
-    href: '',
+    kind: 'Live publication',
+    short: 'A publication that researches, writes and illustrates itself — and publishes to a YouTube channel on the same schedule.',
+    href: 'https://thedoghabit.com',
     problem:
-      'Content sites die from inconsistency. Publishing weekly by hand is a job; publishing weekly for two years is a different job entirely.',
+      'Content sites die from inconsistency. Publishing weekly by hand is a job; publishing weekly for a year is a different job entirely — and the moment you stop, the traffic goes with it.',
     built: [
       'End-to-end pipeline: research, drafting, image generation, publishing',
-      'Runs on a schedule without anyone opening an editor',
-      'Every stage is inspectable, so a bad output is traceable rather than mysterious',
+      'Short-form video generated and posted to its own YouTube channel on a schedule',
+      'Runs unattended — nobody opens an editor to keep it going',
+      'Every stage is inspectable, so a weak output is traceable rather than mysterious',
     ],
     lesson:
-      'Proof that content automation can run unattended for months. Most agencies have never had to make one survive that long.',
+      'This is the proof that content automation survives contact with reality: a real audience, on a real schedule, across a blog and a video channel at once.',
   },
   {
     slug: 'unmaskedwords',
     name: 'UnmaskedWords',
-    kind: 'Product',
+    kind: 'Live platform',
     short: 'An anonymous platform for the things people do not sign their name to.',
-    href: '',
+    href: 'https://unmaskedwords.com',
     problem:
       'Anonymity is easy to offer and hard to actually deliver. The engineering is mostly in deciding what you refuse to store.',
     built: [

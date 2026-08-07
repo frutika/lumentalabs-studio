@@ -15,8 +15,8 @@ export default function Work() {
           <p className="eyebrow">Work</p>
           <h1 className="page-title">We run on what we sell.</h1>
           <p className="lede">
-            These are not client logos on a wall. They are our own products — built, deployed and
-            maintained by the same people who would build yours.
+            Not client logos on a wall. Four products we built, deployed and still maintain — and
+            every one of them is live right now. Open them and judge for yourself.
           </p>
         </div>
       </header>
