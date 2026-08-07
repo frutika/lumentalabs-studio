@@ -10,9 +10,11 @@ export const site = {
   // It is the only call to action on the site.
   email: 'hello@lumentalabs.studio',
 
-  // TODO: paste the URL of the full narrated reel once it is hosted
-  // (YouTube, Vimeo or Cloudflare R2). Until then the section stays hidden.
-  reelUrl: '',
+  // The full narrated reel. Only the YouTube video id - the page builds a
+  // privacy-preserving embed from it and loads nothing until you press play.
+  reelId: 'qsv-XoY7lOg',
+  reelTitle: 'Web Apps to Production: How Lumenta Labs Builds Real-World Software Systems',
+  reelChannel: 'https://www.youtube.com/@lumentatools',
 };
 
 // True while a legal field is still a placeholder. Pages use it so raw "TODO"

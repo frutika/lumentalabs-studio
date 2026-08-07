@@ -42,6 +42,22 @@ export default function Privacy() {
             email, which you control.
           </p>
 
+          <h2>The one exception: the video</h2>
+          <p>
+            The homepage offers a introductory film hosted on YouTube. We deliberately do not embed
+            it the usual way, because a normal embed contacts Google the moment the page opens. What
+            you see before clicking is a still image served from {site.domain}, and nothing else.
+          </p>
+          <p>
+            Only when you press play does the player load, and it loads from
+            youtube-nocookie.com, YouTube&apos;s privacy-enhanced mode. From that point YouTube
+            receives your IP address and may store data on your device under{' '}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+              Google&apos;s privacy policy
+            </a>
+            , which we do not control. If you never press play, none of that happens.
+          </p>
+
           <h2>What is unavoidably processed</h2>
           <p>
             Like every website, this one is served by a web server that keeps access logs. Those logs

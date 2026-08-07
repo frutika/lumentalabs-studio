@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ReelEmbed from './components/ReelEmbed';
 import { site, services, work, pillars } from '../site.config';
 
 // Canonicals are set per page, never in the layout - a layout-level canonical
@@ -100,18 +101,12 @@ export default function Home() {
         </div>
       </section>
 
-      {site.reelUrl ? (
-        <section>
+      {site.reelId ? (
+        <section id="reel">
           <div className="wrap">
             <h2>The studio, in three minutes</h2>
             <p className="section-lede">A short introduction to how we build.</p>
-            <iframe
-              className="reel"
-              src={site.reelUrl}
-              title={`${site.name} reel`}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
-              allowFullScreen
-            />
+            <ReelEmbed id={site.reelId} title={site.reelTitle} poster="/media/reel-poster.jpg" />
           </div>
         </section>
       ) : null}

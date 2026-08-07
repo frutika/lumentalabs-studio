@@ -45,9 +45,24 @@ export default function Cookies() {
               </p>
               <p>
                 This is not a technicality we are relying on. There is no analytics tool, no
-                advertising tag, no embedded video player, no external font, and no social button
-                anywhere on the site. You can confirm it yourself: open your browser&apos;s developer
-                tools, look at Application → Cookies, and you will find the list empty.
+                advertising tag, no external font, and no social button anywhere on the site. You can
+                confirm it yourself: open your browser&apos;s developer tools, look at Application →
+                Cookies, and you will find the list empty.
+              </p>
+
+              <h2>The video is the one thing that can change that</h2>
+              <p>
+                The homepage offers an introductory film hosted on YouTube. Before you click it, no
+                part of YouTube is loaded — what you see is a still image served from {site.domain}.
+                We built it that way on purpose, because an ordinary embed would contact Google on
+                every page view and make everything above untrue.
+              </p>
+              <p>
+                Press play and the player loads from youtube-nocookie.com, YouTube&apos;s
+                privacy-enhanced mode, which avoids advertising cookies but still lets YouTube see
+                your IP address and store data for playback. That is YouTube&apos;s doing and outside
+                our control, which is exactly why we put it behind a click instead of deciding for
+                you.
               </p>
             </>
           )}
