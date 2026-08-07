@@ -5,6 +5,7 @@ export const metadata = {
   title: 'Work',
   description:
     'Bezmaske, Lumenta AI, The Dog Habit and UnmaskedWords — everything we offer clients, built and proved on our own projects first.',
+  alternates: { canonical: '/work' },
 };
 
 export default function Work() {

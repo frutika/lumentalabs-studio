@@ -3,6 +3,7 @@ import { site, pillars } from '../../site.config';
 export const metadata = {
   title: 'Contact',
   description: 'A clear agreement, a concrete delivery, a measurable result. Tell us what should exist.',
+  alternates: { canonical: '/contact' },
 };
 
 export default function Contact() {

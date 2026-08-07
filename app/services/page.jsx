@@ -5,6 +5,7 @@ export const metadata = {
   title: 'Services',
   description:
     'Web platforms and applications, AI tools and integrations, content automation for e-commerce, and architecture, design and maintenance.',
+  alternates: { canonical: '/services' },
 };
 
 export default function Services() {

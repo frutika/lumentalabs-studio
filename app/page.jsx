@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import { site, services, work, pillars } from '../site.config';
 
+// Canonicals are set per page, never in the layout - a layout-level canonical
+// would point every page at the homepage.
+export const metadata = { alternates: { canonical: '/' } };
+
 export default function Home() {
   return (
     <>
