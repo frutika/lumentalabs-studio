@@ -140,6 +140,15 @@ a.card.linked:hover { border-color: var(--accent); background: #0e161f; }
 .ticks li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
 .ticks.wide { max-width: 60ch; }
 
+.email-row { display: flex; align-items: center; gap: .7rem; flex-wrap: wrap; }
+.email-plain {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 15px; color: var(--muted);
+  padding: .55rem .8rem; border: 1px dashed var(--line); border-radius: 7px;
+  user-select: all; /* one click selects the whole address */
+}
+button.btn { font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero video { display: none; }

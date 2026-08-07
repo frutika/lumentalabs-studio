@@ -1,4 +1,5 @@
 import { site, pillars } from '../../site.config';
+import EmailAddress from '../components/EmailAddress';
 
 export const metadata = {
   title: 'Contact',
@@ -17,8 +18,8 @@ export default function Contact() {
             Describe the problem rather than the solution. If we are not the right people for it, we
             will say so — that answer is free and saves us both a month.
           </p>
-          {/* Deliberately a plain mailto: no form, no third-party script, nothing to leak. */}
-          <a className="btn no-offset" href={`mailto:${site.email}`}>{site.email}</a>
+          {/* No form and no third-party script - nothing to leak, nothing to break. */}
+          <EmailAddress email={site.email} />
         </div>
       </header>
 
