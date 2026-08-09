@@ -32,6 +32,11 @@ export default function Services() {
               {s.body.map((p) => (
                 <p key={p.slice(0, 30)}>{p}</p>
               ))}
+              {s.page ? (
+                <p>
+                  <Link href={s.page}>How this works in detail →</Link>
+                </p>
+              ) : null}
             </div>
           </div>
         </section>

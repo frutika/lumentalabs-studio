@@ -44,7 +44,7 @@ export default function Home() {
           </p>
           <div className="grid">
             {services.map((s) => (
-              <Link className="card linked" key={s.slug} href={`/services#${s.slug}`}>
+              <Link className="card linked" key={s.slug} href={s.page || `/services#${s.slug}`}>
                 <span className="num">{s.num}</span>
                 <h3>{s.title}</h3>
                 <p>{s.short}</p>

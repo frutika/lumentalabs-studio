@@ -1,10 +1,11 @@
-import { site, work } from '../site.config';
+import { site, work, services } from '../site.config';
 
 export default function sitemap() {
   const now = new Date();
   const routes = [
     '',
     '/services',
+    ...services.filter((s) => s.page).map((s) => s.page),
     '/work',
     '/contact',
     ...work.map((w) => `/work/${w.slug}`),

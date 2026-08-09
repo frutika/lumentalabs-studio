@@ -81,8 +81,20 @@ export const services = [
     ],
   },
   {
-    slug: 'architecture',
+    slug: 'video',
     num: '04',
+    title: 'Narrated video and localisation',
+    short: 'One film, voiced and captioned in every market you sell in.',
+    page: '/services/video',
+    body: [
+      'Footage is the expensive part, and most companies already have some — a product film, a walkthrough, a reel someone cut last year. What they do not have is that film speaking to each market they sell in.',
+      'We write the narration, voice it, mix it against whatever audio the footage already carries, and deliver captions in the format each platform actually accepts.',
+      'The same script becomes as many language versions as you need, from one production pass rather than one shoot per market.',
+    ],
+  },
+  {
+    slug: 'architecture',
+    num: '05',
     title: 'Architecture, design and maintenance',
     short: 'One team owns the stack end to end — including after launch.',
     body: [
