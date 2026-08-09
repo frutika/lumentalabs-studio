@@ -41,6 +41,15 @@ a { color: inherit; }
 .nav a.link:hover { color: var(--text); }
 @media (max-width: 520px) { .nav a.link { margin-left: 1rem; font-size: 14px; } }
 
+.langs { display: inline-flex; gap: .1rem; margin-left: 1.6rem; vertical-align: middle; }
+.langs .lang {
+  font-size: 12px; letter-spacing: .05em; text-decoration: none;
+  color: var(--muted); padding: .25rem .45rem; border-radius: 5px;
+}
+.langs .lang:hover { color: var(--text); background: #131b25; }
+.langs .lang.on { color: var(--accent); background: #101a22; }
+@media (max-width: 520px) { .langs { margin-left: .8rem; } }
+
 /* ---------- hero ---------- */
 .hero { position: relative; min-height: min(88vh, 760px); display: flex; align-items: center; overflow: hidden; }
 .hero video, .hero .fallback {

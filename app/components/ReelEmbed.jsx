@@ -5,7 +5,7 @@ import { useState } from 'react';
 // A plain YouTube iframe contacts Google the moment the page loads, which would
 // make the cookie notice untrue. So this shows a local poster and only builds
 // the iframe after a deliberate click - and then against youtube-nocookie.
-export default function ReelEmbed({ id, title, poster }) {
+export default function ReelEmbed({ id, title, poster, playLabel, note }) {
   const [playing, setPlaying] = useState(false);
 
   if (playing) {
@@ -25,8 +25,8 @@ export default function ReelEmbed({ id, title, poster }) {
       <img src={poster} alt="" aria-hidden="true" />
       <span className="reel-play" aria-hidden="true">▶</span>
       <span className="reel-label">
-        Play the reel
-        <em>Nothing loads from YouTube until you press play</em>
+        {playLabel}
+        <em>{note}</em>
       </span>
     </button>
   );

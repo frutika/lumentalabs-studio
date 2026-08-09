@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { site, legal, analytics } from '../../site.config';
+import { site, legal, analytics } from '../../../site.config';
 
 export const metadata = {
   title: 'Cookies',

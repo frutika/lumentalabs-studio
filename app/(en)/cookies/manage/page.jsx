@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import CookiePreferences from '../../components/CookiePreferences';
-import { legal, analytics } from '../../../site.config';
+import CookiePreferences from '../../../components/CookiePreferences';
+import { legal, analytics } from '../../../../site.config';
 
 export const metadata = {
   title: 'Manage cookies',

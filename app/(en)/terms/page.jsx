@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { site, legal } from '../../site.config';
-import { Field, PendingNotice } from '../components/LegalIdentity';
+import { site, legal } from '../../../site.config';
+import { Field, PendingNotice } from '../../components/LegalIdentity';
 
 export const metadata = {
   title: 'Terms',

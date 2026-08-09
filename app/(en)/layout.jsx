@@ -1,10 +1,10 @@
-import './globals.css';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-import { site } from '../site.config';
+import '../globals.css';
+import Nav from '../components/Nav';
+import Footer from '../components/Footer';
+import { site } from '../../site.config';
+import { getDict, DEFAULT_LOCALE } from '../../content';
 
-const description =
-  'A digital studio building web platforms, AI tools and automations. Products that launch, get used, and grow — without unnecessary complication.';
+const d = getDict(DEFAULT_LOCALE);
 
 export const metadata = {
   metadataBase: new URL(site.url),
@@ -12,26 +12,27 @@ export const metadata = {
     default: `${site.name} — ${site.tagline}`,
     template: `%s — ${site.name}`,
   },
-  description,
+  description: d.meta.siteDescription,
   openGraph: {
     title: `${site.name} — ${site.tagline}`,
-    description,
+    description: d.meta.siteDescription,
     url: site.url,
     siteName: site.name,
     images: ['/media/hero.jpg'],
+    locale: 'en_US',
     type: 'website',
   },
 };
 
 export const viewport = { themeColor: '#05080c' };
 
-export default function RootLayout({ children }) {
+export default function EnglishLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Nav />
+        <Nav lang={DEFAULT_LOCALE} />
         {children}
-        <Footer />
+        <Footer lang={DEFAULT_LOCALE} />
       </body>
     </html>
   );
