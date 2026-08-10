@@ -33,6 +33,15 @@ export function workFor(lang, slug) {
   return worksFor(lang).find((w) => w.slug === slug);
 }
 
+/**
+ * The film for one language, or null. Deliberately no fallback: a page that
+ * cannot offer the reel in its own language shows no reel section at all.
+ */
+export function reelFor(lang) {
+  const r = site.reels?.[lang];
+  return r?.id ? r : null;
+}
+
 export function servicesFor(lang) {
   return getDict(lang).services.map((s, i) => ({ ...s, num: String(i + 1).padStart(2, '0') }));
 }

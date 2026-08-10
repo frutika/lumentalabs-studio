@@ -10,8 +10,20 @@ export const site = {
   // It is the only call to action on the site.
   email: 'hello@lumentalabs.studio',
 
-  reelId: 'qsv-XoY7lOg',
-  reelTitle: 'Web Apps to Production: How Lumenta Labs Builds Real-World Software Systems',
+  // One entry per language. A page shows the film in ITS OWN language or none
+  // at all - falling back to English is exactly the bug this replaced, where a
+  // Croatian visitor got an English voice-over.
+  reels: {
+    en: {
+      id: 'qsv-XoY7lOg',
+      title: 'Web Apps to Production: How Lumenta Labs Builds Real-World Software Systems',
+    },
+    // TODO: paste the YouTube video id of the Croatian cut (the part after
+    // youtu.be/ or watch?v=), and its title.
+    hr: { id: '', title: '' },
+    // TODO: same for the German cut.
+    de: { id: '', title: '' },
+  },
   reelChannel: 'https://www.youtube.com/@lumentatools',
 
   // Product names and outbound links are the same in every language.

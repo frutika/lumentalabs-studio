@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import ReelEmbed from '../ReelEmbed';
 import { site } from '../../../site.config';
-import { getDict, localePath, servicesFor, worksFor } from '../../../content';
+import { getDict, localePath, servicesFor, worksFor, reelFor } from '../../../content';
 
 export default function Home({ lang }) {
   const d = getDict(lang);
   const p = (path) => localePath(lang, path);
   const services = servicesFor(lang);
   const works = worksFor(lang);
+  const reel = reelFor(lang);
 
   return (
     <>
@@ -91,14 +92,14 @@ export default function Home({ lang }) {
         </div>
       </section>
 
-      {site.reelId ? (
+      {reel ? (
         <section id="reel">
           <div className="wrap">
             <h2>{d.home.reelH2}</h2>
             <p className="section-lede">{d.home.reelLede}</p>
             <ReelEmbed
-              id={site.reelId}
-              title={site.reelTitle}
+              id={reel.id}
+              title={reel.title}
               poster="/media/reel-poster.jpg"
               playLabel={d.home.reelPlay}
               note={d.home.reelNote}
