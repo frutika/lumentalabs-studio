@@ -18,11 +18,8 @@ export const site = {
       id: 'qsv-XoY7lOg',
       title: 'Web Apps to Production: How Lumenta Labs Builds Real-World Software Systems',
     },
-    // TODO: paste the YouTube video id of the Croatian cut (the part after
-    // youtu.be/ or watch?v=), and its title.
-    hr: { id: '', title: '' },
-    // TODO: same for the German cut.
-    de: { id: '', title: '' },
+    hr: { id: 'Tbr3YrGL2sc', title: 'Lumenta Labs HR: The Future of Work?' },
+    de: { id: 'a9197g-xKvM', title: 'Digital Studio ohne KI? Vergiss es!' },
   },
   reelChannel: 'https://www.youtube.com/@lumentatools',
 
