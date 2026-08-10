@@ -18,7 +18,10 @@ export const site = {
       id: 'qsv-XoY7lOg',
       title: 'Web Apps to Production: How Lumenta Labs Builds Real-World Software Systems',
     },
-    hr: { id: 'Tbr3YrGL2sc', title: 'Lumenta Labs HR: The Future of Work?' },
+    hr: {
+      id: 'Tbr3YrGL2sc',
+      title: 'Lumenta Labs HR: „Digitalni studio bez umjetne inteligencije? Zaboravite!”',
+    },
     de: { id: 'a9197g-xKvM', title: 'Digital Studio ohne KI? Vergiss es!' },
   },
   reelChannel: 'https://www.youtube.com/@lumentatools',
