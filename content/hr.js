@@ -3,7 +3,7 @@ const hr = {
   label: 'Hrvatski',
   htmlLang: 'hr',
 
-  nav: { services: 'Usluge', work: 'Radovi', contact: 'Kontakt' },
+  nav: { services: 'Usluge', work: 'Radovi', vodici: 'Vodiči', contact: 'Kontakt' },
 
   meta: {
     siteDescription:
@@ -43,6 +43,25 @@ const hr = {
     finalH2: 'Recite nam što bi trebalo postojati.',
     finalLede: 'Jasan dogovor, konkretna isporuka, mjerljiv rezultat.',
     finalCta: 'Javite nam se',
+  },
+
+  /**
+   * The guides live on their own domain; the site points at them, never copies
+   * them. Empty the href and both this section and the nav link disappear.
+   */
+  vodici: {
+    eyebrow: 'Besplatno',
+    h2: 'Tri vodiča o automatizaciji, napisana da ih primijenite sami.',
+    lede:
+      'Ono što inače postavljamo klijentima, razloženo korak po korak: opisi proizvoda, objave na mrežama i korisnička podrška. Bez pretplate i bez prodajnog razgovora.',
+    items: [
+      'Opisi proizvoda koji se generiraju sami, u tonu vaše trgovine',
+      'Jedan sadržaj, objavljen na svakoj mreži u obliku koji ta mreža traži',
+      'Podrška koja odgovara iz vaše baze znanja, umjesto da izmišlja',
+    ],
+    cta: 'Pogledajte vodiče',
+    note: 'PDF-ovi su besplatni i dostupni odmah. Ako vam se ne isplati raditi to sami, znate gdje smo.',
+    href: 'https://vodici.lumentalabs.studio',
   },
 
   servicesPage: {
