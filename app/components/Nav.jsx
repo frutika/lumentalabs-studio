@@ -17,6 +17,11 @@ export default function Nav({ lang }) {
         <div className="nav-links">
           <Link className="link" href={p('/services')}>{d.nav.services}</Link>
           <Link className="link" href={p('/work')}>{d.nav.work}</Link>
+          {/* Different domain, so a plain anchor. The optional chain is the gate:
+              no vodici block in a dictionary means no link in that language. */}
+          {d.vodici?.href ? (
+            <a className="link" href={d.vodici.href} rel="noopener">{d.nav.vodici}</a>
+          ) : null}
           <Link className="link" href={p('/contact')}>{d.nav.contact}</Link>
           <LangSwitch lang={lang} />
         </div>
