@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ReelEmbed from '../ReelEmbed';
+import VodiciCTA from '../VodiciCTA';
 import { site } from '../../../site.config';
 import { getDict, localePath, servicesFor, worksFor, reelFor } from '../../../content';
 
@@ -107,6 +108,8 @@ export default function Home({ lang }) {
           </div>
         </section>
       ) : null}
+
+      <VodiciCTA lang={lang} />
 
       <section>
         <div className="wrap">
