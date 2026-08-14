@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import JsonLd from '../JsonLd';
 import { getDict, localePath, workFor } from '../../../content';
+import { breadcrumbSchema } from '../../../content/schema';
 
 export default function WorkDetail({ lang, slug }) {
   const d = getDict(lang);
@@ -8,6 +10,13 @@ export default function WorkDetail({ lang, slug }) {
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema(lang, [
+          { name: d.workPage.eyebrow, path: '/work' },
+          { name: item.name, path: `/work/${slug}` },
+        ])}
+      />
+
       <header className="page-head">
         <div className="wrap">
           <p className="eyebrow">
@@ -17,7 +26,8 @@ export default function WorkDetail({ lang, slug }) {
           <p className="lede">{item.short}</p>
           {item.href ? (
             <a className="btn ghost no-offset" href={item.href} target="_blank" rel="noopener noreferrer">
-              {d.workPage.visit} {item.name} ↗
+              {d.workPage.visit} {item.name} <span aria-hidden="true">↗</span>
+              <span className="sr"> ({d.a11y.newTab})</span>
             </a>
           ) : null}
         </div>

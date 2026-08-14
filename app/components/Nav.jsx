@@ -8,7 +8,9 @@ export default function Nav({ lang }) {
   const p = (to) => localePath(lang, to);
 
   return (
-    <nav className="nav">
+    // Two navigation landmarks share this header (main + language), so both
+    // carry a label; an unlabelled pair is indistinguishable in a landmark list.
+    <nav className="nav" aria-label={d.a11y.mainNav}>
       <div className="wrap nav-inner">
         <Link className="brand" href={p('/')}>
           <span className="dot" aria-hidden="true" />

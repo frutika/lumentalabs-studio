@@ -16,13 +16,24 @@ export default function ReelEmbed({ id, title, poster, playLabel, note }) {
         title={title}
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture"
         allowFullScreen
+        loading="lazy"
       />
     );
   }
 
   return (
     <button className="reel reel-facade" type="button" onClick={() => setPlaying(true)}>
-      <img src={poster} alt="" aria-hidden="true" />
+      {/* Far below the fold on every page that uses it, and purely decorative:
+          the button's own text is the accessible name. */}
+      <img
+        src={poster}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        width="1280"
+        height="720"
+      />
       <span className="reel-play" aria-hidden="true">▶</span>
       <span className="reel-label">
         {playLabel}

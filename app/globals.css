@@ -6,6 +6,10 @@
   --muted: #8598ad;
   --accent: #37c6d0;
   --accent-warm: #e2614c;
+  /* --line is a hairline for decorative edges: 1.25:1, deliberately quiet.
+     Anything that is the *boundary of a control* has to clear 3:1 (WCAG 1.4.11),
+     so interactive borders use this instead. */
+  --line-ui: #55697e;
   --max: 1120px;
 }
 
@@ -22,6 +26,36 @@ body {
 }
 
 a { color: inherit; }
+
+/* ---------- focus ---------- */
+/* Nothing here removes the focus ring; this replaces the browser default with
+   one that is actually visible against a near-black background. :focus-visible
+   keeps it off for mouse users, so the look is unchanged for them. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  background: var(--accent);
+  color: #04222a;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: .75rem 1.2rem;
+  border-radius: 0 0 8px 8px;
+  transition: top .12s ease-out;
+}
+.skip-link:focus { top: 0; }
+
+/* main is a landmark, not a layout box - it must not introduce a focus ring
+   of its own when it receives programmatic focus from the skip link. */
+main:focus { outline: none; }
 
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
 
@@ -42,6 +76,7 @@ a { color: inherit; }
 @media (max-width: 520px) { .nav a.link { margin-left: 1rem; font-size: 14px; } }
 
 .langs { display: inline-flex; gap: .1rem; margin-left: 1.6rem; vertical-align: middle; }
+.langs .lang abbr { text-decoration: none; }
 .langs .lang {
   font-size: 12px; letter-spacing: .05em; text-decoration: none;
   color: var(--muted); padding: .25rem .45rem; border-radius: 5px;
@@ -63,6 +98,19 @@ a { color: inherit; }
 }
 .hero .wrap { position: relative; z-index: 2; padding-top: 5rem; padding-bottom: 5rem; }
 
+/* WCAG 2.2.2 - anything that moves on its own for more than five seconds needs
+   a way to stop it. Small and out of the way, but reachable by keyboard. */
+.hero-motion {
+  position: absolute; right: 1.1rem; bottom: 1.1rem; z-index: 3;
+  width: 38px; height: 38px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 12px; line-height: 1; cursor: pointer;
+  color: var(--text); background: rgba(5, 8, 12, .72);
+  border: 1px solid var(--line-ui);
+  backdrop-filter: blur(6px);
+}
+.hero-motion:hover { color: var(--accent); border-color: var(--accent); }
+
 h1 {
   font-size: clamp(2.3rem, 6.2vw, 4.1rem);
   line-height: 1.04;
@@ -82,8 +130,8 @@ h1 {
   background: var(--accent); color: #04222a; border: 1px solid var(--accent);
 }
 .btn:hover { filter: brightness(1.1); }
-.btn.ghost { background: transparent; color: var(--text); border-color: var(--line); margin-left: .6rem; }
-.btn.ghost:hover { border-color: var(--muted); filter: none; }
+.btn.ghost { background: transparent; color: var(--text); border-color: var(--line-ui); margin-left: .6rem; }
+.btn.ghost:hover { border-color: var(--text); filter: none; }
 @media (max-width: 560px) { .btn.ghost { margin: .7rem 0 0; display: block; text-align: center; } }
 
 /* ---------- sections ---------- */
@@ -96,7 +144,7 @@ h2 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); letter-spacing: -.025em; margin: 0
   background: var(--panel); border: 1px solid var(--line); border-radius: 11px;
   padding: 1.6rem 1.5rem;
 }
-.card h3 { font-size: 1.06rem; margin: 0 0 .55rem; letter-spacing: -.01em; }
+.card h3, .card .card-title { font-size: 1.06rem; margin: 0 0 .55rem; letter-spacing: -.01em; max-width: none; }
 .card p { color: var(--muted); font-size: 15px; margin: 0; }
 .card .num {
   font-size: 12px; font-variant-numeric: tabular-nums; color: var(--accent);
@@ -213,7 +261,7 @@ button.btn { font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; 
 
 .toggle {
   position: relative; width: 46px; height: 26px; flex: none;
-  border-radius: 999px; border: 1px solid var(--line); background: #0f151d; cursor: pointer;
+  border-radius: 999px; border: 1px solid var(--line-ui); background: #0f151d; cursor: pointer;
 }
 .toggle .knob {
   position: absolute; top: 3px; left: 3px; width: 18px; height: 18px;
@@ -237,5 +285,8 @@ button.btn { font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; 
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero video { display: none; }
+  /* The video element stays: HeroVideo never starts or even fetches it, so all
+     that renders is the still poster. Hiding it here used to blank the hero
+     while still downloading 1.5 MB of video nobody would see. */
+  * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }

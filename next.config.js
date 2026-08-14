@@ -2,6 +2,17 @@
 module.exports = {
   poweredByHeader: false,
 
+  experimental: {
+    // Each language group owns its own <html>, so Next has no single root
+    // layout to render a 404 into and falls back to its unstyled built-in page
+    // ("404: This page could not be found.", no lang attribute, no landmarks,
+    // no branding). app/global-not-found.jsx supplies the document that is
+    // missing, and in 16.3 that file is still gated behind this flag.
+    // Scope is the 404 render path only.
+    globalNotFound: true,
+  },
+
+
   // The site answers on both www and the apex. Without this the same pages exist
   // under two hostnames, which splits search signals and makes the sitemap
   // (apex-only) disagree with what is actually reachable.

@@ -17,11 +17,14 @@ export default function WorkPage({ lang }) {
 
       <section>
         <div className="wrap">
+          {/* h2, not h3: on this page the cards sit directly under the h1, with
+              no section heading between them. h3 skipped a level. On the home
+              page the same cards are h3 because a real h2 introduces them. */}
           <div className="grid">
             {worksFor(lang).map((w) => (
               <Link className="card linked" key={w.slug} href={p(`/work/${w.slug}`)}>
                 <span className="num">{w.kind}</span>
-                <h3>{w.name}</h3>
+                <h2 className="card-title">{w.name}</h2>
                 <p>{w.short}</p>
               </Link>
             ))}

@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import CookiePreferences from '../../../components/CookiePreferences';
 import { legal, analytics } from '../../../../site.config';
+import { enOnlyMeta } from '../../../../content';
 
-export const metadata = {
-  title: 'Manage cookies',
-  description: 'See exactly what this site has stored on your device, and change it.',
-  alternates: { canonical: '/cookies/manage' },
-};
+export const metadata = enOnlyMeta(
+  '/cookies/manage',
+  'Manage cookies',
+  'See exactly what this site has stored on your device, and change it.'
+);
 
 export default function ManageCookies() {
   return (

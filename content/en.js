@@ -8,6 +8,29 @@ const en = {
   meta: {
     siteDescription:
       'A digital studio building web platforms, AI tools and automations. Products that launch, get used, and grow — without unnecessary complication.',
+    siteTitle: 'Lumenta Labs — Web platforms, AI tools, automation.',
+    ogLocale: 'en_US',
+  },
+
+  a11y: {
+    skip: 'Skip to main content',
+    langNav: 'Language',
+    mainNav: 'Main',
+    footerNav: 'Footer',
+    legalNav: 'Legal',
+    heroVideoPause: 'Pause the background video',
+    heroVideoPlay: 'Play the background video',
+    newTab: 'opens in a new tab',
+    breadcrumb: 'Breadcrumb',
+  },
+
+  notFound: {
+    title: 'Page not found',
+    eyebrow: '404',
+    h1: 'That page is not here.',
+    lede: 'The link may be old, or the address may have a typo in it. Everything the site does have is one click away.',
+    home: 'Go to the home page',
+    work: 'See what we have built',
   },
 
   home: {
