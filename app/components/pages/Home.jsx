@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import ReelEmbed from '../ReelEmbed';
 import VodiciCTA from '../VodiciCTA';
-import { site } from '../../../site.config';
+import HeroVideo from '../HeroVideo';
+import JsonLd from '../JsonLd';
 import { getDict, localePath, servicesFor, worksFor, reelFor } from '../../../content';
+import { organizationSchema, websiteSchema } from '../../../content/schema';
 
 export default function Home({ lang }) {
   const d = getDict(lang);
@@ -13,11 +15,12 @@ export default function Home({ lang }) {
 
   return (
     <>
+      <JsonLd data={organizationSchema(lang)} />
+      <JsonLd data={websiteSchema(lang)} />
+
       <header className="hero" id="top">
         {/* Muted, looping, decorative - the page must read fine if it never loads. */}
-        <video autoPlay muted loop playsInline poster="/media/hero.jpg" aria-hidden="true">
-          <source src="/media/hero.mp4" type="video/mp4" />
-        </video>
+        <HeroVideo pauseLabel={d.a11y.heroVideoPause} playLabel={d.a11y.heroVideoPlay} />
         <div className="wrap">
           <p className="eyebrow">{d.home.eyebrow}</p>
           <h1>{d.home.h1}</h1>

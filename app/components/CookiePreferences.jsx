@@ -99,7 +99,7 @@ export default function CookiePreferences({ analyticsEnabled, providerName }) {
       {saved ? <p className="stamp">Preference saved.</p> : null}
 
       <div className="pref-check">
-        <h3>What is on your device right now</h3>
+        <h2>What is on your device right now</h2>
         {found === null ? (
           <p className="muted-line">Checking…</p>
         ) : nothingStored ? (

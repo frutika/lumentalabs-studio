@@ -2,6 +2,7 @@ import '../../globals.css';
 import { notFound } from 'next/navigation';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
+import SkipLink from '../../components/SkipLink';
 import { site } from '../../../site.config';
 import { getDict, isLocale, LOCALES, DEFAULT_LOCALE } from '../../../content';
 
@@ -14,18 +15,29 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { lang } = await params;
   const d = getDict(lang);
+  const url = `${site.url}/${lang}`;
+
   return {
     metadataBase: new URL(site.url),
-    title: { default: `${site.name} — ${site.tagline}`, template: `%s — ${site.name}` },
+    // Localised: a Croatian page falling back to the English tagline in the
+    // browser tab is the same bug as an English voice-over on a Croatian reel.
+    title: { default: d.meta.siteTitle, template: `%s — ${site.name}` },
     description: d.meta.siteDescription,
+    applicationName: site.name,
     openGraph: {
-      title: `${site.name} — ${site.tagline}`,
+      title: d.meta.siteTitle,
       description: d.meta.siteDescription,
-      url: `${site.url}/${lang}`,
+      url,
       siteName: site.name,
       images: ['/media/hero.jpg'],
-      locale: lang === 'hr' ? 'hr_HR' : 'de_DE',
+      locale: d.meta.ogLocale,
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: d.meta.siteTitle,
+      description: d.meta.siteDescription,
+      images: ['/media/hero.jpg'],
     },
   };
 }
@@ -39,8 +51,9 @@ export default async function IntlLayout({ children, params }) {
   return (
     <html lang={getDict(lang).htmlLang}>
       <body>
+        <SkipLink lang={lang} />
         <Nav lang={lang} />
-        {children}
+        <main id="main">{children}</main>
         <Footer lang={lang} />
       </body>
     </html>

@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { site, legal, analytics } from '../../../site.config';
+import { enOnlyMeta } from '../../../content';
 
-export const metadata = {
-  title: 'Cookies',
-  description: 'This site sets no cookies. What that means, and what would change if it ever did.',
-  alternates: { canonical: '/cookies' },
-};
+export const metadata = enOnlyMeta(
+  '/cookies',
+  'Cookies',
+  'This site sets no cookies. What that means, and what would change if it ever did.'
+);
 
 export default function Cookies() {
   return (

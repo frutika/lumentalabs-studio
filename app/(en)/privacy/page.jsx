@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import { site, legal } from '../../../site.config';
 import { Field, PendingNotice } from '../../components/LegalIdentity';
+import { enOnlyMeta } from '../../../content';
 
-export const metadata = {
-  title: 'Privacy',
-  description: 'What this site collects, what it does not, and what rights you have.',
-  alternates: { canonical: '/privacy' },
-};
+export const metadata = enOnlyMeta(
+  '/privacy',
+  'Privacy',
+  'What this site collects, what it does not, and what rights you have.'
+);
 
 export default function Privacy() {
   return (

@@ -8,6 +8,29 @@ const de = {
   meta: {
     siteDescription:
       'Ein Digitalstudio für Webplattformen, KI-Werkzeuge und Automatisierung. Produkte, die live gehen, genutzt werden und wachsen — ohne unnötige Komplexität.',
+    siteTitle: 'Lumenta Labs — Webplattformen, KI-Werkzeuge, Automatisierung.',
+    ogLocale: 'de_DE',
+  },
+
+  a11y: {
+    skip: 'Zum Hauptinhalt springen',
+    langNav: 'Sprache',
+    mainNav: 'Hauptnavigation',
+    footerNav: 'Fußzeile',
+    legalNav: 'Rechtliches',
+    heroVideoPause: 'Hintergrundvideo pausieren',
+    heroVideoPlay: 'Hintergrundvideo abspielen',
+    newTab: 'wird in einem neuen Tab geöffnet',
+    breadcrumb: 'Brotkrümelnavigation',
+  },
+
+  notFound: {
+    title: 'Seite nicht gefunden',
+    eyebrow: '404',
+    h1: 'Diese Seite gibt es hier nicht.',
+    lede: 'Der Link ist womöglich veraltet, oder in der Adresse steckt ein Tippfehler. Alles, was es auf dieser Seite gibt, ist einen Klick entfernt.',
+    home: 'Zur Startseite',
+    work: 'Unsere Projekte ansehen',
   },
 
   home: {

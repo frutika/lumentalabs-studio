@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import { site, legal } from '../../../site.config';
 import { Field, PendingNotice } from '../../components/LegalIdentity';
+import { enOnlyMeta } from '../../../content';
 
-export const metadata = {
-  title: 'Terms',
-  description: 'The terms under which this website is provided.',
-  alternates: { canonical: '/terms' },
-};
+export const metadata = enOnlyMeta(
+  '/terms',
+  'Terms',
+  'The terms under which this website is provided.'
+);
 
 export default function Terms() {
   return (

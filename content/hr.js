@@ -8,6 +8,29 @@ const hr = {
   meta: {
     siteDescription:
       'Digitalni studio koji gradi web platforme, AI alate i automatizacije. Proizvodi koji se pokrenu, koriste i rastu — bez nepotrebne komplikacije.',
+    siteTitle: 'Lumenta Labs — Web platforme, AI alati, automatizacija.',
+    ogLocale: 'hr_HR',
+  },
+
+  a11y: {
+    skip: 'Prijeđi na glavni sadržaj',
+    langNav: 'Jezik',
+    mainNav: 'Glavna navigacija',
+    footerNav: 'Podnožje',
+    legalNav: 'Pravno',
+    heroVideoPause: 'Zaustavi pozadinski video',
+    heroVideoPlay: 'Pokreni pozadinski video',
+    newTab: 'otvara se u novoj kartici',
+    breadcrumb: 'Navigacijski trag',
+  },
+
+  notFound: {
+    title: 'Stranica nije pronađena',
+    eyebrow: '404',
+    h1: 'Te stranice ovdje nema.',
+    lede: 'Poveznica je možda stara ili se u adresu potkrala pogreška. Sve što na ovoj stranici postoji udaljeno je jedan klik.',
+    home: 'Idi na naslovnicu',
+    work: 'Pogledaj što smo izgradili',
   },
 
   home: {
