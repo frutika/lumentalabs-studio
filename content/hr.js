@@ -3,7 +3,13 @@ const hr = {
   label: 'Hrvatski',
   htmlLang: 'hr',
 
-  nav: { services: 'Usluge', work: 'Radovi', vodici: 'Vodiči', contact: 'Kontakt' },
+  nav: {
+    services: 'Usluge',
+    work: 'Radovi',
+    vodici: 'Vodiči',
+    aiBooster: 'AI Content Booster',
+    contact: 'Kontakt',
+  },
 
   meta: {
     siteDescription:

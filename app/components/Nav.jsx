@@ -24,6 +24,10 @@ export default function Nav({ lang }) {
           {d.vodici?.href ? (
             <a className="link" href={d.vodici.href} rel="noopener">{d.nav.vodici}</a>
           ) : null}
+          {/* Croatian-only offer page - no route exists in other languages. */}
+          {d.nav.aiBooster ? (
+            <Link className="link" href={p('/ai-content-booster')}>{d.nav.aiBooster}</Link>
+          ) : null}
           <Link className="link" href={p('/contact')}>{d.nav.contact}</Link>
           <LangSwitch lang={lang} />
         </div>
