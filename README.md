@@ -1,7 +1,8 @@
 # Lumenta Labs — landing
 
-Next.js stranica za `labs.lumenta.shop`. Deploy ide na **Hostinger Node.js Web Apps**
-(Business plan), preko GitHuba, s automatskim redeployom na svaki push.
+Next.js stranica za `lumentalabs.studio`. Domena je već na **Hostinger Business
+hostingu** koji podržava Node.js Web Apps; deploy ide preko GitHuba, s
+automatskim redeployom na svaki push.
 
 ## Prije objave
 
@@ -9,9 +10,9 @@ Sve što je tvoja odluka je u `site.config.js` — namjerno nije nagađano:
 
 | Polje | Što treba |
 |---|---|
-| `email` | Trenutno `hello@lumenta.shop`. **Provjeri postoji li ta adresa** ili je zamijeni. Osobna adresa nije upisana namjerno. |
-| `reelUrl` | URL cijelog nariranog videa (YouTube / Vimeo / R2). Dok je prazan, cijela sekcija s videom se ne prikazuje. |
-| `products[].href` | Linkovi na Lumenta AI, The Dog Habit i UnmaskedWords. Bez linka se ime prikaže kao običan tekst. |
+| `email` | Trenutno `hello@lumentalabs.studio`. **Provjeri postoji li ta adresa** ili je zamijeni. Osobna adresa nije upisana namjerno. |
+| `reels` | Po jedan URL po jeziku (YouTube / Vimeo / R2). Za jezik bez unosa cijela sekcija s videom se ne prikazuje — nema fallbacka na engleski. |
+| `work[].href` | Linkovi na Bezmaske, Lumenta AI, The Dog Habit i UnmaskedWords. |
 
 ## Lokalno
 
@@ -22,13 +23,11 @@ npm run dev
 
 ## Deploy na Hostinger
 
-1. hPanel → na Business planu dodaj poddomenu `labs.lumenta.shop`.
-   DNS zapis se kreira sam jer su nameserveri za `lumenta.shop` Hostingerovi
-   (`ns1/ns2.dns-parking.com`). Apex `lumenta.shop` pokazuje na VPS i **ostaje netaknut**.
-2. Websites → Add Website → **Node.js Apps** → Import Git Repository.
-3. Build postavke bi se trebale same prepoznati. Ako ne: build `npm run build`,
+1. hPanel → `lumentalabs.studio` je već na Business planu.
+   Websites → Add Website → **Node.js Apps** → Import Git Repository.
+2. Build postavke bi se trebale same prepoznati. Ako ne: build `npm run build`,
    start `npm start`.
-4. SSL je automatski, nginx ne diraš.
+3. SSL je automatski, nginx ne diraš.
 
 ## Mediji
 
@@ -38,7 +37,7 @@ stoji dok se video učitava.
 
 Cijeli narirani video (227 MB) **namjerno nije u repou**. GitHub odbija datoteke
 preko 100 MB, a i da ne odbija, stranica bi bila neupotrebljiva. Ide na YouTube
-ili R2, pa se URL upiše u `reelUrl`.
+ili R2, pa se URL upiše u `site.config.js` pod `reels.<lang>.id`.
 
 ## Napomena o disku
 
