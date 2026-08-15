@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { LOCALES, DEFAULT_LOCALE, localePath, getDict } from '../../content';
+import { LOCALES, DEFAULT_LOCALE, localePath, getDict, localesFor } from '../../content';
 
 /** Strips any locale prefix so the switcher can offer the same page elsewhere. */
 function bare(pathname) {
@@ -13,12 +13,18 @@ function bare(pathname) {
 export default function LangSwitch({ lang }) {
   const path = bare(usePathname() || '/');
   const d = getDict(lang);
+  const published = localesFor(path);
+
+  // A switcher with one option is not a choice, and offering the other two
+  // would link straight into a 404 — the legal pages and the booster only
+  // exist in one language.
+  if (published.length < 2) return null;
 
   return (
     // Was a <span aria-label>. aria-label on a generic element is ignored by
     // most screen readers, so the group had no name at all.
     <nav className="langs" aria-label={d.a11y.langNav}>
-      {LOCALES.map((l) => {
+      {published.map((l) => {
         const dict = getDict(l);
         const current = l === lang;
         return (

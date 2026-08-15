@@ -135,6 +135,23 @@ const hr = {
       'Otprilike kada mora biti živo i što se događa ako ne bude',
       'Okvir budžeta — i grub raspon uštedi puno nagađanja',
     ],
+    form: {
+      h2: 'Pošaljite upit',
+      name: 'Ime i prezime',
+      email: 'E-mail',
+      message: 'Što bi ta stvar trebala raditi?',
+      messageHint: 'Običnim riječima. Ako već nešto postoji, napišite što s time ne valja.',
+      submit: 'Pošalji upit',
+      sending: 'Šaljem…',
+      selected: 'Odabrani paket',
+      okTitle: 'Primljeno.',
+      okBody: 'Javljamo se u roku od 24 sata.',
+      failed: 'Slanje nije uspjelo.',
+      mailFallback: 'Pošaljite iz svog mail programa',
+      mailPrefill: 'Radije iz svog mail programa? Otvori s ispunjenim podacima',
+      honeypot: 'Ne popunjavati',
+      subject: 'Upit preko web stranice',
+    },
   },
 
   videoPage: {

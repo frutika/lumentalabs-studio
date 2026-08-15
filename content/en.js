@@ -110,6 +110,23 @@ const en = {
       'Roughly when it needs to be live, and what happens if it is not',
       'A budget range — even a rough one saves a lot of guessing',
     ],
+    form: {
+      h2: 'Send an enquiry',
+      name: 'Name',
+      email: 'Email',
+      message: 'What should the thing do?',
+      messageHint: 'In plain words. If something already exists, say what is wrong with it.',
+      submit: 'Send enquiry',
+      sending: 'Sending…',
+      selected: 'Selected package',
+      okTitle: 'Received.',
+      okBody: 'We reply within 24 hours.',
+      failed: 'Sending failed.',
+      mailFallback: 'Send from your mail client',
+      mailPrefill: 'Rather use your own mail client? Open with the details filled in',
+      honeypot: 'Do not fill in',
+      subject: 'Enquiry from the website',
+    },
   },
 
   videoPage: {

@@ -11,6 +11,25 @@ const dicts = { en, hr, de };
 export const getDict = (lang) => dicts[lang] || en;
 export const isLocale = (lang) => LOCALES.includes(lang);
 
+/**
+ * Not every page exists in every language. The legal pages are English-only and
+ * the booster is a Croatian-only offer, so both the hreflang cluster and the
+ * language switcher have to narrow to what actually got built — otherwise they
+ * advertise URLs that 404, and x-default points at a page that isn't there.
+ *
+ * Keyed by the unprefixed path, which is what both callers already work with.
+ */
+const ROUTE_LOCALES = {
+  '/ai-content-booster': ['hr'],
+  '/privacy': ['en'],
+  '/terms': ['en'],
+  '/cookies': ['en'],
+  '/cookies/manage': ['en'],
+};
+
+/** Languages a given page is actually published in. Defaults to all of them. */
+export const localesFor = (path = '/') => ROUTE_LOCALES[path] || LOCALES;
+
 /** English lives at the root so the URLs Google already indexed stay valid. */
 export function localePath(lang, path = '/') {
   const clean = path === '/' ? '' : path;
@@ -68,11 +87,16 @@ export function metaFor(lang, path, { title, description, ogType = 'website' } =
   const d = getDict(lang);
   const url = urlFor(lang, path);
 
+  const published = localesFor(path);
+
   const languages = Object.fromEntries(
-    LOCALES.map((l) => [dicts[l].htmlLang, urlFor(l, path)])
+    published.map((l) => [dicts[l].htmlLang, urlFor(l, path)])
   );
-  // Tells search engines which version to show when no language matches.
-  languages['x-default'] = urlFor(DEFAULT_LOCALE, path);
+  // Tells search engines which version to show when no language matches. On a
+  // page that skips English there is no English URL to point at, so it falls
+  // back to the one language that does exist.
+  const fallback = published.includes(DEFAULT_LOCALE) ? DEFAULT_LOCALE : published[0];
+  languages['x-default'] = urlFor(fallback, path);
 
   const desc = description || d.meta.siteDescription;
 

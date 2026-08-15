@@ -283,6 +283,45 @@ button.btn { font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; 
 .notice span { color: var(--muted); font-size: 14px; }
 .pending { color: var(--accent-warm); font-style: italic; }
 
+/* Contact form. Every border below is the boundary of a control, so it uses
+   --line-ui (3:1) rather than the decorative --line hairline - see the note at
+   the top of this file. */
+.form { max-width: 34rem; margin-top: 2rem; }
+.field { margin-bottom: 1.3rem; }
+.field label { display: block; font-size: 14px; color: var(--muted); margin-bottom: .4rem; }
+.field-hint { display: block; font-size: 13px; color: var(--muted); margin-bottom: .5rem; }
+
+.field input,
+.field textarea {
+  width: 100%; font: inherit; font-size: 15px; color: var(--text);
+  background: var(--panel); border: 1px solid var(--line-ui); border-radius: 7px;
+  padding: .75rem .9rem;
+}
+.field textarea { resize: vertical; min-height: 7rem; }
+.field input:focus-visible,
+.field textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.form button[disabled] { opacity: .55; cursor: not-allowed; filter: none; }
+.form-selected { color: var(--muted); font-size: 15px; margin: 0 0 1.4rem; }
+.form-selected strong { color: var(--text); }
+.form-alt { font-size: 14px; color: var(--muted); margin: 1rem 0 0; }
+.form-done { max-width: 34rem; margin-top: 2rem; }
+.form-done strong { display: block; margin-bottom: .3rem; }
+.form-done p { color: var(--muted); margin: 0; }
+
+/* Package picker. The whole card is the label, so the click target is the card
+   rather than the 16px radio inside it. */
+.picker { margin-top: 1.6rem; }
+.picker-grid { border: 0; padding: 0; margin: 0; }
+.picker-card { cursor: pointer; border-color: var(--line-ui); }
+.picker-card.on { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.picker-card:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+.picker-head { display: flex; align-items: center; gap: .6rem; margin-bottom: .8rem; }
+.picker-head input { accent-color: var(--accent); width: 1.05rem; height: 1.05rem; flex: none; }
+.picker-head .card-title { margin: 0; flex: 1; }
+.picker-go { margin-top: 1.8rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.picker-go .section-lede { margin: 0; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   /* The video element stays: HeroVideo never starts or even fetches it, so all

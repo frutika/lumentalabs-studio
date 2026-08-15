@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PaketPicker from '../PaketPicker';
 import { site } from '../../../site.config';
 import { localePath } from '../../../content';
 
@@ -22,42 +23,6 @@ const services = [
   {
     title: 'Upravljanje objavama (opcionalno)',
     body: 'Ako klijent želi, vodimo komunikaciju 30 dana.',
-  },
-];
-
-const packages = [
-  {
-    name: 'Basic',
-    price: '49€',
-    items: [
-      '30 FB/IG objava',
-      '10 Google Business objava',
-      '5 promotivnih tekstova',
-      'Mini SEO audit (PDF)',
-      '1 vizualni template',
-    ],
-  },
-  {
-    name: 'Pro',
-    price: '99€',
-    items: [
-      'Sve iz Basic',
-      '10 AI vizuala',
-      '3 kratka video formata',
-      'Google Business optimizacija',
-      'Konkurentska analiza',
-    ],
-  },
-  {
-    name: 'Premium',
-    price: '149€',
-    items: [
-      'Sve iz Pro',
-      '30 dana upravljanja objavama',
-      '1 kampanja',
-      '1 landing stranica',
-      '24/7 podrška',
-    ],
   },
 ];
 
@@ -109,16 +74,7 @@ export default function AIContentBooster({ lang }) {
           <p className="section-lede">
             Jasna cijena, jasna isporuka. Odaberite razinu koja odgovara trenutnoj fazi biznisa.
           </p>
-          <div className="grid">
-            {packages.map((pkg) => (
-              <article className="card" key={pkg.name}>
-                <h3 className="card-title">{pkg.name} — {pkg.price}</h3>
-                <ul className="ticks">
-                  {pkg.items.map((item) => <li key={item}>{item}</li>)}
-                </ul>
-              </article>
-            ))}
-          </div>
+          <PaketPicker />
         </div>
       </section>
 

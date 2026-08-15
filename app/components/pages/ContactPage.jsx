@@ -1,4 +1,5 @@
 import EmailAddress from '../EmailAddress';
+import ContactForm from '../ContactForm';
 import { site } from '../../../site.config';
 import { getDict } from '../../../content';
 
@@ -13,7 +14,10 @@ export default function ContactPage({ lang }) {
           <p className="eyebrow">{c.eyebrow}</p>
           <h1 className="page-title">{c.h1}</h1>
           <p className="lede">{c.lede}</p>
-          {/* No form and no third-party script - nothing to leak, nothing to break. */}
+          {/* The form posts to our own route and our own database - no third-party
+              script, no embed. Mail stays the first option for anyone who would
+              rather write it themselves, and it is what the form falls back to
+              when the request fails. */}
           <EmailAddress
             email={site.email}
             openLabel={c.openMail}
@@ -22,6 +26,13 @@ export default function ContactPage({ lang }) {
           />
         </div>
       </header>
+
+      <section>
+        <div className="wrap">
+          <h2>{c.form.h2}</h2>
+          <ContactForm lang={lang} />
+        </div>
+      </section>
 
       <section>
         <div className="wrap">

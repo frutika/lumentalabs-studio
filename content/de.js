@@ -110,6 +110,23 @@ const de = {
       'Ungefähr wann es live sein muss und was passiert, wenn nicht',
       'Ein Budgetrahmen — auch grob spart er viel Raterei',
     ],
+    form: {
+      h2: 'Anfrage senden',
+      name: 'Name',
+      email: 'E-Mail',
+      message: 'Was soll die Sache können?',
+      messageHint: 'In normalen Worten. Falls es schon etwas gibt, schreiben Sie, was daran nicht stimmt.',
+      submit: 'Anfrage senden',
+      sending: 'Wird gesendet…',
+      selected: 'Gewähltes Paket',
+      okTitle: 'Angekommen.',
+      okBody: 'Wir melden uns innerhalb von 24 Stunden.',
+      failed: 'Senden fehlgeschlagen.',
+      mailFallback: 'Aus Ihrem Mailprogramm senden',
+      mailPrefill: 'Lieber aus Ihrem Mailprogramm? Mit ausgefüllten Daten öffnen',
+      honeypot: 'Nicht ausfüllen',
+      subject: 'Anfrage über die Website',
+    },
   },
 
   videoPage: {
