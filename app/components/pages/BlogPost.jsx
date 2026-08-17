@@ -43,7 +43,7 @@ export default function BlogPost({ slug }) {
 
       <section>
         <div className="wrap">
-          <BlogCover variant={post.cover} title={post.title} overlayTitle={false} className="post-cover" />
+          <BlogCover variant={post.cover} title={post.title} className="post-cover" />
           <div className="prose">
             {post.body.map((block, i) => <Block key={i} block={block} />)}
           </div>

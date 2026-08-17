@@ -25,12 +25,12 @@ export default function BlogPage() {
           <div className="grid">
             {posts.map((post) => (
               <Link className="card linked cover-card" key={post.slug} href={`/blog/${post.slug}`}>
-                <BlogCover variant={post.cover} title={post.title} className="card-cover" />
-                <div className="card-body">
+                <div className="card-head">
                   <span className="num">{formatDate(post.date)}</span>
                   <h3>{post.title}</h3>
-                  <p>{post.excerpt}</p>
                 </div>
+                <BlogCover variant={post.cover} title={post.title} className="card-cover" />
+                <p className="card-excerpt">{post.excerpt}</p>
               </Link>
             ))}
           </div>
