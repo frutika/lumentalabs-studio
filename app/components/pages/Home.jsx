@@ -3,7 +3,7 @@ import ReelEmbed from '../ReelEmbed';
 import VodiciCTA from '../VodiciCTA';
 import HeroVideo from '../HeroVideo';
 import JsonLd from '../JsonLd';
-import { getDict, localePath, servicesFor, worksFor, reelFor } from '../../../content';
+import { getDict, localePath, servicesFor, worksFor, reelFor, allPosts } from '../../../content';
 import { organizationSchema, websiteSchema } from '../../../content/schema';
 
 export default function Home({ lang }) {
@@ -12,6 +12,9 @@ export default function Home({ lang }) {
   const services = servicesFor(lang);
   const works = worksFor(lang);
   const reel = reelFor(lang);
+  // English-only, same gate as everything else that does not exist in every
+  // language: no `home.blogH2` key in a dictionary means no section renders.
+  const latestPosts = d.home.blogH2 ? allPosts().slice(0, 3) : [];
 
   return (
     <>
@@ -108,6 +111,27 @@ export default function Home({ lang }) {
               playLabel={d.home.reelPlay}
               note={d.home.reelNote}
             />
+          </div>
+        </section>
+      ) : null}
+
+      {latestPosts.length ? (
+        <section>
+          <div className="wrap">
+            <h2>{d.home.blogH2}</h2>
+            <p className="section-lede">{d.home.blogLede}</p>
+            <div className="grid">
+              {latestPosts.map((post) => (
+                <Link className="card linked" key={post.slug} href={`/blog/${post.slug}`}>
+                  <span className="num">{post.tags[0]}</span>
+                  <h3>{post.title}</h3>
+                  <p>{post.excerpt}</p>
+                </Link>
+              ))}
+            </div>
+            <p style={{ marginTop: '1.6rem' }}>
+              <Link className="btn ghost no-offset" href="/blog">{d.home.blogCta} →</Link>
+            </p>
           </div>
         </section>
       ) : null}

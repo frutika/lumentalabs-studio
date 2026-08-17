@@ -1,5 +1,5 @@
 import { site } from '../site.config';
-import { LOCALES, DEFAULT_LOCALE, urlFor, worksFor } from '../content';
+import { LOCALES, DEFAULT_LOCALE, urlFor, worksFor, allPosts } from '../content';
 
 // Marketing pages exist in every language; the legal pages are English-only for
 // now and are listed once, without alternates.
@@ -39,5 +39,21 @@ export default function sitemap() {
     priority: 0.3,
   }));
 
-  return [...translated, ...english];
+  const posts = allPosts();
+  const blog = [
+    {
+      url: `${site.url}/blog`,
+      lastModified: posts[0] ? new Date(posts[0].date) : now,
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    },
+    ...posts.map((post) => ({
+      url: `${site.url}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'yearly',
+      priority: 0.6,
+    })),
+  ];
+
+  return [...translated, ...english, ...blog];
 }

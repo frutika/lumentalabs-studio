@@ -240,8 +240,26 @@ button.btn { font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; 
 .prose p { color: var(--muted); margin: 0 0 1rem; }
 .prose a { color: var(--accent); text-decoration: none; }
 .prose a:hover { text-decoration: underline; }
+.prose ul { color: var(--muted); margin: 0 0 1.2rem; padding-left: 1.2rem; }
+.prose ul li { margin-bottom: .5rem; }
+.prose pre {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 9px;
+  padding: 1rem 1.1rem; overflow-x: auto; margin: 0 0 1.4rem;
+}
+.prose pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13.5px; line-height: 1.55; color: var(--text); background: none;
+}
+.prose blockquote {
+  border-left: 2px solid var(--accent); margin: 1.8rem 0; padding: .1rem 0 .1rem 1.2rem;
+  font-size: 1.05rem; color: var(--text);
+}
+.prose blockquote p { color: inherit; margin: 0; }
 .see-also { margin-top: 2.6rem; padding-top: 1.2rem; border-top: 1px solid var(--line); font-size: 14px; }
 .muted-line { color: var(--muted); }
+.post-meta { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; margin: 0 0 1.6rem; }
+.post-meta time { color: var(--muted); font-size: 14px; }
+.post-tags { display: inline-flex; gap: .5rem; flex-wrap: wrap; }
 
 .pref { border: 1px solid var(--line); border-radius: 11px; overflow: hidden; margin-bottom: 1.4rem; }
 .pref-row {

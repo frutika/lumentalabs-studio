@@ -3,7 +3,7 @@ const en = {
   label: 'English',
   htmlLang: 'en',
 
-  nav: { services: 'Services', work: 'Work', contact: 'Contact' },
+  nav: { services: 'Services', work: 'Work', blog: 'Blog', contact: 'Contact' },
 
   meta: {
     siteDescription:
@@ -58,6 +58,10 @@ const en = {
     howLede:
       'No empty presentations. The shortest path between what you need and something running in production.',
 
+    blogH2: 'From the write-ups',
+    blogLede: 'Specific bugs and fixes from the products above, not generic advice.',
+    blogCta: 'Read the blog',
+
     reelH2: 'The studio, in three minutes',
     reelLede: 'A short introduction to how we build.',
     reelPlay: 'Play the reel',
@@ -92,6 +96,20 @@ const en = {
     closingLede: 'Describe the problem and we will tell you what it takes.',
     closingCta: 'Get in touch',
     allWork: 'All work',
+  },
+
+  blogPage: {
+    eyebrow: 'Blog',
+    h1: 'What we learned building the things above.',
+    lede:
+      'Specific bugs, specific fixes, from the products we run ourselves — not generic advice rewritten to sound like a case study.',
+    readMore: 'Read the write-up',
+    backToAll: 'All posts',
+    relatedH2: 'This came out of building',
+    relatedCta: 'Read the case study',
+    closingH2: 'Have something like this to fix?',
+    closingLede: 'Describe the problem and we will tell you what it takes.',
+    closingCta: 'Get in touch',
   },
 
   contactPage: {

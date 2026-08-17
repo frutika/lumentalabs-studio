@@ -2,6 +2,7 @@ import en from './en';
 import hr from './hr';
 import de from './de';
 import { site } from '../site.config';
+import blogPosts from './blog';
 
 export const DEFAULT_LOCALE = 'en';
 export const LOCALES = ['en', 'hr', 'de'];
@@ -27,8 +28,15 @@ const ROUTE_LOCALES = {
   '/cookies/manage': ['en'],
 };
 
-/** Languages a given page is actually published in. Defaults to all of them. */
-export const localesFor = (path = '/') => ROUTE_LOCALES[path] || LOCALES;
+/**
+ * Languages a given page is actually published in. Defaults to all of them.
+ * The blog is matched by prefix rather than listed post-by-post here — a new
+ * post should not require touching this file to get its hreflang right.
+ */
+export const localesFor = (path = '/') => {
+  if (path === '/blog' || path.startsWith('/blog/')) return ['en'];
+  return ROUTE_LOCALES[path] || LOCALES;
+};
 
 /** English lives at the root so the URLs Google already indexed stay valid. */
 export function localePath(lang, path = '/') {
@@ -50,6 +58,24 @@ export function worksFor(lang) {
 
 export function workFor(lang, slug) {
   return worksFor(lang).find((w) => w.slug === slug);
+}
+
+/**
+ * Blog posts, newest first. English only (see localesFor above) — the posts
+ * are technical write-ups aimed at an English-speaking audience, not brand
+ * copy that needs a translation in every market.
+ */
+export function allPosts() {
+  return [...blogPosts].sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+export function postFor(slug) {
+  return blogPosts.find((post) => post.slug === slug);
+}
+
+/** The work case study a post references, if any — for the "see also" link. */
+export function relatedWorkFor(lang, post) {
+  return post.relatedWork ? workFor(lang, post.relatedWork) : null;
 }
 
 /**
@@ -136,7 +162,7 @@ export function metaFor(lang, path, { title, description, ogType = 'website' } =
  * they still need their own social card. Without this they inherited the
  * layout's, which pointed every one of them at the home page.
  */
-export function enOnlyMeta(path, title, description) {
+export function enOnlyMeta(path, title, description, { ogType = 'article' } = {}) {
   const d = getDict(DEFAULT_LOCALE);
   const url = urlFor(DEFAULT_LOCALE, path);
   return {
@@ -150,7 +176,7 @@ export function enOnlyMeta(path, title, description) {
       siteName: site.name,
       images: ['/media/hero.jpg'],
       locale: d.meta.ogLocale,
-      type: 'article',
+      type: ogType,
     },
     twitter: {
       card: 'summary_large_image',

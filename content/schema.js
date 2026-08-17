@@ -34,6 +34,25 @@ export function websiteSchema(lang) {
   };
 }
 
+export function articleSchema(post, path) {
+  const url = urlFor('en', path);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': `${url}#article`,
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    dateModified: post.date,
+    inLanguage: 'en',
+    url,
+    mainEntityOfPage: url,
+    image: `${site.url}/media/hero.jpg`,
+    author: { '@id': ORG_ID },
+    publisher: { '@id': ORG_ID },
+  };
+}
+
 /** items: [{ name, path }] — the trail, excluding the site root. */
 export function breadcrumbSchema(lang, items) {
   return {
