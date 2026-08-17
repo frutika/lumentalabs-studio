@@ -189,7 +189,7 @@ const VARIANTS = {
   'seo-scan': SeoScan,
 };
 
-export default function BlogCover({ variant, title, className = '' }) {
+export default function BlogCover({ variant, title, overlayTitle = true, className = '' }) {
   const Diagram = VARIANTS[variant];
   return (
     <svg
@@ -205,10 +205,25 @@ export default function BlogCover({ variant, title, className = '' }) {
         <marker id="arrowW" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
           <path d="M0 0 L10 5 L0 10 z" className="fill-w" />
         </marker>
+        <linearGradient id="scrim" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" className="scrim-stop-0" />
+          <stop offset="60%" className="scrim-stop-1" />
+          <stop offset="100%" className="scrim-stop-2" />
+        </linearGradient>
       </defs>
       <rect width="480" height="270" className="fill-panel" />
       <Grid />
       {Diagram ? <Diagram /> : null}
+      {title && overlayTitle ? (
+        <>
+          <rect x="0" y="140" width="480" height="130" fill="url(#scrim)" />
+          <foreignObject x="20" y="162" width="440" height="96">
+            <div className="cover-title-wrap">
+              <span className="cover-title">{title}</span>
+            </div>
+          </foreignObject>
+        </>
+      ) : null}
     </svg>
   );
 }
