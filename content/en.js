@@ -110,6 +110,8 @@ const en = {
     closingH2: 'Have something like this to fix?',
     closingLede: 'Describe the problem and we will tell you what it takes.',
     closingCta: 'Get in touch',
+    share: 'Share this post',
+    shareCopied: 'Link copied',
   },
 
   contactPage: {

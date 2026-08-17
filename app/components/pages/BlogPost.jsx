@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import JsonLd from '../JsonLd';
-import { getDict, DEFAULT_LOCALE, postFor, relatedWorkFor } from '../../../content';
+import BlogCover from '../BlogCover';
+import ShareButton from '../ShareButton';
+import { getDict, DEFAULT_LOCALE, postFor, relatedWorkFor, urlFor } from '../../../content';
 import { articleSchema, breadcrumbSchema } from '../../../content/schema';
 
 export default function BlogPost({ slug }) {
@@ -8,6 +10,7 @@ export default function BlogPost({ slug }) {
   const post = postFor(slug);
   const related = relatedWorkFor(DEFAULT_LOCALE, post);
   const path = `/blog/${slug}`;
+  const url = urlFor(DEFAULT_LOCALE, path);
 
   return (
     <>
@@ -33,12 +36,14 @@ export default function BlogPost({ slug }) {
                 <span className="tag" key={tag}>{tag}</span>
               ))}
             </span>
+            <ShareButton url={url} title={post.title} label={d.blogPage.share} copiedLabel={d.blogPage.shareCopied} />
           </div>
         </div>
       </header>
 
       <section>
         <div className="wrap">
+          <BlogCover variant={post.cover} title={post.title} className="post-cover" />
           <div className="prose">
             {post.body.map((block, i) => <Block key={i} block={block} />)}
           </div>

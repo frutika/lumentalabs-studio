@@ -9,10 +9,15 @@
 //   { ul: ['...', '...'] }    bullet list
 //   { code: 'lang', text }    code block
 //   { quote: '...' }          pull quote / lesson line
+//
+// cover is a variant key rendered by BlogCover.jsx — a small inline SVG
+// diagram of the post's actual failure, not a stock photo. Same reasoning as
+// the rest of this file: no CMS, no image pipeline, ships in the static build.
 
 const posts = [
   {
     slug: 'nginx-500-invisible-errors',
+    cover: 'nginx-proxy',
     title: 'The Nginx Setting That Was Hiding Our Own 500 Errors',
     description:
       'proxy_intercept_errors defaults to off. Without it, a crash in the app behind Nginx reaches the visitor untouched — including the crawler deciding whether to index the page.',
@@ -64,6 +69,7 @@ const posts = [
 
   {
     slug: 'service-worker-froze-our-prerender',
+    cover: 'service-worker',
     title: 'A Service Worker Froze Our Prerender on Day One, Forever',
     description:
       'One long-lived headless browser, reused for every page. The first render installed a Service Worker, and every render after that — for weeks — quietly inherited it.',
@@ -114,6 +120,7 @@ await context.close();`,
 
   {
     slug: 'wordpress-hook-that-only-fires-half-the-time',
+    cover: 'hook-gate',
     title: 'The WordPress Hook That Only Fires Half the Time',
     description:
       'A plugin cache watcher instantiated only on is_admin() or wp_doing_cron(). Fine, until every post on the site started arriving over the REST API instead.',
@@ -166,6 +173,7 @@ await context.close();`,
 
   {
     slug: 'building-a-blog-that-publishes-itself',
+    cover: 'pipeline',
     title: 'Building a Blog That Publishes Itself',
     description:
       "The architecture behind The Dog Habit: a pipeline that researches, writes, illustrates and posts on a schedule, with nobody opening an editor to keep it going.",
@@ -210,6 +218,7 @@ await context.close();`,
 
   {
     slug: 'pocketbase-in-production',
+    cover: 'silos',
     title: 'Running Three Products on One PocketBase, Without Them Sharing Data',
     description:
       'A single lightweight backend, three independent products, one operator. The engineering is mostly in deciding what stays isolated and what is safe to share.',
@@ -248,6 +257,7 @@ listRule:   null  // deny — this is the default, not "no restriction"`,
 
   {
     slug: 'technical-seo-audit-checklist-js-sites',
+    cover: 'seo-scan',
     title: 'A Technical SEO Checklist for Sites That Render in JavaScript',
     description:
       'The specific places a client-rendered app goes wrong for search engines and social scrapers — gathered from fixing them, not from a generic best-practices list.',

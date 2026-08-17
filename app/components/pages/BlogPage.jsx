@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import JsonLd from '../JsonLd';
+import BlogCover from '../BlogCover';
 import { getDict, DEFAULT_LOCALE, allPosts } from '../../../content';
 import { breadcrumbSchema } from '../../../content/schema';
 
@@ -23,10 +24,13 @@ export default function BlogPage() {
         <div className="wrap">
           <div className="grid">
             {posts.map((post) => (
-              <Link className="card linked" key={post.slug} href={`/blog/${post.slug}`}>
-                <span className="num">{formatDate(post.date)}</span>
-                <h3>{post.title}</h3>
-                <p>{post.excerpt}</p>
+              <Link className="card linked cover-card" key={post.slug} href={`/blog/${post.slug}`}>
+                <BlogCover variant={post.cover} title={post.title} className="card-cover" />
+                <div className="card-body">
+                  <span className="num">{formatDate(post.date)}</span>
+                  <h3>{post.title}</h3>
+                  <p>{post.excerpt}</p>
+                </div>
               </Link>
             ))}
           </div>
