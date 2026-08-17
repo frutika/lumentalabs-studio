@@ -206,9 +206,9 @@ export default function BlogCover({ variant, title, overlayTitle = true, classNa
           <path d="M0 0 L10 5 L0 10 z" className="fill-w" />
         </marker>
         <linearGradient id="scrim" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" className="scrim-stop-0" />
+          <stop offset="0%" className="scrim-stop-2" />
           <stop offset="60%" className="scrim-stop-1" />
-          <stop offset="100%" className="scrim-stop-2" />
+          <stop offset="100%" className="scrim-stop-0" />
         </linearGradient>
       </defs>
       <rect width="480" height="270" className="fill-panel" />
@@ -216,8 +216,8 @@ export default function BlogCover({ variant, title, overlayTitle = true, classNa
       {Diagram ? <Diagram /> : null}
       {title && overlayTitle ? (
         <>
-          <rect x="0" y="140" width="480" height="130" fill="url(#scrim)" />
-          <foreignObject x="20" y="162" width="440" height="96">
+          <rect x="0" y="0" width="480" height="118" fill="url(#scrim)" />
+          <foreignObject x="20" y="16" width="440" height="94">
             <div className="cover-title-wrap">
               <span className="cover-title">{title}</span>
             </div>
