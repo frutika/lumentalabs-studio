@@ -128,7 +128,7 @@ export async function POST(request) {
   // request — it would tell the visitor to send again for no reason.
   if (process.env.RESEND_API_KEY) {
     try {
-      await fetch('https://api.resend.com/emails', {
+      const notifyRes = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
@@ -142,6 +142,12 @@ export async function POST(request) {
           text: [`Ime: ${ime}`, `E-mail: ${email}`, `Paket: ${paket ?? '—'}`, `Jezik: ${locale}`, '', poruka || '(bez poruke)'].join('\n'),
         }),
       });
+      if (!notifyRes.ok) {
+        // Resend answers 2xx/4xx over plain HTTP, so a rejected key or an
+        // unverified sending domain never throws — only a status check catches it.
+        const detail = await notifyRes.text().catch(() => '');
+        console.error(`[contact] notification rejected: Resend answered ${notifyRes.status}. ${detail}`);
+      }
     } catch (err) {
       console.error('[contact] notification not sent', err);
     }
