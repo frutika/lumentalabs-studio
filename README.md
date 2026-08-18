@@ -29,6 +29,24 @@ npm run dev
    start `npm start`.
 3. SSL je automatski, nginx ne diraš.
 
+## Kontakt forma
+
+`app/api/contact/route.js` treba ove env varijable na Hostingeru (hPanel →
+Node.js App → Environment variables), inače forma tiho ne radi:
+
+| Varijabla | Za što |
+|---|---|
+| `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` | Upis upita u `contact_requests` tablicu. Bez njih ruta vraća `503 not_configured`. |
+| `RESEND_API_KEY` | Email obavijest na `hello@lumentalabs.studio` kad stigne upit. Opcionalno — bez njega se upit svejedno sprema, samo bez notifikacije. Domena `lumentalabs.studio` mora biti verificirana (DKIM/SPF) u Resendu. |
+
+Nakon dodavanja/promjene env varijable, app treba restart da je proces
+pokupi — čitaju se samo pri startu, ne po zahtjevu.
+
+`GET /api/contact` javlja je li Supabase konfiguriran (`{"ok":true,"supabase":"configured"|"missing"}`),
+bez otkrivanja vrijednosti — koristan prvi korak kod provjere nakon deploya.
+Resend nema ekvivalent health-check; ako notifikacija ne stigne, provjeri
+Hostinger app log za `[contact] notification rejected: Resend answered ...`.
+
 ## Mediji
 
 `public/media/hero.mp4` je 12-sekundna nijema petlja, 1280×720, **1.43 MB** —
