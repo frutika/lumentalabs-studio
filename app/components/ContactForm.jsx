@@ -67,7 +67,9 @@ export default function ContactForm({ lang }) {
 
       if (!res.ok) {
         const payload = await res.json().catch(() => null);
-        throw new Error(payload?.error || f.failed);
+        // The route answers with a code; anything unrecognised (a proxy error
+        // page, an old deploy) falls back to the generic sentence.
+        throw new Error(f.errors[payload?.error] || f.failed);
       }
 
       setState('ok');

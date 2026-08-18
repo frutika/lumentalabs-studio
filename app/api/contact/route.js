@@ -25,21 +25,38 @@ function rateLimited(ip, now) {
   return previous !== undefined && now - previous < INTERVAL_MS;
 }
 
-const fail = (error, status) => Response.json({ error }, { status });
+/**
+ * The response carries a stable code, not a sentence. The visitor reads the
+ * form's own language and the log reads the cause — the first version returned
+ * Croatian prose to German visitors and used one identical string for "the
+ * server has no credentials" and "the database refused the row", which cost an
+ * afternoon of guessing.
+ */
+const fail = (code, status) => Response.json({ error: code }, { status });
+
+const hasConfig = () =>
+  Boolean(process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
+
+/**
+ * Reports whether the route can reach its database, without revealing either
+ * value. Deploys where the environment did not carry over are otherwise only
+ * visible by submitting the form and reading the server log.
+ */
+export async function GET() {
+  return Response.json({ ok: true, supabase: hasConfig() ? 'configured' : 'missing' });
+}
 
 export async function POST(request) {
   const now = Date.now();
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0].trim() || 'unknown';
 
-  if (rateLimited(ip, now)) {
-    return fail('Previše pokušaja. Pričekajte pola minute.', 429);
-  }
+  if (rateLimited(ip, now)) return fail('rate_limited', 429);
 
   let body;
   try {
     body = await request.json();
   } catch {
-    return fail('Neispravan zahtjev.', 400);
+    return fail('bad_request', 400);
   }
 
   // Honeypot. A bot that fills the hidden field gets 200 so it learns nothing.
@@ -53,42 +70,56 @@ export async function POST(request) {
   const paket = PAKET_IDS.includes(body.paket) ? body.paket : null;
   const locale = ['hr', 'en', 'de'].includes(body.locale) ? body.locale : 'en';
 
-  if (ime.length < 2 || ime.length > 120) return fail('Unesite ime.', 400);
+  if (ime.length < 2 || ime.length > 120) return fail('invalid_name', 400);
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) || email.length > 200) {
-    return fail('Unesite ispravnu e-mail adresu.', 400);
+    return fail('invalid_email', 400);
   }
-  if (poruka.length > 4000) return fail('Poruka je predugačka.', 400);
+  if (poruka.length > 4000) return fail('message_too_long', 400);
 
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   if (!url || !key) {
-    console.error('[contact] SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is missing');
-    return fail(`Spremanje nije uspjelo. Pišite nam izravno.`, 500);
+    const missing = [!url && 'SUPABASE_URL', !key && 'SUPABASE_SERVICE_ROLE_KEY']
+      .filter(Boolean)
+      .join(', ');
+    console.error(
+      `[contact] not configured: ${missing} missing from the environment. ` +
+        'Set it on the host and restart the process — these are read at request time.'
+    );
+    return fail('not_configured', 503);
   }
 
-  const res = await fetch(`${url}/rest/v1/${TABLE}`, {
-    method: 'POST',
-    headers: {
-      apikey: key,
-      Authorization: `Bearer ${key}`,
-      'Content-Type': 'application/json',
-      // Without this PostgREST returns the inserted row; we do not need it back.
-      Prefer: 'return=minimal',
-    },
-    body: JSON.stringify({
-      ime,
-      email,
-      poruka: poruka || null,
-      paket,
-      locale,
-      user_agent: request.headers.get('user-agent')?.slice(0, 400) ?? null,
-    }),
-  });
+  let res;
+  try {
+    res = await fetch(`${url}/rest/v1/${TABLE}`, {
+      method: 'POST',
+      headers: {
+        apikey: key,
+        Authorization: `Bearer ${key}`,
+        'Content-Type': 'application/json',
+        // Without this PostgREST returns the inserted row; we do not need it back.
+        Prefer: 'return=minimal',
+      },
+      body: JSON.stringify({
+        ime,
+        email,
+        poruka: poruka || null,
+        paket,
+        locale,
+        user_agent: request.headers.get('user-agent')?.slice(0, 400) ?? null,
+      }),
+    });
+  } catch (err) {
+    // DNS, TLS, timeout — the request never reached PostgREST at all.
+    console.error('[contact] unreachable: could not connect to Supabase.', err);
+    return fail('save_failed', 502);
+  }
 
   if (!res.ok) {
-    console.error('[contact] insert failed', res.status, await res.text().catch(() => ''));
-    return fail('Spremanje nije uspjelo. Pišite nam izravno.', 500);
+    const detail = await res.text().catch(() => '');
+    console.error(`[contact] rejected: PostgREST answered ${res.status}. ${detail}`);
+    return fail('save_failed', 502);
   }
 
   lastSeen.set(ip, now);
