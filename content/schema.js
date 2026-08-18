@@ -47,7 +47,7 @@ export function articleSchema(post, path) {
     inLanguage: 'en',
     url,
     mainEntityOfPage: url,
-    image: `${site.url}/media/hero.jpg`,
+    image: `${url}/opengraph-image`,
     author: { '@id': ORG_ID },
     publisher: { '@id': ORG_ID },
   };

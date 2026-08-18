@@ -10,7 +10,12 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = postFor(slug);
   if (!post) return {};
-  return enOnlyMeta(`/blog/${slug}`, post.title, post.description);
+  const meta = enOnlyMeta(`/blog/${slug}`, post.title, post.description);
+  // Let the opengraph-image.jsx file convention in this route supply the
+  // per-post image — an explicit `images` array here would override it.
+  delete meta.openGraph.images;
+  delete meta.twitter.images;
+  return meta;
 }
 
 export default async function Page({ params }) {
