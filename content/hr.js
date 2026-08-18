@@ -147,6 +147,16 @@ const hr = {
       okTitle: 'Primljeno.',
       okBody: 'Javljamo se u roku od 24 sata.',
       failed: 'Slanje nije uspjelo.',
+      // Keyed by the code the route returns, so the visitor reads the reason in
+      // the language of the page they are on.
+      errors: {
+        rate_limited: 'Prebrzo. Pričekajte pola minute pa pokušajte ponovno.',
+        invalid_name: 'Unesite ime.',
+        invalid_email: 'Unesite ispravnu e-mail adresu.',
+        message_too_long: 'Poruka je predugačka.',
+        not_configured: 'Forma trenutno ne radi na našoj strani.',
+        save_failed: 'Spremanje nije uspjelo.',
+      },
       mailFallback: 'Pošaljite iz svog mail programa',
       mailPrefill: 'Radije iz svog mail programa? Otvori s ispunjenim podacima',
       honeypot: 'Ne popunjavati',

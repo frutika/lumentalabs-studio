@@ -122,6 +122,16 @@ const de = {
       okTitle: 'Angekommen.',
       okBody: 'Wir melden uns innerhalb von 24 Stunden.',
       failed: 'Senden fehlgeschlagen.',
+      // Keyed by the code the route returns, so the visitor reads the reason in
+      // the language of the page they are on.
+      errors: {
+        rate_limited: 'Zu schnell. Warten Sie eine halbe Minute und versuchen Sie es erneut.',
+        invalid_name: 'Bitte geben Sie Ihren Namen ein.',
+        invalid_email: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+        message_too_long: 'Die Nachricht ist zu lang.',
+        not_configured: 'Das Formular funktioniert derzeit auf unserer Seite nicht.',
+        save_failed: 'Speichern fehlgeschlagen.',
+      },
       mailFallback: 'Aus Ihrem Mailprogramm senden',
       mailPrefill: 'Lieber aus Ihrem Mailprogramm? Mit ausgefüllten Daten öffnen',
       honeypot: 'Nicht ausfüllen',

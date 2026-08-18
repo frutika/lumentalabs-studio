@@ -142,6 +142,16 @@ const en = {
       okTitle: 'Received.',
       okBody: 'We reply within 24 hours.',
       failed: 'Sending failed.',
+      // Keyed by the code the route returns, so the visitor reads the reason in
+      // the language of the page they are on.
+      errors: {
+        rate_limited: 'Too quick. Wait half a minute and try again.',
+        invalid_name: 'Please enter your name.',
+        invalid_email: 'Please enter a valid email address.',
+        message_too_long: 'The message is too long.',
+        not_configured: 'The form is not working on our side right now.',
+        save_failed: 'Saving failed.',
+      },
       mailFallback: 'Send from your mail client',
       mailPrefill: 'Rather use your own mail client? Open with the details filled in',
       honeypot: 'Do not fill in',
