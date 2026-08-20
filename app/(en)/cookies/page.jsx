@@ -46,8 +46,10 @@ export default function Cookies() {
               </p>
               <p>
                 This is not a technicality we are relying on. There is no analytics tool, no
-                advertising tag, no external font, and no social button anywhere on the site. You can
-                confirm it yourself: open your browser&apos;s developer tools, look at Application →
+                advertising tag, no external font, and no social button anywhere on the site. The{' '}
+                <Link href="/contact">contact form</Link> does not change this: it sends what you type
+                to our server when you press submit and sets nothing on your device. You can confirm
+                all of this yourself: open your browser&apos;s developer tools, look at Application →
                 Cookies, and you will find the list empty.
               </p>
 
@@ -73,7 +75,8 @@ export default function Cookies() {
             Consent is required before storing anything on your device that is not strictly necessary
             for the service you asked for. Since we store nothing at all, there is nothing to ask
             you about. A banner here would be decoration, and it would train you to click through
-            banners that do matter elsewhere.
+            banners that do matter elsewhere. The banner code already exists in the site, ready to
+            switch on — it simply stays off while there is nothing for it to ask about.
           </p>
 
           <h2>What is not a cookie</h2>
@@ -88,7 +91,8 @@ export default function Cookies() {
           <p>
             If we add measurement later, we will prefer a tool that does not set cookies and does not
             identify individuals. If we ever add something that does, it will be listed on this page
-            with its purpose and lifetime, and it will be off until you turn it on.
+            with its purpose and lifetime, a banner will appear before anything loads asking you to
+            allow or decline it, and it will be off until you turn it on.
           </p>
 
           <p className="see-also">

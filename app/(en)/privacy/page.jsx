@@ -38,9 +38,9 @@ export default function Privacy() {
           <h2>What this site does not do</h2>
           <p>
             There is no analytics, no advertising, no tracking pixels, no embedded fonts from other
-            domains, no social widgets, and no cookies. Every file the page loads comes from{' '}
-            {site.domain} itself. There is also no contact form — the only way to write to us is
-            email, which you control.
+            domains, and no social widgets. Every file the page loads comes from {site.domain}
+            itself. The contact form below is the one place the site talks to another service on
+            your behalf, and it is described in full.
           </p>
 
           <h2>The one exception: the video</h2>
@@ -72,12 +72,20 @@ export default function Privacy() {
             period that provider applies to server logs.
           </p>
 
-          <h2>If you email us</h2>
+          <h2>If you email us, or use the contact form</h2>
           <p>
-            When you write to us, we receive your address, your message, and whatever you choose to
-            put in it. We use it to answer you and, if it leads to work together, to carry out that
-            work. The basis is your request and the steps taken before any contract (Article 6(1)(b)
-            GDPR), or our legitimate interest in replying to enquiries.
+            When you write to us — by email or through the contact form — we receive your name, your
+            email address, the message you type, and, on the form, the package you selected if you
+            picked one. We use it to answer you and, if it leads to work together, to carry out that
+            work.
+            The basis is your request and the steps taken before any contract (Article 6(1)(b) GDPR),
+            or our legitimate interest in replying to enquiries.
+          </p>
+          <p>
+            The form itself sets nothing on your device — no cookie, no local storage — it only sends
+            what you typed to our server when you press submit. Submissions are rate-limited by IP
+            address to stop abuse, and a hidden field designed to catch automated bots is discarded
+            without being read if a real visitor never touches it.
           </p>
           <p>
             We keep correspondence for as long as it is relevant to an ongoing or possible
@@ -86,10 +94,12 @@ export default function Privacy() {
 
           <h2>Who else is involved</h2>
           <p>
-            Our hosting and email provider processes the data above on our behalf, as a processor,
-            under a contract that limits what they may do with it. We do not sell or share personal
-            data with anyone else, and we do not transfer it outside the European Economic Area on
-            purpose.
+            The contact form is stored in a database run by our database provider, and, when
+            configured, triggers one notification email sent through our email delivery provider so
+            we see your message promptly. Our hosting provider serves the site and keeps the access
+            logs described above. Each acts as our processor under a contract that limits what they
+            may do with your data. We do not sell or share personal data with anyone else, and we do
+            not transfer it outside the European Economic Area on purpose.
           </p>
 
           <h2>Links to our other projects</h2>

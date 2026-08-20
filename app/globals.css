@@ -331,6 +331,26 @@ a.card.linked.cover-card { padding: 0; overflow: hidden; display: flex; flex-dir
 .notice span { color: var(--muted); font-size: 14px; }
 .pending { color: var(--accent-warm); font-style: italic; }
 
+/* Cookie consent banner. Fixed to the bottom, one border on the edge it meets
+   the page content - see the --line-ui note above for why that edge uses the
+   3:1 token instead of the decorative --line hairline. */
+.cookie-banner {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  background: var(--panel); border-top: 1px solid var(--line-ui);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, .35);
+}
+.cookie-banner-inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 1.4rem;
+  flex-wrap: wrap; padding: 1rem 1.5rem;
+}
+.cookie-banner-inner p { margin: 0; color: var(--muted); font-size: 14px; max-width: 46rem; }
+.cookie-banner-inner a { color: var(--accent); }
+.cookie-banner-actions { display: flex; gap: .6rem; flex: none; }
+@media (max-width: 560px) {
+  .cookie-banner-inner { flex-direction: column; align-items: stretch; }
+  .cookie-banner-actions { justify-content: flex-end; }
+}
+
 /* Contact form. Every border below is the boundary of a control, so it uses
    --line-ui (3:1) rather than the decorative --line hairline - see the note at
    the top of this file. */
