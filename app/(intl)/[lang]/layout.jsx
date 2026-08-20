@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import SkipLink from '../../components/SkipLink';
-import { site } from '../../../site.config';
+import CookieBanner from '../../components/CookieBanner';
+import { site, analytics } from '../../../site.config';
 import { getDict, isLocale, LOCALES, DEFAULT_LOCALE } from '../../../content';
 
 // English is served from the (en) group at the root, so only the other
@@ -55,6 +56,7 @@ export default async function IntlLayout({ children, params }) {
         <Nav lang={lang} />
         <main id="main">{children}</main>
         <Footer lang={lang} />
+        {analytics.enabled ? <CookieBanner providerName={analytics.provider?.name} /> : null}
       </body>
     </html>
   );

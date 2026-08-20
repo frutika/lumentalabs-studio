@@ -2,7 +2,8 @@ import '../globals.css';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import SkipLink from '../components/SkipLink';
-import { site } from '../../site.config';
+import CookieBanner from '../components/CookieBanner';
+import { site, analytics } from '../../site.config';
 import { getDict, DEFAULT_LOCALE } from '../../content';
 
 const d = getDict(DEFAULT_LOCALE);
@@ -48,6 +49,7 @@ export default function EnglishLayout({ children }) {
             rather than "the chrome around it". */}
         <main id="main">{children}</main>
         <Footer lang={DEFAULT_LOCALE} />
+        {analytics.enabled ? <CookieBanner providerName={analytics.provider?.name} /> : null}
       </body>
     </html>
   );
