@@ -44,14 +44,11 @@ export const isPlaceholder = (v) => typeof v === 'string' && v.trimStart().start
 // These MUST be filled in before the policies mean anything - they are the one
 // thing that cannot be inferred from the code.
 export const legal = {
-  // TODO: exact registered name, e.g. "Lumenta Labs j.d.o.o." or your obrt name.
-  entity: 'TODO — registered business name',
-  // TODO: registered address as it appears in the court/craft register.
-  address: 'TODO — registered address',
-  // TODO: OIB (Croatian personal identification number of the business).
-  oib: 'TODO — OIB',
+  entity: 'Denis Šehić',
+  address: 'Bunarić V 6, 23234 Vir',
+  oib: '02520053309',
   jurisdiction: 'Croatia',
-  updated: '2026-08-08',
+  updated: '2026-08-20',
 };
 
 // Flip `enabled` to true only when a measurement tool is actually installed.
