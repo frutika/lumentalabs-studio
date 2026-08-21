@@ -48,11 +48,11 @@ const hr = {
 
     wallH2: 'Svaka tvrtka prije ili kasnije udari u isti zid.',
     wallP:
-      'Ideja je jasna. Plan je spreman. Ali pretvoriti to u nešto stvarno — nešto što doista radi — mjesto je na kojem većina projekata stane. Zbog tog jaza i postojimo.',
+      'Ideja je jasna, plan je spreman — ali između toga i platforme, AI alata ili automatizacije koja stvarno radi u produkciji, većina projekata stane. Najčešće nam se jave e-trgovine i tvrtke kojima treba proizvod veći od onoga što interni tim stigne izgraditi i održavati. Zbog tog jaza i postojimo.',
 
     whatH2: 'Što radimo',
     whatLede:
-      'Pet stvari, odrađenih kako treba, i to od istog tima koji će biti tu i kad ih zatreba mijenjati.',
+      'Pet stvari koje rješavaju konkretan poslovni problem — sporu platformu, ručan posao koji guta vrijeme tima, ili katalog koji je prerastao sadržaj koji ga prati — odrađenih kako treba, od istog tima koji će biti tu i kad ih zatreba mijenjati.',
 
     quote: ['AI nije naslov. ', 'AI je infrastruktura', ' — ugrađena u sustave koje već koristite, s poslom koji se može izmjeriti.'],
 
@@ -264,14 +264,14 @@ const hr = {
     {
       slug: 'bezmaske',
       kind: 'Živa platforma',
-      short: 'Platforma za recenzije poslodavaca u Hrvatskoj i regiji — i lekcija o tome kako klijentski renderiranu aplikaciju natjerati da rangira.',
+      short: 'Platforma za recenzije poslodavaca u Hrvatskoj i regiji — i lekcija o tome kako modernu web aplikaciju natjerati da se pojavi na Googleu.',
       problem:
-        'Platforma za recenzije živi ili umire na tražilicama i na tome kako joj linkovi izgledaju kad ih netko podijeli. Oboje je upravo ono u čemu je klijentski renderirana aplikacija najlošija: crawleri i društvene mreže dobiju praznu ljusku.',
+        'Platforma za recenzije živi ili umire na tražilicama i na tome kako joj linkovi izgledaju kad ih netko podijeli. Oboje je upravo ono što moderne web aplikacije rade loše iz kutije: tražilice i društvene mreže vide praznu stranicu umjesto sadržaja.',
       built: [
-        'Prerender sloj ispred aplikacije, koji crawlerima poslužuje potpuno formiranu stranicu s ispravnim canonicalom po stranici',
-        'Deduplikacija Open Graph podataka, pa se podijeljeni link prikaže kao ta stranica, a ne kao generička kartica sajta',
-        'Automatsko generiranje sitemapa po rasporedu, kako se pojavljuje novi sadržaj',
-        'Noćne sigurnosne kopije baze otporne na WAL, s provjerom integriteta i replikacijom izvan servera',
+        'Stranice se sada u Google pretrazi pojavljuju kao pravi sadržaj, ne kao prazna ljuska',
+        'Kad netko podijeli link na Facebooku ili LinkedInu, prikaže se prava stranica sa slikom i naslovom — ne generička kartica cijelog sajta',
+        'Nova recenzija se u Google indeksu pojavi sama, bez ručnog prijavljivanja svake stranice',
+        'Baza se svaku noć sigurnosno kopira, provjerava i sprema izvan servera — pad servera ne znači i gubitak podataka',
       ],
       lesson:
         'Sajt s recenzijama zna napraviti puno timova. Napraviti onaj koji tražilice i društvene mreže tretiraju kao pravi sajt — bez pisanja ispočetka — dio je za koji treba iskustvo.',
@@ -283,9 +283,9 @@ const hr = {
       problem:
         'Web trgovinama trebaju tisuće opisa koji zvuče kao brend, a ne kao generički model, i to na jeziku koji većina alata loše barata.',
       built: [
-        'Proces generiranja koji drži ton i terminologiju kroz cijeli katalog',
+        'Sustav koji generira opise za cijeli katalog, a ipak zvuči kao jedan brend, ne kao nasumičan AI tekst',
         'Tekst pisan za tržište na kojem trgovina doista prodaje, a ne naknadno preveden',
-        'Isti sustav koji postavljamo klijentima: Next.js sprijeda, PocketBase iza',
+        'Isti sustav koji postavljamo klijentima — dokazan na tisućama proizvoda prije nego što ga ugradimo kod vas',
       ],
       lesson:
         'Sve što smo ovdje naučili o generiranju u velikom opsegu — kontrolu troška, predmemoriju, provjeru kvalitete — donosimo u klijentski proces.',
