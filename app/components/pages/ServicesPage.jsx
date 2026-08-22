@@ -4,6 +4,9 @@ import { getDict, localePath, servicesFor } from '../../../content';
 export default function ServicesPage({ lang }) {
   const d = getDict(lang);
   const p = (path) => localePath(lang, path);
+  // The problem-framed rewrite exists in hr/de only for now; en falls back to
+  // the older service-list copy rather than 404ing on a missing key.
+  const problems = d.servicesPage.problems;
 
   return (
     <>
@@ -15,7 +18,31 @@ export default function ServicesPage({ lang }) {
         </div>
       </header>
 
-      {servicesFor(lang).map((s) => (
+      {problems ? problems.map((item, i) => (
+        <section id={item.slug} key={item.slug}>
+          <div className="wrap detail">
+            <div className="detail-side">
+              <span className="num">{String(i + 1).padStart(2, '0')}</span>
+              <h2>{item.title}</h2>
+            </div>
+            <div className="detail-body">
+              {item.paragraphs.map((para) => (
+                <p key={para.slice(0, 30)}>{para}</p>
+              ))}
+              {item.slug === 'video' ? (
+                <p>
+                  <Link href={p('/services/video')}>{d.servicesPage.deeper}</Link>
+                </p>
+              ) : null}
+              <p className="detail-sub">{d.servicesPage.gets}</p>
+              <ul className="ticks">
+                {item.gets.map((g) => <li key={g}>{g}</li>)}
+              </ul>
+              <p className="not-for"><strong>{d.servicesPage.notFor}</strong> {item.notFor}</p>
+            </div>
+          </div>
+        </section>
+      )) : servicesFor(lang).map((s) => (
         <section id={s.slug} key={s.slug}>
           <div className="wrap detail">
             <div className="detail-side">
