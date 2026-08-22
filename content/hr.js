@@ -112,13 +112,88 @@ const hr = {
 
   servicesPage: {
     eyebrow: 'Usluge',
-    h1: 'Pet stvari, odrađenih kako treba.',
-    lede: 'Nije popis svega. Ovo je posao koji radimo dovoljno često da u njemu budemo stvarno dobri.',
+    h1: 'Pet problema koje rješavamo',
+    lede: 'Ako se prepoznate u nekom od njih, javite se. Ako ne, recite nam svoj — možda ga rješavamo, a nismo ga tako nazvali.',
     deeper: 'Kako to izgleda u detalje →',
+    gets: 'Što dobivate',
+    notFor: 'Kad ovo nije za vas:',
     closingH2: 'Što od ovoga vam treba?',
     closingLede:
       'Ako niste sigurni, opišite problem umjesto rješenja. Iskreno ćemo vam reći jesmo li mi pravi ljudi za to.',
     closingCta: 'Javite nam se',
+
+    problems: [
+      {
+        slug: 'platforms',
+        title: 'Trebate platformu koja neće trebati prepravku za godinu dana',
+        paragraphs: [
+          'Većina projekata ne propadne na lansiranju, nego šest mjeseci poslije — kad treba dodati jezik, tržište ili tip proizvoda, a temelj to ne podnosi.',
+          'Preuzimamo cijeli put: podatkovni model, sučelje, deploy, nadzor. Vi dobivate sustav koji radi, ne prototip koji netko treba dovršiti.',
+        ],
+        gets: [
+          'Platformu koja podnosi rast bez ponovnog pisanja',
+          'Jednu odgovornu stranu za sve — od baze do domene',
+          'Predaju s dokumentacijom, tako da niste zaključani uz nas',
+        ],
+        notFor: 'ako trebate prezentacijsku stranicu od pet podstranica, jeftinije ćete proći s gotovim rješenjem. Reći ćemo vam to odmah.',
+      },
+      {
+        slug: 'ai',
+        title: 'Vaš tim gubi sate na posao koji stroj može odraditi',
+        paragraphs: [
+          'Netko svaki tjedan prepisuje podatke iz jednog sustava u drugi. Netko ručno slaže izvještaj koji izgleda isto svaki mjesec. To nije problem ljudi, nego procesa.',
+          'Krećemo od konkretnog zadatka i mjerimo koliko sati oslobađa. AI ulazi tamo gdje se isplati, a ne tamo gdje dobro zvuči.',
+        ],
+        gets: [
+          'Proces koji radi bez da ga netko gura svaki dan',
+          'Mjerljivu uštedu sati, dogovorenu prije nego što počnemo',
+          'Alat koji tim koristi unutar postojećeg sučelja, bez novog programa za učiti',
+        ],
+        notFor: 'ako se proces mijenja svaki mjesec, prvo ga treba posložiti. Automatizacija kaosa daje brži kaos.',
+      },
+      {
+        slug: 'ecommerce',
+        title: 'Tisuće artikala bez opisa — ili s opisima dobavljača',
+        paragraphs: [
+          'Katalog raste brže nego što ga netko stigne opisati. Opisi prepisani od dobavljača Google tretira kao duplikat, a strojni prijevod se vidi na prvu.',
+          'Postavljamo proces koji piše opise kroz cijeli katalog, u vašem tonu i s vašim nazivljem, na jeziku tržišta na kojem doista prodajete — ne naknadno preveden.',
+        ],
+        gets: [
+          'Cijeli katalog pokriven u tjednima, ne mjesecima',
+          'Tekst koji zvuči kao jedan brend, a ne kao tisuću nasumičnih AI odlomaka',
+          'Kontrolu prije objave — ništa ne ide van bez vašeg odobrenja',
+        ],
+        notFor: 'ako imate stotinjak artikala i copywritera koji ih stigne obraditi, ovo vam ne treba.',
+      },
+      {
+        slug: 'video',
+        title: 'Jedan video, pet tržišta',
+        paragraphs: [
+          'Snimanje po tržištu je najskuplji način da se dobije ista poruka na pet jezika.',
+          'Iz jedne produkcije radimo naraciju, sinkronizaciju, miks i titlove za svaku jezičnu verziju.',
+        ],
+        gets: [
+          'Sve jezične verzije iz jednog snimanja',
+          'Titlove i naraciju usklađene s tekstom na stranici',
+          'Materijal spreman za objavu, ne sirovi eksport',
+        ],
+        notFor: 'ako vam treba jedan video na jednom jeziku, lokalna produkcija bit će brža.',
+      },
+      {
+        slug: 'architecture',
+        title: 'Nemate koga zvati kad nešto padne',
+        paragraphs: [
+          'Kad su dizajn, kod i hosting kod tri različite strane, kvar postane rasprava o tome tko je kriv.',
+          'Arhitektura, sučelje i pogon ostaju kod jednog tima. Backupi, nadogradnje i nadzor su uključeni, ne dodatna stavka na računu.',
+        ],
+        gets: [
+          'Jedan kontakt za sve, s dogovorenim vremenom odziva',
+          'Backupe i nadzor koji rade i kad nitko ne gleda',
+          'Nadogradnje prije nego što postanu problem',
+        ],
+        notFor: 'ako imate vlastiti tehnički tim, radimo samo dio koji vam nedostaje — recite koji.',
+      },
+    ],
   },
 
   workPage: {

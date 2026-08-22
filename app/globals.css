@@ -228,6 +228,12 @@ section + section { border-top: 1px solid var(--line); }
 .detail-side .num { margin-bottom: .7rem; }
 .detail-body p { color: var(--muted); margin: 0 0 1.1rem; }
 .detail-body p:last-child { margin-bottom: 0; }
+.detail-body p.detail-sub { color: var(--text); font-weight: 600; margin: 1.6rem 0 .8rem; }
+.detail-body p.not-for {
+  margin-top: 1.4rem; padding-top: 1.2rem;
+  border-top: 1px dashed var(--line); font-size: 14.5px;
+}
+.not-for strong { color: var(--text); }
 @media (max-width: 760px) { .detail { grid-template-columns: 1fr; gap: 1.2rem; } }
 
 a.card.linked { display: block; text-decoration: none; transition: border-color .15s, background .15s; }

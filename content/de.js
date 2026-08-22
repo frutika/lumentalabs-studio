@@ -87,13 +87,88 @@ const de = {
 
   servicesPage: {
     eyebrow: 'Leistungen',
-    h1: 'Fünf Dinge, sauber umgesetzt.',
-    lede: 'Keine Liste von allem. Das ist die Arbeit, die wir oft genug machen, um darin wirklich gut zu sein.',
+    h1: 'Fünf Probleme, die wir lösen',
+    lede: 'Wenn Sie sich in einem davon wiedererkennen, melden Sie sich. Wenn nicht, nennen Sie uns Ihres — vielleicht lösen wir es, nur unter anderem Namen.',
     deeper: 'Wie das im Detail läuft →',
+    gets: 'Was Sie bekommen',
+    notFor: 'Nicht für Sie, wenn:',
     closingH2: 'Was davon brauchen Sie?',
     closingLede:
       'Wenn Sie unsicher sind, beschreiben Sie das Problem statt der Lösung. Wir sagen Ihnen ehrlich, ob wir die Richtigen dafür sind.',
     closingCta: 'Kontakt aufnehmen',
+
+    problems: [
+      {
+        slug: 'platforms',
+        title: 'Sie brauchen eine Plattform, die in einem Jahr keinen Umbau braucht',
+        paragraphs: [
+          'Die meisten Projekte scheitern nicht am Launch, sondern ein halbes Jahr später — wenn eine Sprache, ein Markt oder ein neuer Produkttyp dazukommt und das Fundament das nicht trägt.',
+          'Wir übernehmen den ganzen Weg: Datenmodell, Oberfläche, Deployment, Monitoring. Sie bekommen ein System, das läuft — keinen Prototyp, den noch jemand fertigstellen muss.',
+        ],
+        gets: [
+          'Eine Plattform, die Wachstum trägt, ohne neu geschrieben zu werden',
+          'Eine verantwortliche Seite für alles — von der Datenbank bis zur Domain',
+          'Eine Übergabe mit Dokumentation, damit Sie nicht an uns gebunden sind',
+        ],
+        notFor: 'Sie eine Website mit fünf Unterseiten brauchen — da fahren Sie mit einer fertigen Lösung günstiger. Das sagen wir Ihnen sofort.',
+      },
+      {
+        slug: 'ai',
+        title: 'Ihr Team verliert Stunden an Arbeit, die eine Maschine erledigen kann',
+        paragraphs: [
+          'Jede Woche überträgt jemand Daten von einem System ins andere. Jeden Monat baut jemand denselben Report von Hand. Das ist kein Problem der Menschen, sondern des Prozesses.',
+          'Wir starten bei einer konkreten Aufgabe und messen, wie viele Stunden sie freimacht. KI kommt dort zum Einsatz, wo sie sich rechnet — nicht dort, wo sie gut klingt.',
+        ],
+        gets: [
+          'Einen Prozess, der läuft, ohne dass ihn täglich jemand anschiebt',
+          'Eine messbare Zeitersparnis, vereinbart bevor wir anfangen',
+          'Ein Werkzeug, das Ihr Team in der gewohnten Oberfläche nutzt — kein neues Programm zum Lernen',
+        ],
+        notFor: 'sich der Prozess monatlich ändert — dann muss er zuerst stehen. Automatisiertes Chaos ist schnelleres Chaos.',
+      },
+      {
+        slug: 'ecommerce',
+        title: 'Tausende Artikel ohne Beschreibung — oder mit denen des Lieferanten',
+        paragraphs: [
+          'Der Katalog wächst schneller, als ihn jemand beschreiben kann. Vom Lieferanten übernommene Texte wertet Google als Duplikat, und maschinelle Übersetzung sieht man sofort.',
+          'Wir richten einen Prozess ein, der den ganzen Katalog beschreibt — in Ihrem Ton, mit Ihrer Terminologie, in der Sprache des Marktes, in dem Sie tatsächlich verkaufen. Nicht nachträglich übersetzt.',
+        ],
+        gets: [
+          'Den ganzen Katalog abgedeckt in Wochen, nicht Monaten',
+          'Texte, die nach einer Marke klingen — nicht nach tausend zufälligen KI-Absätzen',
+          'Kontrolle vor der Veröffentlichung: nichts geht raus ohne Ihre Freigabe',
+        ],
+        notFor: 'Sie hundert Artikel haben und einen Texter, der hinterherkommt.',
+      },
+      {
+        slug: 'video',
+        title: 'Ein Video, fünf Märkte',
+        paragraphs: [
+          'Pro Markt zu drehen ist der teuerste Weg zu derselben Botschaft in fünf Sprachen.',
+          'Aus einer Produktion liefern wir Sprecher, Vertonung, Mischung und Untertitel für jede Sprachversion.',
+        ],
+        gets: [
+          'Alle Sprachversionen aus einem Dreh',
+          'Untertitel und Sprecher abgestimmt auf den Text Ihrer Website',
+          'Material, das veröffentlichungsfertig ist — kein Rohexport',
+        ],
+        notFor: 'Sie ein Video in einer Sprache brauchen — lokal geht das schneller.',
+      },
+      {
+        slug: 'architecture',
+        title: 'Sie haben niemanden, den Sie anrufen können, wenn etwas ausfällt',
+        paragraphs: [
+          'Wenn Design, Code und Hosting bei drei Parteien liegen, wird jeder Ausfall zur Schuldfrage.',
+          'Architektur, Oberfläche und Betrieb bleiben bei einem Team. Backups, Updates und Monitoring sind enthalten — kein Posten extra.',
+        ],
+        gets: [
+          'Einen Ansprechpartner für alles, mit vereinbarter Reaktionszeit',
+          'Backups und Monitoring, die auch laufen, wenn niemand hinschaut',
+          'Updates, bevor sie zum Problem werden',
+        ],
+        notFor: 'Sie ein eigenes technisches Team haben — dann übernehmen wir nur den fehlenden Teil.',
+      },
+    ],
   },
 
   workPage: {
