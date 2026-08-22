@@ -49,6 +49,7 @@ const de = {
       'Fünf Dinge, sauber umgesetzt, vom selben Team, das auch dann noch da ist, wenn etwas geändert werden muss.',
 
     quote: ['KI ist keine Überschrift. ', 'KI ist Infrastruktur', ' — eingebaut in die Systeme, die Sie ohnehin nutzen, mit einer Aufgabe, die sich messen lässt.'],
+    quoteNote: 'In der Praxis: ein Prozess, der jeden Tag läuft — keine Demo, die einmal funktioniert.',
 
     proofH2: 'Wir empfehlen das nicht nur. Wir arbeiten damit.',
     proofLede:
@@ -131,7 +132,7 @@ const de = {
       h2: 'Anfrage senden',
       name: 'Name',
       email: 'E-Mail',
-      message: 'Was soll die Sache können?',
+      message: 'Beschreiben Sie Ihr Problem',
       messageHint: 'In normalen Worten. Falls es schon etwas gibt, schreiben Sie, was daran nicht stimmt.',
       submit: 'Anfrage senden',
       sending: 'Wird gesendet…',

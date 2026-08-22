@@ -55,6 +55,7 @@ const hr = {
       'Pet stvari koje rješavaju konkretan poslovni problem — sporu platformu, ručan posao koji guta vrijeme tima, ili katalog koji je prerastao sadržaj koji ga prati — odrađenih kako treba, od istog tima koji će biti tu i kad ih zatreba mijenjati.',
 
     quote: ['AI nije naslov. ', 'AI je infrastruktura', ' — ugrađena u sustave koje već koristite, s poslom koji se može izmjeriti.'],
+    quoteNote: 'U praksi: proces koji radi svaki dan, a ne demo koji radi jednom.',
 
     proofH2: 'Ovo ne preporučujemo. Na ovome radimo.',
     proofLede:
@@ -156,7 +157,7 @@ const hr = {
       h2: 'Pošaljite upit',
       name: 'Ime i prezime',
       email: 'E-mail',
-      message: 'Što bi ta stvar trebala raditi?',
+      message: 'Opišite problem',
       messageHint: 'Običnim riječima. Ako već nešto postoji, napišite što s time ne valja.',
       submit: 'Pošalji upit',
       sending: 'Šaljem…',
@@ -257,7 +258,7 @@ const hr = {
     },
     {
       slug: 'video',
-      title: 'Narirani video i lokalizacija',
+      title: 'Naracija i lokalizacija videa',
       short: 'Jedan film, izgovoren i titlovan za svako tržište na kojem prodajete.',
       body: [
         'Snimke su skupi dio, a većina tvrtki već nešto ima — film o proizvodu, obilazak, reel koji je netko montirao lani. Ono što nemaju je taj film koji govori svakom tržištu na kojem prodaju.',
