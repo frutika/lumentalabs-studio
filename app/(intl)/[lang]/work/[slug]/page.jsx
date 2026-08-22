@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
   const { lang, slug } = await params;
   const item = workFor(lang, slug);
   if (!item) return {};
-  return metaFor(lang, `/work/${slug}`, { title: item.name, description: item.short });
+  return metaFor(lang, `/work/${slug}`, { title: item.title || item.name, description: item.short });
 }
 
 export default async function Page({ params }) {

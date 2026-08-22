@@ -102,6 +102,7 @@ const de = {
       'Keine Kundenlogos an der Wand. Vier Produkte, die wir gebaut, ausgeliefert und bis heute betreut haben — und jedes davon ist gerade jetzt live. Öffnen Sie sie und urteilen Sie selbst.',
     problem: 'Das Problem',
     built: 'Was wir gebaut haben',
+    result: 'Ergebnis',
     lesson: 'Warum das für Sie zählt',
     visit: 'Öffnen',
     closingH2: 'Sie brauchen etwas Ähnliches?',
@@ -270,16 +271,21 @@ const de = {
     {
       slug: 'lumenta-ai',
       kind: 'Live-Produkt',
-      short: 'KI-Texterstellung für E-Commerce — Produktbeschreibungen und Kategorieseiten im Umfang des ganzen Katalogs.',
+      title: '12.000 Beschreibungen in neun Tagen — geprüfte Systemkapazität',
+      short: 'KI-Copywriting für den E-Commerce — der ganze Katalog in einem Markenton, auf Kroatisch und Deutsch.',
       problem:
-        'Onlineshops brauchen Tausende Beschreibungen, die nach der Marke klingen und nicht nach einem generischen Modell — in einer Sprache, mit der die meisten Werkzeuge schlecht umgehen.',
+        'Der Katalog wächst schneller, als ihn jemand beschreiben kann. Vom Lieferanten übernommene Texte wertet Google als Duplikat, und ein externer Texter berechnet 3 bis 15 Euro pro Artikel — bei 12.000 Artikeln eine Summe, die kein Shop einplant.',
       built: [
-        'Ein Ablauf, der Ton und Terminologie über den gesamten Katalog hält',
-        'Texte für den Markt, in dem der Shop tatsächlich verkauft, nicht nachträglich übersetzt',
-        'Derselbe Stack, den wir bei Kunden ausliefern: Next.js vorn, PocketBase dahinter',
+        'Ein System, das jeden Artikel im Ton der Marke und mit ihrer Terminologie beschreibt, in der Sprache des Marktes statt nachträglich übersetzt.',
+        'Jeder Text durchläuft eine Qualitätsprüfung vor der Veröffentlichung, und die Generierungskosten sind pro Artikel gedeckelt.',
+      ],
+      result: [
+        'Kapazität: 12.000 Beschreibungen in 9 Tagen — im Schnitt 65 Sekunden pro Text',
+        '0,02 € Generierungskosten pro Beschreibung, gegenüber 3–15 € beim externen Texter',
+        'Acht Tools in Produktion, von der Produktbeschreibung bis zum Newsletter',
       ],
       lesson:
-        'Alles, was wir hier über Erzeugung im großen Umfang gelernt haben — Kostenkontrolle, Caching, Qualitätsprüfung — bringen wir in den Ablauf beim Kunden ein.',
+        'Kostenkontrolle, Caching und Qualitätsprüfung sind hier entstanden — am eigenen Produkt. In Ihr Projekt kommen sie fertig. Wir lernen nicht an Ihrem Katalog.',
     },
     {
       slug: 'the-dog-habit',
