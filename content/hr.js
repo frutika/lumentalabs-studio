@@ -72,6 +72,22 @@ const hr = {
     finalH2: 'Recite nam što bi trebalo postojati.',
     finalLede: 'Jasan dogovor, konkretna isporuka, mjerljiv rezultat.',
     finalCta: 'Javite nam se',
+
+    about: {
+      h2: 'Tko ovo radi',
+      paragraphs: [
+        'Iza Lumenta Labsa stojim ja, Denis. Dvanaest godina gradim digitalne proizvode, zadnjih šest specijalizirano za AI i automatizaciju.',
+        'Razgovarate izravno sa mnom. Isti čovjek koji vam piše ponudu piše i kod, i diže ga u produkciju — nema account managera koji prenosi poruke, nema podizvođača u trećoj zemlji.',
+        'Dvanaest vlastitih proizvoda drži se u produkciji: Lumenta AI, The Dog Habit, UnmaskedWords, BezMaske i ostali. Sve što nudim klijentima prvo je prošlo kroz njih. Ne prodajem ništa što nisam sam držao u zraku.',
+      ],
+      cta: 'Pogledajte što smo izgradili →',
+      stats: [
+        ['12+', 'godina u digitalnom razvoju'],
+        ['6', 'godina u AI-u i automatizaciji'],
+        ['12', 'vlastitih proizvoda u produkciji'],
+      ],
+      photoAlt: 'Denis Šehić',
+    },
   },
 
   /**

@@ -26,6 +26,11 @@ export const site = {
   },
   reelChannel: 'https://www.youtube.com/@lumentatools',
 
+  social: {
+    linkedin: 'https://www.linkedin.com/in/bezmaske/',
+    github: 'https://github.com/frutika/lumentalabs-studio',
+  },
+
   // Product names and outbound links are the same in every language.
   work: [
     { slug: 'bezmaske', name: 'Bezmaske', href: 'https://bezmaske.com' },
