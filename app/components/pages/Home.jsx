@@ -67,6 +67,7 @@ export default function Home({ lang }) {
           <p className="quote">
             {d.home.quote[0]}<em>{d.home.quote[1]}</em>{d.home.quote[2]}
           </p>
+          {d.home.quoteNote ? <p className="muted-line quote-note">{d.home.quoteNote}</p> : null}
         </div>
       </section>
 

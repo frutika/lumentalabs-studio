@@ -105,6 +105,21 @@ export default function ContactForm({ lang }) {
       </div>
 
       <div className="field">
+        <label htmlFor="poruka">{f.message}</label>
+        <span className="field-hint" id="poruka-hint">{f.messageHint}</span>
+        <textarea
+          id="poruka"
+          name="poruka"
+          required
+          rows={5}
+          maxLength={4000}
+          aria-describedby="poruka-hint"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+      </div>
+
+      <div className="field">
         <label htmlFor="ime">{f.name}</label>
         <input
           id="ime"
@@ -126,20 +141,6 @@ export default function ContactForm({ lang }) {
           autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        />
-      </div>
-
-      <div className="field">
-        <label htmlFor="poruka">{f.message}</label>
-        <span className="field-hint" id="poruka-hint">{f.messageHint}</span>
-        <textarea
-          id="poruka"
-          name="poruka"
-          rows={5}
-          maxLength={4000}
-          aria-describedby="poruka-hint"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
         />
       </div>
 
