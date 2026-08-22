@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import ReelEmbed from '../ReelEmbed';
 import VodiciCTA from '../VodiciCTA';
 import HeroVideo from '../HeroVideo';
@@ -83,6 +84,41 @@ export default function Home({ lang }) {
           </div>
         </div>
       </section>
+
+      {d.home.about ? (
+        <section>
+          <div className="wrap">
+            <div className="about-layout">
+              <div className="about-photo">
+                {/* Placeholder until Denis sends a real photo — swap the src below. */}
+                <Image
+                  src="/media/denis-placeholder.jpg"
+                  alt={d.home.about.photoAlt}
+                  fill
+                  sizes="(max-width: 760px) 60vw, 280px"
+                />
+              </div>
+              <div className="about-text">
+                <h2>{d.home.about.h2}</h2>
+                {d.home.about.paragraphs.map((para, i) => (
+                  <p key={i} className={i === 0 ? 'section-lede' : undefined}>{para}</p>
+                ))}
+                {/* TODO: LinkedIn URL */}
+                {/* TODO: GitHub URL */}
+                <Link className="btn ghost no-offset" href={p('/work')}>{d.home.about.cta}</Link>
+              </div>
+            </div>
+            <div className="stats">
+              {d.home.about.stats.map(([num, label]) => (
+                <div className="stat" key={label}>
+                  <span className="stat-num">{num}</span>
+                  <span className="stat-label">{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section>
         <div className="wrap">
