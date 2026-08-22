@@ -127,6 +127,7 @@ const hr = {
       'Nisu ovo logotipi klijenata na zidu. Ovo su četiri proizvoda koja smo izgradili, pustili u rad i još ih održavamo — i svaki je živ upravo sada. Otvorite ih i prosudite sami.',
     problem: 'Problem',
     built: 'Što smo izgradili',
+    result: 'Rezultat',
     lesson: 'Zašto je to vama važno',
     visit: 'Otvori',
     closingH2: 'Treba vam nešto slično?',
@@ -295,16 +296,23 @@ const hr = {
     {
       slug: 'lumenta-ai',
       kind: 'Živi proizvod',
-      short: 'AI copywriting za e-trgovinu — opisi proizvoda i kategorija u opsegu cijelog kataloga.',
+      title: '12.000 opisa u devet dana — provjereni kapacitet sustava',
+      short: 'AI copywriting za e-trgovinu — cijeli katalog u jednom brand tonu, na hrvatskom i njemačkom.',
       problem:
-        'Web trgovinama trebaju tisuće opisa koji zvuče kao brend, a ne kao generički model, i to na jeziku koji većina alata loše barata.',
+        'Katalog raste brže nego što ga itko stigne opisati. Opisi preuzeti od dobavljača Google tretira kao duplikat, a vanjski copywriter za tekst naplaćuje 3 do 15 eura po artiklu — na katalogu od 12.000 artikala to je trošak koji nijedna trgovina ne planira.',
       built: [
-        'Sustav koji generira opise za cijeli katalog, a ipak zvuči kao jedan brend, ne kao nasumičan AI tekst',
-        'Tekst pisan za tržište na kojem trgovina doista prodaje, a ne naknadno preveden',
-        'Isti sustav koji postavljamo klijentima — dokazan na tisućama proizvoda prije nego što ga ugradimo kod vas',
+        'Sustav koji piše opis za svaki artikl u tonu brenda i s njegovim nazivljem, na jeziku tržišta, a ne naknadno preveden.',
+        'Svaki tekst prolazi provjeru kvalitete prije objave, a trošak generiranja je ograničen po artiklu, pa se ne može oteti.',
+      ],
+      result: [
+        'Kapacitet: 12.000 opisa u 9 dana — prosjek obrade 65 sekundi po tekstu',
+        '0,02 € trošak generiranja po opisu, naspram 3–15 € po tekstu kod vanjskog copywritera',
+        'Osam alata u produkciji, od opisa proizvoda do newslettera',
       ],
       lesson:
-        'Sve što smo ovdje naučili o generiranju u velikom opsegu — kontrolu troška, predmemoriju, provjeru kvalitete — donosimo u klijentski proces.',
+        'Kontrola troška, predmemorija i provjera kvalitete razrađene su ovdje, na vlastitom proizvodu. U vaš projekt ulaze gotove. Ne učimo na vašem katalogu.',
+      closingH2: 'Imate sličan problem?',
+      closingLede: 'Opišite ga i reći ćemo vam što je potrebno.',
     },
     {
       slug: 'the-dog-habit',

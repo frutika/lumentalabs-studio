@@ -22,7 +22,7 @@ export default function WorkDetail({ lang, slug }) {
           <p className="eyebrow">
             <Link href={p('/work')}>{d.workPage.eyebrow}</Link> · {item.kind}
           </p>
-          <h1 className="page-title">{item.name}</h1>
+          <h1 className="page-title">{item.title || item.name}</h1>
           <p className="lede">{item.short}</p>
           {item.href ? (
             <a className="btn ghost no-offset" href={item.href} target="_blank" rel="noopener noreferrer">
@@ -51,6 +51,19 @@ export default function WorkDetail({ lang, slug }) {
         </div>
       </section>
 
+      {item.result ? (
+        <section>
+          <div className="wrap detail">
+            <div className="detail-side"><h2>{d.workPage.result}</h2></div>
+            <div className="detail-body">
+              <ul className="ticks">
+                {item.result.map((r) => <li key={r}>{r}</li>)}
+              </ul>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section>
         <div className="wrap detail">
           <div className="detail-side"><h2>{d.workPage.lesson}</h2></div>
@@ -60,8 +73,8 @@ export default function WorkDetail({ lang, slug }) {
 
       <section>
         <div className="wrap">
-          <h2>{d.workPage.closingH2}</h2>
-          <p className="section-lede">{d.workPage.closingLede}</p>
+          <h2>{item.closingH2 || d.workPage.closingH2}</h2>
+          <p className="section-lede">{item.closingLede || d.workPage.closingLede}</p>
           <Link className="btn" href={p('/contact')}>{d.workPage.closingCta}</Link>
           <Link className="btn ghost" href={p('/work')}>{d.workPage.allWork}</Link>
         </div>
