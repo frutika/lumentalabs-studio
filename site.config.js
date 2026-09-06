@@ -37,6 +37,7 @@ export const site = {
     { slug: 'lumenta-ai', name: 'Lumenta AI', href: 'https://lumenta.shop' },
     { slug: 'the-dog-habit', name: 'The Dog Habit', href: 'https://thedoghabit.com' },
     { slug: 'unmaskedwords', name: 'UnmaskedWords', href: 'https://unmaskedwords.com' },
+    { slug: 'docuflow-ai', name: 'DocuFlow AI', href: 'https://app.lumentalabs.studio' },
   ],
 };
 

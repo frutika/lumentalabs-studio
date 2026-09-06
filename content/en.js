@@ -314,6 +314,22 @@ const en = {
       lesson:
         'Taught us how to run several independent products off one carefully managed server — the kind of decision that keeps a client budget sane.',
     },
+    {
+      slug: 'docuflow-ai',
+      kind: 'Live product',
+      short:
+        'AI document processing for small businesses — invoices and receipts extracted, reviewed, and turned into an action with one approval.',
+      problem:
+        'Every invoice and receipt that lands in a small business is a small chore: read it, decide what happens next, then remember to actually do it. Multiply that by a hundred documents a month and the chore becomes the job.',
+      built: [
+        'AI extraction pipeline (Claude) that turns invoices and receipts into structured, reviewable data — two real document types, not a demo of one',
+        'An action engine that suggests the next step — a payment reminder, an accounting task — and only sends it once a person approves it, with a real email behind every approved reminder',
+        'Per-call AI cost tracking and usage-based billing built in from day one, so the product knows its own margins before its first customer does',
+        'A security pass most teams skip entirely: an audit of every database function that runs with elevated privileges, closing grants nobody remembered were open',
+      ],
+      lesson:
+        'The AI call that reads a document is the easy half. The part that earns trust is everything around it — the review step nothing skips, the cost you can account for, the access you can prove is locked down.',
+    },
   ],
 
   pillars: [

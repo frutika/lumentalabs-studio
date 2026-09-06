@@ -419,6 +419,22 @@ const hr = {
       lesson:
         'Naučilo nas je kako voditi više neovisnih proizvoda s jednog pomno održavanog servera — odluka koja klijentski budžet drži razumnim.',
     },
+    {
+      slug: 'docuflow-ai',
+      kind: 'Živi proizvod',
+      short:
+        'AI obrada dokumenata za male tvrtke — fakture i računi se ekstrahiraju, provjeravaju i pretvaraju u akciju jednim odobrenjem.',
+      problem:
+        'Svaka faktura i račun koji stigne u malu tvrtku mala je obaveza: pročitati je, odlučiti što slijedi, pa ne zaboraviti to i napraviti. Pomnožite to sa sto dokumenata mjesečno i obaveza postane posao za sebe.',
+      built: [
+        'AI pipeline za ekstrakciju (Claude) koji fakture i račune pretvara u strukturirane, provjerljive podatke — dva stvarna tipa dokumenta, ne demo jednog',
+        'Action Engine koji predlaže sljedeći korak — podsjetnik za plaćanje, knjigovodstveni zadatak — i šalje ga tek kad ga osoba odobri, uz pravi email iza svakog odobrenog podsjetnika',
+        'Praćenje AI troška po pozivu i naplata prema potrošnji ugrađeni od prvog dana, pa proizvod zna svoju maržu prije nego je sazna prvi kupac',
+        'Sigurnosni prolaz koji većina timova preskoči: audit svake funkcije u bazi koja se izvršava s povišenim ovlastima, zatvaranje dozvola za koje nitko nije pamtio da su otvorene',
+      ],
+      lesson:
+        'AI poziv koji pročita dokument lakša je polovica. Povjerenje se zarađuje svime oko njega — korakom provjere koji se ne preskače, troškom koji se može objasniti, pristupom za koji se može dokazati da je zaključan.',
+    },
   ],
 
   pillars: [
