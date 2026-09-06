@@ -392,6 +392,22 @@ const de = {
       lesson:
         'Hat uns gelehrt, mehrere unabhängige Produkte auf einem sorgfältig geführten Server zu betreiben — die Art Entscheidung, die ein Kundenbudget vernünftig hält.',
     },
+    {
+      slug: 'docuflow-ai',
+      kind: 'Live-Produkt',
+      short:
+        'KI-Dokumentenverarbeitung für kleine Unternehmen — Rechnungen und Belege werden extrahiert, geprüft und mit einer Freigabe zur Aktion.',
+      problem:
+        'Jede Rechnung und jeder Beleg, der in einem kleinen Unternehmen ankommt, ist eine kleine Pflicht: lesen, entscheiden, was als Nächstes passiert, dann nicht vergessen, es auch zu tun. Multipliziert mit hundert Dokumenten im Monat wird aus der Pflicht ein eigener Job.',
+      built: [
+        'KI-Extraktions-Pipeline (Claude), die Rechnungen und Belege in strukturierte, prüfbare Daten verwandelt — zwei echte Dokumenttypen, keine Demo eines einzigen',
+        'Eine Action Engine, die den nächsten Schritt vorschlägt — eine Zahlungserinnerung, eine Buchhaltungsaufgabe — und ihn erst verschickt, wenn ein Mensch zustimmt, mit echtem E-Mail-Versand hinter jeder freigegebenen Erinnerung',
+        'KI-Kostenerfassung pro Aufruf und nutzungsbasierte Abrechnung von Anfang an eingebaut, damit das Produkt seine eigene Marge kennt, bevor der erste Kunde es tut',
+        'Ein Sicherheits-Audit, das die meisten Teams ganz auslassen: jede Datenbankfunktion mit erhöhten Rechten geprüft, Berechtigungen geschlossen, von denen niemand mehr wusste, dass sie offen standen',
+      ],
+      lesson:
+        'Der KI-Aufruf, der ein Dokument liest, ist die leichte Hälfte. Vertrauen verdient man mit allem drumherum — dem Prüfschritt, der nie übersprungen wird, den Kosten, die sich belegen lassen, dem Zugriff, der nachweislich abgeschlossen ist.',
+    },
   ],
 
   pillars: [
