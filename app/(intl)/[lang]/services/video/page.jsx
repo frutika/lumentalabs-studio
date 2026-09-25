@@ -8,7 +8,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { lang } = await params;
   const title = getDict(lang).services.find((s) => s.slug === 'video').title;
-  return metaFor(lang, '/services/video', { title });
+  return metaFor(lang, '/services/video', {
+    title,
+    description: getDict(lang).pageMeta.video.description,
+  });
 }
 
 export default async function Page({ params }) {

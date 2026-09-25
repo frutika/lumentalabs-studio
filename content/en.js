@@ -12,6 +12,38 @@ const en = {
     ogLocale: 'en_US',
   },
 
+  /**
+   * Title and description per page. See the note in hr.js — every page but the
+   * blog posts used to inherit meta.siteDescription.
+   */
+  pageMeta: {
+    home: {
+      // See the note in hr.js — the template does not reach this segment.
+      title: 'A digital studio for web, AI and automation — Lumenta Labs',
+      description:
+        'We build web platforms, AI tools and automations that hold up in production. Twelve of our own products, one team from data model to monitoring.',
+    },
+    services: {
+      title: 'Development and AI automation services',
+      description:
+        'Five problems we solve: web platforms, AI process automation, product descriptions at catalogue scale, video localisation, and hosting with monitoring.',
+    },
+    work: {
+      title: 'Products we have built',
+      description:
+        'Five products we built, shipped and still maintain — Bezmaske, Lumenta AI, The Dog Habit, UnmaskedWords and DocuFlow AI. Every one of them is live.',
+    },
+    contact: {
+      title: 'Contact',
+      description:
+        'Describe the problem, not the solution. We answer within 24 hours, by form or email. If we are not the right people for it, we will say so straight away.',
+    },
+    video: {
+      description:
+        'One production pass becomes narration, voicing, mix and captions for every market you sell in. A finished master per language, your picture untouched.',
+    },
+  },
+
   a11y: {
     skip: 'Skip to main content',
     langNav: 'Language',
@@ -52,7 +84,7 @@ const en = {
 
     proofH2: 'We don’t just recommend this. We run on it.',
     proofLede:
-      'Everything we offer clients, we built and proved on our own projects first — the same architecture, the same pipelines, the same standards. All four are live, and you can open any of them right now.',
+      'Everything we offer clients, we built and proved on our own projects first — the same architecture, the same pipelines, the same standards. All of them are live, and you can open any of them right now.',
 
     howH2: 'How we work',
     howLede:
@@ -164,7 +196,7 @@ const en = {
       path: 'ecommerce-content-automation',
       title: 'AI product descriptions for e-commerce',
       description:
-        'Product descriptions generated across a whole catalogue, in your voice and in the language of the market you actually sell in. Approval before anything publishes.',
+        'Product descriptions generated across a whole catalogue, in your voice and in the language of the market you sell in. Approval before anything publishes.',
       h1: 'AI product descriptions at catalogue scale',
       lede:
         'Thousands of items with no descriptions — or with the supplier’s, which Google reads as duplicates. We set up the process that writes them across the catalogue.',
@@ -247,7 +279,7 @@ const en = {
     eyebrow: 'Work',
     h1: 'We run on what we sell.',
     lede:
-      'Not client logos on a wall. Four products we built, deployed and still maintain — and every one of them is live right now. Open them and judge for yourself.',
+      'Not client logos on a wall. Five products we built, deployed and still maintain — and every one of them is live right now. Open them and judge for yourself.',
     problem: 'The problem',
     built: 'What we built',
     lesson: 'Why it matters to you',
