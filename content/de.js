@@ -222,6 +222,15 @@ const de = {
         'Wir übernehmen den ganzen Weg: Datenmodell, Oberfläche, Deployment, Monitoring. Sie bekommen ein System, das läuft — keinen Prototyp, den noch jemand fertigstellen muss.',
         'Derselbe Ansatz hält zwölf eigene Produkte im Produktivbetrieb. Wir verkaufen keine Architektur, die wir nicht selbst betrieben haben.',
       ],
+      pricing: {
+        q: 'Was kostet eine individuelle Webanwendung?',
+        bands: [
+          ['Internes Werkzeug oder Dashboard mit Nutzern', '6.000 – 12.000 €'],
+          ['Plattform mit Rollen und Integrationen', '12.000 – 28.000 €'],
+          ['Mehrbenutzersystem, Echtzeit, ERP/CRM', 'ab 28.000 €'],
+        ],
+        min: 6000,
+      },
       faq: [
         {
           q: 'Was gehört zur Entwicklung einer Webanwendung?',
@@ -251,6 +260,15 @@ const de = {
         'Wir starten bei einer konkreten Aufgabe und messen, wie viele Stunden sie freisetzt. Automatisierung, die keine Ersparnis zeigen kann, ist keine Automatisierung, sondern ein Kostenposten mit besserem Namen.',
         'Das Werkzeug läuft in der Oberfläche, die das Team jeden Morgen ohnehin öffnet. Nichts Neues zu lernen.',
       ],
+      pricing: {
+        q: 'Was kostet KI-Prozessautomatisierung?',
+        bands: [
+          ['Ein Prozess', '3.500 – 8.000 €'],
+          ['Mehrere Prozesse, in Ihr System eingebaut', '8.000 – 20.000 €'],
+          ['Ein eigenes Werkzeug', 'ab 20.000 €'],
+        ],
+        min: 3500,
+      },
       faq: [
         {
           q: 'Woran erkennen wir, dass sich die Automatisierung rechnet?',
@@ -280,6 +298,15 @@ const de = {
         'Wir richten einen Prozess ein, der Beschreibungen über den gesamten Katalog schreibt — in Ihrem Ton, mit Ihrer Terminologie, in der Sprache des Marktes, in dem Sie tatsächlich verkaufen.',
         'Nichts geht ohne Ihre Freigabe raus. Die Kontrolle ist Teil des Prozesses, kein Zusatz.',
       ],
+      pricing: {
+        q: 'Was kosten generierte Produktbeschreibungen?',
+        bands: [
+          ['Bis tausend Artikel, eine Sprache', '1.500 – 4.000 €'],
+          ['Ganzer Katalog, mehrere Sprachen', '4.000 – 12.000 €'],
+        ],
+        min: 1500,
+        max: 12000,
+      },
       faq: [
         {
           q: 'Wie lange dauert ein kompletter Katalog?',
@@ -309,6 +336,16 @@ const de = {
         'Architektur, Oberfläche und Betrieb bleiben bei einem Team. Backups, Updates und Monitoring sind enthalten, kein separater Posten auf der Rechnung.',
         'Dasselbe Monitoring und dieselben nächtlichen Backups laufen auf unseren eigenen Produkten.',
       ],
+      pricing: {
+        q: 'Was kostet die monatliche Wartung?',
+        bands: [
+          ['Eine Anwendung, Monitoring und Backups', '350 – 900 € / Mon.'],
+          ['Mehrere Systeme, vereinbarte Reaktionszeit', '900 – 2.500 € / Mon.'],
+        ],
+        min: 350,
+        max: 2500,
+        unit: 'MON',
+      },
       faq: [
         {
           q: 'Was ist in der Wartung enthalten?',
@@ -328,6 +365,9 @@ const de = {
 
   serviceDetailPage: {
     eyebrow: 'Leistung',
+    pricingH2: 'Was es kostet',
+    vatNote: 'Alle Preise verstehen sich zzgl. MwSt. Das endgültige Angebot hängt vom Umfang ab — die Spanne sagt Ihnen sofort, ob wir in derselben Größenordnung liegen.',
+    priceQ: 'Was kostet das?',
     getsH2: 'Was Sie bekommen',
     notForH2: 'Wann das nichts für Sie ist',
     faqH2: 'Häufige Fragen',
@@ -401,6 +441,12 @@ const de = {
 
   videoPage: {
     eyebrow: 'Leistungen',
+    pricingH2: 'Was es kostet',
+    pricing: [
+      ['Ein Film, bis zu drei Sprachen', '900 – 2.500 €'],
+      ['Mehrere Filme oder mehrere Märkte', '2.500 – 6.000 €'],
+    ],
+    vatNote: 'Alle Preise zzgl. MwSt. Das endgültige Angebot hängt von Laufzeit und Sprachenzahl ab.',
     h1: 'Ein Film. Jeder Markt, in dem Sie verkaufen.',
     lede:
       'Für jede Sprache neu zu drehen ist der Weg, auf dem Videobudgets sterben. Wir vertonen, was Sie bereits haben, und produzieren aus einem Durchgang eine Fassung für jeden Markt.',

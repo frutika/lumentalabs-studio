@@ -141,6 +141,15 @@ const en = {
         'A handover with documentation, so you are not locked to us',
       ],
       notFor: 'if you need a five-page brochure site, an off-the-shelf tool will cost you less. We will say so straight away.',
+      pricing: {
+        q: 'How much does a custom web application cost?',
+        bands: [
+          ['Internal tool or dashboard with users', '€6,000 – €12,000'],
+          ['Platform with roles and integrations', '€12,000 – €28,000'],
+          ['Multi-user system, real-time, ERP/CRM', 'from €28,000'],
+        ],
+        min: 6000,
+      },
       faq: [
         {
           q: 'What does building a web application include?',
@@ -176,6 +185,15 @@ const en = {
         'A tool the team uses inside their existing interface, with nothing new to learn',
       ],
       notFor: 'if the process changes every month, fix the process first. Automating chaos gives you faster chaos.',
+      pricing: {
+        q: 'How much does AI process automation cost?',
+        bands: [
+          ['One process', '€3,500 – €8,000'],
+          ['Several processes, built into your existing system', '€8,000 – €20,000'],
+          ['A tool of your own', 'from €20,000'],
+        ],
+        min: 3500,
+      },
       faq: [
         {
           q: 'How do we know the automation pays off?',
@@ -211,6 +229,15 @@ const en = {
         'Review before publishing — nothing goes out without your approval',
       ],
       notFor: 'if you have a hundred items and a copywriter who can keep up, you do not need this.',
+      pricing: {
+        q: 'How much do generated product descriptions cost?',
+        bands: [
+          ['Up to a thousand items, one language', '€1,500 – €4,000'],
+          ['Whole catalogue, several languages', '€4,000 – €12,000'],
+        ],
+        min: 1500,
+        max: 12000,
+      },
       faq: [
         {
           q: 'How long does a full catalogue take?',
@@ -246,6 +273,16 @@ const en = {
         'Updates before they turn into problems',
       ],
       notFor: 'if you have your own technical team, we take only the part you are missing — tell us which.',
+      pricing: {
+        q: 'How much does monthly maintenance cost?',
+        bands: [
+          ['One application, monitoring and backups', '€350 – €900 / mo'],
+          ['Several systems, agreed response time', '€900 – €2,500 / mo'],
+        ],
+        min: 350,
+        max: 2500,
+        unit: 'MON',
+      },
       faq: [
         {
           q: 'What does maintenance include?',
@@ -265,6 +302,9 @@ const en = {
 
   serviceDetailPage: {
     eyebrow: 'Service',
+    pricingH2: 'What it costs',
+    vatNote: 'All prices exclude VAT. The final quote depends on scope — the range is here so you know straight away whether we are in the same order of magnitude.',
+    priceQ: 'What does it cost?',
     getsH2: 'What you get',
     notForH2: 'When this is not for you',
     faqH2: 'Common questions',
@@ -353,6 +393,12 @@ const en = {
 
   videoPage: {
     eyebrow: 'Services',
+    pricingH2: 'What it costs',
+    pricing: [
+      ['One film, up to three languages', '€900 – €2,500'],
+      ['Several films or several markets', '€2,500 – €6,000'],
+    ],
+    vatNote: 'All prices exclude VAT. The final quote depends on runtime and how many languages.',
     h1: 'One film. Every market you sell in.',
     lede:
       'Shooting again for each language is how video budgets die. We narrate what you already have, and produce a version for every market from a single pass.',

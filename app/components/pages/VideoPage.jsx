@@ -73,6 +73,22 @@ export default function VideoPage({ lang }) {
         </div>
       </section>
 
+      {v.pricing?.length ? (
+        <section id="cijena">
+          <div className="wrap detail">
+            <div className="detail-side"><h2>{v.pricingH2}</h2></div>
+            <div className="detail-body">
+              <ul className="ticks">
+                {v.pricing.map(([label, value]) => (
+                  <li key={label}><strong>{value}</strong> — {label}</li>
+                ))}
+              </ul>
+              <p className="not-for">{v.vatNote}</p>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section>
         <div className="wrap">
           <h2>{v.closingH2}</h2>

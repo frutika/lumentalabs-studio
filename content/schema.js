@@ -54,13 +54,14 @@ export function articleSchema(post, path) {
 }
 
 /**
- * One service page. Deliberately no areaServed, priceRange or aggregateRating:
- * those are the fields that get invented, and an invented one is worse than a
- * missing one.
+ * One service page. Still no areaServed and no aggregateRating: those are the
+ * fields that get invented, and an invented one is worse than a missing one.
+ * The price is the exception — it is a real figure, and it comes from the same
+ * bands the page prints.
  */
 export function serviceSchema(lang, detail, path) {
   const url = urlFor(lang, path);
-  return {
+  const schema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `${url}#service`,
@@ -70,6 +71,28 @@ export function serviceSchema(lang, detail, path) {
     inLanguage: getDict(lang).htmlLang,
     provider: { '@id': ORG_ID },
   };
+
+  // Only now that real figures exist. A price range is the one field here that
+  // is worth stating in machine-readable form, and it is taken from the same
+  // bands the page prints — never a separate number that can drift from them.
+  const { min, max, unit } = detail.pricing || {};
+  if (min) {
+    schema.offers = {
+      '@type': 'Offer',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'EUR',
+        minPrice: min,
+        ...(max ? { maxPrice: max } : {}),
+        // Monthly retainers are not one-off project prices and should not be
+        // read as though they were.
+        ...(unit ? { unitCode: unit } : {}),
+        valueAddedTaxIncluded: false,
+      },
+    };
+  }
+
+  return schema;
 }
 
 /**

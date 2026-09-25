@@ -70,6 +70,24 @@ export default function ServiceDetail({ lang, slug }) {
         </section>
       ) : null}
 
+      {item.pricing?.bands?.length ? (
+        <section id="cijena">
+          <div className="wrap detail">
+            <div className="detail-side"><h2>{t.pricingH2}</h2></div>
+            <div className="detail-body">
+              {/* The number is the point of this section, so it is text on the
+                  page rather than something a visitor has to ask for. */}
+              <ul className="ticks">
+                {item.pricing.bands.map(([label, value]) => (
+                  <li key={label}><strong>{value}</strong> — {label}</li>
+                ))}
+              </ul>
+              <p className="not-for">{t.vatNote}</p>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {item.faq?.length ? (
         <section>
           <div className="wrap detail">
