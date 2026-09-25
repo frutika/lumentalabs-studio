@@ -2,7 +2,7 @@ import ContactPage from '../../components/pages/ContactPage';
 import { metaFor, getDict, DEFAULT_LOCALE } from '../../../content';
 
 const d = getDict(DEFAULT_LOCALE);
-export const metadata = metaFor(DEFAULT_LOCALE, '/contact', { title: d.contactPage.eyebrow });
+export const metadata = metaFor(DEFAULT_LOCALE, '/contact', d.pageMeta.contact);
 
 export default function Page() {
   return <ContactPage lang={DEFAULT_LOCALE} />;

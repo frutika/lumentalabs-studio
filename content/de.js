@@ -12,6 +12,38 @@ const de = {
     ogLocale: 'de_DE',
   },
 
+  /**
+   * Titel und Beschreibung pro Seite. Siehe die Notiz in hr.js — bisher erbte
+   * jede Seite außer den Blogbeiträgen meta.siteDescription.
+   */
+  pageMeta: {
+    home: {
+      // Siehe die Notiz in hr.js — das Template erreicht dieses Segment nicht.
+      title: 'Digitalstudio für Web, KI und Automatisierung — Lumenta Labs',
+      description:
+        'Wir bauen Webplattformen, KI-Werkzeuge und Automatisierungen, die im Produktivbetrieb halten. Zwölf eigene Produkte, ein Team von Anfang bis Betrieb.',
+    },
+    services: {
+      title: 'Entwicklung und KI-Automatisierung',
+      description:
+        'Fünf Probleme, die wir lösen: Webplattformen, KI-Prozessautomatisierung, Produktbeschreibungen im ganzen Katalog, Video-Lokalisierung und Wartung.',
+    },
+    work: {
+      title: 'Produkte, die wir gebaut haben',
+      description:
+        'Fünf Produkte, die wir gebaut und bis heute betreut haben — Bezmaske, Lumenta AI, The Dog Habit, UnmaskedWords und DocuFlow AI. Alle sind live.',
+    },
+    contact: {
+      title: 'Kontakt',
+      description:
+        'Beschreiben Sie das Problem, nicht die Lösung. Wir antworten innerhalb von 24 Stunden. Sind wir nicht die Richtigen, sagen wir es Ihnen sofort.',
+    },
+    video: {
+      description:
+        'Aus einem Produktionsdurchgang entstehen Sprecher, Mischung und Untertitel für jeden Markt. Ein fertiger Master pro Sprache, Ihr Bild bleibt unberührt.',
+    },
+  },
+
   a11y: {
     skip: 'Zum Hauptinhalt springen',
     langNav: 'Sprache',
@@ -53,7 +85,7 @@ const de = {
 
     proofH2: 'Wir empfehlen das nicht nur. Wir arbeiten damit.',
     proofLede:
-      'Alles, was wir Kunden anbieten, haben wir zuerst in eigenen Projekten gebaut und bewiesen — dieselbe Architektur, dieselben Abläufe, dieselben Standards. Alle vier sind live, und Sie können jedes davon sofort öffnen.',
+      'Alles, was wir Kunden anbieten, haben wir zuerst in eigenen Projekten gebaut und bewiesen — dieselbe Architektur, dieselben Abläufe, dieselben Standards. Alle sind live, und Sie können jedes davon sofort öffnen.',
 
     howH2: 'Wie wir arbeiten',
     howLede:
@@ -310,7 +342,7 @@ const de = {
     eyebrow: 'Projekte',
     h1: 'Wir arbeiten mit dem, was wir verkaufen.',
     lede:
-      'Keine Kundenlogos an der Wand. Vier Produkte, die wir gebaut, ausgeliefert und bis heute betreut haben — und jedes davon ist gerade jetzt live. Öffnen Sie sie und urteilen Sie selbst.',
+      'Keine Kundenlogos an der Wand. Fünf Produkte, die wir gebaut, ausgeliefert und bis heute betreut haben — und jedes davon ist gerade jetzt live. Öffnen Sie sie und urteilen Sie selbst.',
     problem: 'Das Problem',
     built: 'Was wir gebaut haben',
     result: 'Ergebnis',

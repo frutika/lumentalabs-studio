@@ -7,7 +7,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { lang } = await params;
-  return metaFor(lang, '/services', { title: getDict(lang).servicesPage.eyebrow });
+  return metaFor(lang, '/services', getDict(lang).pageMeta.services);
 }
 
 export default async function Page({ params }) {

@@ -18,6 +18,41 @@ const hr = {
     ogLocale: 'hr_HR',
   },
 
+  /**
+   * Title and description per page. Before this every page but the blog posts
+   * inherited meta.siteDescription, so /usluge, /radovi, /kontakt and the video
+   * page all showed the same sentence in Google — one description for five
+   * different pages tells a searcher nothing about which one to open.
+   */
+  pageMeta: {
+    home: {
+      // The title template only reaches child segments, so the home page has
+      // to carry the brand itself or it ships a title with no company in it.
+      title: 'Digitalni studio za web, AI i automatizaciju — Lumenta Labs',
+      description:
+        'Gradimo web platforme, AI alate i automatizacije koje rade u produkciji. Dvanaest vlastitih proizvoda, isti tim od podatkovnog modela do nadzora.',
+    },
+    services: {
+      title: 'Usluge razvoja i AI automatizacije',
+      description:
+        'Pet problema koje rješavamo: web platforme, AI automatizacija procesa, opisi proizvoda za webshop, video lokalizacija i održavanje s nadzorom.',
+    },
+    work: {
+      title: 'Proizvodi koje smo izgradili',
+      description:
+        'Pet proizvoda koje smo izgradili, pustili u rad i još održavamo — Bezmaske, Lumenta AI, The Dog Habit, UnmaskedWords i DocuFlow AI. Svi su živi.',
+    },
+    contact: {
+      title: 'Kontakt',
+      description:
+        'Opišite problem, ne rješenje. Javljamo se u roku od 24 sata, formom ili e-mailom. Ako nismo pravi ljudi za to, reći ćemo vam odmah.',
+    },
+    video: {
+      description:
+        'Iz jedne produkcije radimo naraciju, sinkronizaciju, miks i titlove za svako tržište na kojem prodajete. Gotov master po jeziku, slika netaknuta.',
+    },
+  },
+
   a11y: {
     skip: 'Prijeđi na glavni sadržaj',
     langNav: 'Jezik',
@@ -59,7 +94,7 @@ const hr = {
 
     proofH2: 'Ovo ne preporučujemo. Na ovome radimo.',
     proofLede:
-      'Sve što nudimo klijentima prvo smo izgradili i dokazali na vlastitim projektima — ista arhitektura, isti procesi, isti standardi. Sva četiri su živa i možete ih otvoriti odmah.',
+      'Sve što nudimo klijentima prvo smo izgradili i dokazali na vlastitim projektima — ista arhitektura, isti procesi, isti standardi. Sve je živo i možete ih otvoriti odmah.',
 
     howH2: 'Kako radimo',
     howLede:
@@ -342,7 +377,7 @@ const hr = {
     eyebrow: 'Radovi',
     h1: 'Radimo na onome što prodajemo.',
     lede:
-      'Nisu ovo logotipi klijenata na zidu. Ovo su četiri proizvoda koja smo izgradili, pustili u rad i još ih održavamo — i svaki je živ upravo sada. Otvorite ih i prosudite sami.',
+      'Nisu ovo logotipi klijenata na zidu. Ovo je pet proizvoda koje smo izgradili, pustili u rad i još ih održavamo — i svaki je živ upravo sada. Otvorite ih i prosudite sami.',
     problem: 'Problem',
     built: 'Što smo izgradili',
     result: 'Rezultat',
