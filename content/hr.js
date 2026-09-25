@@ -87,7 +87,7 @@ const hr = {
 
     whatH2: 'Što radimo',
     whatLede:
-      'Pet stvari koje rješavaju konkretan poslovni problem — sporu platformu, ručan posao koji guta vrijeme tima, ili katalog koji je prerastao sadržaj koji ga prati — odrađenih kako treba, od istog tima koji će biti tu i kad ih zatreba mijenjati.',
+      'Pet stvari koje rješavaju konkretan poslovni problem — sporu platformu, ručni posao koji guta vrijeme tima, ili katalog koji je prerastao sadržaj koji ga prati — odrađenih kako treba, od istog tima koji će biti tu i kad ih zatreba mijenjati.',
 
     quote: ['AI nije naslov. ', 'AI je infrastruktura', ' — ugrađena u sustave koje već koristite, s poslom koji se može izmjeriti.'],
     quoteNote: 'U praksi: proces koji radi svaki dan, a ne demo koji radi jednom.',
