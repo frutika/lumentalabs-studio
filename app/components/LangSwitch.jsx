@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { LOCALES, DEFAULT_LOCALE, localePath, getDict, localesFor } from '../../content';
+import { LOCALES, DEFAULT_LOCALE, localePath, getDict, localesFor, translatePath } from '../../content';
 
 /** Strips any locale prefix so the switcher can offer the same page elsewhere. */
 function bare(pathname) {
@@ -33,7 +33,7 @@ export default function LangSwitch({ lang }) {
           <a
             key={l}
             className={`lang${current ? ' on' : ''}`}
-            href={localePath(l, path)}
+            href={localePath(l, translatePath(lang, l, path))}
             hrefLang={dict.htmlLang}
             lang={dict.htmlLang}
             // "page" is the specific token; bare "true" only says "something

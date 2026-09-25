@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getDict, localePath, servicesFor } from '../../../content';
+import { getDict, localePath, servicesFor, serviceDetailPath } from '../../../content';
 
 export default function ServicesPage({ lang }) {
   const d = getDict(lang);
@@ -7,6 +7,12 @@ export default function ServicesPage({ lang }) {
   // The problem-framed rewrite exists in hr/de only for now; en falls back to
   // the older service-list copy rather than 404ing on a missing key.
   const problems = d.servicesPage.problems;
+
+  // Video has its own page already; the rest got one in this change. Either
+  // way the section links to it — a section with no outbound link is a section
+  // search engines can only read as part of this page, never rank on its own.
+  const deeperHref = (slug) =>
+    slug === 'video' ? '/services/video' : serviceDetailPath(lang, slug);
 
   return (
     <>
@@ -29,9 +35,9 @@ export default function ServicesPage({ lang }) {
               {item.paragraphs.map((para) => (
                 <p key={para.slice(0, 30)}>{para}</p>
               ))}
-              {item.slug === 'video' ? (
+              {deeperHref(item.slug) ? (
                 <p>
-                  <Link href={p('/services/video')}>{d.servicesPage.deeper}</Link>
+                  <Link href={p(deeperHref(item.slug))}>{d.servicesPage.deeper}</Link>
                 </p>
               ) : null}
               <p className="detail-sub">{d.servicesPage.gets}</p>
@@ -53,9 +59,9 @@ export default function ServicesPage({ lang }) {
               {s.body.map((para) => (
                 <p key={para.slice(0, 30)}>{para}</p>
               ))}
-              {s.slug === 'video' ? (
+              {deeperHref(s.slug) ? (
                 <p>
-                  <Link href={p('/services/video')}>{d.servicesPage.deeper}</Link>
+                  <Link href={p(deeperHref(s.slug))}>{d.servicesPage.deeper}</Link>
                 </p>
               ) : null}
             </div>
