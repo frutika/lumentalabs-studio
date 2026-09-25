@@ -480,11 +480,16 @@ const hr = {
   videoPage: {
     eyebrow: 'Usluge',
     pricingH2: 'Okvirna cijena',
+    // Priced by language, because that is how the work actually costs: the
+    // first pass carries the script, the voice and the mix, and every further
+    // language after it is close to free. One band covering "up to three
+    // languages" charged the same for one as for three.
     pricing: [
-      ['Jedan film, do tri jezika', '900 – 2.500 €'],
-      ['Više filmova ili više tržišta', '2.500 – 6.000 €'],
+      ['Jedan film, jedan jezik: scenarij, glas, miks, titlovi', '450 – 900 €'],
+      ['Svaki dodatni jezik', '+150 – 300 €'],
+      ['Više filmova, po opsegu', 'od 1.800 €'],
     ],
-    vatNote: 'Sve cijene su bez PDV-a. Konačna ponuda ovisi o duljini snimke i broju jezika.',
+    vatNote: 'Sve cijene su bez PDV-a. Cijena ovisi o duljini snimke; dodatni jezici naplaćuju se po komadu.',
     h1: 'Jedan film. Svako tržište na kojem prodajete.',
     lede:
       'Ponovno snimanje za svaki jezik način je na koji umiru budžeti za video. Mi narriramo ono što već imate i iz jednog prolaza radimo verziju za svako tržište.',

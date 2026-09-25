@@ -394,11 +394,13 @@ const en = {
   videoPage: {
     eyebrow: 'Services',
     pricingH2: 'What it costs',
+    // See the note in hr.js — priced by language rather than by bundle.
     pricing: [
-      ['One film, up to three languages', '€900 – €2,500'],
-      ['Several films or several markets', '€2,500 – €6,000'],
+      ['One film, one language: script, voice, mix, captions', '€450 – €900'],
+      ['Each additional language', '+€150 – €300'],
+      ['Several films, scoped', 'from €1,800'],
     ],
-    vatNote: 'All prices exclude VAT. The final quote depends on runtime and how many languages.',
+    vatNote: 'All prices exclude VAT. The quote depends on runtime; additional languages are charged per language.',
     h1: 'One film. Every market you sell in.',
     lede:
       'Shooting again for each language is how video budgets die. We narrate what you already have, and produce a version for every market from a single pass.',

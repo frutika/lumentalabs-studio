@@ -442,11 +442,13 @@ const de = {
   videoPage: {
     eyebrow: 'Leistungen',
     pricingH2: 'Was es kostet',
+    // Siehe die Notiz in hr.js — pro Sprache statt als Paket.
     pricing: [
-      ['Ein Film, bis zu drei Sprachen', '900 – 2.500 €'],
-      ['Mehrere Filme oder mehrere Märkte', '2.500 – 6.000 €'],
+      ['Ein Film, eine Sprache: Skript, Stimme, Mischung, Untertitel', '450 – 900 €'],
+      ['Jede weitere Sprache', '+150 – 300 €'],
+      ['Mehrere Filme, nach Umfang', 'ab 1.800 €'],
     ],
-    vatNote: 'Alle Preise zzgl. MwSt. Das endgültige Angebot hängt von Laufzeit und Sprachenzahl ab.',
+    vatNote: 'Alle Preise zzgl. MwSt. Der Preis hängt von der Laufzeit ab; weitere Sprachen werden je Sprache berechnet.',
     h1: 'Ein Film. Jeder Markt, in dem Sie verkaufen.',
     lede:
       'Für jede Sprache neu zu drehen ist der Weg, auf dem Videobudgets sterben. Wir vertonen, was Sie bereits haben, und produzieren aus einem Durchgang eine Fassung für jeden Markt.',
