@@ -257,6 +257,15 @@ const hr = {
         'Izrada web aplikacije kod nas znači cijeli put: podatkovni model, sučelje, deploy, nadzor. Vi dobivate sustav koji radi, ne prototip koji netko treba dovršiti.',
         'Isti pristup drži dvanaest naših vlastitih proizvoda u produkciji. Ne nudimo arhitekturu koju nismo sami održavali.',
       ],
+      pricing: {
+        q: 'Koliko košta izrada web aplikacije?',
+        bands: [
+          ['Interni alat ili dashboard s korisnicima', '6.000 – 12.000 €'],
+          ['Platforma s ulogama i integracijama', '12.000 – 28.000 €'],
+          ['Višekorisnički sustav, real-time, ERP/CRM', 'od 28.000 €'],
+        ],
+        min: 6000,
+      },
       faq: [
         {
           q: 'Što sve ulazi u izradu web aplikacije?',
@@ -286,6 +295,15 @@ const hr = {
         'Krećemo od konkretnog zadatka i mjerimo koliko sati oslobađa. Automatizacija koja ne može pokazati uštedu nije automatizacija, nego trošak s boljim imenom.',
         'Alat ulazi u sučelje koje tim već otvara svako jutro. Nema novog programa za učiti.',
       ],
+      pricing: {
+        q: 'Koliko košta AI automatizacija procesa?',
+        bands: [
+          ['Jedan proces', '3.500 – 8.000 €'],
+          ['Više procesa, ugrađeno u postojeći sustav', '8.000 – 20.000 €'],
+          ['Vlastiti alat', 'od 20.000 €'],
+        ],
+        min: 3500,
+      },
       faq: [
         {
           q: 'Kako znamo da se automatizacija isplati?',
@@ -315,6 +333,15 @@ const hr = {
         'Postavljamo proces koji piše opise kroz cijeli katalog, u vašem tonu i s vašim nazivljem, na jeziku tržišta na kojem doista prodajete — ne naknadno preveden.',
         'Ništa ne ide van bez vašeg odobrenja. Kontrola prije objave dio je procesa, ne dodatak.',
       ],
+      pricing: {
+        q: 'Koliko košta generiranje opisa proizvoda?',
+        bands: [
+          ['Do tisuću artikala, jedan jezik', '1.500 – 4.000 €'],
+          ['Cijeli katalog, više jezika', '4.000 – 12.000 €'],
+        ],
+        min: 1500,
+        max: 12000,
+      },
       faq: [
         {
           q: 'Koliko dugo traje obrada cijelog kataloga?',
@@ -344,6 +371,16 @@ const hr = {
         'Arhitektura, sučelje i pogon ostaju kod jednog tima. Backupi, nadogradnje i nadzor su uključeni, ne dodatna stavka na računu.',
         'Isti nadzor i iste noćne backupe vrtimo na vlastitim proizvodima. Ono što nudimo vama već drži naše u zraku.',
       ],
+      pricing: {
+        q: 'Koliko košta održavanje aplikacije mjesečno?',
+        bands: [
+          ['Jedna aplikacija, nadzor i backupi', '350 – 900 € / mj'],
+          ['Više sustava, dogovoreno vrijeme odziva', '900 – 2.500 € / mj'],
+        ],
+        min: 350,
+        max: 2500,
+        unit: 'MON',
+      },
       faq: [
         {
           q: 'Što je uključeno u održavanje?',
@@ -363,6 +400,12 @@ const hr = {
 
   serviceDetailPage: {
     eyebrow: 'Usluga',
+    pricingH2: 'Okvirna cijena',
+    // Stated once, here, rather than per service. While the obrt is outside the
+    // VAT system the invoice says so anyway; writing it from the start means
+    // entering the system later is not read as a 25% price rise.
+    vatNote: 'Sve cijene su bez PDV-a. Konačna ponuda ovisi o opsegu — raspon je tu da odmah znate jesmo li u istom redu veličine.',
+    priceQ: 'Koliko košta?',
     getsH2: 'Što dobivate',
     notForH2: 'Kad ovo nije za vas',
     faqH2: 'Česta pitanja',
@@ -436,6 +479,17 @@ const hr = {
 
   videoPage: {
     eyebrow: 'Usluge',
+    pricingH2: 'Okvirna cijena',
+    // Priced by language, because that is how the work actually costs: the
+    // first pass carries the script, the voice and the mix, and every further
+    // language after it is close to free. One band covering "up to three
+    // languages" charged the same for one as for three.
+    pricing: [
+      ['Jedan film, jedan jezik: scenarij, glas, miks, titlovi', '450 – 900 €'],
+      ['Svaki dodatni jezik', '+150 – 300 €'],
+      ['Više filmova, po opsegu', 'od 1.800 €'],
+    ],
+    vatNote: 'Sve cijene su bez PDV-a. Cijena ovisi o duljini snimke; dodatni jezici naplaćuju se po komadu.',
     h1: 'Jedan film. Svako tržište na kojem prodajete.',
     lede:
       'Ponovno snimanje za svaki jezik način je na koji umiru budžeti za video. Mi narriramo ono što već imate i iz jednog prolaza radimo verziju za svako tržište.',

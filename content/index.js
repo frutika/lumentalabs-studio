@@ -100,10 +100,29 @@ export function servicesFor(lang) {
 export function serviceDetailsFor(lang) {
   const d = getDict(lang);
   const problems = d.servicesPage?.problems || [];
+  const t = d.serviceDetailPage;
   return (d.serviceDetails || []).map((detail) => {
     const problem = problems.find((p) => p.slug === detail.slug) || {};
+    const faq = [...(detail.faq || [])];
+
+    // "Koliko košta X?" is the question the market actually types, and the
+    // answer has to carry the figure — a FAQ that says "depends on scope" is
+    // what every competitor already has. Generated from the bands rather than
+    // written twice, so the page and the answer can never disagree.
+    if (detail.pricing?.bands?.length && detail.pricing.q) {
+      faq.push({
+        q: detail.pricing.q,
+        a: `${detail.pricing.bands
+          // Lower-case the first letter only: toLowerCase() on the whole label
+          // turns "ERP/CRM" into "erp/crm".
+          .map(([label, value]) => `${value} — ${label.charAt(0).toLowerCase()}${label.slice(1)}`)
+          .join('; ')}. ${t.vatNote}`,
+      });
+    }
+
     return {
       ...detail,
+      faq,
       gets: detail.gets || problem.gets || [],
       notFor: detail.notFor || problem.notFor || '',
     };
