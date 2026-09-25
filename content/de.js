@@ -171,6 +171,141 @@ const de = {
     ],
   },
 
+  /**
+   * Eine Seite pro Leistung. Siehe die Notiz in hr.js — gleiche Struktur,
+   * gleicher Grund. Kein `video`-Eintrag: /services/video deckt das bereits ab.
+   */
+  serviceDetails: [
+    {
+      slug: 'platforms',
+      path: 'webanwendungen-entwicklung',
+      title: 'Webanwendungen nach Maß entwickeln',
+      description:
+        'Entwicklung von Webanwendungen und Plattformen nach Maß — Datenmodell, Oberfläche, Deployment und Monitoring aus einer Hand. Gebaut für den Produktivbetrieb.',
+      h1: 'Webanwendungen nach Maß entwickeln',
+      lede:
+        'Plattformen, die Wachstum ohne Umbau tragen. Der ganze Weg vom Datenmodell bis zum Monitoring, bei einem Team.',
+      intro: [
+        'Die meisten Projekte scheitern nicht am Launch, sondern ein halbes Jahr später — wenn eine Sprache, ein Markt oder ein neuer Produkttyp dazukommt und das Fundament das nicht trägt. Der Umbau kostet dann mehr als die erste Version.',
+        'Wir übernehmen den ganzen Weg: Datenmodell, Oberfläche, Deployment, Monitoring. Sie bekommen ein System, das läuft — keinen Prototyp, den noch jemand fertigstellen muss.',
+        'Derselbe Ansatz hält zwölf eigene Produkte im Produktivbetrieb. Wir verkaufen keine Architektur, die wir nicht selbst betrieben haben.',
+      ],
+      faq: [
+        {
+          q: 'Was gehört zur Entwicklung einer Webanwendung?',
+          a: 'Datenmodell, Anwendung, Deployment und Monitoring. Ein Ansprechpartner für alles — von der Datenbank bis zur Domain — und eine Übergabe mit Dokumentation.',
+        },
+        {
+          q: 'Bauen Sie auch einfache Webseiten?',
+          a: 'Wenn Sie fünf Unterseiten brauchen, ist eine Standardlösung günstiger, und das sagen wir Ihnen sofort. Das hier ist für Systeme, die wachsen müssen.',
+        },
+        {
+          q: 'Was, wenn wir schon eine Anwendung haben, die nicht funktioniert?',
+          a: 'Beschreiben Sie, was daran nicht stimmt. Wir übernehmen bestehende Systeme, prüfen aber zuerst, ob Reparatur oder Neubau die bessere Rechnung ist.',
+        },
+      ],
+    },
+    {
+      slug: 'ai',
+      path: 'ki-prozessautomatisierung',
+      title: 'KI-Prozessautomatisierung für Unternehmen',
+      description:
+        'Wiederkehrende Handarbeit automatisiert — in den Systemen, die Ihr Team ohnehin nutzt. Wir starten bei einer konkreten Aufgabe und messen die gesparten Stunden.',
+      h1: 'KI-Prozessautomatisierung für Unternehmen',
+      lede:
+        'Aus wiederkehrender Handarbeit wird ein Prozess. KI kommt dorthin, wo sie sich rechnet — nicht dorthin, wo sie gut klingt.',
+      intro: [
+        'Jemand überträgt jede Woche Daten von einem System ins andere. Jemand baut jeden Monat denselben Bericht von Hand. Das ist kein Personalproblem, sondern ein Prozessproblem.',
+        'Wir starten bei einer konkreten Aufgabe und messen, wie viele Stunden sie freisetzt. Automatisierung, die keine Ersparnis zeigen kann, ist keine Automatisierung, sondern ein Kostenposten mit besserem Namen.',
+        'Das Werkzeug läuft in der Oberfläche, die das Team jeden Morgen ohnehin öffnet. Nichts Neues zu lernen.',
+      ],
+      faq: [
+        {
+          q: 'Woran erkennen wir, dass sich die Automatisierung rechnet?',
+          a: 'Die eingesparten Stunden werden vereinbart, bevor wir anfangen. Setzt eine Aufgabe keine messbare Zeit frei, raten wir davon ab.',
+        },
+        {
+          q: 'Muss das Team ein neues Werkzeug lernen?',
+          a: 'Nein. Der Prozess läuft in der bestehenden Oberfläche.',
+        },
+        {
+          q: 'Wann ist Automatisierung keine gute Idee?',
+          a: 'Wenn sich der Prozess jeden Monat ändert, gehört zuerst der Prozess sortiert. Automatisiertes Chaos ist schnelleres Chaos.',
+        },
+      ],
+    },
+    {
+      slug: 'ecommerce',
+      path: 'produktbeschreibungen-automatisieren',
+      title: 'KI-Produktbeschreibungen für den Onlineshop',
+      description:
+        'Produktbeschreibungen für den ganzen Katalog, in Ihrem Ton und in der Sprache des Marktes, in dem Sie verkaufen. Freigabe vor jeder Veröffentlichung.',
+      h1: 'KI-Produktbeschreibungen für den ganzen Katalog',
+      lede:
+        'Tausende Artikel ohne Beschreibung — oder mit der des Lieferanten, die Google als Duplikat liest. Wir richten den Prozess ein, der sie schreibt.',
+      intro: [
+        'Der Katalog wächst schneller, als jemand ihn beschreiben kann. Vom Lieferanten übernommene Texte gelten als Duplicate Content, und maschinelle Übersetzung sieht man in der ersten Zeile. Beides kostet Positionen.',
+        'Wir richten einen Prozess ein, der Beschreibungen über den gesamten Katalog schreibt — in Ihrem Ton, mit Ihrer Terminologie, in der Sprache des Marktes, in dem Sie tatsächlich verkaufen.',
+        'Nichts geht ohne Ihre Freigabe raus. Die Kontrolle ist Teil des Prozesses, kein Zusatz.',
+      ],
+      faq: [
+        {
+          q: 'Wie lange dauert ein kompletter Katalog?',
+          a: 'Kataloge werden in Wochen abgedeckt, nicht in Monaten. Der genaue Rahmen hängt von Artikelzahl und Sprachen ab — nennen Sie beides und wir schätzen.',
+        },
+        {
+          q: 'Klingen die Texte wie generische KI?',
+          a: 'Der Prozess wird auf Ihren Ton und Ihre Terminologie eingestellt, damit der Katalog wie eine Marke klingt.',
+        },
+        {
+          q: 'Wir haben rund hundert Artikel — brauchen wir das?',
+          a: 'Wenn eine Textkraft hinterherkommt, nicht. Das hier löst ein Mengenproblem.',
+        },
+      ],
+    },
+    {
+      slug: 'architecture',
+      path: 'hosting-und-wartung',
+      title: 'Hosting und Wartung von Webanwendungen',
+      description:
+        'Architektur, Oberfläche und Betrieb bei einem Team. Backups, Monitoring und Updates inklusive, mit vereinbarter Reaktionszeit, wenn etwas ausfällt.',
+      h1: 'Hosting und Wartung von Webanwendungen',
+      lede:
+        'Liegen Design, Code und Hosting bei drei Parteien, wird aus einem Ausfall eine Schuldfrage. Hier gibt es einen Ansprechpartner.',
+      intro: [
+        'Liegen Design, Code und Hosting bei drei verschiedenen Parteien, wird aus einem Ausfall eine Diskussion darüber, wer schuld ist. Sie arbeiten währenddessen nicht.',
+        'Architektur, Oberfläche und Betrieb bleiben bei einem Team. Backups, Updates und Monitoring sind enthalten, kein separater Posten auf der Rechnung.',
+        'Dasselbe Monitoring und dieselben nächtlichen Backups laufen auf unseren eigenen Produkten.',
+      ],
+      faq: [
+        {
+          q: 'Was ist in der Wartung enthalten?',
+          a: 'Backups und Monitoring, die auch laufen, wenn niemand hinsieht, Updates bevor sie zum Problem werden, und ein Ansprechpartner mit vereinbarter Reaktionszeit.',
+        },
+        {
+          q: 'Wir haben ein eigenes technisches Team — geht auch ein Teil?',
+          a: 'Ja. Wir übernehmen den fehlenden Teil — sagen Sie uns welchen.',
+        },
+        {
+          q: 'Übernehmen Sie auch fremd gebaute Anwendungen?',
+          a: 'Ja, nach einer Sichtung des bestehenden Systems. Wenn Wartung ohne vorherige Arbeit keinen Sinn ergibt, sagen wir das vorher.',
+        },
+      ],
+    },
+  ],
+
+  serviceDetailPage: {
+    eyebrow: 'Leistung',
+    getsH2: 'Was Sie bekommen',
+    notForH2: 'Wann das nichts für Sie ist',
+    faqH2: 'Häufige Fragen',
+    closingH2: 'Klingt nach Ihrem Problem?',
+    closingLede: 'Beschreiben Sie es in einfachen Worten. Sind wir nicht die Richtigen dafür, sagen wir es Ihnen — diese Antwort ist kostenlos.',
+    closingCta: 'Schreiben Sie uns',
+    allServices: 'Alle Leistungen',
+    otherH2: 'Weitere Leistungen',
+  },
+
   workPage: {
     eyebrow: 'Projekte',
     h1: 'Wir arbeiten mit dem, was wir verkaufen.',

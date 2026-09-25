@@ -1,5 +1,13 @@
 import { site } from '../site.config';
-import { LOCALES, DEFAULT_LOCALE, urlFor, worksFor, allPosts } from '../content';
+import {
+  LOCALES,
+  DEFAULT_LOCALE,
+  urlFor,
+  worksFor,
+  allPosts,
+  serviceDetailsFor,
+  serviceDetailPaths,
+} from '../content';
 
 // Marketing pages exist in every language; the legal pages are English-only for
 // now and are listed once, without alternates.
@@ -39,6 +47,25 @@ export default function sitemap() {
     priority: 0.3,
   }));
 
+  // The service pages carry a different slug in each language, so they cannot
+  // ride the loop above — that one assumes one path under three prefixes.
+  const services = serviceDetailsFor(DEFAULT_LOCALE).flatMap((service) => {
+    const paths = serviceDetailPaths(service.slug);
+    const languages = {
+      ...Object.fromEntries(Object.entries(paths).map(([l, path]) => [l, urlFor(l, path)])),
+      'x-default': urlFor(DEFAULT_LOCALE, paths[DEFAULT_LOCALE]),
+    };
+    return Object.entries(paths).map(([lang, path]) => ({
+      url: urlFor(lang, path),
+      lastModified: now,
+      changeFrequency: 'yearly',
+      // Above the other inner pages: these are the pages meant to be entered
+      // from search, not passed through on the way somewhere else.
+      priority: 0.8,
+      alternates: { languages },
+    }));
+  });
+
   const posts = allPosts();
   const blog = [
     {
@@ -55,5 +82,5 @@ export default function sitemap() {
     })),
   ];
 
-  return [...translated, ...english, ...blog];
+  return [...translated, ...services, ...english, ...blog];
 }

@@ -83,6 +83,166 @@ const en = {
     closingCta: 'Get in touch',
   },
 
+  /**
+   * One page per service. See the note in hr.js — same structure, same reason,
+   * and `path` is the English slug in the same shared cluster. No `video`
+   * entry: /services/video already covers it properly.
+   */
+  serviceDetails: [
+    {
+      slug: 'platforms',
+      path: 'web-application-development',
+      title: 'Custom web application development',
+      description:
+        'Custom web platforms built end to end — data model, interface, deployment and monitoring from one team. Built to survive production, not just a demo.',
+      h1: 'Custom web application development',
+      lede:
+        'Platforms that take growth without a rewrite. The whole path from data model to production monitoring, owned by one team.',
+      intro: [
+        'Most projects do not fail at launch. They fail six months later, when a language, a market or a new product type has to go in and the foundation will not take it. The rebuild then costs more than the first version did.',
+        'We build the whole path: data model, application, deployment, monitoring. You get a running system, not a prototype somebody still has to finish.',
+        'The same approach keeps twelve of our own products in production. We do not sell an architecture we have not maintained ourselves.',
+      ],
+      gets: [
+        'A platform that takes growth without a rewrite',
+        'One party responsible for all of it — from database to domain',
+        'A handover with documentation, so you are not locked to us',
+      ],
+      notFor: 'if you need a five-page brochure site, an off-the-shelf tool will cost you less. We will say so straight away.',
+      faq: [
+        {
+          q: 'What does building a web application include?',
+          a: 'Data model, application, deployment and monitoring. One party responsible for all of it — from database to domain — and a handover with documentation, so you are not locked to us.',
+        },
+        {
+          q: 'Do you build brochure sites?',
+          a: 'If you need five pages, an off-the-shelf tool will cost you less and we will say so straight away. This is for systems that have to grow.',
+        },
+        {
+          q: 'What if we already have an application that does not work?',
+          a: 'Describe what is wrong with it. We do take over existing systems, but first we look at whether repairing or rewriting is the better deal.',
+        },
+      ],
+    },
+    {
+      slug: 'ai',
+      path: 'ai-process-automation',
+      title: 'AI process automation for business',
+      description:
+        'Automating the repetitive work inside the systems your team already uses. We start from a specific task and measure the hours it frees.',
+      h1: 'AI process automation for business',
+      lede:
+        'Repetitive weekly work becomes a process. AI goes where it pays off, not where it sounds good.',
+      intro: [
+        'Somebody retypes data from one system into another every week. Somebody assembles a report that looks the same every month. That is not a people problem, it is a process problem.',
+        'We start from a specific task and measure the hours it frees. Automation that cannot show a saving is not automation, it is a cost with a better name.',
+        'The tool goes into the interface the team already opens every morning. Nothing new to learn.',
+      ],
+      gets: [
+        'A process that runs without somebody pushing it every day',
+        'A measurable saving in hours, agreed before we start',
+        'A tool the team uses inside their existing interface, with nothing new to learn',
+      ],
+      notFor: 'if the process changes every month, fix the process first. Automating chaos gives you faster chaos.',
+      faq: [
+        {
+          q: 'How do we know the automation pays off?',
+          a: 'The hours saved are agreed before we start. If a task does not free measurable time, we will tell you not to automate it.',
+        },
+        {
+          q: 'Does the team have to learn a new tool?',
+          a: 'No. The process runs inside the interface they already use.',
+        },
+        {
+          q: 'When is automation a bad idea?',
+          a: 'If the process changes every month, fix the process first. Automating chaos gives you faster chaos.',
+        },
+      ],
+    },
+    {
+      slug: 'ecommerce',
+      path: 'ecommerce-content-automation',
+      title: 'AI product descriptions for e-commerce',
+      description:
+        'Product descriptions generated across a whole catalogue, in your voice and in the language of the market you actually sell in. Approval before anything publishes.',
+      h1: 'AI product descriptions at catalogue scale',
+      lede:
+        'Thousands of items with no descriptions — or with the supplier’s, which Google reads as duplicates. We set up the process that writes them across the catalogue.',
+      intro: [
+        'A catalogue grows faster than anyone can describe it. Descriptions copied from a supplier get treated as duplicate content, and machine translation shows on the first line. Both cost you positions.',
+        'We set up a process that writes descriptions across the whole catalogue, in your voice and your terminology, in the language of the market you actually sell in — not translated afterwards.',
+        'Nothing publishes without your approval. Review is part of the process, not an add-on.',
+      ],
+      gets: [
+        'A whole catalogue covered in weeks, not months',
+        'Copy that reads as one brand rather than a thousand unrelated AI paragraphs',
+        'Review before publishing — nothing goes out without your approval',
+      ],
+      notFor: 'if you have a hundred items and a copywriter who can keep up, you do not need this.',
+      faq: [
+        {
+          q: 'How long does a full catalogue take?',
+          a: 'Catalogues get covered in weeks rather than months. The exact range depends on item count and how many languages — tell us both and we will estimate.',
+        },
+        {
+          q: 'Will the descriptions read like generic AI text?',
+          a: 'The process is set up on your voice and your terminology, so the catalogue reads as one brand rather than a thousand unrelated paragraphs.',
+        },
+        {
+          q: 'We have about a hundred items — do we need this?',
+          a: 'If you have a copywriter who can keep up, no. This solves a problem of scale.',
+        },
+      ],
+    },
+    {
+      slug: 'architecture',
+      path: 'managed-hosting-and-maintenance',
+      title: 'Managed hosting and maintenance',
+      description:
+        'Architecture, interface and operations kept with one team. Backups, monitoring and updates included, with an agreed response time when something breaks.',
+      h1: 'Managed hosting and maintenance',
+      lede:
+        'When design, code and hosting sit with three different parties, a fault turns into an argument about whose fault it is. Here there is one contact.',
+      intro: [
+        'When design, code and hosting sit with three different parties, a fault turns into an argument about whose fault it is. Meanwhile you are not working.',
+        'Architecture, interface and operations stay with the same team. Backups, updates and monitoring are included, not a separate line on the invoice.',
+        'We run the same monitoring and the same nightly backups on our own products. What we offer you already keeps ours up.',
+      ],
+      gets: [
+        'One contact for everything, with an agreed response time',
+        'Backups and monitoring that run when nobody is watching',
+        'Updates before they turn into problems',
+      ],
+      notFor: 'if you have your own technical team, we take only the part you are missing — tell us which.',
+      faq: [
+        {
+          q: 'What does maintenance include?',
+          a: 'Backups and monitoring that run when nobody is watching, updates before they become problems, and one contact with an agreed response time.',
+        },
+        {
+          q: 'We have our own technical team — can you cover part of it?',
+          a: 'Yes. We take the part you are missing — tell us which.',
+        },
+        {
+          q: 'Will you take over an application your team did not build?',
+          a: 'We will, after reviewing the existing system. If the state of it means maintenance makes no sense without work first, we will say so before we agree anything.',
+        },
+      ],
+    },
+  ],
+
+  serviceDetailPage: {
+    eyebrow: 'Service',
+    getsH2: 'What you get',
+    notForH2: 'When this is not for you',
+    faqH2: 'Common questions',
+    closingH2: 'Sound like your problem?',
+    closingLede: 'Describe it in plain words. If we are not the right people for it, we will tell you — that answer is free.',
+    closingCta: 'Get in touch',
+    allServices: 'All services',
+    otherH2: 'Other services',
+  },
+
   workPage: {
     eyebrow: 'Work',
     h1: 'We run on what we sell.',

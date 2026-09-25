@@ -91,6 +91,68 @@ export function servicesFor(lang) {
   return getDict(lang).services.map((s, i) => ({ ...s, num: String(i + 1).padStart(2, '0') }));
 }
 
+/**
+ * The service detail pages. `gets` and `notFor` are merged in from the
+ * problem-framed copy where it exists (hr, de) rather than duplicated into
+ * serviceDetails — two copies of the same sentence is two places to forget.
+ * English has no `problems` block, so those entries carry the lists directly.
+ */
+export function serviceDetailsFor(lang) {
+  const d = getDict(lang);
+  const problems = d.servicesPage?.problems || [];
+  return (d.serviceDetails || []).map((detail) => {
+    const problem = problems.find((p) => p.slug === detail.slug) || {};
+    return {
+      ...detail,
+      gets: detail.gets || problem.gets || [],
+      notFor: detail.notFor || problem.notFor || '',
+    };
+  });
+}
+
+/** Looks a page up by the slug that appears in the URL, in that language. */
+export function serviceDetailFor(lang, path) {
+  return serviceDetailsFor(lang).find((s) => s.path === path);
+}
+
+/** Looks the same service up by its language-independent key. */
+export function serviceDetailByKey(lang, slug) {
+  return serviceDetailsFor(lang).find((s) => s.slug === slug);
+}
+
+/**
+ * Unprefixed path to one service page in one language. The slug is localised —
+ * a Croatian buyer searches "izrada web aplikacija", not "web-application-
+ * development" — so the same page has a different URL per language and every
+ * caller has to go through here rather than concatenating a shared slug.
+ */
+export function serviceDetailPath(lang, slug) {
+  const item = serviceDetailByKey(lang, slug);
+  return item ? `/services/${item.path}` : null;
+}
+
+/** { locale: path } for one service, for the hreflang cluster and sitemap. */
+export function serviceDetailPaths(slug) {
+  return Object.fromEntries(
+    LOCALES.map((l) => [l, serviceDetailPath(l, slug)]).filter(([, path]) => path)
+  );
+}
+
+/**
+ * The same page in another language. Paths are identical across languages
+ * everywhere except the service pages, so this is where that exception lives:
+ * without it the language switcher would offer a Croatian slug under /de and
+ * link straight into a 404.
+ */
+export function translatePath(fromLang, toLang, path) {
+  const match = /^\/services\/(.+)$/.exec(path);
+  if (match) {
+    const item = serviceDetailFor(fromLang, match[1]);
+    if (item) return serviceDetailPath(toLang, item.slug) || path;
+  }
+  return path;
+}
+
 /** The full <title> for a page that does not set one of its own. */
 export const siteTitleFor = (lang) => getDict(lang).meta.siteTitle;
 
@@ -109,20 +171,24 @@ export const urlFor = (lang, path = '/') => {
  * Metadata for one page in one language, including the full hreflang set and a
  * social card that matches the page rather than the site root.
  */
-export function metaFor(lang, path, { title, description, ogType = 'website' } = {}) {
+export function metaFor(lang, path, { title, description, ogType = 'website', paths } = {}) {
   const d = getDict(lang);
   const url = urlFor(lang, path);
 
-  const published = localesFor(path);
+  // `paths` is for pages whose slug is localised (the service pages): the
+  // cluster then spans three different URLs rather than one path under three
+  // prefixes. Everything else still goes through localesFor.
+  const published = paths ? LOCALES.filter((l) => paths[l]) : localesFor(path);
+  const pathIn = (l) => (paths ? paths[l] : path);
 
   const languages = Object.fromEntries(
-    published.map((l) => [dicts[l].htmlLang, urlFor(l, path)])
+    published.map((l) => [dicts[l].htmlLang, urlFor(l, pathIn(l))])
   );
   // Tells search engines which version to show when no language matches. On a
   // page that skips English there is no English URL to point at, so it falls
   // back to the one language that does exist.
   const fallback = published.includes(DEFAULT_LOCALE) ? DEFAULT_LOCALE : published[0];
-  languages['x-default'] = urlFor(fallback, path);
+  languages['x-default'] = urlFor(fallback, pathIn(fallback));
 
   const desc = description || d.meta.siteDescription;
 

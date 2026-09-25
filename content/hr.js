@@ -196,6 +196,148 @@ const hr = {
     ],
   },
 
+  /**
+   * One page per service, because /usluge as a single page gives Google nothing
+   * to rank: a visitor searching "izrada web aplikacija" needs a URL, a title
+   * and an H1 that say those words. `path` is the localised slug — it differs
+   * per language on purpose, and content/index.js maps between them so the
+   * language switcher and hreflang still line up.
+   *
+   * `video` deliberately has no entry: /services/video already exists and is a
+   * fuller page than anything generated here would be. Two pages competing for
+   * the same query is the problem, not the fix.
+   */
+  serviceDetails: [
+    {
+      slug: 'platforms',
+      path: 'izrada-web-aplikacija',
+      title: 'Izrada web aplikacija po mjeri',
+      description:
+        'Izrada web aplikacija i platformi po mjeri — podatkovni model, sučelje, deploy i nadzor kod jednog tima. Radi u produkciji, ne samo na demou.',
+      h1: 'Izrada web aplikacija po mjeri',
+      lede:
+        'Platforme koje podnose rast bez prepravke za godinu dana. Cijeli put od podatkovnog modela do nadzora u produkciji, kod jednog tima.',
+      intro: [
+        'Većina projekata ne propadne na lansiranju, nego šest mjeseci poslije — kad treba dodati jezik, tržište ili tip proizvoda, a temelj to ne podnosi. Prepravka tada košta više nego što je koštala prva verzija.',
+        'Izrada web aplikacije kod nas znači cijeli put: podatkovni model, sučelje, deploy, nadzor. Vi dobivate sustav koji radi, ne prototip koji netko treba dovršiti.',
+        'Isti pristup drži dvanaest naših vlastitih proizvoda u produkciji. Ne nudimo arhitekturu koju nismo sami održavali.',
+      ],
+      faq: [
+        {
+          q: 'Što sve ulazi u izradu web aplikacije?',
+          a: 'Podatkovni model, aplikacija, deploy i nadzor. Jedna odgovorna strana za sve — od baze do domene — i predaja s dokumentacijom, tako da niste zaključani uz nas.',
+        },
+        {
+          q: 'Radite li i prezentacijske web stranice?',
+          a: 'Ako trebate stranicu od pet podstranica, jeftinije ćete proći s gotovim rješenjem i reći ćemo vam to odmah. Ovo je za sustave koji rastu.',
+        },
+        {
+          q: 'Što ako već imamo aplikaciju koja ne valja?',
+          a: 'Opišite što s njom ne valja. Preuzimanje postojećeg sustava radimo, ali prvo pogledamo isplati li se popravljati ili pisati ispočetka.',
+        },
+      ],
+    },
+    {
+      slug: 'ai',
+      path: 'ai-automatizacija-poslovanja',
+      title: 'AI automatizacija poslovnih procesa',
+      description:
+        'AI automatizacija ručnih procesa u sustavima koje tim već koristi. Krećemo od konkretnog zadatka i mjerimo koliko sati oslobađa.',
+      h1: 'AI automatizacija poslovnih procesa',
+      lede:
+        'Ručni posao koji se ponavlja svaki tjedan preuzima proces. AI ulazi tamo gdje se isplati, a ne tamo gdje dobro zvuči.',
+      intro: [
+        'Netko svaki tjedan prepisuje podatke iz jednog sustava u drugi. Netko ručno slaže izvještaj koji izgleda isto svaki mjesec. To nije problem ljudi, nego procesa.',
+        'Krećemo od konkretnog zadatka i mjerimo koliko sati oslobađa. Automatizacija koja ne može pokazati uštedu nije automatizacija, nego trošak s boljim imenom.',
+        'Alat ulazi u sučelje koje tim već otvara svako jutro. Nema novog programa za učiti.',
+      ],
+      faq: [
+        {
+          q: 'Kako znamo da se automatizacija isplati?',
+          a: 'Uštedu sati dogovorimo prije nego što počnemo. Ako zadatak ne oslobađa mjerljivo vrijeme, reći ćemo vam da ga ne automatizirate.',
+        },
+        {
+          q: 'Mora li tim učiti novi alat?',
+          a: 'Ne. Proces ulazi unutar postojećeg sučelja koje već koriste.',
+        },
+        {
+          q: 'Kad automatizacija nije dobra ideja?',
+          a: 'Ako se proces mijenja svaki mjesec, prvo ga treba posložiti. Automatizacija kaosa daje brži kaos.',
+        },
+      ],
+    },
+    {
+      slug: 'ecommerce',
+      path: 'ai-opisi-proizvoda-za-webshop',
+      title: 'AI opisi proizvoda za webshop',
+      description:
+        'Generiranje opisa proizvoda kroz cijeli katalog, u vašem tonu i na jeziku tržišta na kojem prodajete. Kontrola prije objave, bez duplikata dobavljača.',
+      h1: 'AI opisi proizvoda za cijeli katalog',
+      lede:
+        'Tisuće artikala bez opisa — ili s opisima prepisanim od dobavljača, koje Google tretira kao duplikat. Postavljamo proces koji ih piše kroz cijeli katalog.',
+      intro: [
+        'Katalog raste brže nego što ga netko stigne opisati. Opisi prepisani od dobavljača Google tretira kao duplikat, a strojni prijevod se vidi na prvu — i jedno i drugo košta vas pozicije u pretrazi.',
+        'Postavljamo proces koji piše opise kroz cijeli katalog, u vašem tonu i s vašim nazivljem, na jeziku tržišta na kojem doista prodajete — ne naknadno preveden.',
+        'Ništa ne ide van bez vašeg odobrenja. Kontrola prije objave dio je procesa, ne dodatak.',
+      ],
+      faq: [
+        {
+          q: 'Koliko dugo traje obrada cijelog kataloga?',
+          a: 'Katalog se pokriva u tjednima umjesto mjesecima. Točan raspon ovisi o broju artikala i broju jezika — recite oboje i dat ćemo procjenu.',
+        },
+        {
+          q: 'Hoće li opisi zvučati kao generički AI tekst?',
+          a: 'Proces se postavlja na vaš ton i vaše nazivlje, pa katalog zvuči kao jedan brend, a ne kao tisuću nasumičnih odlomaka.',
+        },
+        {
+          q: 'Imamo stotinjak artikala — treba li nam ovo?',
+          a: 'Ako imate copywritera koji ih stigne obraditi, ne treba. Ovo rješava problem razmjera.',
+        },
+      ],
+    },
+    {
+      slug: 'architecture',
+      path: 'odrzavanje-i-hosting-web-aplikacija',
+      title: 'Održavanje i hosting web aplikacija',
+      description:
+        'Arhitektura, sučelje i pogon kod jednog tima. Backupi, nadzor i nadogradnje su uključeni, s dogovorenim vremenom odziva kad nešto padne.',
+      h1: 'Održavanje i hosting web aplikacija',
+      lede:
+        'Kad su dizajn, kod i hosting kod tri različite strane, kvar postane rasprava o tome tko je kriv. Ovdje je jedan kontakt za sve.',
+      intro: [
+        'Kad su dizajn, kod i hosting kod tri različite strane, kvar postane rasprava o tome tko je kriv. Vi u međuvremenu ne radite.',
+        'Arhitektura, sučelje i pogon ostaju kod jednog tima. Backupi, nadogradnje i nadzor su uključeni, ne dodatna stavka na računu.',
+        'Isti nadzor i iste noćne backupe vrtimo na vlastitim proizvodima. Ono što nudimo vama već drži naše u zraku.',
+      ],
+      faq: [
+        {
+          q: 'Što je uključeno u održavanje?',
+          a: 'Backupi i nadzor koji rade i kad nitko ne gleda, nadogradnje prije nego što postanu problem, i jedan kontakt s dogovorenim vremenom odziva.',
+        },
+        {
+          q: 'Imamo vlastiti tehnički tim — možete li pokriti samo dio?',
+          a: 'Možemo. Radimo dio koji vam nedostaje — recite koji.',
+        },
+        {
+          q: 'Preuzimate li aplikaciju koju nije radio vaš tim?',
+          a: 'Preuzimamo, nakon pregleda postojećeg sustava. Ako je stanje takvo da održavanje nema smisla bez zahvata, reći ćemo vam to prije nego što se dogovorimo.',
+        },
+      ],
+    },
+  ],
+
+  serviceDetailPage: {
+    eyebrow: 'Usluga',
+    getsH2: 'Što dobivate',
+    notForH2: 'Kad ovo nije za vas',
+    faqH2: 'Česta pitanja',
+    closingH2: 'Zvuči kao vaš problem?',
+    closingLede: 'Opišite ga običnim riječima. Ako nismo pravi ljudi za to, reći ćemo vam — taj odgovor je besplatan.',
+    closingCta: 'Javite nam se',
+    allServices: 'Sve usluge',
+    otherH2: 'Ostale usluge',
+  },
+
   workPage: {
     eyebrow: 'Radovi',
     h1: 'Radimo na onome što prodajemo.',
