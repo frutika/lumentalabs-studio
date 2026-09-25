@@ -7,12 +7,24 @@ import {
   allPosts,
   serviceDetailsFor,
   serviceDetailPaths,
+  localesFor,
 } from '../content';
 
-// Marketing pages exist in every language; the legal pages are English-only for
-// now and are listed once, without alternates.
+// Marketing pages exist in every language.
 const TRANSLATED = ['/', '/services', '/services/video', '/work', '/contact'];
-const ENGLISH_ONLY = ['/privacy', '/terms', '/cookies', '/cookies/manage'];
+
+// Pages published in one language only, listed once and without alternates.
+// Driven by localesFor rather than a hardcoded language, because the Booster is
+// Croatian and the legal pages are English — a list that assumed English left
+// the Booster out of the sitemap entirely, which is how the one page on the
+// site that quotes a price stayed unindexed.
+const SINGLE_LOCALE = [
+  { path: '/ai-content-booster', priority: 0.8 },
+  { path: '/privacy', priority: 0.3 },
+  { path: '/terms', priority: 0.3 },
+  { path: '/cookies', priority: 0.3 },
+  { path: '/cookies/manage', priority: 0.3 },
+];
 
 export default function sitemap() {
   const now = new Date();
@@ -40,12 +52,14 @@ export default function sitemap() {
     }))
   );
 
-  const english = ENGLISH_ONLY.map((path) => ({
-    url: `${site.url}${path}`,
-    lastModified: now,
-    changeFrequency: 'yearly',
-    priority: 0.3,
-  }));
+  const single = SINGLE_LOCALE.flatMap(({ path, priority }) =>
+    localesFor(path).map((lang) => ({
+      url: urlFor(lang, path),
+      lastModified: now,
+      changeFrequency: 'yearly',
+      priority,
+    }))
+  );
 
   // The service pages carry a different slug in each language, so they cannot
   // ride the loop above — that one assumes one path under three prefixes.
@@ -82,5 +96,5 @@ export default function sitemap() {
     })),
   ];
 
-  return [...translated, ...services, ...english, ...blog];
+  return [...translated, ...services, ...single, ...blog];
 }
