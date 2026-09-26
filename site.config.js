@@ -70,6 +70,23 @@ export const contentUpdated = {
   ecommerce: '2026-09-26',
   architecture: '2026-09-26',
 
+  /**
+   * The work case studies. Recovered from git history rather than remembered:
+   * `git log -S"slug: '<slug>'"` over the content files gives the day each
+   * entry last changed. Keyed by path, not by slug, because unlike the service
+   * pages a case study's path is the same in every language.
+   *
+   * For the four originals that day is the commit that added the Croatian and
+   * German versions, so the English text is two days older (7 August). Two days
+   * carries no information on a page untouched for seven weeks, and one date per
+   * case study beats three that disagree.
+   */
+  '/work/bezmaske': '2026-08-09',
+  '/work/lumenta-ai': '2026-08-09',
+  '/work/the-dog-habit': '2026-08-09',
+  '/work/unmaskedwords': '2026-08-09',
+  '/work/docuflow-ai': '2026-09-06',
+
   // Legal copy tracks legal.updated below; kept in step by hand.
   '/privacy': '2026-08-20',
   '/terms': '2026-08-20',
