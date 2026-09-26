@@ -238,11 +238,13 @@ section + section { border-top: 1px solid var(--line); }
 /* A small figures table. Wrapped because three money columns do not fit a
    phone: the wrapper scrolls rather than the whole page. */
 .table-wrap { overflow-x: auto; margin: 1.4rem 0 0; }
-table.figures { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 14.5px; }
+/* Base: cells wrap. Guide tables hold sentences, and a clipped sentence is
+   worse than a tall row. */
+table.figures { border-collapse: collapse; width: 100%; font-size: 14.5px; }
 table.figures th,
 table.figures td {
   text-align: left; padding: .7rem .9rem;
-  border-bottom: 1px solid var(--line); white-space: nowrap;
+  border-bottom: 1px solid var(--line); vertical-align: top;
 }
 table.figures thead th {
   color: var(--text); font-weight: 600; font-size: 13px;
@@ -251,14 +253,75 @@ table.figures thead th {
 }
 table.figures tbody th { color: var(--text); font-weight: 600; }
 table.figures tbody td { color: var(--muted); }
-/* The last column is ours, so it is the one worth reading. */
-table.figures tbody td:last-child { color: var(--accent); }
+
+/* The price comparison is the one table that must not wrap — "1.500 – 4.000 €"
+   broken across two lines stops being one figure — and the one where the last
+   column means "ours", so it earns the accent. */
+table.figures.compare { min-width: 30rem; }
+table.figures.compare th,
+table.figures.compare td { white-space: nowrap; }
+table.figures.compare tbody td:last-child { color: var(--accent); }
 table.figures tbody tr:last-child th,
 table.figures tbody tr:last-child td { border-bottom: 0; }
 
 /* Where to send someone a boundary just turned away. Quieter than a CTA, but
    it has to be findable — it is the only exit that is not the back button. */
 .self-serve { margin-top: .9rem; font-size: 14px; }
+
+/* Guide pages. A guide is long, so the furniture has to carry structure without
+   shouting: facts up top, a table of contents, numbered sub-sequences, callouts
+   and copyable commands. */
+.facts {
+  display: flex; flex-wrap: wrap; gap: 0 2.4rem; margin: 2rem 0 0; padding: 0;
+  border-top: 1px solid var(--line); padding-top: 1.4rem;
+}
+.facts dt {
+  font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: .25rem;
+}
+.facts dd { margin: 0 0 .9rem; color: var(--text); font-weight: 600; font-size: 15px; }
+
+ol.toc { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+ol.toc li { counter-increment: toc; margin-bottom: .7rem; }
+ol.toc li::before {
+  content: counter(toc, decimal-leading-zero); margin-right: .9rem;
+  color: var(--accent); font-variant-numeric: tabular-nums;
+}
+ol.toc a { color: var(--muted); }
+ol.toc a:hover { color: var(--accent); }
+
+ol.substeps { list-style: none; padding: 0; margin: 1.3rem 0 0; counter-reset: sub; }
+ol.substeps li {
+  counter-increment: sub; position: relative;
+  padding-left: 2.6rem; margin-bottom: 1.3rem;
+}
+ol.substeps li::before {
+  content: counter(sub); position: absolute; left: 0; top: -.1rem;
+  width: 1.8rem; height: 1.8rem; border-radius: 50%;
+  border: 1px solid var(--line-ui); color: var(--accent);
+  display: grid; place-items: center; font-size: 13px;
+}
+ol.substeps strong { display: block; color: var(--text); margin-bottom: .3rem; }
+ol.substeps span { color: var(--muted); }
+
+.callout {
+  margin: 1.5rem 0 0; padding: 1.1rem 1.2rem;
+  border: 1px solid var(--line-ui); border-left: 2px solid var(--accent);
+  background: #0e161f;
+}
+.callout strong {
+  display: block; color: var(--text); margin-bottom: .4rem;
+  font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase;
+}
+.detail-body .callout p { margin: 0; font-size: 14.5px; }
+
+pre.code {
+  margin: 1.4rem 0 0; padding: 1rem 1.1rem; overflow-x: auto;
+  border: 1px solid var(--line-ui); background: #0b1219;
+  font-size: 13.5px; line-height: 1.6; color: var(--text);
+  white-space: pre; tab-size: 2;
+}
+pre.code code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 
 /* Citation line under a section that makes a checkable claim. */
 .detail-body p.sources {

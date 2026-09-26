@@ -8,6 +8,7 @@ import {
   serviceDetailsFor,
   serviceDetailPaths,
   localesFor,
+  vodiciFor,
 } from '../content';
 
 // Marketing pages exist in every language.
@@ -18,6 +19,12 @@ const TRANSLATED = ['/', '/services', '/services/video', '/work', '/contact'];
 // English today, but a list that assumes English silently drops anything
 // published in one of the other two.
 const SINGLE_LOCALE = [
+  // The guides are the one Croatian-only branch that is meant to be entered
+  // from search, so they sit with the service pages rather than with the legal
+  // ones. Detail pages are added from the content below.
+  { path: '/vodici', priority: 0.7 },
+  ...vodiciFor().map((g) => ({ path: `/vodici/${g.slug}`, priority: 0.8 })),
+
   { path: '/privacy', priority: 0.3 },
   { path: '/terms', priority: 0.3 },
   { path: '/cookies', priority: 0.3 },

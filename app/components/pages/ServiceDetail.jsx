@@ -84,7 +84,7 @@ export default function ServiceDetail({ lang, slug }) {
 
               {section.table ? (
                 <div className="table-wrap">
-                  <table className="figures">
+                  <table className="figures compare">
                     <thead>
                       <tr>
                         {section.table.head.map((h) => <th key={h} scope="col">{h}</th>)}

@@ -87,6 +87,11 @@ export const contentUpdated = {
   '/work/unmaskedwords': '2026-08-09',
   '/work/docuflow-ai': '2026-09-06',
 
+  // The guides. Their content is a transcription of the PDFs, which carry
+  // "Izdanje 2026"; the pages themselves went up on this date.
+  '/vodici': '2026-09-26',
+  '/vodici/automatizacija-opisa-proizvoda': '2026-09-26',
+
   // Legal copy tracks legal.updated below; kept in step by hand.
   '/privacy': '2026-08-20',
   '/terms': '2026-08-20',
