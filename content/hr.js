@@ -391,6 +391,46 @@ const hr = {
         'Postavljamo proces koji piše opise kroz cijeli katalog, u vašem tonu i s vašim nazivljem, na jeziku tržišta na kojem doista prodajete — ne naknadno preveden.',
         'Ništa ne ide van bez vašeg odobrenja. Kontrola prije objave dio je procesa, ne dodatak.',
       ],
+      // Three sections the page was missing, aimed at the query rather than at
+      // the brand: what this costs against the way the market prices the same
+      // work, what duplicate supplier copy actually does, and why a translated
+      // description is not the same as one written for that market. All three
+      // belong here rather than in a blog post that would compete with this
+      // page for the one query it targets.
+      sections: [
+        {
+          h2: 'Po komadu ili po katalogu',
+          paragraphs: [
+            'Objavljene hrvatske cijene za pisanje opisa kreću se od 5 do 25 € po opisu, ovisno o duljini i razini SEO obrade. To je logika po komadu: katalog od tisuću artikala je između 5.000 i 25.000 €, a od tri tisuće između 15.000 i 75.000 €.',
+            'Mi ne naplaćujemo po komadu, nego po katalogu. Razlog je jednostavan: posao je u postavljanju procesa — tona, nazivlja, pravila i kontrole. Kad to stoji, tisuću artikala i deset tisuća artikala nisu deset puta različit posao.',
+          ],
+          table: {
+            head: ['Artikala', 'Po tržišnoj cijeni (5 – 25 € / opis)', 'Kod nas'],
+            rows: [
+              ['500', '2.500 – 12.500 €', '1.500 – 4.000 €'],
+              ['1.000', '5.000 – 25.000 €', '1.500 – 4.000 €'],
+              ['5.000', '25.000 – 125.000 €', '4.000 – 12.000 €'],
+            ],
+          },
+          note: 'Iznad pet tisuća artikala ili više od dva tržišta radimo procjenu po opsegu. Za razmjer: kroz vlastiti proizvod Lumenta AI prošlo je 12.000 opisa u devet dana — nije klijentski projekt, nego mjera da vaš katalog gotovo sigurno nije prevelik za ovo.',
+        },
+        {
+          h2: 'Što opisi dobavljača stvarno rade',
+          paragraphs: [
+            'Uvriježeno je da Google kažnjava duplicirani sadržaj. Ne kažnjava. Ono što radi je gore od kazne jer je tiho: kad dvadeset trgovina nosi isti opis od istog dobavljača, Google odabere jednu i ostale filtrira iz rezultata. Nema poruke, nema upozorenja u Search Consoleu — samo vas nema.',
+            'Za vas to znači da na svojoj vlastitoj stranici proizvoda ne nastupate s ničim svojim. Jedino po čemu se možete razlikovati je cijena, a to je natjecanje koje dobiva onaj s najdubljim džepom.',
+            'Vlastiti opis to mijenja iz temelja: stranica dobiva tekst koji nijedna druga trgovina nema, i počinje rangirati za način na koji vaši kupci pitaju, a ne onako kako je dobavljač napisao katalog.',
+          ],
+        },
+        {
+          h2: 'Napisano na jeziku tržišta, ne prevedeno',
+          paragraphs: [
+            'Prijevod prenosi rečenicu, ali ne prenosi upit. Njemački kupac ne traži prijevod hrvatske fraze — traži ono što Nijemci doista upisuju, a to je često druga riječ, drugi red veličine pretraga i drugi kupovni motiv.',
+            'Zato opise pišemo na jeziku tržišta, s nazivljem i pretragama tog tržišta, a ne tako da hrvatski tekst provučemo kroz prevoditelj. Isti artikl može imati različit naglasak u Hrvatskoj i u Njemačkoj, jer se različito i kupuje.',
+            'Praktična posljedica: dvije jezične verzije nisu dvostruki posao, ali nisu ni jedan posao s prijevodom na kraju. Cijena za više tržišta to odražava.',
+          ],
+        },
+      ],
       pricing: {
         q: 'Koliko košta generiranje opisa proizvoda?',
         bands: [

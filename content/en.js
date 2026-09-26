@@ -288,6 +288,41 @@ const en = {
         'Review before publishing — nothing goes out without your approval',
       ],
       notFor: 'if you have a hundred items and a copywriter who can keep up, you do not need this.',
+      // See the note in hr.js — the same three sections, aimed at the query.
+      sections: [
+        {
+          h2: 'Per item or per catalogue',
+          paragraphs: [
+            'Published Croatian rates for writing product descriptions run from €5 to €25 per description, depending on length and how much SEO work goes in. That is per-item logic: a thousand-item catalogue lands between €5,000 and €25,000, and a three-thousand-item one between €15,000 and €75,000.',
+            'We do not charge per item, we charge per catalogue. The work is in setting the process up — voice, terminology, rules and review. Once that stands, a thousand items and ten thousand items are not ten times the job.',
+          ],
+          table: {
+            head: ['Items', 'At market rate (€5 – €25 / description)', 'With us'],
+            rows: [
+              ['500', '€2,500 – €12,500', '€1,500 – €4,000'],
+              ['1,000', '€5,000 – €25,000', '€1,500 – €4,000'],
+              ['5,000', '€25,000 – €125,000', '€4,000 – €12,000'],
+            ],
+          },
+          note: 'Above five thousand items, or more than two markets, we scope it. For scale: 12,000 descriptions went through our own product Lumenta AI in nine days — not a client project, but a measure that your catalogue is almost certainly not too big for this.',
+        },
+        {
+          h2: 'What supplier descriptions actually do',
+          paragraphs: [
+            'The received wisdom is that Google penalises duplicate content. It does not. What it does is worse than a penalty because it is silent: when twenty shops carry the same description from the same supplier, Google picks one and filters the rest out of results. No message, no warning in Search Console — you are simply not there.',
+            'What that means for you is that on your own product page you turn up with nothing of your own. The only thing left to compete on is price, and that is a contest won by whoever has the deepest pockets.',
+            'Your own copy changes that at the root: the page carries text no other shop has, and starts ranking for the way your customers ask rather than the way a supplier wrote a catalogue.',
+          ],
+        },
+        {
+          h2: 'Written in the market’s language, not translated',
+          paragraphs: [
+            'A translation carries the sentence but not the query. A German buyer is not searching for a translation of a Croatian phrase — they search for what Germans actually type, which is often a different word, a different search volume and a different buying motive.',
+            'So we write in the language of the market, with that market’s terminology and its searches, rather than pushing Croatian text through a translator. The same item can carry a different emphasis in Croatia and in Germany, because it is bought differently.',
+            'The practical consequence: two language versions are not double the work, but they are not one job with a translation bolted on at the end either. The price for several markets reflects that.',
+          ],
+        },
+      ],
       pricing: {
         q: 'How much do generated product descriptions cost?',
         bands: [
