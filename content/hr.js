@@ -141,7 +141,35 @@ const hr = {
     ],
     cta: 'Pogledajte vodiče',
     note: 'PDF-ovi su besplatni i dostupni odmah. Ako vam se ne isplati raditi to sami, znate gdje smo.',
-    href: 'https://vodici.lumentalabs.studio',
+    // Now an internal path: the guides are pages here. The PDF form stays on
+    // the subdomain and is offered from each guide, so the mailing list keeps
+    // growing without the content staying invisible.
+    href: '/vodici',
+    pdfHref: 'https://vodici.lumentalabs.studio',
+  },
+
+  vodiciPage: {
+    eyebrow: 'Besplatno',
+    h1: 'Tri vodiča o automatizaciji, napisana da ih primijenite sami',
+    lede:
+      'Ono što inače postavljamo klijentima, razloženo korak po korak. Cijeli sadržaj je ovdje, besplatno i bez upisivanja e-maila — PDF je samo pakirana verzija istoga.',
+    read: 'Otvori vodič',
+    closingH2: 'Ne isplati vam se raditi to sami?',
+    closingLede: 'Iste ovakve automatizacije postavljamo po mjeri. Opišite što vam treba.',
+    closingCta: 'Javite nam se',
+  },
+
+  vodicPage: {
+    eyebrow: 'Vodič',
+    allGuides: 'Svi vodiči',
+    contents: 'Sadržaj',
+    factsH2: 'Ukratko',
+    pdfH2: 'Želite ovo kao PDF?',
+    pdfText:
+      'Sva tri vodiča šaljemo na e-mail, u obliku za ispis i dijeljenje. Isti sadržaj koji je ovdje — samo pakiran.',
+    pdfCta: 'Pošaljite mi PDF-ove',
+    relatedH2: 'Radije da to odradimo mi?',
+    relatedCta: 'Pogledajte uslugu',
   },
 
   servicesPage: {

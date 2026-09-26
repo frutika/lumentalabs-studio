@@ -3,6 +3,7 @@ import hr from './hr';
 import de from './de';
 import { site } from '../site.config';
 import blogPosts from './blog';
+import { VODICI, vodicBySlug } from './vodici';
 
 export const DEFAULT_LOCALE = 'en';
 export const LOCALES = ['en', 'hr', 'de'];
@@ -21,6 +22,7 @@ export const isLocale = (lang) => LOCALES.includes(lang);
  * Keyed by the unprefixed path, which is what both callers already work with.
  */
 const ROUTE_LOCALES = {
+  '/vodici': ['hr'],
   '/privacy': ['en'],
   '/terms': ['en'],
   '/cookies': ['en'],
@@ -34,6 +36,8 @@ const ROUTE_LOCALES = {
  */
 export const localesFor = (path = '/') => {
   if (path === '/blog' || path.startsWith('/blog/')) return ['en'];
+  // The guides are Croatian, matched by prefix so a new one needs no edit here.
+  if (path.startsWith('/vodici/')) return ['hr'];
   return ROUTE_LOCALES[path] || LOCALES;
 };
 
@@ -84,6 +88,18 @@ export function relatedWorkFor(lang, post) {
 export function reelFor(lang) {
   const r = site.reels?.[lang];
   return r?.id ? r : null;
+}
+
+/**
+ * The guides. Croatian only, so there is no per-language variant to resolve —
+ * unlike the services, whose slug differs per language.
+ */
+export function vodiciFor() {
+  return VODICI;
+}
+
+export function vodicFor(slug) {
+  return vodicBySlug(slug);
 }
 
 export function servicesFor(lang) {

@@ -116,6 +116,27 @@ export function faqSchema(lang, path, faq) {
   };
 }
 
+/**
+ * One guide. Article rather than HowTo: Google retired HowTo rich results for
+ * ordinary sites, and an Article that is honest about author and publisher is
+ * worth more than a HowTo block nothing renders.
+ */
+export function guideSchema(lang, guide, path) {
+  const url = urlFor(lang, path);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `${url}#article`,
+    headline: guide.h1,
+    description: guide.description,
+    url,
+    mainEntityOfPage: url,
+    inLanguage: getDict(lang).htmlLang,
+    author: { '@id': ORG_ID },
+    publisher: { '@id': ORG_ID },
+  };
+}
+
 /** items: [{ name, path }] — the trail, excluding the site root. */
 export function breadcrumbSchema(lang, items) {
   return {

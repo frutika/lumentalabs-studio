@@ -22,10 +22,10 @@ export default function Nav({ lang }) {
           {/* English-only, same gate pattern as the AI booster below — no
               `nav.blog` key in a dictionary means no link in that language. */}
           {d.nav.blog ? <Link className="link" href={p('/blog')}>{d.nav.blog}</Link> : null}
-          {/* Different domain, so a plain anchor. The optional chain is the gate:
+          {/* Now a page on this domain. The optional chain is still the gate:
               no vodici block in a dictionary means no link in that language. */}
           {d.vodici?.href ? (
-            <a className="link" href={d.vodici.href} rel="noopener">{d.nav.vodici}</a>
+            <Link className="link" href={p(d.vodici.href)}>{d.nav.vodici}</Link>
           ) : null}
           <Link className="link" href={p('/contact')}>{d.nav.contact}</Link>
           <LangSwitch lang={lang} />

@@ -1,9 +1,9 @@
-import { getDict } from '../../content';
+import Link from 'next/link';
+import { getDict, localePath } from '../../content';
 
 /**
- * Points at the guides on their own domain instead of copying them here:
- * one source of truth, no duplicate content. The section renders only where
- * the dictionary has a `vodici` block with an href - so it is absent on
+ * Points at the guides, which now live on this domain. The section renders only
+ * where the dictionary has a `vodici` block with an href - so it is absent on
  * /en and /de without a single language check.
  */
 export default function VodiciCTA({ lang }) {
@@ -22,8 +22,7 @@ export default function VodiciCTA({ lang }) {
           {v.items.map((item) => <li key={item}>{item}</li>)}
         </ul>
 
-        {/* Another domain, so a plain anchor - next/link would prefetch nothing useful. */}
-        <a className="btn" href={v.href} rel="noopener">{v.cta}</a>
+        <Link className="btn" href={localePath(lang, v.href)}>{v.cta}</Link>
 
         <p className="stamp" style={{ marginTop: '1.6rem' }}>{v.note}</p>
       </div>
