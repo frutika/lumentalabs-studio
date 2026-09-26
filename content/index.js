@@ -108,14 +108,14 @@ export function serviceDetailsFor(lang) {
     // "Koliko košta X?" is the question the market actually types, and the
     // answer has to carry the figure — a FAQ that says "depends on scope" is
     // what every competitor already has. Generated from the bands rather than
-    // written twice, so the page and the answer can never disagree.
+    // written twice, so the page and the answer can never disagree. Only the
+    // price and the band name go in: the body and examples belong on the page,
+    // where there is room for them, and would make this answer unreadable.
     if (detail.pricing?.bands?.length && detail.pricing.q) {
       faq.push({
         q: detail.pricing.q,
         a: `${detail.pricing.bands
-          // Lower-case the first letter only: toLowerCase() on the whole label
-          // turns "ERP/CRM" into "erp/crm".
-          .map(([label, value]) => `${value} — ${label.charAt(0).toLowerCase()}${label.slice(1)}`)
+          .map((b) => `${b.price} — ${b.name.charAt(0).toLowerCase()}${b.name.slice(1)}`)
           .join('; ')}. ${t.vatNote}`,
       });
     }

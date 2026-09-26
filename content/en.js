@@ -144,9 +144,39 @@ const en = {
       pricing: {
         q: 'How much does a custom web application cost?',
         bands: [
-          ['Internal tool or dashboard with users', '€6,000 – €12,000'],
-          ['Platform with roles and integrations', '€12,000 – €28,000'],
-          ['Multi-user system, real-time, ERP/CRM', 'from €28,000'],
+          {
+            price: '€6,000 – €12,000',
+            name: 'A tool for one team',
+            body: 'An application one team inside the company uses. It has a login, but no complex roles and no users from outside. One job, done properly.',
+            examples: [
+              'A job-sheet log the field team fills in from a phone',
+              'A quoting tool that replaces a spreadsheet with ten tabs',
+              'A view that joins data from two systems onto one screen',
+            ],
+            boundary: 'The moment roles and permissions or outside access are needed, it is the next band.',
+          },
+          {
+            price: '€12,000 – €28,000',
+            name: 'A platform with outside users',
+            body: 'A system used by people outside your company too — clients, partners, suppliers. Roles and permissions, and data moving to and from other systems.',
+            examples: [
+              'A portal where clients follow the status of their orders',
+              'A booking system with payment and confirmations',
+              'An application that pulls from your ERP and writes back to it',
+            ],
+            boundary: 'This is where most of our projects sit.',
+          },
+          {
+            price: 'from €28,000',
+            name: 'The system the company runs on',
+            body: 'When the application is not a helper but the place the work happens. Several kinds of user, changes in real time, integrations with more than one system.',
+            examples: [
+              'A platform with an access hierarchy and thousands of users',
+              'Stock reconciled across several locations in real time',
+              'A system joining ERP, CRM and billing into one flow',
+            ],
+            boundary: 'A project like this starts with a conversation about scope, not with a price.',
+          },
         ],
         min: 6000,
       },
@@ -188,9 +218,38 @@ const en = {
       pricing: {
         q: 'How much does AI process automation cost?',
         bands: [
-          ['One process', '€3,500 – €8,000'],
-          ['Several processes, built into your existing system', '€8,000 – €20,000'],
-          ['A tool of your own', 'from €20,000'],
+          {
+            price: '€3,500 – €8,000',
+            name: 'One process',
+            body: 'One task that repeats every week, automated end to end and measured before and after.',
+            examples: [
+              'Retyping data from one system into another',
+              'A monthly report somebody assembles by hand',
+              'Sorting inbox enquiries and drafting the replies',
+            ],
+            boundary: 'If you are not sure which task to start with, that is a half-hour conversation and it is free.',
+          },
+          {
+            price: '€8,000 – €20,000',
+            name: 'Several processes in your system',
+            body: 'A handful of connected tasks, built into the interface the team already opens every morning. Nothing new to learn.',
+            examples: [
+              'Document handling from arrival through approval',
+              'A CRM kept current from email and calls, with no manual entry',
+              'Quotes prepared from data already in your system',
+            ],
+            boundary: '',
+          },
+          {
+            price: 'from €20,000',
+            name: 'A tool of your own',
+            body: 'When nothing off the shelf exists, or none of it works the way you need, so yours gets built — and stays yours.',
+            examples: [
+              'An internal assistant over your own knowledge base and documents',
+              'A tool the team uses daily that nobody else has',
+            ],
+            boundary: '',
+          },
         ],
         min: 3500,
       },
@@ -232,8 +291,26 @@ const en = {
       pricing: {
         q: 'How much do generated product descriptions cost?',
         bands: [
-          ['Up to a thousand items, one language', '€1,500 – €4,000'],
-          ['Whole catalogue, several languages', '€4,000 – €12,000'],
+          {
+            price: '€1,500 – €4,000',
+            name: 'Up to a thousand items, one language',
+            body: 'We set the process up on your voice and your terminology, then run the catalogue. You review and approve before anything publishes.',
+            examples: [
+              'A catalogue with no descriptions, or with the supplier’s',
+              'A new product group that has to read like the existing ones',
+            ],
+            boundary: 'If you have a hundred items and a copywriter who can keep up, you do not need this.',
+          },
+          {
+            price: '€4,000 – €12,000',
+            name: 'Whole catalogue, several languages',
+            body: 'The same process across the whole catalogue and every market you sell in — written in that language, not translated afterwards.',
+            examples: [
+              'Thousands of items across two or more markets',
+              'Category and campaign copy alongside the descriptions',
+            ],
+            boundary: '',
+          },
         ],
         min: 1500,
         max: 12000,
@@ -276,8 +353,26 @@ const en = {
       pricing: {
         q: 'How much does monthly maintenance cost?',
         bands: [
-          ['One application, monitoring and backups', '€350 – €900 / mo'],
-          ['Several systems, agreed response time', '€900 – €2,500 / mo'],
+          {
+            price: '€350 – €900 / mo',
+            name: 'One application',
+            body: 'Monitoring that runs when nobody is watching, nightly backups with integrity checks, updates before they turn into problems, and one contact when something stops.',
+            examples: [
+              'An application we built',
+              'An existing system we take over after a review',
+            ],
+            boundary: 'This is not website maintenance. If you need WordPress plugins kept up to date, you will pay less elsewhere.',
+          },
+          {
+            price: '€900 – €2,500 / mo',
+            name: 'Several systems',
+            body: 'A few applications or environments under the same watch, with an agreed response time and a plan for what happens when something falls over.',
+            examples: [
+              'Production and staging across several services',
+              'Several applications sharing a database or a login',
+            ],
+            boundary: 'If you have your own technical team, we take only the part you are missing.',
+          },
         ],
         min: 350,
         max: 2500,
@@ -396,9 +491,21 @@ const en = {
     pricingH2: 'What it costs',
     // See the note in hr.js — priced by language rather than by bundle.
     pricing: [
-      ['One film, one language: script, voice, mix, captions', '€450 – €900'],
-      ['Each additional language', '+€150 – €300'],
-      ['Several films, scoped', 'from €1,800'],
+      {
+        price: '€450 – €900',
+        name: 'One film, one language',
+        body: 'Script, voice, a mix under whatever audio the footage already carries, and captions in the format the destination accepts. Your picture is not re-encoded.',
+      },
+      {
+        price: '+€150 – €300',
+        name: 'Each additional language',
+        body: 'The same film in one more market. The first pass carries the script and the mix, so every language after it costs considerably less.',
+      },
+      {
+        price: 'from €1,800',
+        name: 'Several films',
+        body: 'A series of pieces or a whole library of footage, scoped.',
+      },
     ],
     vatNote: 'All prices exclude VAT. The quote depends on runtime; additional languages are charged per language.',
     h1: 'One film. Every market you sell in.',

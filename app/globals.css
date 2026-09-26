@@ -234,6 +234,18 @@ section + section { border-top: 1px solid var(--line); }
   border-top: 1px dashed var(--line); font-size: 14.5px;
 }
 .not-for strong { color: var(--text); }
+
+/* One price band: the figure, what it is, examples, and where the line to the
+   next band runs. Separated so three bands read as three options rather than
+   one wall of text. */
+.band { padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
+.band:last-of-type { padding-bottom: 0; margin-bottom: 1.4rem; border-bottom: 0; }
+.band > p.detail-sub:first-child { margin-top: 0; }
+/* The number is what the visitor is scanning for. */
+.band p.detail-sub strong { color: var(--accent); }
+.band .ticks { margin-top: .9rem; }
+.band p.not-for { font-size: 14px; }
+
 @media (max-width: 760px) { .detail { grid-template-columns: 1fr; gap: 1.2rem; } }
 
 a.card.linked { display: block; text-decoration: none; transition: border-color .15s, background .15s; }

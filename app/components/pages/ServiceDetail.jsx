@@ -75,13 +75,26 @@ export default function ServiceDetail({ lang, slug }) {
           <div className="wrap detail">
             <div className="detail-side"><h2>{t.pricingH2}</h2></div>
             <div className="detail-body">
-              {/* The number is the point of this section, so it is text on the
-                  page rather than something a visitor has to ask for. */}
-              <ul className="ticks">
-                {item.pricing.bands.map(([label, value]) => (
-                  <li key={label}><strong>{value}</strong> — {label}</li>
-                ))}
-              </ul>
+              {/* A band used to be a price and three words, which said nothing
+                  to someone who does not already know the vocabulary. Each one
+                  now carries what it is, what it looks like, and where the line
+                  to the next band runs — the explanation belongs here, on the
+                  page that ranks for the query, not on a second page competing
+                  with it. */}
+              {item.pricing.bands.map((band) => (
+                <div key={band.name} className="band">
+                  <p className="detail-sub">
+                    <strong>{band.price}</strong> — {band.name}
+                  </p>
+                  <p>{band.body}</p>
+                  {band.examples?.length ? (
+                    <ul className="ticks">
+                      {band.examples.map((ex) => <li key={ex}>{ex}</li>)}
+                    </ul>
+                  ) : null}
+                  {band.boundary ? <p className="not-for">{band.boundary}</p> : null}
+                </div>
+              ))}
               <p className="not-for">{t.vatNote}</p>
             </div>
           </div>
