@@ -179,6 +179,22 @@ export default function VodicDetail({ lang, slug }) {
         </section>
       ) : null}
 
+      {/* Three exits, in rising order of what they cost the reader: do it
+          yourself (the guide above), use the tool, have us do it. The tool rung
+          is only on guides whose job Lumenta AI actually covers. */}
+      {g.tool ? (
+        <section>
+          <div className="wrap">
+            <h2>{t.toolH2}</h2>
+            <p className="section-lede">{g.tool.text}</p>
+            <a className="btn ghost" href={g.tool.href} target="_blank" rel="noopener noreferrer">
+              {g.tool.cta} <span aria-hidden="true">↗</span>
+              <span className="sr"> ({d.a11y.newTab})</span>
+            </a>
+          </div>
+        </section>
+      ) : null}
+
       {related ? (
         <section>
           <div className="wrap">
