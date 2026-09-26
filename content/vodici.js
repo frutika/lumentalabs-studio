@@ -229,6 +229,360 @@ Pravila:
     // decides they would rather not do it themselves has somewhere to go.
     related: 'ecommerce',
   },
+  {
+    slug: 'automatizacija-objava-na-drustvenim-mrezama',
+    num: '02',
+    title: 'Automatizacija objava na društvenim mrežama uz n8n i AI',
+    h1: 'Automatizirajte objave na društvenim mrežama',
+    description:
+      'Korak-po-korak vodič: radni tok koji iz jedne tablice ideja piše objave prilagođene svakoj mreži i objavljuje ih po rasporedu — X, LinkedIn, Facebook, Instagram.',
+    lede:
+      'Izradite radni tok koji iz jedne tablice sadržaja sam piše objave prilagođene svakoj platformi i objavljuje ih po rasporedu. Bez svakodnevnog prijavljivanja u pet aplikacija.',
+    facts: [
+      ['Trajanje', '~45 min'],
+      ['Razina', 'početna–srednja'],
+      ['Alati', 'n8n · OpenAI/Claude · društvene mreže'],
+      ['Cijena', '0 € (self-host)'],
+    ],
+    intro: [
+      'Objavljivanje na više mreža ručno znači isti sadržaj prepisivati pet puta, svaki put drugačije. Ovaj vodič pokazuje kako da jednu ideju upišete u tablicu, a n8n uz pomoć AI-a napiše verziju prilagođenu svakoj platformi i objavi je sam, po rasporedu koji odredite.',
+      'Tok ide ovako: tablica ideja → AI piše po platformi → odobrenje (opcijski) → objava ili raspored.',
+    ],
+    outcome: {
+      title: 'Što ćete imati na kraju',
+      text: 'Radni tok koji iz jednog retka tablice generira zasebne objave za X, LinkedIn, Facebook i Instagram, pošalje vam ih na odobrenje i objavi ih automatski. n8n podržava sedam i više mreža, uključujući TikTok, Threads i YouTube Shorts.',
+    },
+    steps: [
+      {
+        num: '01',
+        h: 'Preduvjeti i pristupi',
+        blocks: [
+          { type: 'p', text: 'Uz n8n i AI ključ, kao u prvom vodiču, za objavljivanje trebate pristup svakoj mreži na kojoj želite objavljivati. Krenite s jednom ili dvije, pa dodajte ostale.' },
+          {
+            type: 'table',
+            head: ['Mreža', 'Kako se povezuje', 'Napomena'],
+            rows: [
+              ['X (Twitter)', 'Nativni čvor ili X API (developer račun)', 'Potreban razvojni pristup za objavu'],
+              ['LinkedIn', 'Nativni LinkedIn čvor (OAuth)', 'Objava na osobni profil ili profil tvrtke'],
+              ['Facebook i Instagram', 'Facebook Graph API (HTTP Request čvor)', 'Traži poslovni račun i povezanu stranicu'],
+              ['Više mreža odjednom', 'Buffer ili sličan servis za raspoređivanje', 'Najlakši način za start bez svakog API-ja posebno'],
+            ],
+          },
+          {
+            type: 'callout',
+            title: 'Preporuka za brz start',
+            text: 'Ako ne želite odmah otvarati razvojne račune za svaku mrežu, počnite preko Buffera: n8n šalje gotov tekst Bufferu, a Buffer objavljuje i raspoređuje na sve povezane mreže.',
+          },
+        ],
+      },
+      {
+        num: '02',
+        h: 'Tablica sadržaja kao izvor ideja',
+        blocks: [
+          { type: 'p', text: 'Napravite Google tablicu koja je vaš kalendar ideja. Svaki redak je jedna objava koju AI razrađuje za sve mreže:' },
+          {
+            type: 'table',
+            head: ['Datum', 'Tema / ideja', 'Ključne točke', 'Poziv na akciju', 'Status'],
+            rows: [
+              ['05. 08.', 'Nova kolekcija tenisica Aura', 'prava koža, udobnost, uniseks', 'Kupi uz 10 % popusta', 'za objavu'],
+              ['07. 08.', 'Savjet: kako održavati kožnu obuću', '3 koraka, kratko i korisno', 'Pogledaj vodič', 'za objavu'],
+            ],
+          },
+          {
+            type: 'list',
+            items: [
+              'Stupac „Status" koristite da radni tok obrađuje samo retke označene s „za objavu".',
+              'Nakon objave n8n stupac mijenja u „objavljeno" da se ista objava ne ponovi.',
+            ],
+          },
+        ],
+      },
+      {
+        num: '03',
+        h: 'Okidač: raspored ili ručno',
+        blocks: [
+          {
+            type: 'substeps',
+            items: [
+              { h: 'Izradite radni tok', text: 'U n8n-u kliknite + Create Workflow i nazovite ga npr. „Auto-objave društvene mreže".' },
+              { h: 'Dodajte Schedule Trigger', text: 'Postavite ga npr. na svaki radni dan u 9:00. Za testiranje koristite Manual Trigger.' },
+              { h: 'Dohvatite retke „za objavu"', text: 'Čvor Google Sheets s operacijom Get Rows, uz filtar po stupcu Status = „za objavu". Tako obrađujete točno ono što je spremno.' },
+            ],
+          },
+        ],
+      },
+      {
+        num: '04',
+        h: 'AI piše objavu po mreži',
+        blocks: [
+          { type: 'p', text: 'Dodajte AI Agent čvor s Chat Modelom. Svaka mreža ima drugačiji ton i duljinu, pa tražite od AI-a da vrati sve verzije odjednom u strukturiranom obliku:' },
+          {
+            type: 'code',
+            text: `Ti si voditelj društvenih mreža za e-commerce brend.
+Na temelju ideje napiši objave prilagođene svakoj mreži, na hrvatskom.
+
+Ideja: {{ $json["Tema / ideja"] }}
+Ključne točke: {{ $json["Ključne točke"] }}
+Poziv na akciju: {{ $json["Poziv na akciju"] }}
+
+Vrati JSON s poljima:
+- "x": do 280 znakova, dinamično, 1-2 hashtaga
+- "linkedin": profesionalan ton, 3-4 rečenice
+- "facebook": topao, razgovorni ton, s emotikonom
+- "instagram": kratak uvod + 5 relevantnih hashtagova
+
+Vrati SAMO ispravan JSON, bez dodatnog teksta.`,
+          },
+          {
+            type: 'callout',
+            title: 'Zašto JSON',
+            text: 'Kad AI vrati JSON, u sljedećim čvorovima lako uzimate baš pravu verziju za pravu mrežu: {{ $json.x }}, {{ $json.linkedin }} i tako redom.',
+          },
+        ],
+      },
+      {
+        num: '05',
+        h: 'Korak odobrenja',
+        blocks: [
+          { type: 'p', text: 'Prije nego išta ode uživo, pametno je da vam objave prvo dođu na pregled. n8n to rješava čvorom koji čeka vašu potvrdu.' },
+          {
+            type: 'substeps',
+            items: [
+              { h: 'Pošaljite nacrt na pregled', text: 'Dodajte čvor Telegram, Slack ili Send Email koji vam šalje sve četiri verzije objave.' },
+              { h: 'Čekajte potvrdu', text: 'Uz Wait čvor ili „human in the loop" pristup, radni tok se nastavlja tek kad odobrite. Odbijete li, objava se preskače.' },
+            ],
+          },
+          {
+            type: 'callout',
+            title: 'Savjet',
+            text: 'Dok gradite povjerenje u sustav, držite korak odobrenja uključen. Kad vidite da AI stabilno daje dobar ton, možete ga isključiti za potpuno automatski rad.',
+          },
+        ],
+      },
+      {
+        num: '06',
+        h: 'Objava na mreže',
+        blocks: [
+          { type: 'p', text: 'Za svaku mrežu dodajte čvor koji uzima svoju verziju teksta iz AI izlaza. Tri načina, od najlakšeg:' },
+          {
+            type: 'table',
+            head: ['Način', 'Kada koristiti'],
+            rows: [
+              ['Nativni čvor (X, LinkedIn)', 'Kad n8n ima gotov čvor za mrežu — najjednostavnije, samo OAuth i tekst.'],
+              ['HTTP Request (Facebook/Instagram Graph API)', 'Kad nema nativnog čvora — šaljete tekst izravno na API mreže.'],
+              ['Buffer', 'Kad želite jednim potezom objaviti ili rasporediti na više mreža bez zasebnih API-ja.'],
+            ],
+          },
+          {
+            type: 'callout',
+            title: 'Mapiranje teksta',
+            text: 'U svakom čvoru za objavu povežite pravo polje: X čvor na {{ $json.x }}, LinkedIn na {{ $json.linkedin }}, i tako redom.',
+          },
+        ],
+      },
+      {
+        num: '07',
+        h: 'Raspored, evidencija i ponovna upotreba',
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'Označite kao objavljeno: na kraju dodajte Google Sheets Update Row koji stupac Status mijenja u „objavljeno".',
+              'Raspoređivanje: želite li objave u razmacima, koristite Buffer ili dodajte Wait čvorove između mreža.',
+              'Evidencija: zapišite datum i vrijeme objave u tablicu radi pregleda učinka.',
+              'Recikliranje sadržaja: najbolje objave nakon mjesec dana ponovno provucite kroz AI za osvježenu verziju.',
+            ],
+          },
+        ],
+      },
+    ],
+    mistakes: {
+      h2: 'Česte pogreške i rješenja',
+      head: ['Simptom', 'Uzrok i rješenje'],
+      rows: [
+        ['Objava predugačka za X', 'U promptu naglasite tvrdo ograničenje od 280 znakova i dodajte provjeru duljine.'],
+        ['AI vratio pokvaren JSON', 'Dodajte uputu „vrati samo ispravan JSON" i čvor za parsiranje; po potrebi ponovite poziv.'],
+        ['Facebook ili Instagram odbija objavu', 'Provjerite koristite li poslovni račun i važeći Graph API token s dozvolama.'],
+        ['Ista objava izašla dvaput', 'Nedostaje korak koji Status mijenja u „objavljeno" nakon uspjeha.'],
+      ],
+    },
+    related: 'ai',
+  },
+  {
+    slug: 'ai-korisnicka-podrska-rag',
+    num: '03',
+    title: 'AI korisnička podrška s bazom znanja (RAG) uz n8n',
+    h1: 'Automatizirajte korisničku podršku uz AI',
+    description:
+      'Korak-po-korak vodič: AI pomoćnik koji odgovara na upite kupaca iz vaše baze znanja (RAG), rutinske rješava sam, a složene prosljeđuje čovjeku.',
+    lede:
+      'Izradite AI pomoćnika koji odgovara na upite kupaca iz vaše vlastite baze znanja — točno, na temelju vaših dokumenata. Rutinske upite rješava sam, složene prosljeđuje čovjeku.',
+    facts: [
+      ['Trajanje', '~60 min'],
+      ['Razina', 'srednja'],
+      ['Alati', 'n8n · OpenAI/Claude · vector store'],
+      ['Cijena', '0 € (self-host)'],
+    ],
+    intro: [
+      'Obični chatbot izmišlja odgovore. AI podrška s RAG-om (Retrieval-Augmented Generation) prvo pretraži vaše dokumente, pa odgovor sastavi samo na temelju onoga što tamo piše. Rezultat su točni odgovori o vašim proizvodima, dostavi, povratima i uvjetima — bez izmišljanja.',
+      'Sustav ima dva radna toka: jedan puni bazu znanja iz vaših dokumenata, drugi dočekuje upite kupaca i odgovara.',
+    ],
+    outcome: {
+      title: 'Što ćete imati na kraju',
+      text: 'AI pomoćnika povezanog s e-poštom ili chatom na webu koji odgovara iz vaše baze znanja, prosljeđuje složene slučajeve čovjeku i bilježi svaki razgovor.',
+    },
+    steps: [
+      {
+        num: '01',
+        h: 'Preduvjeti',
+        blocks: [
+          { type: 'p', text: 'Uz n8n i AI ključ, kao u prethodnim vodičima, za bazu znanja treba i mjesto gdje se spremaju vektori — brojčani zapisi značenja teksta.' },
+          {
+            type: 'table',
+            head: ['Što', 'Uloga', 'Opcija'],
+            rows: [
+              ['AI model (OpenAI ili Anthropic Claude)', 'Sastavlja odgovore', 'Plaćate tokene po upitu'],
+              ['Embeddings model', 'Pretvara dokumente i upite u vektore', 'Npr. OpenAI embeddings'],
+              ['Vector store', 'Sprema i pretražuje bazu znanja', 'Supabase, Pinecone ili lokalni'],
+              ['Izvor upita', 'Odakle stižu pitanja', 'E-pošta, web chat, obrazac'],
+            ],
+          },
+          {
+            type: 'callout',
+            title: 'Što je vector store',
+            text: 'Zamislite ga kao pametnu tražilicu po značenju: umjesto da traži točnu riječ, pronalazi odlomke koji su po smislu najbliži pitanju kupca. To je srce RAG-a.',
+          },
+        ],
+      },
+      {
+        num: '02',
+        h: 'Priprema baze znanja',
+        blocks: [
+          { type: 'p', text: 'Skupite na jedno mjesto sve što AI treba znati. Što je jasnija baza, to su bolji odgovori.' },
+          {
+            type: 'list',
+            items: [
+              'FAQ: pitanja i odgovori o dostavi, povratima, plaćanju i veličinama.',
+              'Politike: uvjeti kupnje, reklamacije, jamstvo.',
+              'Proizvodi: ključne značajke, materijali, održavanje.',
+            ],
+          },
+          {
+            type: 'callout',
+            title: 'Format',
+            text: 'Držite dokumente u Google Driveu ili Notionu — n8n ih odande čita — i pišite kratke, jasne odlomke. Jedan odlomak, jedna tema. Tako pretraga vraća precizne dijelove.',
+          },
+        ],
+      },
+      {
+        num: '03',
+        h: 'Tok 1 — punjenje baze',
+        blocks: [
+          { type: 'p', text: 'Ovaj radni tok pokrećete kad dodate ili promijenite dokumente. On „uči" bazu znanja.' },
+          {
+            type: 'substeps',
+            items: [
+              { h: 'Učitajte dokumente', text: 'Čvor Google Drive ili Notion dohvaća datoteke iz mape s bazom znanja.' },
+              { h: 'Podijelite na dijelove (chunking)', text: 'Čvorom Text Splitter dijelite duge dokumente na manje odlomke da pretraga bude precizna.' },
+              { h: 'Izračunajte embeddings i spremite', text: 'Čvor Embeddings pretvara svaki odlomak u vektor, a Vector Store ga sprema. Baza je sad spremna za pretragu.' },
+            ],
+          },
+          {
+            type: 'callout',
+            title: 'Automatsko osvježavanje',
+            text: 'Povežite okidač na promjenu u Google Drive mapi — čim ažurirate dokument, baza znanja se sama osvježava.',
+          },
+        ],
+      },
+      {
+        num: '04',
+        h: 'Tok 2 — okidač upita',
+        blocks: [
+          { type: 'p', text: 'Drugi radni tok dočekuje pitanja kupaca. Birate odakle stižu:' },
+          {
+            type: 'table',
+            head: ['Kanal', 'Okidač u n8n'],
+            rows: [
+              ['E-pošta podrške', 'Email Trigger (IMAP) — čita nove poruke'],
+              ['Chat na webu', 'Chat Trigger ili Webhook'],
+              ['Kontakt obrazac', 'Webhook s vaše stranice'],
+            ],
+          },
+          {
+            type: 'callout',
+            title: 'Preporuka za start',
+            text: 'Krenite s e-poštom podrške: najmanje rizika, a odmah štedi sate. Web chat dodajte kad ste zadovoljni kvalitetom odgovora.',
+          },
+        ],
+      },
+      {
+        num: '05',
+        h: 'AI Agent s bazom znanja',
+        blocks: [
+          { type: 'p', text: 'Srce sustava: AI Agent čvor kojem kao alat dodate Vector Store. Agent sam pretraži bazu i sastavi odgovor. U system prompt upišite pravila:' },
+          {
+            type: 'code',
+            text: `Ti si ljubazan agent podrške za [naziv brenda].
+Odgovaraj na hrvatskom, kratko i jasno.
+
+Pravila:
+- Koristi ISKLJUČIVO informacije iz baze znanja.
+- Ako odgovor ne postoji u bazi, reci da ćeš proslijediti
+  upit kolegi i ne izmišljaj.
+- Budi uljudan i profesionalan, oslovi kupca s „Vi".
+- Na kraju ponudi dodatnu pomoć.
+
+Pitanje kupca: {{ $json["poruka"] }}`,
+          },
+          {
+            type: 'callout',
+            title: 'Ključno pravilo',
+            text: 'Uputa „koristi isključivo bazu znanja i ne izmišljaj" najvažnija je zaštita od pogrešnih odgovora. Bez nje AI može halucinirati.',
+          },
+        ],
+      },
+      {
+        num: '06',
+        h: 'Odgovor: automatski ili uz pregled',
+        blocks: [
+          { type: 'p', text: 'Odaberite razinu automatizacije prema tome koliko vjerujete sustavu:' },
+          {
+            type: 'substeps',
+            items: [
+              { h: 'A) Nacrt uz pregled (preporuka za start)', text: 'AI sastavi odgovor, ali ga ne šalje — pošalje ga vama ili agentu na Slack, Telegram ili kao skicu u e-pošti. Čovjek potvrdi ili doradi pa pošalje.' },
+              { h: 'B) Potpuno automatski', text: 'Čvor Send Email ili chat odgovor šalje odmah. Koristite tek kad kroz fazu A vidite da su odgovori pouzdani.' },
+            ],
+          },
+        ],
+      },
+      {
+        num: '07',
+        h: 'Eskalacija, granice i evidencija',
+        blocks: [
+          {
+            type: 'list',
+            items: [
+              'Eskalacija na čovjeka: ako baza nema odgovor ili kupac traži čovjeka, čvorom IF preusmjerite upit u vaš sandučić ili tim.',
+              'Granice: osjetljive teme — reklamacije, povrat novca, pravni upiti — uvijek šaljite čovjeku, ne AI-u.',
+              'Evidencija: svaki upit i odgovor spremite u tablicu ili bazu radi kontrole kvalitete.',
+              'Poboljšavanje: pitanja bez dobrog odgovora dodajte u bazu znanja — sustav s vremenom postaje bolji.',
+            ],
+          },
+        ],
+      },
+    ],
+    mistakes: {
+      h2: 'Česte pogreške i rješenja',
+      head: ['Simptom', 'Uzrok i rješenje'],
+      rows: [
+        ['AI izmišlja odgovore', 'Ojačajte uputu „samo iz baze" i provjerite je li Vector Store povezan kao alat.'],
+        ['Odgovori promašuju temu', 'Odlomci u bazi su preveliki — smanjite veličinu dijelova i budite konkretniji.'],
+        ['Baza „ne zna" novi sadržaj', 'Niste ponovno pokrenuli Tok 1 nakon izmjene dokumenata.'],
+        ['Spor odgovor', 'Prevelik broj dohvaćenih odlomaka — ograničite na tri do pet najrelevantnijih.'],
+      ],
+    },
+    related: 'ai',
+  },
 ];
 
 export const VODIC_SLUGS = VODICI.map((v) => v.slug);

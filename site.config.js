@@ -91,6 +91,8 @@ export const contentUpdated = {
   // "Izdanje 2026"; the pages themselves went up on this date.
   '/vodici': '2026-09-26',
   '/vodici/automatizacija-opisa-proizvoda': '2026-09-26',
+  '/vodici/automatizacija-objava-na-drustvenim-mrezama': '2026-09-26',
+  '/vodici/ai-korisnicka-podrska-rag': '2026-09-26',
 
   // Legal copy tracks legal.updated below; kept in step by hand.
   '/privacy': '2026-08-20',
