@@ -424,6 +424,17 @@ a.card.linked.cover-card { padding: 0; overflow: hidden; display: flex; flex-dir
 .picker-go { margin-top: 1.8rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 .picker-go .section-lede { margin: 0; }
 
+/* One word per card, so the billing period is visible where the price is and
+   not only in the note below the grid. */
+.picker-billing {
+  display: block; margin: -.4rem 0 .9rem 1.65rem;
+  font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted);
+}
+/* The note carries the whole model, including VAT. .not-for already draws the
+   dashed rule that separates it from the cards above. */
+.picker-note { margin-top: 1.6rem; max-width: 68ch; }
+.picker-note p.not-for { margin: 0; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   /* The video element stays: HeroVideo never starts or even fetches it, so all

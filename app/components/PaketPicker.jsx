@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { PAKETI, formatPrice } from '../../content/paketi';
+import { PAKETI, formatPrice, BILLING, BILLING_NOTE } from '../../content/paketi';
 
 /**
  * The packages section, as a choice rather than a price list. The Booster is a
@@ -31,10 +31,12 @@ export default function PaketPicker() {
                 onChange={() => setChosen(pkg.id)}
               />
               <span className="card-title">
-                {pkg.name} — {formatPrice(pkg.price)}
+                {pkg.name} — {formatPrice(pkg)}
               </span>
               {pkg.featured && <span className="tag">Najčešće</span>}
             </span>
+
+            <span className="picker-billing">{BILLING[pkg.billing]?.label}</span>
 
             <ul className="ticks">
               {pkg.items.map((item) => <li key={item}>{item}</li>)}
@@ -53,6 +55,10 @@ export default function PaketPicker() {
           {selected ? `Nastavi s ${selected.name}` : 'Odaberite paket'}
         </button>
         <span className="section-lede">Bez obveze — javljamo se u roku od 24 sata.</span>
+      </div>
+
+      <div className="picker-note">
+        <p className="not-for">{BILLING_NOTE}</p>
       </div>
     </div>
   );

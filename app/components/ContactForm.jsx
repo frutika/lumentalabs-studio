@@ -37,11 +37,11 @@ export default function ContactForm({ lang }) {
   const [message, setMessage] = useState('');
 
   function mailtoHref() {
-    const subject = paket ? `${f.subject} — ${paket.name} (${formatPrice(paket.price)})` : f.subject;
+    const subject = paket ? `${f.subject} — ${paket.name} (${formatPrice(paket)})` : f.subject;
     const body = [
       name && `${f.name}: ${name}`,
       email && `${f.email}: ${email}`,
-      paket && `${f.selected}: ${paket.name} — ${formatPrice(paket.price)}`,
+      paket && `${f.selected}: ${paket.name} — ${formatPrice(paket)}`,
       message && `\n${message}`,
     ]
       .filter(Boolean)
@@ -94,7 +94,7 @@ export default function ContactForm({ lang }) {
 
       {paket && (
         <p className="form-selected">
-          {f.selected}: <strong>{paket.name}</strong> — {formatPrice(paket.price)}
+          {f.selected}: <strong>{paket.name}</strong> — {formatPrice(paket)}
         </p>
       )}
 
