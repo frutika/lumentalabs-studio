@@ -37,17 +37,29 @@ export const PAKETI = [
   {
     id: 'premium',
     name: 'Premium',
-    // Monthly, because what it adds over Pro is time-bound: thirty days of
-    // managing posts, and support. The other two are a delivery and then we
-    // are done.
+    // Monthly, because what it adds over Pro is time-bound: managing the posts,
+    // and support. The other two are a delivery and then we are done.
     billing: 'monthly',
     price: 149,
+    // Split, because "sve iz Pro" renewed every month was not the same promise
+    // in every line. A SEO audit has nobody left to inform by month two and a
+    // Google Business profile is optimised once; a landing page every month at
+    // this price contradicts the studio's own floor of 6.000 € for web work.
+    // Those live in setup, delivered in the first month and not repeated.
+    setup: [
+      'Mini SEO audit (PDF)',
+      'Google Business optimizacija',
+      'Konkurentska analiza',
+      '1 vizualni template',
+    ],
     items: [
-      'Sve iz Pro',
-      '30 dana upravljanja objavama',
+      '30 FB/IG objava',
+      '10 Google Business objava',
+      '5 promotivnih tekstova',
+      '10 AI vizuala',
+      '3 kratka video formata',
+      'Upravljanje objavama',
       '1 kampanja',
-      '1 landing stranica',
-      '24/7 podrška',
     ],
   },
 ];
@@ -77,5 +89,11 @@ export const formatPrice = (pkg) => `${pkg.price}€${BILLING[pkg.billing]?.suff
 /** The one place the billing model is explained to a visitor. */
 export const BILLING_NOTE =
   'Basic i Pro se plaćaju jednokratno — isporuka je dogovorena i tu smo stali. ' +
-  'Premium se naplaćuje mjesečno, jer uključuje 30 dana upravljanja objavama i podršku. ' +
+  'Premium se naplaćuje mjesečno: paket se obnavlja svaki mjesec i otkazujete ga kad želite, ' +
+  'do kraja tekućeg mjeseca. Postavljanje se radi u prvom mjesecu i ne ponavlja se. ' +
   'Sve cijene su bez PDV-a.';
+
+/** Heading for the once-only part of a monthly package. */
+export const SETUP_LABEL = 'Postavljanje, u prvom mjesecu';
+/** Heading for what actually recurs. */
+export const RECURRING_LABEL = 'Svaki mjesec';

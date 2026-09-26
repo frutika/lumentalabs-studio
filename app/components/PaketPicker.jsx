@@ -2,7 +2,14 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { PAKETI, formatPrice, BILLING, BILLING_NOTE } from '../../content/paketi';
+import {
+  PAKETI,
+  formatPrice,
+  BILLING,
+  BILLING_NOTE,
+  SETUP_LABEL,
+  RECURRING_LABEL,
+} from '../../content/paketi';
 
 /**
  * The packages section, as a choice rather than a price list. The Booster is a
@@ -37,6 +44,19 @@ export default function PaketPicker() {
             </span>
 
             <span className="picker-billing">{BILLING[pkg.billing]?.label}</span>
+
+            {/* A monthly package has two lists, because setup and what recurs
+                are not the same promise. A one-off package has one, and gets no
+                headings it does not need. */}
+            {pkg.setup?.length ? (
+              <>
+                <span className="picker-group">{SETUP_LABEL}</span>
+                <ul className="ticks">
+                  {pkg.setup.map((item) => <li key={item}>{item}</li>)}
+                </ul>
+                <span className="picker-group">{RECURRING_LABEL}</span>
+              </>
+            ) : null}
 
             <ul className="ticks">
               {pkg.items.map((item) => <li key={item}>{item}</li>)}
