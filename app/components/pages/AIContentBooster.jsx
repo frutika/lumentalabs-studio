@@ -72,7 +72,8 @@ export default function AIContentBooster({ lang }) {
         <div className="wrap">
           <h2>Paketi</h2>
           <p className="section-lede">
-            Jasna cijena, jasna isporuka. Odaberite razinu koja odgovara trenutnoj fazi biznisa.
+            Basic i Pro su jednokratni, Premium je mjesečni. Odaberite razinu koja
+            odgovara trenutnoj fazi biznisa.
           </p>
           <PaketPicker />
         </div>
