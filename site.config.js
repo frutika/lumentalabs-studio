@@ -41,6 +41,42 @@ export const site = {
   ],
 };
 
+/**
+ * When each page's content last actually changed, as a date you edit by hand
+ * when you change that page's copy.
+ *
+ * The sitemap used to send `new Date()` for every entry, which meant every
+ * deploy told Google that all 53 pages had changed — including /privacy, which
+ * nobody had touched in a month. Google's guidance is that it ignores lastmod
+ * when a site's values turn out to be unreliable, so a sitemap that cries wolf
+ * on every push ends up with no lastmod at all, including on the pages where it
+ * would have been true.
+ *
+ * Keyed by the unprefixed path. A path that is not listed here gets NO lastmod
+ * rather than today's date: omitting it is allowed and honest, inventing it is
+ * neither. The blog is not listed because posts carry their own date.
+ */
+export const contentUpdated = {
+  '/': '2026-09-26',
+  '/services': '2026-09-26',
+  '/services/video': '2026-09-26',
+  '/work': '2026-09-26',
+  '/contact': '2026-09-26',
+
+  // The five service pages, by their language-independent key rather than by
+  // slug — the slug differs per language and the date does not.
+  platforms: '2026-09-26',
+  ai: '2026-09-26',
+  ecommerce: '2026-09-26',
+  architecture: '2026-09-26',
+
+  // Legal copy tracks legal.updated below; kept in step by hand.
+  '/privacy': '2026-08-20',
+  '/terms': '2026-08-20',
+  '/cookies': '2026-08-20',
+  '/cookies/manage': '2026-08-20',
+};
+
 // True while a legal field is still a placeholder. Pages use it so raw "TODO"
 // text can never reach a visitor, and so an unmistakable notice appears until
 // the real details are filled in.
