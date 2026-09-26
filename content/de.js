@@ -357,6 +357,41 @@ const de = {
         'Wir richten einen Prozess ein, der Beschreibungen über den gesamten Katalog schreibt — in Ihrem Ton, mit Ihrer Terminologie, in der Sprache des Marktes, in dem Sie tatsächlich verkaufen.',
         'Nichts geht ohne Ihre Freigabe raus. Die Kontrolle ist Teil des Prozesses, kein Zusatz.',
       ],
+      // Siehe die Notiz in hr.js — dieselben drei Abschnitte.
+      sections: [
+        {
+          h2: 'Pro Artikel oder pro Katalog',
+          paragraphs: [
+            'Veröffentlichte kroatische Preise für Produkttexte liegen zwischen 5 und 25 € pro Beschreibung, je nach Länge und SEO-Aufwand. Das ist Logik pro Artikel: ein Katalog mit tausend Artikeln kostet 5.000 bis 25.000 €, einer mit dreitausend 15.000 bis 75.000 €.',
+            'Wir rechnen nicht pro Artikel, sondern pro Katalog. Die Arbeit steckt im Einrichten des Prozesses — Ton, Terminologie, Regeln und Kontrolle. Steht der, sind tausend und zehntausend Artikel nicht das Zehnfache an Arbeit.',
+          ],
+          table: {
+            head: ['Artikel', 'Zum Marktpreis (5 – 25 € / Beschreibung)', 'Bei uns'],
+            rows: [
+              ['500', '2.500 – 12.500 €', '1.500 – 4.000 €'],
+              ['1.000', '5.000 – 25.000 €', '1.500 – 4.000 €'],
+              ['5.000', '25.000 – 125.000 €', '4.000 – 12.000 €'],
+            ],
+          },
+          note: 'Über fünftausend Artikel oder mehr als zwei Märkte schätzen wir nach Umfang. Zur Größenordnung: 12.000 Beschreibungen liefen in neun Tagen durch unser eigenes Produkt Lumenta AI — kein Kundenprojekt, sondern ein Maß dafür, dass Ihr Katalog dafür kaum zu groß ist.',
+        },
+        {
+          h2: 'Was Lieferantentexte wirklich anrichten',
+          paragraphs: [
+            'Es gilt als ausgemacht, dass Google doppelte Inhalte bestraft. Tut es nicht. Was es tut, ist schlimmer als eine Strafe, weil es leise passiert: tragen zwanzig Shops dieselbe Beschreibung desselben Lieferanten, wählt Google eine aus und filtert die übrigen aus den Ergebnissen. Keine Meldung, keine Warnung in der Search Console — Sie sind einfach nicht da.',
+            'Für Sie heißt das: auf Ihrer eigenen Produktseite treten Sie mit nichts Eigenem an. Bleibt nur der Preis als Unterscheidung, und diesen Wettbewerb gewinnt, wer die tiefsten Taschen hat.',
+            'Eigene Texte ändern das von Grund auf: die Seite trägt Text, den kein anderer Shop hat, und rankt für die Art, wie Ihre Kunden fragen — nicht für die, in der ein Lieferant seinen Katalog geschrieben hat.',
+          ],
+        },
+        {
+          h2: 'In der Sprache des Marktes geschrieben, nicht übersetzt',
+          paragraphs: [
+            'Eine Übersetzung trägt den Satz, aber nicht die Suchanfrage. Ein deutscher Käufer sucht nicht nach der Übersetzung einer kroatischen Formulierung, sondern nach dem, was Deutsche tatsächlich eingeben — oft ein anderes Wort, ein anderes Suchvolumen und ein anderes Kaufmotiv.',
+            'Deshalb schreiben wir in der Sprache des Marktes, mit dessen Terminologie und dessen Suchanfragen, statt kroatischen Text durch einen Übersetzer zu schieben. Derselbe Artikel kann in Kroatien und in Deutschland anders betont sein, weil er anders gekauft wird.',
+            'Die praktische Folge: zwei Sprachversionen sind nicht die doppelte Arbeit, aber auch nicht ein Auftrag mit angehängter Übersetzung. Der Preis für mehrere Märkte spiegelt das.',
+          ],
+        },
+      ],
       pricing: {
         q: 'Was kosten generierte Produktbeschreibungen?',
         bands: [

@@ -70,6 +70,47 @@ export default function ServiceDetail({ lang, slug }) {
         </section>
       ) : null}
 
+      {/* Prose sections, between the pitch and the price. A service page that
+          only asserts is a brochure; these are where the argument actually
+          gets made, which is also what the query rewards. */}
+      {item.sections?.map((section) => (
+        <section key={section.h2}>
+          <div className="wrap detail">
+            <div className="detail-side"><h2>{section.h2}</h2></div>
+            <div className="detail-body">
+              {section.paragraphs.map((para) => (
+                <p key={para.slice(0, 30)}>{para}</p>
+              ))}
+
+              {section.table ? (
+                <div className="table-wrap">
+                  <table className="figures">
+                    <thead>
+                      <tr>
+                        {section.table.head.map((h) => <th key={h} scope="col">{h}</th>)}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {section.table.rows.map((row) => (
+                        <tr key={row[0]}>
+                          {/* First cell is the row's label, so it is a header
+                              too — otherwise a screen reader reads three bare
+                              numbers with nothing tying them together. */}
+                          <th scope="row">{row[0]}</th>
+                          {row.slice(1).map((cell) => <td key={cell}>{cell}</td>)}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : null}
+
+              {section.note ? <p className="not-for">{section.note}</p> : null}
+            </div>
+          </div>
+        </section>
+      ))}
+
       {item.pricing?.bands?.length ? (
         <section id="cijena">
           <div className="wrap detail">

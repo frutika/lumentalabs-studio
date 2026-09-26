@@ -235,6 +235,27 @@ section + section { border-top: 1px solid var(--line); }
 }
 .not-for strong { color: var(--text); }
 
+/* A small figures table. Wrapped because three money columns do not fit a
+   phone: the wrapper scrolls rather than the whole page. */
+.table-wrap { overflow-x: auto; margin: 1.4rem 0 0; }
+table.figures { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 14.5px; }
+table.figures th,
+table.figures td {
+  text-align: left; padding: .7rem .9rem;
+  border-bottom: 1px solid var(--line); white-space: nowrap;
+}
+table.figures thead th {
+  color: var(--text); font-weight: 600; font-size: 13px;
+  letter-spacing: .04em; text-transform: uppercase;
+  border-bottom-color: var(--line-ui);
+}
+table.figures tbody th { color: var(--text); font-weight: 600; }
+table.figures tbody td { color: var(--muted); }
+/* The last column is ours, so it is the one worth reading. */
+table.figures tbody td:last-child { color: var(--accent); }
+table.figures tbody tr:last-child th,
+table.figures tbody tr:last-child td { border-bottom: 0; }
+
 /* Where to send someone a boundary just turned away. Quieter than a CTA, but
    it has to be findable — it is the only exit that is not the back button. */
 .self-serve { margin-top: .9rem; font-size: 14px; }
