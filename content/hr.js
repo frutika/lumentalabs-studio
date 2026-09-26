@@ -168,6 +168,7 @@ const hr = {
     pdfText:
       'Sva tri vodiča šaljemo na e-mail, u obliku za ispis i dijeljenje. Isti sadržaj koji je ovdje — samo pakiran.',
     pdfCta: 'Pošaljite mi PDF-ove',
+    toolH2: 'Ne želite postavljati ovo sami?',
     relatedH2: 'Radije da to odradimo mi?',
     relatedCta: 'Pogledajte uslugu',
   },

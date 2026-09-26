@@ -227,6 +227,15 @@ Pravila:
     },
     // Links to the service page this guide naturally leads to, so a reader who
     // decides they would rather not do it themselves has somewhere to go.
+    // The rung between "build it yourself" (this guide) and "we build it"
+    // (the service): Lumenta AI has a product-description tool, so a reader who
+    // finds eight steps too much has somewhere cheaper to land. Only where the
+    // tool genuinely covers the guide's job — see guide 03, which has none.
+    tool: {
+      text: 'Lumenta AI, naš vlastiti alat, ima generator opisa proizvoda — ista stvar bez postavljanja n8n-a. Radi kao samoposluga, po kreditima.',
+      cta: 'Otvori Lumenta AI',
+      href: 'https://lumenta.shop',
+    },
     related: 'ecommerce',
   },
   {
@@ -405,6 +414,11 @@ Vrati SAMO ispravan JSON, bez dodatnog teksta.`,
         ['Facebook ili Instagram odbija objavu', 'Provjerite koristite li poslovni račun i važeći Graph API token s dozvolama.'],
         ['Ista objava izašla dvaput', 'Nedostaje korak koji Status mijenja u „objavljeno" nakon uspjeha.'],
       ],
+    },
+    tool: {
+      text: 'Same tekstove objava možete generirati i u Lumenta AI-u — ima alate za Instagram, TikTok i Facebook oglase. Objavljivanje i raspored ostaju na n8n-u, njih alat ne pokriva.',
+      cta: 'Otvori Lumenta AI',
+      href: 'https://lumenta.shop',
     },
     related: 'ai',
   },
