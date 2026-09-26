@@ -106,6 +106,23 @@ export default function ServiceDetail({ lang, slug }) {
               ) : null}
 
               {section.note ? <p className="not-for">{section.note}</p> : null}
+
+              {/* Sources, where a section makes a claim a visitor may want to
+                  check. Plain anchors: they leave the site. */}
+              {section.sources?.length ? (
+                <p className="sources">
+                  {t.sourcesLabel}:{' '}
+                  {section.sources.map((src, i) => (
+                    <span key={src.href}>
+                      {i > 0 ? ' · ' : ''}
+                      <a href={src.href} target="_blank" rel="noopener noreferrer">
+                        {src.text} <span aria-hidden="true">↗</span>
+                        <span className="sr"> ({d.a11y.newTab})</span>
+                      </a>
+                    </span>
+                  ))}
+                </p>
+              ) : null}
             </div>
           </div>
         </section>

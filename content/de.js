@@ -378,9 +378,15 @@ const de = {
         {
           h2: 'Was Lieferantentexte wirklich anrichten',
           paragraphs: [
-            'Es gilt als ausgemacht, dass Google doppelte Inhalte bestraft. Tut es nicht. Was es tut, ist schlimmer als eine Strafe, weil es leise passiert: tragen zwanzig Shops dieselbe Beschreibung desselben Lieferanten, wählt Google eine aus und filtert die übrigen aus den Ergebnissen. Keine Meldung, keine Warnung in der Search Console — Sie sind einfach nicht da.',
+            'Es gilt als ausgemacht, dass Google doppelte Inhalte bestraft. Tut es nicht, und das steht in Googles eigener Dokumentation: \u201eit\u2019s not something that will cause a manual action\u201c. Was Google tut, ist schlimmer als eine Strafe, weil es leise passiert — für denselben Inhalt wählt es eine Version zum Anzeigen und zeigt die anderen nicht. Keine Meldung, keine Warnung in der Search Console; Sie sind einfach nicht da.',
             'Für Sie heißt das: auf Ihrer eigenen Produktseite treten Sie mit nichts Eigenem an. Bleibt nur der Preis als Unterscheidung, und diesen Wettbewerb gewinnt, wer die tiefsten Taschen hat.',
             'Eigene Texte ändern das von Grund auf: die Seite trägt Text, den kein anderer Shop hat, und rankt für die Art, wie Ihre Kunden fragen — nicht für die, in der ein Lieferant seinen Katalog geschrieben hat.',
+          ],
+          // Siehe die Notiz in hr.js — mit Quelle, weil es dem Konsens
+          // widerspricht.
+          sources: [
+            { text: 'Google Search Central — SEO Starter Guide', href: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide' },
+            { text: 'Google Search Central — kanonische URLs', href: 'https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls' },
           ],
         },
         {
@@ -507,6 +513,7 @@ const de = {
     getsH2: 'Was Sie bekommen',
     notForH2: 'Wann das nichts für Sie ist',
     faqH2: 'Häufige Fragen',
+    sourcesLabel: 'Quelle',
     closingH2: 'Klingt nach Ihrem Problem?',
     closingLede: 'Beschreiben Sie es in einfachen Worten. Sind wir nicht die Richtigen dafür, sagen wir es Ihnen — diese Antwort ist kostenlos.',
     closingCta: 'Schreiben Sie uns',
