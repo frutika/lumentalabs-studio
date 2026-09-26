@@ -1,5 +1,3 @@
-import { PAKET_IDS } from '../../../content/paketi';
-
 export const runtime = 'nodejs';
 
 /**
@@ -67,7 +65,6 @@ export async function POST(request) {
   const ime = String(body.ime ?? '').trim();
   const email = String(body.email ?? '').trim();
   const poruka = String(body.poruka ?? '').trim();
-  const paket = PAKET_IDS.includes(body.paket) ? body.paket : null;
   const locale = ['hr', 'en', 'de'].includes(body.locale) ? body.locale : 'en';
 
   if (ime.length < 2 || ime.length > 120) return fail('invalid_name', 400);
@@ -105,7 +102,6 @@ export async function POST(request) {
         ime,
         email,
         poruka: poruka || null,
-        paket,
         locale,
         user_agent: request.headers.get('user-agent')?.slice(0, 400) ?? null,
       }),
@@ -138,8 +134,8 @@ export async function POST(request) {
           from: 'Lumenta Labs <web@lumentalabs.studio>',
           to: ['hello@lumentalabs.studio'],
           reply_to: email,
-          subject: paket ? `Upit: ${paket} — ${ime}` : `Upit — ${ime}`,
-          text: [`Ime: ${ime}`, `E-mail: ${email}`, `Paket: ${paket ?? '—'}`, `Jezik: ${locale}`, '', poruka || '(bez poruke)'].join('\n'),
+          subject: `Upit — ${ime}`,
+          text: [`Ime: ${ime}`, `E-mail: ${email}`, `Jezik: ${locale}`, '', poruka || '(bez poruke)'].join('\n'),
         }),
       });
       if (!notifyRes.ok) {

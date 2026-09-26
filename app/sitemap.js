@@ -14,12 +14,10 @@ import {
 const TRANSLATED = ['/', '/services', '/services/video', '/work', '/contact'];
 
 // Pages published in one language only, listed once and without alternates.
-// Driven by localesFor rather than a hardcoded language, because the Booster is
-// Croatian and the legal pages are English — a list that assumed English left
-// the Booster out of the sitemap entirely, which is how the one page on the
-// site that quotes a price stayed unindexed.
+// Driven by localesFor rather than a hardcoded language: the legal pages are
+// English today, but a list that assumes English silently drops anything
+// published in one of the other two.
 const SINGLE_LOCALE = [
-  { path: '/ai-content-booster', priority: 0.8 },
   { path: '/privacy', priority: 0.3 },
   { path: '/terms', priority: 0.3 },
   { path: '/cookies', priority: 0.3 },

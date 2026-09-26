@@ -369,6 +369,12 @@ const de = {
               'Eine neue Artikelgruppe, die wie die bestehenden klingen muss',
             ],
             boundary: 'Bei hundert Artikeln und einer Textkraft, die mitkommt, brauchen Sie das nicht.',
+            // Siehe die Notiz in hr.js — wohin stattdessen, nicht nur ein Nein.
+            selfServe: {
+              text: 'Kleinerer Katalog und Sie möchten es selbst machen? Lumenta AI ist unser eigenes Werkzeug für Produkttexte — Selbstbedienung, ohne uns im Ablauf.',
+              cta: 'Lumenta AI öffnen',
+              href: 'https://lumenta.shop',
+            },
           },
           {
             price: '4.000 – 12.000 €',
@@ -513,7 +519,6 @@ const de = {
       messageHint: 'In normalen Worten. Falls es schon etwas gibt, schreiben Sie, was daran nicht stimmt.',
       submit: 'Anfrage senden',
       sending: 'Wird gesendet…',
-      selected: 'Gewähltes Paket',
       okTitle: 'Angekommen.',
       okBody: 'Wir melden uns innerhalb von 24 Stunden.',
       failed: 'Senden fehlgeschlagen.',

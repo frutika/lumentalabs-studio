@@ -235,6 +235,11 @@ section + section { border-top: 1px solid var(--line); }
 }
 .not-for strong { color: var(--text); }
 
+/* Where to send someone a boundary just turned away. Quieter than a CTA, but
+   it has to be findable — it is the only exit that is not the back button. */
+.self-serve { margin-top: .9rem; font-size: 14px; }
+.self-serve a { color: var(--accent); }
+
 /* One price band: the figure, what it is, examples, and where the line to the
    next band runs. Separated so three bands read as three options rather than
    one wall of text. */
@@ -404,45 +409,10 @@ a.card.linked.cover-card { padding: 0; overflow: hidden; display: flex; flex-dir
 .field textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
 .form button[disabled] { opacity: .55; cursor: not-allowed; filter: none; }
-.form-selected { color: var(--muted); font-size: 15px; margin: 0 0 1.4rem; }
-.form-selected strong { color: var(--text); }
 .form-alt { font-size: 14px; color: var(--muted); margin: 1rem 0 0; }
 .form-done { max-width: 34rem; margin-top: 2rem; }
 .form-done strong { display: block; margin-bottom: .3rem; }
 .form-done p { color: var(--muted); margin: 0; }
-
-/* Package picker. The whole card is the label, so the click target is the card
-   rather than the 16px radio inside it. */
-.picker { margin-top: 1.6rem; }
-.picker-grid { border: 0; padding: 0; margin: 0; }
-.picker-card { cursor: pointer; border-color: var(--line-ui); }
-.picker-card.on { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
-.picker-card:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
-.picker-head { display: flex; align-items: center; gap: .6rem; margin-bottom: .8rem; }
-.picker-head input { accent-color: var(--accent); width: 1.05rem; height: 1.05rem; flex: none; }
-.picker-head .card-title { margin: 0; flex: 1; }
-.picker-go { margin-top: 1.8rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-.picker-go .section-lede { margin: 0; }
-
-/* One word per card, so the billing period is visible where the price is and
-   not only in the note below the grid. */
-.picker-billing {
-  display: block; margin: -.4rem 0 .9rem 1.65rem;
-  font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted);
-}
-/* Heading above a list inside a package card: separates setup from what
-   recurs, so the two are not read as one undifferentiated promise. */
-.picker-group {
-  display: block; margin: 1.1rem 0 .6rem;
-  font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase;
-  color: var(--text); font-weight: 600;
-}
-.picker-group:first-of-type { margin-top: 0; }
-
-/* The note carries the whole model, including VAT. .not-for already draws the
-   dashed rule that separates it from the cards above. */
-.picker-note { margin-top: 1.6rem; max-width: 68ch; }
-.picker-note p.not-for { margin: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

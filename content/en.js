@@ -300,6 +300,12 @@ const en = {
               'A new product group that has to read like the existing ones',
             ],
             boundary: 'If you have a hundred items and a copywriter who can keep up, you do not need this.',
+            // See the note in hr.js — where to go instead, not just a no.
+            selfServe: {
+              text: 'Smaller catalogue and happy to run it yourself? Lumenta AI is our own tool for writing descriptions — self-serve, with us out of the loop.',
+              cta: 'Open Lumenta AI',
+              href: 'https://lumenta.shop',
+            },
           },
           {
             price: '€4,000 – €12,000',
@@ -465,7 +471,6 @@ const en = {
       messageHint: 'In plain words. If something already exists, say what is wrong with it.',
       submit: 'Send enquiry',
       sending: 'Sending…',
-      selected: 'Selected package',
       okTitle: 'Received.',
       okBody: 'We reply within 24 hours.',
       failed: 'Sending failed.',

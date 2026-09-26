@@ -7,7 +7,6 @@ const hr = {
     services: 'Usluge',
     work: 'Radovi',
     vodici: 'Vodiči',
-    aiBooster: 'AI Content Booster',
     contact: 'Kontakt',
   },
 
@@ -404,6 +403,14 @@ const hr = {
               'Nova grupa artikala koju treba opisati u istom tonu kao postojeće',
             ],
             boundary: 'Ako imate stotinjak artikala i copywritera koji ih stigne obraditi, ovo vam ne treba.',
+            // Qualifying someone out is only half the job; this says where to
+            // go instead. Lumenta AI is our own tool and does the same thing
+            // self-serve, without us in the loop.
+            selfServe: {
+              text: 'Manji katalog i želite to sami? Lumenta AI je naš alat koji piše opise — samoposluga, bez nas u procesu.',
+              cta: 'Otvori Lumenta AI',
+              href: 'https://lumenta.shop',
+            },
           },
           {
             price: '4.000 – 12.000 €',
@@ -551,7 +558,6 @@ const hr = {
       messageHint: 'Običnim riječima. Ako već nešto postoji, napišite što s time ne valja.',
       submit: 'Pošalji upit',
       sending: 'Šaljem…',
-      selected: 'Odabrani paket',
       okTitle: 'Primljeno.',
       okBody: 'Javljamo se u roku od 24 sata.',
       failed: 'Slanje nije uspjelo.',
