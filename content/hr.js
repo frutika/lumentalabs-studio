@@ -150,9 +150,13 @@ const hr = {
 
   vodiciPage: {
     eyebrow: 'Besplatno',
-    h1: 'Tri vodiča o automatizaciji, napisana da ih primijenite sami',
+    // Not "tri vodiča" while fewer than three are published here: the page
+    // would be arguing with the list underneath it. The PDF series is still
+    // three, and the note below says so.
+    h1: 'Vodiči o automatizaciji, napisani da ih primijenite sami',
     lede:
       'Ono što inače postavljamo klijentima, razloženo korak po korak. Cijeli sadržaj je ovdje, besplatno i bez upisivanja e-maila — PDF je samo pakirana verzija istoga.',
+    note: 'Serija ima tri vodiča. Ostali se objavljuju ovdje kako budu gotovi, a sva tri su već dostupna kao PDF.',
     read: 'Otvori vodič',
     closingH2: 'Ne isplati vam se raditi to sami?',
     closingLede: 'Iste ovakve automatizacije postavljamo po mjeri. Opišite što vam treba.',

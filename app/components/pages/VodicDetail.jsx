@@ -127,7 +127,10 @@ export default function VodicDetail({ lang, slug }) {
             <ol className="toc">
               {g.steps.map((step) => (
                 <li key={step.num}>
-                  <a href={`#${step.num}`}>{step.h}</a>
+                  {/* Prefixed: an id starting with a digit is not a valid CSS
+                      identifier, so querySelector('#01') throws even though the
+                      browser's own fragment jump works. */}
+                  <a href={`#korak-${step.num}`}>{step.h}</a>
                 </li>
               ))}
             </ol>
@@ -136,7 +139,7 @@ export default function VodicDetail({ lang, slug }) {
       </section>
 
       {g.steps.map((step) => (
-        <section id={step.num} key={step.num}>
+        <section id={`korak-${step.num}`} key={step.num}>
           <div className="wrap detail">
             <div className="detail-side">
               <span className="num">{step.num}</span>

@@ -18,6 +18,7 @@ export default function VodiciPage({ lang }) {
           <p className="eyebrow">{t.eyebrow}</p>
           <h1 className="page-title">{t.h1}</h1>
           <p className="lede">{t.lede}</p>
+          {t.note ? <p className="stamp">{t.note}</p> : null}
         </div>
       </header>
 

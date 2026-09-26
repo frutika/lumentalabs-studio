@@ -238,11 +238,13 @@ section + section { border-top: 1px solid var(--line); }
 /* A small figures table. Wrapped because three money columns do not fit a
    phone: the wrapper scrolls rather than the whole page. */
 .table-wrap { overflow-x: auto; margin: 1.4rem 0 0; }
-table.figures { border-collapse: collapse; width: 100%; min-width: 30rem; font-size: 14.5px; }
+/* Base: cells wrap. Guide tables hold sentences, and a clipped sentence is
+   worse than a tall row. */
+table.figures { border-collapse: collapse; width: 100%; font-size: 14.5px; }
 table.figures th,
 table.figures td {
   text-align: left; padding: .7rem .9rem;
-  border-bottom: 1px solid var(--line); white-space: nowrap;
+  border-bottom: 1px solid var(--line); vertical-align: top;
 }
 table.figures thead th {
   color: var(--text); font-weight: 600; font-size: 13px;
@@ -251,8 +253,14 @@ table.figures thead th {
 }
 table.figures tbody th { color: var(--text); font-weight: 600; }
 table.figures tbody td { color: var(--muted); }
-/* The last column is ours, so it is the one worth reading. */
-table.figures tbody td:last-child { color: var(--accent); }
+
+/* The price comparison is the one table that must not wrap — "1.500 – 4.000 €"
+   broken across two lines stops being one figure — and the one where the last
+   column means "ours", so it earns the accent. */
+table.figures.compare { min-width: 30rem; }
+table.figures.compare th,
+table.figures.compare td { white-space: nowrap; }
+table.figures.compare tbody td:last-child { color: var(--accent); }
 table.figures tbody tr:last-child th,
 table.figures tbody tr:last-child td { border-bottom: 0; }
 
