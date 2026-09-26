@@ -78,11 +78,14 @@ export default function VideoPage({ lang }) {
           <div className="wrap detail">
             <div className="detail-side"><h2>{v.pricingH2}</h2></div>
             <div className="detail-body">
-              <ul className="ticks">
-                {v.pricing.map(([label, value]) => (
-                  <li key={label}><strong>{value}</strong> — {label}</li>
-                ))}
-              </ul>
+              {v.pricing.map((band) => (
+                <div key={band.name} className="band">
+                  <p className="detail-sub">
+                    <strong>{band.price}</strong> — {band.name}
+                  </p>
+                  <p>{band.body}</p>
+                </div>
+              ))}
               <p className="not-for">{v.vatNote}</p>
             </div>
           </div>

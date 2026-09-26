@@ -260,9 +260,39 @@ const hr = {
       pricing: {
         q: 'Koliko košta izrada web aplikacije?',
         bands: [
-          ['Interni alat ili dashboard s korisnicima', '6.000 – 12.000 €'],
-          ['Platforma s ulogama i integracijama', '12.000 – 28.000 €'],
-          ['Višekorisnički sustav, real-time, ERP/CRM', 'od 28.000 €'],
+          {
+            price: '6.000 – 12.000 €',
+            name: 'Alat za jedan tim',
+            body: 'Aplikacija koju koristi jedan tim unutar firme. Ima prijavu, ali nema složene uloge ni korisnike izvan firme. Jedna namjena, odrađena do kraja.',
+            examples: [
+              'Evidencija radnih naloga koju terenski tim popunjava s mobitela',
+              'Program za ponude koji zamjenjuje Excel s deset kartica',
+              'Pregled koji spaja podatke iz dva sustava na jedan ekran',
+            ],
+            boundary: 'Čim zatrebaju uloge i ovlasti ili pristup ljudima izvan firme, riječ je o sljedećem pojasu.',
+          },
+          {
+            price: '12.000 – 28.000 €',
+            name: 'Platforma s vanjskim korisnicima',
+            body: 'Sustav kojim se koriste i ljudi izvan vaše firme — klijenti, partneri, dobavljači. Uloge i ovlasti, i razmjena podataka s tuđim sustavima.',
+            examples: [
+              'Portal na kojem klijenti prate status svojih naloga',
+              'Sustav rezervacija s naplatom i potvrdama',
+              'Aplikacija koja podatke vuče iz vašeg ERP-a i vraća ih natrag',
+            ],
+            boundary: 'Ovdje je najviše naših projekata.',
+          },
+          {
+            price: 'od 28.000 €',
+            name: 'Sustav na kojem firma radi',
+            body: 'Kad aplikacija nije pomoćni alat, nego mjesto na kojem se posao odvija. Više tipova korisnika, promjene u stvarnom vremenu, integracije s više sustava.',
+            examples: [
+              'Platforma s hijerarhijom pristupa i tisućama korisnika',
+              'Usklađivanje zaliha između više lokacija u stvarnom vremenu',
+              'Sustav koji spaja ERP, CRM i naplatu u jedan tok',
+            ],
+            boundary: 'Ovakav projekt uvijek počinje razgovorom o opsegu, ne cijenom.',
+          },
         ],
         min: 6000,
       },
@@ -298,9 +328,38 @@ const hr = {
       pricing: {
         q: 'Koliko košta AI automatizacija procesa?',
         bands: [
-          ['Jedan proces', '3.500 – 8.000 €'],
-          ['Više procesa, ugrađeno u postojeći sustav', '8.000 – 20.000 €'],
-          ['Vlastiti alat', 'od 20.000 €'],
+          {
+            price: '3.500 – 8.000 €',
+            name: 'Jedan proces',
+            body: 'Jedan zadatak koji se ponavlja svaki tjedan, automatiziran od početka do kraja i izmjeren prije i poslije.',
+            examples: [
+              'Prepisivanje podataka iz jednog sustava u drugi',
+              'Mjesečni izvještaj koji netko slaže ručno',
+              'Razvrstavanje upita iz inboxa i priprema odgovora',
+            ],
+            boundary: 'Ako niste sigurni koji zadatak prvi, to je razgovor od pola sata i besplatan je.',
+          },
+          {
+            price: '8.000 – 20.000 €',
+            name: 'Više procesa u vašem sustavu',
+            body: 'Nekoliko povezanih zadataka, ugrađenih u sučelje koje tim već otvara svako jutro. Nema novog programa za učiti.',
+            examples: [
+              'Obrada dokumenata od zaprimanja do odobrenja',
+              'Dopunjavanje CRM-a iz e-maila i poziva, bez ručnog unosa',
+              'Priprema ponuda iz podataka koje već imate u sustavu',
+            ],
+            boundary: '',
+          },
+          {
+            price: 'od 20.000 €',
+            name: 'Vlastiti alat',
+            body: 'Kad gotovo rješenje ne postoji ili ne radi kako vama treba, pa se gradi vaš — i ostaje vaš.',
+            examples: [
+              'Interni asistent nad vašom bazom znanja i dokumentima',
+              'Alat koji tim koristi svaki dan i koji nitko drugi nema',
+            ],
+            boundary: '',
+          },
         ],
         min: 3500,
       },
@@ -336,8 +395,26 @@ const hr = {
       pricing: {
         q: 'Koliko košta generiranje opisa proizvoda?',
         bands: [
-          ['Do tisuću artikala, jedan jezik', '1.500 – 4.000 €'],
-          ['Cijeli katalog, više jezika', '4.000 – 12.000 €'],
+          {
+            price: '1.500 – 4.000 €',
+            name: 'Do tisuću artikala, jedan jezik',
+            body: 'Postavljamo proces na vaš ton i vaše nazivlje, pa prođemo katalog. Vi pregledavate i odobravate prije objave.',
+            examples: [
+              'Katalog bez opisa, ili s opisima prepisanim od dobavljača',
+              'Nova grupa artikala koju treba opisati u istom tonu kao postojeće',
+            ],
+            boundary: 'Ako imate stotinjak artikala i copywritera koji ih stigne obraditi, ovo vam ne treba.',
+          },
+          {
+            price: '4.000 – 12.000 €',
+            name: 'Cijeli katalog, više jezika',
+            body: 'Isti proces kroz cijeli katalog i na svakom tržištu na kojem prodajete — pisano na tom jeziku, ne prevedeno naknadno.',
+            examples: [
+              'Tisuće artikala na dva ili više tržišta',
+              'Kategorije i tekstovi kampanja uz same opise',
+            ],
+            boundary: '',
+          },
         ],
         min: 1500,
         max: 12000,
@@ -374,8 +451,26 @@ const hr = {
       pricing: {
         q: 'Koliko košta održavanje aplikacije mjesečno?',
         bands: [
-          ['Jedna aplikacija, nadzor i backupi', '350 – 900 € / mj'],
-          ['Više sustava, dogovoreno vrijeme odziva', '900 – 2.500 € / mj'],
+          {
+            price: '350 – 900 € / mj',
+            name: 'Jedna aplikacija',
+            body: 'Nadzor koji radi i kad nitko ne gleda, noćni backupi s provjerom ispravnosti, nadogradnje prije nego što postanu problem, i jedan kontakt kad nešto stane.',
+            examples: [
+              'Aplikacija koju smo gradili mi',
+              'Postojeći sustav koji preuzimamo nakon pregleda',
+            ],
+            boundary: 'Ovo nije održavanje web stranice. Ako trebate ažuriranje pluginova na WordPressu, jeftinije ćete proći drugdje.',
+          },
+          {
+            price: '900 – 2.500 € / mj',
+            name: 'Više sustava',
+            body: 'Nekoliko aplikacija ili okruženja pod istim nadzorom, s dogovorenim vremenom odziva i planom što se radi kad nešto padne.',
+            examples: [
+              'Produkcija i testno okruženje uz nekoliko servisa',
+              'Više aplikacija koje dijele bazu ili prijavu',
+            ],
+            boundary: 'Ako imate vlastiti tehnički tim, radimo samo dio koji vam nedostaje.',
+          },
         ],
         min: 350,
         max: 2500,
@@ -485,9 +580,21 @@ const hr = {
     // language after it is close to free. One band covering "up to three
     // languages" charged the same for one as for three.
     pricing: [
-      ['Jedan film, jedan jezik: scenarij, glas, miks, titlovi', '450 – 900 €'],
-      ['Svaki dodatni jezik', '+150 – 300 €'],
-      ['Više filmova, po opsegu', 'od 1.800 €'],
+      {
+        price: '450 – 900 €',
+        name: 'Jedan film, jedan jezik',
+        body: 'Scenarij, glas, miks ispod zvuka koji snimka već nosi, i titlovi u formatu koji odredište prihvaća. Vaša se slika ne kodira ponovno.',
+      },
+      {
+        price: '+150 – 300 €',
+        name: 'Svaki dodatni jezik',
+        body: 'Isti film na još jednom tržištu. Prvi prolaz nosi scenarij i miks, pa svaki jezik nakon njega košta znatno manje.',
+      },
+      {
+        price: 'od 1.800 €',
+        name: 'Više filmova',
+        body: 'Serija snimaka ili cijeli katalog materijala, po opsegu.',
+      },
     ],
     vatNote: 'Sve cijene su bez PDV-a. Cijena ovisi o duljini snimke; dodatni jezici naplaćuju se po komadu.',
     h1: 'Jedan film. Svako tržište na kojem prodajete.',

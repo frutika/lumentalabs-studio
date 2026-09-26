@@ -225,9 +225,39 @@ const de = {
       pricing: {
         q: 'Was kostet eine individuelle Webanwendung?',
         bands: [
-          ['Internes Werkzeug oder Dashboard mit Nutzern', '6.000 – 12.000 €'],
-          ['Plattform mit Rollen und Integrationen', '12.000 – 28.000 €'],
-          ['Mehrbenutzersystem, Echtzeit, ERP/CRM', 'ab 28.000 €'],
+          {
+            price: '6.000 – 12.000 €',
+            name: 'Ein Werkzeug für ein Team',
+            body: 'Eine Anwendung, die ein Team im Haus nutzt. Mit Login, aber ohne komplexe Rollen und ohne Nutzer von außen. Eine Aufgabe, richtig gelöst.',
+            examples: [
+              'Auftragserfassung, die das Außenteam per Handy ausfüllt',
+              'Ein Angebotsrechner, der die Tabelle mit zehn Blättern ersetzt',
+              'Eine Ansicht, die Daten aus zwei Systemen auf einem Bildschirm zusammenführt',
+            ],
+            boundary: 'Sobald Rollen und Rechte oder Zugang für Externe dazukommen, ist es die nächste Stufe.',
+          },
+          {
+            price: '12.000 – 28.000 €',
+            name: 'Plattform mit externen Nutzern',
+            body: 'Ein System, das auch Menschen außerhalb Ihres Hauses nutzen — Kunden, Partner, Lieferanten. Rollen und Rechte, und Datenaustausch mit fremden Systemen.',
+            examples: [
+              'Ein Portal, in dem Kunden den Status ihrer Aufträge verfolgen',
+              'Ein Buchungssystem mit Zahlung und Bestätigungen',
+              'Eine Anwendung, die Daten aus Ihrem ERP zieht und zurückschreibt',
+            ],
+            boundary: 'Hier liegen die meisten unserer Projekte.',
+          },
+          {
+            price: 'ab 28.000 €',
+            name: 'Das System, auf dem die Firma läuft',
+            body: 'Wenn die Anwendung kein Hilfsmittel ist, sondern der Ort, an dem die Arbeit passiert. Mehrere Nutzertypen, Änderungen in Echtzeit, Integrationen mit mehreren Systemen.',
+            examples: [
+              'Eine Plattform mit Zugriffshierarchie und tausenden Nutzern',
+              'Bestandsabgleich über mehrere Standorte in Echtzeit',
+              'Ein System, das ERP, CRM und Abrechnung zu einem Ablauf verbindet',
+            ],
+            boundary: 'So ein Projekt beginnt mit einem Gespräch über den Umfang, nicht mit einem Preis.',
+          },
         ],
         min: 6000,
       },
@@ -263,9 +293,38 @@ const de = {
       pricing: {
         q: 'Was kostet KI-Prozessautomatisierung?',
         bands: [
-          ['Ein Prozess', '3.500 – 8.000 €'],
-          ['Mehrere Prozesse, in Ihr System eingebaut', '8.000 – 20.000 €'],
-          ['Ein eigenes Werkzeug', 'ab 20.000 €'],
+          {
+            price: '3.500 – 8.000 €',
+            name: 'Ein Prozess',
+            body: 'Eine Aufgabe, die sich jede Woche wiederholt — durchgehend automatisiert und vorher wie nachher gemessen.',
+            examples: [
+              'Daten von einem System in ein anderes übertragen',
+              'Ein Monatsbericht, den jemand von Hand zusammenstellt',
+              'Anfragen im Postfach sortieren und Antworten vorbereiten',
+            ],
+            boundary: 'Wenn unklar ist, welche Aufgabe zuerst: das ist ein halbstündiges Gespräch und kostenlos.',
+          },
+          {
+            price: '8.000 – 20.000 €',
+            name: 'Mehrere Prozesse in Ihrem System',
+            body: 'Einige zusammenhängende Aufgaben, eingebaut in die Oberfläche, die das Team ohnehin jeden Morgen öffnet. Nichts Neues zu lernen.',
+            examples: [
+              'Dokumente vom Eingang bis zur Freigabe',
+              'Ein CRM, das sich aus E-Mails und Anrufen selbst füllt',
+              'Angebote aus Daten, die Sie schon im System haben',
+            ],
+            boundary: '',
+          },
+          {
+            price: 'ab 20.000 €',
+            name: 'Ein eigenes Werkzeug',
+            body: 'Wenn es nichts von der Stange gibt oder nichts so funktioniert, wie Sie es brauchen — dann wird Ihres gebaut und bleibt Ihres.',
+            examples: [
+              'Ein interner Assistent über Ihrer Wissensbasis und Ihren Dokumenten',
+              'Ein Werkzeug, das das Team täglich nutzt und das kein anderer hat',
+            ],
+            boundary: '',
+          },
         ],
         min: 3500,
       },
@@ -301,8 +360,26 @@ const de = {
       pricing: {
         q: 'Was kosten generierte Produktbeschreibungen?',
         bands: [
-          ['Bis tausend Artikel, eine Sprache', '1.500 – 4.000 €'],
-          ['Ganzer Katalog, mehrere Sprachen', '4.000 – 12.000 €'],
+          {
+            price: '1.500 – 4.000 €',
+            name: 'Bis tausend Artikel, eine Sprache',
+            body: 'Wir stellen den Prozess auf Ihren Ton und Ihre Terminologie ein und gehen den Katalog durch. Sie prüfen und geben frei, bevor etwas erscheint.',
+            examples: [
+              'Ein Katalog ohne Beschreibungen oder mit denen des Lieferanten',
+              'Eine neue Artikelgruppe, die wie die bestehenden klingen muss',
+            ],
+            boundary: 'Bei hundert Artikeln und einer Textkraft, die mitkommt, brauchen Sie das nicht.',
+          },
+          {
+            price: '4.000 – 12.000 €',
+            name: 'Ganzer Katalog, mehrere Sprachen',
+            body: 'Derselbe Prozess über den gesamten Katalog und jeden Markt, in dem Sie verkaufen — in dieser Sprache geschrieben, nicht nachträglich übersetzt.',
+            examples: [
+              'Tausende Artikel in zwei oder mehr Märkten',
+              'Kategorie- und Kampagnentexte neben den Beschreibungen',
+            ],
+            boundary: '',
+          },
         ],
         min: 1500,
         max: 12000,
@@ -339,8 +416,26 @@ const de = {
       pricing: {
         q: 'Was kostet die monatliche Wartung?',
         bands: [
-          ['Eine Anwendung, Monitoring und Backups', '350 – 900 € / Mon.'],
-          ['Mehrere Systeme, vereinbarte Reaktionszeit', '900 – 2.500 € / Mon.'],
+          {
+            price: '350 – 900 € / Mon.',
+            name: 'Eine Anwendung',
+            body: 'Monitoring, das auch läuft, wenn niemand hinsieht, nächtliche Backups mit Integritätsprüfung, Updates bevor sie zum Problem werden, und ein Ansprechpartner, wenn etwas stehen bleibt.',
+            examples: [
+              'Eine von uns gebaute Anwendung',
+              'Ein bestehendes System, das wir nach einer Sichtung übernehmen',
+            ],
+            boundary: 'Das ist keine Website-Wartung. Für WordPress-Plugin-Updates zahlen Sie anderswo weniger.',
+          },
+          {
+            price: '900 – 2.500 € / Mon.',
+            name: 'Mehrere Systeme',
+            body: 'Mehrere Anwendungen oder Umgebungen unter derselben Aufsicht, mit vereinbarter Reaktionszeit und einem Plan für den Ausfall.',
+            examples: [
+              'Produktion und Staging über mehrere Dienste',
+              'Mehrere Anwendungen, die Datenbank oder Login teilen',
+            ],
+            boundary: 'Wenn Sie ein eigenes technisches Team haben, übernehmen wir nur den fehlenden Teil.',
+          },
         ],
         min: 350,
         max: 2500,
@@ -444,9 +539,21 @@ const de = {
     pricingH2: 'Was es kostet',
     // Siehe die Notiz in hr.js — pro Sprache statt als Paket.
     pricing: [
-      ['Ein Film, eine Sprache: Skript, Stimme, Mischung, Untertitel', '450 – 900 €'],
-      ['Jede weitere Sprache', '+150 – 300 €'],
-      ['Mehrere Filme, nach Umfang', 'ab 1.800 €'],
+      {
+        price: '450 – 900 €',
+        name: 'Ein Film, eine Sprache',
+        body: 'Skript, Stimme, Mischung unter dem Ton, den das Material schon trägt, und Untertitel im Format, das die Plattform akzeptiert. Ihr Bild wird nicht neu kodiert.',
+      },
+      {
+        price: '+150 – 300 €',
+        name: 'Jede weitere Sprache',
+        body: 'Derselbe Film in einem weiteren Markt. Der erste Durchgang trägt Skript und Mischung, jede Sprache danach kostet deutlich weniger.',
+      },
+      {
+        price: 'ab 1.800 €',
+        name: 'Mehrere Filme',
+        body: 'Eine Reihe von Filmen oder ein ganzes Materialarchiv, nach Umfang.',
+      },
     ],
     vatNote: 'Alle Preise zzgl. MwSt. Der Preis hängt von der Laufzeit ab; weitere Sprachen werden je Sprache berechnet.',
     h1: 'Ein Film. Jeder Markt, in dem Sie verkaufen.',
