@@ -93,6 +93,17 @@ export default function ServiceDetail({ lang, slug }) {
                     </ul>
                   ) : null}
                   {band.boundary ? <p className="not-for">{band.boundary}</p> : null}
+                  {/* Where to go instead, on a band whose boundary turns
+                      somebody away. A plain anchor: it leaves the site. */}
+                  {band.selfServe ? (
+                    <p className="self-serve">
+                      {band.selfServe.text}{' '}
+                      <a href={band.selfServe.href} target="_blank" rel="noopener noreferrer">
+                        {band.selfServe.cta} <span aria-hidden="true">↗</span>
+                        <span className="sr"> ({d.a11y.newTab})</span>
+                      </a>
+                    </p>
+                  ) : null}
                 </div>
               ))}
               <p className="not-for">{t.vatNote}</p>

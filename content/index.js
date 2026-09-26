@@ -13,15 +13,14 @@ export const getDict = (lang) => dicts[lang] || en;
 export const isLocale = (lang) => LOCALES.includes(lang);
 
 /**
- * Not every page exists in every language. The legal pages are English-only and
- * the booster is a Croatian-only offer, so both the hreflang cluster and the
- * language switcher have to narrow to what actually got built — otherwise they
- * advertise URLs that 404, and x-default points at a page that isn't there.
+ * Not every page exists in every language. The legal pages are English-only, so
+ * both the hreflang cluster and the language switcher have to narrow to what
+ * actually got built — otherwise they advertise URLs that 404, and x-default
+ * points at a page that isn't there.
  *
  * Keyed by the unprefixed path, which is what both callers already work with.
  */
 const ROUTE_LOCALES = {
-  '/ai-content-booster': ['hr'],
   '/privacy': ['en'],
   '/terms': ['en'],
   '/cookies': ['en'],

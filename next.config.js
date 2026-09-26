@@ -24,6 +24,16 @@ module.exports = {
         destination: 'https://lumentalabs.studio/:path*',
         permanent: true,
       },
+      {
+        // The AI Content Booster was a service the studio performed by hand,
+        // and Lumenta AI already does the same job as software the client runs
+        // themselves. The URL was never indexed, but it was shared, so it
+        // lands on the case study rather than on a 404 — on this domain, with
+        // the context, instead of dropping someone straight onto lumenta.shop.
+        source: '/hr/ai-content-booster',
+        destination: '/hr/work/lumenta-ai',
+        permanent: true,
+      },
     ];
   },
 
