@@ -259,6 +259,15 @@ table.figures tbody tr:last-child td { border-bottom: 0; }
 /* Where to send someone a boundary just turned away. Quieter than a CTA, but
    it has to be findable — it is the only exit that is not the back button. */
 .self-serve { margin-top: .9rem; font-size: 14px; }
+
+/* Citation line under a section that makes a checkable claim. */
+.detail-body p.sources {
+  margin-top: 1.2rem; padding-top: 1rem;
+  border-top: 1px dashed var(--line);
+  font-size: 13.5px; color: var(--muted);
+}
+.sources a { color: var(--muted); }
+.sources a:hover { color: var(--accent); }
 .self-serve a { color: var(--accent); }
 
 /* One price band: the figure, what it is, examples, and where the line to the

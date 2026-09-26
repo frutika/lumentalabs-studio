@@ -417,9 +417,16 @@ const hr = {
         {
           h2: 'Što opisi dobavljača stvarno rade',
           paragraphs: [
-            'Uvriježeno je da Google kažnjava duplicirani sadržaj. Ne kažnjava. Ono što radi je gore od kazne jer je tiho: kad dvadeset trgovina nosi isti opis od istog dobavljača, Google odabere jednu i ostale filtrira iz rezultata. Nema poruke, nema upozorenja u Search Consoleu — samo vas nema.',
+            'Uvriježeno je da Google kažnjava duplicirani sadržaj. Ne kažnjava, i to stoji u njihovoj vlastitoj dokumentaciji: „it\u2019s not something that will cause a manual action”. Ono što Google radi je gore od kazne jer je tiho — za isti sadržaj odabere jednu verziju koju će pokazati, a ostale ne pokazuje. Nema poruke, nema upozorenja u Search Consoleu; samo vas nema.',
             'Za vas to znači da na svojoj vlastitoj stranici proizvoda ne nastupate s ničim svojim. Jedino po čemu se možete razlikovati je cijena, a to je natjecanje koje dobiva onaj s najdubljim džepom.',
             'Vlastiti opis to mijenja iz temelja: stranica dobiva tekst koji nijedna druga trgovina nema, i počinje rangirati za način na koji vaši kupci pitaju, a ne onako kako je dobavljač napisao katalog.',
+          ],
+          // Sourced, because this section contradicts what most Croatian pages
+          // on the subject say. A claim that goes against the consensus has to
+          // stand on a document, not on us.
+          sources: [
+            { text: 'Google Search Central — SEO Starter Guide', href: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide' },
+            { text: 'Google Search Central — kanonski URL-ovi', href: 'https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls' },
           ],
         },
         {
@@ -551,6 +558,7 @@ const hr = {
     getsH2: 'Što dobivate',
     notForH2: 'Kad ovo nije za vas',
     faqH2: 'Česta pitanja',
+    sourcesLabel: 'Izvor',
     closingH2: 'Zvuči kao vaš problem?',
     closingLede: 'Opišite ga običnim riječima. Ako nismo pravi ljudi za to, reći ćemo vam — taj odgovor je besplatan.',
     closingCta: 'Javite nam se',

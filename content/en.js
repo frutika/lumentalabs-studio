@@ -309,9 +309,15 @@ const en = {
         {
           h2: 'What supplier descriptions actually do',
           paragraphs: [
-            'The received wisdom is that Google penalises duplicate content. It does not. What it does is worse than a penalty because it is silent: when twenty shops carry the same description from the same supplier, Google picks one and filters the rest out of results. No message, no warning in Search Console — you are simply not there.',
+            'The received wisdom is that Google penalises duplicate content. It does not, and that is in their own documentation: \u201cit\u2019s not something that will cause a manual action\u201d. What Google does is worse than a penalty because it is silent — for the same content it picks one version to show and does not show the others. No message, no warning in Search Console; you are simply not there.',
             'What that means for you is that on your own product page you turn up with nothing of your own. The only thing left to compete on is price, and that is a contest won by whoever has the deepest pockets.',
             'Your own copy changes that at the root: the page carries text no other shop has, and starts ranking for the way your customers ask rather than the way a supplier wrote a catalogue.',
+          ],
+          // See the note in hr.js — this contradicts the consensus, so it is
+          // sourced.
+          sources: [
+            { text: 'Google Search Central — SEO Starter Guide', href: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide' },
+            { text: 'Google Search Central — canonical URLs', href: 'https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls' },
           ],
         },
         {
@@ -444,6 +450,7 @@ const en = {
     getsH2: 'What you get',
     notForH2: 'When this is not for you',
     faqH2: 'Common questions',
+    sourcesLabel: 'Source',
     closingH2: 'Sound like your problem?',
     closingLede: 'Describe it in plain words. If we are not the right people for it, we will tell you — that answer is free.',
     closingCta: 'Get in touch',
