@@ -180,6 +180,50 @@ function SeoScan() {
   );
 }
 
+// A published price is a filter, not a pitch: every enquiry meets it, most turn
+// around there, and the ones that come out the other side already know the
+// order of magnitude. Laid out left to right like the other variants — this
+// canvas is twice as wide as it is tall, and a vertical funnel flattens into a
+// V once next/og stretches it to 1200x630.
+const FILTER_LANES = [
+  { y: 60, pass: false },
+  { y: 105, pass: true },
+  { y: 150, pass: false },
+  { y: 195, pass: true },
+  { y: 240, pass: false },
+];
+
+function PriceFilter() {
+  return (
+    <>
+      <text x="60" y="22" textAnchor="middle" className="tiny">svi upiti</text>
+      <text x="240" y="22" textAnchor="middle" className="lbl-a">cijena</text>
+      <text x="410" y="22" textAnchor="middle" className="tiny">kvalificirani</text>
+
+      {/* Drawn before the lanes, so the two that pass cross it visibly. */}
+      <rect x="224" y="40" width="32" height="220" rx="8" className="stroke-a" />
+
+      {FILTER_LANES.map((l) => (
+        <g key={l.y}>
+          <circle cx="60" cy={l.y} r="11" className={l.pass ? 'stroke-a' : 'stroke-m'} />
+          {l.pass ? (
+            <>
+              <line x1="71" y1={l.y} x2="392" y2={l.y} className="stroke-a" markerEnd="url(#arrow)" />
+              <circle cx="410" cy={l.y} r="9" className="fill-a" />
+            </>
+          ) : (
+            <>
+              <line x1="71" y1={l.y} x2="222" y2={l.y} className="stroke-m" />
+              <line x1="232" y1={l.y - 8} x2="248" y2={l.y + 8} className="stroke-w" />
+              <line x1="248" y1={l.y - 8} x2="232" y2={l.y + 8} className="stroke-w" />
+            </>
+          )}
+        </g>
+      ))}
+    </>
+  );
+}
+
 const VARIANTS = {
   'nginx-proxy': NginxProxy,
   'service-worker': ServiceWorker,
@@ -187,6 +231,7 @@ const VARIANTS = {
   'pipeline': Pipeline,
   'silos': Silos,
   'seo-scan': SeoScan,
+  'price-filter': PriceFilter,
 };
 
 export default function BlogCover({ variant, title, className = '' }) {

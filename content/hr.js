@@ -6,6 +6,7 @@ const hr = {
   nav: {
     services: 'Usluge',
     work: 'Radovi',
+    blog: 'Blog',
     vodici: 'Vodiči',
     contact: 'Kontakt',
   },
@@ -49,6 +50,12 @@ const hr = {
     video: {
       description:
         'Iz jedne produkcije radimo naraciju, sinkronizaciju, miks i titlove za svako tržište na kojem prodajete. Gotov master po jeziku, slika netaknuta.',
+    },
+    blog: {
+      // No dash: the layout template appends " — Lumenta Labs" to this.
+      title: 'Kako vodimo studio',
+      description:
+        'Tekstovi o ponudi, cijenama i pozicioniranju digitalnog studija. Konkretni potezi i brojke s naših stranica, a ne prepričani savjeti.',
     },
   },
 
@@ -98,6 +105,10 @@ const hr = {
     howH2: 'Kako radimo',
     howLede:
       'Bez praznih prezentacija. Najkraći put između onoga što vam treba i nečega što radi u produkciji.',
+
+    blogH2: 'Iz prve ruke',
+    blogLede: 'Kako vodimo studio, po čemu naplaćujemo i što smo pogriješili — bez općenitih savjeta.',
+    blogCta: 'Otvori blog',
 
     reelH2: 'Studio u tri minute',
     reelLede: 'Kratak uvod u to kako gradimo.',
@@ -157,6 +168,25 @@ const hr = {
     closingH2: 'Ne isplati vam se raditi to sami?',
     closingLede: 'Iste ovakve automatizacije postavljamo po mjeri. Opišite što vam treba.',
     closingCta: 'Javite nam se',
+  },
+
+  // The Croatian blog is its own section, not a translation of the English one
+  // — those are technical postmortems, these are about how the studio sells.
+  // Same keys, because BlogPage and BlogPost render either language.
+  blogPage: {
+    eyebrow: 'Blog',
+    h1: 'Što smo naučili vodeći studio.',
+    lede:
+      'Kako slažemo ponudu, po čemu naplaćujemo i gdje smo pogriješili — konkretno, s brojkama koje stvarno stoje na stranici.',
+    readMore: 'Pročitaj tekst',
+    backToAll: 'Svi tekstovi',
+    relatedH2: 'Ovo je nastalo gradeći',
+    relatedCta: 'Pogledajte projekt',
+    closingH2: 'Imate sličan problem?',
+    closingLede: 'Opišite ga i reći ćemo vam što je potrebno.',
+    closingCta: 'Javite nam se',
+    share: 'Podijeli tekst',
+    shareCopied: 'Poveznica kopirana',
   },
 
   vodicPage: {

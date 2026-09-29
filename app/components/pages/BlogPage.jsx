@@ -1,16 +1,18 @@
 import Link from 'next/link';
 import JsonLd from '../JsonLd';
 import BlogCover from '../BlogCover';
-import { getDict, DEFAULT_LOCALE, allPosts } from '../../../content';
+import { getDict, localePath, postsFor } from '../../../content';
 import { breadcrumbSchema } from '../../../content/schema';
 
-export default function BlogPage() {
-  const d = getDict(DEFAULT_LOCALE);
-  const posts = allPosts();
+export default function BlogPage({ lang }) {
+  const d = getDict(lang);
+  const p = (path) => localePath(lang, path);
+  // Only this language's posts: see postsFor in content/index.js.
+  const posts = postsFor(lang);
 
   return (
     <>
-      <JsonLd data={breadcrumbSchema(DEFAULT_LOCALE, [{ name: d.blogPage.eyebrow, path: '/blog' }])} />
+      <JsonLd data={breadcrumbSchema(lang, [{ name: d.blogPage.eyebrow, path: '/blog' }])} />
 
       <header className="page-head">
         <div className="wrap">
@@ -24,9 +26,9 @@ export default function BlogPage() {
         <div className="wrap">
           <div className="grid">
             {posts.map((post) => (
-              <Link className="card linked cover-card" key={post.slug} href={`/blog/${post.slug}`}>
+              <Link className="card linked cover-card" key={post.slug} href={p(`/blog/${post.slug}`)}>
                 <div className="card-head">
-                  <span className="num">{formatDate(post.date)}</span>
+                  <span className="num">{formatDate(post.date, d.htmlLang)}</span>
                   <h3>{post.title}</h3>
                 </div>
                 <BlogCover variant={post.cover} title={post.title} className="card-cover" />
@@ -40,8 +42,8 @@ export default function BlogPage() {
   );
 }
 
-function formatDate(iso) {
-  return new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', {
+function formatDate(iso, locale) {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString(locale, {
     year: 'numeric',
     month: 'short',
     day: 'numeric',

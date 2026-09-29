@@ -213,6 +213,46 @@ function seoScanShapes() {
   ];
 }
 
+const FILTER_LANES = [
+  { y: 60, pass: false },
+  { y: 105, pass: true },
+  { y: 150, pass: false },
+  { y: 195, pass: true },
+  { y: 240, pass: false },
+];
+function priceFilterShapes() {
+  const lanes = FILTER_LANES.map((l) => (
+    <g key={l.y}>
+      <circle cx="60" cy={l.y} r="11" fill="none" stroke={l.pass ? C.accent : C.muted} strokeWidth="2" />
+      {l.pass ? (
+        <g>
+          <line x1="71" y1={l.y} x2="399" y2={l.y} stroke={C.accent} strokeWidth="2" />
+          <circle cx="410" cy={l.y} r="9" fill={C.accent} />
+        </g>
+      ) : (
+        <g>
+          <line x1="71" y1={l.y} x2="222" y2={l.y} stroke={C.muted} strokeWidth="2" />
+          <line x1="232" y1={l.y - 8} x2="248" y2={l.y + 8} stroke={C.warm} strokeWidth="2" />
+          <line x1="248" y1={l.y - 8} x2="232" y2={l.y + 8} stroke={C.warm} strokeWidth="2" />
+        </g>
+      )}
+    </g>
+  ));
+  // The bar first, so the two lanes that pass cross it rather than stop at it.
+  return [
+    <rect key="bar" x="224" y="40" width="32" height="220" rx="8" fill="none" stroke={C.accent} strokeWidth="2" />,
+    ...lanes,
+  ];
+}
+// Larger than the other variants': Satori lays these out as real HTML at a
+// fixed pixel size while the SVG beneath is stretched to 1200x630, so 10px
+// here is 10px on a card three times the width of the on-page cover.
+const priceFilterLabels = () => [
+  { x: 60, y: 22, size: 17, children: 'svi upiti' },
+  { x: 240, y: 22, size: 17, color: C.accent, children: 'cijena' },
+  { x: 410, y: 22, size: 17, children: 'kvalificirani' },
+];
+
 const VARIANTS = {
   'nginx-proxy': { shapes: nginxProxyShapes, labels: nginxProxyLabels },
   'service-worker': { shapes: serviceWorkerShapes, labels: serviceWorkerLabels },
@@ -220,6 +260,7 @@ const VARIANTS = {
   'pipeline': { shapes: pipelineShapes, labels: pipelineLabels },
   'silos': { shapes: silosShapes, labels: silosLabels },
   'seo-scan': { shapes: seoScanShapes, labels: null },
+  'price-filter': { shapes: priceFilterShapes, labels: priceFilterLabels },
 };
 
 export default function OgDiagram({ variant }) {

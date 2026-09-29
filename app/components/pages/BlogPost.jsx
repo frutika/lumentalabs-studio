@@ -2,21 +2,22 @@ import Link from 'next/link';
 import JsonLd from '../JsonLd';
 import BlogCover from '../BlogCover';
 import ShareButton from '../ShareButton';
-import { getDict, DEFAULT_LOCALE, postFor, relatedWorkFor, urlFor } from '../../../content';
+import { getDict, localePath, postFor, relatedWorkFor, urlFor } from '../../../content';
 import { articleSchema, breadcrumbSchema } from '../../../content/schema';
 
-export default function BlogPost({ slug }) {
-  const d = getDict(DEFAULT_LOCALE);
+export default function BlogPost({ lang, slug }) {
+  const d = getDict(lang);
   const post = postFor(slug);
-  const related = relatedWorkFor(DEFAULT_LOCALE, post);
+  const related = relatedWorkFor(lang, post);
+  const p = (path) => localePath(lang, path);
   const path = `/blog/${slug}`;
-  const url = urlFor(DEFAULT_LOCALE, path);
+  const url = urlFor(lang, path);
 
   return (
     <>
-      <JsonLd data={articleSchema(post, path)} />
+      <JsonLd data={articleSchema(lang, post, path)} />
       <JsonLd
-        data={breadcrumbSchema(DEFAULT_LOCALE, [
+        data={breadcrumbSchema(lang, [
           { name: d.blogPage.eyebrow, path: '/blog' },
           { name: post.title, path },
         ])}
@@ -25,12 +26,12 @@ export default function BlogPost({ slug }) {
       <header className="page-head">
         <div className="wrap">
           <p className="eyebrow">
-            <Link href="/blog">{d.blogPage.eyebrow}</Link>
+            <Link href={p('/blog')}>{d.blogPage.eyebrow}</Link>
           </p>
           <h1 className="page-title">{post.title}</h1>
           <p className="lede">{post.description}</p>
           <div className="post-meta">
-            <time dateTime={post.date}>{formatDate(post.date)}</time>
+            <time dateTime={post.date}>{formatDate(post.date, d.htmlLang)}</time>
             <span className="post-tags">
               {post.tags.map((tag) => (
                 <span className="tag" key={tag}>{tag}</span>
@@ -51,8 +52,8 @@ export default function BlogPost({ slug }) {
           {related ? (
             <p className="see-also">
               {d.blogPage.relatedH2}{' '}
-              <Link href={`/work/${related.slug}`}>{related.name}</Link> —{' '}
-              <Link href={`/work/${related.slug}`}>{d.blogPage.relatedCta} ↗</Link>
+              <Link href={p(`/work/${related.slug}`)}>{related.name}</Link> —{' '}
+              <Link href={p(`/work/${related.slug}`)}>{d.blogPage.relatedCta} ↗</Link>
             </p>
           ) : null}
         </div>
@@ -62,8 +63,8 @@ export default function BlogPost({ slug }) {
         <div className="wrap">
           <h2>{d.blogPage.closingH2}</h2>
           <p className="section-lede">{d.blogPage.closingLede}</p>
-          <Link className="btn" href="/contact">{d.blogPage.closingCta}</Link>
-          <Link className="btn ghost" href="/blog">{d.blogPage.backToAll}</Link>
+          <Link className="btn" href={p('/contact')}>{d.blogPage.closingCta}</Link>
+          <Link className="btn ghost" href={p('/blog')}>{d.blogPage.backToAll}</Link>
         </div>
       </section>
     </>
@@ -91,8 +92,8 @@ function Block({ block }) {
   return null;
 }
 
-function formatDate(iso) {
-  return new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', {
+function formatDate(iso, locale) {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString(locale, {
     year: 'numeric',
     month: 'long',
     day: 'numeric',

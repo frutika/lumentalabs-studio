@@ -1,7 +1,12 @@
-// Blog posts. English only for now — technical, first-party case studies read
-// by an English-speaking audience; see ROUTE_LOCALES in index.js. Same
-// content-as-data pattern as work[] and services[]: one place to edit, no CMS,
-// no extra dependency, and it ships in the same static build.
+// Blog posts. Each one declares its own language and is published only in
+// that language — a post is written for one audience, and a translation of a
+// piece aimed at somebody else is a worse page than no page. The English posts
+// are technical postmortems for a developer audience; the Croatian ones are
+// about how the studio sells. Neither set is a translation of the other, so
+// they are separate sections rather than an hreflang pair.
+//
+// Same content-as-data pattern as work[] and services[]: one place to edit, no
+// CMS, no extra dependency, and it ships in the same static build.
 //
 // body[] is a small block language rendered generically by BlogPost.jsx:
 //   { p: '...' }              paragraph
@@ -15,6 +20,92 @@
 // the rest of this file: no CMS, no image pipeline, ships in the static build.
 
 const posts = [
+  {
+    slug: 'cijene-na-stranici',
+    lang: 'hr',
+    cover: 'price-filter',
+    title: 'Cijene nismo objavili zbog kupaca, nego zbog sebe',
+    description:
+      'Objavljena cijena ne prodaje, nego filtrira — i prije toga tjera vas da napišete što zapravo prodajete. Što smo otkrili kad smo rasponima morali pridružiti sadržaj.',
+    date: '2026-09-29',
+    tags: ['Ponuda', 'Cijene', 'Pozicioniranje'],
+    excerpt:
+      'Uobičajen savjet je da se cijena ne objavljuje jer gubite pregovarački prostor. Ono što se stvarno gubi su tri e-maila dok obje strane ne shvate da nisu u istom redu veličine.',
+    body: [
+      {
+        p: 'Uobičajen savjet glasi: cijenu ne stavljaj na stranicu. Izgubit ćeš pregovarački prostor, konkurencija će je vidjeti, a svaki je projekt ionako drugačiji. Sve troje je točno. I svejedno smo cijene objavili.',
+      },
+      {
+        p: 'Razlog nije bio marketinški. Kad nemate objavljenu cijenu, svaki upit počinje uzajamnim pogađanjem: vi pokušavate procijeniti koliko čovjek misli potrošiti, on pokušava procijeniti jeste li preskupi da bi uopće pitao. To se razriješi oko trećeg e-maila, kad netko konačno spomene broj i ispostavi se da ste cijelo vrijeme razgovarali o različitim projektima.',
+      },
+      {
+        p: 'Taj razgovor nije besplatan. Košta vas sat vremena i njega tjedan dana čekanja, a završi ničim. Objavljena cijena taj sat ne štedi kupcu — štedi ga vama, i to prije nego što je potrošen.',
+      },
+      { h2: 'Prvo iznenađenje: nismo znali što prodajemo' },
+      {
+        p: 'Cijenu je lako napisati. Teško je napisati što je u njoj.',
+      },
+      {
+        p: 'Naš prvi cjenik imao je pojas „6.000 – 12.000 € — interni alat ili dashboard s korisnicima”. Izgledao je razumno dok me netko nije pitao što to točno znači. Nisam imao dobar odgovor, a cijenu sam postavio sam.',
+      },
+      {
+        quote: 'Ako čovjek koji je postavio cijenu ne zna objasniti što je u pojasu, kupac koji dolazi s Googlea nema nikakve šanse.',
+      },
+      {
+        p: 'Problem nije bio u brojci nego u jeziku. „Interni alat ili dashboard” je način na koji mi opisujemo arhitekturu. Kupac svoj problem ne zove tako — on ima evidenciju radnih naloga koju terenski tim popunjava na papiru, ili Excel s deset kartica iz kojeg netko ručno slaže ponude. To su riječi koje on i upisuje u Google.',
+      },
+      {
+        p: 'Prepravili smo sve pojaseve tako da svaki ima primjere umjesto kategorije. Izbacili smo riječ „dashboard” jer je prazna za onoga tko traži rješenje, a i nitko je ne pretražuje.',
+      },
+      {
+        p: 'To je bio stvarni ishod objave cijena, a dogodio se prije nego što ih je ijedan kupac vidio: morali smo odgovoriti na pitanja koja smo dotad uspješno izbjegavali.',
+      },
+      { h2: 'Cijena filtrira, ne prodaje' },
+      {
+        p: 'Objavljeni raspon ne uvjerava nikoga da vas nazove. Njegov posao je suprotan — da odvrati onoga koga bi razgovor svejedno razočarao.',
+      },
+      {
+        p: 'Naš najniži pojas za web aplikacije počinje na 6.000 €. Ta brojka kaže „ovo nije prezentacijska stranica od pet podstranica” jasnije nego bilo koji odlomak teksta na stranici usluga. Tko traži takvu stranicu, otiđe — i dobro je da ode, jer bismo mu ionako rekli da će jeftinije proći s gotovim rješenjem.',
+      },
+      {
+        p: 'Zato je objavljena cijena ujedno i izjava o tome kakve probleme rješavate. Raspon od 1.500 do 12.000 € za opise cijelog kataloga govori da naplaćujete po katalogu, a ne po komadu — a to je cijeli poslovni model sažet u jedan redak.',
+      },
+      {
+        p: 'Usput, taj redak ima i konkurentsku težinu koje nismo bili svjesni dok nismo provjerili. Objavljene hrvatske cijene za pisanje opisa kreću se od 5 do 25 € po opisu. Katalog od tisuću artikala je po toj logici 5.000 do 25.000 €. Naš gornji pojas za isti posao na više jezika je 12.000 €. Nismo bili malo jeftiniji nego jeftiniji za red veličine — i to nigdje nije pisalo dok cijenu nismo objavili.',
+      },
+      { h2: 'Tri stvari koje objavljena cijena ne smije biti' },
+      {
+        ul: [
+          'Satnica pored projektnog dna. Ako pišete „od 6.000 €” i „70 €/h”, kupac će podijeliti i doći do 86 sati — pa pregovarati o satima umjesto o opsegu. Objavite jedno ili drugo.',
+          'Jedan raspon preko cijele ponude. „Od 1.500 do 45.000 €” nije cijena nego raspon tržišta. Nekoliko užih pojaseva, svaki s primjerom, kupcu kaže u kojem je on; jedan široki raspon ne kaže ništa.',
+          'Nejasno oko PDV-a. Napišite da je bez PDV-a od prvog dana. Ako uđete u sustav kasnije, inače to izgleda kao poskupljenje od 25 %.',
+        ],
+      },
+      { h2: 'Ljestvica umjesto zida' },
+      {
+        p: 'Druga stvar koju smo promijenili tiče se onoga što nudimo besplatno.',
+      },
+      {
+        p: 'Imali smo tri vodiča o automatizaciji — opisi proizvoda, objave na mrežama, AI podrška — zaključana kao PDF-ovi iza e-mail forme na zasebnoj poddomeni. Provjerili smo: Google o toj poddomeni nije znao ništa. Nula indeksiranih dokumenata. Tri korisna teksta, nevidljiva.',
+      },
+      {
+        p: 'Objavili smo ih kao stranice, u cijelosti, bez upisivanja e-maila. PDF je ostao kao pakirana verzija za one koji ga žele, pa se lista i dalje puni — samo više nije jedini put do tog znanja.',
+      },
+      {
+        quote: 'Tko će sam postaviti n8n, ionako ne bi bio klijent. Tko neće, sad vidi da znamo o čemu govorimo.',
+      },
+      {
+        p: 'Svaki vodič sad završava s tri izlaza poredana po tome koliko čitatelja koštaju: napravi sam, koristi naš alat, mi to odradimo. Ranije su bila dva — vodič i usluga od nekoliko tisuća eura — pa je čovjek koji je pročitao osam koraka i pomislio „ovo je previše petljanja” ostajao bez sredstva. Srednja prečka je nedostajala.',
+      },
+      { h2: 'Što još ne znamo' },
+      {
+        p: 'Cijene su na stranici tek nekoliko dana. Nemamo podatke o tome je li upita manje, jesu li bolji, ni koliko ih je cijena odvratila. Tko vam nakon tjedan dana ponudi takvu brojku, izmislio ju je.',
+      },
+      {
+        p: 'Ono što već znamo je uže, ali sigurnije: da bismo cijenu napisali, morali smo definirati pet usluga preciznije nego ikad dotad. Taj dio se isplatio prije nego što je itko kliknuo.',
+      },
+    ],
+  },
   {
     slug: 'nginx-500-invisible-errors',
     cover: 'nginx-proxy',

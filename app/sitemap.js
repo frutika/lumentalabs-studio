@@ -1,10 +1,12 @@
-import { site, contentUpdated } from '../site.config';
+import { contentUpdated } from '../site.config';
 import {
   LOCALES,
   DEFAULT_LOCALE,
   urlFor,
   worksFor,
   allPosts,
+  postsFor,
+  postLang,
   serviceDetailsFor,
   serviceDetailPaths,
   localesFor,
@@ -96,17 +98,34 @@ export default function sitemap() {
   });
 
   // The blog was already honest: a post's date is a real publication date, and
-  // the index takes the newest post's.
-  const posts = allPosts();
+  // an index takes its own newest post's — not the site's, which would date the
+  // Croatian index off an English post it does not list.
+  //
+  // One index per language, paired as alternates; the posts stand alone, each
+  // at the URL its own language puts it at. Both facts come from localesFor, so
+  // the sitemap and the pages cannot drift apart.
+  const blogIndexes = localesFor('/blog');
+  const indexLanguages = {
+    ...Object.fromEntries(blogIndexes.map((l) => [l, urlFor(l, '/blog')])),
+    'x-default': urlFor(
+      blogIndexes.includes(DEFAULT_LOCALE) ? DEFAULT_LOCALE : blogIndexes[0],
+      '/blog'
+    ),
+  };
+
   const blog = [
-    {
-      url: `${site.url}/blog`,
-      ...(posts[0] ? { lastModified: posts[0].date } : {}),
-      changeFrequency: 'weekly',
-      priority: 0.6,
-    },
-    ...posts.map((post) => ({
-      url: `${site.url}/blog/${post.slug}`,
+    ...blogIndexes.map((lang) => {
+      const newest = postsFor(lang)[0];
+      return {
+        url: urlFor(lang, '/blog'),
+        ...(newest ? { lastModified: newest.date } : {}),
+        changeFrequency: 'weekly',
+        priority: 0.6,
+        alternates: { languages: indexLanguages },
+      };
+    }),
+    ...allPosts().map((post) => ({
+      url: urlFor(postLang(post), `/blog/${post.slug}`),
       lastModified: post.date,
       changeFrequency: 'yearly',
       priority: 0.6,
