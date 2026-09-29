@@ -34,8 +34,8 @@ export function websiteSchema(lang) {
   };
 }
 
-export function articleSchema(post, path) {
-  const url = urlFor('en', path);
+export function articleSchema(lang, post, path) {
+  const url = urlFor(lang, path);
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -44,10 +44,14 @@ export function articleSchema(post, path) {
     description: post.description,
     datePublished: post.date,
     dateModified: post.date,
-    inLanguage: 'en',
+    inLanguage: getDict(lang).htmlLang,
     url,
     mainEntityOfPage: url,
-    image: `${url}/opengraph-image`,
+    // No `image`. This used to claim `${url}/opengraph-image`, which 404s on
+    // every post: the opengraph-image.jsx file convention builds the card at a
+    // hashed path (.../opengraph-image-g58prh), and that hash is not knowable
+    // from here. The real per-post card is on the page as og:image either way,
+    // and a missing recommended field beats a broken URL in structured data.
     author: { '@id': ORG_ID },
     publisher: { '@id': ORG_ID },
   };

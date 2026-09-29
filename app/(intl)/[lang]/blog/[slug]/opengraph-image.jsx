@@ -1,19 +1,24 @@
 import { ImageResponse } from 'next/og';
-import OgDiagram from '../../../components/OgDiagram';
-import { postsFor, postFor, DEFAULT_LOCALE } from '../../../../content';
+import OgDiagram from '../../../../components/OgDiagram';
+import { allPosts, postFor, postLang, getDict, DEFAULT_LOCALE } from '../../../../../content';
+import { site } from '../../../../../site.config';
 
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
-export const alt = 'Lumenta Labs blog post';
+export const alt = `${site.name} blog`;
 
+// Same set the page route builds: one image per post, under its own prefix.
 export function generateStaticParams() {
-  return postsFor(DEFAULT_LOCALE).map((post) => ({ slug: post.slug }));
+  return allPosts()
+    .filter((post) => postLang(post) !== DEFAULT_LOCALE)
+    .map((post) => ({ lang: postLang(post), slug: post.slug }));
 }
 
 export default async function Image({ params }) {
-  const { slug } = await params;
+  const { lang, slug } = await params;
   const post = postFor(slug);
-  const title = post?.title || 'Lumenta Labs';
+  const title = post?.title || site.name;
+  const eyebrow = `${site.name} — ${getDict(lang).blogPage.eyebrow}`;
 
   return new ImageResponse(
     (
@@ -31,7 +36,7 @@ export default async function Image({ params }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <div style={{ display: 'flex', width: 12, height: 12, borderRadius: 6, background: '#37c6d0' }} />
           <span style={{ display: 'flex', color: '#8598ad', fontSize: 22, letterSpacing: 1 }}>
-            Lumenta Labs — Blog
+            {eyebrow}
           </span>
         </div>
         <div

@@ -57,7 +57,8 @@ export const site = {
  * neither. The blog is not listed because posts carry their own date.
  */
 export const contentUpdated = {
-  '/': '2026-09-26',
+  // The Croatian home page gained the "Iz prve ruke" section with the blog.
+  '/': '2026-09-29',
   '/services': '2026-09-26',
   '/services/video': '2026-09-26',
   '/work': '2026-09-26',

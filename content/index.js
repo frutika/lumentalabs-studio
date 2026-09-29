@@ -31,11 +31,24 @@ const ROUTE_LOCALES = {
 
 /**
  * Languages a given page is actually published in. Defaults to all of them.
- * The blog is matched by prefix rather than listed post-by-post here — a new
- * post should not require touching this file to get its hreflang right.
+ *
+ * The blog is answered from the posts themselves rather than listed here, so a
+ * new post needs no edit in this file. The two levels answer differently on
+ * purpose:
+ *
+ * - An index lists whatever exists in its own language, so /blog and /hr/blog
+ *   really are the same page in two languages and pair up as alternates.
+ * - A post does not. Each one is written for one audience and published only in
+ *   that language, so it declares its own language and nothing else — claiming
+ *   an alternate that is a different article, not a translation, is the one
+ *   thing hreflang must never say.
  */
 export const localesFor = (path = '/') => {
-  if (path === '/blog' || path.startsWith('/blog/')) return ['en'];
+  if (path === '/blog') return blogLocales();
+  if (path.startsWith('/blog/')) {
+    const post = postFor(path.slice('/blog/'.length));
+    return [post?.lang || DEFAULT_LOCALE];
+  }
   // The guides are Croatian, matched by prefix so a new one needs no edit here.
   if (path.startsWith('/vodici/')) return ['hr'];
   return ROUTE_LOCALES[path] || LOCALES;
@@ -64,17 +77,34 @@ export function workFor(lang, slug) {
 }
 
 /**
- * Blog posts, newest first. English only (see localesFor above) — the posts
- * are technical write-ups aimed at an English-speaking audience, not brand
- * copy that needs a translation in every market.
+ * Every post, newest first, regardless of language. For the sitemap, which
+ * lists each post once at the URL its own language puts it at.
  */
 export function allPosts() {
   return [...blogPosts].sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
+/**
+ * The posts published in one language, newest first. A post declares its own
+ * `lang` and appears in that index only: the English write-ups are postmortems
+ * for a developer audience, the Croatian ones are about how the studio sells,
+ * and mixing them would give both readers a list half of which is not for them.
+ */
+export function postsFor(lang) {
+  return allPosts().filter((post) => (post.lang || DEFAULT_LOCALE) === lang);
+}
+
+/** Languages with at least one post, in LOCALES order so x-default is stable. */
+export function blogLocales() {
+  return LOCALES.filter((l) => postsFor(l).length);
+}
+
 export function postFor(slug) {
   return blogPosts.find((post) => post.slug === slug);
 }
+
+/** The language a post is published in — its own, or English if it says none. */
+export const postLang = (post) => post?.lang || DEFAULT_LOCALE;
 
 /** The work case study a post references, if any — for the "see also" link. */
 export function relatedWorkFor(lang, post) {

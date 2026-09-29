@@ -4,7 +4,7 @@ import ReelEmbed from '../ReelEmbed';
 import VodiciCTA from '../VodiciCTA';
 import HeroVideo from '../HeroVideo';
 import JsonLd from '../JsonLd';
-import { getDict, localePath, servicesFor, worksFor, reelFor, allPosts } from '../../../content';
+import { getDict, localePath, servicesFor, worksFor, reelFor, postsFor } from '../../../content';
 import { organizationSchema, websiteSchema } from '../../../content/schema';
 import { site } from '../../../site.config';
 
@@ -14,9 +14,11 @@ export default function Home({ lang }) {
   const services = servicesFor(lang);
   const works = worksFor(lang);
   const reel = reelFor(lang);
-  // English-only, same gate as everything else that does not exist in every
-  // language: no `home.blogH2` key in a dictionary means no section renders.
-  const latestPosts = d.home.blogH2 ? allPosts().slice(0, 3) : [];
+  // Same gate as everything else that does not exist in every language: no
+  // `home.blogH2` key in a dictionary means no section renders. The posts are
+  // this language's own — a home page linking three articles the reader cannot
+  // read is worse than no section at all.
+  const latestPosts = d.home.blogH2 ? postsFor(lang).slice(0, 3) : [];
 
   return (
     <>
@@ -168,7 +170,7 @@ export default function Home({ lang }) {
             <p className="section-lede">{d.home.blogLede}</p>
             <div className="grid">
               {latestPosts.map((post) => (
-                <Link className="card linked" key={post.slug} href={`/blog/${post.slug}`}>
+                <Link className="card linked" key={post.slug} href={p(`/blog/${post.slug}`)}>
                   <span className="num">{post.tags[0]}</span>
                   <h3>{post.title}</h3>
                   <p>{post.excerpt}</p>
@@ -176,7 +178,7 @@ export default function Home({ lang }) {
               ))}
             </div>
             <p style={{ marginTop: '1.6rem' }}>
-              <Link className="btn ghost no-offset" href="/blog">{d.home.blogCta} →</Link>
+              <Link className="btn ghost no-offset" href={p('/blog')}>{d.home.blogCta} →</Link>
             </p>
           </div>
         </section>
