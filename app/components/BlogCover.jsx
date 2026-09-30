@@ -224,18 +224,19 @@ function PriceFilter() {
   );
 }
 
-// The offer as a staircase: each step costs the buyer more and us differently.
-// The retired entry package floats off to the side, crossed out — it looked
-// like a first step but was our time sold at the lowest price on the site.
+// Three ways to the same result, as a staircase: each step up costs more and
+// suits a bigger catalogue. Axis caption top-left, because the staircase is
+// only a comparison if it says what rises along it.
 const LADDER_STEPS = [
-  { x: 105, y: 222, sub: 240, label: 'vodič', note: 'besplatno' },
-  { x: 235, y: 170, sub: 188, label: 'alat', note: 'samoposluga' },
-  { x: 370, y: 115, sub: 133, label: 'usluga', note: 'projekt' },
+  { x: 105, y: 222, sub: 240, label: 'sami', note: 'vodič · besplatan' },
+  { x: 235, y: 170, sub: 188, label: 'alat', note: 'od 19 $ / mj' },
+  { x: 370, y: 115, sub: 133, label: 'projekt', note: 'od 1.500 €' },
 ];
 
 function Ladder() {
   return (
     <>
+      <text x="40" y="34" className="tiny">više artikala, više jezika →</text>
       <path d="M40 250 V200 H170 V145 H300 V90 H440 V250 Z" className="stroke-a" />
       {LADDER_STEPS.map((s) => (
         <g key={s.label}>
@@ -243,10 +244,6 @@ function Ladder() {
           <text x={s.x} y={s.sub} textAnchor="middle" className="tiny">{s.note}</text>
         </g>
       ))}
-      <text x="105" y="84" textAnchor="middle" className="tiny">ručni paket · 49 €</text>
-      <rect x="62" y="98" width="86" height="56" rx="6" className="stroke-w" strokeDasharray="5 5" />
-      <line x1="91" y1="112" x2="119" y2="140" className="stroke-w" />
-      <line x1="119" y1="112" x2="91" y2="140" className="stroke-w" />
     </>
   );
 }

@@ -14,6 +14,8 @@
 //   { ul: ['...', '...'] }    bullet list
 //   { code: 'lang', text }    code block
 //   { quote: '...' }          pull quote / lesson line
+//   { links: [{ text, href, note? }] }
+//                             where to go next; '/…' is internal, https leaves
 //
 // cover is a variant key rendered by BlogCover.jsx — a small inline SVG
 // diagram of the post's actual failure, not a stock photo. Same reasoning as
@@ -21,107 +23,109 @@
 
 const posts = [
   {
-    slug: 'ugasili-smo-najjeftiniju-uslugu',
+    slug: 'opisi-proizvoda-sami-alat-ili-agencija',
     lang: 'hr',
     cover: 'ladder',
-    title: 'Ugasili smo najjeftiniju uslugu jer je nama bila najskuplja',
+    title: 'Opisi proizvoda za webshop: sami, alatom ili s agencijom?',
     description:
-      'Ulazni paket od 49 € trebao je dovoditi klijente. Kad smo izračunali koliko našeg vremena prodaje, ispalo je oko 10 € na sat. Zašto ulaz u ponudu ne smije biti vaš rad.',
+      'Tri načina da webshop dobije vlastite opise proizvoda, s pravim cijenama: besplatno sami, alatom od 19 $ mjesečno ili projektom od 1.500 €. Kako odabrati prema broju artikala i jezika.',
     date: '2026-09-30',
-    tags: ['Ponuda', 'Cijene', 'Odluke'],
+    tags: ['Webshop', 'Opisi proizvoda', 'AI'],
     excerpt:
-      'Standardni savjet kaže: ponudite nešto jeftino da ljudi uđu. Mi smo to napravili, i nakon šest tjedana ugasili — ne zato što je bilo jeftino kupcu, nego zato što je bilo skupo nama.',
+      'Nije pitanje koji je način najbolji, nego koji odgovara vašem katalogu. Dva pitanja to odluče: koliko artikala imate i na koliko jezika prodajete.',
     body: [
       {
-        p: 'Jedan od najčešćih savjeta za male studije i agencije glasi: napravite ulazni proizvod. Nešto jeftino i jednostavno, da vas kupac isproba bez rizika, a veći posao dođe kasnije, kad već postoji povjerenje.',
+        p: 'Katalog bez opisa, ili s opisima prepisanim od dobavljača, problem je gotovo svakog webshopa. Rješenja ima više nego ikad, i zato je teško odabrati: jedni kažu da to napravite sami za pola sata, drugi prodaju pretplatu, treći nude projekt od nekoliko tisuća eura.',
       },
       {
-        p: 'Mi smo ga imali. Zvao se AI Content Booster, bio je na stranici šest tjedana, od sredine kolovoza do kraja rujna, i imao je tri paketa: Basic za 49 €, Pro za 99 € i Premium za 149 € mjesečno. Ugasili smo ga prošlog tjedna.',
+        p: 'Mi nudimo sva tri puta — besplatni vodič, vlastiti alat i projekt — pa ovdje nemamo razloga gurati najskuplji. Najskuplji je za većinu trgovina pogrešan izbor.',
       },
-      {
-        p: 'Ovo nije tekst o tome da ulazni proizvodi ne valjaju. Tekst je o tome što ulazni proizvod smije biti — jer naš to nije bio.',
-      },
-      { h2: 'Što je bilo u paketu' },
-      {
-        p: 'Basic, onaj od 49 €, sadržavao je:',
-      },
+      { h2: 'Dva pitanja koja odluče umjesto vas' },
       {
         ul: [
-          '30 objava za Facebook i Instagram',
-          '10 objava za Google poslovni profil',
-          '5 promotivnih tekstova',
-          'mini SEO audit u PDF-u',
-          'jedan vizualni predložak',
+          'Koliko artikala treba opisati — i koliko novih dolazi svaki mjesec?',
+          'Na koliko jezika prodajete?',
         ],
       },
       {
-        p: 'To je 45 tekstova i dva dodatna isporučena rada za 49 €. Nešto više od eura po tekstu. Pro je na to dodavao deset AI vizuala, tri kratka videa, optimizaciju Google profila i analizu konkurencije. Premium je sve to ponavljao svaki mjesec, uz upravljanje objavama i jednu kampanju.',
+        p: 'Treće pitanje je manje očito, ali jednako važno: tko će pregledati tekst prije objave. Svaki od tri puta pretpostavlja da netko pročita opis prije nego što ga vidi kupac. AI zna pogriješiti u činjenicama — dimenziji, materijalu, kompatibilnosti — i to ne smije otkriti kupac.',
+      },
+      { h2: '1. Sami, uz besplatni vodič' },
+      {
+        p: 'Napravite vlastitu automatizaciju: u Google tablicu upišete naziv i značajke proizvoda, a radni tok u alatu n8n pošalje ih AI modelu i upiše gotov opis natrag u tablicu. Programiranje nije potrebno. Postavljanje traje oko pola sata, a naš vodič prolazi svaki korak.',
       },
       {
-        p: 'Na papiru je izgledalo izdašno. I to je bio prvi znak, koji nismo pročitali: izdašan ulazni paket je izdašan prema kupcu. Netko ga plaća, a u uslužnom poslu taj netko ste vi, svojim satima.',
-      },
-      { h2: 'Računica koju nismo napravili na početku' },
-      {
-        p: 'Tekstove je pisao naš vlastiti alat, Lumenta AI. Ali alat ne bira teme, ne provjerava je li objava za pekaru u Osijeku stvarno o pekari u Osijeku, ne objavljuje i ne odgovara na poruku „može li umjesto petka u subotu”. To radi čovjek.',
+        p: 'Cijena: n8n na vlastitom računalu ili serveru je besplatan. Plaćate samo pozive AI modelu, izravno pružatelju (OpenAI ili Anthropic), po potrošnji.',
       },
       {
-        p: 'Kad smo sjeli i procijenili koliko ljudskog rada stoji iza Premium paketa, dobili smo otprilike četrnaest sati mjesečno. Za 149 € to je oko 10 € na sat.',
+        p: 'Za koga: imate nekoga tko se ne boji tablice i postavljanja, želite potpunu kontrolu nad uputama koje model dobiva i ne smeta vam da je održavanje vaše. Kad se nešto promijeni, popravljate vi.',
       },
+      { h2: '2. Alat: bez postavljanja, po kreditima' },
       {
-        quote: 'Čak i da smo precijenili posao dvostruko, bili bismo na 21 € po satu — na istoj domeni na kojoj izrada web aplikacije počinje od 6.000 €.',
-      },
-      {
-        p: 'I tu je drugi problem, veći od same satnice. Kupac koji na istoj stranici vidi paket od 49 € i projekt od 6.000 € ne zaključuje da imate širok raspon. Zaključuje jedno od dvoje: ili je šest tisuća napuhano, ili je ono za 49 € napravljeno na brzinu. Nijedan zaključak nam ne pomaže.',
-      },
-      {
-        p: 'A treći, koji smo zadnji primijetili: Booster je u biti bio Lumenta AI prodan kao ručni rad. Poslovni paket tog alata košta 49 dolara mjesečno. Premium je koštao 149 € — otprilike trostruko — a razlika je bila u tome što smo alat umjesto kupca vrtjeli mi.',
-      },
-      { h2: 'Ulaz u ponudu ne smije biti vaše vrijeme' },
-      {
-        p: 'Ideja ulaznog proizvoda je dobra. Pogrešno je ono što se obično stavi na to mjesto: najmanji komad usluge, po najnižoj cijeni. Usluga se ne skalira prema dolje. Mali posao ne traži proporcionalno manje pažnje — dogovor, izmjene, pitanja i provjera ne traju deset puta kraće zato što je cijena deset puta manja.',
-      },
-      {
-        p: 'Ulaz koji radi je onaj koji vas ne košta ništa po novom kupcu. Kod nas su to sada dvije stvari:',
+        p: 'Lumenta AI je naš alat koji radi isto bez ikakvog postavljanja. Upišete naziv i značajke proizvoda, odaberete ton i jezik (hrvatski, engleski ili njemački) i dobijete opis.',
       },
       {
         ul: [
-          'Besplatni vodiči. Cijeli sadržaj na stranici, bez e-mail forme. Tko ih pročita i napravi sam, dobio je ono što treba, a nas nije koštao ni minutu.',
-          'Alat. Tko ne želi postavljati sam, a ne treba projekt, koristi Lumenta AI kao samoposlugu. Plaća alat, ne naše sate.',
+          'Pri registraciji dobivate 10 besplatnih kredita — dovoljno da isprobate na vlastitim artiklima.',
+          'Pro: 19 $ mjesečno, 500 kredita.',
+          'Business: 49 $ mjesečno, 2.000 kredita.',
+          'Jedan opis troši jedan kredit. Krediti se obnavljaju mjesečno i dijele se s ostalim alatima u paketu.',
         ],
       },
       {
-        p: 'Tek treća prečka je usluga — i ona počinje ondje gdje se isplati objema stranama.',
+        p: 'Za koga: desetci do nekoliko stotina artikala, i novi artikli koji stalno pristižu. Opišete ih onda kad dođu, bez čekanja na nekoga.',
       },
       {
-        quote: 'Ulazni proizvod nije najmanji komad onoga što prodajete. To je nešto što se prodaje bez vas.',
+        p: 'Granica koju trebate znati prije pretplate: opisi se generiraju jedan po jedan, kroz obrazac. Nema uvoza cijelog kataloga odjednom. Za trideset novih artikala mjesečno to nije problem; za katalog od tisuću artikala to je tisuću unosa, i tada vam treba treći put.',
       },
-      { h2: 'Što smo točno promijenili' },
+      { h2: '3. Projekt: cijeli katalog, jedan ili više jezika' },
+      {
+        p: 'Ovdje radimo mi. Proces postavimo na vaš ton i vaše nazivlje, pa prođemo cijeli katalog. Vi pregledavate i odobravate prije objave.',
+      },
       {
         ul: [
-          'Stranica Boostera je uklonjena. Stara adresa trajno preusmjerava na studiju slučaja o Lumenta AI, pa nitko tko ima stari link ne završi na praznoj stranici.',
-          'Na stranici usluge za opise proizvoda najniži pojas sad upućuje manje kataloge izravno na alat: „manji katalog i želite to sami?” — bez nas u procesu.',
-          'Vodiči za opise proizvoda i za objave na mrežama — poslovi koje alat pokriva — završavaju s tri izlaza: napravi sam, koristi alat, mi to odradimo. Ranije su bila dva, pa tko nije htio sam, nije imao kamo osim do nas.',
+          'Do tisuću artikala, jedan jezik: 1.500 – 4.000 €.',
+          'Cijeli katalog, više jezika: 4.000 – 12.000 €.',
         ],
       },
-      { h2: 'Isto iskušenje, dva dana kasnije' },
       {
-        p: 'Najpoučniji dio cijele priče dogodio se nakon gašenja. Čim je Booster maknut, pojavila se ideja: dodajmo u Lumenta AI paket „za vas to radimo” za 490 € mjesečno. Veća cijena, ozbiljniji kupci, isti posao.',
+        p: 'Cijene su bez PDV-a. Kod više jezika opise pišemo na jeziku tržišta, s nazivljem kojim se tamo pretražuje, a ne tako da hrvatski tekst provučemo kroz prevoditelj.',
       },
       {
-        p: 'Ali isti posao je upravo bio problem. Cijena je bila deset puta veća od Basica, a struktura ista: naše vrijeme, prodano mjesečno, bez gornje granice. Nitko ga nije tražio, a za naplatu bi trebalo dirati sustav plaćanja koji sad radi.',
+        p: 'Za usporedbu: objavljene hrvatske cijene za pisanje opisa kreću se od 5 do 25 € po opisu. Katalog od tisuću artikala je po toj logici 5.000 do 25.000 €. Razlika je u tome što projekt naplaćujemo po katalogu, a ne po komadu.',
       },
       {
-        p: 'Odluka je bila kratka: to bi bila još jedna obaveza. Nismo ga napravili.',
+        p: 'Za koga: tisuće artikala, više tržišta, i nitko u timu tko bi to stigao sam.',
+      },
+      { h2: 'Kako odabrati u jednoj minuti' },
+      {
+        ul: [
+          'Stotinjak artikala i netko tko ih stigne napisati? Ne treba vam ništa od ovoga. Iskreno.',
+          'Želite razumjeti kako to radi i imate pola sata? Vodič.',
+          'Desetci do nekoliko stotina artikala, novi stalno dolaze? Alat.',
+          'Tisuću artikala i više, ili više od jednog jezika? Projekt.',
+        ],
       },
       {
-        p: 'Pitanje koje sad postavljamo prije svake nove stavke u ponudi nije „koliko ovo košta kupca”, nego „čije sate ovo prodaje, i koliko ih je u jednom mjesecu”.',
+        quote: 'Pravi izbor ne ovisi o tome koliko želite potrošiti, nego o tome koliko artikala imate i tko će ih pregledati.',
       },
-      { h2: 'Što ne znamo' },
+      { h2: 'Što vrijedi za sva tri puta' },
       {
-        p: 'Ne znamo bi li netko od kupaca paketa od 49 € s vremenom postao klijent za veći projekt. Možda bi. Šest tjedana nije dovoljno da se to vidi, a nemamo podatke koji bi to potvrdili ili opovrgnuli.',
+        p: 'Nemojte ostaviti opise dobavljača. Uvriježeno je da Google za duplicirani sadržaj kažnjava, a ne kažnjava — to stoji u njegovoj vlastitoj dokumentaciji. Ono što radi je tiše: od više stranica s istim tekstom prikaže jednu, a ostale ne. Ako isti opis ima dvadeset trgovina, velika je šansa da prikazana stranica nije vaša.',
       },
       {
-        p: 'Ali i da je tako, taj put je trebao ići kroz nešto što se isplati i dok čeka. Vodič koji netko pročita i vrati se za godinu dana nije nas koštao ništa. Paket od 49 € koji se ne pretvori u veći posao koštao nas je svaki put.',
+        p: 'Dajte modelu prave podatke. Opis je dobar onoliko koliko su dobre značajke koje upišete. „Majica, pamuk” daje općenit tekst; „majica, 100 % organski pamuk, 180 g/m², kroj oversize” daje tekst koji prodaje.',
+      },
+      {
+        p: 'I na kraju, već spomenuto: netko mora pročitati prije objave. To nije posao koji alat — ni naš — radi umjesto vas.',
+      },
+      { h2: 'Gdje dalje' },
+      {
+        links: [
+          { text: 'Vodič: automatizirajte opise proizvoda uz n8n i AI', href: '/hr/vodici/automatizacija-opisa-proizvoda', note: 'besplatno, oko 30 minuta' },
+          { text: 'Lumenta AI', href: 'https://lumenta.shop', note: '10 besplatnih kredita pri registraciji' },
+          { text: 'Opisi proizvoda za webshop kao projekt', href: '/hr/services/ai-opisi-proizvoda-za-webshop', note: 'pojasevi, primjeri i česta pitanja' },
+        ],
       },
     ],
   },

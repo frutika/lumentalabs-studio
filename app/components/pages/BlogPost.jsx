@@ -73,6 +73,27 @@ export default function BlogPost({ lang, slug }) {
 
 function Block({ block }) {
   if (block.h2) return <h2>{block.h2}</h2>;
+  // Where to go next, for posts that compare options: a reader who has just
+  // picked one should not have to hunt for it. Internal paths get Link; full
+  // URLs leave the site and say so.
+  if (block.links) {
+    return (
+      <ul className="ticks">
+        {block.links.map((l) => (
+          <li key={l.href}>
+            {l.href.startsWith('/') ? (
+              <Link href={l.href}>{l.text}</Link>
+            ) : (
+              <a href={l.href} target="_blank" rel="noopener noreferrer">
+                {l.text} <span aria-hidden="true">↗</span>
+              </a>
+            )}
+            {l.note ? <> — {l.note}</> : null}
+          </li>
+        ))}
+      </ul>
+    );
+  }
   if (block.p) return <p>{block.p}</p>;
   if (block.quote) return <blockquote><p>{block.quote}</p></blockquote>;
   if (block.ul) {
