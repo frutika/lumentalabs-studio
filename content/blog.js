@@ -14,12 +14,121 @@
 //   { ul: ['...', '...'] }    bullet list
 //   { code: 'lang', text }    code block
 //   { quote: '...' }          pull quote / lesson line
+//   { links: [{ text, href, note? }] }
+//                             where to go next; '/…' is internal, https leaves
 //
 // cover is a variant key rendered by BlogCover.jsx — a small inline SVG
 // diagram of the post's actual failure, not a stock photo. Same reasoning as
 // the rest of this file: no CMS, no image pipeline, ships in the static build.
 
 const posts = [
+  {
+    slug: 'opisi-proizvoda-sami-alat-ili-agencija',
+    lang: 'hr',
+    cover: 'ladder',
+    title: 'Opisi proizvoda za webshop: sami, alatom ili s agencijom?',
+    description:
+      'Tri načina da webshop dobije vlastite opise proizvoda, s pravim cijenama: besplatno sami, alatom od 19 $ mjesečno ili projektom od 1.500 €. Kako odabrati prema broju artikala i jezika.',
+    date: '2026-09-30',
+    tags: ['Webshop', 'Opisi proizvoda', 'AI'],
+    excerpt:
+      'Nije pitanje koji je način najbolji, nego koji odgovara vašem katalogu. Dva pitanja to odluče: koliko artikala imate i na koliko jezika prodajete.',
+    body: [
+      {
+        p: 'Katalog bez opisa, ili s opisima prepisanim od dobavljača, problem je gotovo svakog webshopa. Rješenja ima više nego ikad, i zato je teško odabrati: jedni kažu da to napravite sami za pola sata, drugi prodaju pretplatu, treći nude projekt od nekoliko tisuća eura.',
+      },
+      {
+        p: 'Mi nudimo sva tri puta — besplatni vodič, vlastiti alat i projekt — pa ovdje nemamo razloga gurati najskuplji. Najskuplji je za većinu trgovina pogrešan izbor.',
+      },
+      { h2: 'Dva pitanja koja odluče umjesto vas' },
+      {
+        ul: [
+          'Koliko artikala treba opisati — i koliko novih dolazi svaki mjesec?',
+          'Na koliko jezika prodajete?',
+        ],
+      },
+      {
+        p: 'Treće pitanje je manje očito, ali jednako važno: tko će pregledati tekst prije objave. Svaki od tri puta pretpostavlja da netko pročita opis prije nego što ga vidi kupac. AI zna pogriješiti u činjenicama — dimenziji, materijalu, kompatibilnosti — i to ne smije otkriti kupac.',
+      },
+      { h2: '1. Sami, uz besplatni vodič' },
+      {
+        p: 'Napravite vlastitu automatizaciju: u Google tablicu upišete naziv i značajke proizvoda, a radni tok u alatu n8n pošalje ih AI modelu i upiše gotov opis natrag u tablicu. Programiranje nije potrebno. Postavljanje traje oko pola sata, a naš vodič prolazi svaki korak.',
+      },
+      {
+        p: 'Cijena: n8n na vlastitom računalu ili serveru je besplatan. Plaćate samo pozive AI modelu, izravno pružatelju (OpenAI ili Anthropic), po potrošnji.',
+      },
+      {
+        p: 'Za koga: imate nekoga tko se ne boji tablice i postavljanja, želite potpunu kontrolu nad uputama koje model dobiva i ne smeta vam da je održavanje vaše. Kad se nešto promijeni, popravljate vi.',
+      },
+      { h2: '2. Alat: bez postavljanja, po kreditima' },
+      {
+        p: 'Lumenta AI je naš alat koji radi isto bez ikakvog postavljanja. Upišete naziv i značajke proizvoda, odaberete ton i jezik (hrvatski, engleski ili njemački) i dobijete opis.',
+      },
+      {
+        ul: [
+          'Pri registraciji dobivate 10 besplatnih kredita — dovoljno da isprobate na vlastitim artiklima.',
+          'Pro: 19 $ mjesečno, 500 kredita.',
+          'Business: 49 $ mjesečno, 2.000 kredita.',
+          'Jedan opis troši jedan kredit. Krediti se obnavljaju mjesečno i dijele se s ostalim alatima u paketu.',
+        ],
+      },
+      {
+        p: 'Za koga: desetci do nekoliko stotina artikala, i novi artikli koji stalno pristižu. Opišete ih onda kad dođu, bez čekanja na nekoga.',
+      },
+      {
+        p: 'Granica koju trebate znati prije pretplate: opisi se generiraju jedan po jedan, kroz obrazac. Nema uvoza cijelog kataloga odjednom. Za trideset novih artikala mjesečno to nije problem; za katalog od tisuću artikala to je tisuću unosa, i tada vam treba treći put.',
+      },
+      { h2: '3. Projekt: cijeli katalog, jedan ili više jezika' },
+      {
+        p: 'Ovdje radimo mi. Proces postavimo na vaš ton i vaše nazivlje, pa prođemo cijeli katalog. Vi pregledavate i odobravate prije objave.',
+      },
+      {
+        ul: [
+          'Do tisuću artikala, jedan jezik: 1.500 – 4.000 €.',
+          'Cijeli katalog, više jezika: 4.000 – 12.000 €.',
+        ],
+      },
+      {
+        p: 'Cijene su bez PDV-a. Kod više jezika opise pišemo na jeziku tržišta, s nazivljem kojim se tamo pretražuje, a ne tako da hrvatski tekst provučemo kroz prevoditelj.',
+      },
+      {
+        p: 'Za usporedbu: objavljene hrvatske cijene za pisanje opisa kreću se od 5 do 25 € po opisu. Katalog od tisuću artikala je po toj logici 5.000 do 25.000 €. Razlika je u tome što projekt naplaćujemo po katalogu, a ne po komadu.',
+      },
+      {
+        p: 'Za koga: tisuće artikala, više tržišta, i nitko u timu tko bi to stigao sam.',
+      },
+      { h2: 'Kako odabrati u jednoj minuti' },
+      {
+        ul: [
+          'Stotinjak artikala i netko tko ih stigne napisati? Ne treba vam ništa od ovoga. Iskreno.',
+          'Želite razumjeti kako to radi i imate pola sata? Vodič.',
+          'Desetci do nekoliko stotina artikala, novi stalno dolaze? Alat.',
+          'Tisuću artikala i više, ili više od jednog jezika? Projekt.',
+        ],
+      },
+      {
+        quote: 'Pravi izbor ne ovisi o tome koliko želite potrošiti, nego o tome koliko artikala imate i tko će ih pregledati.',
+      },
+      { h2: 'Što vrijedi za sva tri puta' },
+      {
+        p: 'Nemojte ostaviti opise dobavljača. Uvriježeno je da Google za duplicirani sadržaj kažnjava, a ne kažnjava — to stoji u njegovoj vlastitoj dokumentaciji. Ono što radi je tiše: od više stranica s istim tekstom prikaže jednu, a ostale ne. Ako isti opis ima dvadeset trgovina, velika je šansa da prikazana stranica nije vaša.',
+      },
+      {
+        p: 'Dajte modelu prave podatke. Opis je dobar onoliko koliko su dobre značajke koje upišete. „Majica, pamuk” daje općenit tekst; „majica, 100 % organski pamuk, 180 g/m², kroj oversize” daje tekst koji prodaje.',
+      },
+      {
+        p: 'I na kraju, već spomenuto: netko mora pročitati prije objave. To nije posao koji alat — ni naš — radi umjesto vas.',
+      },
+      { h2: 'Gdje dalje' },
+      {
+        links: [
+          { text: 'Vodič: automatizirajte opise proizvoda uz n8n i AI', href: '/hr/vodici/automatizacija-opisa-proizvoda', note: 'besplatno, oko 30 minuta' },
+          { text: 'Lumenta AI', href: 'https://lumenta.shop', note: '10 besplatnih kredita pri registraciji' },
+          { text: 'Opisi proizvoda za webshop kao projekt', href: '/hr/services/ai-opisi-proizvoda-za-webshop', note: 'pojasevi, primjeri i česta pitanja' },
+        ],
+      },
+    ],
+  },
   {
     slug: 'cijene-na-stranici',
     lang: 'hr',
