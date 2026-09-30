@@ -253,6 +253,29 @@ const priceFilterLabels = () => [
   { x: 410, y: 22, size: 17, children: 'kvalificirani' },
 ];
 
+const LADDER_STEPS = [
+  { x: 105, y: 222, sub: 240, label: 'vodič', note: 'besplatno' },
+  { x: 235, y: 170, sub: 188, label: 'alat', note: 'samoposluga' },
+  { x: 370, y: 115, sub: 133, label: 'usluga', note: 'projekt' },
+];
+function ladderShapes() {
+  return [
+    <path key="stairs" d="M40 250 V200 H170 V145 H300 V90 H440 V250 Z" fill="none" stroke={C.accent} strokeWidth="2" />,
+    <rect key="gone" x="62" y="98" width="86" height="56" rx="6" fill="none" stroke={C.warm} strokeWidth="2" strokeDasharray="5 5" />,
+    <line key="x1" x1="91" y1="112" x2="119" y2="140" stroke={C.warm} strokeWidth="2" />,
+    <line key="x2" x1="119" y1="112" x2="91" y2="140" stroke={C.warm} strokeWidth="2" />,
+  ];
+}
+// Sized for the 1200x630 card, like priceFilterLabels: these are HTML at a
+// fixed pixel size over an SVG that is stretched.
+const ladderLabels = () => [
+  ...LADDER_STEPS.flatMap((s) => [
+    { x: s.x, y: s.y - 4, size: 18, color: C.accent, children: s.label },
+    { x: s.x, y: s.sub + 4, size: 14, children: s.note },
+  ]),
+  { x: 105, y: 82, size: 14, color: C.warm, children: 'ručni paket · 49 €' },
+];
+
 const VARIANTS = {
   'nginx-proxy': { shapes: nginxProxyShapes, labels: nginxProxyLabels },
   'service-worker': { shapes: serviceWorkerShapes, labels: serviceWorkerLabels },
@@ -261,6 +284,7 @@ const VARIANTS = {
   'silos': { shapes: silosShapes, labels: silosLabels },
   'seo-scan': { shapes: seoScanShapes, labels: null },
   'price-filter': { shapes: priceFilterShapes, labels: priceFilterLabels },
+  'ladder': { shapes: ladderShapes, labels: ladderLabels },
 };
 
 export default function OgDiagram({ variant }) {

@@ -21,6 +21,111 @@
 
 const posts = [
   {
+    slug: 'ugasili-smo-najjeftiniju-uslugu',
+    lang: 'hr',
+    cover: 'ladder',
+    title: 'Ugasili smo najjeftiniju uslugu jer je nama bila najskuplja',
+    description:
+      'Ulazni paket od 49 € trebao je dovoditi klijente. Kad smo izračunali koliko našeg vremena prodaje, ispalo je oko 10 € na sat. Zašto ulaz u ponudu ne smije biti vaš rad.',
+    date: '2026-09-30',
+    tags: ['Ponuda', 'Cijene', 'Odluke'],
+    excerpt:
+      'Standardni savjet kaže: ponudite nešto jeftino da ljudi uđu. Mi smo to napravili, i nakon šest tjedana ugasili — ne zato što je bilo jeftino kupcu, nego zato što je bilo skupo nama.',
+    body: [
+      {
+        p: 'Jedan od najčešćih savjeta za male studije i agencije glasi: napravite ulazni proizvod. Nešto jeftino i jednostavno, da vas kupac isproba bez rizika, a veći posao dođe kasnije, kad već postoji povjerenje.',
+      },
+      {
+        p: 'Mi smo ga imali. Zvao se AI Content Booster, bio je na stranici šest tjedana, od sredine kolovoza do kraja rujna, i imao je tri paketa: Basic za 49 €, Pro za 99 € i Premium za 149 € mjesečno. Ugasili smo ga prošlog tjedna.',
+      },
+      {
+        p: 'Ovo nije tekst o tome da ulazni proizvodi ne valjaju. Tekst je o tome što ulazni proizvod smije biti — jer naš to nije bio.',
+      },
+      { h2: 'Što je bilo u paketu' },
+      {
+        p: 'Basic, onaj od 49 €, sadržavao je:',
+      },
+      {
+        ul: [
+          '30 objava za Facebook i Instagram',
+          '10 objava za Google poslovni profil',
+          '5 promotivnih tekstova',
+          'mini SEO audit u PDF-u',
+          'jedan vizualni predložak',
+        ],
+      },
+      {
+        p: 'To je 45 tekstova i dva dodatna isporučena rada za 49 €. Nešto više od eura po tekstu. Pro je na to dodavao deset AI vizuala, tri kratka videa, optimizaciju Google profila i analizu konkurencije. Premium je sve to ponavljao svaki mjesec, uz upravljanje objavama i jednu kampanju.',
+      },
+      {
+        p: 'Na papiru je izgledalo izdašno. I to je bio prvi znak, koji nismo pročitali: izdašan ulazni paket je izdašan prema kupcu. Netko ga plaća, a u uslužnom poslu taj netko ste vi, svojim satima.',
+      },
+      { h2: 'Računica koju nismo napravili na početku' },
+      {
+        p: 'Tekstove je pisao naš vlastiti alat, Lumenta AI. Ali alat ne bira teme, ne provjerava je li objava za pekaru u Osijeku stvarno o pekari u Osijeku, ne objavljuje i ne odgovara na poruku „može li umjesto petka u subotu”. To radi čovjek.',
+      },
+      {
+        p: 'Kad smo sjeli i procijenili koliko ljudskog rada stoji iza Premium paketa, dobili smo otprilike četrnaest sati mjesečno. Za 149 € to je oko 10 € na sat.',
+      },
+      {
+        quote: 'Čak i da smo precijenili posao dvostruko, bili bismo na 21 € po satu — na istoj domeni na kojoj izrada web aplikacije počinje od 6.000 €.',
+      },
+      {
+        p: 'I tu je drugi problem, veći od same satnice. Kupac koji na istoj stranici vidi paket od 49 € i projekt od 6.000 € ne zaključuje da imate širok raspon. Zaključuje jedno od dvoje: ili je šest tisuća napuhano, ili je ono za 49 € napravljeno na brzinu. Nijedan zaključak nam ne pomaže.',
+      },
+      {
+        p: 'A treći, koji smo zadnji primijetili: Booster je u biti bio Lumenta AI prodan kao ručni rad. Poslovni paket tog alata košta 49 dolara mjesečno. Premium je koštao 149 € — otprilike trostruko — a razlika je bila u tome što smo alat umjesto kupca vrtjeli mi.',
+      },
+      { h2: 'Ulaz u ponudu ne smije biti vaše vrijeme' },
+      {
+        p: 'Ideja ulaznog proizvoda je dobra. Pogrešno je ono što se obično stavi na to mjesto: najmanji komad usluge, po najnižoj cijeni. Usluga se ne skalira prema dolje. Mali posao ne traži proporcionalno manje pažnje — dogovor, izmjene, pitanja i provjera ne traju deset puta kraće zato što je cijena deset puta manja.',
+      },
+      {
+        p: 'Ulaz koji radi je onaj koji vas ne košta ništa po novom kupcu. Kod nas su to sada dvije stvari:',
+      },
+      {
+        ul: [
+          'Besplatni vodiči. Cijeli sadržaj na stranici, bez e-mail forme. Tko ih pročita i napravi sam, dobio je ono što treba, a nas nije koštao ni minutu.',
+          'Alat. Tko ne želi postavljati sam, a ne treba projekt, koristi Lumenta AI kao samoposlugu. Plaća alat, ne naše sate.',
+        ],
+      },
+      {
+        p: 'Tek treća prečka je usluga — i ona počinje ondje gdje se isplati objema stranama.',
+      },
+      {
+        quote: 'Ulazni proizvod nije najmanji komad onoga što prodajete. To je nešto što se prodaje bez vas.',
+      },
+      { h2: 'Što smo točno promijenili' },
+      {
+        ul: [
+          'Stranica Boostera je uklonjena. Stara adresa trajno preusmjerava na studiju slučaja o Lumenta AI, pa nitko tko ima stari link ne završi na praznoj stranici.',
+          'Na stranici usluge za opise proizvoda najniži pojas sad upućuje manje kataloge izravno na alat: „manji katalog i želite to sami?” — bez nas u procesu.',
+          'Vodiči za opise proizvoda i za objave na mrežama — poslovi koje alat pokriva — završavaju s tri izlaza: napravi sam, koristi alat, mi to odradimo. Ranije su bila dva, pa tko nije htio sam, nije imao kamo osim do nas.',
+        ],
+      },
+      { h2: 'Isto iskušenje, dva dana kasnije' },
+      {
+        p: 'Najpoučniji dio cijele priče dogodio se nakon gašenja. Čim je Booster maknut, pojavila se ideja: dodajmo u Lumenta AI paket „za vas to radimo” za 490 € mjesečno. Veća cijena, ozbiljniji kupci, isti posao.',
+      },
+      {
+        p: 'Ali isti posao je upravo bio problem. Cijena je bila deset puta veća od Basica, a struktura ista: naše vrijeme, prodano mjesečno, bez gornje granice. Nitko ga nije tražio, a za naplatu bi trebalo dirati sustav plaćanja koji sad radi.',
+      },
+      {
+        p: 'Odluka je bila kratka: to bi bila još jedna obaveza. Nismo ga napravili.',
+      },
+      {
+        p: 'Pitanje koje sad postavljamo prije svake nove stavke u ponudi nije „koliko ovo košta kupca”, nego „čije sate ovo prodaje, i koliko ih je u jednom mjesecu”.',
+      },
+      { h2: 'Što ne znamo' },
+      {
+        p: 'Ne znamo bi li netko od kupaca paketa od 49 € s vremenom postao klijent za veći projekt. Možda bi. Šest tjedana nije dovoljno da se to vidi, a nemamo podatke koji bi to potvrdili ili opovrgnuli.',
+      },
+      {
+        p: 'Ali i da je tako, taj put je trebao ići kroz nešto što se isplati i dok čeka. Vodič koji netko pročita i vrati se za godinu dana nije nas koštao ništa. Paket od 49 € koji se ne pretvori u veći posao koštao nas je svaki put.',
+      },
+    ],
+  },
+  {
     slug: 'cijene-na-stranici',
     lang: 'hr',
     cover: 'price-filter',

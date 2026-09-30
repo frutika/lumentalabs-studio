@@ -224,6 +224,33 @@ function PriceFilter() {
   );
 }
 
+// The offer as a staircase: each step costs the buyer more and us differently.
+// The retired entry package floats off to the side, crossed out — it looked
+// like a first step but was our time sold at the lowest price on the site.
+const LADDER_STEPS = [
+  { x: 105, y: 222, sub: 240, label: 'vodič', note: 'besplatno' },
+  { x: 235, y: 170, sub: 188, label: 'alat', note: 'samoposluga' },
+  { x: 370, y: 115, sub: 133, label: 'usluga', note: 'projekt' },
+];
+
+function Ladder() {
+  return (
+    <>
+      <path d="M40 250 V200 H170 V145 H300 V90 H440 V250 Z" className="stroke-a" />
+      {LADDER_STEPS.map((s) => (
+        <g key={s.label}>
+          <text x={s.x} y={s.y} textAnchor="middle" className="lbl-a">{s.label}</text>
+          <text x={s.x} y={s.sub} textAnchor="middle" className="tiny">{s.note}</text>
+        </g>
+      ))}
+      <text x="105" y="84" textAnchor="middle" className="tiny">ručni paket · 49 €</text>
+      <rect x="62" y="98" width="86" height="56" rx="6" className="stroke-w" strokeDasharray="5 5" />
+      <line x1="91" y1="112" x2="119" y2="140" className="stroke-w" />
+      <line x1="119" y1="112" x2="91" y2="140" className="stroke-w" />
+    </>
+  );
+}
+
 const VARIANTS = {
   'nginx-proxy': NginxProxy,
   'service-worker': ServiceWorker,
@@ -232,6 +259,7 @@ const VARIANTS = {
   'silos': Silos,
   'seo-scan': SeoScan,
   'price-filter': PriceFilter,
+  'ladder': Ladder,
 };
 
 export default function BlogCover({ variant, title, className = '' }) {
