@@ -735,7 +735,7 @@ const en = {
     {
       slug: 'narrator',
       kind: 'Internal tool',
-      title: 'Narrator — one video, four languages',
+      title: 'Narrator — one video, more than a hundred languages',
       short: 'Our own tool for multilingual video narration — timing, music, subtitles and translation in a single pass.',
       problem:
         'Our Lumenta Labs promo videos needed narration in several languages. We could have paid a studio for each language or subscribed to a TTS service. Instead we built our own tool — in five days.',
@@ -744,6 +744,7 @@ const en = {
         'Music is automatically ducked under the voice',
         'Subtitles are exported in a format YouTube and Facebook accept',
         'Translated versions in one click, with brand names left untouched',
+        'More than a hundred languages available — a new language needs neither a new tool nor a new voice actor',
       ],
       result: [
         'The same promo video got narration in four languages: English, German, Croatian and Dutch',

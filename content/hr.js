@@ -897,7 +897,7 @@ const hr = {
     {
       slug: 'narrator',
       kind: 'Interni alat',
-      title: 'Narrator — jedan video, četiri jezika',
+      title: 'Narrator — jedan video, više od sto jezika',
       short: 'Vlastiti alat za višejezičnu naraciju videa — tajming, glazba, titlovi i prijevod u jednom prolazu.',
       problem:
         'Za promo videe Lumenta Labsa trebale su nam naracije na više jezika. Mogli smo plaćati studio za svaki jezik ili pretplatu na TTS servis. Umjesto toga napravili smo vlastiti alat — za pet dana.',
@@ -906,6 +906,7 @@ const hr = {
         'Glazba se automatski stišava ispod glasa',
         'Titlovi se izvoze u formatu koji prihvaćaju YouTube i Facebook',
         'Prevedene verzije jednim klikom, a nazivi brendova ostaju netaknuti',
+        'Više od sto jezika na raspolaganju — novi jezik ne traži novi alat ni novog spikera',
       ],
       result: [
         'Isti promo video dobio je naraciju na četiri jezika: engleskom, njemačkom, hrvatskom i nizozemskom',

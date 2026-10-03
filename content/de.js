@@ -788,7 +788,7 @@ const de = {
     {
       slug: 'narrator',
       kind: 'Internes Tool',
-      title: 'Narrator — ein Video, vier Sprachen',
+      title: 'Narrator — ein Video, über hundert Sprachen',
       short: 'Unser eigenes Tool für mehrsprachige Video-Sprecherstimmen — Timing, Musik, Untertitel und Übersetzung in einem Durchgang.',
       problem:
         'Für die Promo-Videos von Lumenta Labs brauchten wir Sprecherstimmen in mehreren Sprachen. Wir hätten für jede Sprache ein Studio bezahlen oder einen TTS-Dienst abonnieren können. Stattdessen haben wir ein eigenes Tool gebaut — in fünf Tagen.',
@@ -797,6 +797,7 @@ const de = {
         'Die Musik wird automatisch unter die Stimme abgesenkt',
         'Untertitel werden in einem Format exportiert, das YouTube und Facebook akzeptieren',
         'Übersetzte Fassungen mit einem Klick, Markennamen bleiben unangetastet',
+        'Über hundert Sprachen verfügbar — eine neue Sprache braucht weder ein neues Tool noch einen neuen Sprecher',
       ],
       result: [
         'Dasselbe Promo-Video bekam eine Sprecherstimme in vier Sprachen: Englisch, Deutsch, Kroatisch und Niederländisch',
