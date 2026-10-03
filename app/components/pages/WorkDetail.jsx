@@ -76,6 +76,9 @@ export default function WorkDetail({ lang, slug }) {
           <h2>{item.closingH2 || d.workPage.closingH2}</h2>
           <p className="section-lede">{item.closingLede || d.workPage.closingLede}</p>
           <Link className="btn" href={p('/contact')}>{d.workPage.closingCta}</Link>
+          {item.closingLink ? (
+            <Link className="btn ghost" href={p(item.closingLink.path)}>{item.closingLink.label}</Link>
+          ) : null}
           <Link className="btn ghost" href={p('/work')}>{d.workPage.allWork}</Link>
         </div>
       </section>
