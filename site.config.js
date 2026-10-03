@@ -38,6 +38,9 @@ export const site = {
     { slug: 'the-dog-habit', name: 'The Dog Habit', href: 'https://thedoghabit.com' },
     { slug: 'unmaskedwords', name: 'UnmaskedWords', href: 'https://unmaskedwords.com' },
     { slug: 'docuflow-ai', name: 'DocuFlow AI', href: 'https://app.lumentalabs.studio' },
+    // Internal studio tool, nothing public to open — so no href, and the detail
+    // page renders without the "Open" button.
+    { slug: 'narrator', name: 'Narrator' },
   ],
 };
 
@@ -61,7 +64,7 @@ export const contentUpdated = {
   '/': '2026-09-29',
   '/services': '2026-09-26',
   '/services/video': '2026-09-26',
-  '/work': '2026-09-26',
+  '/work': '2026-10-03',
   '/contact': '2026-09-26',
 
   // The five service pages, by their language-independent key rather than by
@@ -83,10 +86,11 @@ export const contentUpdated = {
    * case study beats three that disagree.
    */
   '/work/bezmaske': '2026-08-09',
-  '/work/lumenta-ai': '2026-08-09',
+  '/work/lumenta-ai': '2026-10-03',
   '/work/the-dog-habit': '2026-08-09',
   '/work/unmaskedwords': '2026-08-09',
-  '/work/docuflow-ai': '2026-09-06',
+  '/work/docuflow-ai': '2026-10-03',
+  '/work/narrator': '2026-10-03',
 
   // The guides. Their content is a transcription of the PDFs, which carry
   // "Izdanje 2026"; the pages themselves went up on this date.

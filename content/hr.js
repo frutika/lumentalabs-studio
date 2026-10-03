@@ -40,7 +40,7 @@ const hr = {
     work: {
       title: 'Proizvodi koje smo izgradili',
       description:
-        'Pet proizvoda koje smo izgradili, pustili u rad i još održavamo — Bezmaske, Lumenta AI, The Dog Habit, UnmaskedWords i DocuFlow AI. Svi su živi.',
+        'Pet živih proizvoda koje smo izgradili i održavamo — Bezmaske, Lumenta AI, The Dog Habit, UnmaskedWords i DocuFlow AI — i Narrator, naš alat za višejezičnu naraciju videa.',
     },
     contact: {
       title: 'Kontakt',
@@ -629,7 +629,7 @@ const hr = {
     eyebrow: 'Radovi',
     h1: 'Radimo na onome što prodajemo.',
     lede:
-      'Nisu ovo logotipi klijenata na zidu. Ovo je pet proizvoda koje smo izgradili, pustili u rad i još ih održavamo — i svaki je živ upravo sada. Otvorite ih i prosudite sami.',
+      'Nisu ovo logotipi klijenata na zidu. Ovo je pet proizvoda koje smo izgradili, pustili u rad i još ih održavamo — i svaki je živ upravo sada. Otvorite ih i prosudite sami. Šesti je Narrator, interni alat na kojem radimo lokalizaciju videa.',
     problem: 'Problem',
     built: 'Što smo izgradili',
     result: 'Rezultat',
@@ -830,9 +830,11 @@ const hr = {
       built: [
         'Sustav koji piše opis za svaki artikl u tonu brenda i s njegovim nazivljem, na jeziku tržišta, a ne naknadno preveden.',
         'Svaki tekst prolazi provjeru kvalitete prije objave, a trošak generiranja je ograničen po artiklu, pa se ne može oteti.',
+        'Uz katalog, alati za svakodnevne objave — Instagram, Facebook, TikTok, YouTube, newsletter — na jednom mjestu. Nastali su iz naše vlastite potrebe: objave na više mreža trošile su nam sate, a postojeći alati bili su razbacani, svaki sa svojom pretplatom.',
+        'Lumenta Motion: ubacite gotovu TikTok skriptu ili ispunite nekoliko polja umjesto nje i dobijete renderiran MP4 spreman za objavu.',
       ],
       result: [
-        'Kapacitet: 12.000 opisa u 9 dana — prosjek obrade 65 sekundi po tekstu',
+        'Kapacitet, izmjeren simulacijom s paralelnim tokovima: 12.000 opisa u 9 dana — prosjek obrade 65 sekundi po tekstu',
         '0,02 € trošak generiranja po opisu, naspram 3–15 € po tekstu kod vanjskog copywritera',
         'Osam alata u produkciji, od opisa proizvoda do newslettera',
       ],
@@ -874,17 +876,45 @@ const hr = {
       slug: 'docuflow-ai',
       kind: 'Živi proizvod',
       short:
-        'AI obrada dokumenata za male tvrtke — fakture i računi se ekstrahiraju, provjeravaju i pretvaraju u akciju jednim odobrenjem.',
+        'Ulazni dokumenti za male tvrtke u doba Fiskalizacije 2.0 — eRačuni stižu sami, a PDF-ove, skenove i fotografije čita AI i pretvara u akciju jednim odobrenjem.',
       problem:
-        'Svaka faktura i račun koji stigne u malu tvrtku mala je obaveza: pročitati je, odlučiti što slijedi, pa ne zaboraviti to i napraviti. Pomnožite to sa sto dokumenata mjesečno i obaveza postane posao za sebe.',
+        'Fiskalizaciju 2.0 počeli smo pratiti dok još nitko nije točno znao kako će raditi ni zašto se uvodi. Kad smo zakopali dublje, uočili smo ono što se u najavama nije spominjalo: obavezan eRačun ne znači kraj papira. Mala tvrtka i dalje dobiva PDF-ove, fotografirane račune, skenove i gotovinske potvrde — samo sada uz eRačune. Dva svijeta, a nijedan alat za oba.',
       built: [
-        'AI pipeline za ekstrakciju (Claude) koji fakture i račune pretvara u strukturirane, provjerljive podatke — dva stvarna tipa dokumenta, ne demo jednog',
+        'eRačuni stižu automatski preko certificiranog informacijskog posrednika (ePoslovanje, doku.hr). Podaci su već strukturirani, pa se na njih ne troši AI obrada.',
+        'Sve ostalo — PDF, sken, fotografiju — čita AI (Claude) i izvlači iznose, rokove, IBAN i OIB u strukturirane, provjerljive podatke.',
         'Action Engine koji predlaže sljedeći korak — podsjetnik za plaćanje, knjigovodstveni zadatak — i šalje ga tek kad ga osoba odobri, uz pravi email iza svakog odobrenog podsjetnika',
-        'Praćenje AI troška po pozivu i naplata prema potrošnji ugrađeni od prvog dana, pa proizvod zna svoju maržu prije nego je sazna prvi kupac',
+        'Praćenje AI troška po pozivu ugrađeno od prvog dana, pa proizvod zna svoju maržu prije nego je sazna prvi kupac',
         'Sigurnosni prolaz koji većina timova preskoči: audit svake funkcije u bazi koja se izvršava s povišenim ovlastima, zatvaranje dozvola za koje nitko nije pamtio da su otvorene',
       ],
+      result: [
+        'Pravi eRačun poslan je kroz testno okruženje posrednika, preuzet i prikazan u aplikaciji — bez ijednog AI poziva. „eRačuni bez troška AI obrade“ izmjereno je, a ne pretpostavljeno.',
+        'AI ekstrakcija mjerena je na stvarnim fotografiranim i skeniranim hrvatskim računima i uplatnicama. Sporne znamenke IBAN-a i OIB-a rješavaju se kontrolnim sumama (mod-97, mod 11-10), a ne nagađanjem.',
+        'U produkciji, cijeli proizvod na hrvatskom',
+      ],
       lesson:
-        'AI poziv koji pročita dokument lakša je polovica. Povjerenje se zarađuje svime oko njega — korakom provjere koji se ne preskače, troškom koji se može objasniti, pristupom za koji se može dokazati da je zaključan.',
+        'AI poziv koji pročita dokument lakša je polovica. Povjerenje se zarađuje svime oko njega — korakom provjere koji se ne preskače, troškom koji se može objasniti, pristupom za koji se može dokazati da je zaključan. I jasnom granicom: DocuFlow svjesno ne fiskalizira primitak, jer je to zakonska uloga posrednika. Korisnika kroz taj korak upućuje, umjesto da glumi da ga preuzima.',
+    },
+    {
+      slug: 'narrator',
+      kind: 'Interni alat',
+      title: 'Narrator — jedan video, četiri jezika',
+      short: 'Vlastiti alat za višejezičnu naraciju videa — tajming, glazba, titlovi i prijevod u jednom prolazu.',
+      problem:
+        'Za promo videe Lumenta Labsa trebale su nam naracije na više jezika. Mogli smo plaćati studio za svaki jezik ili pretplatu na TTS servis. Umjesto toga napravili smo vlastiti alat — za pet dana.',
+      built: [
+        'Naracija na Azure Neural TTS-u, raspoređena oko dijelova u kojima originalni video već govori — alat ih pronalazi sam',
+        'Glazba se automatski stišava ispod glasa',
+        'Titlovi se izvoze u formatu koji prihvaćaju YouTube i Facebook',
+        'Prevedene verzije jednim klikom, a nazivi brendova ostaju netaknuti',
+      ],
+      result: [
+        'Isti promo video dobio je naraciju na četiri jezika: engleskom, njemačkom, hrvatskom i nizozemskom',
+        'Napravljen za pet dana i od tada u svakodnevnoj upotrebi',
+        'Na njemu radimo naracije za vlastite promo videe i za filmove i videe koje radimo za klijente',
+      ],
+      lesson:
+        'Najskuplji dio lokalizacije nije glas, nego sve oko njega: tajming, glazba, titlovi, nazivi brendova. Kad se to automatizira, novi jezik prestaje biti projekt i postaje klik. Na tome radi naša usluga lokalizacije videa — vi dobivate verziju za svako tržište, a ne novi projekt za svaki jezik.',
+      closingLink: { path: '/services/video', label: 'Usluga lokalizacije videa' },
     },
   ],
 

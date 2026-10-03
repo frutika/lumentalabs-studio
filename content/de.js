@@ -31,7 +31,7 @@ const de = {
     work: {
       title: 'Produkte, die wir gebaut haben',
       description:
-        'Fünf Produkte, die wir gebaut und bis heute betreut haben — Bezmaske, Lumenta AI, The Dog Habit, UnmaskedWords und DocuFlow AI. Alle sind live.',
+        'Fünf Live-Produkte, die wir gebaut haben und betreuen — Bezmaske, Lumenta AI, The Dog Habit, UnmaskedWords und DocuFlow AI — dazu Narrator, unser Tool für mehrsprachige Video-Sprecherstimmen.',
     },
     contact: {
       title: 'Kontakt',
@@ -525,7 +525,7 @@ const de = {
     eyebrow: 'Projekte',
     h1: 'Wir arbeiten mit dem, was wir verkaufen.',
     lede:
-      'Keine Kundenlogos an der Wand. Fünf Produkte, die wir gebaut, ausgeliefert und bis heute betreut haben — und jedes davon ist gerade jetzt live. Öffnen Sie sie und urteilen Sie selbst.',
+      'Keine Kundenlogos an der Wand. Fünf Produkte, die wir gebaut, ausgeliefert und bis heute betreut haben — und jedes davon ist gerade jetzt live. Öffnen Sie sie und urteilen Sie selbst. Das sechste ist Narrator, das interne Tool, auf dem unsere Video-Lokalisierung läuft.',
     problem: 'Das Problem',
     built: 'Was wir gebaut haben',
     result: 'Ergebnis',
@@ -723,9 +723,11 @@ const de = {
       built: [
         'Ein System, das jeden Artikel im Ton der Marke und mit ihrer Terminologie beschreibt, in der Sprache des Marktes statt nachträglich übersetzt.',
         'Jeder Text durchläuft eine Qualitätsprüfung vor der Veröffentlichung, und die Generierungskosten sind pro Artikel gedeckelt.',
+        'Neben dem Katalog Tools für tägliche Beiträge — Instagram, Facebook, TikTok, YouTube, Newsletter — an einem Ort. Sie entstanden aus unserem eigenen Bedarf: Beiträge für mehrere Netzwerke kosteten uns Stunden, und die vorhandenen Tools waren verstreut, jedes mit eigenem Abo.',
+        'Lumenta Motion: ein fertiges TikTok-Skript einfügen oder stattdessen ein paar Felder ausfüllen — heraus kommt ein gerendertes MP4, bereit zur Veröffentlichung.',
       ],
       result: [
-        'Kapazität: 12.000 Beschreibungen in 9 Tagen — im Schnitt 65 Sekunden pro Text',
+        'Kapazität, gemessen in einer Simulation mit parallelen Strängen: 12.000 Beschreibungen in 9 Tagen — im Schnitt 65 Sekunden pro Text',
         '0,02 € Generierungskosten pro Beschreibung, gegenüber 3–15 € beim externen Texter',
         'Acht Tools in Produktion, von der Produktbeschreibung bis zum Newsletter',
       ],
@@ -765,17 +767,45 @@ const de = {
       slug: 'docuflow-ai',
       kind: 'Live-Produkt',
       short:
-        'KI-Dokumentenverarbeitung für kleine Unternehmen — Rechnungen und Belege werden extrahiert, geprüft und mit einer Freigabe zur Aktion.',
+        'Eingangsbelege für kleine Unternehmen in Zeiten der kroatischen Fiskalisierung 2.0 — E-Rechnungen kommen von selbst, PDFs, Scans und Fotos liest die KI und macht daraus mit einer Freigabe eine Aktion.',
       problem:
-        'Jede Rechnung und jeder Beleg, der in einem kleinen Unternehmen ankommt, ist eine kleine Pflicht: lesen, entscheiden, was als Nächstes passiert, dann nicht vergessen, es auch zu tun. Multipliziert mit hundert Dokumenten im Monat wird aus der Pflicht ein eigener Job.',
+        'Die kroatische Fiskalisierung 2.0 haben wir verfolgt, als noch niemand genau wusste, wie sie funktionieren würde und warum sie eingeführt wird. Beim genaueren Hinsehen fiel uns auf, was in den Ankündigungen fehlte: Die Pflicht zur E-Rechnung bedeutet nicht das Ende des Papiers. Ein kleines Unternehmen erhält weiterhin PDFs, fotografierte Belege, Scans und Barquittungen — nur jetzt zusätzlich zu E-Rechnungen. Zwei Welten, und kein Tool für beide.',
       built: [
-        'KI-Extraktions-Pipeline (Claude), die Rechnungen und Belege in strukturierte, prüfbare Daten verwandelt — zwei echte Dokumenttypen, keine Demo eines einzigen',
+        'E-Rechnungen kommen automatisch über einen zertifizierten Zugangsdienst (ePoslovanje, doku.hr). Die Daten sind bereits strukturiert, daher fällt dafür keine KI-Verarbeitung an.',
+        'Alles andere — PDF, Scan, Foto — liest die KI (Claude) und extrahiert Beträge, Fälligkeiten, IBAN und Steuernummer als strukturierte, prüfbare Daten.',
         'Eine Action Engine, die den nächsten Schritt vorschlägt — eine Zahlungserinnerung, eine Buchhaltungsaufgabe — und ihn erst verschickt, wenn ein Mensch zustimmt, mit echtem E-Mail-Versand hinter jeder freigegebenen Erinnerung',
-        'KI-Kostenerfassung pro Aufruf und nutzungsbasierte Abrechnung von Anfang an eingebaut, damit das Produkt seine eigene Marge kennt, bevor der erste Kunde es tut',
+        'KI-Kostenerfassung pro Aufruf von Anfang an eingebaut, damit das Produkt seine eigene Marge kennt, bevor der erste Kunde es tut',
         'Ein Sicherheits-Audit, das die meisten Teams ganz auslassen: jede Datenbankfunktion mit erhöhten Rechten geprüft, Berechtigungen geschlossen, von denen niemand mehr wusste, dass sie offen standen',
       ],
+      result: [
+        'Eine echte E-Rechnung wurde über die Testumgebung des Zugangsdienstes gesendet, abgerufen und in der App angezeigt — ohne einen einzigen KI-Aufruf. „E-Rechnungen ohne KI-Verarbeitungskosten“ ist gemessen, nicht angenommen.',
+        'Die KI-Extraktion wurde an echten fotografierten und gescannten kroatischen Belegen und Zahlscheinen gemessen. Unsichere Ziffern in IBAN und Steuernummer werden über Prüfsummen (mod-97, mod 11-10) entschieden, nicht geraten.',
+        'In Produktion, das ganze Produkt auf Kroatisch',
+      ],
       lesson:
-        'Der KI-Aufruf, der ein Dokument liest, ist die leichte Hälfte. Vertrauen verdient man mit allem drumherum — dem Prüfschritt, der nie übersprungen wird, den Kosten, die sich belegen lassen, dem Zugriff, der nachweislich abgeschlossen ist.',
+        'Der KI-Aufruf, der ein Dokument liest, ist die leichte Hälfte. Vertrauen verdient man mit allem drumherum — dem Prüfschritt, der nie übersprungen wird, den Kosten, die sich belegen lassen, dem Zugriff, der nachweislich abgeschlossen ist. Und mit einer klaren Grenze: DocuFlow fiskalisiert den Rechnungseingang bewusst nicht, denn das ist die gesetzliche Rolle des Zugangsdienstes. Es führt den Nutzer zu diesem Schritt, statt so zu tun, als würde es ihn übernehmen.',
+    },
+    {
+      slug: 'narrator',
+      kind: 'Internes Tool',
+      title: 'Narrator — ein Video, vier Sprachen',
+      short: 'Unser eigenes Tool für mehrsprachige Video-Sprecherstimmen — Timing, Musik, Untertitel und Übersetzung in einem Durchgang.',
+      problem:
+        'Für die Promo-Videos von Lumenta Labs brauchten wir Sprecherstimmen in mehreren Sprachen. Wir hätten für jede Sprache ein Studio bezahlen oder einen TTS-Dienst abonnieren können. Stattdessen haben wir ein eigenes Tool gebaut — in fünf Tagen.',
+      built: [
+        'Sprecherstimme über Azure Neural TTS, gelegt um die Stellen, an denen im Originalvideo bereits gesprochen wird — das Tool findet sie selbst',
+        'Die Musik wird automatisch unter die Stimme abgesenkt',
+        'Untertitel werden in einem Format exportiert, das YouTube und Facebook akzeptieren',
+        'Übersetzte Fassungen mit einem Klick, Markennamen bleiben unangetastet',
+      ],
+      result: [
+        'Dasselbe Promo-Video bekam eine Sprecherstimme in vier Sprachen: Englisch, Deutsch, Kroatisch und Niederländisch',
+        'In fünf Tagen gebaut und seitdem täglich im Einsatz',
+        'Damit vertonen wir unsere eigenen Promo-Videos sowie Filme und Videos, die wir für Kunden produzieren',
+      ],
+      lesson:
+        'Der teure Teil der Lokalisierung ist nicht die Stimme, sondern alles drumherum: Timing, Musik, Untertitel, Markennamen. Ist das automatisiert, wird eine neue Sprache vom Projekt zum Klick. Darauf läuft unsere Video-Lokalisierung — Sie bekommen eine Fassung für jeden Markt, nicht ein neues Projekt für jede Sprache.',
+      closingLink: { path: '/services/video', label: 'Video-Lokalisierung ansehen' },
     },
   ],
 

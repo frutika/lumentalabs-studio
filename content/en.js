@@ -31,7 +31,7 @@ const en = {
     work: {
       title: 'Products we have built',
       description:
-        'Five products we built, shipped and still maintain — Bezmaske, Lumenta AI, The Dog Habit, UnmaskedWords and DocuFlow AI. Every one of them is live.',
+        'Five live products we built and maintain — Bezmaske, Lumenta AI, The Dog Habit, UnmaskedWords and DocuFlow AI — plus Narrator, our multilingual video narration tool.',
     },
     contact: {
       title: 'Contact',
@@ -462,7 +462,7 @@ const en = {
     eyebrow: 'Work',
     h1: 'We run on what we sell.',
     lede:
-      'Not client logos on a wall. Five products we built, deployed and still maintain — and every one of them is live right now. Open them and judge for yourself.',
+      'Not client logos on a wall. Five products we built, deployed and still maintain — and every one of them is live right now. Open them and judge for yourself. The sixth is Narrator, the internal tool our video localisation runs on.',
     problem: 'The problem',
     built: 'What we built',
     lesson: 'Why it matters to you',
@@ -675,6 +675,8 @@ const en = {
         'Generation pipeline that holds brand voice and terminology across an entire catalogue',
         'Output written for the market the shop actually sells into, not translated after the fact',
         'Same stack we deploy for clients: Next.js front end with PocketBase behind it',
+        'Beyond the catalogue, tools for everyday posting — Instagram, Facebook, TikTok, YouTube, newsletters — in one place. They came from our own need: posting across several networks was eating hours, and the existing tools were scattered, each with its own subscription.',
+        'Lumenta Motion: paste a finished TikTok script, or fill in a few fields instead, and get a rendered MP4 ready to post.',
       ],
       lesson:
         'Everything we learned here about running generation at scale — cost control, caching, quality checks — is what we bring to a client pipeline.',
@@ -712,17 +714,45 @@ const en = {
       slug: 'docuflow-ai',
       kind: 'Live product',
       short:
-        'AI document processing for small businesses — invoices and receipts extracted, reviewed, and turned into an action with one approval.',
+        'Incoming documents for small businesses in the era of Croatia\'s Fiscalisation 2.0 — e-invoices arrive on their own, while AI reads PDFs, scans and photos and turns them into an action with one approval.',
       problem:
-        'Every invoice and receipt that lands in a small business is a small chore: read it, decide what happens next, then remember to actually do it. Multiply that by a hundred documents a month and the chore becomes the job.',
+        'We started following Croatia\'s Fiscalisation 2.0 while nobody yet knew quite how it would work or why it was being introduced. Digging deeper, we noticed what the announcements left out: mandatory e-invoicing does not mean the end of paper. A small business still receives PDFs, photographed receipts, scans and cash slips — only now alongside e-invoices. Two worlds, and no tool for both.',
       built: [
-        'AI extraction pipeline (Claude) that turns invoices and receipts into structured, reviewable data — two real document types, not a demo of one',
+        'E-invoices arrive automatically through a certified access point (ePoslovanje, doku.hr). The data is already structured, so no AI processing is spent on it.',
+        'Everything else — PDF, scan, photo — is read by AI (Claude), which extracts amounts, due dates, IBAN and tax ID into structured, reviewable data.',
         'An action engine that suggests the next step — a payment reminder, an accounting task — and only sends it once a person approves it, with a real email behind every approved reminder',
-        'Per-call AI cost tracking and usage-based billing built in from day one, so the product knows its own margins before its first customer does',
+        'Per-call AI cost tracking built in from day one, so the product knows its own margins before its first customer does',
         'A security pass most teams skip entirely: an audit of every database function that runs with elevated privileges, closing grants nobody remembered were open',
       ],
+      result: [
+        'A real e-invoice was sent through the access point\'s test environment, fetched and shown in the app — without a single AI call. "E-invoices at no AI processing cost" is measured, not assumed.',
+        'AI extraction was measured on real photographed and scanned Croatian receipts and payment slips. Uncertain IBAN and tax-ID digits are settled by checksums (mod-97, mod 11-10), not guesswork.',
+        'In production, the whole product in Croatian',
+      ],
       lesson:
-        'The AI call that reads a document is the easy half. The part that earns trust is everything around it — the review step nothing skips, the cost you can account for, the access you can prove is locked down.',
+        'The AI call that reads a document is the easy half. The part that earns trust is everything around it — the review step nothing skips, the cost you can account for, the access you can prove is locked down. And a clear boundary: DocuFlow deliberately does not fiscalise receipt of invoices, because that is the access point\'s legal role. It points the user through that step rather than pretending to take it over.',
+    },
+    {
+      slug: 'narrator',
+      kind: 'Internal tool',
+      title: 'Narrator — one video, four languages',
+      short: 'Our own tool for multilingual video narration — timing, music, subtitles and translation in a single pass.',
+      problem:
+        'Our Lumenta Labs promo videos needed narration in several languages. We could have paid a studio for each language or subscribed to a TTS service. Instead we built our own tool — in five days.',
+      built: [
+        'Narration on Azure Neural TTS, placed around the parts where the original video already speaks — the tool finds them itself',
+        'Music is automatically ducked under the voice',
+        'Subtitles are exported in a format YouTube and Facebook accept',
+        'Translated versions in one click, with brand names left untouched',
+      ],
+      result: [
+        'The same promo video got narration in four languages: English, German, Croatian and Dutch',
+        'Built in five days and in daily use since',
+        'It narrates our own promo videos and the films and videos we make for clients',
+      ],
+      lesson:
+        'The expensive part of localisation is not the voice but everything around it: timing, music, subtitles, brand names. Automate that and a new language stops being a project and becomes a click. It is what our video localisation service runs on — you get a version for every market, not a new project for every language.',
+      closingLink: { path: '/services/video', label: 'Video localisation service' },
     },
   ],
 
