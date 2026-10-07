@@ -95,9 +95,8 @@ export default function Home({ lang }) {
             <div className="about-layout">
               <div className="about-media">
                 <div className="about-photo">
-                  {/* Placeholder until Denis sends a real photo — swap the src below. */}
                   <Image
-                    src="/media/denis-placeholder.jpg"
+                    src="/media/denis.jpg"
                     alt={d.home.about.photoAlt}
                     fill
                     sizes="(max-width: 760px) 60vw, 280px"
