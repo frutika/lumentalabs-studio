@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { site } from '../../site.config';
+import { site, legal } from '../../site.config';
 import { getDict, localePath } from '../../content';
 
 export default function Footer({ lang }) {
@@ -26,6 +26,11 @@ export default function Footer({ lang }) {
         <Link href="/cookies" hrefLang="en">Cookies</Link>
         <Link href="/cookies/manage" hrefLang="en">Manage cookies</Link>
       </nav>
+      {/* Zakon o elektroničkoj trgovini: who runs the site, where, and the
+          registry entry, readable from every page. */}
+      <p className="wrap foot-identity">
+        {legal.entity}, {legal.address} · OIB {legal.oib} · MBO {legal.mbo}
+      </p>
     </footer>
   );
 }

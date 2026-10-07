@@ -100,8 +100,8 @@ export const contentUpdated = {
   '/vodici/ai-korisnicka-podrska-rag': '2026-09-26',
 
   // Legal copy tracks legal.updated below; kept in step by hand.
-  '/privacy': '2026-08-20',
-  '/terms': '2026-08-20',
+  '/privacy': '2026-10-07',
+  '/terms': '2026-10-07',
   '/cookies': '2026-08-20',
   '/cookies/manage': '2026-08-20',
 };
@@ -115,11 +115,16 @@ export const isPlaceholder = (v) => typeof v === 'string' && v.trimStart().start
 // These MUST be filled in before the policies mean anything - they are the one
 // thing that cannot be inferred from the code.
 export const legal = {
-  entity: 'Denis Šehić',
+  // From the obrtnica (Obrtni registar, upis 07.10.2026.).
+  // Owner's name left out on purpose; OIB + MBO identify the obrt unambiguously.
+  entity: 'LUMENTA LABS, obrt za računalne usluge, trgovinu i prijevoz robe',
   address: 'Bunarić V 6, 23234 Vir',
-  oib: '02520053309',
+  // An obrt has no OIB of its own; the owner's OIB is the obrt's tax number.
+  oib: '36229460035',
+  mbo: '99388324',
+  registry: 'Obrtni registar',
   jurisdiction: 'Croatia',
-  updated: '2026-08-20',
+  updated: '2026-10-07',
 };
 
 // Flip `enabled` to true only when a measurement tool is actually installed.
