@@ -31,7 +31,8 @@ export default function Terms() {
           <h2>Who operates this site</h2>
           <p>
             {site.domain} is operated by <Field value={legal.entity} />,{' '}
-            <Field value={legal.address} />, OIB <Field value={legal.oib} />. Contact:{' '}
+            <Field value={legal.address} />, OIB <Field value={legal.oib} />, registered in the{' '}
+            {legal.registry} under MBO {legal.mbo}. Contact:{' '}
             <a href={`mailto:${site.email}`}>{site.email}</a>.
           </p>
 
