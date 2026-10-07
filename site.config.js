@@ -115,8 +115,9 @@ export const isPlaceholder = (v) => typeof v === 'string' && v.trimStart().start
 // These MUST be filled in before the policies mean anything - they are the one
 // thing that cannot be inferred from the code.
 export const legal = {
-  // Exactly as on the obrtnica (Obrtni registar, upis 07.10.2026.).
-  entity: 'LUMENTA LABS, obrt za računalne usluge, trgovinu i prijevoz robe, vl. Jadranka Šehić',
+  // From the obrtnica (Obrtni registar, upis 07.10.2026.).
+  // Owner's name left out on purpose; OIB + MBO identify the obrt unambiguously.
+  entity: 'LUMENTA LABS, obrt za računalne usluge, trgovinu i prijevoz robe',
   address: 'Bunarić V 6, 23234 Vir',
   // An obrt has no OIB of its own; the owner's OIB is the obrt's tax number.
   oib: '36229460035',
