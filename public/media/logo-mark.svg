@@ -1,6 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#05080c"/>
-  <g transform="translate(6.4 6.4) scale(.8)">
   <defs>
     <mask id="ll-cut">
       <rect width="64" height="64" fill="#fff"/>
@@ -9,5 +7,4 @@
   </defs>
   <path mask="url(#ll-cut)" fill="#1d6fb0" d="M17 4 H29 V47 H58 L51 58 H17 Z"/>
   <path d="M3 34 H10 C13 34 15 39 19 39 C24 39 25 12 31 12 C37 12 37 39 43 39 C47 39 48 31 52 31 H61" fill="none" stroke="#37c6d0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
 </svg>
