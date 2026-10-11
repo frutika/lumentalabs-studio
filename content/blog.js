@@ -23,6 +23,99 @@
 
 const posts = [
   {
+    slug: 'nitko-ovo-ne-radi',
+    lang: 'hr',
+    cover: 'three-answers',
+    relatedWork: 'docuflow-ai',
+    title: '„Nitko ovo ne radi” gotovo nikad nije prilika',
+    description:
+      'Rečenica „ne postoji ništa slično” ima tri moguća objašnjenja, a samo je jedno bezopasno. Četiri stvarne ideje, razlozi zašto ne postoje i kako to provjeriti za 20 minuta.',
+    date: '2026-10-11',
+    tags: ['Ideje', 'Validacija', 'Tržište'],
+    excerpt:
+      'Rečenica koja zvuči kao najjači argument za ideju najčešće je znak da istraga nije ni počela.',
+    body: [
+      {
+        p: 'Gotovo svaka ideja za aplikaciju koju vidimo ima istu rečenicu: „Ne postoji ništa slično.” Ili blaže: „Postoje alati, ali nijedan ne radi ovo kako treba.”',
+      },
+      {
+        p: 'Ta rečenica zvuči kao najjači argument za ideju. U praksi je najčešće znak da istraga nije ni počela. Može biti točna, ali to treba dokazati, a ne pretpostaviti.',
+      },
+      { h2: 'Tri stvarna odgovora' },
+      {
+        p: 'Kad se pitanje „zašto ovo ne postoji” shvati ozbiljno, odgovor je gotovo uvijek jedan od tri:',
+      },
+      {
+        ul: [
+          'Postoji, samo ga niste našli. Pretraživali ste na hrvatskom, samo prvu stranicu rezultata ili svoj naziv za rješenje umjesto riječi kojima drugi opisuju problem.',
+          'Postojao je, pa je nestao. Netko je probao, potrošio novac i odustao. Ta priča vrijedi više od bilo koje analize tržišta, jer pokazuje gdje je zid.',
+          'Ne postoji jer ga nešto ne dopušta: zakon, povjerenje, odgovornost ili ekonomija tržišta. Ideja nije nova, nego je prepreka stara.',
+        ],
+      },
+      {
+        p: 'Prvi odgovor je najbezopasniji: znači da ulazite na tržište s konkurencijom, što nije loše. Treći je najopasniji, jer ga je najlakše ne vidjeti dok nešto već niste izgradili.',
+      },
+      { h2: 'Četiri ideje, četiri razloga' },
+      {
+        p: 'Sve četiri su stvarne ideje koje smo nedavno provukli kroz naš filter od 12 pitanja, i sve četiri su tvrdile da nešto ne postoji.',
+      },
+      {
+        p: 'Dating aplikacija u kojoj se ne može samo „swipeati”, nego treba reagirati na konkretan detalj iz profila. Tvrdnja: sve aplikacije teže brzim matchevima. Stvarnost: Hinge radi upravo to i na tome je izgradio cijeli brend. Prvi odgovor: postoji, samo nije pronađen.',
+      },
+      {
+        p: 'Digitalni izvršitelj, aplikacija koja obitelji šalje lozinke ako se korisnik dulje vrijeme ne javi. Tvrdnja: nema jednostavnog rješenja za prosječnog čovjeka. Stvarnost: Google ima upravitelja neaktivnog računa, Apple omogućuje kontakt koji nasljeđuje pristup računu, a neki upravitelji lozinki imaju hitni pristup za člana obitelji. Besplatno, i od tvrtki kojima ljudi već vjeruju. Ono što nedostaje, čuvanje tuđih lozinki u novoj i maloj aplikaciji, nedostaje s razlogom: povjerenje.',
+      },
+      {
+        p: 'Prehrambeni plan za ljude s kroničnim bolestima, prema sadržaju hladnjaka i današnjim simptomima. Tvrdnja: postojeće aplikacije su previše općenite. Stvarnost: softver koji daje individualne preporuke za upravljanje bolešću u EU može spadati pod propise o medicinskim proizvodima, s certifikacijom koja traje godinama. Verzija bez bolesti i simptoma nije regulirana, ali je onda samo još jedna aplikacija s receptima. Treći odgovor: prepreka je zakon.',
+      },
+      {
+        p: 'Platforma za male poslove u kvartu, od sastavljanja ormara do čuvanja psa na dva sata. Tvrdnja: postoje samo globalne platforme i nepregledne oglasnice. Stvarnost: TaskRabbit postoji i u vlasništvu je IKEA-e, ali radi u velikim gradovima. Platforma treba dovoljno ljudi na obje strane, u isto vrijeme, unutar par kilometara. A nakon prvog dobrog posla ljudi razmijene brojeve i platforma im više ne treba. Treći odgovor: prepreka je ekonomija tržišta.',
+      },
+      { h2: 'Kako to provjeriti za 20 minuta' },
+      {
+        p: 'Ne treba vam analiza tržišta. Treba vam dvadeset minuta i malo nepovjerenja prema vlastitoj ideji.',
+      },
+      {
+        ul: [
+          'Opišite problem na engleskom, na tri različita načina, i pretražite svaki. Ne tražite svoj naziv za rješenje, nego riječi kojima bi korisnik opisao muku.',
+          'Pretražite App Store i Google Play, ne samo web. Mnogi potrošački proizvodi postoje samo kao aplikacija.',
+          'Uz ime prvog pronađenog proizvoda dodajte „alternative”. Stranice s usporedbama izlistaju cijelu kategoriju odjednom.',
+          'Potražite „shut down” ili „zašto se ugasio” uz naziv kategorije. Ugašeni projekti su najjeftinija lekcija koju ćete ikad dobiti.',
+          'Pitajte jednu osobu iz branše. Ona često zna ne samo što postoji, nego i zašto nešto ne postoji.',
+        ],
+      },
+      {
+        p: 'Ako ni nakon toga ne nađete ništa, tek tada postaje zanimljivo. Ali sada imate pitanje koje vrijedi više od same ideje: koji od tri razloga vrijedi ovdje?',
+      },
+      { h2: 'Kada je ipak prilika' },
+      {
+        p: 'Ideja koja ne postoji može biti dobra. Tada obično vrijedi jedno od dvoje:',
+      },
+      {
+        ul: [
+          'Prepreka je lokalna. Veliki igrači ne rade za hrvatski jezik, hrvatske propise ili hrvatske dokumente, jer im se to ne isplati. Za njih je tržište premalo, a za nekoga tko je ovdje dovoljno je veliko.',
+          'Imate nešto što drugi nemaju: pristup, znanje ili podatke koji ruše upravo onu prepreku zbog koje ideja ne postoji.',
+        ],
+      },
+      {
+        p: 'Tako je nastao i DocuFlow. Fiskalizaciju 2.0 pratili smo dok još nije bilo jasno kako će raditi i vidjeli da obavezni eRačun ne pokriva sve: ostaju skenirani, fotografirani i PDF računi. Globalni alati to ne rade za hrvatsko tržište, ne zato što se nitko nije sjetio, nego zato što im je premalo.',
+      },
+      {
+        quote: 'Pitanje nije postoji li nešto slično. Pitanje je zašto ne postoji i jeste li vi ti koji taj razlog možete ukloniti.',
+      },
+      {
+        p: 'Ako imate ideju i niste sigurni na koji ste od tri odgovora naišli, provucite je kroz naš filter ili nam je pošaljite, pa ćemo je pogledati zajedno.',
+      },
+      { h2: 'Gdje dalje' },
+      {
+        links: [
+          { text: '12 pitanja koja postavimo svakoj ideji prije prve linije koda', href: '/hr/blog/filter-ideja-12-pitanja', note: 'cijeli filter, s primjerima' },
+          { text: 'DocuFlow: kako je nastao', href: '/hr/work/docuflow-ai', note: 'prilika koju je otvorila lokalna prepreka' },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'filter-ideja-12-pitanja',
     lang: 'hr',
     cover: 'idea-filter',
