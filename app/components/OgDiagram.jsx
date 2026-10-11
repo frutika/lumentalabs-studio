@@ -317,6 +317,33 @@ const ideaFilterLabels = () => [
   { x: 428, y: 22, size: 17, children: 'validirati' },
 ];
 
+// See ThreeAnswers in BlogCover.jsx. No <marker> in Satori, so the arrows
+// end in a small dot at the box instead of a head.
+const ANSWERS = [
+  { y: 62, label: 'postoji', color: C.accent },
+  { y: 135, label: 'ugašeno', color: C.muted },
+  { y: 208, label: 'prepreka', color: C.warm },
+];
+function threeAnswersShapes() {
+  return [
+    <rect key="idea" x="40" y="110" width="100" height="50" rx="8" fill="none" stroke={C.muted} strokeWidth="2" />,
+    ...ANSWERS.map((a) => (
+      <g key={a.label}>
+        <line x1="140" y1="135" x2="296" y2={a.y} stroke={a.color} strokeWidth="2" />
+        <circle cx="297" cy={a.y} r="3" fill={a.color} />
+        <rect x="300" y={a.y - 22} width="140" height="44" rx="8" fill="none" stroke={a.color} strokeWidth="2" strokeDasharray={a.color === C.muted ? '5 4' : undefined} />
+      </g>
+    )),
+    <line key="wall" x1="452" y1="190" x2="452" y2="226" stroke={C.warm} strokeWidth="4" />,
+  ];
+}
+// Sized for the 1200x630 card, like priceFilterLabels.
+const threeAnswersLabels = () => [
+  { x: 40, y: 30, anchor: 'start', size: 15, children: '„nitko ovo ne radi” →' },
+  { x: 90, y: 135, size: 18, children: 'ideja' },
+  ...ANSWERS.map((a) => ({ x: 370, y: a.y, size: 18, color: a.color, children: a.label })),
+];
+
 const VARIANTS = {
   'nginx-proxy': { shapes: nginxProxyShapes, labels: nginxProxyLabels },
   'service-worker': { shapes: serviceWorkerShapes, labels: serviceWorkerLabels },
@@ -327,6 +354,7 @@ const VARIANTS = {
   'price-filter': { shapes: priceFilterShapes, labels: priceFilterLabels },
   'ladder': { shapes: ladderShapes, labels: ladderLabels },
   'idea-filter': { shapes: ideaFilterShapes, labels: ideaFilterLabels },
+  'three-answers': { shapes: threeAnswersShapes, labels: threeAnswersLabels },
 };
 
 export default function OgDiagram({ variant }) {

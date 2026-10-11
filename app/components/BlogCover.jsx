@@ -303,6 +303,42 @@ function IdeaFilter() {
   );
 }
 
+// "Nobody does this" splits three ways: it exists, it existed and died, or
+// something stops it existing. Only the first is harmless, so it is the one
+// drawn in the accent colour; the wall is the warm one.
+const ANSWERS = [
+  { y: 62, label: 'postoji', box: 'stroke-a', text: 'lbl-a' },
+  { y: 135, label: 'ugašeno', box: 'stroke-m', text: '' },
+  { y: 208, label: 'prepreka', box: 'stroke-w', text: '' },
+];
+
+function ThreeAnswers() {
+  return (
+    <>
+      <text x="40" y="30" className="tiny">„nitko ovo ne radi” →</text>
+      <rect x="40" y="110" width="100" height="50" rx="8" className="stroke-m" />
+      <text x="90" y="139" textAnchor="middle">ideja</text>
+      {ANSWERS.map((a) => (
+        <g key={a.label}>
+          {/* The dead end gets no arrowhead and a dashed box. */}
+          <line
+            x1="140" y1="135" x2="296" y2={a.y}
+            className={a.box}
+            markerEnd={a.box === 'stroke-a' ? 'url(#arrow)' : a.box === 'stroke-w' ? 'url(#arrowW)' : undefined}
+          />
+          <rect
+            x="300" y={a.y - 22} width="140" height="44" rx="8"
+            className={a.box}
+            strokeDasharray={a.box === 'stroke-m' ? '5 4' : undefined}
+          />
+          <text x="370" y={a.y + 4} textAnchor="middle" className={a.text}>{a.label}</text>
+        </g>
+      ))}
+      <line x1="452" y1="190" x2="452" y2="226" className="stroke-w" strokeWidth="4" />
+    </>
+  );
+}
+
 const VARIANTS = {
   'nginx-proxy': NginxProxy,
   'service-worker': ServiceWorker,
@@ -313,6 +349,7 @@ const VARIANTS = {
   'price-filter': PriceFilter,
   'ladder': Ladder,
   'idea-filter': IdeaFilter,
+  'three-answers': ThreeAnswers,
 };
 
 export default function BlogCover({ variant, title, className = '' }) {
