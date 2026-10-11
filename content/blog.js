@@ -23,6 +23,100 @@
 
 const posts = [
   {
+    slug: 'filter-ideja-12-pitanja',
+    lang: 'hr',
+    cover: 'idea-filter',
+    title: '12 pitanja koja postavimo svakoj ideji prije prve linije koda',
+    description:
+      'Filter od 12 pitanja kroz koji provučemo svaku ideju za aplikaciju, našu ili klijentovu: četiri pitanja koja je ruše i osam koja je boduju. Traje deset minuta, štedi mjesece.',
+    date: '2026-10-11',
+    tags: ['Ideje', 'Validacija', 'Proizvod'],
+    excerpt:
+      'Većina aplikacija ne propadne zbog lošeg koda, nego zbog pitanja koje nitko nije postavio prije nego što je kod napisan.',
+    body: [
+      {
+        p: 'Većina aplikacija ne propadne zbog lošeg koda. Propadne zbog pitanja koje nitko nije postavio prije nego što je kod napisan: smije li se to uopće raditi, tko će platiti i zašto to već netko ne radi.',
+      },
+      {
+        p: 'Zato svaku ideju, našu ili klijentovu, prije početka provučemo kroz isti filter od 12 pitanja. Traje pet do deset minuta. Ovdje ga dijelimo cijelog, onako kako ga sami koristimo.',
+      },
+      { h2: 'Kako filter radi' },
+      {
+        ul: [
+          'Eliminacija: četiri pitanja na koja je dovoljan jedan loš odgovor da ideja padne. Ovdje se ne boduje i ne pregovara.',
+          'Bodovanje: ideje koje prođu eliminaciju dobivaju 0, 1 ili 2 boda na osam pitanja, najviše 16.',
+          'Odluka: 12 bodova ili više znači da vrijedi provjeriti potražnju. Između 8 i 11: suzite ideju i ocijenite je ponovno. Ispod 8: u ladicu.',
+        ],
+      },
+      {
+        p: 'Eliminacija ide prva jer odvaja ideje koje su teške od onih koje su za vas nemoguće. Visok zbroj bodova ne spašava ideju koja u srži krije pravni ili sigurnosni problem.',
+      },
+      { h2: 'Prvi dio: četiri pitanja koja ruše ideju' },
+      {
+        p: '1. Zašto ovo već ne postoji? Ako je odgovor „nitko se nije sjetio”, provjerite još jednom. Gotovo uvijek postoji ili isti proizvod, ili razlog zašto ga nema: zakon, povjerenje ili odgovornost. Pravo pitanje je možete li taj razlog riješiti bolje od drugih.',
+      },
+      {
+        p: '2. Je li područje regulirano? Zdravlje, pravni savjeti, financije, čuvanje tuđeg novca ili lozinki, podaci o djeci. Ako jest, postoji li siguran, informativni oblik proizvoda koji ne prelazi tu granicu? Ako ne postoji, ideja otpada.',
+      },
+      {
+        p: '3. Koja je najgora greška? Zamislite da aplikacija pogriješi. Je li posljedica neugodnost ili stvarna šteta za zdravlje, novac ili nešto nepovratno? Ako je šteta, može li je sama arhitektura spriječiti, primjerice provjerom ili čovjekom koji potvrđuje odluku?',
+      },
+      {
+        p: '4. Može li to nositi vaš oblik poslovanja? Obrtnik za obveze obrta odgovara cijelom svojom imovinom. Može li jedan nezadovoljan korisnik napraviti štetu veću od godišnjeg prihoda? Ako može, ideja traži drugačiju strukturu, osiguranje ili odustajanje.',
+      },
+      { h2: 'Drugi dio: osam pitanja za bodovanje' },
+      {
+        p: 'Svako pitanje nosi 0, 1 ili 2 boda. Bodujte strogo: kad dvojite između dvije ocjene, uzmite nižu.',
+      },
+      {
+        ul: [
+          'Bol u trenutku: plaća li korisnik sada, za problem koji ima danas? 0 bodova ako je „bilo bi lijepo imati”, 2 ako je problem hitan i košta ga novca ili vremena.',
+          'Plaćanje: tko plaća, koliko i koliko često? 0 ako nije jasno tko bi platio, 2 ako postoji jasan kupac i model koji odgovara tome koliko često se proizvod koristi.',
+          'Besplatna alternativa: radi li nešto besplatno 80 % posla? 0 ako da, i već je u rukama korisnika. 2 ako ne postoji ili je znatno slabija.',
+          'Ponovna upotreba: koliko možete preuzeti iz onoga što već imate? 0 ako sve gradite od nule, 2 ako veći dio tehnologije već postoji.',
+          'Validacija u dva tjedna: možete li dokazati potražnju prije koda? 0 ako se potražnja vidi tek s gotovim proizvodom, 2 ako je pokažu landing stranica, lista čekanja ili ručni pilot.',
+          'Dostupnost kupaca: znate li gdje je prvih sto kupaca? 0 ako su „svi” ciljana skupina, 2 ako znate grupe, kanale ili ljude po imenu.',
+          'Trošak po korisniku: ostaje li marža pozitivna? 0 ako AI, API ili infrastruktura pojedu cijenu, 2 ako je trošak nizak ili se dijeli među korisnicima.',
+          'Strateška vrijednost: što dobivate ako ideja ne uspije kao posao? 0 ako ništa osim izgubljenog vremena, 2 ako ostaje referenca, znanje ili dio koji koristite drugdje.',
+        ],
+      },
+      {
+        p: 'Ocjena 1 je sve između. U našem iskustvu besplatna alternativa ruši najviše ideja. Strateška vrijednost je razlog zašto ponekad gradimo i ono što neće biti veliki posao, ali će pokazati što znamo.',
+      },
+      { h2: 'Ideja koja pada: digitalni izvršitelj' },
+      {
+        p: 'Aplikacija čuva korisnikove lozinke i šalje ih obitelji ako se korisnik određeno vrijeme ne javi. Zvuči korisno i emotivno je jaka. Pada već na eliminaciji:',
+      },
+      {
+        ul: [
+          'Regulacija: čuvanje tuđih lozinki i pristup računima preminule osobe pravno su osjetljivi.',
+          'Najgora greška: lažni okidač (bolnica, izgubljen mobitel, tjedan bez signala) šalje lozinke, a to se ne može poništiti.',
+          'Oblik poslovanja: jedno curenje podataka znači štetu koju mala tvrtka ne može pokriti.',
+        ],
+      },
+      {
+        p: 'Problemi su u samoj srži ideje, ne u izvedbi, pa ih bolji kod ne rješava.',
+      },
+      { h2: 'Ideja koja prođe, ali ne dovoljno: planer vremena kao budžet' },
+      {
+        p: 'Korisnik tjedno ima 168 sati i raspoređuje ih u „omotnice”, kao novac u aplikacijama za budžet. Eliminaciju prolazi lako: nije regulirano i greška nikome ne može naštetiti.',
+      },
+      {
+        p: 'Bodovanje daje oko 10 od 16. Trošak po korisniku i strateška vrijednost su jaki, ali bol nije hitna, a besplatnih alata za planiranje je puno. Rezultat nije „ne”, nego „suzite”: pronađite ono po čemu se razlikuje od kalendara, pa ocijenite ponovno.',
+      },
+      {
+        quote: 'Filter ne kaže koja će ideja uspjeti. Kaže koju ne vrijedi graditi i što treba provjeriti prije prve linije koda.',
+      },
+      { h2: 'Najteže je primijeniti ga na vlastite ideje' },
+      {
+        p: 'Filter najviše vrijedi upravo na idejama u koje ste već zaljubljeni. Tamo je najlakše preskočiti pitanje koje boli, ili dati 2 boda gdje pošteno ide 1.',
+      },
+      {
+        p: 'Imate ideju za aplikaciju i niste sigurni prolazi li? Pošaljite nam je, pa ćemo je zajedno provući kroz svih 12 pitanja.',
+      },
+    ],
+  },
+  {
     slug: 'opisi-proizvoda-sami-alat-ili-agencija',
     lang: 'hr',
     cover: 'ladder',

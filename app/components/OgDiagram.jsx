@@ -273,6 +273,50 @@ const ladderLabels = () => [
   ]),
 ];
 
+// See IdeaFilter in BlogCover.jsx: two gates, one idea out the far side.
+const IDEA_LANES = [
+  { y: 60, stop: 1 },
+  { y: 105, stop: 0 },
+  { y: 150, stop: 2 },
+  { y: 195, stop: 1 },
+  { y: 240, stop: 2 },
+];
+const IDEA_GATES = [170, 310];
+function ideaFilterShapes() {
+  const gates = IDEA_GATES.map((gx) => (
+    <rect key={`gate${gx}`} x={gx - 16} y="40" width="32" height="220" rx="8" fill="none" stroke={C.accent} strokeWidth="2" />
+  ));
+  const lanes = IDEA_LANES.map((l) => {
+    if (l.stop === 0) {
+      return (
+        <g key={l.y}>
+          <circle cx="50" cy={l.y} r="11" fill="none" stroke={C.accent} strokeWidth="2" />
+          <line x1="61" y1={l.y} x2="417" y2={l.y} stroke={C.accent} strokeWidth="2" />
+          <circle cx="428" cy={l.y} r="9" fill={C.accent} />
+        </g>
+      );
+    }
+    const gx = IDEA_GATES[l.stop - 1];
+    return (
+      <g key={l.y}>
+        <circle cx="50" cy={l.y} r="11" fill="none" stroke={C.muted} strokeWidth="2" />
+        <line x1="61" y1={l.y} x2={gx - 18} y2={l.y} stroke={C.muted} strokeWidth="2" />
+        <line x1={gx - 8} y1={l.y - 8} x2={gx + 8} y2={l.y + 8} stroke={C.warm} strokeWidth="2" />
+        <line x1={gx + 8} y1={l.y - 8} x2={gx - 8} y2={l.y + 8} stroke={C.warm} strokeWidth="2" />
+      </g>
+    );
+  });
+  // Gates first, so the lane that passes crosses them rather than stops at them.
+  return [...gates, ...lanes];
+}
+// Sized for the 1200x630 card, like priceFilterLabels.
+const ideaFilterLabels = () => [
+  { x: 50, y: 22, size: 17, children: 'ideje' },
+  { x: 170, y: 22, size: 17, color: C.accent, children: 'eliminacija' },
+  { x: 310, y: 22, size: 17, color: C.accent, children: 'bodovanje' },
+  { x: 428, y: 22, size: 17, children: 'validirati' },
+];
+
 const VARIANTS = {
   'nginx-proxy': { shapes: nginxProxyShapes, labels: nginxProxyLabels },
   'service-worker': { shapes: serviceWorkerShapes, labels: serviceWorkerLabels },
@@ -282,6 +326,7 @@ const VARIANTS = {
   'seo-scan': { shapes: seoScanShapes, labels: null },
   'price-filter': { shapes: priceFilterShapes, labels: priceFilterLabels },
   'ladder': { shapes: ladderShapes, labels: ladderLabels },
+  'idea-filter': { shapes: ideaFilterShapes, labels: ideaFilterLabels },
 };
 
 export default function OgDiagram({ variant }) {

@@ -248,6 +248,61 @@ function Ladder() {
   );
 }
 
+// Two gates, not one: elimination first, scoring second. Five ideas go in,
+// most stop at the first gate, a couple more at the second, and one comes out
+// the other side. Same left-to-right lanes as price-filter, for the same
+// reason — the canvas is wide, and next/og stretches it further.
+const IDEA_LANES = [
+  { y: 60, stop: 1 },
+  { y: 105, stop: 0 },
+  { y: 150, stop: 2 },
+  { y: 195, stop: 1 },
+  { y: 240, stop: 2 },
+];
+const IDEA_GATES = [170, 310];
+
+function Cross({ x, y }) {
+  return (
+    <>
+      <line x1={x - 8} y1={y - 8} x2={x + 8} y2={y + 8} className="stroke-w" />
+      <line x1={x + 8} y1={y - 8} x2={x - 8} y2={y + 8} className="stroke-w" />
+    </>
+  );
+}
+
+function IdeaFilter() {
+  return (
+    <>
+      <text x="50" y="22" textAnchor="middle" className="tiny">ideje</text>
+      <text x="170" y="22" textAnchor="middle" className="lbl-a">eliminacija</text>
+      <text x="310" y="22" textAnchor="middle" className="lbl-a">bodovanje</text>
+      <text x="428" y="22" textAnchor="middle" className="tiny">validirati</text>
+
+      {/* Gates drawn before the lanes, so the lanes that pass cross them. */}
+      {IDEA_GATES.map((gx) => (
+        <rect key={gx} x={gx - 16} y="40" width="32" height="220" rx="8" className="stroke-a" />
+      ))}
+
+      {IDEA_LANES.map((l) => (
+        <g key={l.y}>
+          <circle cx="50" cy={l.y} r="11" className={l.stop === 0 ? 'stroke-a' : 'stroke-m'} />
+          {l.stop === 0 ? (
+            <>
+              <line x1="61" y1={l.y} x2="410" y2={l.y} className="stroke-a" markerEnd="url(#arrow)" />
+              <circle cx="428" cy={l.y} r="9" className="fill-a" />
+            </>
+          ) : (
+            <>
+              <line x1="61" y1={l.y} x2={IDEA_GATES[l.stop - 1] - 18} y2={l.y} className="stroke-m" />
+              <Cross x={IDEA_GATES[l.stop - 1]} y={l.y} />
+            </>
+          )}
+        </g>
+      ))}
+    </>
+  );
+}
+
 const VARIANTS = {
   'nginx-proxy': NginxProxy,
   'service-worker': ServiceWorker,
@@ -257,6 +312,7 @@ const VARIANTS = {
   'seo-scan': SeoScan,
   'price-filter': PriceFilter,
   'ladder': Ladder,
+  'idea-filter': IdeaFilter,
 };
 
 export default function BlogCover({ variant, title, className = '' }) {
