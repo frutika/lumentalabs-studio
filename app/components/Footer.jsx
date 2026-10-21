@@ -56,6 +56,9 @@ export default function Footer({ lang }) {
           {legal.entity}, {legal.address} · OIB {legal.oib} · MBO {legal.mbo}
         </p>
       </div>
+      {/* The name, set large and fading into the page. Decorative: the brand
+          link above already says it. */}
+      <div className="wrap foot-giant" aria-hidden="true">{site.name.split(' ')[0]}</div>
       <div className="wrap foot-bar">
         {/* A build-time year on a statically prerendered page freezes at the
             deploy date. suppressHydrationWarning lets the client correct it. */}

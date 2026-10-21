@@ -189,6 +189,46 @@ const hr = {
 
     reelMeta: 'Video · 3:40',
 
+    // Redizajn v2 (2026-10): tvrdnja u heroju, traka, sekcija sa stackom i
+    // prikaz agenta. ILUSTRACIJA: iznosi i dobavljač u prikazu agenta su
+    // primjer, i panel to piše.
+    h1Big: ['Softver koji ', 'radi sam.'],
+    marquee: ['Web platforme', 'AI agenti', 'AI za dokumente', 'Sadržaj za cijeli katalog', 'Lokalizacija videa', 'Automatizacija procesa', 'Arhitektura i održavanje'],
+    stack: {
+      label: 'Dokaz, ne prezentacija',
+      h2: ['Jedan stack.', 'Naši vlastiti proizvodi', ' rade na njemu.'],
+      lede: 'Sve što nudimo klijentima prvo smo izgradili i dokazali na vlastitim projektima — ista arhitektura, isti procesi, isti standardi.',
+    },
+    agent: {
+      label: 'Primjer: AI agent pretvara pristigli e-račun u jednu predloženu radnju',
+      project: 'docuflow-ai',
+      view: 'izvođenje agenta',
+      example: 'primjer podataka',
+      running: 'radi',
+      context: 'Fiskalizacija 2.0',
+      inputLabel: 'Ulaz',
+      agentLabel: 'Agent',
+      outputLabel: 'Predložena radnja',
+      file: 'e-račun.pdf',
+      steps: [
+        ['E-račun zaprimljen iz inboxa', '0,3 s'],
+        ['PDF pročitan — 2 stranice', '1,9 s'],
+        ['Izvučeni dobavljač, OIB, stavke i PDV', '1,2 s'],
+        ['Provjereni iznosi i duplikati', '0,4 s'],
+      ],
+      current: 'Predlaže radnju…',
+      liveTag: 'uživo',
+      next: 'Čeka jedno odobrenje',
+      action: {
+        title: 'Proknjiži kao trošak',
+        fields: [['Dobavljač', 'Primjer d.o.o.'], ['Iznos', '1.240,00 €'], ['PDV', '25 %'], ['Kategorija', 'Uredska oprema']],
+        approve: 'Odobri',
+        review: 'Pregledaj',
+      },
+      note: 'Jedan klik od dokumenta do proknjiženog troška. Agent čita, odluka ostaje čovjeku.',
+    },
+    tileSample: ['Ritual sporog uživanja u čaši. ', 'Hladno namakan osamnaest sati'],
+
     about: {
       h2: 'Tko ovo radi',
       paragraphs: [

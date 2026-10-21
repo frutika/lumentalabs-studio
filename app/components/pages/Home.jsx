@@ -1,9 +1,12 @@
+import { Fragment } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ReelEmbed from '../ReelEmbed';
 import JsonLd from '../JsonLd';
 import ProjectCanvas from '../home/ProjectCanvas';
 import ServiceVisual from '../home/ServiceVisual';
+import AgentRun from '../home/AgentRun';
+import TileArt from '../home/TileArt';
 import { getDict, localePath, servicesFor, worksFor, reelFor, postsFor } from '../../../content';
 import { organizationSchema, websiteSchema } from '../../../content/schema';
 import { site } from '../../../site.config';
@@ -18,11 +21,12 @@ function lastWordEm(text) {
   return <>{text.slice(0, i + 1)}<em>{text.slice(i + 1)}</em></>;
 }
 
-/** "We don't just recommend this. We run on it." → second sentence dimmed. */
-function secondSentenceDim(text) {
+/** "We don't just recommend this. We run on it." → second sentence on its own
+    line, in the italic accent. */
+function secondSentenceEm(text) {
   const i = text.indexOf('. ');
   if (i < 0) return text;
-  return <>{text.slice(0, i + 2)}<span className="dim">{text.slice(i + 2)}</span></>;
+  return <>{text.slice(0, i + 1)}<br /><em>{text.slice(i + 2)}</em></>;
 }
 
 const Arrow = () => <span aria-hidden="true">→</span>;
@@ -32,18 +36,6 @@ const ExternalIcon = () => (
     <path d="M3.5 8.5 L8.5 3.5 M4.5 3.5 H8.5 V7.5" />
   </svg>
 );
-
-// Each product's name, set the way the product sets it. Names are brand facts
-// from site.config; only the typography lives here.
-function Wordmark({ slug, name }) {
-  switch (slug) {
-    case 'lumenta-ai': return <span className="wm-bold">Lumenta<em>AI</em></span>;
-    case 'the-dog-habit': return <span className="wm-serif it">{name}</span>;
-    case 'unmaskedwords': return <span className="wm-mono">unmasked_words</span>;
-    case 'docuflow-ai': return <span className="wm-bold light">DocuFlow<em>AI</em></span>;
-    default: return <span className="wm-serif">{name}</span>;
-  }
-}
 
 export default function Home({ lang }) {
   const d = getDict(lang);
@@ -63,6 +55,7 @@ export default function Home({ lang }) {
   const serviceCard = (s) => (
     <article className="svc" key={s.slug}>
       <div>
+        <span className="ghost" aria-hidden="true">{s.num}</span>
         <span className="num">{s.num}</span>
         <h3><Link href={serviceHref(s)}>{s.title}</Link></h3>
         <p>{s.short}</p>
@@ -75,32 +68,51 @@ export default function Home({ lang }) {
     <div className="home">
       <JsonLd data={organizationSchema(lang)} />
       <JsonLd data={websiteSchema(lang)} />
-      <div className="glow top" aria-hidden="true" />
-
       <header className="hero" id="top">
-        <div className="wrap">
+        {/* One light source: the beam, its core and the floor it falls on. */}
+        <div className="stage" aria-hidden="true">
+          <span className="beam" />
+          <span className="glow top" />
+          <span className="beam-core" />
+          <span className="floor" />
+        </div>
+        <div className="wrap hero-inner">
           <Link className="announce" href={p('/work/docuflow-ai')}>
             <span className="announce-tag">{h.announce.tag}</span>
             {h.announce.text}
             <Arrow />
           </Link>
-          <h1>{lastWordEm(h.h1)}</h1>
+          {/* The keyword line stays inside the h1: it is what the page ranks for.
+              The big line under it is the claim the products back up. */}
+          <h1>
+            <span className="h1-kicker">{h.h1}</span>{' '}
+            <span className="h1-big">{h.h1Big[0]}<em>{h.h1Big[1]}</em></span>
+          </h1>
           <p className="lede">{h.lede}</p>
           <div className="btn-row">
             <Link className="btn" href={p('/contact')}>{h.ctaPrimary} <Arrow /></Link>
             <Link className="btn ghost" href={p('/work')}>{h.ctaSecondary}</Link>
           </div>
-          <ProjectCanvas works={works} c={h.canvas} href={(slug) => p(`/work/${slug}`)} />
+          <AgentRun a={h.agent} />
         </div>
       </header>
 
-      <section className="h-sec ruled">
-        <div className="wrap gap">
-          <p className="label">{h.wallLabel}</p>
-          <div>
-            <h2>{h.wallH2}</h2>
-            <p>{h.wallP}</p>
-          </div>
+      {/* Decorative ticker; every item in it is said properly further down. */}
+      <div className="marquee" aria-hidden="true">
+        <div className="marquee-track">
+          {[0, 1].map((k) => (
+            <span key={k}>
+              {h.marquee.map((m) => <Fragment key={m}>{m}<i>/</i></Fragment>)}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <section className="h-sec wall">
+        <div className="wrap">
+          <p className="label hot">{h.wallLabel}</p>
+          <h2>{lastWordEm(h.wallH2)}</h2>
+          <p>{h.wallP}</p>
         </div>
       </section>
 
@@ -115,6 +127,19 @@ export default function Home({ lang }) {
         </div>
       </section>
 
+      <section className="stack" id="stack">
+        <div className="wrap h-head">
+          <div>
+            <p className="label hot">{h.stack.label}</p>
+            <h2>{h.stack.h2[0]}<br /><em>{h.stack.h2[1]}</em>{h.stack.h2[2]}</h2>
+          </div>
+          <p>{h.stack.lede}</p>
+        </div>
+        <div className="wrap">
+          <ProjectCanvas works={works} c={h.canvas} href={(slug) => p(`/work/${slug}`)} />
+        </div>
+      </section>
+
       <section className="ivory">
         <div className="wrap">
           <p className="label">{h.quoteLabel}</p>
@@ -126,7 +151,7 @@ export default function Home({ lang }) {
       <section className="h-sec" id="work">
         <div className="wrap">
           <div className="h-head">
-            <h2>{secondSentenceDim(h.proofH2)}</h2>
+            <h2>{secondSentenceEm(h.proofH2)}</h2>
             <p>{h.proofLede}</p>
           </div>
           <div className="gallery">
@@ -134,14 +159,15 @@ export default function Home({ lang }) {
               const external = Boolean(w.href);
               const body = (
                 <>
-                  {/* The wordmark is styling (e.g. "unmasked_words"); the plain name is
-                      what a screen reader gets. */}
-                  <div className="tile-art" aria-hidden="true"><Wordmark slug={w.slug} name={w.name} /></div>
-                  <span className="sr">{w.name}{external ? ` (${d.a11y.newTab})` : ''}</span>
+                  <div className="tile-art" aria-hidden="true"><TileArt slug={w.slug} sample={h.tileSample} /></div>
                   <div className="tile-body">
                     <div className="tile-meta">
-                      <span className={`status${external ? '' : ' internal'}`}>{w.kind}</span>
-                      {external ? <ExternalIcon /> : <Arrow />}
+                      <span className="tile-name">
+                        {w.name}{external ? <span className="sr"> ({d.a11y.newTab})</span> : null}
+                      </span>
+                      <span className={`status${external ? '' : ' internal'}`}>
+                        {w.kind}{external ? <ExternalIcon /> : <Arrow />}
+                      </span>
                     </div>
                     <p>{w.short}</p>
                   </div>
@@ -213,7 +239,7 @@ export default function Home({ lang }) {
             <ol className="steps">
               {d.pillars.map(([title, body], i) => (
                 <li key={title}>
-                  <span className="num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="num" aria-hidden="true">{i + 1}</span>
                   <div><strong>{title}</strong><span>{body}</span></div>
                 </li>
               ))}
@@ -254,10 +280,9 @@ export default function Home({ lang }) {
                 <li key={post.slug}>
                   <Link href={p(`/blog/${post.slug}`)}>
                     <span className="post-tag">{post.tags[0]}</span>
-                    <span className="post-text">
-                      <span className="post-title">{post.title}</span>
-                      <span className="post-excerpt">{post.excerpt}</span>
-                    </span>
+                    <span className="post-title">{post.title}</span>
+                    <span className="post-excerpt">{post.excerpt}</span>
+                    <span className="post-more" aria-hidden="true"><Arrow /></span>
                   </Link>
                 </li>
               ))}
@@ -283,7 +308,10 @@ export default function Home({ lang }) {
       ) : null}
 
       <section className="cta" id="contact">
-        <div className="glow bottom" aria-hidden="true" />
+        <div className="stage" aria-hidden="true">
+          <span className="glow bottom" />
+          <span className="floor" />
+        </div>
         <div className="wrap">
           <h2>{lastWordEm(h.finalH2)}</h2>
           <p>{h.finalLede}</p>
