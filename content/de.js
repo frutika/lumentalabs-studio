@@ -44,14 +44,21 @@ const de = {
     },
   },
 
+  footer: {
+    tagline: 'Ein Digitalstudio für Web, KI und Automatisierung.',
+    studio: 'Studio',
+    resources: 'Ressourcen',
+    contact: 'Kontakt',
+    guides: 'Kostenlose Leitfäden (HR)',
+    status: 'Alle Systeme normal',
+  },
+
   a11y: {
     skip: 'Zum Hauptinhalt springen',
     langNav: 'Sprache',
     mainNav: 'Hauptnavigation',
     footerNav: 'Fußzeile',
     legalNav: 'Rechtliches',
-    heroVideoPause: 'Hintergrundvideo pausieren',
-    heroVideoPlay: 'Hintergrundvideo abspielen',
     newTab: 'wird in einem neuen Tab geöffnet',
     breadcrumb: 'Brotkrümelnavigation',
   },
@@ -99,6 +106,69 @@ const de = {
     finalH2: 'Sagen Sie uns, was es geben sollte.',
     finalLede: 'Eine klare Vereinbarung, eine konkrete Lieferung, ein messbares Ergebnis.',
     finalCta: 'Kontakt aufnehmen',
+    // Redesign (2026-10). Alles darunter ist der Rahmen um den Text oben:
+    // Ankündigung im Hero, Labels und die illustrativen Mini-Oberflächen.
+    announce: { tag: 'NEU', text: 'DocuFlow AI ist live — Fiskalisierung 2.0, erledigt' },
+    wallLabel: 'Die Lücke',
+    quoteLabel: 'Praktische KI',
+
+    canvas: {
+      label: 'Unsere Produkte und ihr gemeinsamer Stack',
+      project: 'lumenta-labs',
+      env: 'production',
+      status: '{live} live · {internal} intern',
+      view: 'Architektur',
+      stackTitle: 'Gemeinsamer Stack',
+      stack: 'Next.js · PocketBase · n8n · KI-Pipelines',
+      stackNote: 'dieselbe Architektur, dieselben Standards',
+      nodes: {
+        bezmaske: 'Arbeitgeberbewertungen · HR',
+        unmaskedwords: 'anonyme Plattform',
+        narrator: 'Stimme · Untertitel · i18n',
+        'lumenta-ai': 'E-Commerce-Copywriting',
+        'the-dog-habit': 'Selbstpublikation · YouTube',
+        'docuflow-ai': 'E-Rechnungen · Fiskalisierung 2.0',
+      },
+    },
+
+    serviceUi: {
+      deploy: {
+        head: 'deploy · main',
+        env: 'production',
+        steps: ['Abhängigkeiten installieren', 'Build — Next.js', 'Routen für Crawler vorrendern'],
+        ready: 'Bereit — lumentalabs.studio',
+      },
+      generator: {
+        product: 'Leinendecke Aurora',
+        tone: 'Ton: luxuriös',
+        lang: 'Sprache: DE',
+        output: 'Stonewashed-Leinen, das mit jeder Wäsche weicher wird — eine leise Schicht Wärme für lange Abende',
+      },
+      content: {
+        rows: ['Produktseiten', 'Kategorieseiten', 'Kampagnen'],
+        queued: 'in Warteschlange',
+      },
+      monitor: { label: 'Überwacht nach dem Launch', status: 'stabil' },
+    },
+
+    // ILLUSTRATION: Aufgaben und LUM-xx-Kennungen sind ein Beispiel für das
+    // gemeinsame Board, kein echtes Projekt. Frei ersetzbar.
+    board: {
+      title: 'Ihr Projekt',
+      sub: 'gemeinsames Board',
+      note: 'für Sie jederzeit sichtbar',
+      inProgress: 'In Arbeit',
+      done: 'Erledigt',
+      tasks: [
+        { id: 'LUM-47', title: 'Weiterleitung www → Hauptdomain', tag: 'SEO', done: false, pct: 25 },
+        { id: 'LUM-45', title: 'Anfrageformular → n8n-Webhook → E-Mail', tag: 'Automatisierung', done: false, pct: 75 },
+        { id: 'LUM-41', title: 'SPF, DKIM und DMARC für die Absenderdomain', tag: 'E-Mail', done: true },
+        { id: 'LUM-38', title: 'Automatisierungsserver auf eigene Subdomain', tag: 'Infra', done: true },
+        { id: 'LUM-33', title: 'Landingpage für die kostenlosen Leitfäden', tag: 'Web', done: true },
+      ],
+    },
+
+    reelMeta: 'Video · 3:40',
 
     about: {
       h2: 'Wer das macht',

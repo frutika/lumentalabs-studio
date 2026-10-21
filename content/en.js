@@ -44,14 +44,21 @@ const en = {
     },
   },
 
+  footer: {
+    tagline: 'A digital studio for web, AI and automation.',
+    studio: 'Studio',
+    resources: 'Resources',
+    contact: 'Contact',
+    guides: 'Free guides (HR)',
+    status: 'All systems normal',
+  },
+
   a11y: {
     skip: 'Skip to main content',
     langNav: 'Language',
     mainNav: 'Main',
     footerNav: 'Footer',
     legalNav: 'Legal',
-    heroVideoPause: 'Pause the background video',
-    heroVideoPlay: 'Play the background video',
     newTab: 'opens in a new tab',
     breadcrumb: 'Breadcrumb',
   },
@@ -102,6 +109,72 @@ const en = {
     finalH2: 'Tell us what should exist.',
     finalLede: 'A clear agreement, a concrete delivery, a measurable result.',
     finalCta: 'Get in touch',
+    // Redesign (2026-10). Everything below is chrome around the copy above:
+    // the hero announcement, the labels and the illustrative mini-interfaces.
+    announce: { tag: 'NEW', text: 'DocuFlow AI is live — Fiscalisation 2.0, handled' },
+    wallLabel: 'The gap',
+    quoteLabel: 'Practical AI',
+
+    canvas: {
+      label: 'Our products and the stack they share',
+      project: 'lumenta-labs',
+      env: 'production',
+      // {live} and {internal} are counted from site.config, so the line can
+      // never claim more than exists.
+      status: '{live} live · {internal} internal',
+      view: 'Architecture',
+      stackTitle: 'Shared stack',
+      stack: 'Next.js · PocketBase · n8n · AI pipelines',
+      stackNote: 'same architecture, same standards',
+      nodes: {
+        bezmaske: 'company reviews · HR',
+        unmaskedwords: 'anonymous platform',
+        narrator: 'voice · subtitles · i18n',
+        'lumenta-ai': 'e-commerce copywriting',
+        'the-dog-habit': 'self-publishing · YouTube',
+        'docuflow-ai': 'e-invoices · Fiscalisation 2.0',
+      },
+    },
+
+    // Labels inside the small illustrations on the five service cards.
+    serviceUi: {
+      deploy: {
+        head: 'deploy · main',
+        env: 'production',
+        steps: ['Install dependencies', 'Build — Next.js', 'Prerender routes for crawlers'],
+        ready: 'Ready — lumentalabs.studio',
+      },
+      generator: {
+        product: 'Aurora Linen Throw',
+        tone: 'tone: luxury',
+        lang: 'lang: EN',
+        output: 'Stone-washed linen that softens with every wash — a quiet layer of warmth for slow evenings',
+      },
+      content: {
+        rows: ['Product pages', 'Category pages', 'Campaigns'],
+        queued: 'queued',
+      },
+      monitor: { label: 'Monitored after launch', status: 'healthy' },
+    },
+
+    // ILLUSTRATION: the tasks and LUM-xx ids are an example of the shared
+    // board, not a real project. Replace freely.
+    board: {
+      title: 'Your project',
+      sub: 'shared board',
+      note: 'visible to you, always',
+      inProgress: 'In progress',
+      done: 'Done',
+      tasks: [
+        { id: 'LUM-47', title: 'Redirect www → apex domain', tag: 'SEO', done: false, pct: 25 },
+        { id: 'LUM-45', title: 'Lead form → n8n webhook → email', tag: 'Automation', done: false, pct: 75 },
+        { id: 'LUM-41', title: 'SPF, DKIM and DMARC for the sending domain', tag: 'Email', done: true },
+        { id: 'LUM-38', title: 'Move automation server to its own subdomain', tag: 'Infra', done: true },
+        { id: 'LUM-33', title: 'Landing page for the free guides', tag: 'Web', done: true },
+      ],
+    },
+
+    reelMeta: 'Reel · 3:40',
   },
 
   servicesPage: {

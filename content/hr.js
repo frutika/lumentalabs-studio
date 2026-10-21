@@ -59,14 +59,21 @@ const hr = {
     },
   },
 
+  footer: {
+    tagline: 'Digitalni studio za web, AI i automatizaciju.',
+    studio: 'Studio',
+    resources: 'Resursi',
+    contact: 'Kontakt',
+    guides: 'Besplatni vodiči',
+    status: 'Svi sustavi rade normalno',
+  },
+
   a11y: {
     skip: 'Prijeđi na glavni sadržaj',
     langNav: 'Jezik',
     mainNav: 'Glavna navigacija',
     footerNav: 'Podnožje',
     legalNav: 'Pravno',
-    heroVideoPause: 'Zaustavi pozadinski video',
-    heroVideoPlay: 'Pokreni pozadinski video',
     newTab: 'otvara se u novoj kartici',
     breadcrumb: 'Navigacijski trag',
   },
@@ -118,6 +125,69 @@ const hr = {
     finalH2: 'Recite nam što bi trebalo postojati.',
     finalLede: 'Jasan dogovor, konkretna isporuka, mjerljiv rezultat.',
     finalCta: 'Javite nam se',
+    // Redizajn (2026-10). Sve ispod je okvir oko teksta iznad: najava u
+    // heroju, labele i ilustrativna mini-sučelja.
+    announce: { tag: 'NOVO', text: 'DocuFlow AI je u produkciji — Fiskalizacija 2.0, riješeno' },
+    wallLabel: 'Jaz',
+    quoteLabel: 'Praktični AI',
+
+    canvas: {
+      label: 'Naši proizvodi i zajednički stack',
+      project: 'lumenta-labs',
+      env: 'produkcija',
+      status: '{live} živih · {internal} interni',
+      view: 'Arhitektura',
+      stackTitle: 'Zajednički stack',
+      stack: 'Next.js · PocketBase · n8n · AI pipelines',
+      stackNote: 'ista arhitektura, isti standardi',
+      nodes: {
+        bezmaske: 'recenzije poslodavaca · HR',
+        unmaskedwords: 'anonimna platforma',
+        narrator: 'glas · titlovi · i18n',
+        'lumenta-ai': 'copywriting za e-trgovinu',
+        'the-dog-habit': 'samoobjavljivanje · YouTube',
+        'docuflow-ai': 'eRačuni · Fiskalizacija 2.0',
+      },
+    },
+
+    serviceUi: {
+      deploy: {
+        head: 'deploy · main',
+        env: 'produkcija',
+        steps: ['Instalacija ovisnosti', 'Build — Next.js', 'Prerender ruta za crawlere'],
+        ready: 'Spremno — lumentalabs.studio',
+      },
+      generator: {
+        product: 'Lanena deka Aurora',
+        tone: 'ton: luksuzno',
+        lang: 'jezik: HR',
+        output: 'Kameno prani lan koji sa svakim pranjem postaje mekši — tihi sloj topline za spore večeri',
+      },
+      content: {
+        rows: ['Stranice proizvoda', 'Stranice kategorija', 'Kampanje'],
+        queued: 'u redu čekanja',
+      },
+      monitor: { label: 'Nadzor nakon lansiranja', status: 'ispravno' },
+    },
+
+    // ILUSTRACIJA: zadaci i oznake LUM-xx su primjer zajedničke ploče, ne
+    // stvarni projekt. Slobodno zamijeniti.
+    board: {
+      title: 'Vaš projekt',
+      sub: 'zajednička ploča',
+      note: 'uvijek vam je vidljiva',
+      inProgress: 'U tijeku',
+      done: 'Gotovo',
+      tasks: [
+        { id: 'LUM-47', title: 'Preusmjeravanje www → glavna domena', tag: 'SEO', done: false, pct: 25 },
+        { id: 'LUM-45', title: 'Forma za upite → n8n webhook → email', tag: 'Automatizacija', done: false, pct: 75 },
+        { id: 'LUM-41', title: 'SPF, DKIM i DMARC za domenu pošiljatelja', tag: 'Email', done: true },
+        { id: 'LUM-38', title: 'Server za automatizaciju na vlastitu poddomenu', tag: 'Infra', done: true },
+        { id: 'LUM-33', title: 'Landing stranica za besplatne vodiče', tag: 'Web', done: true },
+      ],
+    },
+
+    reelMeta: 'Video · 3:40',
 
     about: {
       h2: 'Tko ovo radi',

@@ -1,4 +1,5 @@
 import './globals.css';
+import { fontVars } from './fonts';
 import Link from 'next/link';
 import { site } from '../site.config';
 import { getDict, DEFAULT_LOCALE } from '../content';
@@ -20,11 +21,11 @@ export const metadata = {
   robots: { index: false, follow: true },
 };
 
-export const viewport = { themeColor: '#05080c' };
+export const viewport = { themeColor: '#0C0B0A' };
 
 export default function GlobalNotFound() {
   return (
-    <html lang="en">
+    <html lang="en" className={fontVars}>
       <body>
         <main id="main">
           <header className="page-head">
