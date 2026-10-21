@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import ClosingCta from '../ClosingCta';
+import { PageTitle } from '../text';
 import { site } from '../../../site.config';
 import { getDict, localePath } from '../../../content';
 
@@ -14,7 +16,7 @@ export default function VideoPage({ lang }) {
           <p className="eyebrow">
             <Link href={p('/services')}>{v.eyebrow}</Link> · 04
           </p>
-          <h1 className="page-title">{v.h1}</h1>
+          <PageTitle text={v.h1} />
           <p className="lede">{v.lede}</p>
           <Link className="btn no-offset" href={p('/contact')}>{v.cta}</Link>
         </div>
@@ -81,7 +83,7 @@ export default function VideoPage({ lang }) {
               {v.pricing.map((band) => (
                 <div key={band.name} className="band">
                   <p className="detail-sub">
-                    <strong>{band.price}</strong> — {band.name}
+                    <strong>{band.price}</strong> {band.name}
                   </p>
                   <p>{band.body}</p>
                 </div>
@@ -92,14 +94,10 @@ export default function VideoPage({ lang }) {
         </section>
       ) : null}
 
-      <section>
-        <div className="wrap">
-          <h2>{v.closingH2}</h2>
-          <p className="section-lede">{v.closingLede}</p>
-          <Link className="btn" href={p('/contact')}>{d.servicesPage.closingCta}</Link>
-          <Link className="btn ghost" href={`mailto:${site.email}`}>{site.email}</Link>
-        </div>
-      </section>
+      <ClosingCta title={v.closingH2} lede={v.closingLede}>
+        <Link className="btn" href={p('/contact')}>{d.servicesPage.closingCta} <span aria-hidden="true">→</span></Link>
+        <a className="btn mail" href={`mailto:${site.email}`}>{site.email}</a>
+      </ClosingCta>
     </>
   );
 }

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import JsonLd from '../JsonLd';
 import BlogCover from '../BlogCover';
 import ShareButton from '../ShareButton';
+import ClosingCta from '../ClosingCta';
 import { getDict, localePath, postFor, relatedWorkFor, urlFor } from '../../../content';
 import { articleSchema, breadcrumbSchema } from '../../../content/schema';
 
@@ -28,7 +29,7 @@ export default function BlogPost({ lang, slug }) {
           <p className="eyebrow">
             <Link href={p('/blog')}>{d.blogPage.eyebrow}</Link>
           </p>
-          <h1 className="page-title">{post.title}</h1>
+          <h1 className="page-title post-title-h1">{post.title}</h1>
           <p className="lede">{post.description}</p>
           <div className="post-meta">
             <time dateTime={post.date}>{formatDate(post.date, d.htmlLang)}</time>
@@ -59,14 +60,10 @@ export default function BlogPost({ lang, slug }) {
         </div>
       </section>
 
-      <section>
-        <div className="wrap">
-          <h2>{d.blogPage.closingH2}</h2>
-          <p className="section-lede">{d.blogPage.closingLede}</p>
-          <Link className="btn" href={p('/contact')}>{d.blogPage.closingCta}</Link>
-          <Link className="btn ghost" href={p('/blog')}>{d.blogPage.backToAll}</Link>
-        </div>
-      </section>
+      <ClosingCta title={d.blogPage.closingH2} lede={d.blogPage.closingLede}>
+        <Link className="btn" href={p('/contact')}>{d.blogPage.closingCta} <span aria-hidden="true">→</span></Link>
+        <Link className="btn ghost" href={p('/blog')}>{d.blogPage.backToAll}</Link>
+      </ClosingCta>
     </>
   );
 }

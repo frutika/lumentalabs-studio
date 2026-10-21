@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { PageTitle } from '../text';
 import { getDict, localePath } from '../../../content';
 
 /**
@@ -15,10 +16,12 @@ export default function NotFoundPage({ lang }) {
     <header className="page-head">
       <div className="wrap">
         <p className="eyebrow">{d.notFound.eyebrow}</p>
-        <h1 className="page-title">{d.notFound.h1}</h1>
+        <PageTitle text={d.notFound.h1} />
         <p className="lede">{d.notFound.lede}</p>
-        <Link className="btn no-offset" href={p('/')}>{d.notFound.home}</Link>
-        <Link className="btn ghost" href={p('/work')}>{d.notFound.work}</Link>
+        <div className="btn-row">
+          <Link className="btn" href={p('/')}>{d.notFound.home}</Link>
+          <Link className="btn ghost" href={p('/work')}>{d.notFound.work}</Link>
+        </div>
       </div>
     </header>
   );

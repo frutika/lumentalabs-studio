@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import ClosingCta from '../ClosingCta';
+import ServiceVisual from '../home/ServiceVisual';
+import { PageTitle } from '../text';
 import { getDict, localePath, servicesFor, serviceDetailPath } from '../../../content';
 
 export default function ServicesPage({ lang }) {
@@ -7,6 +10,9 @@ export default function ServicesPage({ lang }) {
   // The problem-framed rewrite exists in hr/de only for now; en falls back to
   // the older service-list copy rather than 404ing on a missing key.
   const problems = d.servicesPage.problems;
+  const items = problems
+    ? problems.map((item, i) => ({ ...item, num: String(i + 1).padStart(2, '0'), body: item.paragraphs }))
+    : servicesFor(lang);
 
   // Video has its own page already; the rest got one in this change. Either
   // way the section links to it — a section with no outbound link is a section
@@ -19,63 +25,55 @@ export default function ServicesPage({ lang }) {
       <header className="page-head">
         <div className="wrap">
           <p className="eyebrow">{d.servicesPage.eyebrow}</p>
-          <h1 className="page-title">{d.servicesPage.h1}</h1>
+          <PageTitle text={d.servicesPage.h1} />
           <p className="lede">{d.servicesPage.lede}</p>
+          {/* An index of the page, Linear-style: five jumps, one per section. */}
+          <nav className="jump" aria-label={d.servicesPage.eyebrow}>
+            {items.map((item) => (
+              <a key={item.slug} href={`#${item.slug}`}>
+                <span className="jump-num">{item.num}</span>{item.title}
+              </a>
+            ))}
+          </nav>
         </div>
       </header>
 
-      {problems ? problems.map((item, i) => (
-        <section id={item.slug} key={item.slug}>
-          <div className="wrap detail">
-            <div className="detail-side">
-              <span className="num">{String(i + 1).padStart(2, '0')}</span>
+      {items.map((item) => (
+        <section id={item.slug} key={item.slug} className="svc-detail">
+          <div className="wrap svc-detail-grid">
+            <div className="svc-detail-side">
+              <span className="svc-detail-num" aria-hidden="true">{item.num}</span>
               <h2>{item.title}</h2>
-            </div>
-            <div className="detail-body">
-              {item.paragraphs.map((para) => (
-                <p key={para.slice(0, 30)}>{para}</p>
-              ))}
+              <ServiceVisual slug={item.slug} ui={d.home.serviceUi} />
               {deeperHref(item.slug) ? (
-                <p>
-                  <Link href={p(deeperHref(item.slug))}>{d.servicesPage.deeper}</Link>
-                </p>
+                <Link className="btn ghost no-offset" href={p(deeperHref(item.slug))}>
+                  {d.servicesPage.deeper}
+                </Link>
               ) : null}
-              <p className="detail-sub">{d.servicesPage.gets}</p>
-              <ul className="ticks">
-                {item.gets.map((g) => <li key={g}>{g}</li>)}
-              </ul>
-              <p className="not-for"><strong>{d.servicesPage.notFor}</strong> {item.notFor}</p>
-            </div>
-          </div>
-        </section>
-      )) : servicesFor(lang).map((s) => (
-        <section id={s.slug} key={s.slug}>
-          <div className="wrap detail">
-            <div className="detail-side">
-              <span className="num">{s.num}</span>
-              <h2>{s.title}</h2>
             </div>
             <div className="detail-body">
-              {s.body.map((para) => (
+              {item.body.map((para) => (
                 <p key={para.slice(0, 30)}>{para}</p>
               ))}
-              {deeperHref(s.slug) ? (
-                <p>
-                  <Link href={p(deeperHref(s.slug))}>{d.servicesPage.deeper}</Link>
-                </p>
+              {item.gets ? (
+                <>
+                  <p className="detail-sub">{d.servicesPage.gets}</p>
+                  <ul className="ticks">
+                    {item.gets.map((g) => <li key={g}>{g}</li>)}
+                  </ul>
+                </>
+              ) : null}
+              {item.notFor ? (
+                <p className="not-for"><strong>{d.servicesPage.notFor}</strong> {item.notFor}</p>
               ) : null}
             </div>
           </div>
         </section>
       ))}
 
-      <section>
-        <div className="wrap">
-          <h2>{d.servicesPage.closingH2}</h2>
-          <p className="section-lede">{d.servicesPage.closingLede}</p>
-          <Link className="btn" href={p('/contact')}>{d.servicesPage.closingCta}</Link>
-        </div>
-      </section>
+      <ClosingCta title={d.servicesPage.closingH2} lede={d.servicesPage.closingLede}>
+        <Link className="btn" href={p('/contact')}>{d.servicesPage.closingCta} <span aria-hidden="true">→</span></Link>
+      </ClosingCta>
     </>
   );
 }
