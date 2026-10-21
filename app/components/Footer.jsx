@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import BrandMark from './BrandMark';
+import Image from 'next/image';
 import { site, legal } from '../../site.config';
 import { getDict, localePath } from '../../content';
 
@@ -13,7 +13,7 @@ export default function Footer({ lang }) {
       <div className="wrap foot-main">
         <div className="foot-brand">
           <Link className="brand" href={p('/')}>
-            <BrandMark size={20} />
+            <Image className="brand-mark" src="/media/logo-mark.svg" alt="" width={24} height={24} unoptimized />
             {site.name}
           </Link>
           <p>{f.tagline}</p>

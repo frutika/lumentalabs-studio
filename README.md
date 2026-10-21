@@ -56,11 +56,9 @@ fontove s drugih domena.
 
 ## Mediji
 
-`public/media/hero.mp4` je 12-sekundna nijema petlja, 1280×720, **1.43 MB** — od redizajna
-(listopad 2026.) je **nitko ne učitava**: hero je sada platno s projektima. Datoteka je
-ostavljena dok se ne odluči treba li je obrisati. Ranije: petlja
-izrezana iz originalnog B-rolla i komprimirana za web. `hero.jpg` (nekad njezin poster)
-i dalje je slika za društvene mreže (Open Graph / Twitter kartica).
+Hero je od redizajna (listopad 2026.) platno s projektima, bez videa; nekadašnja
+petlja `hero.mp4` obrisana je iz repoa (ostaje u git povijesti). `hero.jpg` je i
+dalje slika za društvene mreže (Open Graph / Twitter kartica).
 
 Cijeli narirani video (227 MB) **namjerno nije u repou**. GitHub odbija datoteke
 preko 100 MB, a i da ne odbija, stranica bi bila neupotrebljiva. Ide na YouTube

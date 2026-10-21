@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import LangSwitch from './LangSwitch';
-import BrandMark from './BrandMark';
+import Image from 'next/image';
 import { site } from '../../site.config';
 import { getDict, localePath } from '../../content';
 
@@ -14,7 +14,7 @@ export default function Nav({ lang }) {
     <nav className="nav" aria-label={d.a11y.mainNav}>
       <div className="wrap nav-inner">
         <Link className="brand" href={p('/')}>
-          <BrandMark />
+          <Image className="brand-mark" src="/media/logo-mark.svg" alt="" width={28} height={28} priority unoptimized />
           {site.name}
         </Link>
         <div className="nav-links">
