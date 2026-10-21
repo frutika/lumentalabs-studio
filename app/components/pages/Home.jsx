@@ -7,19 +7,10 @@ import ProjectCanvas from '../home/ProjectCanvas';
 import ServiceVisual from '../home/ServiceVisual';
 import AgentRun from '../home/AgentRun';
 import TileArt from '../home/TileArt';
+import { lastWordEm } from '../text';
 import { getDict, localePath, servicesFor, worksFor, reelFor, postsFor } from '../../../content';
 import { organizationSchema, websiteSchema } from '../../../content/schema';
 import { site } from '../../../site.config';
-
-/**
- * Display headings set their last word in italic accent. Split here rather
- * than stored as two keys, so the translations stay one sentence each.
- */
-function lastWordEm(text) {
-  const i = text.trimEnd().lastIndexOf(' ');
-  if (i < 0) return <em>{text}</em>;
-  return <>{text.slice(0, i + 1)}<em>{text.slice(i + 1)}</em></>;
-}
 
 /** "We don't just recommend this. We run on it." → second sentence on its own
     line, in the italic accent. */

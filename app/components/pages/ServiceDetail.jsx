@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import JsonLd from '../JsonLd';
+import ClosingCta from '../ClosingCta';
+import { PageTitle } from '../text';
 import {
   getDict,
   localePath,
@@ -36,9 +38,12 @@ export default function ServiceDetail({ lang, slug }) {
           </p>
           {/* The H1 is the query, spelled the way somebody types it. Everything
               else on the page can be brand voice; this line cannot. */}
-          <h1 className="page-title">{item.h1}</h1>
+          <PageTitle text={item.h1} />
           <p className="lede">{item.lede}</p>
-          <Link className="btn" href={p('/contact')}>{t.closingCta}</Link>
+          <div className="btn-row">
+            <Link className="btn" href={p('/contact')}>{t.closingCta} <span aria-hidden="true">→</span></Link>
+            {item.pricing?.bands?.length ? <a className="btn ghost" href="#cijena">{t.pricingH2}</a> : null}
+          </div>
         </div>
       </header>
 
@@ -142,7 +147,7 @@ export default function ServiceDetail({ lang, slug }) {
               {item.pricing.bands.map((band) => (
                 <div key={band.name} className="band">
                   <p className="detail-sub">
-                    <strong>{band.price}</strong> — {band.name}
+                    <strong>{band.price}</strong> {band.name}
                   </p>
                   <p>{band.body}</p>
                   {band.examples?.length ? (
@@ -186,29 +191,31 @@ export default function ServiceDetail({ lang, slug }) {
         </section>
       ) : null}
 
-      <section>
-        <div className="wrap">
-          <h2>{t.closingH2}</h2>
-          <p className="section-lede">{t.closingLede}</p>
-          <Link className="btn" href={p('/contact')}>{t.closingCta}</Link>
-        </div>
-      </section>
-
       {others.length ? (
         <section>
           <div className="wrap">
-            <h2>{t.otherH2}</h2>
-            <ul className="ticks">
+            <div className="h-head">
+              <h2>{t.otherH2}</h2>
+              <Link className="more-link" href={p('/services')}>{t.allServices} <span aria-hidden="true">→</span></Link>
+            </div>
+            <ul className="link-cards">
               {others.map((s) => (
                 <li key={s.slug}>
-                  <Link href={p(serviceDetailPath(lang, s.slug))}>{s.h1}</Link>
+                  <Link href={p(serviceDetailPath(lang, s.slug))}>
+                    <span className="link-card-title">{s.h1}</span>
+                    {s.lede ? <span className="link-card-text">{s.lede}</span> : null}
+                    <span className="link-card-more" aria-hidden="true">→</span>
+                  </Link>
                 </li>
               ))}
             </ul>
-            <p><Link href={p('/services')}>{t.allServices}</Link></p>
           </div>
         </section>
       ) : null}
+
+      <ClosingCta title={t.closingH2} lede={t.closingLede}>
+        <Link className="btn" href={p('/contact')}>{t.closingCta} <span aria-hidden="true">→</span></Link>
+      </ClosingCta>
     </>
   );
 }

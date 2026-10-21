@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import JsonLd from '../JsonLd';
 import BlogCover from '../BlogCover';
+import { PageTitle } from '../text';
 import { getDict, localePath, postsFor } from '../../../content';
 import { breadcrumbSchema } from '../../../content/schema';
 
@@ -17,7 +18,7 @@ export default function BlogPage({ lang }) {
       <header className="page-head">
         <div className="wrap">
           <p className="eyebrow">{d.blogPage.eyebrow}</p>
-          <h1 className="page-title">{d.blogPage.h1}</h1>
+          <PageTitle text={d.blogPage.h1} />
           <p className="lede">{d.blogPage.lede}</p>
         </div>
       </header>

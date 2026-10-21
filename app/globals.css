@@ -200,10 +200,10 @@ h2 {
 
 .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
 .card {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
-  padding: 28px;
+  background: linear-gradient(180deg, var(--surface), var(--inset));
+  border: 1px solid #24221E; border-radius: 18px; padding: 30px;
 }
-.card h3, .card .card-title { font-size: 18px; font-weight: 500; margin: 0 0 .55rem; letter-spacing: -.015em; max-width: none; }
+.card h3, .card .card-title { font-size: 20px; font-weight: 600; margin: 0 0 .55rem; letter-spacing: -.025em; line-height: 1.25; max-width: none; }
 .card p { color: var(--muted); font-size: 15px; margin: 0; }
 .card .num {
   font-family: var(--mono); font-size: 12px; font-variant-numeric: tabular-nums; color: var(--accent);
@@ -228,14 +228,15 @@ h2 {
 .stat-num { display: block; font-family: var(--serif); font-size: 52px; line-height: 1; letter-spacing: -.02em; color: var(--accent); margin-bottom: .5rem; }
 .stat-label { color: var(--muted); font-size: 14px; }
 
-.pillars { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); margin-top: 2.5rem; }
-.pillar { border-left: 1px solid var(--accent); padding-left: 1.1rem; }
-.pillar strong { display: block; font-weight: 500; margin-bottom: .3rem; }
+.pillars { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); margin-top: 2.5rem; counter-reset: pillar; }
+.pillar { padding: 28px; border: 1px solid #24221E; border-radius: 18px; background: #0E0D0F; counter-increment: pillar; }
+.pillar::before { content: counter(pillar); display: block; margin-bottom: 18px; font-family: var(--serif); font-size: 40px; line-height: 1; color: var(--accent); }
+.pillar strong { display: block; font-weight: 600; font-size: 18px; margin-bottom: .3rem; }
 .pillar span { color: var(--muted); font-size: 15px; }
 
 .quote {
-  font-family: var(--serif); font-size: clamp(28px, 3.6vw, 44px); letter-spacing: -.015em; line-height: 1.15;
-  max-width: 24ch; margin: 0;
+  font-family: var(--serif); font-size: clamp(36px, 5.6vw, 80px); letter-spacing: -.025em; line-height: 1.02;
+  max-width: 20ch; margin: 0;
 }
 .quote em { color: var(--accent); }
 .quote-note { margin-top: 1rem; font-size: 15px; }
@@ -276,9 +277,69 @@ footer { border-top: 1px solid var(--line-soft); color: var(--muted); font-size:
 .foot-status { display: inline-flex; align-items: center; gap: 8px; }
 
 /* ---------- inner pages ---------- */
-.page-head { padding: 96px 0 56px; border-bottom: 1px solid var(--line-soft); }
-.page-title { font-size: clamp(40px, 5.5vw, 72px); line-height: 1.02; letter-spacing: -.02em; margin: 0 0 1.1rem; max-width: 18ch; }
-.page-head .lede { margin-bottom: 1.6rem; }
+/* Every inner page opens under the same light as the home page: a beam from
+   the top right and the perspective floor, both drawn by pseudo-elements so
+   no page needs extra markup. */
+.page-head {
+  position: relative; overflow: hidden; isolation: isolate;
+  padding: 128px 0 96px; border-bottom: 1px solid var(--line-faint);
+}
+.page-head::before {
+  content: ''; position: absolute; z-index: -1; top: 0; left: 72%; width: 1400px; height: 1000px;
+  transform: translateX(-50%); pointer-events: none;
+  background: conic-gradient(from 0deg at 50% 0%, transparent 154deg, var(--beam) 180deg, transparent 206deg);
+  filter: blur(24px); opacity: .8;
+}
+.page-head::after {
+  content: ''; position: absolute; z-index: -1; bottom: 0; left: -50%; width: 200%; height: 420px; pointer-events: none;
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 72px 72px;
+  transform: perspective(520px) rotateX(64deg); transform-origin: 50% 100%;
+  -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 80%);
+  mask-image: linear-gradient(to top, #000 0%, transparent 80%);
+}
+@media (max-width: 760px) { .page-head { padding: 80px 0 64px; } }
+.page-head .eyebrow { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin-bottom: 28px; }
+.page-head .eyebrow::before {
+  content: ''; flex: none; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent); box-shadow: 0 0 12px var(--accent);
+}
+.page-title {
+  margin: 0 0 1.6rem; max-width: 15ch;
+  font-family: var(--sans); font-weight: 600; font-size: clamp(38px, 7vw, 104px);
+  line-height: .95; letter-spacing: -.05em;
+  overflow-wrap: break-word; hyphens: auto;
+}
+.page-title em { font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -.025em; color: var(--accent); }
+.page-title.long { max-width: 20ch; font-size: clamp(34px, 5.2vw, 76px); line-height: 1; letter-spacing: -.045em; }
+/* An article title is a sentence, not a slogan: smaller, wider. */
+.page-title.post-title-h1 { max-width: 22ch; font-size: clamp(34px, 4.6vw, 64px); line-height: 1.02; letter-spacing: -.04em; }
+.page-head .lede { margin-bottom: 2rem; font-size: clamp(18px, 1.7vw, 21px); }
+.page-head .btn-row { margin-top: .4rem; }
+.page-head .btn { min-height: 52px; padding: 0 22px; border-radius: 12px; }
+.page-head .btn:not(.ghost) { font-weight: 600; box-shadow: 0 0 0 1px rgba(255, 255, 255, .15) inset, 0 12px 40px -8px var(--beam); }
+
+/* Case-study head: copy left, the product's drawing right. */
+.page-head.split .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 48px 64px; }
+.head-copy { flex: 999 1 520px; min-width: 0; }
+.head-art {
+  flex: 1 1 340px; min-width: 0; position: relative; height: 320px; padding: 32px;
+  border-radius: 20px; padding-bottom: 56px;
+  border: 1px solid #2C2925; background: rgba(14, 13, 15, .85);
+  background-image: var(--dot-bg); background-size: 18px 18px;
+  box-shadow: 0 40px 100px -40px rgba(0, 0, 0, .9), 0 0 0 6px var(--ring);
+}
+.head-art .status { position: absolute; left: 32px; bottom: 22px; }
+
+/* Jump links under the services head. */
+.jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.jump a {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 14px 0 8px;
+  border: 1px solid var(--line); border-radius: 999px; background: rgba(20, 19, 17, .7);
+  color: var(--muted); font-size: 14px; text-decoration: none;
+}
+.jump a:hover { color: var(--text); border-color: var(--faint); }
+.jump-num { font-family: var(--mono); font-size: 11px; padding: 3px 7px; border-radius: 999px; background: var(--chip); color: var(--accent); }
 .eyebrow a { color: var(--accent); text-decoration: none; }
 .eyebrow a:hover { text-decoration: underline; }
 .btn.no-offset { margin-left: 0; }
@@ -289,14 +350,15 @@ section + section { border-top: 1px solid var(--line-soft); }
 /* Grid items default to min-width: auto, so one wide code block or table used to
    stretch the whole column past a phone's width instead of scrolling itself. */
 .detail > * { min-width: 0; }
-.detail-side h2 { margin: 0; font-size: clamp(1.3rem, 2.6vw, 1.7rem); max-width: 14ch; }
+.detail-side h2 { margin: 0; font-size: clamp(26px, 2.8vw, 36px); font-weight: 600; letter-spacing: -.04em; line-height: 1.05; max-width: 14ch; }
+@media (min-width: 761px) { .detail-side { position: sticky; top: 96px; } }
 .detail-side .num { margin-bottom: .7rem; }
-.detail-body p { color: var(--muted); margin: 0 0 1.1rem; }
+.detail-body p { color: var(--muted); margin: 0 0 1.1rem; font-size: 17px; }
 .detail-body p:last-child { margin-bottom: 0; }
 .detail-body p.detail-sub { color: var(--text); font-weight: 600; margin: 1.6rem 0 .8rem; }
 .detail-body p.not-for {
-  margin-top: 1.4rem; padding-top: 1.2rem;
-  border-top: 1px dashed var(--line); font-size: 14.5px;
+  margin-top: 1.6rem; padding: 16px 18px;
+  border: 1px dashed var(--line-ui); border-radius: 12px; font-size: 15px;
 }
 .not-for strong { color: var(--text); }
 
@@ -401,8 +463,13 @@ pre.code code { font-family: var(--mono); }
 /* One price band: the figure, what it is, examples, and where the line to the
    next band runs. Separated so three bands read as three options rather than
    one wall of text. */
-.band { padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
-.band:last-of-type { padding-bottom: 0; margin-bottom: 1.4rem; border-bottom: 0; }
+.band {
+  padding: 26px 28px; margin-bottom: 16px;
+  border: 1px solid #24221E; border-radius: 18px; background: linear-gradient(180deg, var(--surface), var(--inset));
+}
+.band:last-of-type { margin-bottom: 1.4rem; }
+.band p.detail-sub { font-size: 18px; }
+.band p.detail-sub strong { display: block; margin-bottom: 4px; font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 3.4vw, 44px); letter-spacing: -.02em; line-height: 1.05; }
 .band > p.detail-sub:first-child { margin-top: 0; }
 /* The number is what the visitor is scanning for. */
 .band p.detail-sub strong { color: var(--accent); }
@@ -416,7 +483,7 @@ a.card.linked:hover { border-color: var(--faint); background: var(--surface-2); 
 
 .ticks { list-style: none; padding: 0; margin: 0; }
 .ticks li { position: relative; padding-left: 1.6rem; margin-bottom: .8rem; color: var(--muted); }
-.ticks li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+.ticks li::before { content: ''; position: absolute; left: 2px; top: .62em; width: 7px; height: 7px; border-radius: 2px; background: var(--accent); }
 .ticks.wide { max-width: 60ch; }
 
 .email-row { display: flex; align-items: center; gap: .7rem; flex-wrap: wrap; }
@@ -1105,3 +1172,64 @@ a.node:hover { border-color: var(--faint); }
 }
 .btn.mail { font-family: var(--mono); font-size: 14px; font-weight: 400; background: var(--surface); color: var(--text); border-color: var(--line); }
 .btn.mail:hover { border-color: var(--faint); filter: none; }
+
+
+/* ======================================================================
+   Inner pages, v2
+   ====================================================================== */
+
+/* The closing band on every inner page (ClosingCta.jsx). */
+.cta h2 em { font-family: var(--serif); font-weight: 400; font-style: italic; color: var(--accent); }
+.cta-inner { padding: 0; }
+.cta-inner .wrap { padding-top: 160px; padding-bottom: 150px; }
+@media (max-width: 760px) { .cta-inner .wrap { padding-top: 104px; padding-bottom: 96px; } }
+.cta-inner h2 { font-size: clamp(42px, 8vw, 128px); max-width: 12ch; hyphens: auto; overflow-wrap: break-word; }
+.cta-inner .btn.ghost { margin: 0; }
+
+/* Services: one section per service, the illustration beside the argument. */
+.svc-detail-grid { display: flex; flex-wrap: wrap; gap: 40px 72px; align-items: flex-start; }
+.svc-detail-side { flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 22px; }
+@media (min-width: 900px) { .svc-detail-side { position: sticky; top: 96px; } }
+.svc-detail-side h2 { margin: 0; font-size: clamp(30px, 3.4vw, 46px); font-weight: 600; letter-spacing: -.045em; line-height: 1.02; }
+.svc-detail-num { font-family: var(--serif); font-size: 72px; line-height: .8; color: var(--accent); }
+.svc-detail-side .mini { margin-top: 0; }
+.svc-detail-side .btn { align-self: flex-start; }
+.svc-detail .detail-body { flex: 999 1 480px; min-width: 0; }
+
+/* Work page and anywhere a product is a tile. */
+h2.tile-name { margin: 0; max-width: none; font-size: 20px; line-height: 1.25; letter-spacing: -.02em; }
+
+/* Other services, at the foot of a service page. */
+.link-cards {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+.link-cards li { display: flex; }
+.link-cards a {
+  flex: 1; display: flex; flex-direction: column; gap: 10px; padding: 26px;
+  border: 1px solid #24221E; border-radius: 18px; background: #0E0D0F; text-decoration: none;
+  transition: border-color .15s;
+}
+.link-cards a:hover { border-color: var(--faint); }
+.link-card-title { font-size: 20px; font-weight: 600; letter-spacing: -.025em; line-height: 1.2; }
+.link-cards a:hover .link-card-title { color: var(--accent); }
+.link-card-text { color: var(--muted); font-size: 15px; }
+.link-card-more { margin-top: auto; font-family: var(--mono); font-size: 12px; color: var(--faint); }
+
+/* Contact form in a lit panel. */
+.form-panel {
+  max-width: 44rem; padding: clamp(24px, 4vw, 44px); border-radius: 20px;
+  border: 1px solid #2C2925; background: linear-gradient(180deg, #141311, #0E0D0C);
+  box-shadow: 0 40px 100px -40px rgba(0, 0, 0, .9);
+}
+.form-panel h2 { margin-bottom: .4rem; }
+.form-panel .form { margin-top: 1.4rem; }
+
+/* Blog and guide cards: covers framed like the home tiles. */
+a.card.linked.cover-card { border-radius: 18px; }
+.card-cover { border-top: 1px solid var(--line-faint); border-bottom: 1px solid var(--line-faint); }
+.post-cover { border-radius: 18px; box-shadow: 0 40px 100px -40px rgba(0, 0, 0, .9); }
+
+/* Long-form reading: a calmer measure, headings in the site's voice. */
+.prose { font-size: 17px; }
+.prose h2 { font-size: clamp(24px, 2.4vw, 30px); font-weight: 600; letter-spacing: -.035em; margin-top: 3rem; }

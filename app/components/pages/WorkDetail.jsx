@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import JsonLd from '../JsonLd';
+import ClosingCta from '../ClosingCta';
+import TileArt from '../home/TileArt';
+import { PageTitle } from '../text';
 import { getDict, localePath, workFor } from '../../../content';
 import { breadcrumbSchema } from '../../../content/schema';
 
@@ -17,19 +20,26 @@ export default function WorkDetail({ lang, slug }) {
         ])}
       />
 
-      <header className="page-head">
+      <header className="page-head split">
         <div className="wrap">
-          <p className="eyebrow">
-            <Link href={p('/work')}>{d.workPage.eyebrow}</Link> · {item.kind}
-          </p>
-          <h1 className="page-title">{item.title || item.name}</h1>
-          <p className="lede">{item.short}</p>
-          {item.href ? (
-            <a className="btn ghost no-offset" href={item.href} target="_blank" rel="noopener noreferrer">
-              {d.workPage.visit} {item.name} <span aria-hidden="true">↗</span>
-              <span className="sr"> ({d.a11y.newTab})</span>
-            </a>
-          ) : null}
+          <div className="head-copy">
+            <p className="eyebrow">
+              <Link href={p('/work')}>{d.workPage.eyebrow}</Link> · {item.kind}
+            </p>
+            <PageTitle text={item.title || item.name} />
+            <p className="lede">{item.short}</p>
+            {item.href ? (
+              <a className="btn ghost no-offset" href={item.href} target="_blank" rel="noopener noreferrer">
+                {d.workPage.visit} {item.name} <span aria-hidden="true">↗</span>
+                <span className="sr"> ({d.a11y.newTab})</span>
+              </a>
+            ) : null}
+          </div>
+          {/* The same drawing as the product's tile, larger: decorative. */}
+          <div className="head-art" aria-hidden="true">
+            <TileArt slug={slug} sample={d.home.tileSample} />
+            <span className={`status${item.href ? '' : ' internal'}`}>{item.kind}</span>
+          </div>
         </div>
       </header>
 
@@ -71,17 +81,13 @@ export default function WorkDetail({ lang, slug }) {
         </div>
       </section>
 
-      <section>
-        <div className="wrap">
-          <h2>{item.closingH2 || d.workPage.closingH2}</h2>
-          <p className="section-lede">{item.closingLede || d.workPage.closingLede}</p>
-          <Link className="btn" href={p('/contact')}>{d.workPage.closingCta}</Link>
-          {item.closingLink ? (
-            <Link className="btn ghost" href={p(item.closingLink.path)}>{item.closingLink.label}</Link>
-          ) : null}
-          <Link className="btn ghost" href={p('/work')}>{d.workPage.allWork}</Link>
-        </div>
-      </section>
+      <ClosingCta title={item.closingH2 || d.workPage.closingH2} lede={item.closingLede || d.workPage.closingLede}>
+        <Link className="btn" href={p('/contact')}>{d.workPage.closingCta} <span aria-hidden="true">→</span></Link>
+        {item.closingLink ? (
+          <Link className="btn ghost" href={p(item.closingLink.path)}>{item.closingLink.label}</Link>
+        ) : null}
+        <Link className="btn ghost" href={p('/work')}>{d.workPage.allWork}</Link>
+      </ClosingCta>
     </>
   );
 }

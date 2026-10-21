@@ -1,5 +1,6 @@
 import EmailAddress from '../EmailAddress';
 import ContactForm from '../ContactForm';
+import { PageTitle } from '../text';
 import { site } from '../../../site.config';
 import { getDict } from '../../../content';
 
@@ -12,7 +13,7 @@ export default function ContactPage({ lang }) {
       <header className="page-head">
         <div className="wrap">
           <p className="eyebrow">{c.eyebrow}</p>
-          <h1 className="page-title">{c.h1}</h1>
+          <PageTitle text={c.h1} />
           <p className="lede">{c.lede}</p>
           {/* The form posts to our own route and our own database - no third-party
               script, no embed. Mail stays the first option for anyone who would
@@ -29,8 +30,10 @@ export default function ContactPage({ lang }) {
 
       <section>
         <div className="wrap">
-          <h2>{c.form.h2}</h2>
-          <ContactForm lang={lang} />
+          <div className="form-panel">
+            <h2>{c.form.h2}</h2>
+            <ContactForm lang={lang} />
+          </div>
         </div>
       </section>
 

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import JsonLd from '../JsonLd';
+import ClosingCta from '../ClosingCta';
+import { PageTitle } from '../text';
 import { getDict, localePath, vodiciFor } from '../../../content';
 import { breadcrumbSchema } from '../../../content/schema';
 
@@ -16,7 +18,7 @@ export default function VodiciPage({ lang }) {
       <header className="page-head">
         <div className="wrap">
           <p className="eyebrow">{t.eyebrow}</p>
-          <h1 className="page-title">{t.h1}</h1>
+          <PageTitle text={t.h1} />
           <p className="lede">{t.lede}</p>
           {t.note ? <p className="stamp">{t.note}</p> : null}
         </div>
@@ -41,13 +43,9 @@ export default function VodiciPage({ lang }) {
         </div>
       </section>
 
-      <section>
-        <div className="wrap">
-          <h2>{t.closingH2}</h2>
-          <p className="section-lede">{t.closingLede}</p>
-          <Link className="btn" href={p('/contact')}>{t.closingCta}</Link>
-        </div>
-      </section>
+      <ClosingCta title={t.closingH2} lede={t.closingLede}>
+        <Link className="btn" href={p('/contact')}>{t.closingCta} <span aria-hidden="true">→</span></Link>
+      </ClosingCta>
     </>
   );
 }

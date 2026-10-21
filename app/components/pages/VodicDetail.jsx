@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import ClosingCta from '../ClosingCta';
+import { PageTitle } from '../text';
 import JsonLd from '../JsonLd';
 import {
   getDict,
@@ -92,7 +94,7 @@ export default function VodicDetail({ lang, slug }) {
           <p className="eyebrow">
             <Link href={p('/vodici')}>{d.nav.vodici}</Link> · {t.eyebrow} {g.num}
           </p>
-          <h1 className="page-title">{g.h1}</h1>
+          <PageTitle text={g.h1} />
           <p className="lede">{g.lede}</p>
 
           <dl className="facts">
@@ -196,22 +198,19 @@ export default function VodicDetail({ lang, slug }) {
       ) : null}
 
       {related ? (
+        <ClosingCta title={t.relatedH2} lede={related.lede}>
+          <Link className="btn" href={p(serviceDetailPath(lang, g.related))}>
+            {t.relatedCta} <span aria-hidden="true">→</span>
+          </Link>
+          <Link className="btn ghost" href={p('/vodici')}>{t.allGuides}</Link>
+        </ClosingCta>
+      ) : (
         <section>
           <div className="wrap">
-            <h2>{t.relatedH2}</h2>
-            <p className="section-lede">{related.lede}</p>
-            <Link className="btn" href={p(serviceDetailPath(lang, g.related))}>
-              {t.relatedCta}
-            </Link>
+            <p><Link href={p('/vodici')}>{t.allGuides}</Link></p>
           </div>
         </section>
-      ) : null}
-
-      <section>
-        <div className="wrap">
-          <p><Link href={p('/vodici')}>{t.allGuides}</Link></p>
-        </div>
-      </section>
+      )}
     </>
   );
 }
