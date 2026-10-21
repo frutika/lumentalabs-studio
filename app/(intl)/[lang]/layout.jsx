@@ -1,4 +1,5 @@
 import '../../globals.css';
+import { fontVars } from '../../fonts';
 import { notFound } from 'next/navigation';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
@@ -43,14 +44,14 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export const viewport = { themeColor: '#05080c' };
+export const viewport = { themeColor: '#0C0B0A' };
 
 export default async function IntlLayout({ children, params }) {
   const { lang } = await params;
   if (!isLocale(lang) || lang === DEFAULT_LOCALE) notFound();
 
   return (
-    <html lang={getDict(lang).htmlLang}>
+    <html lang={getDict(lang).htmlLang} className={fontVars}>
       <body>
         <SkipLink lang={lang} />
         <Nav lang={lang} />

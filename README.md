@@ -47,11 +47,18 @@ bez otkrivanja vrijednosti — koristan prvi korak kod provjere nakon deploya.
 Resend nema ekvivalent health-check; ako notifikacija ne stigne, provjeri
 Hostinger app log za `[contact] notification rejected: Resend answered ...`.
 
+## Fontovi
+
+Instrument Serif, Geist i Geist Mono su u `app/fonts/` (OFL, licence uz njih) i
+učitavaju se preko `next/font/local` u `app/fonts.js`. Ništa ne ide na Google Fonts —
+ni iz preglednika ni pri buildu — jer `/privacy` obećaje da stranica ne učitava
+fontove s drugih domena.
+
 ## Mediji
 
-`public/media/hero.mp4` je 12-sekundna nijema petlja, 1280×720, **1.43 MB** —
-izrezana iz originalnog B-rolla i komprimirana za web. `hero.jpg` je poster koji
-stoji dok se video učitava.
+Hero je od redizajna (listopad 2026.) platno s projektima, bez videa; nekadašnja
+petlja `hero.mp4` obrisana je iz repoa (ostaje u git povijesti). `hero.jpg` je i
+dalje slika za društvene mreže (Open Graph / Twitter kartica).
 
 Cijeli narirani video (227 MB) **namjerno nije u repou**. GitHub odbija datoteke
 preko 100 MB, a i da ne odbija, stranica bi bila neupotrebljiva. Ide na YouTube

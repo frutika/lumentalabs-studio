@@ -1,4 +1,5 @@
 import '../globals.css';
+import { fontVars } from '../fonts';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import SkipLink from '../components/SkipLink';
@@ -36,11 +37,11 @@ export const metadata = {
   },
 };
 
-export const viewport = { themeColor: '#05080c' };
+export const viewport = { themeColor: '#0C0B0A' };
 
 export default function EnglishLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={fontVars}>
       <body>
         <SkipLink lang={DEFAULT_LOCALE} />
         <Nav lang={DEFAULT_LOCALE} />
