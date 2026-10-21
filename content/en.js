@@ -175,6 +175,46 @@ const en = {
     },
 
     reelMeta: 'Reel · 3:40',
+
+    // Redesign v2 (2026-10): the hero's claim, the ticker, the stack section
+    // and the agent run. ILLUSTRATION: the agent run's figures and the
+    // supplier are example data, and the panel says so.
+    h1Big: ['Software that ', 'runs itself.'],
+    marquee: ['Web platforms', 'AI agents', 'Document AI', 'Content at catalogue scale', 'Video localisation', 'Process automation', 'Architecture & maintenance'],
+    stack: {
+      label: 'Proof, not a pitch',
+      h2: ['One stack.', 'Our own products', ' run on it.'],
+      lede: 'Everything we offer clients, we built and proved on our own projects first — the same architecture, the same pipelines, the same standards.',
+    },
+    agent: {
+      label: 'Example: an AI agent turning an incoming e-invoice into one proposed action',
+      project: 'docuflow-ai',
+      view: 'agent run',
+      example: 'example data',
+      running: 'running',
+      context: 'Fiscalisation 2.0',
+      inputLabel: 'Input',
+      agentLabel: 'Agent',
+      outputLabel: 'Proposed action',
+      file: 'e-invoice.pdf',
+      steps: [
+        ['Received e-invoice from inbox', '0.3s'],
+        ['Read the PDF — 2 pages', '1.9s'],
+        ['Extracted supplier, OIB, line items, VAT', '1.2s'],
+        ['Checked totals and duplicates', '0.4s'],
+      ],
+      current: 'Proposing an action…',
+      liveTag: 'live',
+      next: 'Waiting for one approval',
+      action: {
+        title: 'Book as expense',
+        fields: [['Supplier', 'Primjer d.o.o.'], ['Amount', '€ 1,240.00'], ['VAT', '25 %'], ['Category', 'Office equipment']],
+        approve: 'Approve',
+        review: 'Review',
+      },
+      note: 'One click from a document to a booked expense. The agent does the reading; a person keeps the decision.',
+    },
+    tileSample: ['A slow-pour ritual in a glass. ', 'Steeped cold for eighteen hours'],
   },
 
   servicesPage: {

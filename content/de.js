@@ -170,6 +170,46 @@ const de = {
 
     reelMeta: 'Video · 3:40',
 
+    // Redesign v2 (2026-10): Claim im Hero, Laufband, Stack-Abschnitt und
+    // Agent-Lauf. ILLUSTRATION: Beträge und Lieferant im Agent-Lauf sind
+    // Beispieldaten, und das Panel sagt es.
+    h1Big: ['Software, die ', 'von selbst läuft.'],
+    marquee: ['Webplattformen', 'KI-Agenten', 'Dokumenten-KI', 'Inhalte im Katalogmaßstab', 'Video-Lokalisierung', 'Prozessautomatisierung', 'Architektur & Wartung'],
+    stack: {
+      label: 'Beweis statt Pitch',
+      h2: ['Ein Stack.', 'Unsere eigenen Produkte', ' laufen darauf.'],
+      lede: 'Alles, was wir Kunden anbieten, haben wir zuerst an eigenen Projekten gebaut und erprobt — dieselbe Architektur, dieselben Pipelines, dieselben Standards.',
+    },
+    agent: {
+      label: 'Beispiel: Ein KI-Agent macht aus einer eingehenden E-Rechnung einen Handlungsvorschlag',
+      project: 'docuflow-ai',
+      view: 'Agent-Lauf',
+      example: 'Beispieldaten',
+      running: 'läuft',
+      context: 'Fiskalisierung 2.0',
+      inputLabel: 'Eingang',
+      agentLabel: 'Agent',
+      outputLabel: 'Vorgeschlagene Aktion',
+      file: 'e-rechnung.pdf',
+      steps: [
+        ['E-Rechnung aus dem Posteingang erhalten', '0,3 s'],
+        ['PDF gelesen — 2 Seiten', '1,9 s'],
+        ['Lieferant, OIB, Positionen und MwSt. extrahiert', '1,2 s'],
+        ['Summen und Duplikate geprüft', '0,4 s'],
+      ],
+      current: 'Schlägt eine Aktion vor…',
+      liveTag: 'live',
+      next: 'Wartet auf eine Freigabe',
+      action: {
+        title: 'Als Ausgabe buchen',
+        fields: [['Lieferant', 'Primjer d.o.o.'], ['Betrag', '1.240,00 €'], ['MwSt.', '25 %'], ['Kategorie', 'Büroausstattung']],
+        approve: 'Freigeben',
+        review: 'Prüfen',
+      },
+      note: 'Ein Klick vom Dokument zur gebuchten Ausgabe. Der Agent liest, die Entscheidung bleibt beim Menschen.',
+    },
+    tileSample: ['Ein langsames Ritual im Glas. ', 'Achtzehn Stunden kalt gezogen'],
+
     about: {
       h2: 'Wer das macht',
       paragraphs: [
