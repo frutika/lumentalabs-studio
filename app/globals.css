@@ -528,8 +528,15 @@ button.btn { font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; 
 .prose h2:first-child { margin-top: 0; }
 .prose h3 { font-size: 1rem; margin: 0 0 .6rem; }
 .prose p { color: var(--muted); margin: 0 0 1rem; }
-.prose a { color: var(--accent); text-decoration: none; }
-.prose a:hover { text-decoration: underline; }
+/* The underline draws in from the left on hover instead of snapping on. A
+   background gradient rather than text-decoration, because only the former
+   can be animated. */
+.prose a {
+  color: var(--accent); text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size .25s ease;
+}
+.prose a:hover { background-size: 100% 1px; }
 .prose ul { color: var(--muted); margin: 0 0 1.2rem; padding-left: 1.2rem; }
 .prose ul li { margin-bottom: .5rem; }
 .prose pre {
@@ -1297,3 +1304,70 @@ a.card.linked.cover-card { border-radius: 18px; }
 /* Long-form reading: a calmer measure, headings in the site's voice. */
 .prose { font-size: 17px; }
 .prose h2 { font-size: clamp(24px, 2.4vw, 30px); font-weight: 600; letter-spacing: -.035em; margin-top: 3rem; }
+
+/* ---------- e-commerce demo ---------- */
+.demo-h2 { font-size: clamp(24px, 2.4vw, 30px); font-weight: 600; letter-spacing: -.035em; margin: 0 0 1.4rem; }
+.demo {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  border: 1px solid #2C2925; border-radius: 18px; overflow: hidden;
+  background: linear-gradient(180deg, var(--surface), var(--inset));
+}
+@media (max-width: 820px) { .demo { grid-template-columns: 1fr; } }
+.demo-in, .demo-out { padding: 28px; min-width: 0; }
+.demo-in { border-right: 1px solid var(--line); }
+@media (max-width: 820px) { .demo-in { border-right: 0; border-bottom: 1px solid var(--line); } }
+.demo-label { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--faint); margin: 0 0 1rem; }
+.demo-chips, .demo-langs { display: flex; flex-wrap: wrap; gap: 8px; }
+.demo-langs { margin-top: 1.4rem; }
+.demo-chip {
+  font: inherit; font-size: 14px; color: var(--muted); cursor: pointer;
+  min-height: 40px; padding: 0 14px; border-radius: 999px;
+  border: 1px solid var(--line-ui); background: var(--surface-3);
+  transition: border-color .15s, color .15s, background .15s, transform .12s ease;
+}
+.demo-chip:hover { border-color: var(--faint); color: var(--text); }
+.demo-chip:active { transform: scale(.97); }
+.demo-chip[aria-pressed="true"] { border-color: var(--accent); color: var(--text); background: rgba(240, 163, 94, .1); }
+.demo-fields { margin: 1.4rem 0 0; display: grid; grid-template-columns: auto 1fr; gap: .5rem 1rem; font-size: 14px; }
+.demo-fields dt { color: var(--faint); }
+.demo-fields dd { margin: 0; color: var(--muted); }
+.demo-out { display: flex; flex-direction: column; }
+.demo-busy { flex: 1; display: flex; align-items: center; min-height: 18rem; font-family: var(--mono); font-size: 14px; }
+.demo-result { min-height: 18rem; }
+.demo-result h3 { font-size: 20px; font-weight: 600; letter-spacing: -.02em; margin: 0 0 .8rem; }
+.demo-result > p { color: var(--muted); margin: 0 0 1.2rem; }
+.demo-result .ticks li { margin-bottom: .5rem; font-size: 15px; }
+.demo-meta { font-size: 14px; color: var(--muted); margin: 1rem 0 0; }
+.demo-meta span { color: var(--faint); }
+.demo-note { margin: auto 0 0; padding-top: 1.4rem; font-size: 13px; color: var(--faint); }
+@media (prefers-reduced-motion: no-preference) {
+  .demo-result { animation: lm-demo-in .35s ease both; }
+  @keyframes lm-demo-in { from { opacity: 0; transform: translateY(6px); } }
+}
+
+/* ---------- microinteractions ---------- */
+/* Small, CSS only, and all of it stops under prefers-reduced-motion through
+   the global reduced-motion rule earlier in this file. Nothing here hides content: an
+   effect that does not run leaves the page exactly as it was before. */
+
+/* A button gives under the press, and its trailing arrow leans the way it goes. */
+.btn { transition: filter .15s, transform .12s ease, border-color .15s, background .15s; }
+.btn:active { transform: translateY(1px) scale(.985); }
+.btn > span[aria-hidden="true"]:last-of-type { display: inline-block; transition: transform .2s ease; }
+.btn:hover > span[aria-hidden="true"]:last-of-type { transform: translateX(3px); }
+
+/* Sections and cards ease in as they scroll into view. Scroll-driven, so no
+   JavaScript and no observer; browsers without animation-timeline skip the
+   whole block and show everything at once, which is the correct fallback.
+   Anything already on screen at load is past its entry range and renders
+   fully visible, so nothing above the fold ever starts hidden. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .detail, .shot, .card, .tile, .svc, .proof-grid > li {
+      animation: lm-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+    @keyframes lm-reveal { from { opacity: 0; transform: translateY(18px); } }
+  }
+}

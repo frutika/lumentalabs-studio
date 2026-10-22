@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import JsonLd from '../JsonLd';
 import ClosingCta from '../ClosingCta';
+import ContentDemo from '../ContentDemo';
 import { PageTitle } from '../text';
 import {
   getDict,
@@ -10,6 +11,7 @@ import {
   serviceDetailPath,
 } from '../../../content';
 import { serviceSchema, faqSchema, breadcrumbSchema } from '../../../content/schema';
+import { DEMO, DEMO_UI } from '../../../content/demo';
 
 export default function ServiceDetail({ lang, slug }) {
   const d = getDict(lang);
@@ -56,6 +58,17 @@ export default function ServiceDetail({ lang, slug }) {
           </div>
         </div>
       </section>
+
+      {/* The e-commerce page shows the product doing the job instead of
+          describing it. Rendered only once real outputs are stored. */}
+      {item.slug === 'ecommerce' && DEMO.products.length ? (
+        <section>
+          <div className="wrap">
+            <h2 className="demo-h2">{DEMO_UI[lang].h2}</h2>
+            <ContentDemo lang={lang} demo={DEMO} t={DEMO_UI[lang]} />
+          </div>
+        </section>
+      ) : null}
 
       {item.gets?.length ? (
         <section>
