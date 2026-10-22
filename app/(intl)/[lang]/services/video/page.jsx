@@ -11,6 +11,7 @@ export async function generateMetadata({ params }) {
   return metaFor(lang, '/services/video', {
     title,
     description: getDict(lang).pageMeta.video.description,
+    fileImage: true,
   });
 }
 

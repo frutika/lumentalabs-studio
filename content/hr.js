@@ -760,6 +760,7 @@ const hr = {
     closingLede: 'Opišite problem i reći ćemo vam što je potrebno.',
     closingCta: 'Javite nam se',
     allWork: 'Svi radovi',
+    shotAlt: 'Snimka zaslona naslovnice: {name}',
   },
 
   contactPage: {
