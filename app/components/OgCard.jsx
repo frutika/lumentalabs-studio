@@ -41,9 +41,18 @@ export async function loadShot(shot) {
 // and spaces words unevenly; Satori reads TTF but not the WOFF2 the site uses.
 const fontFile = (name) => readFile(join(process.cwd(), 'app', 'fonts', 'og', name));
 
+/** The `fonts` option for any ImageResponse on the site; use fontFamily 'Geist'. */
+export async function ogFonts() {
+  const [regular, semibold] = await Promise.all([fontFile('Geist-Regular.ttf'), fontFile('Geist-SemiBold.ttf')]);
+  return [
+    { name: 'Geist', data: regular, weight: 400, style: 'normal' },
+    { name: 'Geist', data: semibold, weight: 600, style: 'normal' },
+  ];
+}
+
 export async function ogCard({ eyebrow, title, text, image }) {
   const wide = !image;
-  const [regular, semibold] = await Promise.all([fontFile('Geist-Regular.ttf'), fontFile('Geist-SemiBold.ttf')]);
+  const fonts = await ogFonts();
 
   return new ImageResponse(
     (
@@ -116,10 +125,7 @@ export async function ogCard({ eyebrow, title, text, image }) {
     ),
     {
       ...OG_SIZE,
-      fonts: [
-        { name: 'Geist', data: regular, weight: 400, style: 'normal' },
-        { name: 'Geist', data: semibold, weight: 600, style: 'normal' },
-      ],
+      fonts,
     }
   );
 }

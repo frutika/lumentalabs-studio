@@ -16,10 +16,10 @@
 //   directly as `{nginxProxyShapes()}`, never invoked as `<NginxProxy />`.
 
 const C = {
-  line: '#17222e',
-  accent: '#37c6d0',
+  line: '#2A2723',
+  accent: '#F0A35E',
   warm: '#e2614c',
-  muted: '#55697e',
+  muted: '#8C877C',
   badgeText: '#04222a',
 };
 

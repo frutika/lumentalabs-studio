@@ -51,7 +51,8 @@ export default function WorkDetail({ lang, slug }) {
             <figure className="shot">
               <div className="shot-bar" aria-hidden="true">
                 <span className="shot-dots"><i /><i /><i /></span>
-                <span className="shot-url">{item.href.replace(/^https?:\/\//, '')}</span>
+                {/* Narrator is a local tool with no public address, so localhost. */}
+                <span className="shot-url">{item.href ? item.href.replace(/^https?:\/\//, '') : 'localhost'}</span>
               </div>
               <img
                 src={`/media/work/${item.shot}.webp`}
