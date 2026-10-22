@@ -51,6 +51,7 @@ const de = {
     contact: 'Kontakt',
     guides: 'Kostenlose Leitfäden (HR)',
     status: 'Alle Systeme normal',
+    weight: 'Diese Seite: {kb} KB · geladen in {s} s',
   },
 
   a11y: {
@@ -209,6 +210,16 @@ const de = {
       note: 'Ein Klick vom Dokument zur gebuchten Ausgabe. Der Agent liest, die Entscheidung bleibt beim Menschen.',
     },
     tileSample: ['Ein langsames Ritual im Glas. ', 'Achtzehn Stunden kalt gezogen'],
+    proof: {
+      label: 'Gemessen, nicht behauptet',
+      source: 'Quelle',
+      items: [
+        { value: '12.000', text: 'Produktbeschreibungen in neun Tagen, durch Lumenta AI', slug: 'lumenta-ai' },
+        { value: '0', text: 'KI-Aufrufe für eine eingehende E-Rechnung in DocuFlow', slug: 'docuflow-ai' },
+        { value: '5 Tage', text: 'von der Idee bis Narrator, unserem Tool für mehrsprachige Vertonung', slug: 'narrator' },
+        { value: '100+', text: 'Sprachen, die Narrator vertonen kann, ohne neues Tool pro Sprache', slug: 'narrator' },
+      ],
+    },
 
     about: {
       h2: 'Wer das macht',

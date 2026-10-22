@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { site, legal } from '../../site.config';
 import { getDict, localePath } from '../../content';
+import PageWeight from './PageWeight';
 
 export default function Footer({ lang }) {
   const d = getDict(lang);
@@ -63,7 +64,10 @@ export default function Footer({ lang }) {
         {/* A build-time year on a statically prerendered page freezes at the
             deploy date. suppressHydrationWarning lets the client correct it. */}
         <span suppressHydrationWarning>© {new Date().getFullYear()} {site.name}</span>
-        <span className="foot-status"><span className="status-dot" aria-hidden="true" />{f.status}</span>
+        <span className="foot-meta">
+          <PageWeight template={f.weight} locale={d.htmlLang} />
+          <span className="foot-status"><span className="status-dot" aria-hidden="true" />{f.status}</span>
+        </span>
       </div>
     </footer>
   );

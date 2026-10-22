@@ -66,6 +66,7 @@ const hr = {
     contact: 'Kontakt',
     guides: 'Besplatni vodiči',
     status: 'Svi sustavi rade normalno',
+    weight: 'Ova stranica: {kb} KB · učitana za {s} s',
   },
 
   a11y: {
@@ -228,6 +229,16 @@ const hr = {
       note: 'Jedan klik od dokumenta do proknjiženog troška. Agent čita, odluka ostaje čovjeku.',
     },
     tileSample: ['Ritual sporog uživanja u čaši. ', 'Hladno namakan osamnaest sati'],
+    proof: {
+      label: 'Izmjereno, ne obećano',
+      source: 'Izvor',
+      items: [
+        { value: '12.000', text: 'opisa proizvoda u devet dana, kroz Lumenta AI', slug: 'lumenta-ai' },
+        { value: '0', text: 'AI poziva potrošenih na pristigli e-račun u DocuFlowu', slug: 'docuflow-ai' },
+        { value: '5 dana', text: 'od ideje do Narratora, našeg alata za višejezičnu naraciju', slug: 'narrator' },
+        { value: '100+', text: 'jezika za koje Narrator radi naraciju, bez novog alata za svaki', slug: 'narrator' },
+      ],
+    },
 
     about: {
       h2: 'Tko ovo radi',

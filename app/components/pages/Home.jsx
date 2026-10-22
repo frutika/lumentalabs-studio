@@ -99,6 +99,28 @@ export default function Home({ lang }) {
         </div>
       </div>
 
+      {/* Figures that each link to the case study that states them, so every
+          one can be checked rather than taken on trust. */}
+      <section className="proof" aria-labelledby="proof-label">
+        <div className="wrap">
+          <p className="label hot" id="proof-label">{h.proof.label}</p>
+          <ul className="proof-grid">
+            {h.proof.items.map((item) => {
+              const source = works.find((w) => w.slug === item.slug);
+              return (
+                <li key={item.text}>
+                  <Link href={p(`/work/${item.slug}`)}>
+                    <span className="proof-value">{item.value}</span>
+                    <span className="proof-text">{item.text}</span>
+                    <span className="proof-src">{h.proof.source}: {source?.name} <Arrow /></span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
       <section className="h-sec wall">
         <div className="wrap">
           <p className="label hot">{h.wallLabel}</p>
