@@ -68,7 +68,7 @@ export function worksFor(lang) {
   const d = getDict(lang);
   return d.work.map((w) => {
     const base = site.work.find((x) => x.slug === w.slug) || {};
-    return { ...w, name: base.name, href: base.href || '' };
+    return { ...w, name: base.name, href: base.href || '', shot: base.shot || '' };
   });
 }
 
@@ -235,7 +235,7 @@ export const urlFor = (lang, path = '/') => {
  * Metadata for one page in one language, including the full hreflang set and a
  * social card that matches the page rather than the site root.
  */
-export function metaFor(lang, path, { title, description, ogType = 'website', paths } = {}) {
+export function metaFor(lang, path, { title, description, ogType = 'website', paths, fileImage = false } = {}) {
   const d = getDict(lang);
   const url = urlFor(lang, path);
 
@@ -283,6 +283,13 @@ export function metaFor(lang, path, { title, description, ogType = 'website', pa
   // `title: undefined` as a value and it wipes out the layout's title.default —
   // which is exactly how the three home pages ended up with no <title> at all.
   if (title) meta.title = title;
+
+  // A route with its own opengraph-image file: an explicit `images` array here
+  // would win over it, so the default card has to be left out entirely.
+  if (fileImage) {
+    delete meta.openGraph.images;
+    delete meta.twitter.images;
+  }
 
   return meta;
 }

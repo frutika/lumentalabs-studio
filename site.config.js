@@ -32,11 +32,15 @@ export const site = {
   },
 
   // Product names and outbound links are the same in every language.
+  // `shot` names the screenshot pair in public/media/work/: <shot>.webp for the
+  // case study page and <shot>-og.jpg for its social card (next/og cannot
+  // decode WebP). Only public pages are captured; anything behind a login
+  // needs demo data first, so DocuFlow and Narrator have none yet.
   work: [
-    { slug: 'bezmaske', name: 'Bezmaske', href: 'https://bezmaske.com' },
-    { slug: 'lumenta-ai', name: 'Lumenta AI', href: 'https://lumenta.shop' },
-    { slug: 'the-dog-habit', name: 'The Dog Habit', href: 'https://thedoghabit.com' },
-    { slug: 'unmaskedwords', name: 'UnmaskedWords', href: 'https://unmaskedwords.com' },
+    { slug: 'bezmaske', name: 'Bezmaske', href: 'https://bezmaske.com', shot: 'bezmaske' },
+    { slug: 'lumenta-ai', name: 'Lumenta AI', href: 'https://lumenta.shop', shot: 'lumenta-ai' },
+    { slug: 'the-dog-habit', name: 'The Dog Habit', href: 'https://thedoghabit.com', shot: 'the-dog-habit' },
+    { slug: 'unmaskedwords', name: 'UnmaskedWords', href: 'https://unmaskedwords.com', shot: 'unmaskedwords' },
     { slug: 'docuflow-ai', name: 'DocuFlow AI', href: 'https://app.lumentalabs.studio' },
     // Internal studio tool, nothing public to open — so no href, and the detail
     // page renders without the "Open" button.

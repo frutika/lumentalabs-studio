@@ -10,7 +10,7 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const item = workFor(DEFAULT_LOCALE, slug);
   if (!item) return {};
-  return metaFor(DEFAULT_LOCALE, `/work/${slug}`, { title: item.name, description: item.short });
+  return metaFor(DEFAULT_LOCALE, `/work/${slug}`, { title: item.name, description: item.short, fileImage: true });
 }
 
 export default async function Page({ params }) {

@@ -43,6 +43,29 @@ export default function WorkDetail({ lang, slug }) {
         </div>
       </header>
 
+      {item.shot ? (
+        <section>
+          <div className="wrap">
+            {/* The real product as it is live today, in a plain browser frame
+                whose address bar names the domain the button above opens. */}
+            <figure className="shot">
+              <div className="shot-bar" aria-hidden="true">
+                <span className="shot-dots"><i /><i /><i /></span>
+                <span className="shot-url">{item.href.replace(/^https?:\/\//, '')}</span>
+              </div>
+              <img
+                src={`/media/work/${item.shot}.webp`}
+                alt={d.workPage.shotAlt.replace('{name}', item.name)}
+                width="1600"
+                height="1000"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          </div>
+        </section>
+      ) : null}
+
       <section>
         <div className="wrap detail">
           <div className="detail-side"><h2>{d.workPage.problem}</h2></div>

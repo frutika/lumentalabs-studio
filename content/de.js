@@ -656,6 +656,7 @@ const de = {
     closingLede: 'Beschreiben Sie das Problem, und wir sagen Ihnen, was dafür nötig ist.',
     closingCta: 'Kontakt aufnehmen',
     allWork: 'Alle Projekte',
+    shotAlt: 'Screenshot der Startseite von {name}',
   },
 
   contactPage: {

@@ -595,6 +595,7 @@ const en = {
     closingLede: 'Describe the problem and we will tell you what it takes.',
     closingCta: 'Get in touch',
     allWork: 'All work',
+    shotAlt: 'Screenshot of the {name} homepage',
   },
 
   blogPage: {

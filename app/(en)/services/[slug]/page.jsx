@@ -24,6 +24,7 @@ export async function generateMetadata({ params }) {
     title: item.title,
     description: item.description,
     paths: serviceDetailPaths(item.slug),
+    fileImage: true,
   });
 }
 
