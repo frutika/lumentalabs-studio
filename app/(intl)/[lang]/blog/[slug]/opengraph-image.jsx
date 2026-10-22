@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import { ogFonts } from '../../../../components/OgCard';
 import OgDiagram from '../../../../components/OgDiagram';
 import { allPosts, postFor, postLang, getDict, DEFAULT_LOCALE } from '../../../../../content';
 import { site } from '../../../../../site.config';
@@ -28,14 +29,14 @@ export default async function Image({ params }) {
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
-          background: '#05080c',
+          background: '#0C0B0A',
           padding: '56px 64px',
-          fontFamily: 'sans-serif',
+          fontFamily: 'Geist',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div style={{ display: 'flex', width: 12, height: 12, borderRadius: 6, background: '#37c6d0' }} />
-          <span style={{ display: 'flex', color: '#8598ad', fontSize: 22, letterSpacing: 1 }}>
+          <div style={{ display: 'flex', width: 12, height: 12, borderRadius: 6, background: '#F0A35E' }} />
+          <span style={{ display: 'flex', color: '#A8A398', fontSize: 22, letterSpacing: 1 }}>
             {eyebrow}
           </span>
         </div>
@@ -44,8 +45,8 @@ export default async function Image({ params }) {
             display: 'flex',
             marginTop: 26,
             fontSize: 52,
-            fontWeight: 700,
-            color: '#dfe8f2',
+            fontWeight: 600,
+            color: '#F3F0E8',
             lineHeight: 1.16,
             letterSpacing: -1.2,
             maxWidth: 1000,
@@ -59,8 +60,8 @@ export default async function Image({ params }) {
             flex: 1,
             marginTop: 34,
             borderRadius: 16,
-            border: '1px solid #17222e',
-            background: '#0b1117',
+            border: '1px solid #2A2723',
+            background: '#141311',
             overflow: 'hidden',
           }}
         >
@@ -68,6 +69,6 @@ export default async function Image({ params }) {
         </div>
       </div>
     ),
-    { ...size }
+    { ...size, fonts: await ogFonts() }
   );
 }
