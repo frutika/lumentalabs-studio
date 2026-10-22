@@ -3,6 +3,7 @@ import JsonLd from '../JsonLd';
 import BlogCover from '../BlogCover';
 import ShareButton from '../ShareButton';
 import ClosingCta from '../ClosingCta';
+import { fitStyle } from '../text';
 import { getDict, localePath, postFor, relatedWorkFor, urlFor } from '../../../content';
 import { articleSchema, breadcrumbSchema } from '../../../content/schema';
 
@@ -29,7 +30,7 @@ export default function BlogPost({ lang, slug }) {
           <p className="eyebrow">
             <Link href={p('/blog')}>{d.blogPage.eyebrow}</Link>
           </p>
-          <h1 className="page-title post-title-h1">{post.title}</h1>
+          <h1 className="page-title post-title-h1" style={fitStyle(post.title)}>{post.title}</h1>
           <p className="lede">{post.description}</p>
           <div className="post-meta">
             <time dateTime={post.date}>{formatDate(post.date, d.htmlLang)}</time>

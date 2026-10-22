@@ -304,16 +304,22 @@ footer { border-top: 1px solid var(--line-soft); color: var(--muted); font-size:
   content: ''; flex: none; width: 7px; height: 7px; border-radius: 50%;
   background: var(--accent); box-shadow: 0 0 12px var(--accent);
 }
+/* Display headings never split a word. Each carries --fit, its longest
+   unbreakable run in characters (fitStyle in text.jsx); the font size is
+   capped so that run fits the container's width (cqi), at ~.58em per
+   character - measured Geist 600 is .45-.53em, so there is room to spare.
+   The column is the query container, so a narrow column caps it too. */
+.page-head .wrap, .head-copy, .cta-inner .wrap { container-type: inline-size; }
 .page-title {
-  margin: 0 0 1.6rem; max-width: 15ch;
-  font-family: var(--sans); font-weight: 600; font-size: clamp(38px, 7vw, 104px);
-  line-height: .95; letter-spacing: -.05em;
-  overflow-wrap: break-word; hyphens: auto;
+  margin: 0 0 1.6rem; max-width: max(17ch, calc(var(--fit, 8) * .6em));
+  font-family: var(--sans); font-weight: 600;
+  font-size: min(clamp(36px, 6vw, 88px), calc(100cqi / (var(--fit, 8) * .58)));
+  line-height: .98; letter-spacing: -.05em; text-wrap: balance;
 }
 .page-title em { font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: -.025em; color: var(--accent); }
-.page-title.long { max-width: 20ch; font-size: clamp(34px, 5.2vw, 76px); line-height: 1; letter-spacing: -.045em; }
+.page-title.long { max-width: max(22ch, calc(var(--fit, 8) * .6em)); font-size: min(clamp(32px, 4.4vw, 64px), calc(100cqi / (var(--fit, 8) * .58))); line-height: 1.02; letter-spacing: -.045em; }
 /* An article title is a sentence, not a slogan: smaller, wider. */
-.page-title.post-title-h1 { max-width: 22ch; font-size: clamp(34px, 4.6vw, 64px); line-height: 1.02; letter-spacing: -.04em; }
+.page-title.post-title-h1 { max-width: max(24ch, calc(var(--fit, 8) * .6em)); font-size: min(clamp(30px, 4.2vw, 58px), calc(100cqi / (var(--fit, 8) * .58))); line-height: 1.05; letter-spacing: -.04em; }
 .page-head .lede { margin-bottom: 2rem; font-size: clamp(18px, 1.7vw, 21px); }
 .page-head .btn-row { margin-top: .4rem; }
 .page-head .btn { min-height: 52px; padding: 0 22px; border-radius: 12px; }
@@ -1183,7 +1189,7 @@ a.node:hover { border-color: var(--faint); }
 .cta-inner { padding: 0; }
 .cta-inner .wrap { padding-top: 160px; padding-bottom: 150px; }
 @media (max-width: 760px) { .cta-inner .wrap { padding-top: 104px; padding-bottom: 96px; } }
-.cta-inner h2 { font-size: clamp(42px, 8vw, 128px); max-width: 12ch; hyphens: auto; overflow-wrap: break-word; }
+.cta-inner h2 { font-size: min(clamp(40px, 7vw, 112px), calc(100cqi / (var(--fit, 8) * .58))); max-width: max(13ch, calc(var(--fit, 8) * .6em)); text-wrap: balance; }
 .cta-inner .btn.ghost { margin: 0; }
 
 /* Services: one section per service, the illustration beside the argument. */
