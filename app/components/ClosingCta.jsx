@@ -1,4 +1,4 @@
-import { lastWordEm } from './text';
+import { lastWordEm, fitStyle } from './text';
 
 /**
  * The closing band every page ends on: the same light and floor as the home
@@ -12,7 +12,7 @@ export default function ClosingCta({ title, lede, children }) {
         <span className="floor" />
       </div>
       <div className="wrap">
-        <h2>{lastWordEm(title)}</h2>
+        <h2 style={fitStyle(title)}>{lastWordEm(title)}</h2>
         {lede ? <p>{lede}</p> : null}
         <div className="btn-row">{children}</div>
       </div>
