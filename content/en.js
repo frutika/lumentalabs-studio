@@ -51,6 +51,7 @@ const en = {
     contact: 'Contact',
     guides: 'Free guides (HR)',
     status: 'All systems normal',
+    weight: 'This page: {kb} KB · loaded in {s} s',
   },
 
   a11y: {
@@ -215,6 +216,16 @@ const en = {
       note: 'One click from a document to a booked expense. The agent does the reading; a person keeps the decision.',
     },
     tileSample: ['A slow-pour ritual in a glass. ', 'Steeped cold for eighteen hours'],
+    proof: {
+      label: 'Measured, not claimed',
+      source: 'Source',
+      items: [
+        { value: '12,000', text: 'product descriptions in nine days, through Lumenta AI', slug: 'lumenta-ai' },
+        { value: '0', text: 'AI calls spent on an incoming e-invoice in DocuFlow', slug: 'docuflow-ai' },
+        { value: '5 days', text: 'from idea to Narrator, our multilingual narration tool', slug: 'narrator' },
+        { value: '100+', text: 'languages Narrator can voice, with no new tool per language', slug: 'narrator' },
+      ],
+    },
   },
 
   servicesPage: {
