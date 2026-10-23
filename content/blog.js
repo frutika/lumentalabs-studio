@@ -375,7 +375,7 @@ const posts = [
           'Pri registraciji dobivate 10 besplatnih kredita, dovoljno za tri opisa na vlastitim artiklima.',
           'Pro: 19 $ mjesečno, 500 kredita (oko 165 opisa).',
           'Business: 49 $ mjesečno, 2.000 kredita (oko 665 opisa).',
-          'Jedan opis troši tri kredita. Krediti se obnavljaju mjesečno i dijele se s ostalim alatima u paketu.',
+          'Jedan opis proizvoda troši tri kredita, a ostali alati u paketu po jedan. Krediti se obnavljaju mjesečno i zajednički su za sve alate.',
         ],
       },
       {
