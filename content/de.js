@@ -481,20 +481,20 @@ const de = {
       // Siehe die Notiz in hr.js — dieselben drei Abschnitte.
       sections: [
         {
-          h2: 'Pro Artikel oder pro Katalog',
+          h2: 'Pro Artikel, zu einem Bruchteil des Marktpreises',
           paragraphs: [
-            'Veröffentlichte kroatische Preise für Produkttexte liegen zwischen 5 und 25 € pro Beschreibung, je nach Länge und SEO-Aufwand. Das ist Logik pro Artikel: ein Katalog mit tausend Artikeln kostet 5.000 bis 25.000 €, einer mit dreitausend 15.000 bis 75.000 €.',
-            'Wir rechnen nicht pro Artikel, sondern pro Katalog. Die Arbeit steckt im Einrichten des Prozesses — Ton, Terminologie, Regeln und Kontrolle. Steht der, sind tausend und zehntausend Artikel nicht das Zehnfache an Arbeit.',
+            'Veröffentlichte kroatische Preise für Produkttexte liegen zwischen 5 und 25 € pro Beschreibung, je nach Länge und SEO-Aufwand. Ein Katalog mit tausend Artikeln kostet nach dieser Logik 5.000 bis 25.000 €, einer mit dreitausend 15.000 bis 75.000 €.',
+            'Auch wir rechnen pro Beschreibung, aber der Preis sinkt mit der Größe des Katalogs: die ersten 100 Beschreibungen zu 2 €, die nächsten 400 zu 1,50 €, jede weitere ab der fünfhundertsten zu 1 €. Die Arbeit steckt im Einrichten des Prozesses — Ton, Terminologie, Regeln und Kontrolle. Steht der, kostet jede weitere Beschreibung wenig, und das sieht man am Preis.',
           ],
           table: {
-            head: ['Artikel', 'Zum Marktpreis (5 – 25 € / Beschreibung)', 'Bei uns'],
+            head: ['Artikel', 'Zum Marktpreis (5 – 25 € / Beschreibung)', 'Bei uns'],
             rows: [
-              ['500', '2.500 – 12.500 €', '1.500 – 4.000 €'],
-              ['1.000', '5.000 – 25.000 €', '1.500 – 4.000 €'],
-              ['5.000', '25.000 – 125.000 €', '4.000 – 12.000 €'],
+              ['500', '2.500 – 12.500 €', '800 €'],
+              ['1.000', '5.000 – 25.000 €', '1.300 €'],
+              ['5.000', '25.000 – 125.000 €', '5.300 €'],
             ],
           },
-          note: 'Über fünftausend Artikel oder mehr als zwei Märkte schätzen wir nach Umfang. Zur Größenordnung: 12.000 Beschreibungen liefen in neun Tagen durch unser eigenes Produkt Lumenta AI — kein Kundenprojekt, sondern ein Maß dafür, dass Ihr Katalog dafür kaum zu groß ist.',
+          note: 'Jede Sprache rechnen wir getrennt ab, zu denselben Preisen. Zur Größenordnung: 12.000 Beschreibungen liefen in neun Tagen durch unser eigenes Produkt Lumenta AI — kein Kundenprojekt, sondern ein Maß dafür, dass Ihr Katalog dafür kaum zu groß ist.',
         },
         {
           h2: 'Was Lieferantentexte wirklich anrichten',
@@ -515,7 +515,7 @@ const de = {
           paragraphs: [
             'Eine Übersetzung trägt den Satz, aber nicht die Suchanfrage. Ein deutscher Käufer sucht nicht nach der Übersetzung einer kroatischen Formulierung, sondern nach dem, was Deutsche tatsächlich eingeben — oft ein anderes Wort, ein anderes Suchvolumen und ein anderes Kaufmotiv.',
             'Deshalb schreiben wir in der Sprache des Marktes, mit dessen Terminologie und dessen Suchanfragen, statt kroatischen Text durch einen Übersetzer zu schieben. Derselbe Artikel kann in Kroatien und in Deutschland anders betont sein, weil er anders gekauft wird.',
-            'Die praktische Folge: zwei Sprachversionen sind nicht die doppelte Arbeit, aber auch nicht ein Auftrag mit angehängter Übersetzung. Der Preis für mehrere Märkte spiegelt das.',
+            'Die praktische Folge: zwei Sprachversionen sind nicht die doppelte Arbeit, aber auch nicht ein Auftrag mit angehängter Übersetzung. Deshalb rechnen wir jede Sprache als eigene Beschreibungen ab, zu denselben Preisen.',
           ],
         },
       ],
@@ -523,9 +523,9 @@ const de = {
         q: 'Was kosten generierte Produktbeschreibungen?',
         bands: [
           {
-            price: '1.500 – 4.000 €',
-            name: 'Bis tausend Artikel, eine Sprache',
-            body: 'Wir stellen den Prozess auf Ihren Ton und Ihre Terminologie ein und gehen den Katalog durch. Sie prüfen und geben frei, bevor etwas erscheint.',
+            price: '2 € / Beschreibung',
+            name: 'Die ersten 100 Beschreibungen',
+            body: 'Wir stellen den Prozess auf Ihren Ton und Ihre Terminologie ein und gehen den Katalog durch. Enthalten sind Beschreibung, Titel und Meta-Beschreibung, eine Korrekturrunde und eine Tabelle für den Import in Ihren Shop. Sie prüfen und geben frei, bevor etwas erscheint. Mindestauftrag 150 €.',
             examples: [
               'Ein Katalog ohne Beschreibungen oder mit denen des Lieferanten',
               'Eine neue Artikelgruppe, die wie die bestehenden klingen muss',
@@ -539,18 +539,30 @@ const de = {
             },
           },
           {
-            price: '4.000 – 12.000 €',
-            name: 'Ganzer Katalog, mehrere Sprachen',
-            body: 'Derselbe Prozess über den gesamten Katalog und jeden Markt, in dem Sie verkaufen — in dieser Sprache geschrieben, nicht nachträglich übersetzt.',
+            price: '1,50 € / Beschreibung',
+            name: 'Beschreibung 101 bis 500',
+            body: 'Steht der Prozess, kostet jede weitere Beschreibung weniger. Ein Katalog mit 500 Artikeln insgesamt: 800 €.',
             examples: [
-              'Tausende Artikel in zwei oder mehr Märkten',
-              'Kategorie- und Kampagnentexte neben den Beschreibungen',
+              'Ein mittelgroßer Katalog, der eigene Texte braucht',
+              'Eine neue Saison oder eine neue Kategorie',
+            ],
+            boundary: '',
+          },
+          {
+            price: '1 € / Beschreibung',
+            name: 'Jede Beschreibung ab der 501.',
+            body: 'Für große Kataloge und mehrere Märkte. 1.000 Artikel insgesamt: 1.300 €; 5.000 Artikel: 5.300 €. Jede Sprache rechnen wir getrennt ab, zu denselben Preisen, und schreiben sie in der Sprache des Marktes statt nachträglich zu übersetzen.',
+            examples: [
+              'Tausende Artikel',
+              'Derselbe Katalog in zwei oder mehr Märkten',
             ],
             boundary: '',
           },
         ],
-        min: 1500,
-        max: 12000,
+        // Graduated, like a tax bracket: the first 100 descriptions at the top
+        // rate, the next 400 at the middle one, the rest at the bottom. min is
+        // the minimum order; there is no max, because the price is per item.
+        min: 150,
       },
       faq: [
         {

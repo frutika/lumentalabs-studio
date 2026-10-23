@@ -415,20 +415,20 @@ const en = {
       // See the note in hr.js — the same three sections, aimed at the query.
       sections: [
         {
-          h2: 'Per item or per catalogue',
+          h2: 'Per item, at a fraction of the market rate',
           paragraphs: [
-            'Published Croatian rates for writing product descriptions run from €5 to €25 per description, depending on length and how much SEO work goes in. That is per-item logic: a thousand-item catalogue lands between €5,000 and €25,000, and a three-thousand-item one between €15,000 and €75,000.',
-            'We do not charge per item, we charge per catalogue. The work is in setting the process up — voice, terminology, rules and review. Once that stands, a thousand items and ten thousand items are not ten times the job.',
+            'Published Croatian rates for writing product descriptions run from €5 to €25 per description, depending on length and how much SEO work goes in. A thousand-item catalogue lands between €5,000 and €25,000 on that logic, and a three-thousand-item one between €15,000 and €75,000.',
+            'We charge per description too, but the rate falls as the catalogue grows: the first 100 descriptions at €2, the next 400 at €1.50, and every one after the five-hundredth at €1. The work is in setting the process up — voice, terminology, rules and review. Once that stands, each further description costs little, and the price shows it.',
           ],
           table: {
             head: ['Items', 'At market rate (€5 – €25 / description)', 'With us'],
             rows: [
-              ['500', '€2,500 – €12,500', '€1,500 – €4,000'],
-              ['1,000', '€5,000 – €25,000', '€1,500 – €4,000'],
-              ['5,000', '€25,000 – €125,000', '€4,000 – €12,000'],
+              ['500', '€2,500 – €12,500', '€800'],
+              ['1,000', '€5,000 – €25,000', '€1,300'],
+              ['5,000', '€25,000 – €125,000', '€5,300'],
             ],
           },
-          note: 'Above five thousand items, or more than two markets, we scope it. For scale: 12,000 descriptions went through our own product Lumenta AI in nine days — not a client project, but a measure that your catalogue is almost certainly not too big for this.',
+          note: 'Each language is priced separately, at the same rates. For scale: 12,000 descriptions went through our own product Lumenta AI in nine days — not a client project, but a measure that your catalogue is almost certainly not too big for this.',
         },
         {
           h2: 'What supplier descriptions actually do',
@@ -449,7 +449,7 @@ const en = {
           paragraphs: [
             'A translation carries the sentence but not the query. A German buyer is not searching for a translation of a Croatian phrase — they search for what Germans actually type, which is often a different word, a different search volume and a different buying motive.',
             'So we write in the language of the market, with that market’s terminology and its searches, rather than pushing Croatian text through a translator. The same item can carry a different emphasis in Croatia and in Germany, because it is bought differently.',
-            'The practical consequence: two language versions are not double the work, but they are not one job with a translation bolted on at the end either. The price for several markets reflects that.',
+            'The practical consequence: two language versions are not double the work, but they are not one job with a translation bolted on at the end either. So each language is priced as its own set of descriptions, at the same rates.',
           ],
         },
       ],
@@ -457,9 +457,9 @@ const en = {
         q: 'How much do generated product descriptions cost?',
         bands: [
           {
-            price: '€1,500 – €4,000',
-            name: 'Up to a thousand items, one language',
-            body: 'We set the process up on your voice and your terminology, then run the catalogue. You review and approve before anything publishes.',
+            price: '€2 / description',
+            name: 'The first 100 descriptions',
+            body: 'We set the process up on your voice and your terminology, then run the catalogue. Each one includes the description, title and meta description, one round of revisions and a spreadsheet ready to import into your shop. You review and approve before anything publishes. Minimum order €150.',
             examples: [
               'A catalogue with no descriptions, or with the supplier’s',
               'A new product group that has to read like the existing ones',
@@ -473,18 +473,30 @@ const en = {
             },
           },
           {
-            price: '€4,000 – €12,000',
-            name: 'Whole catalogue, several languages',
-            body: 'The same process across the whole catalogue and every market you sell in — written in that language, not translated afterwards.',
+            price: '€1.50 / description',
+            name: 'Descriptions 101 to 500',
+            body: 'Once the process is set up, each further description costs less. A 500-item catalogue in total: €800.',
             examples: [
-              'Thousands of items across two or more markets',
-              'Category and campaign copy alongside the descriptions',
+              'A mid-sized catalogue that needs its own copy',
+              'A new season or a new product category',
+            ],
+            boundary: '',
+          },
+          {
+            price: '€1 / description',
+            name: 'Every description after the 500th',
+            body: 'For large catalogues and several markets. 1,000 items in total: €1,300; 5,000 items: €5,300. Each language is priced separately at the same rates, and written in that market’s language rather than translated afterwards.',
+            examples: [
+              'Thousands of items',
+              'The same catalogue in two or more markets',
             ],
             boundary: '',
           },
         ],
-        min: 1500,
-        max: 12000,
+        // Graduated, like a tax bracket: the first 100 descriptions at the top
+        // rate, the next 400 at the middle one, the rest at the bottom. min is
+        // the minimum order; there is no max, because the price is per item.
+        min: 150,
       },
       faq: [
         {
