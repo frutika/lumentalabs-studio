@@ -334,7 +334,7 @@ const posts = [
     cover: 'ladder',
     title: 'Opisi proizvoda za webshop: sami, alatom ili s agencijom?',
     description:
-      'Tri načina da webshop dobije vlastite opise proizvoda, s pravim cijenama: besplatno sami, alatom od 19 $ mjesečno ili projektom od 1.500 €. Kako odabrati prema broju artikala i jezika.',
+      'Tri načina da webshop dobije vlastite opise proizvoda, s pravim cijenama: besplatno sami, alatom od 19 $ mjesečno ili projektom od 2 € po opisu. Kako odabrati prema broju artikala i jezika.',
     date: '2026-09-30',
     tags: ['Webshop', 'Opisi proizvoda', 'AI'],
     excerpt:
@@ -390,15 +390,17 @@ const posts = [
       },
       {
         ul: [
-          'Do tisuću artikala, jedan jezik: 1.500 – 4.000 €.',
-          'Cijeli katalog, više jezika: 4.000 – 12.000 €.',
+          'Do 100 artikala: 2 € po opisu.',
+          'Od 101 do 500 artikala: 1,50 € po opisu.',
+          'Iznad 500 artikala: 1 € po opisu.',
+          'Minimalna narudžba: 150 €.',
         ],
       },
       {
-        p: 'Cijene su bez PDV-a. Kod više jezika opise pišemo na jeziku tržišta, s nazivljem kojim se tamo pretražuje, a ne tako da hrvatski tekst provučemo kroz prevoditelj.',
+        p: 'U cijenu su uključeni opis, naslov i meta opis za Google te jedan krug ispravaka, a isporučujemo tablicu spremnu za uvoz u webshop. Cijene su bez PDV-a. Kod više jezika opise pišemo na jeziku tržišta, s nazivljem kojim se tamo pretražuje, a ne tako da hrvatski tekst provučemo kroz prevoditelj.',
       },
       {
-        p: 'Za usporedbu: objavljene hrvatske cijene za pisanje opisa kreću se od 5 do 25 € po opisu. Katalog od tisuću artikala je po toj logici 5.000 do 25.000 €. Razlika je u tome što projekt naplaćujemo po katalogu, a ne po komadu.',
+        p: 'Za usporedbu: objavljene hrvatske cijene za pisanje opisa kreću se od 5 do 25 € po opisu. Katalog od tisuću artikala je po toj logici 5.000 do 25.000 €, a kod nas manje od 2.000 €.',
       },
       {
         p: 'Za koga: tisuće artikala, više tržišta, i nitko u timu tko bi to stigao sam.',

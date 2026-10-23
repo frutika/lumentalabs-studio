@@ -230,7 +230,7 @@ function PriceFilter() {
 const LADDER_STEPS = [
   { x: 105, y: 222, sub: 240, label: 'sami', note: 'vodič · besplatan' },
   { x: 235, y: 170, sub: 188, label: 'alat', note: 'od 19 $ / mj' },
-  { x: 370, y: 115, sub: 133, label: 'projekt', note: 'od 1.500 €' },
+  { x: 370, y: 115, sub: 133, label: 'projekt', note: '2 € / opis' },
 ];
 
 function Ladder() {
