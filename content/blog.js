@@ -397,7 +397,7 @@ const posts = [
         ],
       },
       {
-        p: 'U cijenu su uključeni opis, naslov i meta opis za Google te jedan krug ispravaka, a isporučujemo tablicu spremnu za uvoz u webshop. Cijene su bez PDV-a. Kod više jezika opise pišemo na jeziku tržišta, s nazivljem kojim se tamo pretražuje, a ne tako da hrvatski tekst provučemo kroz prevoditelj.',
+        p: 'U cijenu su uključeni opis, naslov i meta opis za Google te jedan krug ispravaka, a isporučujemo tablicu spremnu za uvoz u webshop. Cijene su bez PDV-a; trenutno nismo u sustavu PDV-a, pa ga na računu nema. Kod više jezika opise pišemo na jeziku tržišta, s nazivljem kojim se tamo pretražuje, a ne tako da hrvatski tekst provučemo kroz prevoditelj.',
       },
       {
         p: 'Za usporedbu: objavljene hrvatske cijene za pisanje opisa kreću se od 5 do 25 € po opisu. Katalog od tisuću artikala je po toj logici 5.000 do 25.000 €, a kod nas 1.300 €.',
