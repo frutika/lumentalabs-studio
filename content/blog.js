@@ -372,7 +372,7 @@ const posts = [
       },
       {
         ul: [
-          'Pri registraciji dobivate 10 besplatnih kredita, dovoljno za tri opisa na vlastitim artiklima.',
+          'Pri registraciji jednokratno dobivate 30 besplatnih kredita, dovoljno za deset opisa na vlastitim artiklima.',
           'Pro: 19 $ mjesečno, 500 kredita (oko 165 opisa).',
           'Business: 49 $ mjesečno, 2.000 kredita (oko 665 opisa).',
           'Jedan opis proizvoda troši tri kredita, a ostali alati u paketu po jedan. Krediti se obnavljaju mjesečno i zajednički su za sve alate.',
@@ -431,7 +431,7 @@ const posts = [
       {
         links: [
           { text: 'Vodič: automatizirajte opise proizvoda uz n8n i AI', href: '/hr/vodici/automatizacija-opisa-proizvoda', note: 'besplatno, oko 30 minuta' },
-          { text: 'Lumenta AI', href: 'https://lumenta.shop', note: '10 besplatnih kredita pri registraciji' },
+          { text: 'Lumenta AI', href: 'https://lumenta.shop', note: '30 besplatnih kredita pri registraciji' },
           { text: 'Opisi proizvoda za webshop kao projekt', href: '/hr/services/ai-opisi-proizvoda-za-webshop', note: 'pojasevi, primjeri i česta pitanja' },
         ],
       },
