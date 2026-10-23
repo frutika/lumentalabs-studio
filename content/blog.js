@@ -450,6 +450,9 @@ const posts = [
       'Uobičajen savjet je da se cijena ne objavljuje jer gubite pregovarački prostor. Ono što se stvarno gubi su tri e-maila dok obje strane ne shvate da nisu u istom redu veličine.',
     body: [
       {
+        p: 'Ažurirano 24. 10. 2026.: opise proizvoda za webshop danas naplaćujemo po opisu (od 2 € po opisu, minimalno 150 €), a ne u pojasevima koji se spominju niže. Ovaj tekst opisuje kako su prve objavljene cijene nastale; aktualni cjenik je na stranici usluge.',
+      },
+      {
         p: 'Uobičajen savjet glasi: cijenu ne stavljaj na stranicu. Izgubit ćeš pregovarački prostor, konkurencija će je vidjeti, a svaki je projekt ionako drugačiji. Sve troje je točno. I svejedno smo cijene objavili.',
       },
       {
@@ -520,6 +523,12 @@ const posts = [
       },
       {
         p: 'Ono što već znamo je uže, ali sigurnije: da bismo cijenu napisali, morali smo definirati pet usluga preciznije nego ikad dotad. Taj dio se isplatio prije nego što je itko kliknuo.',
+      },
+      { h2: 'Gdje dalje' },
+      {
+        links: [
+          { text: 'Aktualni cjenik opisa proizvoda', href: '/hr/services/ai-opisi-proizvoda-za-webshop', note: 'cijena po opisu, s primjerima' },
+        ],
       },
     ],
   },
