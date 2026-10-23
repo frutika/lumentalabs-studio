@@ -344,7 +344,35 @@ const threeAnswersLabels = () => [
   ...ANSWERS.map((a) => ({ x: 370, y: a.y, size: 18, color: a.color, children: a.label })),
 ];
 
+// See SpecMismatch in BlogCover.jsx.
+function specMismatchShapes() {
+  return [
+    <rect key="opis" x="40" y="55" width="170" height="180" rx="8" fill="none" stroke={C.muted} strokeWidth="2" />,
+    <line key="o1" x1="62" y1="108" x2="188" y2="108" stroke={C.muted} strokeWidth="2" />,
+    <line key="o2" x1="62" y1="126" x2="188" y2="126" stroke={C.muted} strokeWidth="2" />,
+    <line key="o3" x1="62" y1="144" x2="150" y2="144" stroke={C.muted} strokeWidth="2" />,
+    <rect key="ov" x="80" y="172" width="90" height="36" rx="6" fill="none" stroke={C.warm} strokeWidth="2" />,
+    <rect key="spec" x="270" y="55" width="170" height="180" rx="8" fill="none" stroke={C.muted} strokeWidth="2" />,
+    <line key="s1" x1="290" y1="112" x2="420" y2="112" stroke={C.muted} strokeWidth="2" />,
+    <line key="s2" x1="290" y1="140" x2="420" y2="140" stroke={C.muted} strokeWidth="2" />,
+    <line key="s3" x1="355" y1="100" x2="355" y2="152" stroke={C.muted} strokeWidth="2" />,
+    <rect key="sv" x="310" y="172" width="90" height="36" rx="6" fill="none" stroke={C.warm} strokeWidth="2" />,
+    <line key="link" x1="170" y1="190" x2="310" y2="190" stroke={C.warm} strokeWidth="2" strokeDasharray="5 4" />,
+    <circle key="ne" cx="240" cy="190" r="15" fill={C.warm} />,
+  ];
+}
+// Sized for the 1200x630 card, like priceFilterLabels.
+const specMismatchLabels = () => [
+  { x: 40, y: 30, anchor: 'start', size: 15, children: 'isti proizvod, dva podatka →' },
+  { x: 125, y: 84, size: 20, color: C.accent, children: 'opis' },
+  { x: 355, y: 84, size: 20, color: C.accent, children: 'specifikacija' },
+  { x: 125, y: 190, size: 18, children: '350 cm' },
+  { x: 355, y: 190, size: 18, children: '320 cm' },
+  { x: 240, y: 190, size: 20, color: C.badgeText, children: '≠' },
+];
+
 const VARIANTS = {
+  'spec-mismatch': { shapes: specMismatchShapes, labels: specMismatchLabels },
   'nginx-proxy': { shapes: nginxProxyShapes, labels: nginxProxyLabels },
   'service-worker': { shapes: serviceWorkerShapes, labels: serviceWorkerLabels },
   'hook-gate': { shapes: hookGateShapes, labels: hookGateLabels },
