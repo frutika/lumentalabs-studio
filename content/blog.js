@@ -23,6 +23,125 @@
 
 const posts = [
   {
+    slug: 'greske-u-opisima-proizvoda',
+    lang: 'hr',
+    cover: 'spec-mismatch',
+    title: 'Pregledali smo 30 hrvatskih webshopova. Ovih šest grešaka u opisima proizvoda ponavlja se posvuda',
+    description:
+      'U 24 od 30 hrvatskih webshopova našli smo greške u opisima proizvoda. Šest obrazaca koji se ponavljaju i kako svoju trgovinu provjeriti za 15 minuta.',
+    date: '2026-10-24',
+    tags: ['Webshop', 'Opisi proizvoda', 'SEO'],
+    excerpt:
+      'Najčešća greška nije loš stil nego opis koji tvrdi jedno, a specifikacija ispod njega drugo. Kupac tada ne zna čemu vjerovati, pa ne kupi.',
+    body: [
+      {
+        p: 'U listopadu smo detaljno pregledali 30 hrvatskih nišnih webshopova: alate, rasvjetu, dječju opremu, opremu za kavu, hranu za ljubimce, vrtni namještaj, nautiku. Nismo gledali dizajn ni cijene, nego samo jedno: što kupac pročita kad otvori stranicu proizvoda.',
+      },
+      {
+        p: 'U 24 od 30 trgovina našli smo barem jednu grešku koja kupca može zbuniti ili mu dati razlog da ode. U šest trgovina opisi su bili dobri, pa ih ovdje ne spominjemo dalje. Sve što slijedi su stvarni primjeri, ali bez imena trgovina: cilj nije prozivati nikoga, nego pokazati obrasce koji se ponavljaju.',
+      },
+      {
+        p: 'Jedna napomena o metodi: za svaku trgovinu otvorili smo jednu do dvije stranice proizvoda, ne cijeli katalog. Brojke ispod zato su donja granica. Greška koju smo vidjeli na jednoj stranici rijetko je jedina u katalogu, jer je nastala istim postupkom kao i sve ostale.',
+      },
+      { h2: '1. Opis kaže jedno, specifikacija drugo' },
+      {
+        p: 'Najčešća i najskuplja greška, u sedam trgovina. Nekoliko primjera:',
+      },
+      {
+        ul: [
+          'SUP daska: 350 cm u opisu, 320 cm u specifikaciji.',
+          'Električni moped: opis spominje drugi model iz iste serije i brzinu od 50 km/h, specifikacija ispod kaže 80 km/h.',
+          'Auto žarulja: opis objašnjava kako radi s CANBUS sustavom, a specifikacija kaže da ga žarulja nema.',
+          'Vrtna fotelja: opis kaže da je crna, a naslov i specifikacija da je antracit.',
+          'Set nasadnih ključeva: cijeli opis govori o drugoj vrsti alata i drugim veličinama. Proizvod iz naslova u tekstu se uopće ne spominje.',
+        ],
+      },
+      {
+        p: 'Zašto je to gore od praznog opisa: prazan opis kupca ne informira, a proturječan ga tjera da posumnja u sve ostalo na stranici. Ako dužina nije točna, je li točna nosivost? Kupac koji nije siguran ili pita (i čeka odgovor), ili kupi drugdje.',
+      },
+      {
+        p: 'Kako nastaje: opis je jednom napisan za sličan proizvod ili stariji model, pa kopiran. Specifikacija se kasnije ažurirala iz feeda dobavljača, a tekst nije.',
+      },
+      { h2: '2. Tekst proizvođača, preuzet od riječi do riječi' },
+      {
+        p: 'Sedam trgovina. Ponekad je to cijeli tehnički list proizvođača bez ijedne rečenice koja kaže kome je proizvod namijenjen, ponekad marketinški tekst o brendu u kojem o samom proizvodu ima tek nekoliko riječi.',
+      },
+      {
+        p: 'Problem nije samo stil. Isti tekst ima svaka druga trgovina koja prodaje isti proizvod. Google za to ne kažnjava, ali od više stranica s istim tekstom obično prikaže jednu, a ostale ne. Ako taj opis ima dvadeset trgovina, velika je šansa da prikazana stranica nije vaša.',
+      },
+      { h2: '3. Engleski usred hrvatskog i strojni prijevod' },
+      {
+        p: 'Šest trgovina. Opis sjedala za bicikl potpuno na engleskom u inače hrvatskoj trgovini. Engleska rečenica o modi zalutala usred opisa dječjeg tricikla. Zemlja podrijetla napisana kao „Cambodia”. Naslov proizvoda na engleskom.',
+      },
+      {
+        p: 'Strojni prijevod je podmukliji, jer na prvi pogled izgleda kao hrvatski. U jednom opisu umjesto „namjene” piše „sudbina”, jer je prevoditelj krivo shvatio riječ iz izvornika. U drugom rečenica „štiti od MacBook od 16”” koja se razumije tek kad se zamisli engleski original.',
+      },
+      {
+        p: 'Kupac to ne doživljava kao jezičnu sitnicu, nego kao znak da trgovina nije pažljiva. A trgovini koja nije pažljiva s tekstom teže je vjerovati i s dostavom i reklamacijama.',
+      },
+      { h2: '4. Tipfeleri, krivo napisan brend i tekst bez dijakritika' },
+      {
+        p: 'Pet trgovina. Opis bez ijednog č, ć, š i ž („Velicina cestica”). Naziv brenda napisan s greškom, na stranici koja taj brend prodaje. Gramatičke greške preuzete iz loše prevedenog teksta proizvođača („Ukusni patka i losos”).',
+      },
+      {
+        p: 'Tekst bez dijakritika ima i SEO posljedicu, ne samo estetsku: kupci pretražuju i s kvačicama i bez njih, a vi time sami birate da vas nađe samo dio njih.',
+      },
+      { h2: '5. Prazan opis ili trinaest riječi' },
+      {
+        p: 'Tri trgovine. Kartica „Opis” koja je potpuno prazna, pa kupac vidi samo pet stavki specifikacije. Klasična gitara s opisom od trinaest riječi, a upravo kod gitare kupac želi znati drvo, menzuru i za koga je. Maslinovo ulje s pedesetak riječi, bez ijedne o tome odakle je i po čemu je drugačije.',
+      },
+      {
+        p: 'Ovo je najlakša greška za popraviti i ona koju kupac najviše primijeti, jer na stranici jednostavno nema ničega što bi ga uvjerilo.',
+      },
+      { h2: '6. Nema meta opisa' },
+      {
+        p: 'Najmanje četiri trgovine, a vjerojatno i više, jer meta opis nismo provjerili svugdje. Meta opis je tekst koji Google prikazuje ispod naslova u rezultatima pretraživanja. Kad ga nema, Google sam izabere komad teksta sa stranice, a to je često početak tehničkog lista ili rečenica iz podnožja.',
+      },
+      {
+        p: 'Google ni postojeći meta opis ne prikazuje uvijek, ali kad ga nema, šansa da u rezultatima stoji nešto što prodaje pada gotovo na nulu.',
+      },
+      {
+        quote: 'Kupac ne vidi vaš proces, nego samo rezultat. A rezultat kojemu ne vjeruje ne kupuje.',
+      },
+      { h2: 'Bonus: zdravstvene tvrdnje' },
+      {
+        p: 'Jedna trgovina dodacima prehrani imala je opise sa zdravstvenim tvrdnjama bez izvora i proizvod čiji naziv obećava sastojak kojeg u sastavu nema. To nije stilski problem nego regulatorni: tvrdnje o zdravlju na hrani i dodacima prehrani u EU smiju biti samo one s odobrenog popisa. Ako prodajete takve proizvode, opis mora prodavati i biti usklađen, i to je posao za nekoga tko poznaje pravila.',
+      },
+      { h2: 'Kako provjeriti svoju trgovinu za 15 minuta' },
+      {
+        p: 'Ne treba vam alat ni agencija da biste vidjeli imate li ove probleme. Odaberite pet proizvoda: dva najprodavanija, dva nasumična i jedan koji ste dodali najnovije. Za svaki provjerite:',
+      },
+      {
+        ul: [
+          'Slažu li se brojke u opisu s brojkama u specifikaciji i naslovu? Dimenzije, težina, snaga, model, boja.',
+          'Kopirajte jednu rečenicu iz opisa i pretražite je pod navodnicima. Ako je ima još deset trgovina, tekst nije vaš.',
+          'Ima li ijedna rečenica na engleskom, ili rečenica koja zvuči kao prijevod?',
+          'Ima li opis č, ć, š, ž i đ? Je li naziv brenda napisan točno?',
+          'Govori li opis kome je proizvod namijenjen i zašto baš on, ili samo nabraja specifikaciju?',
+          'Utipkajte naziv proizvoda u Google i pogledajte tekst ispod vaše stranice. Je li to nešto što ste vi napisali?',
+        ],
+      },
+      {
+        p: 'Ako je sve u redu na pet proizvoda, vjerojatno ste među onih šest trgovina koje ne trebaju ništa mijenjati. Ako nije, pogreška je gotovo sigurno sustavna, jer su i ostali opisi nastali na isti način.',
+      },
+      { h2: 'Što s tim' },
+      {
+        p: 'Za desetak artikala dovoljno je sjesti i ispraviti ih ručno. Za stotine i tisuće artikala pravi posao nije pisanje nego postupak: tekst koji se piše iz provjerenih podataka o proizvodu, uz provjeru da opis ne tvrdi ništa što specifikacija ne potvrđuje, i čovjek koji pročita prije objave.',
+      },
+      {
+        p: 'Tako radimo i mi. Svaki opis koji napravimo provjeravamo tvrdnju po tvrdnju prema izvornim podacima, a proturječja koja nađemo u vašim podacima ne skrivamo nego vam ih označimo, jer su ona najčešće pravi problem.',
+      },
+      { h2: 'Gdje dalje' },
+      {
+        links: [
+          { text: 'Opisi proizvoda za webshop kao projekt', href: '/hr/services/ai-opisi-proizvoda-za-webshop', note: 'primjer opisa i česta pitanja' },
+          { text: 'Opisi proizvoda: sami, alatom ili s agencijom?', href: '/hr/blog/opisi-proizvoda-sami-alat-ili-agencija', note: 'koji put odgovara vašem katalogu' },
+          { text: 'Vodič: automatizirajte opise proizvoda uz n8n i AI', href: '/hr/vodici/automatizacija-opisa-proizvoda', note: 'besplatno, oko 30 minuta' },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'nitko-ovo-ne-radi',
     lang: 'hr',
     cover: 'three-answers',

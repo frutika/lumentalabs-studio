@@ -339,7 +339,35 @@ function ThreeAnswers() {
   );
 }
 
+// The most common error in the webshop review: the description and the spec
+// table on the same page disagree. Two panels, two values, a warm ≠ between.
+function SpecMismatch() {
+  return (
+    <>
+      <text x="40" y="30" className="tiny">isti proizvod, dva podatka →</text>
+      <rect x="40" y="55" width="170" height="180" rx="8" className="stroke-m" />
+      <text x="125" y="84" textAnchor="middle" className="lbl-a">opis</text>
+      <line x1="62" y1="108" x2="188" y2="108" className="stroke-m" />
+      <line x1="62" y1="126" x2="188" y2="126" className="stroke-m" />
+      <line x1="62" y1="144" x2="150" y2="144" className="stroke-m" />
+      <rect x="80" y="172" width="90" height="36" rx="6" className="stroke-w" />
+      <text x="125" y="195" textAnchor="middle">350 cm</text>
+      <rect x="270" y="55" width="170" height="180" rx="8" className="stroke-m" />
+      <text x="355" y="84" textAnchor="middle" className="lbl-a">specifikacija</text>
+      <line x1="290" y1="112" x2="420" y2="112" className="stroke-m" />
+      <line x1="290" y1="140" x2="420" y2="140" className="stroke-m" />
+      <line x1="355" y1="100" x2="355" y2="152" className="stroke-m" />
+      <rect x="310" y="172" width="90" height="36" rx="6" className="stroke-w" />
+      <text x="355" y="195" textAnchor="middle">320 cm</text>
+      <line x1="170" y1="190" x2="310" y2="190" className="stroke-w" strokeDasharray="5 4" />
+      <circle cx="240" cy="190" r="15" className="fill-w" />
+      <text x="240" y="197" textAnchor="middle" className="badge" style={{ fontSize: 20 }}>≠</text>
+    </>
+  );
+}
+
 const VARIANTS = {
+  'spec-mismatch': SpecMismatch,
   'nginx-proxy': NginxProxy,
   'service-worker': ServiceWorker,
   'hook-gate': HookGate,
