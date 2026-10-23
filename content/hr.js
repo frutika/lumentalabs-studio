@@ -579,20 +579,20 @@ const hr = {
       // page for the one query it targets.
       sections: [
         {
-          h2: 'Po komadu ili po katalogu',
+          h2: 'Po komadu, ali višestruko jeftinije',
           paragraphs: [
-            'Objavljene hrvatske cijene za pisanje opisa kreću se od 5 do 25 € po opisu, ovisno o duljini i razini SEO obrade. To je logika po komadu: katalog od tisuću artikala je između 5.000 i 25.000 €, a od tri tisuće između 15.000 i 75.000 €.',
-            'Mi ne naplaćujemo po komadu, nego po katalogu. Razlog je jednostavan: posao je u postavljanju procesa — tona, nazivlja, pravila i kontrole. Kad to stoji, tisuću artikala i deset tisuća artikala nisu deset puta različit posao.',
+            'Objavljene hrvatske cijene za pisanje opisa kreću se od 5 do 25 € po opisu, ovisno o duljini i razini SEO obrade. Katalog od tisuću artikala je po toj logici između 5.000 i 25.000 €, a od tri tisuće između 15.000 i 75.000 €.',
+            'I mi naplaćujemo po opisu, ali cijena pada s veličinom kataloga: prvih 100 opisa po 2 €, sljedećih 400 po 1,50 €, a svaki iznad petstotog po 1 €. Posao je u postavljanju procesa — tona, nazivlja, pravila i kontrole. Kad to stoji, svaki sljedeći opis košta malo, i to vidite u cijeni.',
           ],
           table: {
-            head: ['Artikala', 'Po tržišnoj cijeni (5 – 25 € / opis)', 'Kod nas'],
+            head: ['Artikala', 'Po tržišnoj cijeni (5 – 25 € / opis)', 'Kod nas'],
             rows: [
-              ['500', '2.500 – 12.500 €', '1.500 – 4.000 €'],
-              ['1.000', '5.000 – 25.000 €', '1.500 – 4.000 €'],
-              ['5.000', '25.000 – 125.000 €', '4.000 – 12.000 €'],
+              ['500', '2.500 – 12.500 €', '800 €'],
+              ['1.000', '5.000 – 25.000 €', '1.300 €'],
+              ['5.000', '25.000 – 125.000 €', '5.300 €'],
             ],
           },
-          note: 'Iznad pet tisuća artikala ili više od dva tržišta radimo procjenu po opsegu. Za razmjer: kroz vlastiti proizvod Lumenta AI prošlo je 12.000 opisa u devet dana — nije klijentski projekt, nego mjera da vaš katalog gotovo sigurno nije prevelik za ovo.',
+          note: 'Svaki jezik računamo zasebno, po istim cijenama. Za razmjer: kroz vlastiti proizvod Lumenta AI prošlo je 12.000 opisa u devet dana — nije klijentski projekt, nego mjera da vaš katalog gotovo sigurno nije prevelik za ovo.',
         },
         {
           h2: 'Što opisi dobavljača stvarno rade',
@@ -614,7 +614,7 @@ const hr = {
           paragraphs: [
             'Prijevod prenosi rečenicu, ali ne prenosi upit. Njemački kupac ne traži prijevod hrvatske fraze — traži ono što Nijemci doista upisuju, a to je često druga riječ, drugi red veličine pretraga i drugi kupovni motiv.',
             'Zato opise pišemo na jeziku tržišta, s nazivljem i pretragama tog tržišta, a ne tako da hrvatski tekst provučemo kroz prevoditelj. Isti artikl može imati različit naglasak u Hrvatskoj i u Njemačkoj, jer se različito i kupuje.',
-            'Praktična posljedica: dvije jezične verzije nisu dvostruki posao, ali nisu ni jedan posao s prijevodom na kraju. Cijena za više tržišta to odražava.',
+            'Praktična posljedica: dvije jezične verzije nisu dvostruki posao, ali nisu ni jedan posao s prijevodom na kraju. Zato svaki jezik računamo kao zaseban opis, po istim cijenama.',
           ],
         },
       ],
@@ -622,17 +622,15 @@ const hr = {
         q: 'Koliko košta generiranje opisa proizvoda?',
         bands: [
           {
-            price: '1.500 – 4.000 €',
-            name: 'Do tisuću artikala, jedan jezik',
-            body: 'Postavljamo proces na vaš ton i vaše nazivlje, pa prođemo katalog. Vi pregledavate i odobravate prije objave.',
+            price: '2 € / opis',
+            name: 'Prvih 100 opisa',
+            body: 'Postavljamo proces na vaš ton i vaše nazivlje, pa prođemo katalog. Uključeni su opis, naslov i meta opis, jedan krug ispravaka i tablica za uvoz u webshop. Vi pregledavate i odobravate prije objave. Minimalna narudžba je 150 €.',
             examples: [
               'Katalog bez opisa, ili s opisima prepisanim od dobavljača',
               'Nova grupa artikala koju treba opisati u istom tonu kao postojeće',
             ],
             boundary: 'Ako imate stotinjak artikala i copywritera koji ih stigne obraditi, ovo vam ne treba.',
-            // Qualifying someone out is only half the job; this says where to
-            // go instead. Lumenta AI is our own tool and does the same thing
-            // self-serve, without us in the loop.
+            // Qualifying someone out is only half the job; this says where to go instead.
             selfServe: {
               text: 'Manji katalog i želite to sami? Lumenta AI je naš alat koji piše opise — samoposluga, bez nas u procesu.',
               cta: 'Otvori Lumenta AI',
@@ -640,18 +638,30 @@ const hr = {
             },
           },
           {
-            price: '4.000 – 12.000 €',
-            name: 'Cijeli katalog, više jezika',
-            body: 'Isti proces kroz cijeli katalog i na svakom tržištu na kojem prodajete — pisano na tom jeziku, ne prevedeno naknadno.',
+            price: '1,50 € / opis',
+            name: 'Od 101. do 500. opisa',
+            body: 'Kad je proces postavljen, svaki sljedeći opis košta manje. Katalog od 500 artikala ukupno: 800 €.',
             examples: [
-              'Tisuće artikala na dva ili više tržišta',
-              'Kategorije i tekstovi kampanja uz same opise',
+              'Katalog srednje veličine koji treba vlastite opise',
+              'Nova sezona ili nova kategorija artikala',
+            ],
+            boundary: '',
+          },
+          {
+            price: '1 € / opis',
+            name: 'Svaki opis iznad 500.',
+            body: 'Za velike kataloge i više tržišta. 1.000 artikala ukupno: 1.300 €; 5.000 artikala: 5.300 €. Svaki jezik računamo zasebno, po istim cijenama, i pišemo ga na jeziku tržišta, ne prevodimo naknadno.',
+            examples: [
+              'Tisuće artikala',
+              'Isti katalog na dva ili više tržišta',
             ],
             boundary: '',
           },
         ],
-        min: 1500,
-        max: 12000,
+        // Graduated, like a tax bracket: the first 100 descriptions at the top
+        // rate, the next 400 at the middle one, the rest at the bottom. min is
+        // the minimum order; there is no max, because the price is per item.
+        min: 150,
       },
       faq: [
         {

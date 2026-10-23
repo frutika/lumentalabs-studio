@@ -390,17 +390,17 @@ const posts = [
       },
       {
         ul: [
-          'Do 100 artikala: 2 € po opisu.',
-          'Od 101 do 500 artikala: 1,50 € po opisu.',
-          'Iznad 500 artikala: 1 € po opisu.',
-          'Minimalna narudžba: 150 €.',
+          'Prvih 100 opisa: 2 € po opisu.',
+          'Od 101. do 500. opisa: 1,50 € po opisu.',
+          'Svaki opis iznad petstotog: 1 €.',
+          'Minimalna narudžba: 150 €. Katalog od 500 artikala ukupno je 800 €, od tisuću 1.300 €.',
         ],
       },
       {
         p: 'U cijenu su uključeni opis, naslov i meta opis za Google te jedan krug ispravaka, a isporučujemo tablicu spremnu za uvoz u webshop. Cijene su bez PDV-a. Kod više jezika opise pišemo na jeziku tržišta, s nazivljem kojim se tamo pretražuje, a ne tako da hrvatski tekst provučemo kroz prevoditelj.',
       },
       {
-        p: 'Za usporedbu: objavljene hrvatske cijene za pisanje opisa kreću se od 5 do 25 € po opisu. Katalog od tisuću artikala je po toj logici 5.000 do 25.000 €, a kod nas manje od 2.000 €.',
+        p: 'Za usporedbu: objavljene hrvatske cijene za pisanje opisa kreću se od 5 do 25 € po opisu. Katalog od tisuću artikala je po toj logici 5.000 do 25.000 €, a kod nas 1.300 €.',
       },
       {
         p: 'Za koga: tisuće artikala, više tržišta, i nitko u timu tko bi to stigao sam.',
