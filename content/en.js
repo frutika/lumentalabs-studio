@@ -581,7 +581,7 @@ const en = {
   serviceDetailPage: {
     eyebrow: 'Service',
     pricingH2: 'What it costs',
-    vatNote: 'All prices exclude VAT. The final quote depends on scope — the range is here so you know straight away whether we are in the same order of magnitude.',
+    vatNote: 'All prices exclude VAT; we are currently not VAT-registered, so none is added to the invoice. The final quote depends on scope — the range is here so you know straight away whether we are in the same order of magnitude.',
     priceQ: 'What does it cost?',
     getsH2: 'What you get',
     notForH2: 'When this is not for you',
@@ -691,7 +691,7 @@ const en = {
         body: 'A series of pieces or a whole library of footage, scoped.',
       },
     ],
-    vatNote: 'All prices exclude VAT. The quote depends on runtime; additional languages are charged per language.',
+    vatNote: 'All prices exclude VAT; we are currently not VAT-registered, so none is added to the invoice. The quote depends on runtime; additional languages are charged per language.',
     h1: 'One film. Every market you sell in.',
     lede:
       'Shooting again for each language is how video budgets die. We narrate what you already have, and produce a version for every market from a single pass.',

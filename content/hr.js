@@ -742,8 +742,10 @@ const hr = {
     pricingH2: 'Okvirna cijena',
     // Stated once, here, rather than per service. While the obrt is outside the
     // VAT system the invoice says so anyway; writing it from the start means
-    // entering the system later is not read as a 25% price rise.
-    vatNote: 'Sve cijene su bez PDV-a. Konačna ponuda ovisi o opsegu — raspon je tu da odmah znate jesmo li u istom redu veličine.',
+    // entering the system later is not read as a 25% price rise. The second
+    // clause tells a buyer outside the VAT system the real figure today; on
+    // entering the system, delete it and nothing else changes.
+    vatNote: 'Sve cijene su bez PDV-a; trenutno nismo u sustavu PDV-a, pa ga na računu nema. Konačna ponuda ovisi o opsegu — raspon je tu da odmah znate jesmo li u istom redu veličine.',
     priceQ: 'Koliko košta?',
     getsH2: 'Što dobivate',
     notForH2: 'Kad ovo nije za vas',
@@ -841,7 +843,7 @@ const hr = {
         body: 'Serija snimaka ili cijeli katalog materijala, po opsegu.',
       },
     ],
-    vatNote: 'Sve cijene su bez PDV-a. Cijena ovisi o duljini snimke; dodatni jezici naplaćuju se po komadu.',
+    vatNote: 'Sve cijene su bez PDV-a; trenutno nismo u sustavu PDV-a, pa ga na računu nema. Cijena ovisi o duljini snimke; dodatni jezici naplaćuju se po komadu.',
     h1: 'Jedan film. Svako tržište na kojem prodajete.',
     lede:
       'Ponovno snimanje za svaki jezik način je na koji umiru budžeti za video. Mi narriramo ono što već imate i iz jednog prolaza radimo verziju za svako tržište.',

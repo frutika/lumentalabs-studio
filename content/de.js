@@ -641,7 +641,7 @@ const de = {
   serviceDetailPage: {
     eyebrow: 'Leistung',
     pricingH2: 'Was es kostet',
-    vatNote: 'Alle Preise verstehen sich zzgl. MwSt. Das endgültige Angebot hängt vom Umfang ab — die Spanne sagt Ihnen sofort, ob wir in derselben Größenordnung liegen.',
+    vatNote: 'Alle Preise verstehen sich zzgl. MwSt.; derzeit sind wir nicht mehrwertsteuerpflichtig, daher weist die Rechnung keine MwSt. aus. Das endgültige Angebot hängt vom Umfang ab — die Spanne sagt Ihnen sofort, ob wir in derselben Größenordnung liegen.',
     priceQ: 'Was kostet das?',
     getsH2: 'Was Sie bekommen',
     notForH2: 'Wann das nichts für Sie ist',
@@ -736,7 +736,7 @@ const de = {
         body: 'Eine Reihe von Filmen oder ein ganzes Materialarchiv, nach Umfang.',
       },
     ],
-    vatNote: 'Alle Preise zzgl. MwSt. Der Preis hängt von der Laufzeit ab; weitere Sprachen werden je Sprache berechnet.',
+    vatNote: 'Alle Preise zzgl. MwSt.; derzeit sind wir nicht mehrwertsteuerpflichtig, daher weist die Rechnung keine MwSt. aus. Der Preis hängt von der Laufzeit ab; weitere Sprachen werden je Sprache berechnet.',
     h1: 'Ein Film. Jeder Markt, in dem Sie verkaufen.',
     lede:
       'Für jede Sprache neu zu drehen ist der Weg, auf dem Videobudgets sterben. Wir vertonen, was Sie bereits haben, und produzieren aus einem Durchgang eine Fassung für jeden Markt.',
