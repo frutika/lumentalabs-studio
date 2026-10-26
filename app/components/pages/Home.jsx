@@ -209,7 +209,7 @@ export default function Home({ lang }) {
               <div className="about-media">
                 <div className="about-photo">
                   <Image
-                    src="/media/denis.jpg"
+                    src="/media/denis-portrait.jpg"
                     alt={h.about.photoAlt}
                     fill
                     sizes="(max-width: 760px) 60vw, 280px"
