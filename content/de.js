@@ -469,10 +469,10 @@ const de = {
       path: 'produktbeschreibungen-automatisieren',
       title: 'KI-Produktbeschreibungen für den Onlineshop',
       description:
-        'Produktbeschreibungen für den ganzen Katalog, in Ihrem Ton und in der Sprache des Marktes, in dem Sie verkaufen. Freigabe vor jeder Veröffentlichung.',
+        'Produktbeschreibungen erstellen lassen, für den ganzen Katalog: KI-Artikelbeschreibungen in Ihrem Ton und in der Sprache Ihres Marktes, mit Freigabe vor jeder Veröffentlichung.',
       h1: 'KI-Produktbeschreibungen für den ganzen Katalog',
       lede:
-        'Tausende Artikel ohne Beschreibung — oder mit der des Lieferanten, die Google als Duplikat liest. Wir richten den Prozess ein, der sie schreibt.',
+        'Tausende Artikel ohne Beschreibung — oder mit der des Lieferanten, die Google als Duplikat liest. Statt Produkttexte einzeln schreiben zu lassen, richten wir den Prozess ein, der sie schreibt.',
       intro: [
         'Der Katalog wächst schneller, als jemand ihn beschreiben kann. Vom Lieferanten übernommene Texte gelten als Duplicate Content, und maschinelle Übersetzung sieht man in der ersten Zeile. Beides kostet Positionen.',
         'Wir richten einen Prozess ein, der Beschreibungen über den gesamten Katalog schreibt — in Ihrem Ton, mit Ihrer Terminologie, in der Sprache des Marktes, in dem Sie tatsächlich verkaufen.',
@@ -481,20 +481,26 @@ const de = {
       // Siehe die Notiz in hr.js — dieselben drei Abschnitte.
       sections: [
         {
-          h2: 'Pro Artikel, zu einem Bruchteil des Marktpreises',
+          // German buyers compare against German text marketplaces, not the
+          // Croatian rates the hr page cites, so this section prices against
+          // Textbroker and content.de, per word, with the source linked.
+          h2: 'Zum Preis eines Textbörsen-Texts, mit einem Prozess dahinter',
           paragraphs: [
-            'Veröffentlichte kroatische Preise für Produkttexte liegen zwischen 5 und 25 € pro Beschreibung, je nach Länge und SEO-Aufwand. Ein Katalog mit tausend Artikeln kostet nach dieser Logik 5.000 bis 25.000 €, einer mit dreitausend 15.000 bis 75.000 €.',
-            'Auch wir rechnen pro Beschreibung, aber der Preis sinkt mit der Größe des Katalogs: die ersten 100 Beschreibungen zu 2 €, die nächsten 400 zu 1,50 €, jede weitere ab der fünfhundertsten zu 1 €. Die Arbeit steckt im Einrichten des Prozesses — Ton, Terminologie, Regeln und Kontrolle. Steht der, kostet jede weitere Beschreibung wenig, und das sieht man am Preis.',
+            'Wer Produktbeschreibungen erstellen lässt, landet meist bei einer Textbörse wie Textbroker oder content.de. Abgerechnet wird pro Wort, je nach Qualitätsstufe etwa 1,3 bis 7 Cent. Eine Beschreibung mit 150 Wörtern kostet dort rund 2 bis 10,50 € — ohne Titel und Meta-Beschreibung, und bei einem ganzen Katalog geschrieben von so vielen Autoren, wie der Auftrag gerade findet.',
+            'Bei uns zahlen Sie einmal die Einrichtung (690 €, inklusive 20 Probetexten, die Sie freigeben, bevor es weitergeht) und danach pro Beschreibung: 2,50 € bis zur fünfhundertsten, 1,50 € bis zur zweitausendsten, 1 € darüber. Darin stecken Beschreibung, Titel und Meta-Beschreibung, in einem Ton über den ganzen Katalog.',
           ],
           table: {
-            head: ['Artikel', 'Zum Marktpreis (5 – 25 € / Beschreibung)', 'Bei uns'],
+            head: ['Artikel', 'Textbörse (1,3 – 7 ct / Wort, 150 Wörter)', 'Bei uns'],
             rows: [
-              ['500', '2.500 – 12.500 €', '800 €'],
-              ['1.000', '5.000 – 25.000 €', '1.300 €'],
-              ['5.000', '25.000 – 125.000 €', '5.300 €'],
+              ['500', '975 – 5.250 €', '1.940 €'],
+              ['1.000', '1.950 – 10.500 €', '2.690 €'],
+              ['5.000', '9.750 – 52.500 €', '7.190 €'],
             ],
           },
-          note: 'Jede Sprache rechnen wir getrennt ab, zu denselben Preisen. Zur Größenordnung: 12.000 Beschreibungen liefen in neun Tagen durch unser eigenes Produkt Lumenta AI — kein Kundenprojekt, sondern ein Maß dafür, dass Ihr Katalog dafür kaum zu groß ist.',
+          sources: [
+            { text: 'Gründerküche — Texte von Textbörsen, Content-Maklern und Text-Brokern', href: 'https://www.gruenderkueche.de/fachartikel/texte-vom-profi-so-kauft-ihr-texte-eure-website-von-textkauf-portalen-content-maklern-und-text-brokern/' },
+          ],
+          note: 'Unsere Preise inklusive Einrichtung. Textbörsen-Preise nach öffentlich zugänglichen Angaben, ohne Titel und Meta-Beschreibung; die aktuellen Tarife legen die Plattformen im Kundenkonto fest. Jede weitere Sprache: Einrichtung 345 €, Beschreibungen zu denselben Preisen. Zur Größenordnung: 12.000 Beschreibungen liefen in neun Tagen durch unser eigenes Produkt Lumenta AI — kein Kundenprojekt, sondern ein Maß dafür, dass Ihr Katalog dafür kaum zu groß ist.',
         },
         {
           h2: 'Was Lieferantentexte wirklich anrichten',
@@ -523,9 +529,9 @@ const de = {
         q: 'Was kosten generierte Produktbeschreibungen?',
         bands: [
           {
-            price: '2 € / Beschreibung',
-            name: 'Die ersten 100 Beschreibungen',
-            body: 'Wir stellen den Prozess auf Ihren Ton und Ihre Terminologie ein und gehen den Katalog durch. Enthalten sind Beschreibung, Titel und Meta-Beschreibung, eine Korrekturrunde und eine Tabelle für den Import in Ihren Shop. Sie prüfen und geben frei, bevor etwas erscheint. Mindestauftrag 150 €.',
+            price: '690 €',
+            name: 'Einrichtung des Prozesses',
+            body: 'Wir stellen den Prozess auf Ihren Ton und Ihre Terminologie ein und schreiben 20 Probetexte zu Ihren eigenen Artikeln. Erst wenn Sie diese freigeben, gehen wir den Rest des Katalogs durch. Jede Beschreibung kommt mit Titel und Meta-Beschreibung, der Katalog mit einer Korrekturrunde und einer Tabelle für den Import in Ihren Shop. Jede weitere Sprache: 345 €.',
             examples: [
               'Ein Katalog ohne Beschreibungen oder mit denen des Lieferanten',
               'Eine neue Artikelgruppe, die wie die bestehenden klingen muss',
@@ -539,9 +545,9 @@ const de = {
             },
           },
           {
-            price: '1,50 € / Beschreibung',
-            name: 'Beschreibung 101 bis 500',
-            body: 'Steht der Prozess, kostet jede weitere Beschreibung weniger. Ein Katalog mit 500 Artikeln insgesamt: 800 €.',
+            price: '2,50 € / Beschreibung',
+            name: 'Bis zur 500. Beschreibung',
+            body: 'Ein Katalog mit 500 Artikeln insgesamt, Einrichtung inklusive: 1.940 €.',
             examples: [
               'Ein mittelgroßer Katalog, der eigene Texte braucht',
               'Eine neue Saison oder eine neue Kategorie',
@@ -549,20 +555,32 @@ const de = {
             boundary: '',
           },
           {
+            price: '1,50 € / Beschreibung',
+            name: 'Beschreibung 501 bis 2.000',
+            body: 'Steht der Prozess, kostet jede weitere Beschreibung weniger. 1.000 Artikel insgesamt: 2.690 €; 2.000 Artikel: 4.190 €.',
+            examples: [
+              'Ein großer Katalog über mehrere Kategorien',
+              'Derselbe Katalog in zwei Märkten',
+            ],
+            boundary: '',
+          },
+          {
             price: '1 € / Beschreibung',
-            name: 'Jede Beschreibung ab der 501.',
-            body: 'Für große Kataloge und mehrere Märkte. 1.000 Artikel insgesamt: 1.300 €; 5.000 Artikel: 5.300 €. Jede Sprache rechnen wir getrennt ab, zu denselben Preisen, und schreiben sie in der Sprache des Marktes statt nachträglich zu übersetzen.',
+            name: 'Jede Beschreibung ab der 2.001.',
+            body: 'Für große Kataloge und mehrere Märkte. 5.000 Artikel insgesamt: 7.190 €. Jede Sprache schreiben wir in der Sprache des Marktes, statt nachträglich zu übersetzen.',
             examples: [
               'Tausende Artikel',
-              'Derselbe Katalog in zwei oder mehr Märkten',
+              'Derselbe Katalog in mehreren Märkten',
             ],
             boundary: '',
           },
         ],
-        // Graduated, like a tax bracket: the first 100 descriptions at the top
-        // rate, the next 400 at the middle one, the rest at the bottom. min is
-        // the minimum order; there is no max, because the price is per item.
-        min: 150,
+        // Graduated, like a tax bracket, after a flat setup fee: the setup band
+        // pays for the work that takes as long for a hundred items as for five
+        // thousand (voice, terminology, rules, 20 trial descriptions), then each
+        // description at the rate of its bracket. min is the setup fee, which is
+        // also the smallest possible order; there is no max, the price is per item.
+        min: 690,
       },
       faq: [
         {
@@ -570,8 +588,12 @@ const de = {
           a: 'Kataloge werden in Wochen abgedeckt, nicht in Monaten. Der genaue Rahmen hängt von Artikelzahl und Sprachen ab — nennen Sie beides und wir schätzen.',
         },
         {
+          q: 'Warum nicht einfach eine Textbörse?',
+          a: 'Für einzelne Texte ist eine Textbörse oft die günstigere Wahl. Bei einem ganzen Katalog schreiben dort Dutzende Autoren, jeder in seinem Ton, und Titel und Meta-Beschreibungen sind eigene Aufträge. Bei uns wird der Ton einmal eingerichtet und gilt für jeden Artikel — ab etwa tausend Artikeln liegen wir damit am unteren Ende der Textbörsen-Preise.',
+        },
+        {
           q: 'Klingen die Texte wie generische KI?',
-          a: 'Der Prozess wird auf Ihren Ton und Ihre Terminologie eingestellt, damit der Katalog wie eine Marke klingt.',
+          a: 'Nicht, wenn der Prozess stimmt: Jede KI-Artikelbeschreibung entsteht nach Ihrem Ton und Ihrer Terminologie und wird vor der Veröffentlichung geprüft, damit der Katalog wie eine Marke klingt.',
         },
         {
           q: 'Wir haben rund hundert Artikel — brauchen wir das?',

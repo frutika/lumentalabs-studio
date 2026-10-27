@@ -418,17 +418,17 @@ const en = {
           h2: 'Per item, at a fraction of the market rate',
           paragraphs: [
             'Published Croatian rates for writing product descriptions run from €5 to €25 per description, depending on length and how much SEO work goes in. A thousand-item catalogue lands between €5,000 and €25,000 on that logic, and a three-thousand-item one between €15,000 and €75,000.',
-            'We charge per description too, but the rate falls as the catalogue grows: the first 100 descriptions at €2, the next 400 at €1.50, and every one after the five-hundredth at €1. The work is in setting the process up — voice, terminology, rules and review. Once that stands, each further description costs little, and the price shows it.',
+            'We charge for setting the process up, then for each description. Setup (€490, including 20 trial descriptions you approve before anything else) pays for the work that takes as long for a hundred items as for five thousand: voice, terminology, rules and review. After that a description costs €2 up to the 500th, €1.20 up to the 2,000th and €0.80 beyond.',
           ],
           table: {
             head: ['Items', 'At market rate (€5 – €25 / description)', 'With us'],
             rows: [
-              ['500', '€2,500 – €12,500', '€800'],
-              ['1,000', '€5,000 – €25,000', '€1,300'],
-              ['5,000', '€25,000 – €125,000', '€5,300'],
+              ['500', '€2,500 – €12,500', '€1,490'],
+              ['1,000', '€5,000 – €25,000', '€2,090'],
+              ['5,000', '€25,000 – €125,000', '€5,690'],
             ],
           },
-          note: 'Each language is priced separately, at the same rates. For scale: 12,000 descriptions went through our own product Lumenta AI in nine days — not a client project, but a measure that your catalogue is almost certainly not too big for this.',
+          note: 'The prices in the table include setup. Each further language: €245 setup, descriptions at the same rates. For scale: 12,000 descriptions went through our own product Lumenta AI in nine days — not a client project, but a measure that your catalogue is almost certainly not too big for this.',
         },
         {
           h2: 'What supplier descriptions actually do',
@@ -457,9 +457,9 @@ const en = {
         q: 'How much do generated product descriptions cost?',
         bands: [
           {
-            price: '€2 / description',
-            name: 'The first 100 descriptions',
-            body: 'We set the process up on your voice and your terminology, then run the catalogue. Each one includes the description, title and meta description, one round of revisions and a spreadsheet ready to import into your shop. You review and approve before anything publishes. Minimum order €150.',
+            price: '€490',
+            name: 'Setting the process up',
+            body: 'We set the process up on your voice and your terminology and write 20 trial descriptions on your own items. Only once you approve them do we run the rest of the catalogue. Every description comes with a title and meta description, and the catalogue with one round of revisions and a spreadsheet ready to import into your shop. Each further language: €245.',
             examples: [
               'A catalogue with no descriptions, or with the supplier’s',
               'A new product group that has to read like the existing ones',
@@ -473,9 +473,9 @@ const en = {
             },
           },
           {
-            price: '€1.50 / description',
-            name: 'Descriptions 101 to 500',
-            body: 'Once the process is set up, each further description costs less. A 500-item catalogue in total: €800.',
+            price: '€2 / description',
+            name: 'Up to the 500th description',
+            body: 'A 500-item catalogue in total, setup included: €1,490.',
             examples: [
               'A mid-sized catalogue that needs its own copy',
               'A new season or a new product category',
@@ -483,20 +483,32 @@ const en = {
             boundary: '',
           },
           {
-            price: '€1 / description',
-            name: 'Every description after the 500th',
-            body: 'For large catalogues and several markets. 1,000 items in total: €1,300; 5,000 items: €5,300. Each language is priced separately at the same rates, and written in that market’s language rather than translated afterwards.',
+            price: '€1.20 / description',
+            name: 'Descriptions 501 to 2,000',
+            body: 'Once the process is set up, each further description costs less. 1,000 items in total: €2,090; 2,000 items: €3,290.',
+            examples: [
+              'A large catalogue across several categories',
+              'The same catalogue in two markets',
+            ],
+            boundary: '',
+          },
+          {
+            price: '€0.80 / description',
+            name: 'Every description after the 2,000th',
+            body: 'For large catalogues and several markets. 5,000 items in total: €5,690. Each language is written in that market’s language rather than translated afterwards.',
             examples: [
               'Thousands of items',
-              'The same catalogue in two or more markets',
+              'The same catalogue in several markets',
             ],
             boundary: '',
           },
         ],
-        // Graduated, like a tax bracket: the first 100 descriptions at the top
-        // rate, the next 400 at the middle one, the rest at the bottom. min is
-        // the minimum order; there is no max, because the price is per item.
-        min: 150,
+        // Graduated, like a tax bracket, after a flat setup fee: the setup band
+        // pays for the work that takes as long for a hundred items as for five
+        // thousand (voice, terminology, rules, 20 trial descriptions), then each
+        // description at the rate of its bracket. min is the setup fee, which is
+        // also the smallest possible order; there is no max, the price is per item.
+        min: 490,
       },
       faq: [
         {

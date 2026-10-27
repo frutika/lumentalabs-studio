@@ -582,17 +582,17 @@ const hr = {
           h2: 'Po komadu, ali višestruko jeftinije',
           paragraphs: [
             'Objavljene hrvatske cijene za pisanje opisa kreću se od 5 do 25 € po opisu, ovisno o duljini i razini SEO obrade. Katalog od tisuću artikala je po toj logici između 5.000 i 25.000 €, a od tri tisuće između 15.000 i 75.000 €.',
-            'I mi naplaćujemo po opisu, ali cijena pada s veličinom kataloga: prvih 100 opisa po 2 €, sljedećih 400 po 1,50 €, a svaki iznad petstotog po 1 €. Posao je u postavljanju procesa — tona, nazivlja, pravila i kontrole. Kad to stoji, svaki sljedeći opis košta malo, i to vidite u cijeni.',
+            'Mi naplaćujemo postavljanje procesa, a zatim svaki opis. Postavljanje (490 €, uključuje 20 probnih opisa koje odobravate prije svega ostalog) plaća posao koji traje jednako za sto i za pet tisuća artikala: ton, nazivlje, pravila i kontrolu. Nakon toga opis košta 2 € do petstotog, 1,20 € do dvijetisućitog i 0,80 € iznad toga.',
           ],
           table: {
             head: ['Artikala', 'Po tržišnoj cijeni (5 – 25 € / opis)', 'Kod nas'],
             rows: [
-              ['500', '2.500 – 12.500 €', '800 €'],
-              ['1.000', '5.000 – 25.000 €', '1.300 €'],
-              ['5.000', '25.000 – 125.000 €', '5.300 €'],
+              ['500', '2.500 – 12.500 €', '1.490 €'],
+              ['1.000', '5.000 – 25.000 €', '2.090 €'],
+              ['5.000', '25.000 – 125.000 €', '5.690 €'],
             ],
           },
-          note: 'Svaki jezik računamo zasebno, po istim cijenama. Za razmjer: kroz vlastiti proizvod Lumenta AI prošlo je 12.000 opisa u devet dana — nije klijentski projekt, nego mjera da vaš katalog gotovo sigurno nije prevelik za ovo.',
+          note: 'Cijene u tablici uključuju postavljanje. Svaki dodatni jezik: postavljanje 245 €, opisi po istim cijenama. Za razmjer: kroz vlastiti proizvod Lumenta AI prošlo je 12.000 opisa u devet dana — nije klijentski projekt, nego mjera da vaš katalog gotovo sigurno nije prevelik za ovo.',
         },
         {
           h2: 'Što opisi dobavljača stvarno rade',
@@ -622,9 +622,9 @@ const hr = {
         q: 'Koliko košta generiranje opisa proizvoda?',
         bands: [
           {
-            price: '2 € / opis',
-            name: 'Prvih 100 opisa',
-            body: 'Postavljamo proces na vaš ton i vaše nazivlje, pa prođemo katalog. Uključeni su opis, naslov i meta opis, jedan krug ispravaka i tablica za uvoz u webshop. Vi pregledavate i odobravate prije objave. Minimalna narudžba je 150 €.',
+            price: '490 €',
+            name: 'Postavljanje procesa',
+            body: 'Postavljamo proces na vaš ton i vaše nazivlje i pišemo 20 probnih opisa na vašim artiklima. Tek kad ih odobrite, prolazimo ostatak kataloga. Svaki opis dolazi s naslovom i meta opisom, a uz katalog dobivate jedan krug ispravaka i tablicu za uvoz u webshop. Svaki dodatni jezik: 245 €.',
             examples: [
               'Katalog bez opisa, ili s opisima prepisanim od dobavljača',
               'Nova grupa artikala koju treba opisati u istom tonu kao postojeće',
@@ -638,9 +638,9 @@ const hr = {
             },
           },
           {
-            price: '1,50 € / opis',
-            name: 'Od 101. do 500. opisa',
-            body: 'Kad je proces postavljen, svaki sljedeći opis košta manje. Katalog od 500 artikala ukupno: 800 €.',
+            price: '2 € / opis',
+            name: 'Do 500. opisa',
+            body: 'Katalog od 500 artikala ukupno, s postavljanjem: 1.490 €.',
             examples: [
               'Katalog srednje veličine koji treba vlastite opise',
               'Nova sezona ili nova kategorija artikala',
@@ -648,20 +648,32 @@ const hr = {
             boundary: '',
           },
           {
-            price: '1 € / opis',
-            name: 'Svaki opis iznad 500.',
-            body: 'Za velike kataloge i više tržišta. 1.000 artikala ukupno: 1.300 €; 5.000 artikala: 5.300 €. Svaki jezik računamo zasebno, po istim cijenama, i pišemo ga na jeziku tržišta, ne prevodimo naknadno.',
+            price: '1,20 € / opis',
+            name: 'Od 501. do 2.000. opisa',
+            body: 'Kad je proces postavljen, svaki sljedeći opis košta manje. 1.000 artikala ukupno: 2.090 €; 2.000 artikala: 3.290 €.',
+            examples: [
+              'Veliki katalog s više kategorija',
+              'Isti katalog na dva tržišta',
+            ],
+            boundary: '',
+          },
+          {
+            price: '0,80 € / opis',
+            name: 'Svaki opis iznad 2.000.',
+            body: 'Za velike kataloge i više tržišta. 5.000 artikala ukupno: 5.690 €. Svaki jezik pišemo na jeziku tržišta, ne prevodimo naknadno.',
             examples: [
               'Tisuće artikala',
-              'Isti katalog na dva ili više tržišta',
+              'Isti katalog na više tržišta',
             ],
             boundary: '',
           },
         ],
-        // Graduated, like a tax bracket: the first 100 descriptions at the top
-        // rate, the next 400 at the middle one, the rest at the bottom. min is
-        // the minimum order; there is no max, because the price is per item.
-        min: 150,
+        // Graduated, like a tax bracket, after a flat setup fee: the setup band
+        // pays for the work that takes as long for a hundred items as for five
+        // thousand (voice, terminology, rules, 20 trial descriptions), then each
+        // description at the rate of its bracket. min is the setup fee, which is
+        // also the smallest possible order; there is no max, the price is per item.
+        min: 490,
       },
       faq: [
         {

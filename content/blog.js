@@ -334,7 +334,7 @@ const posts = [
     cover: 'ladder',
     title: 'Opisi proizvoda za webshop: sami, alatom ili s agencijom?',
     description:
-      'Tri načina da webshop dobije vlastite opise proizvoda, s pravim cijenama: besplatno sami, alatom od 19 $ mjesečno ili projektom od 2 € po opisu. Kako odabrati prema broju artikala i jezika.',
+      'Tri načina da webshop dobije vlastite opise proizvoda, s pravim cijenama: besplatno sami, alatom od 19 $ mjesečno ili projektom od 490 €. Kako odabrati prema broju artikala i jezika.',
     date: '2026-09-30',
     tags: ['Webshop', 'Opisi proizvoda', 'AI'],
     excerpt:
@@ -390,17 +390,18 @@ const posts = [
       },
       {
         ul: [
-          'Prvih 100 opisa: 2 € po opisu.',
-          'Od 101. do 500. opisa: 1,50 € po opisu.',
-          'Svaki opis iznad petstotog: 1 €.',
-          'Minimalna narudžba: 150 €. Katalog od 500 artikala ukupno je 800 €, od tisuću 1.300 €.',
+          'Postavljanje procesa: 490 €, uključuje 20 probnih opisa koje odobravate prije ostatka kataloga.',
+          'Do 500. opisa: 2 € po opisu.',
+          'Od 501. do 2.000. opisa: 1,20 € po opisu.',
+          'Svaki opis iznad dvijetisućitog: 0,80 €.',
+          'Katalog od 500 artikala ukupno je 1.490 €, od tisuću 2.090 €.',
         ],
       },
       {
         p: 'U cijenu su uključeni opis, naslov i meta opis za Google te jedan krug ispravaka, a isporučujemo tablicu spremnu za uvoz u webshop. Cijene su bez PDV-a; trenutno nismo u sustavu PDV-a, pa ga na računu nema. Kod više jezika opise pišemo na jeziku tržišta, s nazivljem kojim se tamo pretražuje, a ne tako da hrvatski tekst provučemo kroz prevoditelj.',
       },
       {
-        p: 'Za usporedbu: objavljene hrvatske cijene za pisanje opisa kreću se od 5 do 25 € po opisu. Katalog od tisuću artikala je po toj logici 5.000 do 25.000 €, a kod nas 1.300 €.',
+        p: 'Za usporedbu: objavljene hrvatske cijene za pisanje opisa kreću se od 5 do 25 € po opisu. Katalog od tisuću artikala je po toj logici 5.000 do 25.000 €, a kod nas 2.090 €.',
       },
       {
         p: 'Za koga: tisuće artikala, više tržišta, i nitko u timu tko bi to stigao sam.',
@@ -450,7 +451,7 @@ const posts = [
       'Uobičajen savjet je da se cijena ne objavljuje jer gubite pregovarački prostor. Ono što se stvarno gubi su tri e-maila dok obje strane ne shvate da nisu u istom redu veličine.',
     body: [
       {
-        p: 'Ažurirano 24. 10. 2026.: opise proizvoda za webshop danas naplaćujemo po opisu (od 2 € po opisu, minimalno 150 €), a ne u pojasevima koji se spominju niže. Ovaj tekst opisuje kako su prve objavljene cijene nastale; aktualni cjenik je na stranici usluge.',
+        p: 'Ažurirano 27. 10. 2026.: opise proizvoda za webshop danas naplaćujemo kao postavljanje procesa (490 €) i zatim po opisu (od 2 € naniže), a ne u pojasevima koji se spominju niže. Ovaj tekst opisuje kako su prve objavljene cijene nastale; aktualni cjenik je na stranici usluge.',
       },
       {
         p: 'Uobičajen savjet glasi: cijenu ne stavljaj na stranicu. Izgubit ćeš pregovarački prostor, konkurencija će je vidjeti, a svaki je projekt ionako drugačiji. Sve troje je točno. I svejedno smo cijene objavili.',
