@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { site } from '../../site.config';
 import { getDict } from '../../content';
+import { getVisitSource } from './visitSourceStore';
 
 /** mailto: bodies over roughly 1800 characters get truncated or dropped by some
     clients, so the fallback link stays well under that. */
@@ -43,7 +44,7 @@ export default function ContactForm({ lang }) {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, locale: lang }),
+        body: JSON.stringify({ ...data, locale: lang, izvor: getVisitSource() }),
       });
 
       if (!res.ok) {

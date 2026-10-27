@@ -32,6 +32,15 @@ function rateLimited(ip, now) {
  */
 const fail = (code, status) => Response.json({ error: code }, { status });
 
+function cleanSource(raw) {
+  if (!raw || typeof raw !== 'object') return null;
+  const out = {};
+  for (const key of ['prva', 'prethodna', 'vanjski']) {
+    if (typeof raw[key] === 'string' && raw[key].trim()) out[key] = raw[key].trim().slice(0, 300);
+  }
+  return Object.keys(out).length ? out : null;
+}
+
 const hasConfig = () =>
   Boolean(process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
 
@@ -73,6 +82,10 @@ export async function POST(request) {
   }
   if (poruka.length > 4000) return fail('message_too_long', 400);
 
+  // Where the visitor came from (see components/visitSourceStore.js). Optional
+  // and never a reason to refuse an enquiry: anything malformed becomes null.
+  const izvor = cleanSource(body.izvor);
+
   const url = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
@@ -104,6 +117,7 @@ export async function POST(request) {
         poruka: poruka || null,
         locale,
         user_agent: request.headers.get('user-agent')?.slice(0, 400) ?? null,
+        izvor,
       }),
     });
   } catch (err) {
@@ -135,7 +149,16 @@ export async function POST(request) {
           to: ['hello@lumentalabs.studio'],
           reply_to: email,
           subject: `Upit — ${ime}`,
-          text: [`Ime: ${ime}`, `E-mail: ${email}`, `Jezik: ${locale}`, '', poruka || '(bez poruke)'].join('\n'),
+          text: [
+            `Ime: ${ime}`,
+            `E-mail: ${email}`,
+            `Jezik: ${locale}`,
+            `Došao s: ${izvor?.vanjski || 'izravno / nepoznato'}`,
+            `Prva stranica: ${izvor?.prva || '—'}`,
+            `Prije kontakta: ${izvor?.prethodna || '—'}`,
+            '',
+            poruka || '(bez poruke)',
+          ].join('\n'),
         }),
       });
       if (!notifyRes.ok) {
