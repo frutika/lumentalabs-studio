@@ -3,6 +3,7 @@ import { fontVars } from '../fonts';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import SkipLink from '../components/SkipLink';
+import VisitSource from '../components/VisitSource';
 import CookieBanner from '../components/CookieBanner';
 import { site, analytics } from '../../site.config';
 import { getDict, DEFAULT_LOCALE } from '../../content';
@@ -44,6 +45,7 @@ export default function EnglishLayout({ children }) {
     <html lang="en" className={fontVars}>
       <body>
         <SkipLink lang={DEFAULT_LOCALE} />
+        <VisitSource />
         <Nav lang={DEFAULT_LOCALE} />
         {/* Every page needs one main landmark: it is what a skip link targets,
             what a screen reader jumps to, and what an agent reads as "the page"

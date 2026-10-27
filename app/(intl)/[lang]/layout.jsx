@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import SkipLink from '../../components/SkipLink';
+import VisitSource from '../../components/VisitSource';
 import CookieBanner from '../../components/CookieBanner';
 import { site, analytics } from '../../../site.config';
 import { getDict, isLocale, LOCALES, DEFAULT_LOCALE } from '../../../content';
@@ -54,6 +55,7 @@ export default async function IntlLayout({ children, params }) {
     <html lang={getDict(lang).htmlLang} className={fontVars}>
       <body>
         <SkipLink lang={lang} />
+        <VisitSource />
         <Nav lang={lang} />
         <main id="main">{children}</main>
         <Footer lang={lang} />

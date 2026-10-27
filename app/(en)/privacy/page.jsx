@@ -82,8 +82,13 @@ export default function Privacy() {
             or our legitimate interest in replying to enquiries.
           </p>
           <p>
-            The form itself sets nothing on your device — no cookie, no local storage — it only sends
-            what you typed to our server when you press submit. Submissions are rate-limited by IP
+            The form itself sets nothing on your device — no cookie, no local storage. When you press
+            submit it sends what you typed, together with where your visit started: the first page
+            you opened on this site (including any campaign tag in its address), the page you were
+            on just before the contact page, and the name of the website that linked you here, if
+            any. That is kept in the page&apos;s memory only and tells us which pages and channels
+            lead to enquiries; it is stored with your message and never used to track you
+            elsewhere. Submissions are rate-limited by IP
             address to stop abuse, and a hidden field designed to catch automated bots is discarded
             without being read if a real visitor never touches it.
           </p>
