@@ -729,6 +729,7 @@ const de = {
         message_too_long: 'Die Nachricht ist zu lang.',
         not_configured: 'Das Formular funktioniert derzeit auf unserer Seite nicht.',
         save_failed: 'Speichern fehlgeschlagen.',
+        send_failed: 'Senden fehlgeschlagen. Bitte erneut versuchen oder uns direkt per E-Mail schreiben.',
       },
       mailFallback: 'Aus Ihrem Mailprogramm senden',
       mailPrefill: 'Lieber aus Ihrem Mailprogramm? Mit ausgefüllten Daten öffnen',

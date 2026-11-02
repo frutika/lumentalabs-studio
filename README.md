@@ -31,21 +31,26 @@ npm run dev
 
 ## Kontakt forma
 
-`app/api/contact/route.js` treba ove env varijable na Hostingeru (hPanel →
-Node.js App → Environment variables), inače forma tiho ne radi:
+`app/api/contact/route.js` šalje svaki upit kao jedan email preko Resenda na
+`hello@lumentalabs.studio` (reply-to je posjetiteljev email). Baze nema — inbox je
+zapis. Ranije je forma pisala u Supabase Free projekt, koji se pauzirao zbog
+neaktivnosti; pauziran projekt bi tiho srušio formu.
+
+Env varijabla na Hostingeru (hPanel → Node.js App → Environment variables):
 
 | Varijabla | Za što |
 |---|---|
-| `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` | Upis upita u `contact_requests` tablicu. Bez njih ruta vraća `503 not_configured`. |
-| `RESEND_API_KEY` | Email obavijest na `hello@lumentalabs.studio` kad stigne upit. Opcionalno — bez njega se upit svejedno sprema, samo bez notifikacije. Domena `lumentalabs.studio` mora biti verificirana (DKIM/SPF) u Resendu. |
+| `RESEND_API_KEY` | Slanje upita. Bez nje ruta vraća `503 not_configured`. Domena `lumentalabs.studio` mora biti verificirana (DKIM/SPF) u Resendu. |
 
 Nakon dodavanja/promjene env varijable, app treba restart da je proces
-pokupi — čitaju se samo pri startu, ne po zahtjevu.
+pokupi.
 
-`GET /api/contact` javlja je li Supabase konfiguriran (`{"ok":true,"supabase":"configured"|"missing"}`),
-bez otkrivanja vrijednosti — koristan prvi korak kod provjere nakon deploya.
-Resend nema ekvivalent health-check; ako notifikacija ne stigne, provjeri
-Hostinger app log za `[contact] notification rejected: Resend answered ...`.
+Ako Resend odbije slanje, ruta vraća `502 send_failed` i posjetitelj dobije poruku
+da pokuša ponovno — upit se ne smije tiho izgubiti, jer kopije nigdje drugdje nema.
+
+`GET /api/contact` javlja je li Resend konfiguriran (`{"ok":true,"resend":"configured"|"missing"}`),
+bez otkrivanja vrijednosti. Ako upit ne stigne, provjeri Hostinger app log za
+`[contact] rejected: Resend answered ...`.
 
 ## Fontovi
 

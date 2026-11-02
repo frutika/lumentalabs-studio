@@ -674,6 +674,7 @@ const en = {
         message_too_long: 'The message is too long.',
         not_configured: 'The form is not working on our side right now.',
         save_failed: 'Saving failed.',
+        send_failed: 'Sending failed. Please try again, or email us directly.',
       },
       mailFallback: 'Send from your mail client',
       mailPrefill: 'Rather use your own mail client? Open with the details filled in',
