@@ -1,11 +1,13 @@
 export const runtime = 'nodejs';
 
 /**
- * Supabase over plain fetch. The JS client would be a fourth dependency for one
- * INSERT, and this file is the only thing in the project that talks to a
- * database at all.
+ * An enquiry is delivered as one email through Resend, over plain fetch, to
+ * hello@lumentalabs.studio. There is no database: the form used to write to a
+ * Supabase Free project that kept getting paused for inactivity, and a paused
+ * project would have made the form fail silently. The inbox is the record.
  */
-const TABLE = 'contact_requests';
+const TO = 'hello@lumentalabs.studio';
+const FROM = 'Lumenta Labs <web@lumentalabs.studio>';
 
 /**
  * One submission per IP per interval. The site runs as a long-lived Node
@@ -41,16 +43,15 @@ function cleanSource(raw) {
   return Object.keys(out).length ? out : null;
 }
 
-const hasConfig = () =>
-  Boolean(process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
+const hasConfig = () => Boolean(process.env.RESEND_API_KEY);
 
 /**
- * Reports whether the route can reach its database, without revealing either
- * value. Deploys where the environment did not carry over are otherwise only
- * visible by submitting the form and reading the server log.
+ * Reports whether the route can send, without revealing the key. Deploys where
+ * the environment did not carry over are otherwise only visible by submitting
+ * the form and reading the server log.
  */
 export async function GET() {
-  return Response.json({ ok: true, supabase: hasConfig() ? 'configured' : 'missing' });
+  return Response.json({ ok: true, resend: hasConfig() ? 'configured' : 'missing' });
 }
 
 export async function POST(request) {
@@ -86,91 +87,59 @@ export async function POST(request) {
   // and never a reason to refuse an enquiry: anything malformed becomes null.
   const izvor = cleanSource(body.izvor);
 
-  const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const key = process.env.RESEND_API_KEY;
 
-  if (!url || !key) {
-    const missing = [!url && 'SUPABASE_URL', !key && 'SUPABASE_SERVICE_ROLE_KEY']
-      .filter(Boolean)
-      .join(', ');
+  if (!key) {
     console.error(
-      `[contact] not configured: ${missing} missing from the environment. ` +
-        'Set it on the host and restart the process — these are read at request time.'
+      '[contact] not configured: RESEND_API_KEY missing from the environment. ' +
+        'Set it on the host and restart the process.'
     );
     return fail('not_configured', 503);
   }
 
+  const userAgent = request.headers.get('user-agent')?.slice(0, 400) ?? '—';
+
   let res;
   try {
-    res = await fetch(`${url}/rest/v1/${TABLE}`, {
+    res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
-        apikey: key,
         Authorization: `Bearer ${key}`,
         'Content-Type': 'application/json',
-        // Without this PostgREST returns the inserted row; we do not need it back.
-        Prefer: 'return=minimal',
       },
       body: JSON.stringify({
-        ime,
-        email,
-        poruka: poruka || null,
-        locale,
-        user_agent: request.headers.get('user-agent')?.slice(0, 400) ?? null,
-        izvor,
+        from: FROM,
+        to: [TO],
+        reply_to: email,
+        subject: `Upit — ${ime}`,
+        text: [
+          `Ime: ${ime}`,
+          `E-mail: ${email}`,
+          `Jezik: ${locale}`,
+          `Došao s: ${izvor?.vanjski || 'izravno / nepoznato'}`,
+          `Prva stranica: ${izvor?.prva || '—'}`,
+          `Prije kontakta: ${izvor?.prethodna || '—'}`,
+          `Preglednik: ${userAgent}`,
+          '',
+          poruka || '(bez poruke)',
+        ].join('\n'),
       }),
     });
   } catch (err) {
-    // DNS, TLS, timeout — the request never reached PostgREST at all.
-    console.error('[contact] unreachable: could not connect to Supabase.', err);
-    return fail('save_failed', 502);
+    // DNS, TLS, timeout — the request never reached Resend at all.
+    console.error('[contact] unreachable: could not connect to Resend.', err);
+    return fail('send_failed', 502);
   }
 
   if (!res.ok) {
+    // Resend answers 4xx over plain HTTP for a rejected key or an unverified
+    // sending domain, so only a status check catches it. With no database
+    // behind it, the visitor must be told to try again or the enquiry is lost.
     const detail = await res.text().catch(() => '');
-    console.error(`[contact] rejected: PostgREST answered ${res.status}. ${detail}`);
-    return fail('save_failed', 502);
+    console.error(`[contact] rejected: Resend answered ${res.status}. ${detail}`);
+    return fail('send_failed', 502);
   }
 
   lastSeen.set(ip, now);
-
-  // The enquiry is already stored, so a failed notification must not fail the
-  // request — it would tell the visitor to send again for no reason.
-  if (process.env.RESEND_API_KEY) {
-    try {
-      const notifyRes = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          from: 'Lumenta Labs <web@lumentalabs.studio>',
-          to: ['hello@lumentalabs.studio'],
-          reply_to: email,
-          subject: `Upit — ${ime}`,
-          text: [
-            `Ime: ${ime}`,
-            `E-mail: ${email}`,
-            `Jezik: ${locale}`,
-            `Došao s: ${izvor?.vanjski || 'izravno / nepoznato'}`,
-            `Prva stranica: ${izvor?.prva || '—'}`,
-            `Prije kontakta: ${izvor?.prethodna || '—'}`,
-            '',
-            poruka || '(bez poruke)',
-          ].join('\n'),
-        }),
-      });
-      if (!notifyRes.ok) {
-        // Resend answers 2xx/4xx over plain HTTP, so a rejected key or an
-        // unverified sending domain never throws — only a status check catches it.
-        const detail = await notifyRes.text().catch(() => '');
-        console.error(`[contact] notification rejected: Resend answered ${notifyRes.status}. ${detail}`);
-      }
-    } catch (err) {
-      console.error('[contact] notification not sent', err);
-    }
-  }
-
   return Response.json({ ok: true });
 }

@@ -823,6 +823,7 @@ const hr = {
         message_too_long: 'Poruka je predugačka.',
         not_configured: 'Forma trenutno ne radi na našoj strani.',
         save_failed: 'Spremanje nije uspjelo.',
+        send_failed: 'Slanje nije uspjelo. Pokušajte ponovno ili nam pišite izravno e-mailom.',
       },
       mailFallback: 'Pošaljite iz svog mail programa',
       mailPrefill: 'Radije iz svog mail programa? Otvori s ispunjenim podacima',

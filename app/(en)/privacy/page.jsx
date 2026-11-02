@@ -87,7 +87,7 @@ export default function Privacy() {
             you opened on this site (including any campaign tag in its address), the page you were
             on just before the contact page, and the name of the website that linked you here, if
             any. That is kept in the page&apos;s memory only and tells us which pages and channels
-            lead to enquiries; it is stored with your message and never used to track you
+            lead to enquiries; it travels with your message and is never used to track you
             elsewhere. Submissions are rate-limited by IP
             address to stop abuse, and a hidden field designed to catch automated bots is discarded
             without being read if a real visitor never touches it.
@@ -99,9 +99,9 @@ export default function Privacy() {
 
           <h2>Who else is involved</h2>
           <p>
-            The contact form is stored in a database run by our database provider, and, when
-            configured, triggers one notification email sent through our email delivery provider so
-            we see your message promptly. Our hosting provider serves the site and keeps the access
+            The contact form is not stored in any database: your message is delivered as one email
+            to our inbox through our email delivery provider, and kept there like any other email
+            we receive. Our hosting provider serves the site and keeps the access
             logs described above. Each acts as our processor under a contract that limits what they
             may do with your data. We do not sell or share personal data with anyone else, and we do
             not transfer it outside the European Economic Area on purpose.
