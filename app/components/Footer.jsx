@@ -34,6 +34,9 @@ export default function Footer({ lang }) {
                 switcher: it can cross into another root layout, and a client
                 transition would keep the old <html lang>. */}
             <a href={localePath('hr', '/vodici')} hrefLang="hr">{f.guides}</a>
+            <a href={site.social.docuflowWhatsapp} hrefLang="hr" target="_blank" rel="noopener noreferrer">
+              {f.docuflowChannel}
+            </a>
           </div>
           <div className="foot-col">
             <p className="label">{f.contact}</p>

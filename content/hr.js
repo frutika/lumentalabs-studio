@@ -65,6 +65,7 @@ const hr = {
     resources: 'Resursi',
     contact: 'Kontakt',
     guides: 'Besplatni vodiči',
+    docuflowChannel: 'DocuFlow na WhatsAppu',
     status: 'Svi sustavi rade normalno',
     weight: 'Ova stranica: {kb} KB · učitana za {s} s',
   },
