@@ -50,6 +50,7 @@ const en = {
     resources: 'Resources',
     contact: 'Contact',
     guides: 'Free guides (HR)',
+    docuflowChannel: 'DocuFlow on WhatsApp (HR)',
     status: 'All systems normal',
     weight: 'This page: {kb} KB · loaded in {s} s',
   },

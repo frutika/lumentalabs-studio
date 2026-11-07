@@ -29,6 +29,8 @@ export const site = {
   social: {
     linkedin: 'https://www.linkedin.com/in/bezmaske/',
     github: 'https://github.com/frutika/lumentalabs-studio',
+    // The DocuFlow AI WhatsApp channel. Its posts are in Croatian.
+    docuflowWhatsapp: 'https://whatsapp.com/channel/0029VbDk22b2Jl8Efori7I1d',
   },
 
   // Product names and outbound links are the same in every language.
