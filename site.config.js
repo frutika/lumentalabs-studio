@@ -10,6 +10,14 @@ export const site = {
   // It is the only call to action on the site.
   email: 'hello@lumentalabs.studio',
 
+  // Published in structured data only when set. Left empty rather than guessed:
+  // a number in schema is a number people and agents will call. E.164 format,
+  // for example '+385...'.
+  telephone: null,
+
+  // The person named on the about page.
+  founder: 'Denis Šehić',
+
   // One entry per language. A page shows the film in ITS OWN language or none
   // at all - falling back to English is exactly the bug this replaced, where a
   // Croatian visitor got an English voice-over.
@@ -72,6 +80,7 @@ export const contentUpdated = {
   '/services/video': '2026-09-26',
   '/work': '2026-10-03',
   '/contact': '2026-09-26',
+  '/about': '2026-11-08',
 
   // The five service pages, by their language-independent key rather than by
   // slug — the slug differs per language and the date does not.
@@ -125,6 +134,8 @@ export const legal = {
   // Owner's name left out on purpose; OIB + MBO identify the obrt unambiguously.
   entity: 'LUMENTA LABS, obrt za računalne usluge, trgovinu i prijevoz robe',
   address: 'Bunarić V 6, 23234 Vir',
+  // The same address, split for structured data.
+  postal: { streetAddress: 'Bunarić V 6', postalCode: '23234', addressLocality: 'Vir', addressCountry: 'HR' },
   // An obrt has no OIB of its own; the owner's OIB is the obrt's tax number.
   oib: '36229460035',
   mbo: '99388324',

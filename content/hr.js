@@ -25,6 +25,11 @@ const hr = {
    * different pages tells a searcher nothing about which one to open.
    */
   pageMeta: {
+    about: {
+      title: 'O nama',
+      description:
+        'Digitalni studio koji vodi Denis Šehić: dvanaest godina u digitalnim proizvodima, zadnjih šest u AI-u i automatizaciji. Isti čovjek piše ponudu i kod.',
+    },
     home: {
       // The title template only reaches child segments, so the home page has
       // to carry the brand itself or it ships a title with no company in it.
@@ -59,9 +64,17 @@ const hr = {
     },
   },
 
+  aboutPage: {
+    eyebrow: 'O nama',
+    h1: 'Tko stoji iza Lumenta Labsa',
+    legalH2: 'Podaci o obrtu',
+    labels: { address: 'Adresa', oib: 'OIB', mbo: 'MBO', email: 'Email' },
+  },
+
   footer: {
     tagline: 'Digitalni studio za web, AI i automatizaciju.',
     studio: 'Studio',
+    about: 'O nama',
     resources: 'Resursi',
     contact: 'Kontakt',
     guides: 'Besplatni vodiči',

@@ -1,5 +1,6 @@
-import { site } from '../site.config';
-import { getDict, urlFor } from './index';
+import { site, legal } from '../site.config';
+import { getDict, urlFor, servicesFor, worksFor, postsFor } from './index';
+import { servicePath } from '../lib/llms';
 
 const ORG_ID = `${site.url}/#organization`;
 
@@ -11,7 +12,19 @@ export function organizationSchema(lang) {
     '@id': ORG_ID,
     name: site.name,
     url: site.url,
+    legalName: legal.entity,
     email: site.email,
+    ...(site.telephone ? { telephone: site.telephone } : {}),
+    address: { '@type': 'PostalAddress', ...legal.postal },
+    taxID: legal.oib,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      email: site.email,
+      url: urlFor(lang, '/contact'),
+      ...(site.telephone ? { telephone: site.telephone } : {}),
+      availableLanguage: ['en', 'hr', 'de'],
+    },
     description: d.meta.siteDescription,
     logo: `${site.url}/media/logo.png`,
     image: `${site.url}/media/hero.jpg`,
@@ -31,6 +44,103 @@ export function websiteSchema(lang) {
     description: d.meta.siteDescription,
     inLanguage: d.htmlLang,
     publisher: { '@id': ORG_ID },
+  };
+}
+
+/** The home page itself: what it is and what it belongs to. */
+export function homePageSchema(lang) {
+  const d = getDict(lang);
+  const url = urlFor(lang, '/');
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${url}#webpage`,
+    url,
+    name: d.pageMeta.home.title,
+    description: d.pageMeta.home.description,
+    inLanguage: d.htmlLang,
+    isPartOf: { '@id': `${url}#website` },
+    about: { '@id': ORG_ID },
+  };
+}
+
+const itemList = (name, items) => ({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name,
+  itemListElement: items.map((item, i) => ({ '@type': 'ListItem', position: i + 1, item })),
+});
+
+/**
+ * The lists the home page prints, in the same order and from the same content.
+ * Prices stay on the service pages, where the bands they come from are printed.
+ */
+export function homeServicesSchema(lang) {
+  const d = getDict(lang);
+  return itemList(
+    d.home.whatH2,
+    servicesFor(lang).map((s) => ({
+      '@type': 'Service',
+      name: s.title,
+      description: s.short,
+      url: urlFor(lang, servicePath(lang, s.slug)),
+      provider: { '@id': ORG_ID },
+    }))
+  );
+}
+
+/** CreativeWork rather than SoftwareApplication: one of these is a blog. */
+export function homeWorkSchema(lang) {
+  return itemList(
+    getDict(lang).nav.work,
+    worksFor(lang).map((w) => ({
+      '@type': 'CreativeWork',
+      name: w.name,
+      description: w.short,
+      url: urlFor(lang, `/work/${w.slug}`),
+      creator: { '@id': ORG_ID },
+    }))
+  );
+}
+
+/** Only the posts the page lists, so null in a language whose home lists none. */
+export function homePostsSchema(lang) {
+  const d = getDict(lang);
+  if (!d.home.blogH2) return null;
+  const posts = postsFor(lang).slice(0, 3);
+  if (!posts.length) return null;
+  return itemList(
+    d.home.blogH2,
+    posts.map((post) => ({
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.excerpt,
+      datePublished: post.date,
+      url: urlFor(lang, `/blog/${post.slug}`),
+      author: { '@id': ORG_ID },
+    }))
+  );
+}
+
+export function aboutPageSchema(lang) {
+  const d = getDict(lang);
+  const url = urlFor(lang, '/about');
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': `${url}#webpage`,
+    url,
+    name: d.pageMeta.about.title,
+    description: d.pageMeta.about.description,
+    inLanguage: d.htmlLang,
+    about: { '@id': ORG_ID },
+    mainEntity: {
+      '@type': 'Person',
+      name: site.founder,
+      image: `${site.url}/media/denis.jpg`,
+      worksFor: { '@id': ORG_ID },
+      sameAs: [site.social.linkedin],
+    },
   };
 }
 

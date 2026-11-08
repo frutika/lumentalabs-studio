@@ -22,6 +22,7 @@ export default function Footer({ lang }) {
         <nav className="foot-cols" aria-label={d.a11y.footerNav}>
           <div className="foot-col">
             <p className="label">{f.studio}</p>
+            <Link href={p('/about')}>{f.about}</Link>
             <Link href={p('/services')}>{d.nav.services}</Link>
             <Link href={p('/work')}>{d.nav.work}</Link>
             <Link href={`${p('/')}#how`}>{d.home.howH2}</Link>

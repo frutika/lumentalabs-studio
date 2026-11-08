@@ -17,6 +17,11 @@ const de = {
    * jede Seite außer den Blogbeiträgen meta.siteDescription.
    */
   pageMeta: {
+    about: {
+      title: 'Über uns',
+      description:
+        'Ein digitales Studio unter der Leitung von Denis Šehić: zwölf Jahre digitale Produkte, die letzten sechs in KI und Automatisierung. Derselbe Mensch schreibt Angebot und Code.',
+    },
     home: {
       // Siehe die Notiz in hr.js — das Template erreicht dieses Segment nicht.
       title: 'Digitalstudio für Web, KI und Automatisierung — Lumenta Labs',
@@ -44,9 +49,17 @@ const de = {
     },
   },
 
+  aboutPage: {
+    eyebrow: 'Über uns',
+    h1: 'Wer hinter Lumenta Labs steht',
+    legalH2: 'Angaben zum Unternehmen',
+    labels: { address: 'Adresse', oib: 'Steuernummer (OIB)', mbo: 'Registernummer (MBO)', email: 'E-Mail' },
+  },
+
   footer: {
     tagline: 'Ein Digitalstudio für Web, KI und Automatisierung.',
     studio: 'Studio',
+    about: 'Über uns',
     resources: 'Ressourcen',
     contact: 'Kontakt',
     guides: 'Kostenlose Leitfäden (HR)',

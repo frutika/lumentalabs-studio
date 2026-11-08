@@ -17,6 +17,11 @@ const en = {
    * blog posts used to inherit meta.siteDescription.
    */
   pageMeta: {
+    about: {
+      title: 'About',
+      description:
+        'A digital studio run by Denis Šehić: twelve years building digital products, the last six in AI and automation. The person who writes your quote also writes the code.',
+    },
     home: {
       // See the note in hr.js — the template does not reach this segment.
       title: 'A digital studio for web, AI and automation — Lumenta Labs',
@@ -44,9 +49,32 @@ const en = {
     },
   },
 
+  aboutPage: {
+    eyebrow: 'About',
+    h1: 'Who is behind Lumenta Labs',
+    legalH2: 'Business details',
+    labels: { address: 'Address', oib: 'Tax number (OIB)', mbo: 'Registration number (MBO)', email: 'Email' },
+    story: {
+      h2: 'Who does this',
+      paragraphs: [
+        'I am Denis Šehić, and I am behind Lumenta Labs. I have been building digital products for twelve years, the last six specialising in AI and automation.',
+        'You talk to me directly. The person who writes your quote also writes the code and takes it to production: no account manager relaying messages, no subcontractors abroad.',
+        'Twelve of my own products run in production, among them Lumenta AI, The Dog Habit, UnmaskedWords and Bezmaske. Everything I offer clients went through them first. I do not sell anything I have not kept running myself.',
+      ],
+      cta: 'See what we have built →',
+      stats: [
+        ['12+', 'years in digital development'],
+        ['6', 'years in AI and automation'],
+        ['12', 'own products in production'],
+      ],
+      photoAlt: 'Denis Šehić',
+    },
+  },
+
   footer: {
     tagline: 'A digital studio for web, AI and automation.',
     studio: 'Studio',
+    about: 'About',
     resources: 'Resources',
     contact: 'Contact',
     guides: 'Free guides (HR)',
