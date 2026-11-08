@@ -53,13 +53,13 @@ const en = {
     eyebrow: 'About',
     h1: 'Who is behind Lumenta Labs',
     legalH2: 'Business details',
-    labels: { address: 'Address', oib: 'Tax number (OIB)', mbo: 'Registration number (MBO)', email: 'Email' },
+    labels: { address: 'Address', oib: 'Tax number (OIB)', mbo: 'Registration number (MBO)', email: 'Email', phone: 'Phone' },
     story: {
       h2: 'Who does this',
       paragraphs: [
         'I am Denis Šehić, and I am behind Lumenta Labs. I have been building digital products for twelve years, the last six specialising in AI and automation.',
-        'You talk to me directly. The person who writes your quote also writes the code and takes it to production: no account manager relaying messages, no subcontractors abroad.',
-        'Twelve of my own products run in production, among them Lumenta AI, The Dog Habit, UnmaskedWords and Bezmaske. Everything I offer clients went through them first. I do not sell anything I have not kept running myself.',
+        'You talk to me directly. The person who writes your quote also writes the code and takes it to production. No account manager relaying messages, no subcontractors abroad.',
+        'I keep my own products in production: Lumenta AI with eight tools under one roof, DocuFlow, The Dog Habit, UnmaskedWords and BezMaske. Everything I offer clients went through them first. I do not sell anything I have not kept running myself.',
       ],
       cta: 'See what we have built →',
       stats: [

@@ -13,7 +13,7 @@ export const site = {
   // Published in structured data only when set. Left empty rather than guessed:
   // a number in schema is a number people and agents will call. E.164 format,
   // for example '+385...'.
-  telephone: null,
+  telephone: '+385996908235',
 
   // The person named on the about page.
   founder: 'Denis Šehić',
@@ -74,8 +74,8 @@ export const site = {
  * neither. The blog is not listed because posts carry their own date.
  */
 export const contentUpdated = {
-  // The Croatian home page gained the "Iz prve ruke" section with the blog.
-  '/': '2026-09-29',
+  // The about section on the Croatian and German home pages was rewritten.
+  '/': '2026-11-08',
   '/services': '2026-09-26',
   '/services/video': '2026-09-26',
   '/work': '2026-10-03',

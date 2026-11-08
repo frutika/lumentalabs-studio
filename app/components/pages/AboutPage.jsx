@@ -68,6 +68,7 @@ export default function AboutPage({ lang }) {
             <li>{a.labels.oib}: {legal.oib}</li>
             <li>{a.labels.mbo}: {legal.mbo}</li>
             <li>{a.labels.email}: <a href={`mailto:${site.email}`}>{site.email}</a></li>
+            {site.telephone ? <li>{a.labels.phone}: <a href={`tel:${site.telephone}`}>{site.telephone}</a></li> : null}
           </ul>
         </div>
       </section>
