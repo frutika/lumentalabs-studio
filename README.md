@@ -83,6 +83,7 @@ nebitno — ali ako ikad dodaš formu ili upload, podaci moraju ići van aplikac
 | Sažetak stranice | `/llms.txt`, gradi se iz `content/` (`lib/llms.js`) |
 | Markdown verzija | `Accept: text/markdown` na bilo kojoj stranici, ili `/markdown/<put>`. Pretvara se objavljeni HTML (`lib/markdown.js`), samo za putove iz sitemapa |
 | MCP poslužitelj | `/mcp`, read-only i bez stanja (`lib/mcp.js`) |
+| WebMCP | Isti alati za agente u pregledniku (`app/components/WebMcpTools.jsx`), pozivaju `/mcp` |
 | Server Card | `/mcp/server-card` (SEP-2127), `/.well-known/mcp/server-card.json` (dodatno polja iz SEP-1649), `/.well-known/ai-catalog.json` |
 
 Telefon se u structured data pojavljuje tek kad je `site.telephone` u `site.config.js` postavljen.

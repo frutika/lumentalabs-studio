@@ -4,6 +4,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import SkipLink from '../components/SkipLink';
 import VisitSource from '../components/VisitSource';
+import WebMcpTools from '../components/WebMcpTools';
 import CookieBanner from '../components/CookieBanner';
 import { site, analytics } from '../../site.config';
 import { getDict, DEFAULT_LOCALE } from '../../content';
@@ -46,6 +47,7 @@ export default function EnglishLayout({ children }) {
       <body>
         <SkipLink lang={DEFAULT_LOCALE} />
         <VisitSource />
+        <WebMcpTools />
         <Nav lang={DEFAULT_LOCALE} />
         {/* Every page needs one main landmark: it is what a skip link targets,
             what a screen reader jumps to, and what an agent reads as "the page"

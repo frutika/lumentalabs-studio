@@ -22,7 +22,10 @@ const notAllowed = () =>
 export const GET = notAllowed;
 export const DELETE = notAllowed;
 
-const allowedOrigins = new Set([site.url, `https://www.${site.domain}`]);
+// MARKDOWN_ORIGIN is only set on a local build, which has to be able to call itself.
+const allowedOrigins = new Set(
+  [site.url, `https://www.${site.domain}`, process.env.MARKDOWN_ORIGIN].filter(Boolean)
+);
 
 export async function POST(req) {
   // The transport spec requires this, against DNS rebinding. No Origin means
