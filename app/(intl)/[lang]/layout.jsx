@@ -5,6 +5,7 @@ import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import SkipLink from '../../components/SkipLink';
 import VisitSource from '../../components/VisitSource';
+import WebMcpTools from '../../components/WebMcpTools';
 import CookieBanner from '../../components/CookieBanner';
 import { site, analytics } from '../../../site.config';
 import { getDict, isLocale, LOCALES, DEFAULT_LOCALE } from '../../../content';
@@ -56,6 +57,7 @@ export default async function IntlLayout({ children, params }) {
       <body>
         <SkipLink lang={lang} />
         <VisitSource />
+        <WebMcpTools />
         <Nav lang={lang} />
         <main id="main">{children}</main>
         <Footer lang={lang} />
