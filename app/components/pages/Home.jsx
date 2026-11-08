@@ -9,7 +9,14 @@ import AgentRun from '../home/AgentRun';
 import TileArt from '../home/TileArt';
 import { lastWordEm } from '../text';
 import { getDict, localePath, servicesFor, worksFor, reelFor, postsFor } from '../../../content';
-import { organizationSchema, websiteSchema } from '../../../content/schema';
+import {
+  organizationSchema,
+  websiteSchema,
+  homePageSchema,
+  homeServicesSchema,
+  homeWorkSchema,
+  homePostsSchema,
+} from '../../../content/schema';
 import { site } from '../../../site.config';
 
 /** "We don't just recommend this. We run on it." → second sentence on its own
@@ -59,6 +66,10 @@ export default function Home({ lang }) {
     <div className="home">
       <JsonLd data={organizationSchema(lang)} />
       <JsonLd data={websiteSchema(lang)} />
+      <JsonLd data={homePageSchema(lang)} />
+      <JsonLd data={homeServicesSchema(lang)} />
+      <JsonLd data={homeWorkSchema(lang)} />
+      {latestPosts.length ? <JsonLd data={homePostsSchema(lang)} /> : null}
       <header className="hero" id="top">
         {/* One light source: the beam, its core and the floor it falls on. */}
         <div className="stage" aria-hidden="true">

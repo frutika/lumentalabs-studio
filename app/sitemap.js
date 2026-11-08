@@ -14,7 +14,7 @@ import {
 } from '../content';
 
 // Marketing pages exist in every language.
-const TRANSLATED = ['/', '/services', '/services/video', '/work', '/contact'];
+const TRANSLATED = ['/', '/about', '/services', '/services/video', '/work', '/contact'];
 
 // Pages published in one language only, listed once and without alternates.
 // Driven by localesFor rather than a hardcoded language: the legal pages are

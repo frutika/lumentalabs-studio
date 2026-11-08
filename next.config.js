@@ -1,3 +1,12 @@
+// True when the client prefers Markdown: it names text/markdown, and not after
+// text/html. Browsers never send it, so ordinary visits cannot match. Next wraps
+// the value in ^...$ itself.
+const WANTS_MARKDOWN = { type: 'header', key: 'accept', value: '(?:(?!text/html).)*text/markdown.*' };
+
+// Each home page advertises the summary for agents and its own Markdown version.
+const homeLink = (markdownPath) =>
+  `</llms.txt>; rel="describedby"; type="text/plain", <${markdownPath}>; rel="alternate"; type="text/markdown"`;
+
 /** @type {import('next').NextConfig} */
 module.exports = {
   poweredByHeader: false,
@@ -37,14 +46,34 @@ module.exports = {
     ];
   },
 
+  async rewrites() {
+    // beforeFiles, or the prerendered HTML answers first. Everything that is not
+    // a page is left out, so it keeps answering as itself.
+    return {
+      beforeFiles: [
+        { source: '/', has: [WANTS_MARKDOWN], destination: '/markdown' },
+        {
+          source: '/:path((?!_next/|api/|media/|markdown|mcp|llms\\.txt|robots\\.txt|sitemap\\.xml|\\.well-known/).+)',
+          has: [WANTS_MARKDOWN],
+          destination: '/markdown/:path',
+        },
+      ],
+    };
+  },
+
   async headers() {
     return [
+      { source: '/', headers: [{ key: 'Link', value: homeLink('/markdown') }] },
+      { source: '/hr', headers: [{ key: 'Link', value: homeLink('/markdown/hr') }] },
+      { source: '/de', headers: [{ key: 'Link', value: homeLink('/markdown/de') }] },
       {
         // Next marks prerendered pages s-maxage=31536000 because it assumes the
         // CDN is purged on every deploy. Hostinger's is not, so a deploy could
         // sit invisible behind a year-old cached copy. Short shared-cache life
         // with background revalidation keeps pages fast and still current.
-        source: '/((?!_next/static|media/).*)',
+        // Except for the agent-facing routes, which set their own.
+        source: '/((?!_next/static|media/|markdown|mcp|\\.well-known/).*)',
+        missing: [WANTS_MARKDOWN],
         headers: [
           {
             key: 'Cache-Control',

@@ -17,6 +17,11 @@ const de = {
    * jede Seite außer den Blogbeiträgen meta.siteDescription.
    */
   pageMeta: {
+    about: {
+      title: 'Über uns',
+      description:
+        'Ein digitales Studio unter der Leitung von Denis Šehić: zwölf Jahre digitale Produkte, die letzten sechs in KI und Automatisierung. Derselbe Mensch schreibt Angebot und Code.',
+    },
     home: {
       // Siehe die Notiz in hr.js — das Template erreicht dieses Segment nicht.
       title: 'Digitalstudio für Web, KI und Automatisierung — Lumenta Labs',
@@ -44,9 +49,17 @@ const de = {
     },
   },
 
+  aboutPage: {
+    eyebrow: 'Über uns',
+    h1: 'Wer hinter Lumenta Labs steht',
+    legalH2: 'Angaben zum Unternehmen',
+    labels: { address: 'Adresse', oib: 'Steuernummer (OIB)', mbo: 'Registernummer (MBO)', email: 'E-Mail', phone: 'Mobil' },
+  },
+
   footer: {
     tagline: 'Ein Digitalstudio für Web, KI und Automatisierung.',
     studio: 'Studio',
+    about: 'Über uns',
     resources: 'Ressourcen',
     contact: 'Kontakt',
     guides: 'Kostenlose Leitfäden (HR)',
@@ -226,8 +239,8 @@ const de = {
       h2: 'Wer das macht',
       paragraphs: [
         'Hinter Lumenta Labs stehe ich, Denis Šehić. Seit zwölf Jahren baue ich digitale Produkte, die letzten sechs davon spezialisiert auf KI und Automatisierung.',
-        'Sie sprechen direkt mit mir. Derselbe Mensch, der Ihr Angebot schreibt, schreibt auch den Code und bringt ihn in Produktion — kein Account Manager dazwischen, keine Subunternehmer im Ausland.',
-        'Zwölf eigene Produkte laufen in Produktion: Lumenta AI, The Dog Habit, UnmaskedWords, BezMaske und weitere. Alles, was ich Kunden anbiete, ist zuerst durch sie hindurchgegangen. Ich verkaufe nichts, was ich nicht selbst am Laufen gehalten habe.',
+        'Sie sprechen direkt mit mir. Derselbe Mensch, der Ihr Angebot schreibt, schreibt auch den Code und bringt ihn in Produktion. Kein Account Manager dazwischen, keine Subunternehmer im Ausland.',
+        'In Produktion halte ich zwölf eigene Produkte. Acht davon bilden die Plattform Lumenta AI, die übrigen stehen für sich, etwa DocuFlow, The Dog Habit, UnmaskedWords und BezMaske. Alles, was ich Kunden anbiete, ist zuerst durch sie hindurchgegangen. Ich verkaufe nichts, was ich nicht selbst am Laufen gehalten habe.',
       ],
       cta: 'Sehen Sie, was wir gebaut haben →',
       stats: [

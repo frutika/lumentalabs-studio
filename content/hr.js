@@ -25,6 +25,11 @@ const hr = {
    * different pages tells a searcher nothing about which one to open.
    */
   pageMeta: {
+    about: {
+      title: 'O nama',
+      description:
+        'Digitalni studio koji vodi Denis Šehić: dvanaest godina u digitalnim proizvodima, zadnjih šest u AI-u i automatizaciji. Isti čovjek piše ponudu i kod.',
+    },
     home: {
       // The title template only reaches child segments, so the home page has
       // to carry the brand itself or it ships a title with no company in it.
@@ -59,9 +64,17 @@ const hr = {
     },
   },
 
+  aboutPage: {
+    eyebrow: 'O nama',
+    h1: 'Tko stoji iza Lumenta Labsa',
+    legalH2: 'Podaci o obrtu',
+    labels: { address: 'Adresa', oib: 'OIB', mbo: 'MBO', email: 'Email', phone: 'Mobitel' },
+  },
+
   footer: {
     tagline: 'Digitalni studio za web, AI i automatizaciju.',
     studio: 'Studio',
+    about: 'O nama',
     resources: 'Resursi',
     contact: 'Kontakt',
     guides: 'Besplatni vodiči',
@@ -245,8 +258,8 @@ const hr = {
       h2: 'Tko ovo radi',
       paragraphs: [
         'Iza Lumenta Labsa stojim ja, Denis Šehić. Dvanaest godina gradim digitalne proizvode, zadnjih šest specijalizirano za AI i automatizaciju.',
-        'Razgovarate izravno sa mnom. Isti čovjek koji vam piše ponudu piše i kod, i diže ga u produkciju — nema account managera koji prenosi poruke, nema podizvođača u trećoj zemlji.',
-        'Dvanaest vlastitih proizvoda drži se u produkciji: Lumenta AI, The Dog Habit, UnmaskedWords, BezMaske i ostali. Sve što nudim klijentima prvo je prošlo kroz njih. Ne prodajem ništa što nisam sam držao u zraku.',
+        'Razgovarate izravno sa mnom. Isti čovjek koji vam piše ponudu piše i kod i diže ga u produkciju. Nema account managera koji prenosi poruke ni podizvođača u trećoj zemlji.',
+        'U produkciji držim dvanaest vlastitih proizvoda. Osam ih čini platformu Lumenta AI, a ostali su samostalni, poput DocuFlowa, The Dog Habita, UnmaskedWordsa i BezMaske. Sve što nudim klijentima prvo je prošlo kroz njih. Ne prodajem ništa što nisam sam držao u zraku.',
       ],
       cta: 'Pogledajte što smo izgradili →',
       stats: [
