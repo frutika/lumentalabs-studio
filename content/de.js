@@ -240,7 +240,7 @@ const de = {
       paragraphs: [
         'Hinter Lumenta Labs stehe ich, Denis Šehić. Seit zwölf Jahren baue ich digitale Produkte, die letzten sechs davon spezialisiert auf KI und Automatisierung.',
         'Sie sprechen direkt mit mir. Derselbe Mensch, der Ihr Angebot schreibt, schreibt auch den Code und bringt ihn in Produktion. Kein Account Manager dazwischen, keine Subunternehmer im Ausland.',
-        'In Produktion halte ich eigene Produkte: Lumenta AI mit acht Tools unter einem Dach, DocuFlow, The Dog Habit, UnmaskedWords und BezMaske. Alles, was ich Kunden anbiete, ist zuerst durch sie hindurchgegangen. Ich verkaufe nichts, was ich nicht selbst am Laufen gehalten habe.',
+        'In Produktion halte ich zwölf eigene Produkte. Acht davon bilden die Plattform Lumenta AI, die übrigen stehen für sich, etwa DocuFlow, The Dog Habit, UnmaskedWords und BezMaske. Alles, was ich Kunden anbiete, ist zuerst durch sie hindurchgegangen. Ich verkaufe nichts, was ich nicht selbst am Laufen gehalten habe.',
       ],
       cta: 'Sehen Sie, was wir gebaut haben →',
       stats: [
