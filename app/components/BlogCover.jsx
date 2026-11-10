@@ -366,7 +366,42 @@ function SpecMismatch() {
   );
 }
 
+// One product, three platforms: the same facts fan out into three differently
+// shaped sets of fields. Bars inside each box stand for that platform's fields.
+const PLATFORM_BOXES = [
+  { y: 40, name: 'Shopify', bars: [60, 30, 24] },
+  { y: 106, name: 'WooCommerce', bars: [40, 78] },
+  { y: 172, name: 'Etsy', bars: [50, 20, 20, 20] },
+];
+
+function PlatformFields() {
+  return (
+    <>
+      <text x="40" y="30" className="tiny">jedan proizvod, tri skupa polja →</text>
+      <rect x="40" y="85" width="130" height="110" rx="8" className="stroke-a" />
+      <text x="105" y="114" textAnchor="middle" className="lbl-a">proizvod</text>
+      <line x1="58" y1="138" x2="152" y2="138" className="stroke-m" />
+      <line x1="58" y1="156" x2="152" y2="156" className="stroke-m" />
+      <line x1="58" y1="174" x2="120" y2="174" className="stroke-m" />
+      {PLATFORM_BOXES.map((b) => (
+        <g key={b.name}>
+          <Arrow x1={172} y1={140} x2={284} y2={b.y + 29} />
+          <rect x="290" y={b.y} width="150" height="58" rx="6" className="stroke-m" />
+          <text x="365" y={b.y + 20} textAnchor="middle" className="lbl-a">{b.name}</text>
+          {b.bars.reduce((acc, w, i) => {
+            const x = acc.x;
+            acc.els.push(<line key={i} x1={x} y1={b.y + 40} x2={x + w - 6} y2={b.y + 40} className="stroke-m" />);
+            acc.x = x + w + 4;
+            return acc;
+          }, { x: 304, els: [] }).els}
+        </g>
+      ))}
+    </>
+  );
+}
+
 const VARIANTS = {
+  'platform-fields': PlatformFields,
   'spec-mismatch': SpecMismatch,
   'nginx-proxy': NginxProxy,
   'service-worker': ServiceWorker,

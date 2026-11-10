@@ -371,7 +371,40 @@ const specMismatchLabels = () => [
   { x: 240, y: 190, size: 20, color: C.badgeText, children: '≠' },
 ];
 
+// See PlatformFields in BlogCover.jsx. No markers in Satori, so arrows are
+// plain lines ending at the box edge.
+const OG_PLATFORM_BOXES = [
+  { y: 40, name: 'Shopify', bars: [60, 30, 24] },
+  { y: 106, name: 'WooCommerce', bars: [40, 78] },
+  { y: 172, name: 'Etsy', bars: [50, 20, 20, 20] },
+];
+function platformFieldsShapes() {
+  const out = [
+    <rect key="prod" x="40" y="85" width="130" height="110" rx="8" fill="none" stroke={C.accent} strokeWidth="2" />,
+    <line key="p1" x1="58" y1="138" x2="152" y2="138" stroke={C.muted} strokeWidth="2" />,
+    <line key="p2" x1="58" y1="156" x2="152" y2="156" stroke={C.muted} strokeWidth="2" />,
+    <line key="p3" x1="58" y1="174" x2="120" y2="174" stroke={C.muted} strokeWidth="2" />,
+  ];
+  OG_PLATFORM_BOXES.forEach((b) => {
+    out.push(<line key={`a${b.y}`} x1="172" y1="140" x2="288" y2={b.y + 29} stroke={C.accent} strokeWidth="2" />);
+    out.push(<rect key={`r${b.y}`} x="290" y={b.y} width="150" height="58" rx="6" fill="none" stroke={C.muted} strokeWidth="2" />);
+    let x = 304;
+    b.bars.forEach((w, i) => {
+      out.push(<line key={`b${b.y}-${i}`} x1={x} y1={b.y + 40} x2={x + w - 6} y2={b.y + 40} stroke={C.muted} strokeWidth="2" />);
+      x += w + 4;
+    });
+  });
+  return out;
+}
+// Sized for the 1200x630 card, like specMismatchLabels.
+const platformFieldsLabels = () => [
+  { x: 40, y: 30, anchor: 'start', size: 15, children: 'jedan proizvod, tri skupa polja →' },
+  { x: 105, y: 110, size: 20, color: C.accent, children: 'proizvod' },
+  ...OG_PLATFORM_BOXES.map((b) => ({ x: 365, y: b.y + 18, size: 17, color: C.accent, children: b.name })),
+];
+
 const VARIANTS = {
+  'platform-fields': { shapes: platformFieldsShapes, labels: platformFieldsLabels },
   'spec-mismatch': { shapes: specMismatchShapes, labels: specMismatchLabels },
   'nginx-proxy': { shapes: nginxProxyShapes, labels: nginxProxyLabels },
   'service-worker': { shapes: serviceWorkerShapes, labels: serviceWorkerLabels },
