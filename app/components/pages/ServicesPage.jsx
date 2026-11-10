@@ -22,6 +22,8 @@ export default function ServicesPage({ lang }) {
 
   const prices = Object.fromEntries(items.map((item) => [item.slug, servicePriceFor(lang, item.slug)]));
   const price = (slug) => prices[slug];
+  // An umbrella service lists its packages, each with its own price and page.
+  const packagesOf = (slug) => servicesFor(lang).find((s) => s.slug === slug)?.packages || [];
 
   return (
     <>
@@ -69,8 +71,23 @@ export default function ServicesPage({ lang }) {
               {item.notFor ? (
                 <p className="not-for"><strong>{d.servicesPage.notFor}</strong> {item.notFor}</p>
               ) : null}
-              {/* The entry price, with a link to the bands that explain it. */}
-              {price(item.slug) ? (
+              {/* The entry price, with a link to the bands that explain it. An
+                  umbrella service shows one line per package instead. */}
+              {packagesOf(item.slug).length ? (
+                <>
+                  <p className="detail-sub">{d.prices.packagesLabel}</p>
+                  {packagesOf(item.slug).map((pkg) => {
+                    const pp = servicePriceFor(lang, pkg.slug);
+                    return (
+                      <p className="svc-price-line" key={pkg.slug}>
+                        <strong>{pp?.from}</strong>
+                        <span>{pkg.name}</span>
+                        <Link href={p(pp?.href || deeperHref(pkg.slug))}>{d.prices.more} <span aria-hidden="true">→</span></Link>
+                      </p>
+                    );
+                  })}
+                </>
+              ) : price(item.slug) ? (
                 <p className="svc-price-line">
                   <strong>{price(item.slug).from}</strong>
                   <span>{price(item.slug).first}</span>

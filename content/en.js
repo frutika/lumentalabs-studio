@@ -31,7 +31,7 @@ const en = {
     services: {
       title: 'Development and AI automation services',
       description:
-        'Five problems we solve: web platforms, AI process automation, product descriptions at catalogue scale, video localisation, and hosting with monitoring.',
+        'Six problems we solve: websites, custom applications, process automation, systems integration, AI solutions, and maintenance with monitoring.',
     },
     work: {
       title: 'Products we have built',
@@ -115,7 +115,7 @@ const en = {
 
     whatH2: 'What we do',
     whatLede:
-      'Five things, done properly, by the same team that will still be there when it needs changing.',
+      'Six things, done properly, by the same team that will still be there when they need changing. Automation is a task that runs by rules, integration is two systems exchanging data, and AI goes in where text has to be read or written.',
 
     quote: ['Not AI as a headline. ', 'AI as infrastructure', ' — built into the systems you already use, doing a specific job you can measure.'],
 
@@ -168,6 +168,28 @@ const en = {
 
     // Labels inside the small illustrations on the five service cards.
     serviceUi: {
+      site: {
+        rows: [
+          ['Phone · tablet · desktop', '✓'],
+          ['Google and AI search', '✓'],
+          ['Tracking cookies', '0'],
+        ],
+      },
+      flow: {
+        head: 'process · weekly report',
+        env: 'automatic',
+        steps: [
+          'Data pulled from three systems',
+          'Report built from the template',
+          'Sent to the team by email',
+        ],
+        ready: 'Done — no manual work',
+      },
+      sync: {
+        head: 'Shop ⇄ accounting',
+        status: 'in sync',
+        rows: ['Orders', 'Stock', 'Invoices'],
+      },
       deploy: {
         head: 'deploy · main',
         env: 'production',
@@ -259,7 +281,7 @@ const en = {
 
   servicesPage: {
     eyebrow: 'Services',
-    h1: 'Five things, done properly.',
+    h1: 'Six things, done properly.',
     lede: 'Not a menu of everything. The work we do often enough to be genuinely good at it.',
     deeper: 'How this works in detail →',
     closingH2: 'Which of these do you need?',
@@ -274,6 +296,95 @@ const en = {
    * entry: /services/video already covers it properly.
    */
   serviceDetails: [
+    {
+      slug: 'websites',
+      path: 'website-development',
+      title: 'Website and online shop development',
+      description: 'Websites and online shops that load instantly, work in several languages and are ready for Google and AI search. Clear prices and a written list of what is included.',
+      h1: 'Website and online shop development',
+      lede: 'Sites that bring enquiries rather than just existing. Fast on every screen, in your customers’ languages, and ready for search engines and AI assistants.',
+      intro: [
+        'A site that loads slowly and looks like everyone else’s loses the visitor before they read what you do. Most of that is technical, and most of it can be fixed.',
+        'We design for your brand rather than from a template, and build so the site is fast, readable on a phone and prepared for Google. It is also prepared for AI assistants such as ChatGPT and Claude, which increasingly answer the question themselves instead of sending the visitor to a search result.',
+        'This site is built the same way: no tracking cookies, three languages, and a plain-text version of every page for AI tools.',
+      ],
+      gets: [
+        'Design fitted to your visual identity, not an off-the-shelf template',
+        'A layout that works on phones, tablets and desktops',
+        'Technical SEO, plus preparation for AI search (llms.txt and a Markdown version of every page)',
+        'Your texts, images and a contact form put in place',
+        'Cookie-free analytics — or Google Analytics and Search Console, if you want them',
+        'A GDPR-compliant privacy notice and cookie notice',
+      ],
+      notFor: 'if you need a site by tomorrow at the lowest possible price, a site builder such as Wix or Squarespace will be faster and cheaper.',
+      sections: [
+        {
+          h2: 'What is not included',
+          paragraphs: [
+            'So nothing on the invoice comes as a surprise: these are paid separately or supplied by you.',
+          ],
+          list: [
+            'Domain and hosting — roughly €30 – €150 a year, depending on the provider',
+            'Copywriting',
+            'Professional photography',
+            'Monthly maintenance — see technical maintenance and support',
+          ],
+        },
+      ],
+      pricing: {
+        q: 'How much does a website cost?',
+        bands: [
+          {
+            price: 'from €900',
+            name: 'Landing page',
+            body: 'One page with one goal: present a product, service or campaign and turn the visit into an enquiry.',
+            examples: [
+              'A new business or service that needs a serious first impression',
+              'A campaign or product with its own address',
+              'A restaurant, holiday rental or local service',
+            ],
+            boundary: 'As soon as you need more pages or languages, it is the next band.',
+          },
+          {
+            price: '€1,800 – €4,000',
+            name: 'Business website (5 – 10 pages)',
+            body: 'A company site that has to bring in enquiries: services, references, blog and contact, in more than one language if needed.',
+            examples: [
+              'A small or mid-sized company whose site brings nothing in',
+              'A service business that needs one page per service',
+              'A site in two or three languages for foreign markets',
+            ],
+            boundary: '',
+          },
+          {
+            price: 'from €3,500',
+            name: 'Online shop',
+            body: 'A shop with card payments, delivery and a catalogue you edit yourself.',
+            examples: [
+              'Selling products with card payments',
+              'A catalogue with variants, stock and delivery options',
+              'A shop with descriptions for the whole catalogue (with the descriptions package)',
+            ],
+            boundary: 'When the shop has to exchange data with accounting or a warehouse, that is systems integration and is quoted separately.',
+          },
+        ],
+        min: 900,
+      },
+      faq: [
+        {
+          q: 'What if I already have a site?',
+          a: 'We look at what works on it and what does not. Sometimes fixing speed and copy is enough; sometimes starting again is cheaper. We will tell you which.',
+        },
+        {
+          q: 'What does preparing for AI search mean?',
+          a: 'ChatGPT, Claude and Perplexity increasingly answer questions instead of Google. The site gives them a summary (llms.txt) and a clean text version of every page, so they can quote you accurately. This site does the same.',
+        },
+        {
+          q: 'Is hosting included?',
+          a: 'No. Domain and hosting are paid separately, roughly €30 – €150 a year. We will help you choose and set them up.',
+        },
+      ],
+    },
     {
       slug: 'platforms',
       path: 'web-application-development',
@@ -293,7 +404,7 @@ const en = {
         'One party responsible for all of it — from database to domain',
         'A handover with documentation, so you are not locked to us',
       ],
-      notFor: 'if you need a five-page brochure site, an off-the-shelf tool will cost you less. We will say so straight away.',
+      notFor: 'if you need a brochure site or an online shop, a custom application would cost more than it should — that is what website development is for.',
       pricing: {
         q: 'How much does a custom web application cost?',
         bands: [
@@ -340,7 +451,7 @@ const en = {
         },
         {
           q: 'Do you build brochure sites?',
-          a: 'If you need five pages, an off-the-shelf tool will cost you less and we will say so straight away. This is for systems that have to grow.',
+          a: 'Yes, as a separate service with its own prices — see website development. A custom application is for systems that need more than a site.',
         },
         {
           q: 'What if we already have an application that does not work?',
@@ -418,6 +529,77 @@ const en = {
         {
           q: 'When is automation a bad idea?',
           a: 'If the process changes every month, fix the process first. Automating chaos gives you faster chaos.',
+        },
+      ],
+    },
+    {
+      slug: 'integrations',
+      path: 'systems-integration',
+      title: 'Business systems integration',
+      description: 'Connecting your shop, accounting, CRM and warehouse so data is entered once and every other system picks it up on its own.',
+      h1: 'Business systems integration',
+      lede: 'Shop, accounting, CRM and stock that exchange data on their own. You enter it once.',
+      intro: [
+        'An order arrives in the shop, somebody types it into accounting, then adjusts stock by hand. Every retyped field is a place for an error and an hour that never shows up anywhere.',
+        'We connect the systems you already use so data is entered once and the others pick it up — in one direction or both, with a record of every exchange so it is clear where something stuck.',
+        'We do this on our own product every day: DocuFlow AI receives e-invoices automatically through a certified exchange provider, as structured data, with nobody typing anything in.',
+      ],
+      gets: [
+        'Data entered once, not three times',
+        'A record of every exchange, so you can see where something stuck',
+        'An alert when a connection stops, before your customers notice',
+      ],
+      notFor: 'if a ready-made plug-in already connects the two systems, use it. We will tell you if one exists.',
+      pricing: {
+        q: 'How much does systems integration cost?',
+        bands: [
+          {
+            price: 'from €1,500',
+            name: 'One connection',
+            body: 'Two systems exchanging one kind of data, through a ready API on both sides.',
+            examples: [
+              'Orders from the shop to the delivery service',
+              'New customers from the shop into the CRM or newsletter',
+              'Payment confirmations back into the order',
+            ],
+            boundary: 'If a ready-made plug-in already does it, we will tell you to use that instead.',
+          },
+          {
+            price: '€3,500 – €8,000',
+            name: 'Sync with ERP or accounting',
+            body: 'Prices, stock, orders and invoices kept in step in both directions, with rules for whatever does not match.',
+            examples: [
+              'Stock and prices from the ERP into the shop',
+              'Orders and invoices from the shop into accounting',
+              'Incoming e-invoices from the exchange provider into your system',
+            ],
+            boundary: '',
+          },
+          {
+            price: 'from €8,000',
+            name: 'Several systems',
+            body: 'One flow of data through several systems, with monitoring and a record of every exchange.',
+            examples: [
+              'Shop, ERP and billing in one flow',
+              'Several sales channels sharing one stock',
+            ],
+            boundary: 'A project like this starts with a review of the systems you have, not with a price.',
+          },
+        ],
+        min: 1500,
+      },
+      faq: [
+        {
+          q: 'What if one of the systems has no API?',
+          a: 'Then we look for another route — file export and import, email, or an intermediary. If there is no reliable route, we will say so before quoting.',
+        },
+        {
+          q: 'What happens when somebody changes their API?',
+          a: 'The integration stops or starts making mistakes. That is why we recommend maintenance alongside it: monitoring catches the failure and we fix it before your customers notice.',
+        },
+        {
+          q: 'What is the difference between integration and automation?',
+          a: 'Integration connects two systems so they exchange data. Automation takes over a whole task somebody does by hand — it often includes an integration, but also rules, decisions and notifications.',
         },
       ],
     },
@@ -716,16 +898,19 @@ const en = {
   // not here: they come from serviceDetails[].pricing.min and videoPage.priceMin
   // through servicePriceFor(), so there is one number to change, not three.
   prices: {
+    packagesLabel: 'Packages',
     from: 'from {price}',
     perMonth: '/ mo',
     label: 'Pricing',
     h2: 'What it costs',
-    lede: 'Five services, five starting points. Each service page shows what falls into which range and where the next one begins.',
+    lede: 'Six services, six starting points. Each service page shows what falls into which range and where the next one begins.',
     more: 'Full pricing',
     cta: 'Ask for a quote',
   },
 
   videoPage: {
+    // Page title, now that video is a package rather than a card of its own.
+    title: 'Narrated video and localisation',
     // Lowest figure in pricing[] below, as a number for servicePriceFor().
     priceMin: 450,
     eyebrow: 'Services',
@@ -792,8 +977,18 @@ const en = {
 
   services: [
     {
+      slug: 'websites',
+      title: 'Websites and digital platforms',
+      short: 'Sites and shops that load instantly, speak your customers’ language and are ready for Google and AI search.',
+      body: [
+        'Most small-business sites lose the visitor before the first sentence: slow, built on the same template as the competition, with an enquiry form nobody fills in.',
+        'We build sites and shops that load at once on any screen, in the languages your customers use, and are technically prepared for Google and for the AI assistants that increasingly answer instead of it.',
+        'What the price includes and what it does not is written down before we start — no surprises on the invoice.',
+      ],
+    },
+    {
       slug: 'platforms',
-      title: 'Web platforms and applications',
+      title: 'Custom application development',
       short: 'From idea to production — deployed, monitored, and ready for real users on day one.',
       body: [
         'Most projects do not fail at the idea. They fail in the stretch between a design that looks right and a system that survives its first hundred users.',
@@ -803,38 +998,49 @@ const en = {
     },
     {
       slug: 'ai',
-      title: 'AI tools and integrations',
-      short: 'Content generation and process automation, built into the systems you already use.',
+      title: 'Business process automation',
+      short: 'Repetitive weekly work taken over by a process — inside the systems your team already uses.',
       body: [
-        'AI is only useful when it has a specific job and a measurable result. We start from the job, not from the model.',
-        'Content generation that holds your voice across every page. Process automation that removes the repetitive work nobody should be doing by hand.',
-        'It goes into the tools your team already opens every morning. Nobody has to learn a new interface to get the benefit.',
+        'Somebody copies data from one system to another every week. Somebody builds the same report by hand every month. That is not a people problem; it is a process problem.',
+        'We start from one specific task and measure how many hours it frees. AI goes in where it pays, not where it sounds good.',
+        'The process lives in the tools your team already opens every morning. Nobody has to learn a new interface.',
       ],
     },
     {
-      slug: 'ecommerce',
-      title: 'Content automation for e-commerce',
-      short: 'Descriptions, category pages and campaigns at the scale a real catalogue demands.',
+      slug: 'integrations',
+      title: 'Systems integration',
+      short: 'Shop, accounting, CRM and stock exchanging data on their own, instead of somebody retyping it.',
       body: [
-        'A shop with four thousand products cannot be written by hand, and a shop written by a generic model reads like every other shop.',
-        'We build pipelines that generate at catalogue scale while staying inside your brand voice, your terminology, and the language your customers actually buy in.',
-        'This is not theory for us. It is the product we run.',
+        'An order arrives in the shop, somebody types it into accounting, then adjusts stock by hand. Every retyped field is a place for an error and an hour nobody sees.',
+        'We connect the systems you already use so data is entered once and the others pick it up — in one direction or both.',
+        'When one side changes its API, the integration changes with it. That is what maintenance is for.',
       ],
     },
     {
-      slug: 'video',
-      title: 'Narrated video and localisation',
-      short: 'One film, voiced and captioned in every market you sell in.',
+      slug: 'ai-solutions',
+      title: 'AI solutions and integrations',
+      short: 'AI where reading and writing is the work: descriptions for a whole catalogue, narration in every language, documents that process themselves.',
       body: [
-        'Footage is the expensive part, and most companies already have some — a product film, a walkthrough, a reel someone cut last year. What they do not have is that film speaking to each market they sell in.',
-        'We write the narration, voice it, mix it against whatever audio the footage already carries, and deliver captions in the format each platform actually accepts.',
-        'The same script becomes as many language versions as you need, from one production pass rather than one shoot per market.',
+        'Thousands of products without descriptions, a video that speaks one language, PDFs somebody retypes by hand. These are the jobs where AI genuinely saves time, because the work is text and language.',
+        'Each of them runs on our own products first: Lumenta AI writes descriptions, Narrator voices video, DocuFlow reads invoices.',
+        'Approval before anything goes out always stays with you.',
+      ],
+      // Packages with their own pages and prices; this card is their umbrella.
+      packages: [
+        {
+          slug: 'ecommerce',
+          name: 'Product descriptions for your shop',
+        },
+        {
+          slug: 'video',
+          name: 'Video narration and localisation',
+        },
       ],
     },
     {
       slug: 'architecture',
-      title: 'Architecture, design and maintenance',
-      short: 'One team owns the stack end to end — including after launch.',
+      title: 'Technical maintenance and support',
+      short: 'Monitoring, backups and updates — and one contact when something stops.',
       body: [
         'Most of what goes wrong in a project goes wrong at a handover: between a designer and a developer, or between an agency and whoever it quietly outsourced to.',
         'We keep architecture, interface and operations with the same team, so there is no seam for things to fall through.',

@@ -31,7 +31,7 @@ const de = {
     services: {
       title: 'Entwicklung und KI-Automatisierung',
       description:
-        'Fünf Probleme, die wir lösen: Webplattformen, KI-Prozessautomatisierung, Produktbeschreibungen im ganzen Katalog, Video-Lokalisierung und Wartung.',
+        'Sechs Probleme, die wir lösen: Websites, individuelle Anwendungen, Prozessautomatisierung, Systemintegration, KI-Lösungen und Wartung mit Monitoring.',
     },
     work: {
       title: 'Produkte, die wir gebaut haben',
@@ -100,7 +100,7 @@ const de = {
 
     whatH2: 'Was wir machen',
     whatLede:
-      'Fünf Dinge, sauber umgesetzt, vom selben Team, das auch dann noch da ist, wenn etwas geändert werden muss.',
+      'Sechs Leistungen, von der Website bis zum System, auf dem Ihr Geschäft läuft. Automatisierung ist eine Aufgabe, die nach Regeln läuft, Integration sind zwei Systeme, die Daten austauschen, und KI kommt dort hinein, wo Text gelesen oder geschrieben werden muss.',
 
     quote: ['KI ist keine Überschrift. ', 'KI ist Infrastruktur', ' — eingebaut in die Systeme, die Sie ohnehin nutzen, mit einer Aufgabe, die sich messen lässt.'],
     quoteNote: 'In der Praxis: ein Prozess, der jeden Tag läuft — keine Demo, die einmal funktioniert.',
@@ -147,6 +147,28 @@ const de = {
     },
 
     serviceUi: {
+      site: {
+        rows: [
+          ['Handy · Tablet · Desktop', '✓'],
+          ['Google und KI-Suche', '✓'],
+          ['Tracking-Cookies', '0'],
+        ],
+      },
+      flow: {
+        head: 'Prozess · Wochenreport',
+        env: 'automatisch',
+        steps: [
+          'Daten aus drei Systemen geholt',
+          'Report nach Vorlage erstellt',
+          'Per E-Mail ans Team geschickt',
+        ],
+        ready: 'Fertig — ohne Handarbeit',
+      },
+      sync: {
+        head: 'Shop ⇄ Buchhaltung',
+        status: 'synchron',
+        rows: ['Bestellungen', 'Lagerbestand', 'Rechnungen'],
+      },
       deploy: {
         head: 'deploy · main',
         env: 'production',
@@ -254,7 +276,7 @@ const de = {
 
   servicesPage: {
     eyebrow: 'Leistungen',
-    h1: 'Fünf Probleme, die wir lösen',
+    h1: 'Sechs Probleme, die wir lösen',
     lede: 'Wenn Sie sich in einem davon wiedererkennen, melden Sie sich. Wenn nicht, nennen Sie uns Ihres — vielleicht lösen wir es, nur unter anderem Namen.',
     deeper: 'Wie das im Detail läuft →',
     gets: 'Was Sie bekommen',
@@ -265,6 +287,20 @@ const de = {
     closingCta: 'Kontakt aufnehmen',
 
     problems: [
+      {
+        slug: 'websites',
+        title: 'Die Website ist da, aber sie bringt keine Anfragen',
+        paragraphs: [
+          'Langsam, auf derselben Vorlage wie die Konkurrenz, mit einem Formular, das niemand ausfüllt. Der Kunde ist weg, bevor er gelesen hat, was Sie tun.',
+          'Wir bauen Websites und Shops, die sofort laden, auf jedem Bildschirm und in den Sprachen Ihrer Kunden funktionieren und technisch für Google und KI-Suche vorbereitet sind. Ohne Cookies und Tracking, die Sie nicht brauchen.',
+        ],
+        gets: [
+          'Eine Website, die sofort lädt — auch auf dem Handy',
+          'Technische Vorbereitung für Google und KI-Suche',
+          'Eine klare Liste, was im Preis enthalten ist und was nicht',
+        ],
+        notFor: 'Sie die Website morgen und zum niedrigsten möglichen Preis brauchen — dann ist ein Baukasten wie Wix oder Squarespace schneller und günstiger.',
+      },
       {
         slug: 'platforms',
         title: 'Sie brauchen eine Plattform, die in einem Jahr keinen Umbau braucht',
@@ -277,7 +313,7 @@ const de = {
           'Eine verantwortliche Seite für alles — von der Datenbank bis zur Domain',
           'Eine Übergabe mit Dokumentation, damit Sie nicht an uns gebunden sind',
         ],
-        notFor: 'Sie eine Website mit fünf Unterseiten brauchen — da fahren Sie mit einer fertigen Lösung günstiger. Das sagen wir Ihnen sofort.',
+        notFor: 'Sie eine Präsentationswebsite oder einen Onlineshop brauchen — eine individuelle Anwendung wäre dafür zu teuer; dafür gibt es unsere Website-Erstellung.',
       },
       {
         slug: 'ai',
@@ -294,32 +330,32 @@ const de = {
         notFor: 'sich der Prozess monatlich ändert — dann muss er zuerst stehen. Automatisiertes Chaos ist schnelleres Chaos.',
       },
       {
-        slug: 'ecommerce',
-        title: 'Tausende Artikel ohne Beschreibung — oder mit denen des Lieferanten',
+        slug: 'integrations',
+        title: 'Sie tippen dieselben Daten in drei Systeme',
         paragraphs: [
-          'Der Katalog wächst schneller, als ihn jemand beschreiben kann. Vom Lieferanten übernommene Texte wertet Google als Duplikat, und maschinelle Übersetzung sieht man sofort.',
-          'Wir richten einen Prozess ein, der den ganzen Katalog beschreibt — in Ihrem Ton, mit Ihrer Terminologie, in der Sprache des Marktes, in dem Sie tatsächlich verkaufen. Nicht nachträglich übersetzt.',
+          'Eine Bestellung kommt im Shop an, jemand überträgt sie in die Buchhaltung und passt danach den Lagerbestand von Hand an. Jedes abgetippte Feld ist eine Fehlerquelle und eine Stunde, die niemand sieht.',
+          'Wir verbinden die Systeme, die Sie schon nutzen, sodass Daten einmal eingegeben werden und die anderen sie selbst übernehmen — in eine Richtung oder in beide.',
         ],
         gets: [
-          'Den ganzen Katalog abgedeckt in Wochen, nicht Monaten',
-          'Texte, die nach einer Marke klingen — nicht nach tausend zufälligen KI-Absätzen',
-          'Kontrolle vor der Veröffentlichung: nichts geht raus ohne Ihre Freigabe',
+          'Daten, die einmal eingegeben werden, nicht dreimal',
+          'Ein Protokoll jedes Austauschs, damit klar ist, wo etwas hängen blieb',
+          'Eine Warnung, wenn eine Verbindung stillsteht — bevor Ihre Kunden es merken',
         ],
-        notFor: 'Sie hundert Artikel haben und einen Texter, der hinterherkommt.',
+        notFor: 'ein fertiges Plug-in die beiden Systeme bereits verbindet — dann nutzen Sie das. Wir sagen Ihnen, ob es eines gibt.',
       },
       {
-        slug: 'video',
-        title: 'Ein Video, fünf Märkte',
+        slug: 'ai-solutions',
+        title: 'Arbeit, die Lesen und Schreiben verlangt — in einem Umfang, den niemand schafft',
         paragraphs: [
-          'Pro Markt zu drehen ist der teuerste Weg zu derselben Botschaft in fünf Sprachen.',
-          'Aus einer Produktion liefern wir Sprecher, Vertonung, Mischung und Untertitel für jede Sprachversion.',
+          'Tausende Artikel ohne Beschreibung, ein Video, das nur eine Sprache spricht, PDFs, die jemand von Hand abtippt. Das sind die Aufgaben, bei denen KI wirklich Zeit spart, weil die Arbeit aus Text und Sprache besteht.',
+          'Jede dieser Lösungen läuft zuerst auf unseren eigenen Produkten: Lumenta AI schreibt Beschreibungen, Narrator vertont Videos, DocuFlow liest Rechnungen. Die Freigabe vor der Veröffentlichung bleibt immer bei Ihnen.',
         ],
         gets: [
-          'Alle Sprachversionen aus einem Dreh',
-          'Untertitel und Sprecher abgestimmt auf den Text Ihrer Website',
-          'Material, das veröffentlichungsfertig ist — kein Rohexport',
+          'Produktbeschreibungen für den ganzen Katalog, in Ihrem Ton und in der Sprache des Marktes',
+          'Videos mit Sprecherstimme und Untertiteln für jeden Markt, aus einer Aufnahme',
+          'Kontrolle vor der Veröffentlichung — nichts geht ohne Ihre Freigabe raus',
         ],
-        notFor: 'Sie ein Video in einer Sprache brauchen — lokal geht das schneller.',
+        notFor: 'KI keine messbare Zeit und kein Geld spart — dann sagen wir Ihnen, dass Sie sie nicht einführen sollen.',
       },
       {
         slug: 'architecture',
@@ -343,6 +379,94 @@ const de = {
    * gleicher Grund. Kein `video`-Eintrag: /services/video deckt das bereits ab.
    */
   serviceDetails: [
+    {
+      slug: 'websites',
+      path: 'webseiten-erstellung',
+      title: 'Website- und Onlineshop-Erstellung',
+      description: 'Websites und Onlineshops, die sofort laden, mehrsprachig sind und für Google und KI-Suche bereitstehen. Klare Preise und eine schriftliche Liste, was enthalten ist.',
+      h1: 'Website- und Onlineshop-Erstellung',
+      lede: 'Websites, die Anfragen bringen, statt nur da zu sein. Schnell auf jedem Bildschirm, in den Sprachen Ihrer Kunden und bereit für Suchmaschinen und KI-Assistenten.',
+      intro: [
+        'Eine Website, die langsam lädt und aussieht wie alle anderen, verliert den Besucher, bevor er liest, was Sie tun. Das meiste davon ist technisch, und das meiste lässt sich beheben.',
+        'Wir gestalten für Ihre Marke statt nach Vorlage und bauen so, dass die Website schnell ist, auf dem Handy lesbar und für Google vorbereitet. Ebenso für KI-Assistenten wie ChatGPT und Claude, die Fragen immer öfter selbst beantworten, statt auf ein Suchergebnis zu verweisen.',
+        'Diese Website ist genauso gebaut: keine Tracking-Cookies, drei Sprachen und eine Textfassung jeder Seite für KI-Werkzeuge.',
+      ],
+      gets: [
+        'Design passend zu Ihrem Erscheinungsbild, keine fertige Vorlage',
+        'Darstellung für Handy, Tablet und Desktop',
+        'Technische SEO und Vorbereitung für KI-Suche (llms.txt und eine Markdown-Fassung jeder Seite)',
+        'Einbau Ihrer Texte, Bilder und eines Kontaktformulars',
+        'Analyse ohne Cookies — oder Google Analytics und Search Console, wenn Sie das möchten',
+        'DSGVO-konforme Datenschutzerklärung und Cookie-Hinweis',
+      ],
+      sections: [
+        {
+          h2: 'Was nicht enthalten ist',
+          paragraphs: [
+            'Damit nichts auf der Rechnung überrascht: Das wird separat bezahlt oder von Ihnen geliefert.',
+          ],
+          list: [
+            'Domain und Hosting — etwa 30 – 150 € pro Jahr, je nach Anbieter',
+            'Texterstellung (Copywriting)',
+            'Professionelle Fotografie',
+            'Monatliche Wartung — siehe technische Wartung und Support',
+          ],
+        },
+      ],
+      pricing: {
+        q: 'Was kostet eine Website?',
+        bands: [
+          {
+            price: 'ab 900 €',
+            name: 'Landingpage',
+            body: 'Eine Seite mit einem Ziel: ein Produkt, eine Leistung oder eine Kampagne vorstellen und aus dem Besuch eine Anfrage machen.',
+            examples: [
+              'Ein neues Unternehmen oder eine neue Leistung, die einen ernsthaften ersten Eindruck braucht',
+              'Eine Kampagne oder ein Produkt mit eigener Adresse',
+              'Restaurant, Ferienwohnung oder lokaler Dienstleister',
+            ],
+            boundary: 'Sobald mehr Seiten oder Sprachen nötig sind, ist es die nächste Stufe.',
+          },
+          {
+            price: '1.800 – 4.000 €',
+            name: 'Unternehmenswebsite (5 – 10 Seiten)',
+            body: 'Eine Firmenwebsite, die Anfragen bringen soll: Leistungen, Referenzen, Blog und Kontakt, bei Bedarf mehrsprachig.',
+            examples: [
+              'Ein kleines oder mittleres Unternehmen, dessen Website nichts bringt',
+              'Ein Dienstleister, der eine Seite pro Leistung braucht',
+              'Eine Website in zwei oder drei Sprachen für Auslandsmärkte',
+            ],
+            boundary: '',
+          },
+          {
+            price: 'ab 3.500 €',
+            name: 'Onlineshop',
+            body: 'Ein Shop mit Kartenzahlung, Versand und einem Katalog, den Sie selbst pflegen.',
+            examples: [
+              'Verkauf von Produkten mit Kartenzahlung',
+              'Katalog mit Varianten, Lagerbestand und Versandoptionen',
+              'Ein Shop mit Beschreibungen für den ganzen Katalog (mit dem Beschreibungspaket)',
+            ],
+            boundary: 'Wenn der Shop Daten mit Buchhaltung oder Lager austauschen soll, ist das Systemintegration und wird separat angeboten.',
+          },
+        ],
+        min: 900,
+      },
+      faq: [
+        {
+          q: 'Was, wenn ich schon eine Website habe?',
+          a: 'Wir sehen uns an, was daran funktioniert und was nicht. Manchmal reicht es, Geschwindigkeit und Texte zu verbessern, manchmal ist ein Neuanfang günstiger. Wir sagen Ihnen, was davon.',
+        },
+        {
+          q: 'Was heißt Vorbereitung für KI-Suche?',
+          a: 'ChatGPT, Claude und Perplexity beantworten Fragen immer öfter anstelle von Google. Die Website gibt ihnen eine Zusammenfassung (llms.txt) und eine saubere Textfassung jeder Seite, damit sie Sie korrekt zitieren können. Diese Website macht es genauso.',
+        },
+        {
+          q: 'Ist Hosting enthalten?',
+          a: 'Nein. Domain und Hosting werden separat bezahlt, etwa 30 – 150 € pro Jahr. Wir helfen Ihnen, sie auszuwählen und einzurichten.',
+        },
+      ],
+    },
     {
       slug: 'platforms',
       path: 'webanwendungen-entwicklung',
@@ -403,7 +527,7 @@ const de = {
         },
         {
           q: 'Bauen Sie auch einfache Webseiten?',
-          a: 'Wenn Sie fünf Unterseiten brauchen, ist eine Standardlösung günstiger, und das sagen wir Ihnen sofort. Das hier ist für Systeme, die wachsen müssen.',
+          a: 'Ja, als eigene Leistung mit eigenen Preisen — siehe Website-Erstellung. Eine individuelle Anwendung ist für Systeme, die mehr als eine Website brauchen.',
         },
         {
           q: 'Was, wenn wir schon eine Anwendung haben, die nicht funktioniert?',
@@ -475,6 +599,71 @@ const de = {
         {
           q: 'Wann ist Automatisierung keine gute Idee?',
           a: 'Wenn sich der Prozess jeden Monat ändert, gehört zuerst der Prozess sortiert. Automatisiertes Chaos ist schnelleres Chaos.',
+        },
+      ],
+    },
+    {
+      slug: 'integrations',
+      path: 'systemintegration',
+      title: 'Integration von Geschäftssystemen',
+      description: 'Shop, Buchhaltung, CRM und Lager verbinden, sodass Daten einmal eingegeben werden und jedes andere System sie selbst übernimmt.',
+      h1: 'Integration von Geschäftssystemen',
+      lede: 'Shop, Buchhaltung, CRM und Lager, die Daten selbst austauschen. Sie geben sie einmal ein.',
+      intro: [
+        'Eine Bestellung kommt im Shop an, jemand überträgt sie in die Buchhaltung und passt danach den Lagerbestand von Hand an. Jedes abgetippte Feld ist eine Fehlerquelle und eine Stunde, die nirgends auftaucht.',
+        'Wir verbinden die Systeme, die Sie schon nutzen, sodass Daten einmal eingegeben werden und die anderen sie übernehmen — in eine Richtung oder in beide, mit einem Protokoll jedes Austauschs, damit klar ist, wo etwas hängen blieb.',
+        'Auf unserem eigenen Produkt machen wir das jeden Tag: DocuFlow AI empfängt E-Rechnungen automatisch über einen zertifizierten Vermittler, als strukturierte Daten, ohne dass jemand etwas abtippt.',
+      ],
+      pricing: {
+        q: 'Was kostet eine Systemintegration?',
+        bands: [
+          {
+            price: 'ab 1.500 €',
+            name: 'Eine Verbindung',
+            body: 'Zwei Systeme, die eine Art von Daten austauschen, über eine fertige API auf beiden Seiten.',
+            examples: [
+              'Bestellungen aus dem Shop an den Versanddienstleister',
+              'Neue Kunden aus dem Shop ins CRM oder in den Newsletter',
+              'Zahlungsbestätigungen zurück in die Bestellung',
+            ],
+            boundary: 'Wenn ein fertiges Plug-in das schon kann, sagen wir Ihnen, dass Sie das nutzen sollen.',
+          },
+          {
+            price: '3.500 – 8.000 €',
+            name: 'Synchronisation mit ERP oder Buchhaltung',
+            body: 'Preise, Lagerbestände, Bestellungen und Rechnungen, die in beide Richtungen abgeglichen werden, mit Regeln für alles, was nicht zusammenpasst.',
+            examples: [
+              'Lagerbestand und Preise aus dem ERP in den Shop',
+              'Bestellungen und Rechnungen aus dem Shop in die Buchhaltung',
+              'Eingehende E-Rechnungen vom Vermittler in Ihr System',
+            ],
+            boundary: '',
+          },
+          {
+            price: 'ab 8.000 €',
+            name: 'Mehrere Systeme',
+            body: 'Ein Datenfluss durch mehrere Systeme, mit Monitoring und einem Protokoll jedes Austauschs.',
+            examples: [
+              'Shop, ERP und Abrechnung in einem Fluss',
+              'Mehrere Verkaufskanäle mit gemeinsamem Lagerbestand',
+            ],
+            boundary: 'Ein solches Projekt beginnt mit einer Prüfung Ihrer Systeme, nicht mit einem Preis.',
+          },
+        ],
+        min: 1500,
+      },
+      faq: [
+        {
+          q: 'Was, wenn eines der Systeme keine API hat?',
+          a: 'Dann suchen wir einen anderen Weg — Dateiexport und -import, E-Mail oder einen Vermittler. Gibt es keinen verlässlichen Weg, sagen wir es Ihnen vor dem Angebot.',
+        },
+        {
+          q: 'Was passiert, wenn jemand seine API ändert?',
+          a: 'Dann bleibt die Integration stehen oder macht Fehler. Deshalb empfehlen wir Wartung dazu: Das Monitoring bemerkt den Ausfall, und wir beheben ihn, bevor Ihre Kunden es merken.',
+        },
+        {
+          q: 'Was ist der Unterschied zwischen Integration und Automatisierung?',
+          a: 'Integration verbindet zwei Systeme, damit sie Daten austauschen. Automatisierung übernimmt eine ganze Aufgabe, die jemand von Hand erledigt — oft samt Integration, aber auch mit Regeln, Entscheidungen und Benachrichtigungen.',
         },
       ],
     },
@@ -756,16 +945,19 @@ const de = {
   // not here: they come from serviceDetails[].pricing.min and videoPage.priceMin
   // through servicePriceFor(), so there is one number to change, not three.
   prices: {
+    packagesLabel: 'Pakete',
     from: 'ab {price}',
     perMonth: '/ Mon.',
     label: 'Preise',
     h2: 'Was es kostet',
-    lede: 'Fünf Leistungen, fünf Einstiegspreise. Auf der Seite jeder Leistung steht, was in welche Spanne fällt und wo die nächste beginnt.',
+    lede: 'Sechs Leistungen, sechs Einstiegspreise. Auf der Seite jeder Leistung steht, was in welche Spanne fällt und wo die nächste beginnt.',
     more: 'Preise im Detail',
     cta: 'Angebot anfragen',
   },
 
   videoPage: {
+    // Page title, now that video is a package rather than a card of its own.
+    title: 'Vertontes Video und Lokalisierung',
     // Lowest figure in pricing[] below, as a number for servicePriceFor().
     priceMin: 450,
     eyebrow: 'Leistungen',
@@ -832,8 +1024,18 @@ const de = {
 
   services: [
     {
+      slug: 'websites',
+      title: 'Websites und digitale Plattformen',
+      short: 'Websites und Shops, die sofort laden, die Sprache Ihrer Kunden sprechen und für Google und KI-Suche bereit sind.',
+      body: [
+        'Die meisten Websites kleiner Firmen verlieren den Besucher vor dem ersten Satz: langsam, auf derselben Vorlage wie die Konkurrenz, mit einem Anfrageformular, das niemand ausfüllt.',
+        'Wir bauen Websites und Shops, die auf jedem Bildschirm sofort laden, in den Sprachen Ihrer Kunden, und technisch für Google und für die KI-Assistenten vorbereitet sind, die heute immer öfter statt Google antworten.',
+        'Was im Preis enthalten ist und was nicht, steht schriftlich fest, bevor wir anfangen — keine Überraschungen auf der Rechnung.',
+      ],
+    },
+    {
       slug: 'platforms',
-      title: 'Webplattformen und Anwendungen',
+      title: 'Individuelle Anwendungsentwicklung',
       short: 'Von der Idee bis in die Produktion — ausgeliefert, überwacht und ab Tag eins bereit für echte Nutzer.',
       body: [
         'Die meisten Projekte scheitern nicht an der Idee. Sie scheitern auf der Strecke zwischen einem Entwurf, der gut aussieht, und einem System, das die ersten hundert Nutzer übersteht.',
@@ -843,38 +1045,49 @@ const de = {
     },
     {
       slug: 'ai',
-      title: 'KI-Werkzeuge und Integrationen',
-      short: 'Inhaltserstellung und Prozessautomatisierung, eingebaut in Ihre bestehenden Systeme.',
+      title: 'Automatisierung von Geschäftsprozessen',
+      short: 'Wiederkehrende Arbeit übernimmt ein Prozess — in den Systemen, die Ihr Team schon nutzt.',
       body: [
-        'KI ist erst nützlich, wenn sie eine konkrete Aufgabe und ein messbares Ergebnis hat. Wir beginnen bei der Aufgabe, nicht beim Modell.',
-        'Inhaltserstellung, die Ihren Ton über jede Seite hält. Automatisierung, die die wiederkehrende Arbeit entfernt, die niemand von Hand machen sollte.',
-        'Es geht in die Werkzeuge, die Ihr Team ohnehin jeden Morgen öffnet. Niemand muss eine neue Oberfläche lernen, um davon zu profitieren.',
+        'Jede Woche überträgt jemand Daten von einem System ins andere. Jeden Monat baut jemand denselben Report von Hand. Das ist kein Problem der Menschen, sondern des Prozesses.',
+        'Wir starten bei einer konkreten Aufgabe und messen, wie viele Stunden sie freimacht. KI kommt dort zum Einsatz, wo sie sich rechnet — nicht dort, wo sie gut klingt.',
+        'Der Prozess lebt in den Werkzeugen, die Ihr Team ohnehin jeden Morgen öffnet. Niemand muss eine neue Oberfläche lernen.',
       ],
     },
     {
-      slug: 'ecommerce',
-      title: 'Content-Automatisierung für E-Commerce',
-      short: 'Beschreibungen, Kategorieseiten und Kampagnen in dem Umfang, den ein echter Katalog verlangt.',
+      slug: 'integrations',
+      title: 'Integration verschiedener Systeme',
+      short: 'Shop, Buchhaltung, CRM und Lager tauschen Daten selbst aus, statt dass jemand sie abtippt.',
       body: [
-        'Ein Shop mit viertausend Artikeln lässt sich nicht von Hand schreiben, und ein Shop aus einem generischen Modell liest sich wie jeder andere.',
-        'Wir bauen Abläufe, die im Umfang des gesamten Katalogs erzeugen und dabei in Ihrem Ton, Ihrer Terminologie und der Sprache bleiben, in der Ihre Kunden tatsächlich kaufen.',
-        'Für uns ist das keine Theorie. Es ist das Produkt, das wir selbst betreiben.',
+        'Eine Bestellung kommt im Shop an, jemand überträgt sie in die Buchhaltung und passt danach den Lagerbestand von Hand an. Jedes abgetippte Feld ist eine Fehlerquelle und eine Stunde, die niemand sieht.',
+        'Wir verbinden die Systeme, die Sie schon nutzen, sodass Daten einmal eingegeben werden und die anderen sie selbst übernehmen — in eine Richtung oder in beide.',
+        'Wenn eine Seite ihre API ändert, ändert sich die Integration mit. Dafür ist die Wartung da.',
       ],
     },
     {
-      slug: 'video',
-      title: 'Vertontes Video und Lokalisierung',
-      short: 'Ein Film, vertont und untertitelt für jeden Markt, in dem Sie verkaufen.',
+      slug: 'ai-solutions',
+      title: 'KI-Lösungen und Integrationen',
+      short: 'KI dort, wo Lesen und Schreiben die Arbeit ist: Beschreibungen für den ganzen Katalog, Vertonung in jeder Sprache, Dokumente, die sich selbst verarbeiten.',
       body: [
-        'Das Material ist der teure Teil, und die meisten Unternehmen haben bereits welches — einen Produktfilm, einen Rundgang, ein Reel, das letztes Jahr jemand geschnitten hat. Was fehlt, ist derselbe Film, der zu jedem Markt spricht.',
-        'Wir schreiben die Erzählung, vertonen sie, mischen sie gegen den Ton, den das Material bereits trägt, und liefern Untertitel im Format, das jede Plattform wirklich akzeptiert.',
-        'Aus demselben Skript werden so viele Sprachfassungen, wie Sie brauchen — aus einem Produktionsdurchgang statt aus einem Dreh pro Markt.',
+        'Tausende Artikel ohne Beschreibung, ein Video, das nur eine Sprache spricht, PDFs, die jemand von Hand abtippt. Das sind die Aufgaben, bei denen KI wirklich Zeit spart, weil die Arbeit aus Text und Sprache besteht.',
+        'Jede dieser Lösungen läuft zuerst auf unseren eigenen Produkten: Lumenta AI schreibt Beschreibungen, Narrator vertont Videos, DocuFlow liest Rechnungen.',
+        'Die Freigabe vor der Veröffentlichung bleibt immer bei Ihnen.',
+      ],
+      // Packages with their own pages and prices; this card is their umbrella.
+      packages: [
+        {
+          slug: 'ecommerce',
+          name: 'Produktbeschreibungen für Ihren Shop',
+        },
+        {
+          slug: 'video',
+          name: 'Video-Vertonung und Lokalisierung',
+        },
       ],
     },
     {
       slug: 'architecture',
-      title: 'Architektur, Design und Wartung',
-      short: 'Ein Team verantwortet den gesamten Stack — auch nach dem Start.',
+      title: 'Technische Wartung und Support',
+      short: 'Monitoring, Backups und Updates — und ein Ansprechpartner, wenn etwas stillsteht.',
       body: [
         'Das meiste, was in einem Projekt schiefgeht, geht bei einer Übergabe schief: zwischen Designer und Entwickler, oder zwischen einer Agentur und dem, an den sie still weitervergeben hat.',
         'Architektur, Oberfläche und Betrieb bleiben bei demselben Team, damit es keine Nahtstelle gibt, durch die Dinge fallen.',

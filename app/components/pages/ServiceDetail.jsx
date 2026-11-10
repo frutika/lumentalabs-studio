@@ -100,6 +100,12 @@ export default function ServiceDetail({ lang, slug }) {
                 <p key={para.slice(0, 30)}>{para}</p>
               ))}
 
+              {section.list?.length ? (
+                <ul className="ticks">
+                  {section.list.map((li) => <li key={li}>{li}</li>)}
+                </ul>
+              ) : null}
+
               {section.table ? (
                 <div className="table-wrap">
                   <table className="figures compare">

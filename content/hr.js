@@ -40,7 +40,7 @@ const hr = {
     services: {
       title: 'Usluge razvoja i AI automatizacije',
       description:
-        'Pet problema koje rješavamo: web platforme, AI automatizacija procesa, opisi proizvoda za webshop, video lokalizacija i održavanje s nadzorom.',
+        'Šest problema koje rješavamo: web stranice, aplikacije po mjeri, automatizacija procesa, integracija sustava, AI rješenja i održavanje s nadzorom.',
     },
     work: {
       title: 'Proizvodi koje smo izgradili',
@@ -115,7 +115,7 @@ const hr = {
 
     whatH2: 'Što radimo',
     whatLede:
-      'Pet stvari koje rješavaju konkretan poslovni problem — sporu platformu, ručni posao koji guta vrijeme tima, ili katalog koji je prerastao sadržaj koji ga prati — odrađenih kako treba, od istog tima koji će biti tu i kad ih zatreba mijenjati.',
+      'Šest usluga, od stranice do sustava na kojem posao stoji. Automatizacija je zadatak koji radi po pravilima, integracija su dva sustava koja razmjenjuju podatke, a AI ulazi tamo gdje treba čitati ili pisati tekst.',
 
     quote: ['AI nije naslov. ', 'AI je infrastruktura', ' — ugrađena u sustave koje već koristite, s poslom koji se može izmjeriti.'],
     quoteNote: 'U praksi: proces koji radi svaki dan, a ne demo koji radi jednom.',
@@ -166,6 +166,28 @@ const hr = {
     },
 
     serviceUi: {
+      site: {
+        rows: [
+          ['Mobitel · tablet · računalo', '✓'],
+          ['Google i AI pretraživači', '✓'],
+          ['Kolačići za praćenje', '0'],
+        ],
+      },
+      flow: {
+        head: 'proces · tjedni izvještaj',
+        env: 'automatski',
+        steps: [
+          'Podaci preuzeti iz tri sustava',
+          'Izvještaj složen po predlošku',
+          'Poslan timu e-mailom',
+        ],
+        ready: 'Gotovo — bez ručnog rada',
+      },
+      sync: {
+        head: 'Webshop ⇄ knjigovodstvo',
+        status: 'usklađeno',
+        rows: ['Narudžbe', 'Zalihe', 'Računi'],
+      },
       deploy: {
         head: 'deploy · main',
         env: 'produkcija',
@@ -340,7 +362,7 @@ const hr = {
 
   servicesPage: {
     eyebrow: 'Usluge',
-    h1: 'Pet problema koje rješavamo',
+    h1: 'Šest problema koje rješavamo',
     lede: 'Ako se prepoznate u nekom od njih, javite se. Ako ne, recite nam svoj — možda ga rješavamo, a nismo ga tako nazvali.',
     deeper: 'Kako to izgleda u detalje →',
     gets: 'Što dobivate',
@@ -351,6 +373,20 @@ const hr = {
     closingCta: 'Javite nam se',
 
     problems: [
+      {
+        slug: 'websites',
+        title: 'Stranica postoji, ali ne donosi upite',
+        paragraphs: [
+          'Spora je, izgleda kao kod konkurencije, a obrazac za upit nitko ne ispunjava. Kupac je otišao prije nego što je pročitao što radite.',
+          'Radimo stranice i webshopove koji se učitavaju odmah, rade na svakom zaslonu i na jeziku vaših kupaca, i tehnički su pripremljeni za Google i AI pretraživače. Bez kolačića i praćenja koje ne trebate.',
+        ],
+        gets: [
+          'Stranicu koja se učitava odmah, i na mobitelu',
+          'Tehničku pripremu za Google i AI pretraživače',
+          'Jasan popis onoga što ulazi u cijenu, i onoga što ne ulazi',
+        ],
+        notFor: 'ako vam stranica treba za sutra i po najnižoj mogućoj cijeni, graditelji stranica poput Wixa ili Squarespacea bit će brži i jeftiniji.',
+      },
       {
         slug: 'platforms',
         title: 'Trebate platformu koja neće trebati prepravku za godinu dana',
@@ -363,7 +399,7 @@ const hr = {
           'Jednu odgovornu stranu za sve — od baze do domene',
           'Predaju s dokumentacijom, tako da niste zaključani uz nas',
         ],
-        notFor: 'ako trebate prezentacijsku stranicu od pet podstranica, jeftinije ćete proći s gotovim rješenjem. Reći ćemo vam to odmah.',
+        notFor: 'ako trebate prezentacijsku stranicu ili webshop, aplikacija po mjeri bila bi preskupa — za to je izrada web stranica.',
       },
       {
         slug: 'ai',
@@ -380,32 +416,32 @@ const hr = {
         notFor: 'ako se proces mijenja svaki mjesec, prvo ga treba posložiti. Automatizacija kaosa daje brži kaos.',
       },
       {
-        slug: 'ecommerce',
-        title: 'Tisuće artikala bez opisa — ili s opisima dobavljača',
+        slug: 'integrations',
+        title: 'Isti podatak upisujete u tri sustava',
         paragraphs: [
-          'Katalog raste brže nego što ga netko stigne opisati. Opisi prepisani od dobavljača Google tretira kao duplikat, a strojni prijevod se vidi na prvu.',
-          'Postavljamo proces koji piše opise kroz cijeli katalog, u vašem tonu i s vašim nazivljem, na jeziku tržišta na kojem doista prodajete — ne naknadno preveden.',
+          'Narudžba stigne u webshop, netko je prepiše u knjigovodstvo, pa ručno ažurira zalihe. Svaki prepisani podatak mjesto je za grešku i sat koji nitko ne vidi.',
+          'Povezujemo sustave koje već koristite tako da podatak upišete jednom, a ostali ga preuzmu sami — u jednom smjeru ili u oba.',
         ],
         gets: [
-          'Cijeli katalog pokriven u tjednima, ne mjesecima',
-          'Tekst koji zvuči kao jedan brend, a ne kao tisuću nasumičnih AI odlomaka',
-          'Kontrolu prije objave — ništa ne ide van bez vašeg odobrenja',
+          'Podatak koji se upisuje jednom, ne tri puta',
+          'Zapis svake razmjene, pa se zna gdje je nešto zapelo',
+          'Upozorenje kad veza stane, prije nego što to primijete kupci',
         ],
-        notFor: 'ako imate stotinjak artikala i copywritera koji ih stigne obraditi, ovo vam ne treba.',
+        notFor: 'ako oba sustava već povezuje gotov dodatak, uključite njega. Reći ćemo vam ako postoji.',
       },
       {
-        slug: 'video',
-        title: 'Jedan video, pet tržišta',
+        slug: 'ai-solutions',
+        title: 'Posao koji traži čitanje i pisanje, u opsegu koji nitko ne stigne',
         paragraphs: [
-          'Snimanje po tržištu je najskuplji način da se dobije ista poruka na pet jezika.',
-          'Iz jedne produkcije radimo naraciju, sinkronizaciju, miks i titlove za svaku jezičnu verziju.',
+          'Tisuće artikala bez opisa, video koji govori samo jednim jezikom, PDF-ovi koje netko ručno prepisuje. To su poslovi u kojima AI stvarno štedi vrijeme, jer je posao tekst i jezik.',
+          'Svako od tih rješenja prvo radi na našim proizvodima: Lumenta AI piše opise, Narrator radi naraciju videa, DocuFlow čita račune. Odobrenje prije objave uvijek ostaje kod vas.',
         ],
         gets: [
-          'Sve jezične verzije iz jednog snimanja',
-          'Titlove i naraciju usklađene s tekstom na stranici',
-          'Materijal spreman za objavu, ne sirovi eksport',
+          'Opise proizvoda za cijeli katalog, u vašem tonu i na jeziku tržišta',
+          'Video s naracijom i titlovima za svako tržište, iz jednog snimanja',
+          'Kontrolu prije objave — ništa ne ide van bez vašeg odobrenja',
         ],
-        notFor: 'ako vam treba jedan video na jednom jeziku, lokalna produkcija bit će brža.',
+        notFor: 'ako AI ne štedi mjerljivo vrijeme ili novac, reći ćemo vam da ga ne uvodite.',
       },
       {
         slug: 'architecture',
@@ -436,6 +472,94 @@ const hr = {
    * the same query is the problem, not the fix.
    */
   serviceDetails: [
+    {
+      slug: 'websites',
+      path: 'izrada-web-stranica',
+      title: 'Izrada web stranica i webshopova',
+      description: 'Izrada web stranica i webshopova koji se učitavaju odmah, rade na više jezika i spremni su za Google i AI pretraživače. Jasne cijene i popis onoga što ulazi.',
+      h1: 'Izrada web stranica i webshopova',
+      lede: 'Stranice koje donose upite, a ne samo postoje. Brze na svakom zaslonu, na jeziku vaših kupaca i spremne za tražilice i AI asistente.',
+      intro: [
+        'Stranica koja se sporo učitava i izgleda kao sve ostale gubi posjetitelja prije nego što pročita što radite. Većina toga je tehnička stvar, i većina se da popraviti.',
+        'Dizajniramo za vaš brend, a ne iz predloška, i gradimo tako da je stranica brza, čitljiva na mobitelu i pripremljena za Google. Pripremljena je i za AI asistente poput ChatGPT-a i Claudea, koji sve češće sami odgovore na pitanje umjesto da posjetitelja pošalju na rezultat pretrage.',
+        'Ova stranica izgrađena je na isti način: bez kolačića za praćenje, na tri jezika i s tekstualnom verzijom svake stranice za AI alate.',
+      ],
+      gets: [
+        'Dizajn prilagođen vašem vizualnom identitetu, ne gotov predložak',
+        'Prikaz prilagođen mobitelu, tabletu i računalu',
+        'Tehničku SEO pripremu i pripremu za AI pretraživače (llms.txt i Markdown verzija svake stranice)',
+        'Unos tekstova, slika i kontakt forme koje dostavite',
+        'Analitiku bez kolačića — ili Google Analytics i Search Console, ako ih želite',
+        'Pravila privatnosti i obavijest o kolačićima usklađene s GDPR-om',
+      ],
+      sections: [
+        {
+          h2: 'Što nije u cijeni',
+          paragraphs: [
+            'Da vas ništa ne iznenadi na računu: ovo se plaća zasebno ili ga dostavljate sami.',
+          ],
+          list: [
+            'Domena i hosting — otprilike 30 – 150 € godišnje, ovisno o pružatelju',
+            'Pisanje tekstova (copywriting)',
+            'Profesionalno fotografiranje',
+            'Mjesečno održavanje — pogledajte tehničko održavanje i podršku',
+          ],
+        },
+      ],
+      pricing: {
+        q: 'Koliko košta izrada web stranice?',
+        bands: [
+          {
+            price: 'od 900 €',
+            name: 'Landing stranica',
+            body: 'Jedna stranica s jednim ciljem: predstaviti proizvod, uslugu ili kampanju i od posjeta napraviti upit.',
+            examples: [
+              'Novi obrt ili usluga kojoj treba ozbiljan prvi dojam',
+              'Kampanja ili proizvod s vlastitom adresom',
+              'Restoran, apartman ili lokalna usluga',
+            ],
+            boundary: 'Čim zatreba više stranica ili jezika, riječ je o sljedećem pojasu.',
+          },
+          {
+            price: '1.800 – 4.000 €',
+            name: 'Poslovna stranica (5 – 10 stranica)',
+            body: 'Stranica tvrtke koja treba donositi upite: usluge, reference, blog i kontakt, po potrebi na više jezika.',
+            examples: [
+              'Mala ili srednja tvrtka čija stranica ne donosi ništa',
+              'Uslužna djelatnost kojoj treba stranica za svaku uslugu',
+              'Stranica na dva ili tri jezika za strana tržišta',
+            ],
+            boundary: '',
+          },
+          {
+            price: 'od 3.500 €',
+            name: 'Webshop',
+            body: 'Trgovina s plaćanjem karticama, dostavom i katalogom koji sami uređujete.',
+            examples: [
+              'Prodaja proizvoda s plaćanjem karticama',
+              'Katalog s varijantama, zalihama i načinima dostave',
+              'Webshop s opisima za cijeli katalog (uz paket opisa proizvoda)',
+            ],
+            boundary: 'Kad webshop treba razmjenjivati podatke s knjigovodstvom ili skladištem, to je integracija sustava i nudi se zasebno.',
+          },
+        ],
+        min: 900,
+      },
+      faq: [
+        {
+          q: 'Što ako već imam stranicu?',
+          a: 'Pogledamo što na njoj radi, a što ne. Ponekad je dovoljno popraviti brzinu i tekstove, a ponekad je jeftinije početi ispočetka. Reći ćemo vam što od toga.',
+        },
+        {
+          q: 'Što znači priprema za AI pretraživače?',
+          a: 'ChatGPT, Claude i Perplexity sve češće odgovaraju umjesto Googlea. Stranica im daje sažetak (llms.txt) i čistu tekstualnu verziju svake stranice, pa vas mogu točno citirati. Ova stranica radi isto.',
+        },
+        {
+          q: 'Je li hosting uključen?',
+          a: 'Nije. Domena i hosting plaćaju se zasebno, otprilike 30 – 150 € godišnje. Pomoći ćemo vam da ih odaberete i postavite.',
+        },
+      ],
+    },
     {
       slug: 'platforms',
       path: 'izrada-web-aplikacija',
@@ -496,7 +620,7 @@ const hr = {
         },
         {
           q: 'Radite li i prezentacijske web stranice?',
-          a: 'Ako trebate stranicu od pet podstranica, jeftinije ćete proći s gotovim rješenjem i reći ćemo vam to odmah. Ovo je za sustave koji rastu.',
+          a: 'Radimo, kao zasebnu uslugu s vlastitim cijenama — pogledajte izradu web stranica. Aplikacija po mjeri je za sustave koji trebaju više od stranice.',
         },
         {
           q: 'Što ako već imamo aplikaciju koja ne valja?',
@@ -568,6 +692,71 @@ const hr = {
         {
           q: 'Kad automatizacija nije dobra ideja?',
           a: 'Ako se proces mijenja svaki mjesec, prvo ga treba posložiti. Automatizacija kaosa daje brži kaos.',
+        },
+      ],
+    },
+    {
+      slug: 'integrations',
+      path: 'integracija-sustava',
+      title: 'Integracija poslovnih sustava',
+      description: 'Povezivanje webshopa, knjigovodstva, CRM-a i skladišta tako da podatak upišete jednom, a ostali sustavi ga preuzmu sami.',
+      h1: 'Integracija poslovnih sustava',
+      lede: 'Webshop, knjigovodstvo, CRM i skladište koji sami razmjenjuju podatke. Podatak upisujete jednom.',
+      intro: [
+        'Narudžba stigne u webshop, netko je prepiše u knjigovodstvo, pa ručno ažurira zalihe. Svaki prepisani podatak mjesto je za grešku i sat koji se nigdje ne vidi.',
+        'Povezujemo sustave koje već koristite tako da podatak upišete jednom, a ostali ga preuzmu sami — u jednom smjeru ili u oba, sa zapisom svake razmjene, pa se zna gdje je nešto zapelo.',
+        'Na vlastitom proizvodu to radimo svaki dan: DocuFlow AI eRačune preuzima automatski preko certificiranog informacijskog posrednika, kao strukturirane podatke, bez ičijeg ručnog unosa.',
+      ],
+      pricing: {
+        q: 'Koliko košta integracija sustava?',
+        bands: [
+          {
+            price: 'od 1.500 €',
+            name: 'Jedna veza',
+            body: 'Dva sustava koja razmjenjuju jednu vrstu podataka, preko gotovog API-ja s obje strane.',
+            examples: [
+              'Narudžbe iz webshopa u dostavnu službu',
+              'Novi kupci iz webshopa u CRM ili newsletter',
+              'Potvrde plaćanja natrag u narudžbu',
+            ],
+            boundary: 'Ako to već radi gotov dodatak, reći ćemo vam da uključite njega.',
+          },
+          {
+            price: '3.500 – 8.000 €',
+            name: 'Sinkronizacija s ERP-om ili knjigovodstvom',
+            body: 'Cijene, zalihe, narudžbe i računi koji se usklađuju u oba smjera, s pravilima za ono što se ne slaže.',
+            examples: [
+              'Zalihe i cijene iz ERP-a u webshop',
+              'Narudžbe i računi iz webshopa u knjigovodstvo',
+              'Ulazni eRačuni od posrednika u vaš sustav',
+            ],
+            boundary: '',
+          },
+          {
+            price: 'od 8.000 €',
+            name: 'Više sustava',
+            body: 'Jedan tok podataka kroz nekoliko sustava, s nadzorom i zapisom svake razmjene.',
+            examples: [
+              'Webshop, ERP i naplata u jednom toku',
+              'Više prodajnih kanala sa zajedničkim zalihama',
+            ],
+            boundary: 'Ovakav projekt počinje pregledom sustava koje imate, ne cijenom.',
+          },
+        ],
+        min: 1500,
+      },
+      faq: [
+        {
+          q: 'Što ako jedan od sustava nema API?',
+          a: 'Tada tražimo drugi put — izvoz i uvoz datoteka, e-mail ili posrednika. Ako pouzdanog puta nema, reći ćemo vam prije ponude.',
+        },
+        {
+          q: 'Što kad netko promijeni svoj API?',
+          a: 'Integracija tada stane ili počne griješiti. Zato uz nju preporučujemo održavanje: nadzor primijeti kvar, a mi ga popravimo prije nego što ga primijete kupci.',
+        },
+        {
+          q: 'Koja je razlika između integracije i automatizacije?',
+          a: 'Integracija povezuje dva sustava da razmjenjuju podatke. Automatizacija preuzima cijeli zadatak koji netko radi ručno — često uključuje integraciju, ali i pravila, odluke i obavijesti.',
         },
       ],
     },
@@ -850,16 +1039,19 @@ const hr = {
   // not here: they come from serviceDetails[].pricing.min and videoPage.priceMin
   // through servicePriceFor(), so there is one number to change, not three.
   prices: {
+    packagesLabel: 'Paketi',
     from: 'od {price}',
     perMonth: '/ mj',
     label: 'Cijene',
     h2: 'Okvirne cijene',
-    lede: 'Pet usluga, pet početnih iznosa. Na stranici svake usluge piše što ulazi u koji raspon i gdje počinje sljedeći.',
+    lede: 'Šest usluga, šest početnih iznosa. Na stranici svake usluge piše što ulazi u koji raspon i gdje počinje sljedeći.',
     more: 'Okvirna cijena',
     cta: 'Zatražite ponudu',
   },
 
   videoPage: {
+    // Page title, now that video is a package rather than a card of its own.
+    title: 'Naracija i lokalizacija videa',
     // Lowest figure in pricing[] below, as a number for servicePriceFor().
     priceMin: 450,
     eyebrow: 'Usluge',
@@ -929,8 +1121,18 @@ const hr = {
 
   services: [
     {
+      slug: 'websites',
+      title: 'Web stranice i digitalne platforme',
+      short: 'Stranice i webshopovi koji se učitavaju odmah, rade na jeziku vaših kupaca i spremni su za Google i AI pretraživače.',
+      body: [
+        'Većina stranica malih tvrtki izgubi posjetitelja prije prve rečenice: spora je, izgleda kao kod konkurencije, a obrazac za upit nitko ne ispunjava.',
+        'Radimo stranice i webshopove koji se učitavaju odmah na svakom zaslonu, na jezicima vaših kupaca, i tehnički su pripremljeni za Google i za AI asistente koji sve češće odgovaraju umjesto njega.',
+        'Što ulazi u cijenu, a što ne, zapisano je prije nego što počnemo — bez iznenađenja na računu.',
+      ],
+    },
+    {
       slug: 'platforms',
-      title: 'Web platforme i aplikacije',
+      title: 'Razvoj prilagođenih aplikacija',
       short: 'Od ideje do produkcije — objavljeno, nadzirano i spremno za stvarne korisnike prvog dana.',
       body: [
         'Većina projekata ne propadne na ideji. Propadnu na dionici između dizajna koji izgleda dobro i sustava koji preživi prvih sto korisnika.',
@@ -940,38 +1142,49 @@ const hr = {
     },
     {
       slug: 'ai',
-      title: 'AI alati i integracije',
-      short: 'Generiranje sadržaja i automatizacija procesa, ugrađeni u sustave koje već koristite.',
+      title: 'Automatizacija poslovnih procesa',
+      short: 'Ručni posao koji se ponavlja svaki tjedan preuzima proces — u sustavima koje tim već koristi.',
       body: [
-        'AI je koristan tek kad ima konkretan posao i mjerljiv rezultat. Krećemo od posla, ne od modela.',
-        'Generiranje sadržaja koje drži vaš ton na svakoj stranici. Automatizacija koja uklanja ponavljajući posao koji nitko ne bi trebao raditi ručno.',
-        'Ulazi u alate koje vaš tim ionako otvara svako jutro. Nitko ne mora učiti novo sučelje da bi imao koristi.',
+        'Netko svaki tjedan prepisuje podatke iz jednog sustava u drugi. Netko ručno slaže izvještaj koji svaki mjesec izgleda isto. To nije problem ljudi, nego procesa.',
+        'Krećemo od jednog konkretnog zadatka i mjerimo koliko sati oslobađa. AI ulazi tamo gdje se isplati, a ne tamo gdje dobro zvuči.',
+        'Proces živi u alatima koje tim ionako otvara svako jutro. Nitko ne mora učiti novo sučelje.',
       ],
     },
     {
-      slug: 'ecommerce',
-      title: 'Automatizacija sadržaja za e-trgovinu',
-      short: 'Opisi, kategorije i kampanje u opsegu koji stvarni katalog zahtijeva.',
+      slug: 'integrations',
+      title: 'Integracija različitih sustava',
+      short: 'Webshop, knjigovodstvo, CRM i skladište koji sami razmjenjuju podatke, umjesto da ih netko prepisuje.',
       body: [
-        'Trgovina s četiri tisuće artikala ne može se pisati ručno, a trgovina koju napiše generički model čita se kao i svaka druga.',
-        'Gradimo procese koji generiraju u opsegu cijelog kataloga, a ostaju unutar vašeg tona, vaše terminologije i jezika na kojem vaši kupci doista kupuju.',
-        'Nama to nije teorija. To je proizvod koji sami vrtimo.',
+        'Narudžba stigne u webshop, netko je prepiše u knjigovodstvo, pa ručno ažurira zalihe. Svaki prepisani podatak mjesto je za grešku i sat koji nitko ne vidi.',
+        'Povezujemo sustave koje već koristite tako da podatak upišete jednom, a ostali ga preuzmu sami — u jednom smjeru ili u oba.',
+        'Kad jedna strana promijeni svoj API, integracija se mijenja s njom. Za to služi održavanje.',
       ],
     },
     {
-      slug: 'video',
-      title: 'Naracija i lokalizacija videa',
-      short: 'Jedan film, izgovoren i titlovan za svako tržište na kojem prodajete.',
+      slug: 'ai-solutions',
+      title: 'AI rješenja i integracije',
+      short: 'AI tamo gdje je posao čitanje i pisanje: opisi za cijeli katalog, naracija videa na svakom jeziku, dokumenti koji se sami obrade.',
       body: [
-        'Snimke su skupi dio, a većina tvrtki već nešto ima — film o proizvodu, obilazak, reel koji je netko montirao lani. Ono što nemaju je taj film koji govori svakom tržištu na kojem prodaju.',
-        'Pišemo naraciju, snimamo je glasom, miksamo je s onim zvukom koji snimka već nosi i isporučujemo titlove u formatu koji svaka platforma stvarno prihvaća.',
-        'Isti scenarij postaje onoliko jezičnih verzija koliko trebate, iz jednog produkcijskog prolaza umjesto jednog snimanja po tržištu.',
+        'Tisuće artikala bez opisa, video koji govori samo jednim jezikom, PDF-ovi koje netko ručno prepisuje. To su poslovi u kojima AI stvarno štedi vrijeme, jer je posao tekst i jezik.',
+        'Svako od tih rješenja prvo radi na našim proizvodima: Lumenta AI piše opise, Narrator radi naraciju videa, DocuFlow čita račune.',
+        'Odobrenje prije objave uvijek ostaje kod vas.',
+      ],
+      // Packages with their own pages and prices; this card is their umbrella.
+      packages: [
+        {
+          slug: 'ecommerce',
+          name: 'Opisi proizvoda za webshop',
+        },
+        {
+          slug: 'video',
+          name: 'Naracija i lokalizacija videa',
+        },
       ],
     },
     {
       slug: 'architecture',
-      title: 'Arhitektura, dizajn i održavanje',
-      short: 'Jedan tim drži cijeli sustav od početka do kraja — i nakon lansiranja.',
+      title: 'Tehničko održavanje i podrška',
+      short: 'Nadzor, backupi i nadogradnje — i jedan kontakt kad nešto stane.',
       body: [
         'Većina onoga što u projektu pođe po zlu pođe po zlu na primopredaji: između dizajnera i programera, ili između agencije i onoga kome je tiho proslijedila posao.',
         'Arhitekturu, sučelje i pogon držimo u istom timu, pa nema šava kroz koji stvari propadaju.',

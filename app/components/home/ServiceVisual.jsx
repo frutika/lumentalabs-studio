@@ -32,7 +32,48 @@ export default function ServiceVisual({ slug, ui }) {
         </div>
       );
     }
+    case 'websites': {
+      // Three plain facts about the kind of site we build, as a spec sheet.
+      const t = ui.site;
+      return (
+        <dl className="mini mini-table">
+          {t.rows.map(([label, value]) => (
+            <div key={label}>
+              <dt>{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
+      );
+    }
     case 'ai': {
+      // Process automation: a weekly job that now runs by itself.
+      const t = ui.flow;
+      return (
+        <div className="mini pad">
+          <div className="mini-head"><span>{t.head}</span><span>{t.env}</span></div>
+          <ul>
+            {t.steps.map((s) => <li key={s}><Tick />{s}</li>)}
+            <li className="ready"><span className="status-dot" aria-hidden="true" />{t.ready}</li>
+          </ul>
+        </div>
+      );
+    }
+    case 'integrations': {
+      const t = ui.sync;
+      return (
+        <div className="mini pad">
+          <div className="mini-head">
+            <span>{t.head}</span>
+            <span className="ok"><span className="status-dot" aria-hidden="true" />{t.status}</span>
+          </div>
+          <ul>
+            {t.rows.map((r) => <li key={r}><Tick />{r}</li>)}
+          </ul>
+        </div>
+      );
+    }
+    case 'ai-solutions': {
       const t = ui.generator;
       return (
         <div className="mini pad">
