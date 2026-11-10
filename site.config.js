@@ -81,6 +81,8 @@ export const contentUpdated = {
   '/work': '2026-10-03',
   '/contact': '2026-09-26',
   '/about': '2026-11-08',
+  // How client data is handled. Describes the server as configured on this day.
+  '/security': '2026-11-10',
 
   // The five service pages, by their language-independent key rather than by
   // slug — the slug differs per language and the date does not.
@@ -114,8 +116,9 @@ export const contentUpdated = {
   '/vodici/automatizacija-objava-na-drustvenim-mrezama': '2026-09-26',
   '/vodici/ai-korisnicka-podrska-rag': '2026-09-26',
 
-  // Legal copy tracks legal.updated below; kept in step by hand.
-  '/privacy': '2026-10-07',
+  // Legal copy tracks legal.updated below; kept in step by hand. /privacy is
+  // the exception: its Croatian and German translations went up on this day.
+  '/privacy': '2026-11-10',
   '/terms': '2026-10-07',
   '/cookies': '2026-08-20',
   '/cookies/manage': '2026-08-20',

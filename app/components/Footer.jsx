@@ -46,14 +46,16 @@ export default function Footer({ lang }) {
           </div>
         </nav>
       </div>
-      {/* The legal pages are English-only for now, so they are always linked at
-          the root rather than under a language prefix that does not exist. */}
+      {/* Security and privacy exist in every language. Terms and cookies are
+          English-only for now, so they are always linked at the root rather
+          than under a language prefix that does not exist. */}
       <div className="wrap">
         <nav className="foot-legal" aria-label={d.a11y.legalNav}>
           {/* German visitors look for the word Impressum before they trust a
               site. The operator details it stands for already live in /terms. */}
           {lang === 'de' ? <Link href="/terms#operator" hrefLang="en">Impressum</Link> : null}
-          <Link href="/privacy" hrefLang="en">Privacy</Link>
+          <Link href={p('/security')}>{f.security}</Link>
+          <Link href={p('/privacy')}>{f.privacy}</Link>
           <Link href="/terms" hrefLang="en">Terms</Link>
           <Link href="/cookies" hrefLang="en">Cookies</Link>
           <Link href="/cookies/manage" hrefLang="en">Manage cookies</Link>

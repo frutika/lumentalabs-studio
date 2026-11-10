@@ -539,6 +539,8 @@ button.btn { font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; 
 .prose a:hover { background-size: 100% 1px; }
 .prose ul { color: var(--muted); margin: 0 0 1.2rem; padding-left: 1.2rem; }
 .prose ul li { margin-bottom: .5rem; }
+/* A table inside running text needs air below it as well as above. */
+.prose .table-wrap { margin: 1.2rem 0 1.6rem; }
 .prose pre {
   background: var(--panel); border: 1px solid var(--line); border-radius: 9px;
   padding: 1rem 1.1rem; overflow-x: auto; margin: 0 0 1.4rem;

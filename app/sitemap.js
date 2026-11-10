@@ -14,7 +14,10 @@ import {
 } from '../content';
 
 // Marketing pages exist in every language.
-const TRANSLATED = ['/', '/about', '/services', '/services/video', '/work', '/contact'];
+const TRANSLATED = ['/', '/about', '/services', '/services/video', '/work', '/contact', '/security', '/privacy'];
+
+// Translated, but not a page anyone should land on from search.
+const LOW_PRIORITY = { '/privacy': 0.3 };
 
 // Pages published in one language only, listed once and without alternates.
 // Driven by localesFor rather than a hardcoded language: the legal pages are
@@ -27,7 +30,6 @@ const SINGLE_LOCALE = [
   { path: '/vodici', priority: 0.7 },
   ...vodiciFor().map((g) => ({ path: `/vodici/${g.slug}`, priority: 0.8 })),
 
-  { path: '/privacy', priority: 0.3 },
   { path: '/terms', priority: 0.3 },
   { path: '/cookies', priority: 0.3 },
   { path: '/cookies/manage', priority: 0.3 },
@@ -54,7 +56,7 @@ export default function sitemap() {
       url: urlFor(lang, path),
       ...lastmod(path),
       changeFrequency: path === '/' ? 'monthly' : 'yearly',
-      priority: path === '/' ? 1 : 0.7,
+      priority: path === '/' ? 1 : LOW_PRIORITY[path] ?? 0.7,
       // Telling search engines about every language version of this page is what
       // stops them treating the translations as thin duplicates.
       alternates: {
