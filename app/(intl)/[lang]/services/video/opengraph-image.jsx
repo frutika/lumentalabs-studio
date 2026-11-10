@@ -14,7 +14,7 @@ export default async function Image({ params }) {
   const d = getDict(lang);
   return ogCard({
     eyebrow: d.servicesPage.eyebrow,
-    title: d.services.find((s) => s.slug === 'video').title,
+    title: d.videoPage.title,
     text: d.pageMeta.video.description,
   });
 }

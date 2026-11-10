@@ -1015,6 +1015,8 @@ a.node:hover { border-color: var(--faint); }
 .uptime-head { display: flex; justify-content: space-between; gap: 12px; font-size: 11px; color: var(--faint); }
 .uptime-head .ok { display: inline-flex; align-items: center; gap: 6px; color: var(--live); }
 .uptime-head .status-dot { width: 6px; height: 6px; }
+.mini-head .ok { display: inline-flex; align-items: center; gap: 6px; color: var(--live); }
+.mini-head .ok .status-dot { width: 6px; height: 6px; }
 .uptime { display: flex; gap: 3px; margin-top: 12px; }
 .uptime span { flex: 1; height: 22px; border-radius: 2px; background: #2F5E46; }
 .uptime span.now { background: var(--live); }

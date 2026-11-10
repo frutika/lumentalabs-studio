@@ -203,6 +203,19 @@ export function servicePriceFor(lang, slug) {
     first = detail?.pricing?.bands?.[0]?.name;
     href = detail ? `/services/${detail.path}#cijena` : null;
   }
+  // An umbrella card (AI solutions) has no bands of its own: it starts where
+  // the cheapest of its packages starts, and names the packages instead.
+  const umbrella = d.services.find((s) => s.slug === slug);
+  if (umbrella?.packages?.length) {
+    const floors = umbrella.packages
+      .map((pkg) => (pkg.slug === 'video'
+        ? d.videoPage?.priceMin
+        : serviceDetailByKey(lang, pkg.slug)?.pricing?.min))
+      .filter(Boolean);
+    min = floors.length ? Math.min(...floors) : undefined;
+    first = umbrella.packages.map((pkg) => pkg.name).join(' · ');
+    href = `/services#${slug}`;
+  }
   if (!min || !href) return null;
   const amount = new Intl.NumberFormat(NUMBER_LOCALE[lang] || 'en-GB', {
     style: 'currency', currency: 'EUR', maximumFractionDigits: 0,

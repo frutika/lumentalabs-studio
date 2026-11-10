@@ -152,8 +152,8 @@ export default function Home({ lang }) {
             <h2>{h.whatH2}</h2>
             <p>{h.whatLede}</p>
           </div>
-          <div className="svc-row">{services.slice(0, 2).map(serviceCard)}</div>
-          <div className="svc-row three">{services.slice(2).map(serviceCard)}</div>
+          <div className="svc-row three">{services.slice(0, 3).map(serviceCard)}</div>
+          <div className="svc-row three">{services.slice(3).map(serviceCard)}</div>
         </div>
       </section>
 
