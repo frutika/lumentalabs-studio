@@ -45,6 +45,7 @@ export default function EnglishLayout({ children }) {
   return (
     <html lang="en" className={fontVars}>
       <body>
+        <link rel="ard" href="/.well-known/ard.json" />
         <SkipLink lang={DEFAULT_LOCALE} />
         <VisitSource />
         <WebMcpTools />

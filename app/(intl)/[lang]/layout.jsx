@@ -55,6 +55,7 @@ export default async function IntlLayout({ children, params }) {
   return (
     <html lang={getDict(lang).htmlLang} className={fontVars}>
       <body>
+        <link rel="ard" href="/.well-known/ard.json" />
         <SkipLink lang={lang} />
         <VisitSource />
         <WebMcpTools />
