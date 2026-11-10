@@ -95,7 +95,7 @@ export const security = {
         h2: 'AI i vaši podaci',
         paragraphs: [
           'AI koristimo samo u projektima u kojima je to dogovoreno, i samo na podacima koji su za taj posao potrebni. Koji podaci idu modelu piše u ponudi.',
-          'Modele pozivamo preko poslovnog API-ja tvrtke Anthropic. Prema njihovim uvjetima za poslovne korisnike, podaci poslani preko API-ja ne koriste se za treniranje modela. Obrada se odvija u SAD-u, a prijenos je uređen ugovorom o obradi podataka sa standardnim ugovornim klauzulama.',
+          'Modele pozivamo preko poslovnog API-ja tvrtke Anthropic. Prema njihovim uvjetima za poslovne korisnike, podaci poslani preko API-ja ne koriste se za treniranje modela. Obrada se odvija u SAD-u, a prijenos se temelji na odluci o primjerenosti (EU–US Data Privacy Framework) ili na standardnim ugovornim klauzulama Europske komisije.',
           'Ako vaši podaci ne smiju napustiti Europsku uniju, recite to na početku. Tada AI dio radimo preko pružatelja koji obrađuje unutar EU-a, ili ga ne radimo.',
           'Rezultat AI obrade ne objavljuje se sam od sebe: odobrenje ostaje kod vas.',
         ],
@@ -236,7 +236,7 @@ export const security = {
         h2: 'AI and your data',
         paragraphs: [
           'We use AI only in projects where that was agreed, and only on the data that work needs. Which data goes to the model is written in the proposal.',
-          'We call the models through Anthropic’s commercial API. Under their terms for business customers, data sent through the API is not used to train models. Processing takes place in the USA, and the transfer is governed by a data processing agreement with standard contractual clauses.',
+          'We call the models through Anthropic’s commercial API. Under their terms for business customers, data sent through the API is not used to train models. Processing takes place in the USA, and the transfer relies on the adequacy decision (EU–US Data Privacy Framework) or on the European Commission\u2019s standard contractual clauses.',
           'If your data must not leave the European Union, say so at the start. We then do the AI part through a provider that processes inside the EU, or we do not do it.',
           'The result of AI processing is never published by itself: approval stays with you.',
         ],
@@ -377,7 +377,7 @@ export const security = {
         h2: 'KI und Ihre Daten',
         paragraphs: [
           'KI setzen wir nur in Projekten ein, in denen das vereinbart ist, und nur für die Daten, die diese Arbeit braucht. Welche Daten an das Modell gehen, steht im Angebot.',
-          'Die Modelle rufen wir über die kommerzielle API von Anthropic auf. Nach deren Bedingungen für Geschäftskunden werden über die API gesendete Daten nicht zum Training von Modellen verwendet. Die Verarbeitung findet in den USA statt; die Übermittlung ist durch einen Auftragsverarbeitungsvertrag mit Standardvertragsklauseln geregelt.',
+          'Die Modelle rufen wir über die kommerzielle API von Anthropic auf. Nach deren Bedingungen für Geschäftskunden werden über die API gesendete Daten nicht zum Training von Modellen verwendet. Die Verarbeitung findet in den USA statt; die Übermittlung stützt sich auf den Angemessenheitsbeschluss (EU–US Data Privacy Framework) oder auf die Standardvertragsklauseln der Europäischen Kommission.',
           'Dürfen Ihre Daten die Europäische Union nicht verlassen, sagen Sie es zu Beginn. Dann setzen wir den KI-Teil über einen Anbieter um, der innerhalb der EU verarbeitet, oder wir setzen ihn nicht um.',
           'Das Ergebnis einer KI-Verarbeitung wird nie von selbst veröffentlicht: Die Freigabe bleibt bei Ihnen.',
         ],
