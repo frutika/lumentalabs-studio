@@ -1160,6 +1160,39 @@ a.node:hover { border-color: var(--faint); }
 #reel .play-dot { width: 46px; height: 46px; }
 @media (max-width: 640px) { #reel .reel-card { min-height: 460px; } }
 
+/* ---------- entry prices (home #cijene, service cards, /services) ---------- */
+.svc .svc-price { margin-top: 14px; font-family: var(--mono); font-size: 13px; color: var(--accent); }
+.price-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.price-list li { border-bottom: 1px solid var(--line); }
+.price-list a {
+  display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) 13rem 9.5rem;
+  align-items: baseline; gap: 8px 28px; padding: 22px 4px; text-decoration: none;
+}
+.price-name { font-size: 20px; font-weight: 600; letter-spacing: -.025em; line-height: 1.25; }
+.price-first { color: var(--muted); font-size: 15px; }
+.price-from {
+  font-family: var(--serif); font-size: clamp(28px, 3vw, 38px); line-height: 1;
+  letter-spacing: -.02em; color: var(--accent); white-space: nowrap; text-align: right;
+}
+.price-more { font-family: var(--mono); font-size: 12px; color: var(--faint); white-space: nowrap; text-align: right; }
+.price-list a:hover .price-name, .price-list a:hover .price-more { color: var(--accent); }
+.price-list a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+@media (max-width: 760px) {
+  .price-list a { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 16px; padding: 20px 0; }
+  .price-name { grid-column: 1; }
+  .price-from { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+  .price-first { grid-column: 1; }
+  .price-more { grid-column: 1 / -1; }
+}
+.price-note { margin: 22px 0 28px; max-width: 46em; color: var(--faint); font-size: 14px; }
+.svc-price-line {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px;
+  margin-top: 1.8rem; padding-top: 1.2rem; border-top: 1px solid var(--line);
+}
+.svc-price-line strong { font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1; color: var(--accent); }
+.svc-price-line span { color: var(--muted); }
+.svc-price-line a { margin-left: auto; font-size: 15px; }
+
 /* ---------- write-ups ---------- */
 .more-link { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 15px; text-decoration: none; }
 .more-link:hover { color: var(--accent); }

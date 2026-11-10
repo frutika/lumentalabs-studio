@@ -174,6 +174,43 @@ export function serviceDetailsFor(lang) {
   });
 }
 
+/**
+ * The entry price of one service, for the home page and /services: the lowest
+ * figure from the same bands the detail page prints, so the "from" here can
+ * never disagree with the page it links to. Video keeps its bands on its own
+ * page (videoPage), so its floor is read from there. null when a language has
+ * no figure for that service — the caller then shows nothing rather than a
+ * made-up number.
+ */
+const NUMBER_LOCALE = { hr: 'hr-HR', en: 'en-GB', de: 'de-DE' };
+
+export function servicePriceFor(lang, slug) {
+  const d = getDict(lang);
+  const pr = d.prices;
+  if (!pr) return null;
+  let min;
+  let unit;
+  let first;
+  let href;
+  if (slug === 'video') {
+    min = d.videoPage?.priceMin;
+    first = d.videoPage?.pricing?.[0]?.name;
+    href = '/services/video#cijena';
+  } else {
+    const detail = serviceDetailByKey(lang, slug);
+    min = detail?.pricing?.min;
+    unit = detail?.pricing?.unit;
+    first = detail?.pricing?.bands?.[0]?.name;
+    href = detail ? `/services/${detail.path}#cijena` : null;
+  }
+  if (!min || !href) return null;
+  const amount = new Intl.NumberFormat(NUMBER_LOCALE[lang] || 'en-GB', {
+    style: 'currency', currency: 'EUR', maximumFractionDigits: 0,
+  }).format(min);
+  const from = pr.from.replace('{price}', amount);
+  return { from: unit === 'MON' ? `${from} ${pr.perMonth}` : from, first, href };
+}
+
 /** Looks a page up by the slug that appears in the URL, in that language. */
 export function serviceDetailFor(lang, path) {
   return serviceDetailsFor(lang).find((s) => s.path === path);

@@ -8,7 +8,7 @@ import ServiceVisual from '../home/ServiceVisual';
 import AgentRun from '../home/AgentRun';
 import TileArt from '../home/TileArt';
 import { lastWordEm } from '../text';
-import { getDict, localePath, servicesFor, worksFor, reelFor, postsFor } from '../../../content';
+import { getDict, localePath, servicesFor, servicePriceFor, worksFor, reelFor, postsFor } from '../../../content';
 import {
   organizationSchema,
   websiteSchema,
@@ -39,7 +39,12 @@ export default function Home({ lang }) {
   const d = getDict(lang);
   const h = d.home;
   const p = (path) => localePath(lang, path);
-  const services = servicesFor(lang);
+  // Every card carries its entry price: "what does it cost" is the question a
+  // buyer has before any other, and the answer already exists on the detail
+  // pages — it just was not anywhere on the page most people land on.
+  const services = servicesFor(lang).map((s) => ({ ...s, price: servicePriceFor(lang, s.slug) }));
+  const priced = services.filter((s) => s.price);
+  const pr = d.prices;
   const works = worksFor(lang);
   const reel = reelFor(lang);
   // Same gate as everything else that does not exist in every language: no
@@ -57,6 +62,7 @@ export default function Home({ lang }) {
         <span className="num">{s.num}</span>
         <h3><Link href={serviceHref(s)}>{s.title}</Link></h3>
         <p>{s.short}</p>
+        {s.price ? <p className="svc-price">{s.price.from}</p> : null}
       </div>
       <ServiceVisual slug={s.slug} ui={h.serviceUi} />
     </article>
@@ -150,6 +156,34 @@ export default function Home({ lang }) {
           <div className="svc-row three">{services.slice(2).map(serviceCard)}</div>
         </div>
       </section>
+
+      {pr && priced.length ? (
+        <section className="h-sec ruled" id="cijene" aria-labelledby="cijene-h2">
+          <div className="wrap">
+            <div className="h-head">
+              <div>
+                <p className="label hot">{pr.label}</p>
+                <h2 id="cijene-h2">{pr.h2}</h2>
+              </div>
+              <p>{pr.lede}</p>
+            </div>
+            <ul className="price-list">
+              {priced.map((s) => (
+                <li key={s.slug}>
+                  <Link href={p(s.price.href)}>
+                    <span className="price-name">{s.title}</span>
+                    <span className="price-first">{s.price.first}</span>
+                    <span className="price-from">{s.price.from}</span>
+                    <span className="price-more">{pr.more} <Arrow /></span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className="price-note">{d.serviceDetailPage.vatNote}</p>
+            <Link className="btn" href={p('/contact')}>{pr.cta} <Arrow /></Link>
+          </div>
+        </section>
+      ) : null}
 
       <section className="stack" id="stack">
         <div className="wrap h-head">

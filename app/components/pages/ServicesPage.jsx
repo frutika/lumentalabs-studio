@@ -2,7 +2,7 @@ import Link from 'next/link';
 import ClosingCta from '../ClosingCta';
 import ServiceVisual from '../home/ServiceVisual';
 import { PageTitle } from '../text';
-import { getDict, localePath, servicesFor, serviceDetailPath } from '../../../content';
+import { getDict, localePath, servicesFor, servicePriceFor, serviceDetailPath } from '../../../content';
 
 export default function ServicesPage({ lang }) {
   const d = getDict(lang);
@@ -19,6 +19,9 @@ export default function ServicesPage({ lang }) {
   // search engines can only read as part of this page, never rank on its own.
   const deeperHref = (slug) =>
     slug === 'video' ? '/services/video' : serviceDetailPath(lang, slug);
+
+  const prices = Object.fromEntries(items.map((item) => [item.slug, servicePriceFor(lang, item.slug)]));
+  const price = (slug) => prices[slug];
 
   return (
     <>
@@ -65,6 +68,14 @@ export default function ServicesPage({ lang }) {
               ) : null}
               {item.notFor ? (
                 <p className="not-for"><strong>{d.servicesPage.notFor}</strong> {item.notFor}</p>
+              ) : null}
+              {/* The entry price, with a link to the bands that explain it. */}
+              {price(item.slug) ? (
+                <p className="svc-price-line">
+                  <strong>{price(item.slug).from}</strong>
+                  <span>{price(item.slug).first}</span>
+                  <Link href={p(price(item.slug).href)}>{d.prices.more} <span aria-hidden="true">→</span></Link>
+                </p>
               ) : null}
             </div>
           </div>

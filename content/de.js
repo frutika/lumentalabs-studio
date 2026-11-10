@@ -752,7 +752,22 @@ const de = {
     },
   },
 
+  // Entry prices for the home page and /services. The figures themselves are
+  // not here: they come from serviceDetails[].pricing.min and videoPage.priceMin
+  // through servicePriceFor(), so there is one number to change, not three.
+  prices: {
+    from: 'ab {price}',
+    perMonth: '/ Mon.',
+    label: 'Preise',
+    h2: 'Was es kostet',
+    lede: 'Fünf Leistungen, fünf Einstiegspreise. Auf der Seite jeder Leistung steht, was in welche Spanne fällt und wo die nächste beginnt.',
+    more: 'Preise im Detail',
+    cta: 'Angebot anfragen',
+  },
+
   videoPage: {
+    // Lowest figure in pricing[] below, as a number for servicePriceFor().
+    priceMin: 450,
     eyebrow: 'Leistungen',
     pricingH2: 'Was es kostet',
     // Siehe die Notiz in hr.js — pro Sprache statt als Paket.
