@@ -77,6 +77,8 @@ const en = {
     about: 'About',
     resources: 'Resources',
     contact: 'Contact',
+    security: 'Security and data',
+    privacy: 'Privacy',
     guides: 'Free guides (HR)',
     docuflowChannel: 'DocuFlow on WhatsApp (HR)',
     status: 'All systems normal',

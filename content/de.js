@@ -62,6 +62,8 @@ const de = {
     about: 'Über uns',
     resources: 'Ressourcen',
     contact: 'Kontakt',
+    security: 'Sicherheit und Daten',
+    privacy: 'Datenschutz',
     guides: 'Kostenlose Leitfäden (HR)',
     docuflowChannel: 'DocuFlow auf WhatsApp (HR)',
     status: 'Alle Systeme normal',

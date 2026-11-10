@@ -14,7 +14,7 @@ export const getDict = (lang) => dicts[lang] || en;
 export const isLocale = (lang) => LOCALES.includes(lang);
 
 /**
- * Not every page exists in every language. The legal pages are English-only, so
+ * Not every page exists in every language. Terms and cookies are English-only, so
  * both the hreflang cluster and the language switcher have to narrow to what
  * actually got built — otherwise they advertise URLs that 404, and x-default
  * points at a page that isn't there.
@@ -23,7 +23,6 @@ export const isLocale = (lang) => LOCALES.includes(lang);
  */
 const ROUTE_LOCALES = {
   '/vodici': ['hr'],
-  '/privacy': ['en'],
   '/terms': ['en'],
   '/cookies': ['en'],
   '/cookies/manage': ['en'],

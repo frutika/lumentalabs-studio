@@ -1,13 +1,15 @@
 import Link from 'next/link';
 import { site, legal } from '../../../site.config';
 import { Field, PendingNotice } from '../../components/LegalIdentity';
-import { enOnlyMeta } from '../../../content';
+import { metaFor, DEFAULT_LOCALE } from '../../../content';
 
-export const metadata = enOnlyMeta(
-  '/privacy',
-  'Privacy',
-  'What this site collects, what it does not, and what rights you have.'
-);
+// Translated into Croatian and German in content/legal.js — the three must
+// change together.
+export const metadata = metaFor(DEFAULT_LOCALE, '/privacy', {
+  title: 'Privacy',
+  description: 'What this site collects, what it does not, and what rights you have.',
+  ogType: 'article',
+});
 
 export default function Privacy() {
   return (
@@ -132,7 +134,8 @@ export default function Privacy() {
           </p>
 
           <p className="see-also">
-            See also: <Link href="/cookies">Cookies</Link> · <Link href="/terms">Terms</Link>
+            See also: <Link href="/security">Security and data</Link> ·{' '}
+            <Link href="/cookies">Cookies</Link> · <Link href="/terms">Terms</Link>
           </p>
         </div>
       </section>

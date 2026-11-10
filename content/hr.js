@@ -77,6 +77,8 @@ const hr = {
     about: 'O nama',
     resources: 'Resursi',
     contact: 'Kontakt',
+    security: 'Sigurnost i podaci',
+    privacy: 'Privatnost',
     guides: 'Besplatni vodiči',
     docuflowChannel: 'DocuFlow na WhatsAppu',
     status: 'Svi sustavi rade normalno',
