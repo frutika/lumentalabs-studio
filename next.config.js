@@ -3,9 +3,10 @@
 // the value in ^...$ itself.
 const WANTS_MARKDOWN = { type: 'header', key: 'accept', value: '(?:(?!text/html).)*text/markdown.*' };
 
-// Each home page advertises the summary for agents and its own Markdown version.
+// Each home page advertises the summary for agents, its own Markdown version
+// and the discovery manifest.
 const homeLink = (markdownPath) =>
-  `</llms.txt>; rel="describedby"; type="text/plain", <${markdownPath}>; rel="alternate"; type="text/markdown"`;
+  `</llms.txt>; rel="describedby"; type="text/plain", <${markdownPath}>; rel="alternate"; type="text/markdown", </.well-known/ard.json>; rel="ard"; type="application/json"`;
 
 /** @type {import('next').NextConfig} */
 module.exports = {
