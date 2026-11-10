@@ -846,7 +846,22 @@ const hr = {
     },
   },
 
+  // Entry prices for the home page and /services. The figures themselves are
+  // not here: they come from serviceDetails[].pricing.min and videoPage.priceMin
+  // through servicePriceFor(), so there is one number to change, not three.
+  prices: {
+    from: 'od {price}',
+    perMonth: '/ mj',
+    label: 'Cijene',
+    h2: 'Okvirne cijene',
+    lede: 'Pet usluga, pet početnih iznosa. Na stranici svake usluge piše što ulazi u koji raspon i gdje počinje sljedeći.',
+    more: 'Okvirna cijena',
+    cta: 'Zatražite ponudu',
+  },
+
   videoPage: {
+    // Lowest figure in pricing[] below, as a number for servicePriceFor().
+    priceMin: 450,
     eyebrow: 'Usluge',
     pricingH2: 'Okvirna cijena',
     // Priced by language, because that is how the work actually costs: the
