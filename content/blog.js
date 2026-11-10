@@ -23,6 +23,118 @@
 
 const posts = [
   {
+    slug: 'opis-proizvoda-shopify-woocommerce-etsy',
+    lang: 'hr',
+    cover: 'platform-fields',
+    title: 'Isti proizvod, tri platforme: što Shopify, WooCommerce i Etsy traže od opisa',
+    description:
+      'Shopify, WooCommerce i Etsy imaju različita polja za opis proizvoda i različito ih koriste u pretrazi. Što upisati u koje polje na kojoj platformi i koje se greške najčešće ponavljaju.',
+    date: '2026-11-10',
+    tags: ['Webshop', 'Opisi proizvoda', 'SEO'],
+    excerpt:
+      'Opis koji odlično radi na Shopifyju na Etsyju jedva pomaže, a na WooCommerceu često ostavi prazno najvažnije polje na stranici. Platforma određuje gdje tekst čita kupac, a gdje tražilica.',
+    body: [
+      {
+        p: 'Opis proizvoda nije jedan tekst. Svaka platforma ima svoja polja, i svako od njih netko čita: kupac koji odlučuje, Google ili tražilica same platforme. Isti odlomak zalijepljen u sva polja obično dobro služi samo jednom od njih.',
+      },
+      {
+        p: 'Ovo je pregled za tri platforme koje male trgovine najčešće koriste: što koje polje radi i što u njega upisati. Uz svaku platformu je poveznica na generator u Lumenti AI, našem alatu. Na svakoj stranici je demo koji napiše jedan opis bez registracije, pa možete usporediti s onim što trenutno imate.',
+      },
+      { h2: 'Shopify: opis i SEO sekcija koju većina preskoči' },
+      {
+        p: 'Shopify proizvod ima naslov i opis, a na dnu stranice za uređivanje sekciju za prikaz u tražilici (Search engine listing). U njoj su naslov stranice, meta opis i adresa proizvoda.',
+      },
+      {
+        p: 'Ako tu sekciju ostavite praznu, Shopify za tražilice preuzme naslov proizvoda i početak opisa. Kad opis počinje rečenicom „Dobrodošli u našu trgovinu” ili tablicom mjera, upravo to kupac vidi u rezultatima pretrage.',
+      },
+      {
+        ul: [
+          'Naslov proizvoda: ono što proizvod jest, bez slogana. Kupac ga vidi na stranici proizvoda i u kolekcijama.',
+          'Opis: prvi odlomak za kupca koji odlučuje, zatim detalji. Ono što kupci uspoređuju (materijal, mjere, kompatibilnost) ide u natuknice.',
+          'Naslov stranice i meta opis: pišu se za rezultate pretrage. Google meta opis obično skrati na otprilike 150 do 160 znakova, pa ono najvažnije ide na početak.',
+          'Alt tekst slika: kratko, što je na slici. Shopify ga uređuje za svaku sliku posebno, a rijetko je ispunjen.',
+        ],
+      },
+      {
+        links: [
+          { text: 'Generator opisa proizvoda za Shopify', href: 'https://lumenta.shop/generators/generator-opisa-proizvoda-za-shopify', note: 'naslov, kratki i dugi opis i meta opis u jednoj generaciji' },
+        ],
+      },
+      { h2: 'WooCommerce: dva opisa s dvije različite uloge' },
+      {
+        p: 'WooCommerce ima dugi opis (glavni uređivač) i kratki opis (zasebno polje ispod njega). U većini tema kratki opis stoji uz cijenu i gumb za košaricu, a dugi u kartici niže na stranici. Kratki opis je dakle ono što kupac pročita u trenutku odluke.',
+      },
+      {
+        p: 'Dvije greške ponavljaju se najčešće. Prva je da je kratki opis prazan, pa uz cijenu ne piše ništa. Druga je da oba polja sadrže isti tekst, pa kratki opis ne kaže ništa više od naslova.',
+      },
+      {
+        ul: [
+          'Kratki opis: dvije do četiri rečenice ili tri natuknice. Za koga je proizvod, glavna korist i podatak koji odlučuje.',
+          'Dugi opis: sve ostalo, s podnaslovima ako je tekst dugačak.',
+          'Meta naslov i opis: WooCommerce ih nema sam po sebi, nego dolaze iz SEO dodatka poput Yoasta ili Rank Matha. Bez dodatka Google sam bira tekst sa stranice.',
+          'Atributi: boju, veličinu i materijal upišite kao atribute, a ne samo u tekst. Inače ih filteri u trgovini ne vide.',
+        ],
+      },
+      {
+        links: [
+          { text: 'Generator opisa proizvoda za WooCommerce', href: 'https://lumenta.shop/generators/generator-opisa-proizvoda-za-woocommerce', note: 'kratki i dugi opis pisani za svoje mjesto, plus meta opis za Yoast ili Rank Math' },
+        ],
+      },
+      { h2: 'Etsy: naslov i oznake rade više od opisa' },
+      {
+        p: 'Etsy je tražilica unutar tržnice, a njegova pretraga najviše se oslanja na naslov, oznake, kategoriju i atribute oglasa. Naslov može imati do 140 znakova, a oglas do 13 oznaka od najviše 20 znakova.',
+      },
+      {
+        p: 'Dugo su se naslovi punili nizom ključnih riječi odvojenih zarezima. Etsy danas u savjetima prodavačima preporučuje kraće, čitljive naslove, a ključne riječi koje ne stanu u naslov idu u oznake.',
+      },
+      {
+        ul: [
+          'Naslov: što je proizvod, najvažnije na početku, bez ponavljanja iste riječi.',
+          'Oznake: iskoristite svih 13, i to frazama koje kupci stvarno upisuju („poklon za kumu”, „drvena daska za rezanje”), a ne ponavljanjem kategorije.',
+          'Opis: priča i detalji za kupca koji je već kliknuo, poput materijala, mjera, načina izrade i roka slanja.',
+          'Jezik: Etsy kupci su većinom izvan Hrvatske. Ako prodajete van, oglas mora biti na jeziku kupca.',
+        ],
+      },
+      {
+        links: [
+          { text: 'Generator opisa proizvoda za Etsy', href: 'https://lumenta.shop/generators/generator-opisa-proizvoda-za-etsy', note: 'naslov, opis i popis ključnih riječi za 13 oznaka' },
+        ],
+      },
+      { h2: 'Isti proizvod na Instagramu' },
+      {
+        p: 'Opis objave na Instagramu nije opis proizvoda. U feedu se vidi prvi redak ili dva, a ostatak se otvara tek na „više”, pa prva rečenica mora zaustaviti scroll umjesto da nabraja specifikaciju. Opis može imati do 2.200 znakova i najviše 30 hashtagova.',
+      },
+      {
+        links: [
+          { text: 'Generator Instagram objava za webshopove', href: 'https://lumenta.shop/generators/generator-instagram-opisa-za-trgovine', note: 'kuka, opis, kraća verzija za Reels i hashtagovi po dosegu' },
+          { text: 'Generator Instagram objava za modne brendove', href: 'https://lumenta.shop/generators/generator-instagram-opisa-za-modne-brendove' },
+        ],
+      },
+      { h2: 'Što vrijedi za sve tri platforme' },
+      {
+        ul: [
+          'Ne ostavljajte opis dobavljača. Isti tekst ima još dvadeset trgovina, a Google od više stranica s istim tekstom obično prikaže samo jednu.',
+          'Isti podatak svugdje. Mjera u opisu mora biti ista kao mjera u specifikaciji. To je najčešća greška koju smo našli pregledavajući hrvatske webshopove.',
+          'Pročitajte tekst prije objave, pogotovo ako ga je napisao alat. AI zna pogriješiti u mjeri, materijalu ili kompatibilnosti.',
+        ],
+      },
+      {
+        p: 'Ako proizvod prodajete na više platformi, najlakše je krenuti od jednog popisa činjenica o proizvodu i iz njega napisati verziju za svako polje. Obrnuto, rezanje jednog dugog teksta na komade, gotovo uvijek ostavi polje koje ne radi svoj posao.',
+      },
+      {
+        quote: 'Platforma ne određuje koliko teksta trebate, nego gdje ga netko čita.',
+      },
+      { h2: 'Gdje dalje' },
+      {
+        links: [
+          { text: 'AI generator opisa proizvoda za bilo koji webshop', href: 'https://lumenta.shop/generators/ai-generator-opisa-proizvoda', note: 'jedan opis besplatno, bez registracije' },
+          { text: 'Pregledali smo 30 hrvatskih webshopova: šest grešaka u opisima proizvoda', href: '/hr/blog/greske-u-opisima-proizvoda' },
+          { text: 'Opisi proizvoda za webshop: sami, alatom ili s agencijom?', href: '/hr/blog/opisi-proizvoda-sami-alat-ili-agencija', note: 'kako odabrati prema broju artikala i jezika' },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'greske-u-opisima-proizvoda',
     lang: 'hr',
     cover: 'spec-mismatch',
