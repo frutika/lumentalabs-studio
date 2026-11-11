@@ -74,9 +74,9 @@ export const site = {
  * neither. The blog is not listed because posts carry their own date.
  */
 export const contentUpdated = {
-  // The about section on the Croatian and German home pages was rewritten.
-  '/': '2026-11-08',
-  '/services': '2026-09-26',
+  // The Croatian home and services pages now use the terms buyers search for.
+  '/': '2026-11-11',
+  '/services': '2026-11-11',
   '/services/video': '2026-09-26',
   '/work': '2026-10-03',
   '/contact': '2026-09-26',

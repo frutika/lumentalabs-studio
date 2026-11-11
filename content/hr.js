@@ -33,14 +33,14 @@ const hr = {
     home: {
       // The title template only reaches child segments, so the home page has
       // to carry the brand itself or it ships a title with no company in it.
-      title: 'Digitalni studio za web, AI i automatizaciju — Lumenta Labs',
+      title: 'Izrada web stranica i AI automatizacija — Lumenta Labs',
       description:
-        'Gradimo web platforme, AI alate i automatizacije koje rade u produkciji. Dvanaest vlastitih proizvoda, isti tim od podatkovnog modela do nadzora.',
+        'Izrada web stranica, webshopova i aplikacija po mjeri te automatizacija poslovnih procesa. Dvanaest vlastitih proizvoda, isti tim od ideje do nadzora.',
     },
     services: {
-      title: 'Usluge razvoja i AI automatizacije',
+      title: 'Izrada web stranica, aplikacija i AI rješenja',
       description:
-        'Šest problema koje rješavamo: web stranice, aplikacije po mjeri, automatizacija procesa, integracija sustava, AI rješenja i održavanje s nadzorom.',
+        'Izrada web stranica i webshopova, aplikacije po mjeri, automatizacija poslovnih procesa, integracija sustava, AI rješenja i održavanje, uz jasne cijene.',
     },
     work: {
       title: 'Proizvodi koje smo izgradili',
@@ -106,8 +106,8 @@ const hr = {
 
   home: {
     eyebrow: 'Digitalni studio',
-    h1: 'Web platforme, AI alati, automatizacija.',
-    lede: 'Proizvodi koji se pokrenu, koriste i rastu — bez nepotrebne komplikacije.',
+    h1: 'Web stranice, aplikacije, AI automatizacija.',
+    lede: 'Izrada web stranica, webshopova i aplikacija po mjeri. Proizvodi koji se pokrenu, koriste i rastu — bez nepotrebne komplikacije.',
     ctaPrimary: 'Pokreni projekt',
     ctaSecondary: 'Pogledaj što smo izgradili',
 
@@ -364,8 +364,8 @@ const hr = {
 
   servicesPage: {
     eyebrow: 'Usluge',
-    h1: 'Šest problema koje rješavamo',
-    lede: 'Ako se prepoznate u nekom od njih, javite se. Ako ne, recite nam svoj — možda ga rješavamo, a nismo ga tako nazvali.',
+    h1: 'Izrada web stranica, aplikacija i automatizacija',
+    lede: 'Šest problema koje rješavamo. Ako se prepoznate u nekom od njih, javite se. Ako ne, recite nam svoj — možda ga rješavamo, a nismo ga tako nazvali.',
     deeper: 'Kako to izgleda u detalje →',
     gets: 'Što dobivate',
     notFor: 'Kad ovo nije za vas:',
