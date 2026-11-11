@@ -23,6 +23,84 @@
 
 const posts = [
   {
+    slug: 'ai-obrada-racuna',
+    lang: 'hr',
+    cover: 'invoice-lanes',
+    relatedWork: 'docuflow-ai',
+    title: 'AI obrada računa: što stvarno može, a što i dalje morate vi',
+    description:
+      'Što AI obrada računa stvarno radi za malu tvrtku u doba Fiskalizacije 2.0, gdje griješi, što ne smije raditi sama i pet pitanja prije nego izaberete alat.',
+    date: '2026-11-11',
+    tags: ['Fiskalizacija 2.0', 'AI', 'Računi'],
+    excerpt:
+      'eRačunu AI ne treba, a skenu treba i provjera. Gdje AI obrada računa štedi sate, a gdje pogrešan podatak izgleda jednako uvjerljivo kao točan.',
+    body: [
+      {
+        p: 'Ako vodite malu tvrtku ili obrt, vjerojatno ste čuli da će AI „sam riješiti račune”. Dio toga je točan. Drugi dio je obećanje koje vas može koštati kod knjigovođe. Pišemo iz vlastitog iskustva: gradimo DocuFlow AI, alat koji čita ulazne račune, pa vidimo gdje to radi dobro, a gdje zapinje.',
+      },
+      { h2: 'Prvo razdvojite dvije vrste računa' },
+      {
+        p: 'Od 1. siječnja 2026. poslovni subjekti u Hrvatskoj, uključujući paušalne obrte, obvezni su primati eRačune. eRačun nije PDF, nego strukturirani dokument: dobavljač, iznos, PDV i datumi već stoje u svojim poljima. Njega AI ne treba čitati, jer nema što pogađati. U DocuFlowu eRačuni zato uopće ne prolaze AI obradu.',
+      },
+      {
+        p: 'Problem je sve ostalo: račun s benzinske plaćen karticom, faktura inozemnog dobavljača u PDF-u, fotografija zgužvanog isječka. Obavezni eRačun to nije uklonio, pa mala tvrtka danas ima dvije hrpe umjesto jedne. AI obrada računa ima smisla upravo za tu drugu hrpu.',
+      },
+      { h2: 'Što AI radi dobro' },
+      {
+        ul: [
+          'Iz PDF-a, skena ili fotografije čita dobavljača, broj računa, datume, osnovicu, PDV i ukupan iznos.',
+          'Snalazi se u različitim izgledima računa, bez posebnog predloška za svakog dobavljača.',
+          'Slaže sve u jedan popis, umjesto da podatke prepisujete u tablicu.',
+          'Uz izvučene podatke može predložiti sljedeći korak, recimo podsjetnik za plaćanje prije dospijeća.',
+        ],
+      },
+      { h2: 'Gdje griješi' },
+      {
+        p: 'AI može krivo pročitati znamenku, osobito na lošoj fotografiji. Nezgodno je to što pogrešan podatak izgleda jednako uvjerljivo kao točan. Nitko neće podviknuti da je 8 zapravo 3.',
+      },
+      {
+        p: 'Neki se podaci mogu provjeriti računski. IBAN ima kontrolne znamenke po algoritmu mod-97, a OIB po algoritmu mod 11-10, pa se krivo pročitana znamenka tu najčešće otkrije odmah. Zbroj osnovice i PDV-a može se usporediti s ukupnim iznosom. Datum dospijeća, međutim, nema nikakvu kontrolu. Ako je krivo pročitan, saznat ćete kad stigne opomena.',
+      },
+      { quote: 'Pitanje nije je li AI točan. Pitanje je što se događa kad nije.' },
+      {
+        p: 'Zato dobar alat ne skriva nesigurnost. Pokazuje koliko je siguran u pojedini podatak, drži original uz izvučene vrijednosti i ostavlja vama zadnju riječ. Provjera traje nekoliko sekundi po računu, što je i dalje puno manje od prepisivanja.',
+      },
+      { h2: 'Što AI ne smije raditi sam' },
+      {
+        ul: [
+          'Slati ili plaćati bez vaše potvrde. U DocuFlowu podsjetnik za plaćanje odlazi tek kad ga odobrite.',
+          'Fiskalizirati primitak eRačuna. To radi vaš informacijski posrednik ili MikroeRačun.',
+          'Birati KPD šifre umjesto vas. Za njih odgovarate vi, a zakon propisuje kazne za neispravno povezanu šifru.',
+          'Zamijeniti knjigovođu. Alat mu može predati uredne podatke i originale, a knjiženje i porezne odluke ostaju njegov posao.',
+        ],
+      },
+      { h2: 'Pet pitanja prije nego izaberete alat' },
+      {
+        ul: [
+          'Razlikuje li eRačune od skenova, ili sve šalje kroz AI i naplaćuje vam to?',
+          'Pokazuje li koliko je siguran u svaki podatak?',
+          'Vidite li original uz izvučene podatke?',
+          'Što odlazi van bez vaše potvrde? Točan odgovor je: ništa.',
+          'U kojem obliku knjigovođa dobiva podatke, i dobiva li originale?',
+        ],
+      },
+      { h2: 'Kome se to isplati' },
+      {
+        p: 'Granicu ne određuje veličina tvrtke, nego količina papira. Ako mjesečno imate pet računa, tablica i pola sata posla vjerojatno su dovoljni i alat vam ne treba. Ako ih je nekoliko desetaka i stižu kroz mail, pretinac i mobitel, prepisivanje postaje posao u kojem se greške ne primjećuju.',
+      },
+      {
+        p: 'Jedna napomena za iduću godinu: od 1. siječnja 2027. subjekti izvan sustava PDV-a moraju eRačune i izdavati drugim poslovnim subjektima u Hrvatskoj. DocuFlow se bavi ulaznom stranom i ne izdaje eRačune, pa će vam za to trebati posrednik ili MikroeRačun.',
+      },
+      {
+        links: [
+          { text: 'DocuFlow AI: kako radi i kako je nastao', href: '/hr/work/docuflow-ai', note: 'eRačuni i AI obrada računa na jednom mjestu' },
+          { text: 'Isprobajte DocuFlow', href: 'https://app.lumentalabs.studio', note: 'možete početi besplatno' },
+          { text: 'AI automatizacija poslovnih procesa', href: '/hr/services/ai-automatizacija-poslovanja', note: 'ako vam treba rješenje po mjeri' },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'opis-proizvoda-shopify-woocommerce-etsy',
     lang: 'hr',
     cover: 'platform-fields',

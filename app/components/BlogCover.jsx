@@ -400,7 +400,32 @@ function PlatformFields() {
   );
 }
 
+// The post's argument: an eRačun is already data and skips the AI; everything
+// else goes through it and a human check. Both lanes end in the same list.
+function InvoiceLanes() {
+  return (
+    <>
+      <text x="40" y="30" className="tiny">dva puta, jedan popis →</text>
+      <rect x="30" y="62" width="100" height="46" rx="8" className="stroke-m" />
+      <text x="80" y="89" textAnchor="middle">eRačun</text>
+      <rect x="30" y="170" width="100" height="46" rx="8" className="stroke-m" />
+      <text x="80" y="197" textAnchor="middle">sken, PDF</text>
+      <rect x="160" y="170" width="56" height="46" rx="8" className="stroke-a" />
+      <text x="188" y="197" textAnchor="middle" className="lbl-a">AI</text>
+      <rect x="246" y="170" width="84" height="46" rx="8" className="stroke-w" />
+      <text x="288" y="197" textAnchor="middle">provjera</text>
+      <rect x="360" y="100" width="96" height="80" rx="8" className="stroke-a" />
+      <text x="408" y="144" textAnchor="middle" className="lbl-a">popis</text>
+      <Arrow x1="130" y1="85" x2="356" y2="125" />
+      <Arrow x1="130" y1="193" x2="156" y2="193" />
+      <Arrow x1="216" y1="193" x2="242" y2="193" />
+      <Arrow x1="330" y1="193" x2="356" y2="160" />
+    </>
+  );
+}
+
 const VARIANTS = {
+  'invoice-lanes': InvoiceLanes,
   'platform-fields': PlatformFields,
   'spec-mismatch': SpecMismatch,
   'nginx-proxy': NginxProxy,

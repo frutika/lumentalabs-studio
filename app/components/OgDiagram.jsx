@@ -403,7 +403,32 @@ const platformFieldsLabels = () => [
   ...OG_PLATFORM_BOXES.map((b) => ({ x: 365, y: b.y + 18, size: 17, color: C.accent, children: b.name })),
 ];
 
+// See InvoiceLanes in BlogCover.jsx.
+function invoiceLanesShapes() {
+  return [
+    <rect key="e" x="30" y="62" width="100" height="46" rx="8" fill="none" stroke={C.muted} strokeWidth="2" />,
+    <rect key="s" x="30" y="170" width="100" height="46" rx="8" fill="none" stroke={C.muted} strokeWidth="2" />,
+    <rect key="ai" x="160" y="170" width="56" height="46" rx="8" fill="none" stroke={C.accent} strokeWidth="2" />,
+    <rect key="p" x="246" y="170" width="84" height="46" rx="8" fill="none" stroke={C.warm} strokeWidth="2" />,
+    <rect key="l" x="360" y="100" width="96" height="80" rx="8" fill="none" stroke={C.accent} strokeWidth="2" />,
+    <line key="a1" x1="130" y1="85" x2="360" y2="125" stroke={C.accent} strokeWidth="2" />,
+    <line key="a2" x1="130" y1="193" x2="160" y2="193" stroke={C.accent} strokeWidth="2" />,
+    <line key="a3" x1="216" y1="193" x2="246" y2="193" stroke={C.accent} strokeWidth="2" />,
+    <line key="a4" x1="330" y1="193" x2="360" y2="160" stroke={C.accent} strokeWidth="2" />,
+  ];
+}
+// Sized for the 1200x630 card, like priceFilterLabels.
+const invoiceLanesLabels = () => [
+  { x: 40, y: 30, anchor: 'start', size: 15, children: 'dva puta, jedan popis →' },
+  { x: 80, y: 85, size: 18, children: 'eRačun' },
+  { x: 80, y: 193, size: 18, children: 'sken, PDF' },
+  { x: 188, y: 193, size: 18, color: C.accent, children: 'AI' },
+  { x: 288, y: 193, size: 18, children: 'provjera' },
+  { x: 408, y: 140, size: 20, color: C.accent, children: 'popis' },
+];
+
 const VARIANTS = {
+  'invoice-lanes': { shapes: invoiceLanesShapes, labels: invoiceLanesLabels },
   'platform-fields': { shapes: platformFieldsShapes, labels: platformFieldsLabels },
   'spec-mismatch': { shapes: specMismatchShapes, labels: specMismatchLabels },
   'nginx-proxy': { shapes: nginxProxyShapes, labels: nginxProxyLabels },

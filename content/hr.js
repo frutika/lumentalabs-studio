@@ -1266,8 +1266,9 @@ const hr = {
     {
       slug: 'docuflow-ai',
       kind: 'Živi proizvod',
+      title: 'DocuFlow — AI obrada računa i eRačuni za male tvrtke',
       short:
-        'Ulazni dokumenti za male tvrtke u doba Fiskalizacije 2.0 — eRačuni stižu sami, a PDF-ove, skenove i fotografije čita AI i pretvara u akciju jednim odobrenjem.',
+        'AI obrada računa za male tvrtke u doba Fiskalizacije 2.0: eRačuni stižu sami, a PDF-ove, skenove i fotografije čita AI i pretvara u akciju jednim odobrenjem.',
       problem:
         'Fiskalizaciju 2.0 počeli smo pratiti dok još nitko nije točno znao kako će raditi ni zašto se uvodi. Kad smo zakopali dublje, uočili smo ono što se u najavama nije spominjalo: obavezan eRačun ne znači kraj papira. Mala tvrtka i dalje dobiva PDF-ove, fotografirane račune, skenove i gotovinske potvrde — samo sada uz eRačune. Dva svijeta, a nijedan alat za oba.',
       built: [
