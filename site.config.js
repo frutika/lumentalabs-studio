@@ -106,7 +106,7 @@ export const contentUpdated = {
   '/work/lumenta-ai': '2026-10-03',
   '/work/the-dog-habit': '2026-08-09',
   '/work/unmaskedwords': '2026-08-09',
-  '/work/docuflow-ai': '2026-10-03',
+  '/work/docuflow-ai': '2026-11-11',
   '/work/narrator': '2026-10-03',
 
   // The guides. Their content is a transcription of the PDFs, which carry
