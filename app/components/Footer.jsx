@@ -38,6 +38,12 @@ export default function Footer({ lang }) {
             <a href={site.social.docuflowWhatsapp} hrefLang="hr" target="_blank" rel="noopener noreferrer">
               {f.docuflowChannel}
             </a>
+            {/* Backlink is part of the Fiskalopedija+ benefits listing for
+                DocuFlow: keep it followed (no nofollow) and keep the referrer.
+                A proper name, so the same label in every language. */}
+            <a href="https://fiskalopedija.hr/" hrefLang="hr" target="_blank" rel="noopener">
+              Fiskalopedija
+            </a>
           </div>
           <div className="foot-col">
             <p className="label">{f.contact}</p>
