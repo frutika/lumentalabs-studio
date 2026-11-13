@@ -91,8 +91,12 @@ const de = {
 
   home: {
     eyebrow: 'Digitalstudio',
-    h1: 'Webplattformen, KI-Werkzeuge, Automatisierung.',
-    lede: 'Produkte, die live gehen, genutzt werden und wachsen — ohne unnötige Komplexität.',
+    // Der Hero trägt die Begriffe, die Käufer in die Suche tippen: die Zeile
+    // in der h1 benennt die Arbeit, und der Vorspann sagt in einem Satz, wer wir
+    // sind, woher und was wir tun, denn diesen Satz zitieren Suchmaschinen und
+    // KI-Antworten.
+    h1: 'Webentwicklung, individuelle Anwendungen, KI-Automatisierung.',
+    lede: 'Lumenta Labs ist ein Digitalstudio aus Kroatien für Websites, Onlineshops und individuelle Anwendungen sowie die KI-Automatisierung von Geschäftsprozessen. Produkte, die live gehen, genutzt werden und wachsen.',
     ctaPrimary: 'Projekt starten',
     ctaSecondary: 'Unsere Projekte ansehen',
 
@@ -123,6 +127,53 @@ const de = {
     finalH2: 'Sagen Sie uns, was es geben sollte.',
     finalLede: 'Eine klare Vereinbarung, eine konkrete Lieferung, ein messbares Ergebnis.',
     finalCta: 'Kontakt aufnehmen',
+
+    // Der Wegweiser am linken Rand auf breiten Bildschirmen: wo man auf der
+    // langen Seite gerade ist. Die Schlüssel sind die Abschnitts-ids in Home.jsx.
+    rail: {
+      label: 'Auf dieser Seite',
+      top: 'Start',
+      proof: 'Zahlen',
+      services: 'Leistungen',
+      cijene: 'Preise',
+      stack: 'Produkte',
+      work: 'Arbeiten',
+      how: 'Ablauf',
+      faq: 'Fragen',
+      contact: 'Kontakt',
+    },
+
+    // Die Fragen, die ein Käufer und eine KI-Suche über das Studio stellen.
+    // Jede Antwort wiederholt etwas, das die Website schon an anderer Stelle
+    // sagt; {services} kommt aus der Leistungsliste, die Preisantwort aus
+    // denselben Beträgen wie der Abschnitt Preise.
+    faq: {
+      h2: 'Häufige Fragen',
+      priceQ: 'Was kostet eine Website, eine Anwendung oder KI-Automatisierung?',
+      priceLead: 'Einstiegspreise je Leistung:',
+      items: [
+        {
+          q: 'Was ist Lumenta Labs und was macht das Studio?',
+          a: 'Lumenta Labs ist ein Digitalstudio mit Sitz in Vir, Kroatien. Wir entwickeln Websites, Onlineshops und individuelle Anwendungen und bringen Automatisierung und KI in Geschäftsprozesse. Unsere Leistungen: {services}.',
+        },
+        {
+          q: 'Wer arbeitet an meinem Projekt?',
+          a: 'Denis Šehić, der Inhaber des Studios. Lumenta Labs ist ein Ein-Personen-Unternehmen: Wer Ihr Angebot schreibt, schreibt auch den Code und bringt ihn in Produktion. Es gibt keine Account-Manager und keine Subunternehmer.',
+        },
+        {
+          q: 'Womit belegen Sie, dass Ihr Angebot funktioniert?',
+          a: 'Mit unseren eigenen Produkten. Wir betreiben zwölf eigene Produkte in Produktion, darunter Bezmaske, Lumenta AI, The Dog Habit, UnmaskedWords und DocuFlow AI. Alles, was wir Kunden anbieten, haben wir zuerst dort gebaut, und die Live-Produkte können Sie sofort öffnen.',
+        },
+        {
+          q: 'Was ist der Unterschied zwischen Automatisierung, Integration und einer KI-Lösung?',
+          a: 'Automatisierung ist eine Aufgabe, die nach Regeln abläuft. Integration heißt, dass zwei Systeme selbstständig Daten austauschen. KI kommt dort ins Spiel, wo Text gelesen oder geschrieben werden muss, etwa Beschreibungen für einen ganzen Katalog oder Dokumente, die sich selbst verarbeiten.',
+        },
+        {
+          q: 'In welchen Sprachen arbeiten Sie?',
+          a: 'Deutsch, Englisch und Kroatisch. In diesen drei Sprachen ist auch diese Website veröffentlicht.',
+        },
+      ],
+    },
     // Redesign (2026-10). Alles darunter ist der Rahmen um den Text oben:
     // Ankündigung im Hero, Labels und die illustrativen Mini-Oberflächen.
     announce: { tag: 'NEU', text: 'DocuFlow AI ist live — Fiskalisierung 2.0, erledigt' },

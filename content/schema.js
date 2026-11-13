@@ -17,6 +17,8 @@ export function organizationSchema(lang) {
     ...(site.telephone ? { telephone: site.telephone } : {}),
     address: { '@type': 'PostalAddress', ...legal.postal },
     taxID: legal.oib,
+    // The studio is one person, and the site says so on /about and /security.
+    founder: { '@type': 'Person', name: site.founder, sameAs: [site.social.linkedin] },
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',

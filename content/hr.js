@@ -106,8 +106,11 @@ const hr = {
 
   home: {
     eyebrow: 'Digitalni studio',
-    h1: 'Web stranice, aplikacije, AI automatizacija.',
-    lede: 'Izrada web stranica, webshopova i aplikacija po mjeri. Proizvodi koji se pokrenu, koriste i rastu — bez nepotrebne komplikacije.',
+    // Hero nosi pojmove koje kupci upisuju u tražilicu: retka u h1 ponavlja
+    // naslov stranice, a uvod u jednoj rečenici kaže tko smo, odakle i što radimo,
+    // jer tu rečenicu citiraju i tražilice i AI odgovori.
+    h1: 'Izrada web stranica, aplikacija i AI automatizacija.',
+    lede: 'Lumenta Labs je digitalni studio iz Hrvatske za izradu web stranica, webshopova i aplikacija po mjeri te AI automatizaciju poslovnih procesa. Gradimo proizvode koji se pokrenu, koriste i rastu.',
     ctaPrimary: 'Pokreni projekt',
     ctaSecondary: 'Pogledaj što smo izgradili',
 
@@ -142,6 +145,52 @@ const hr = {
     finalH2: 'Recite nam što bi trebalo postojati.',
     finalLede: 'Jasan dogovor, konkretna isporuka, mjerljiv rezultat.',
     finalCta: 'Javite nam se',
+
+    // Putokaz uz lijevi rub na širokim ekranima: gdje ste na dugoj stranici.
+    // Ključevi su id-jevi sekcija u Home.jsx.
+    rail: {
+      label: 'Na ovoj stranici',
+      top: 'Početak',
+      proof: 'Brojke',
+      services: 'Usluge',
+      cijene: 'Cijene',
+      stack: 'Proizvodi',
+      work: 'Radovi',
+      how: 'Kako radimo',
+      faq: 'Pitanja',
+      contact: 'Kontakt',
+    },
+
+    // Pitanja koja kupac i AI tražilica postavljaju o studiju. Svaki odgovor
+    // ponavlja nešto što stranica već tvrdi drugdje; {services} se puni iz
+    // popisa usluga, a odgovor o cijeni iz istih iznosa kao sekcija Cijene.
+    faq: {
+      h2: 'Česta pitanja',
+      priceQ: 'Koliko košta izrada web stranice, aplikacije ili AI automatizacije?',
+      priceLead: 'Početne cijene po usluzi:',
+      items: [
+        {
+          q: 'Što je Lumenta Labs i čime se bavi?',
+          a: 'Lumenta Labs je digitalni studio iz Vira u Hrvatskoj. Izrađujemo web stranice, webshopove i aplikacije po mjeri te uvodimo automatizaciju i AI u poslovne procese. Naše usluge: {services}.',
+        },
+        {
+          q: 'Tko radi na mom projektu?',
+          a: 'Denis Šehić, vlasnik studija. Lumenta Labs je obrt jedne osobe: isti čovjek koji vam piše ponudu piše i kod i diže ga u produkciju. Nema account managera ni podizvođača.',
+        },
+        {
+          q: 'Čime dokazujete da ono što nudite radi?',
+          a: 'Vlastitim proizvodima. U produkciji držimo dvanaest vlastitih proizvoda, među njima Bezmaske, Lumenta AI, The Dog Habit, UnmaskedWords i DocuFlow AI. Sve što nudimo klijentima prvo smo izgradili na njima, a žive proizvode možete otvoriti odmah.',
+        },
+        {
+          q: 'Koja je razlika između automatizacije, integracije i AI rješenja?',
+          a: 'Automatizacija je zadatak koji radi po pravilima. Integracija su dva sustava koja sama razmjenjuju podatke. AI ulazi tamo gdje treba čitati ili pisati tekst, na primjer opise proizvoda za cijeli katalog ili dokumente koji se sami obrade.',
+        },
+        {
+          q: 'Na kojim jezicima radite?',
+          a: 'Na hrvatskom, engleskom i njemačkom. Na ta tri jezika objavljena je i ova stranica.',
+        },
+      ],
+    },
     // Redizajn (2026-10). Sve ispod je okvir oko teksta iznad: najava u
     // heroju, labele i ilustrativna mini-sučelja.
     announce: { tag: 'NOVO', text: 'DocuFlow AI je u produkciji — Fiskalizacija 2.0, riješeno' },
