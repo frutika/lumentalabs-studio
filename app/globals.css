@@ -1408,3 +1408,95 @@ a.card.linked.cover-card { border-radius: 18px; }
     @keyframes lm-reveal { from { opacity: 0; transform: translateY(18px); } }
   }
 }
+
+/* ======================================================================
+   v3 (2026-11): the light answers the visitor
+   The hero has one light source. Now it can be steered: --lx is the pointer's
+   horizontal position over the hero (-1 left, 1 right; HeroLight.jsx), and the
+   beam, its core and the lit part of the headline all follow it. With no
+   pointer it sways slowly on its own. Registered as a number so it can be
+   transitioned and animated, which is where the light's lag comes from.
+   ====================================================================== */
+@property --lx { syntax: '<number>'; inherits: true; initial-value: 0; }
+
+.hero { --lx: 0; transition: --lx 1.2s cubic-bezier(.2, .7, .2, 1); }
+.hero.steered { transition-duration: .45s; }
+.hero .stage .beam {
+  background: conic-gradient(from calc(var(--lx) * -13deg) at 50% 0%, transparent 152deg, var(--beam) 180deg, transparent 208deg);
+}
+.hero .stage .beam-core { height: 520px; transform: rotate(calc(var(--lx) * -13deg)); transform-origin: 50% 0; }
+/* The headline is read by the light: full strength where the beam falls,
+   dimmer either side. At its dimmest the text still clears 7:1 on --bg. */
+.hero .h1-big {
+  -webkit-mask-image: radial-gradient(ellipse 58% 150% at calc(50% + var(--lx) * 36%) 45%, #000 26%, rgba(0, 0, 0, .64) 100%);
+  mask-image: radial-gradient(ellipse 58% 150% at calc(50% + var(--lx) * 36%) 45%, #000 26%, rgba(0, 0, 0, .64) 100%);
+}
+
+/* A little less air, so the running agent shows above the fold on a laptop. */
+@media (min-width: 761px) {
+  .hero-inner { padding-top: 104px; }
+  .h1-big { font-size: clamp(48px, 10.4vw, 152px); }
+  .run { margin-top: 72px; }
+}
+
+/* A wave of light crossing the floor from the horizon towards the viewer.
+   Drawn on the grid's own lines (216px = every third column, 72px rows), so
+   it reads as the grid lighting up rather than something laid over it. */
+.stage .floor::after {
+  content: ''; position: absolute; inset: 0; opacity: 0;
+  background-image: linear-gradient(90deg, var(--edge) 1px, transparent 1px), linear-gradient(var(--edge) 1px, transparent 1px);
+  background-size: 216px 100%, 100% 72px;
+  -webkit-mask: linear-gradient(transparent, #000 55%, transparent) 0 -200px / 100% 200px no-repeat;
+  mask: linear-gradient(transparent, #000 55%, transparent) 0 -200px / 100% 200px no-repeat;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Idle: the light sways until someone takes hold of it. */
+  .hero:not(.steered) { animation: lm-sway 9s ease-in-out infinite alternate; }
+  @keyframes lm-sway { from { --lx: -.42; } to { --lx: .42; } }
+
+  .stage .floor::after { opacity: 1; animation: lm-wave 7s cubic-bezier(.5, 0, .8, .6) infinite; }
+  @keyframes lm-wave {
+    0% { -webkit-mask-position: 0 -200px; mask-position: 0 -200px; }
+    70%, 100% { -webkit-mask-position: 0 640px; mask-position: 0 640px; }
+  }
+
+  /* The one load sequence: the core drops, then the headline takes the light.
+     The headline starts dim rather than hidden, so it is painted at once. */
+  .hero .stage .beam-core { animation: lm-drop 1.1s cubic-bezier(.2, .7, .2, 1) both; }
+  .hero .h1-big { animation: lm-ignite 1.4s .15s cubic-bezier(.2, .7, .2, 1) both; }
+  @keyframes lm-drop { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0); } }
+  @keyframes lm-ignite { from { opacity: .3; letter-spacing: -.04em; } }
+}
+
+/* ---------- section rail ----------
+   Wayfinding for a long page, in the left margin on screens wide enough to
+   have one. Blended by difference so the same white marks read on the dark
+   sections and on the ivory band without a second colour scheme. */
+.rail { display: none; }
+@media (min-width: 1400px) {
+  .rail { display: block; position: fixed; left: 26px; top: 50%; transform: translateY(-50%); z-index: 4; mix-blend-mode: difference; }
+  .rail ol { list-style: none; margin: 0; padding: 0; }
+  .rail a {
+    display: flex; align-items: center; gap: 10px; height: 24px;
+    font-family: var(--mono); font-size: 11px; color: #fff; text-decoration: none;
+  }
+  .rail i { display: block; width: 12px; height: 1px; background: currentColor; opacity: .38; transition: width .3s ease, opacity .3s ease; }
+  .rail span { opacity: 0; transform: translateX(-4px); transition: opacity .25s ease, transform .25s ease; white-space: nowrap; }
+  .rail a:hover i, .rail a:focus-visible i { opacity: .9; width: 20px; }
+  .rail a:hover span, .rail a:focus-visible span { opacity: .75; transform: none; }
+  .rail a.on i { width: 30px; opacity: 1; }
+  .rail a.on span { opacity: 1; transform: none; }
+}
+
+/* ---------- home FAQ ----------
+   Every answer is on the page, open: these are here to be read by people and
+   quoted by machines, and a collapsed answer serves neither. */
+.home-faq { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 32px 64px; align-items: start; }
+.home-faq h2 { margin: 0; }
+.home-faq dl { margin: 0; }
+.home-faq dl > div { padding: 24px 0; border-top: 1px solid var(--line-soft); }
+.home-faq dl > div:first-child { padding-top: 0; border-top: 0; }
+.home-faq dt { font-size: 19px; font-weight: 500; line-height: 1.35; letter-spacing: -.01em; }
+.home-faq dd { margin: 10px 0 0; max-width: 64ch; color: var(--muted); }
+@media (max-width: 860px) { .home-faq { grid-template-columns: 1fr; } }

@@ -966,9 +966,12 @@ listRule:   null  // deny — this is the default, not "no restriction"`,
   {
     slug: 'technical-seo-audit-checklist-js-sites',
     cover: 'seo-scan',
-    title: 'A Technical SEO Checklist for Sites That Render in JavaScript',
+    // Titled for what people type: Search Console showed this post appearing
+    // for "javascript seo testing", "javascript seo audit" and "javascript seo
+    // checker" with no clicks under the old, vaguer title.
+    title: 'JavaScript SEO Audit Checklist: Testing What Crawlers Actually See',
     description:
-      'The specific places a client-rendered app goes wrong for search engines and social scrapers — gathered from fixing them, not from a generic best-practices list.',
+      'A JavaScript SEO audit checklist for client-rendered sites: how to test rendering, which tools show what a crawler really receives, and where these sites go wrong for search engines and social scrapers.',
     date: '2026-08-18',
     tags: ['SEO', 'Checklist'],
     relatedWork: null,
@@ -981,6 +984,19 @@ listRule:   null  // deny — this is the default, not "no restriction"`,
       { h2: 'Verify with the right identity, not your own browser' },
       {
         p: "A plain request to the site tells you almost nothing if crawlers and normal visitors are served differently — which, on a prerendered site, they are by design. Check with the actual crawler user agent, and check the ones people forget: Google's ad-quality crawler and Bing's are both real, both distinct from the main indexing bot, and neither contains the substring most bot-detection code is written to match.",
+      },
+      { h2: 'The tools for testing JavaScript rendering' },
+      {
+        p: 'None of these is a dedicated JavaScript SEO checker, and none needs to be. Each one answers a single question: what did the crawler receive, and what did it build from it.',
+      },
+      {
+        ul: [
+          'A plain HTTP request sent with a crawler user agent — the raw HTML that arrives before any script has run, which is all that many social scrapers and AI crawlers ever read',
+          'URL Inspection in Google Search Console — the HTML Googlebot rendered from the page and a screenshot of what it saw, for a site you have verified',
+          'The Rich Results Test — the same renderer, usable on any public URL, including one you cannot verify in Search Console',
+          'View source next to the Elements panel in browser developer tools — the first is what the server sent, the second is what JavaScript built, and the difference between them is the audit',
+          'A browser with JavaScript switched off — the fastest test of all for whether a page has any content without it',
+        ],
       },
       { h2: 'Confirm the sitemap describes reality, not the plan for it' },
       {

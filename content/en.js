@@ -106,8 +106,12 @@ const en = {
 
   home: {
     eyebrow: 'Digital studio',
-    h1: 'Web platforms, AI tools, automation.',
-    lede: 'Products that launch, get used, and grow — without unnecessary complication.',
+    // The hero carries the terms buyers type into a search box: the line in
+    // the h1 names the work, and the lede says in one sentence who we are, where
+    // from and what we do, because that sentence is what search engines and AI
+    // answers quote.
+    h1: 'Web development, custom applications, AI automation.',
+    lede: 'Lumenta Labs is a digital studio from Croatia that builds websites, online shops and custom applications, and automates business processes with AI. Products that launch, get used, and grow.',
     ctaPrimary: 'Start a project',
     ctaSecondary: 'See what we have built',
 
@@ -141,6 +145,53 @@ const en = {
     finalH2: 'Tell us what should exist.',
     finalLede: 'A clear agreement, a concrete delivery, a measurable result.',
     finalCta: 'Get in touch',
+
+    // The wayfinder along the left edge on wide screens: where you are on a
+    // long page. The keys are the section ids in Home.jsx.
+    rail: {
+      label: 'On this page',
+      top: 'Top',
+      proof: 'Figures',
+      services: 'Services',
+      cijene: 'Prices',
+      stack: 'Products',
+      work: 'Work',
+      how: 'How we work',
+      faq: 'Questions',
+      contact: 'Contact',
+    },
+
+    // The questions a buyer and an AI search engine ask about the studio. Each
+    // answer repeats something the site already states elsewhere; {services}
+    // is filled from the service list, and the price answer from the same
+    // figures as the Prices section.
+    faq: {
+      h2: 'Common questions',
+      priceQ: 'How much does a website, an application or AI automation cost?',
+      priceLead: 'Entry prices by service:',
+      items: [
+        {
+          q: 'What is Lumenta Labs and what does it do?',
+          a: 'Lumenta Labs is a digital studio based in Vir, Croatia. We build websites, online shops and custom applications, and bring automation and AI into business processes. Our services: {services}.',
+        },
+        {
+          q: 'Who works on my project?',
+          a: 'Denis Šehić, who runs the studio. Lumenta Labs is a one-person business: the person who writes your quote also writes the code and ships it to production. There are no account managers and no subcontractors.',
+        },
+        {
+          q: 'How do you show that what you offer works?',
+          a: 'With our own products. We keep twelve of our own products in production, among them Bezmaske, Lumenta AI, The Dog Habit, UnmaskedWords and DocuFlow AI. Everything we offer clients was built on them first, and the live ones can be opened right now.',
+        },
+        {
+          q: 'What is the difference between automation, integration and an AI solution?',
+          a: 'Automation is a task that runs by rules. Integration is two systems exchanging data on their own. AI comes in where text has to be read or written, such as descriptions for a whole catalogue or documents that process themselves.',
+        },
+        {
+          q: 'Which languages do you work in?',
+          a: 'English, Croatian and German. This site is published in all three.',
+        },
+      ],
+    },
     // Redesign (2026-10). Everything below is chrome around the copy above:
     // the hero announcement, the labels and the illustrative mini-interfaces.
     announce: { tag: 'NEW', text: 'DocuFlow AI is live — Fiscalisation 2.0, handled' },

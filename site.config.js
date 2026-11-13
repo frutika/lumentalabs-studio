@@ -75,7 +75,7 @@ export const site = {
  */
 export const contentUpdated = {
   // The Croatian home and services pages now use the terms buyers search for.
-  '/': '2026-11-11',
+  '/': '2026-11-13',
   '/services': '2026-11-11',
   '/services/video': '2026-09-26',
   '/work': '2026-10-03',

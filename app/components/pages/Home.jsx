@@ -7,6 +7,8 @@ import ProjectCanvas from '../home/ProjectCanvas';
 import ServiceVisual from '../home/ServiceVisual';
 import AgentRun from '../home/AgentRun';
 import TileArt from '../home/TileArt';
+import HeroLight from '../home/HeroLight';
+import SectionRail from '../home/SectionRail';
 import { lastWordEm } from '../text';
 import { getDict, localePath, servicesFor, servicePriceFor, worksFor, reelFor, postsFor } from '../../../content';
 import {
@@ -16,6 +18,7 @@ import {
   homeServicesSchema,
   homeWorkSchema,
   homePostsSchema,
+  faqSchema,
 } from '../../../content/schema';
 import { site } from '../../../site.config';
 
@@ -55,6 +58,29 @@ export default function Home({ lang }) {
   const serviceHref = (s) => (s.slug === 'video' ? p('/services/video') : `${p('/services')}#${s.slug}`);
   const v = d.vodici;
 
+  // The questions, with the two generated answers filled in: the service list
+  // and the entry prices come from the same data the page prints above, so the
+  // answers cannot drift from the sections they summarise.
+  const serviceNames = services.map((s) => s.title).join(', ');
+  const faq = h.faq
+    ? h.faq.items.map((item) => ({ q: item.q, a: item.a.replace('{services}', serviceNames) }))
+    : [];
+  if (h.faq && priced.length) {
+    faq.splice(1, 0, {
+      q: h.faq.priceQ,
+      a: `${h.faq.priceLead} ${priced.map((s) => `${s.title} ${s.price.from}`).join('; ')}. ${d.serviceDetailPage.vatNote}`,
+    });
+  }
+
+  // Only the sections this language actually renders, in page order.
+  const present = {
+    top: true, proof: true, services: true, cijene: Boolean(pr && priced.length), stack: true,
+    work: true, how: true, faq: faq.length > 0, contact: true,
+  };
+  const railItems = h.rail
+    ? Object.keys(present).filter((id) => present[id] && h.rail[id]).map((id) => ({ id, label: h.rail[id] }))
+    : [];
+
   const serviceCard = (s) => (
     <article className="svc" key={s.slug}>
       <div>
@@ -76,8 +102,11 @@ export default function Home({ lang }) {
       <JsonLd data={homeServicesSchema(lang)} />
       <JsonLd data={homeWorkSchema(lang)} />
       {latestPosts.length ? <JsonLd data={homePostsSchema(lang)} /> : null}
+      {faq.length ? <JsonLd data={faqSchema(lang, '/', faq)} /> : null}
+      {railItems.length ? <SectionRail items={railItems} label={h.rail.label} /> : null}
       <header className="hero" id="top">
         {/* One light source: the beam, its core and the floor it falls on. */}
+        <HeroLight />
         <div className="stage" aria-hidden="true">
           <span className="beam" />
           <span className="glow top" />
@@ -118,7 +147,7 @@ export default function Home({ lang }) {
 
       {/* Figures that each link to the case study that states them, so every
           one can be checked rather than taken on trust. */}
-      <section className="proof" aria-labelledby="proof-label">
+      <section className="proof" id="proof" aria-labelledby="proof-label">
         <div className="wrap">
           <p className="label hot" id="proof-label">{h.proof.label}</p>
           <ul className="proof-grid">
@@ -361,6 +390,22 @@ export default function Home({ lang }) {
             </ul>
             <Link className="btn" href={p(v.href)}>{v.cta}</Link>
             <p className="stamp">{v.note}</p>
+          </div>
+        </section>
+      ) : null}
+
+      {faq.length ? (
+        <section className="h-sec ruled" id="faq" aria-labelledby="faq-h2">
+          <div className="wrap home-faq">
+            <h2 id="faq-h2">{h.faq.h2}</h2>
+            <dl>
+              {faq.map((item) => (
+                <div key={item.q}>
+                  <dt>{item.q}</dt>
+                  <dd>{item.a}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </section>
       ) : null}
