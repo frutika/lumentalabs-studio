@@ -23,6 +23,73 @@
 
 const posts = [
   {
+    slug: 'pet-pitanja-prije-ai-alata',
+    lang: 'hr',
+    cover: 'data-map',
+    relatedWork: 'docuflow-ai',
+    title: 'Pet pitanja prije nego AI-ju date svoje račune',
+    description:
+      'Gdje stoje podaci, što ide izvan EU i uči li AI na vašim dokumentima? Pet pitanja za svakog tko vam nudi AI alat, uz naše odgovore.',
+    date: '2026-11-14',
+    tags: ['AI', 'GDPR', 'Sigurnost podataka'],
+    excerpt:
+      '„Ne brinite, sigurno je” nije odgovor na pitanje gdje su vaši podaci. Odgovor ima grad, rok i potpis.',
+    body: [
+      {
+        p: 'Račun za gorivo, slikan u autu, malo mutan. Ponuda koju ste jučer poslali klijentu. Izvod iz banke. Kad sve to ubacite u „AI alat”, kamo je zapravo otišlo?',
+      },
+      {
+        p: 'Većina ponuđača na to odgovori: „Ne brinite, sigurno je.” To nije odgovor.',
+      },
+      { quote: 'Odgovor ima grad, rok i potpis.' },
+      {
+        p: 'Ovo je pet pitanja koja vrijedi postaviti svakome tko vam nudi AI, pa i nama. Uz svako pišemo kako zvuči slab odgovor i što odgovaramo mi.',
+      },
+      { h2: '1. Što potpisujemo prije nego vidite ijedan moj dokument?' },
+      { p: 'Slab odgovor: „To ćemo riješiti usput.”' },
+      {
+        p: 'Naš odgovor: prije nego što dobijemo pristup osobnim podacima potpisujemo ugovor o obradi podataka prema članku 28. GDPR-a. U njemu piše koji pružatelji sudjeluju u vašem projektu, a novog ne uvodimo bez najave. Ugovor o povjerljivosti potpisujemo na zahtjev, i prije prvog razgovora o detaljima.',
+      },
+      { h2: '2. U kojem gradu stoje moji podaci?' },
+      { p: 'Slab odgovor: „U oblaku.”' },
+      {
+        p: 'Naš odgovor: birate vi. Sustav može raditi na vašoj infrastrukturi, pa podaci ne napuštaju vaše okruženje, ili na našem poslužitelju u Frankfurtu. Sigurnosne kopije stoje odvojeno, u europskoj regiji Cloudflareove pohrane R2, i brišu se automatski nakon 14 dana.',
+      },
+      { h2: '3. Što od toga izlazi iz EU?' },
+      {
+        p: 'Slab odgovor: „Ništa.” Kod AI alata to je rijetko točno, jer većina velikih jezičnih modela dolazi od američkih tvrtki.',
+      },
+      {
+        p: 'Naš odgovor: dvije stvari, AI obrada (Anthropic) i slanje e-pošte iz aplikacije (Resend). Prijenos se temelji na odluci o primjerenosti (EU–US Data Privacy Framework) ili na standardnim ugovornim klauzulama Europske komisije. To piše u ponudi prije nego što krenemo, a pružatelja izvan EU ne uvodimo bez vašeg pisanog pristanka.',
+      },
+      { h2: '4. Uči li AI na mojim dokumentima?' },
+      { p: 'Slab odgovor: „Mislim da ne.”' },
+      {
+        p: 'Naš odgovor: ne. Modele pozivamo preko poslovnog API-ja tvrtke Anthropic, a prema njihovim uvjetima za poslovne korisnike podaci poslani tim putem ne koriste se za treniranje modela. Zato uvijek pitajte i kojim putem alat šalje podatke: uvjeti chat aplikacije i poslovnog API-ja nisu isti.',
+      },
+      { h2: '5. Tko ima zadnju riječ, AI ili čovjek?' },
+      { p: 'Slab odgovor: „AI je jako točan.”' },
+      {
+        p: 'Naš odgovor: AI griješi. Mutnu fotografiju može pročitati krivo, baš kao i čovjek. Zato ga koristimo samo za ono što piše u ponudi, a rezultat AI obrade ne objavljuje se sam od sebe: odobrenje ostaje kod vas. U DocuFlow AI-ju prije zatvaranja mjeseca na vrhu vidite dokumente koji traže pogled: AI nesiguran u iznos, nedostaje OIB, mogući duplikat. Knjigovođa uz tablicu za uvoz dobiva i sve originale.',
+      },
+      { h2: 'Zašto baš ova pitanja' },
+      {
+        p: 'Jer smo ih prvo morali postaviti sami sebi. DocuFlow AI prima račune paušalnih obrta i malih tvrtki: eRačune, ali i fotografije, skenove i PDF-ove. Počeli smo ga graditi prateći Fiskalizaciju 2.0, dok se još nije znalo kako će točno raditi. Tko radi s tuđim računima, odgovore mora imati prije prve linije koda.',
+      },
+      {
+        p: 'Ako razmišljate o AI-ju u svom poslu, postavite ovih pet pitanja svom ponuđaču. A ako želite, postavite ih i nama.',
+      },
+      { h2: 'Gdje dalje' },
+      {
+        links: [
+          { text: 'Sigurnost i podaci', href: '/hr/security', note: 'puni odgovori: rokovi, pružatelji, što se događa kad suradnja završi' },
+          { text: 'AI obrada računa: što stvarno može, a što i dalje morate vi', href: '/hr/blog/ai-obrada-racuna', note: 'pet pitanja o samom alatu, ne o podacima' },
+          { text: 'DocuFlow AI: kako radi i kako je nastao', href: '/hr/work/docuflow-ai' },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'ai-obrada-racuna',
     lang: 'hr',
     cover: 'invoice-lanes',

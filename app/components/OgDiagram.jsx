@@ -427,7 +427,38 @@ const invoiceLanesLabels = () => [
   { x: 408, y: 140, size: 20, color: C.accent, children: 'popis' },
 ];
 
+// See DataMap in BlogCover.jsx. No <marker> in Satori, so the arrows end in
+// a small dot at the box instead of a head.
+function dataMapShapes() {
+  return [
+    <line key="border" x1="350" y1="30" x2="350" y2="232" stroke={C.warm} strokeWidth="2" strokeDasharray="5 4" />,
+    <rect key="doc" x="40" y="68" width="100" height="44" rx="8" fill="none" stroke={C.muted} strokeWidth="2" />,
+    <line key="in" x1="140" y1="90" x2="176" y2="90" stroke={C.accent} strokeWidth="2" />,
+    <circle key="inDot" cx="177" cy="90" r="3" fill={C.accent} />,
+    <rect key="fra" x="180" y="68" width="140" height="44" rx="8" fill="none" stroke={C.accent} strokeWidth="2" />,
+    <line key="bk" x1="250" y1="112" x2="250" y2="158" stroke={C.muted} strokeWidth="2" />,
+    <rect key="bak" x="180" y="158" width="140" height="44" rx="8" fill="none" stroke={C.muted} strokeWidth="2" strokeDasharray="5 4" />,
+    <line key="toAi" x1="320" y1="90" x2="376" y2="90" stroke={C.warm} strokeWidth="2" />,
+    <circle key="aiDot" cx="377" cy="90" r="3" fill={C.warm} />,
+    <rect key="ai" x="380" y="68" width="70" height="44" rx="8" fill="none" stroke={C.warm} strokeWidth="2" />,
+    <line key="toMail" x1="320" y1="104" x2="376" y2="172" stroke={C.warm} strokeWidth="2" />,
+    <circle key="mailDot" cx="377" cy="173" r="3" fill={C.warm} />,
+    <rect key="mail" x="380" y="158" width="70" height="44" rx="8" fill="none" stroke={C.warm} strokeWidth="2" />,
+  ];
+}
+const dataMapLabels = () => [
+  { x: 40, y: 30, anchor: 'start', size: 15, children: 'kamo odu vaši dokumenti →' },
+  { x: 328, y: 42, size: 15, children: 'EU' },
+  { x: 374, y: 42, size: 15, children: 'SAD' },
+  { x: 90, y: 90, size: 18, children: 'dokument' },
+  { x: 250, y: 90, size: 18, color: C.accent, children: 'Frankfurt' },
+  { x: 250, y: 180, size: 18, children: 'kopije · 14 dana' },
+  { x: 415, y: 90, size: 18, children: 'AI' },
+  { x: 415, y: 180, size: 18, children: 'e-pošta' },
+];
+
 const VARIANTS = {
+  'data-map': { shapes: dataMapShapes, labels: dataMapLabels },
   'invoice-lanes': { shapes: invoiceLanesShapes, labels: invoiceLanesLabels },
   'platform-fields': { shapes: platformFieldsShapes, labels: platformFieldsLabels },
   'spec-mismatch': { shapes: specMismatchShapes, labels: specMismatchLabels },

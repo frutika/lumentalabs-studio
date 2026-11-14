@@ -424,7 +424,36 @@ function InvoiceLanes() {
   );
 }
 
+// Where a client's document actually goes: our server and its backups stay
+// inside the EU (accent), and only two things cross the border, drawn warm
+// and dashed like every other "watch this" line in these covers.
+function DataMap() {
+  return (
+    <>
+      <text x="40" y="30" className="tiny">kamo odu vaši dokumenti →</text>
+      <text x="340" y="42" textAnchor="end" className="tiny">EU</text>
+      <text x="360" y="42" className="tiny">SAD</text>
+      <line x1="350" y1="30" x2="350" y2="232" className="stroke-w" strokeDasharray="5 4" />
+      <rect x="40" y="68" width="100" height="44" rx="8" className="stroke-m" />
+      <text x="90" y="94" textAnchor="middle">dokument</text>
+      <line x1="140" y1="90" x2="176" y2="90" className="stroke-a" markerEnd="url(#arrow)" />
+      <rect x="180" y="68" width="140" height="44" rx="8" className="stroke-a" />
+      <text x="250" y="94" textAnchor="middle" className="lbl-a">Frankfurt</text>
+      <line x1="250" y1="112" x2="250" y2="158" className="stroke-m" />
+      <rect x="180" y="158" width="140" height="44" rx="8" className="stroke-m" strokeDasharray="5 4" />
+      <text x="250" y="184" textAnchor="middle">kopije · 14 dana</text>
+      <line x1="320" y1="90" x2="376" y2="90" className="stroke-w" markerEnd="url(#arrowW)" />
+      <rect x="380" y="68" width="70" height="44" rx="8" className="stroke-w" />
+      <text x="415" y="94" textAnchor="middle">AI</text>
+      <line x1="320" y1="104" x2="376" y2="172" className="stroke-w" markerEnd="url(#arrowW)" />
+      <rect x="380" y="158" width="70" height="44" rx="8" className="stroke-w" />
+      <text x="415" y="184" textAnchor="middle">e-pošta</text>
+    </>
+  );
+}
+
 const VARIANTS = {
+  'data-map': DataMap,
   'invoice-lanes': InvoiceLanes,
   'platform-fields': PlatformFields,
   'spec-mismatch': SpecMismatch,
