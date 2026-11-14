@@ -156,7 +156,10 @@ const posts = [
         p: 'Granicu ne određuje veličina tvrtke, nego količina papira. Ako mjesečno imate pet računa, tablica i pola sata posla vjerojatno su dovoljni i alat vam ne treba. Ako ih je nekoliko desetaka i stižu kroz mail, pretinac i mobitel, prepisivanje postaje posao u kojem se greške ne primjećuju.',
       },
       {
-        p: 'Jedna napomena za iduću godinu: od 1. siječnja 2027. subjekti izvan sustava PDV-a moraju eRačune i izdavati drugim poslovnim subjektima u Hrvatskoj. DocuFlow se bavi ulaznom stranom i ne izdaje eRačune, pa će vam za to trebati posrednik ili MikroeRačun.',
+        p: 'Jedna napomena za iduću godinu: od 1. siječnja 2027. subjekti izvan sustava PDV-a moraju eRačune i izdavati drugim poslovnim subjektima u Hrvatskoj. DocuFlow ih izdaje, ali samo za paušalne obrte i samo ako imate račun kod informacijskog posrednika ePoslovanje. DocuFlow složi eRačun i pošalje ga preko vašeg ePoslovanja, koje ga potpisuje, fiskalizira i dostavlja kupcu.',
+      },
+      {
+        p: 'DocuFlow sam nije posrednik i ne fiskalizira. Zato u ePoslovanju mora biti uključena fiskalizacija izlaznih računa, a u FiskAplikaciji dano ovlaštenje posredniku. Izdaju se računi poslovnim subjektima u Hrvatskoj, ne građanima ni stranim kupcima. Ako ste obveznik PDV-a, kroz DocuFlow ne možete izdavati račune. Besplatna alternativa je MikroeRačun.',
       },
       {
         links: [
