@@ -17,6 +17,14 @@
 //   { links: [{ text, href, note? }] }
 //                             where to go next; '/…' is internal, https leaves
 //
+// services[] are serviceDetails slugs (websites, platforms, ai, integrations,
+// ecommerce, architecture). They decide which service pages list the post and
+// which posts it offers as "read next" — the internal links that tell Google a
+// post matters. A post with none still gets "read next", just ordered by date.
+//
+// seoTitle, where set, replaces title in <title> only. The H1 stays the long,
+// readable headline; the search result gets the version that fits ~60 chars.
+//
 // cover is a variant key rendered by BlogCover.jsx — a small inline SVG
 // diagram of the post's actual failure, not a stock photo. Same reasoning as
 // the rest of this file: no CMS, no image pipeline, ships in the static build.
@@ -24,6 +32,7 @@
 const posts = [
   {
     slug: 'pet-pitanja-prije-ai-alata',
+    services: ['ai', 'integrations'],
     lang: 'hr',
     cover: 'data-map',
     relatedWork: 'docuflow-ai',
@@ -91,6 +100,7 @@ const posts = [
   },
   {
     slug: 'ai-obrada-racuna',
+    services: ['ai', 'integrations'],
     lang: 'hr',
     cover: 'invoice-lanes',
     relatedWork: 'docuflow-ai',
@@ -172,6 +182,8 @@ const posts = [
   },
   {
     slug: 'opis-proizvoda-shopify-woocommerce-etsy',
+    services: ['ecommerce'],
+    seoTitle: 'Opis proizvoda za Shopify, WooCommerce i Etsy',
     lang: 'hr',
     cover: 'platform-fields',
     title: 'Isti proizvod, tri platforme: što Shopify, WooCommerce i Etsy traže od opisa',
@@ -284,6 +296,8 @@ const posts = [
   },
   {
     slug: 'greske-u-opisima-proizvoda',
+    services: ['ecommerce'],
+    seoTitle: '6 grešaka u opisima proizvoda hrvatskih webshopova',
     lang: 'hr',
     cover: 'spec-mismatch',
     title: 'Pregledali smo 30 hrvatskih webshopova. Ovih šest grešaka u opisima proizvoda ponavlja se posvuda',
@@ -403,6 +417,7 @@ const posts = [
   },
   {
     slug: 'nitko-ovo-ne-radi',
+    services: ['platforms'],
     lang: 'hr',
     cover: 'three-answers',
     relatedWork: 'docuflow-ai',
@@ -496,6 +511,8 @@ const posts = [
   },
   {
     slug: 'filter-ideja-12-pitanja',
+    services: ['platforms'],
+    seoTitle: '12 pitanja koja postavimo svakoj ideji prije koda',
     lang: 'hr',
     cover: 'idea-filter',
     title: '12 pitanja koja postavimo svakoj ideji prije prve linije koda',
@@ -590,6 +607,7 @@ const posts = [
   },
   {
     slug: 'opisi-proizvoda-sami-alat-ili-agencija',
+    services: ['ecommerce'],
     lang: 'hr',
     cover: 'ladder',
     title: 'Opisi proizvoda za webshop: sami, alatom ili s agencijom?',
@@ -700,6 +718,7 @@ const posts = [
   },
   {
     slug: 'cijene-na-stranici',
+    services: ['websites'],
     lang: 'hr',
     cover: 'price-filter',
     title: 'Cijene nismo objavili zbog kupaca, nego zbog sebe',
@@ -795,6 +814,7 @@ const posts = [
   },
   {
     slug: 'nginx-500-invisible-errors',
+    services: ['architecture'],
     cover: 'nginx-proxy',
     title: 'The Nginx Setting That Was Hiding Our Own 500 Errors',
     description:
@@ -847,6 +867,7 @@ const posts = [
 
   {
     slug: 'service-worker-froze-our-prerender',
+    services: ['architecture'],
     cover: 'service-worker',
     title: 'A Service Worker Froze Our Prerender on Day One, Forever',
     description:
@@ -898,6 +919,7 @@ await context.close();`,
 
   {
     slug: 'wordpress-hook-that-only-fires-half-the-time',
+    services: ['websites'],
     cover: 'hook-gate',
     title: 'The WordPress Hook That Only Fires Half the Time',
     description:
@@ -951,6 +973,7 @@ await context.close();`,
 
   {
     slug: 'building-a-blog-that-publishes-itself',
+    services: ['ai', 'websites'],
     cover: 'pipeline',
     title: 'Building a Blog That Publishes Itself',
     description:
@@ -996,6 +1019,8 @@ await context.close();`,
 
   {
     slug: 'pocketbase-in-production',
+    services: ['platforms', 'architecture'],
+    seoTitle: 'PocketBase in Production: Three Apps, One Instance',
     cover: 'silos',
     title: 'Running Three Products on One PocketBase, Without Them Sharing Data',
     description:
@@ -1035,6 +1060,8 @@ listRule:   null  // deny — this is the default, not "no restriction"`,
 
   {
     slug: 'technical-seo-audit-checklist-js-sites',
+    services: ['websites'],
+    seoTitle: 'JavaScript SEO Audit Checklist for JS Sites',
     cover: 'seo-scan',
     // Titled for what people type: Search Console showed this post appearing
     // for "javascript seo testing", "javascript seo audit" and "javascript seo

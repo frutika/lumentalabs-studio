@@ -21,7 +21,7 @@ export async function generateMetadata({ params }) {
   const post = postIn(lang, slug);
   if (!post) return {};
   const meta = metaFor(lang, `/blog/${slug}`, {
-    title: post.title,
+    title: post.seoTitle || post.title,
     description: post.description,
     ogType: 'article',
   });

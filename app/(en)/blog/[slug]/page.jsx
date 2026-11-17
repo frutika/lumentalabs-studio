@@ -15,7 +15,7 @@ export async function generateMetadata({ params }) {
   const post = isEnglish(slug) ? postFor(slug) : null;
   if (!post) return {};
   const meta = metaFor(DEFAULT_LOCALE, `/blog/${slug}`, {
-    title: post.title,
+    title: post.seoTitle || post.title,
     description: post.description,
     ogType: 'article',
   });

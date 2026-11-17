@@ -9,6 +9,7 @@ import {
   serviceDetailFor,
   serviceDetailsFor,
   serviceDetailPath,
+  readingFor,
 } from '../../../content';
 import { serviceSchema, faqSchema, breadcrumbSchema } from '../../../content/schema';
 import { DEMO, DEMO_UI } from '../../../content/demo';
@@ -23,6 +24,11 @@ export default function ServiceDetail({ lang, slug }) {
   // The other services, so a page that turns out to be the wrong one still
   // leads somewhere rather than back to the browser's back button.
   const others = serviceDetailsFor(lang).filter((s) => s.slug !== item.slug);
+
+  // Guides and posts about this service. The service page is the strongest
+  // page on the site for its topic, so links from here are what get the
+  // deeper material crawled and indexed.
+  const reading = readingFor(lang, item.slug);
 
   return (
     <>
@@ -206,6 +212,27 @@ export default function ServiceDetail({ lang, slug }) {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+      ) : null}
+
+      {reading.length ? (
+        <section>
+          <div className="wrap">
+            <div className="h-head">
+              <h2>{t.readingH2}</h2>
+            </div>
+            <ul className="link-cards">
+              {reading.map((r) => (
+                <li key={r.key}>
+                  <Link href={p(r.href)}>
+                    <span className="link-card-title">{r.title}</span>
+                    {r.text ? <span className="link-card-text">{r.text}</span> : null}
+                    <span className="link-card-more" aria-hidden="true">→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       ) : null}
