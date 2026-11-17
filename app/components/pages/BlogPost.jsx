@@ -4,13 +4,24 @@ import BlogCover from '../BlogCover';
 import ShareButton from '../ShareButton';
 import ClosingCta from '../ClosingCta';
 import { fitStyle } from '../text';
-import { getDict, localePath, postFor, relatedWorkFor, urlFor } from '../../../content';
+import {
+  getDict,
+  localePath,
+  morePostsFor,
+  postFor,
+  relatedWorkFor,
+  serviceDetailByKey,
+  serviceDetailPath,
+  urlFor,
+} from '../../../content';
 import { articleSchema, breadcrumbSchema } from '../../../content/schema';
 
 export default function BlogPost({ lang, slug }) {
   const d = getDict(lang);
   const post = postFor(slug);
   const related = relatedWorkFor(lang, post);
+  const more = morePostsFor(lang, post);
+  const service = post.services?.length ? serviceDetailByKey(lang, post.services[0]) : null;
   const p = (path) => localePath(lang, path);
   const path = `/blog/${slug}`;
   const url = urlFor(lang, path);
@@ -58,8 +69,37 @@ export default function BlogPost({ lang, slug }) {
               <Link href={p(`/work/${related.slug}`)}>{d.blogPage.relatedCta} ↗</Link>
             </p>
           ) : null}
+
+          {service ? (
+            <p className="see-also">
+              {d.blogPage.serviceLabel}{' '}
+              <Link href={p(serviceDetailPath(lang, service.slug))}>{service.h1}</Link>
+            </p>
+          ) : null}
         </div>
       </section>
+
+      {more.length ? (
+        <section>
+          <div className="wrap">
+            <div className="h-head">
+              <h2>{d.blogPage.moreH2}</h2>
+              <Link className="more-link" href={p('/blog')}>{d.blogPage.backToAll} <span aria-hidden="true">→</span></Link>
+            </div>
+            <ul className="link-cards">
+              {more.map((x) => (
+                <li key={x.slug}>
+                  <Link href={p(`/blog/${x.slug}`)}>
+                    <span className="link-card-title">{x.title}</span>
+                    {x.description ? <span className="link-card-text">{x.description}</span> : null}
+                    <span className="link-card-more" aria-hidden="true">→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
 
       <ClosingCta title={d.blogPage.closingH2} lede={d.blogPage.closingLede}>
         <Link className="btn" href={p('/contact')}>{d.blogPage.closingCta} <span aria-hidden="true">→</span></Link>

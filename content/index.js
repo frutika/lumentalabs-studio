@@ -105,6 +105,36 @@ export function postFor(slug) {
 /** The language a post is published in — its own, or English if it says none. */
 export const postLang = (post) => post?.lang || DEFAULT_LOCALE;
 
+/**
+ * Other posts in the same language for the "read next" block, the ones about
+ * the same service first. Without it a post's only inbound link was the blog
+ * index, and Search Console listed exactly those posts as "discovered — not
+ * indexed": Google had found them once and saw nothing pointing back.
+ */
+export function morePostsFor(lang, post, n = 3) {
+  const mine = post.services || [];
+  const others = postsFor(lang).filter((x) => x.slug !== post.slug);
+  const near = (x) => (x.services || []).some((s) => mine.includes(s));
+  return [...others.filter(near), ...others.filter((x) => !near(x))].slice(0, n);
+}
+
+/**
+ * Guides and posts that go deeper on one service, for its detail page. Guides
+ * first (they are the practical how-to), then posts. Croatian guides only
+ * appear on the Croatian page — they have no translation to point at.
+ */
+export function readingFor(lang, serviceKey) {
+  const guides = lang === 'hr'
+    ? VODICI.filter((g) => g.related === serviceKey).map((g) => ({
+        key: `v-${g.slug}`, title: g.title, text: g.lede, href: `/vodici/${g.slug}`,
+      }))
+    : [];
+  const posts = postsFor(lang)
+    .filter((x) => (x.services || []).includes(serviceKey))
+    .map((x) => ({ key: `b-${x.slug}`, title: x.title, text: x.description, href: `/blog/${x.slug}` }));
+  return [...guides, ...posts];
+}
+
 /** The work case study a post references, if any — for the "see also" link. */
 export function relatedWorkFor(lang, post) {
   return post.relatedWork ? workFor(lang, post.relatedWork) : null;

@@ -240,6 +240,7 @@ Pravila:
   },
   {
     slug: 'automatizacija-objava-na-drustvenim-mrezama',
+    seoTitle: 'Automatizacija objava na društvenim mrežama uz n8n',
     num: '02',
     title: 'Automatizacija objava na društvenim mrežama uz n8n i AI',
     h1: 'Automatizirajte objave na društvenim mrežama',
@@ -424,6 +425,7 @@ Vrati SAMO ispravan JSON, bez dodatnog teksta.`,
   },
   {
     slug: 'ai-korisnicka-podrska-rag',
+    seoTitle: 'AI korisnička podrška (RAG) uz n8n',
     num: '03',
     title: 'AI korisnička podrška s bazom znanja (RAG) uz n8n',
     h1: 'Automatizirajte korisničku podršku uz AI',

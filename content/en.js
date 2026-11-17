@@ -856,6 +856,7 @@ const en = {
 
   serviceDetailPage: {
     eyebrow: 'Service',
+    readingH2: 'Written up from real work',
     pricingH2: 'What it costs',
     vatNote: 'All prices exclude VAT; we are currently not VAT-registered, so none is added to the invoice. The final quote depends on scope — the range is here so you know straight away whether we are in the same order of magnitude.',
     priceQ: 'What does it cost?',
@@ -895,6 +896,8 @@ const en = {
     backToAll: 'All posts',
     relatedH2: 'This came out of building',
     relatedCta: 'Read the case study',
+    moreH2: 'Read next',
+    serviceLabel: 'Related service:',
     closingH2: 'Have something like this to fix?',
     closingLede: 'Describe the problem and we will tell you what it takes.',
     closingCta: 'Get in touch',

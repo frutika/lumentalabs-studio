@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
   const { lang } = await params;
   if (lang !== 'hr') return {};
   const t = getDict(lang).vodiciPage;
-  return metaFor(lang, '/vodici', { title: t.h1, description: t.lede });
+  return metaFor(lang, '/vodici', { title: t.metaTitle || t.h1, description: t.lede });
 }
 
 export default async function Page({ params }) {

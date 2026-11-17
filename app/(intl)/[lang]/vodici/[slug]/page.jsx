@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
   const g = lang === 'hr' ? vodicFor(slug) : null;
   if (!g) return {};
   return metaFor(lang, `/vodici/${slug}`, {
-    title: g.title,
+    title: g.seoTitle || g.title,
     description: g.description,
     ogType: 'article',
   });

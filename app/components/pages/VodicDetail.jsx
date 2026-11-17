@@ -6,6 +6,7 @@ import {
   getDict,
   localePath,
   vodicFor,
+  vodiciFor,
   serviceDetailPath,
   serviceDetailByKey,
 } from '../../../content';
@@ -78,6 +79,10 @@ export default function VodicDetail({ lang, slug }) {
   const g = vodicFor(slug);
   const p = (path) => localePath(lang, path);
   const related = g.related ? serviceDetailByKey(lang, g.related) : null;
+  // The other guides. Each guide used to be linked only from /vodici, which
+  // is why two of the three sat in Search Console as "discovered" and never
+  // crawled; the one linked from a service page was indexed.
+  const otherGuides = vodiciFor().filter((x) => x.slug !== g.slug);
 
   return (
     <>
@@ -193,6 +198,28 @@ export default function VodicDetail({ lang, slug }) {
               {g.tool.cta} <span aria-hidden="true">↗</span>
               <span className="sr"> ({d.a11y.newTab})</span>
             </a>
+          </div>
+        </section>
+      ) : null}
+
+      {otherGuides.length ? (
+        <section>
+          <div className="wrap">
+            <div className="h-head">
+              <h2>{t.othersH2}</h2>
+              <Link className="more-link" href={p('/vodici')}>{t.allGuides} <span aria-hidden="true">→</span></Link>
+            </div>
+            <ul className="link-cards">
+              {otherGuides.map((x) => (
+                <li key={x.slug}>
+                  <Link href={p(`/vodici/${x.slug}`)}>
+                    <span className="link-card-title">{x.title}</span>
+                    {x.lede ? <span className="link-card-text">{x.lede}</span> : null}
+                    <span className="link-card-more" aria-hidden="true">→</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       ) : null}

@@ -918,6 +918,7 @@ const de = {
 
   serviceDetailPage: {
     eyebrow: 'Leistung',
+    readingH2: 'Mehr zum Thema',
     pricingH2: 'Was es kostet',
     vatNote: 'Alle Preise verstehen sich zzgl. MwSt.; derzeit sind wir nicht mehrwertsteuerpflichtig, daher weist die Rechnung keine MwSt. aus. Das endgültige Angebot hängt vom Umfang ab — die Spanne sagt Ihnen sofort, ob wir in derselben Größenordnung liegen.',
     priceQ: 'Was kostet das?',

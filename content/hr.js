@@ -58,7 +58,7 @@ const hr = {
     },
     blog: {
       // No dash: the layout template appends " — Lumenta Labs" to this.
-      title: 'Kako vodimo studio',
+      title: 'Blog o AI automatizaciji, webu i cijenama',
       description:
         'Tekstovi o ponudi, cijenama i pozicioniranju digitalnog studija. Konkretni potezi i brojke s naših stranica, a ne prepričani savjeti.',
     },
@@ -369,6 +369,8 @@ const hr = {
 
   vodiciPage: {
     eyebrow: 'Besplatno',
+    // <title> only; the H1 below stays the long sentence.
+    metaTitle: 'Besplatni vodiči za n8n i AI automatizaciju',
     h1: 'Tri vodiča o automatizaciji, napisana da ih primijenite sami',
     lede:
       'Ono što inače postavljamo klijentima, razloženo korak po korak. Cijeli sadržaj je ovdje, besplatno i bez upisivanja e-maila — PDF je samo pakirana verzija istoga.',
@@ -390,6 +392,8 @@ const hr = {
     backToAll: 'Svi tekstovi',
     relatedH2: 'Ovo je nastalo gradeći',
     relatedCta: 'Pogledajte projekt',
+    moreH2: 'Pročitajte i',
+    serviceLabel: 'Povezana usluga:',
     closingH2: 'Imate sličan problem?',
     closingLede: 'Opišite ga i reći ćemo vam što je potrebno.',
     closingCta: 'Javite nam se',
@@ -409,6 +413,7 @@ const hr = {
     toolH2: 'Ne želite postavljati ovo sami?',
     relatedH2: 'Radije da to odradimo mi?',
     relatedCta: 'Pogledajte uslugu',
+    othersH2: 'Ostali vodiči',
   },
 
   servicesPage: {
@@ -1005,6 +1010,7 @@ const hr = {
 
   serviceDetailPage: {
     eyebrow: 'Usluga',
+    readingH2: 'Vodiči i tekstovi o ovome',
     pricingH2: 'Okvirna cijena',
     // Stated once, here, rather than per service. While the obrt is outside the
     // VAT system the invoice says so anyway; writing it from the start means
