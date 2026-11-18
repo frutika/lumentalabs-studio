@@ -457,6 +457,19 @@ const dataMapLabels = () => [
   { x: 415, y: 180, size: 18, children: 'e-pošta' },
 ];
 
+function guideShapes() {
+  return [
+    <rect key="page" x="150" y="40" width="180" height="190" rx="10" fill="none" stroke={C.muted} strokeWidth="2" />,
+    <line key="head" x1="172" y1="72" x2="290" y2="72" stroke={C.accent} strokeWidth="2" />,
+    ...[108, 138, 168].flatMap((y, i) => [
+      <circle key={`d${y}`} cx="180" cy={y} r="5" fill={C.accent} />,
+      <line key={`l${y}`} x1="194" y1={y} x2={[300, 278, 292][i]} y2={y} stroke={C.muted} strokeWidth="2" />,
+    ]),
+    <circle key="ok" cx="330" cy="205" r="26" fill="none" stroke={C.accent} strokeWidth="2" />,
+    <path key="tick" d="M318 205 l8 8 l16 -16" fill="none" stroke={C.accent} strokeWidth="2" />,
+  ];
+}
+
 const VARIANTS = {
   'data-map': { shapes: dataMapShapes, labels: dataMapLabels },
   'invoice-lanes': { shapes: invoiceLanesShapes, labels: invoiceLanesLabels },
@@ -472,6 +485,7 @@ const VARIANTS = {
   'ladder': { shapes: ladderShapes, labels: ladderLabels },
   'idea-filter': { shapes: ideaFilterShapes, labels: ideaFilterLabels },
   'three-answers': { shapes: threeAnswersShapes, labels: threeAnswersLabels },
+  'guide': { shapes: guideShapes, labels: null },
 };
 
 export default function OgDiagram({ variant }) {

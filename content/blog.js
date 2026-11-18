@@ -25,9 +25,16 @@
 // seoTitle, where set, replaces title in <title> only. The H1 stays the long,
 // readable headline; the search result gets the version that fits ~60 chars.
 //
+// blog-auto.json holds posts published by the n8n workflow (draft by Claude,
+// approved by mail, merged as a PR). It is plain data so a generated post can
+// never break this file's syntax; see vps-infra n8n/. Those posts use the
+// generic 'guide' cover, since a custom diagram is code a workflow can't draw.
+//
 // cover is a variant key rendered by BlogCover.jsx — a small inline SVG
 // diagram of the post's actual failure, not a stock photo. Same reasoning as
 // the rest of this file: no CMS, no image pipeline, ships in the static build.
+
+import autoPosts from './blog-auto.json';
 
 const posts = [
   {
@@ -1127,4 +1134,4 @@ listRule:   null  // deny — this is the default, not "no restriction"`,
   },
 ];
 
-export default posts;
+export default [...autoPosts, ...posts];
