@@ -1,1 +1,144 @@
-[]
+[
+  {
+    "slug": "integracija-webshopa-i-knjigovodstva",
+    "services": [
+      "integrations",
+      "ecommerce"
+    ],
+    "lang": "hr",
+    "cover": "guide",
+    "title": "Webshop i knjigovodstvo: kako odlučiti treba li vam integracija",
+    "description": "Kako provjeriti trebate li povezati webshop, knjigovodstvo i skladište, kada je dovoljan gotov dodatak i što pripremiti prije traženja ponude.",
+    "date": "2026-11-18",
+    "tags": [
+      "integracija sustava",
+      "webshop",
+      "knjigovodstvo"
+    ],
+    "excerpt": "Ako istu narudžbu upisujete u webshop, knjigovodstvo i skladište, ne treba vam nužno skup projekt. Prvo treba znati gdje podatak zapinje.",
+    "body": [
+      {
+        "p": "Narudžba stigne u webshop. Netko je otvori, prepiše kupca i stavke u knjigovodstveni program, a zatim ručno smanji zalihu u tablici ili skladišnom programu. To je posao od nekoliko minuta, ali se ponavlja za svaku narudžbu, svaki dan."
+      },
+      {
+        "p": "Problem nije samo izgubljeno vrijeme. Svaki prepisani podatak mjesto je za grešku: zamijenjena znamenka u iznosu, krivo upisana šifra artikla, zaliha koja pokazuje dva komada kad ih nema nijedan. Takve greške često prvi primijeti kupac, a ne vi."
+      },
+      {
+        "p": "Ovaj vodič pomaže vam odlučiti trebate li uopće povezivati sustave, je li dovoljan gotov dodatak i što morate znati prije nego što bilo koga pitate za ponudu. Možete ga proći s olovkom u ruci, bez ikakvog tehničkog predznanja."
+      },
+      {
+        "h2": "Prvo zapišite put jednog podatka"
+      },
+      {
+        "p": "Prije bilo kakve odluke uzmite jednu stvarnu narudžbu i zapišite što se s njom događa od trenutka kad kupac klikne „Naruči” do trenutka kad je posao zatvoren. Ne kako bi trebalo biti, nego kako je zapravo."
+      },
+      {
+        "ul": [
+          "U koji sustav podatak prvi put ulazi: webshop, e-mail ili telefon.",
+          "Tko ga i gdje ponovno upisuje: knjigovodstvo, skladište, dostavna služba, CRM.",
+          "Koliko se puta tjedno to ponavlja i koliko traje svaki put.",
+          "Koje su se greške dogodile u zadnjih nekoliko mjeseci i gdje su nastale.",
+          "Što se događa kad osoba koja to radi ode na godišnji odmor."
+        ]
+      },
+      {
+        "p": "Iz takvog popisa obično postanu jasne dvije stvari: koja je veza najbolnija i je li problem uopće u povezivanju. Ako se isti podatak upisuje na tri mjesta, to je posao za integraciju. Ako ga svatko upisuje na svoj način jer pravila nema, prvo treba dogovoriti pravila. Povezivanjem nereda dobivate samo brži nered."
+      },
+      {
+        "h2": "Najprije provjerite postoji li gotov dodatak"
+      },
+      {
+        "p": "Mnoge webshop platforme i knjigovodstveni programi imaju gotove dodatke za povezivanje s uobičajenim sustavima, poput dostavnih službi, alata za newsletter ili servisa za plaćanje. Ako takav dodatak pokriva ono što vam treba, uključite njega. Bit će jeftiniji i brže će proraditi od bilo čega izrađenog po mjeri. Kad ga procjenjujete, ne gledajte samo popis značajki, nego pitajte:"
+      },
+      {
+        "ul": [
+          "Prenosi li točno one podatke koji vam trebaju ili samo dio njih?",
+          "Radi li u smjeru koji vam treba ili samo u jednom?",
+          "Što radi kad podatak ne odgovara: preskoči ga, javi grešku ili ga tiho upiše krivo?",
+          "Možete li vidjeti zapis o tome što je preneseno i kada?",
+          "Tko ga održava i što se događa kad jedan od sustava dobije novu verziju?"
+        ]
+      },
+      {
+        "p": "Integracija po mjeri ima smisla kad dodatka nema, kad pokriva samo pola posla ili kad imate pravila koja nijedan gotov alat ne poznaje, na primjer zajedničke zalihe za više prodajnih kanala ili posebna pravila za artikle koji se u dva sustava ne slažu."
+      },
+      {
+        "h2": "Jedan smjer ili oba, i tko ima zadnju riječ"
+      },
+      {
+        "p": "Najjednostavnija integracija šalje podatak u jednom smjeru: narudžba iz webshopa ide u dostavnu službu, novi kupac ide u newsletter. Ako na drugoj strani nitko te podatke ne mijenja, nema mjesta za sukob."
+      },
+      {
+        "p": "Dvosmjerna sinkronizacija je druga priča. Kad se cijene ili zalihe mogu promijeniti i u webshopu i u knjigovodstvenom ili ERP programu, morate unaprijed odlučiti koji sustav ima zadnju riječ za koji podatak. Bez toga dvije promjene istog podatka u kratkom razmaku daju rezultat koji nitko ne zna objasniti."
+      },
+      {
+        "quote": "Prije nego što povežete dva sustava, odlučite koji je od njih izvor istine za svaki pojedini podatak."
+      },
+      {
+        "p": "U praksi to može izgledati ovako: cijene i zalihe vodi ERP i šalje ih u webshop, narudžbe nastaju u webshopu i idu u knjigovodstvo, a potvrda plaćanja vraća se natrag u narudžbu. Zapišite takav popis za svoje podatke, makar u tri retka. Uštedjet ćete puno nesporazuma kasnije."
+      },
+      {
+        "h2": "Što ako jedan od sustava nema API"
+      },
+      {
+        "p": "API je dogovoreni način na koji jedan program razmjenjuje podatke s drugim. Kad ga imaju oba sustava, povezivanje je razmjerno izravno. Neki stariji knjigovodstveni i skladišni programi ga nemaju ili ga imaju samo djelomično, pa se preko njega može čitati, ali ne i upisivati."
+      },
+      {
+        "p": "To ne znači da je povezivanje nemoguće. Drugi putevi su izvoz i uvoz datoteka, razmjena preko e-maila ili posrednik koji podatke preuzima i prosljeđuje. Takva rješenja mogu dobro raditi, ali su osjetljivija na promjene formata i traže jasno pravilo za slučaj kad datoteka ne stigne. Ako pouzdan put ne postoji, bolje je to saznati prije ponude nego nakon nekoliko mjeseci rada."
+      },
+      {
+        "p": "Prije razgovora s bilo kojim izvođačem provjerite u dokumentaciji ili kod dobavljača svog programa ima li API i koji se podaci preko njega mogu čitati i upisivati. To je pitanje koje ćete ionako čuti prvo."
+      },
+      {
+        "h2": "Veza koju nitko ne nadzire tiho prestane raditi"
+      },
+      {
+        "p": "Integracija nije projekt koji se jednom završi i zaboravi. Sustavi s obje strane dobivaju nadogradnje, a kad netko promijeni svoj API, veza stane ili počne griješiti. Najgori slučaj nije veza koja očito ne radi, nego ona koja izgleda kao da radi: narudžbe se ne prenose, a nitko to ne zna dok ne nazove kupac. Zato od svake integracije, bila ona gotov dodatak ili rađena po mjeri, tražite tri stvari:"
+      },
+      {
+        "ul": [
+          "Zapis svake razmjene, da se može vidjeti gdje je podatak zapeo.",
+          "Upozorenje kad veza stane, poslano osobi koja će ga doista pročitati.",
+          "Dogovor o tome tko popravlja kvar i u kojem roku."
+        ]
+      },
+      {
+        "p": "Ako vam dodatak ili izvođač ne nudi ništa od toga, računajte s time da ćete grešku otkriti kasno i ručno."
+      },
+      {
+        "h2": "Kako pripremiti upit i koliko to može koštati"
+      },
+      {
+        "p": "S popisom iz prvog koraka i odgovorima na pitanja iznad imate gotovo sve što treba za razgovor s izvođačem: koje sustave koristite, koje podatke treba prenositi, u kojem smjeru i koliko često, koji je sustav izvor istine i ima li svaki od njih API. Dodajte okvir budžeta, jer i grub raspon uštedi puno nagađanja s obje strane."
+      },
+      {
+        "p": "U Lumenta Labsu integraciju sustava radimo kao zasebnu uslugu, s objavljenim cijenama. Jedna veza, u kojoj dva sustava razmjenjuju jednu vrstu podataka preko gotovog API-ja s obje strane, kreće od 1.500 €. Sinkronizacija s ERP-om ili knjigovodstvom, u kojoj se cijene, zalihe, narudžbe i računi usklađuju u oba smjera, iznosi 3.500 – 8.000 €. Jedan tok podataka kroz više sustava kreće od 8.000 € i počinje pregledom sustava koje imate, a ne cijenom. Sve cijene su bez PDV-a. Ako vašu potrebu već pokriva gotov dodatak, reći ćemo vam da uključite njega."
+      },
+      {
+        "links": [
+          {
+            "text": "Integracija poslovnih sustava",
+            "href": "/hr/services/integracija-sustava",
+            "note": "Što ulazi u koji cjenovni raspon i česta pitanja o sustavima bez API-ja."
+          },
+          {
+            "text": "AI automatizacija poslovnih procesa",
+            "href": "/hr/services/ai-automatizacija-poslovanja",
+            "note": "Kad ne treba samo prenijeti podatak, nego preuzeti cijeli ručni zadatak."
+          },
+          {
+            "text": "DocuFlow AI",
+            "href": "/hr/work/docuflow-ai",
+            "note": "Primjer veze s posrednikom: eRačuni stižu kao strukturirani podaci, bez ručnog unosa."
+          },
+          {
+            "text": "Kontakt",
+            "href": "/hr/contact",
+            "note": "Opišite koje sustave koristite i gdje se podatak prepisuje."
+          }
+        ]
+      }
+    ],
+    "seoTitle": "Webshop i knjigovodstvo: treba li vam integracija?"
+  }
+]
