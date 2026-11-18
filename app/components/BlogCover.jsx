@@ -452,6 +452,25 @@ function DataMap() {
   );
 }
 
+// Generic cover for posts published by the n8n workflow (content/blog-auto.json):
+// a page with a heading, three points and a check. Language-neutral, no labels.
+function Guide() {
+  return (
+    <>
+      <rect x="150" y="40" width="180" height="190" rx="10" className="stroke-m" />
+      <line x1="172" y1="72" x2="290" y2="72" className="stroke-a" />
+      {[108, 138, 168].map((y, i) => (
+        <g key={y}>
+          <circle cx="180" cy={y} r="5" className="fill-a" />
+          <line x1="194" y1={y} x2={[300, 278, 292][i]} y2={y} className="stroke-m" />
+        </g>
+      ))}
+      <circle cx="330" cy="205" r="26" className="stroke-a" />
+      <path d="M318 205 l8 8 l16 -16" className="stroke-a" />
+    </>
+  );
+}
+
 const VARIANTS = {
   'data-map': DataMap,
   'invoice-lanes': InvoiceLanes,
@@ -467,6 +486,7 @@ const VARIANTS = {
   'ladder': Ladder,
   'idea-filter': IdeaFilter,
   'three-answers': ThreeAnswers,
+  'guide': Guide,
 };
 
 export default function BlogCover({ variant, title, className = '' }) {
