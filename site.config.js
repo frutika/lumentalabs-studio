@@ -39,6 +39,8 @@ export const site = {
     github: 'https://github.com/frutika/lumentalabs-studio',
     // The DocuFlow AI WhatsApp channel. Its posts are in Croatian.
     docuflowWhatsapp: 'https://whatsapp.com/channel/0029VbDk22b2Jl8Efori7I1d',
+    // Google Business Profile. The cid form is stable; the maps.app.goo.gl share link is not.
+    googleBusiness: 'https://www.google.com/maps?cid=14057719053920724113',
   },
 
   // Product names and outbound links are the same in every language.

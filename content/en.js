@@ -1174,7 +1174,7 @@ const en = {
       problem:
         'We started following Croatia\'s Fiscalisation 2.0 while nobody yet knew quite how it would work or why it was being introduced. Digging deeper, we noticed what the announcements left out: mandatory e-invoicing does not mean the end of paper. A small business still receives PDFs, photographed receipts, scans and cash slips — only now alongside e-invoices. Two worlds, and no tool for both.',
       built: [
-        'E-invoices arrive automatically through a certified access point (ePoslovanje, doku.hr). The data is already structured, so no AI processing is spent on it.',
+        'E-invoices arrive automatically through a certified access point (ePoslovanje). The data is already structured, so no AI processing is spent on it.',
         'Everything else — PDF, scan, photo — is read by AI (Claude), which extracts amounts, due dates, IBAN and tax ID into structured, reviewable data.',
         'An action engine that suggests the next step — a payment reminder, an accounting task — and only sends it once a person approves it, with a real email behind every approved reminder',
         'Per-call AI cost tracking built in from day one, so the product knows its own margins before its first customer does',
