@@ -657,6 +657,78 @@ const en = {
       ],
     },
     {
+      slug: 'n8n',
+      path: 'n8n-automation',
+      title: 'n8n automation: setup and workflows',
+      description: 'Self-hosted n8n set up on your server and custom n8n workflows with error handling and monitoring. We run n8n ourselves, in production.',
+      h1: 'n8n automation',
+      lede: 'n8n on your own server, and workflows that run unattended: connecting the apps, AI models and data you already have.',
+      intro: [
+        'n8n is an open-source automation tool. It connects apps, databases and AI models into visual workflows, and it can be installed on your own server, so your data never leaves your infrastructure.',
+        'A workflow put together in an afternoon works until something changes. When an API returns an error or data arrives in an unexpected shape, it quietly stops. So we build workflows with error handling, a record of every run and an alert when something gets stuck.',
+        'We run n8n ourselves, self-hosted on our own server: workflows write and publish the articles on this site’s blog and send the free guides to people who ask for them.',
+      ],
+      gets: [
+        'n8n on your server or in your n8n Cloud account, owned by you',
+        'HTTPS and protected access to the editor',
+        'Regular backups of workflows and data',
+        'Workflows with error handling and alerts when something gets stuck',
+        'A description of every workflow: what it does, where it reads from and where it writes',
+      ],
+      notFor: 'If a ready-made add-on in a tool you already use does the job, you do not need n8n. We will tell you before we quote.',
+      sections: [
+        {
+          h2: 'Maintenance',
+          paragraphs: [
+            'n8n ships new versions often, and the apps it connects to change their APIs. Without maintenance a workflow stops sooner or later.',
+            'Updates, monitoring and fixes are part of managed hosting and maintenance, as for the other systems we build.',
+          ],
+        },
+      ],
+      pricing: {
+        q: 'How much does n8n automation cost?',
+        bands: [
+          {
+            price: 'from €600',
+            name: 'n8n setup',
+            body: 'Self-hosted n8n on your server, with HTTPS, protected access and backups. Ready for the first workflows.',
+            examples: [
+              'A team that wants n8n but not the server work',
+              'Moving from n8n Cloud to your own server',
+              'Data that must not leave your infrastructure',
+            ],
+            boundary: 'The server or VPS is paid separately, usually €5 – 20 a month.',
+          },
+          {
+            price: '€1,500 – 3,500',
+            name: 'Custom workflow',
+            body: 'One task automated end to end, with error handling and a description of how it works.',
+            examples: [
+              'Form enquiries into your CRM, with an automatic reply',
+              'Product descriptions or posts written by AI, with your approval',
+              'Shop orders into accounting or the courier',
+            ],
+            boundary: 'When the automation spans several processes or needs its own interface, it is AI process automation.',
+          },
+        ],
+        min: 600,
+      },
+      faq: [
+        {
+          q: 'What is n8n?',
+          a: 'An open-source automation tool that connects apps, databases and AI models into visual workflows. It runs in n8n Cloud or on your own server.',
+        },
+        {
+          q: 'Self-hosted or n8n Cloud?',
+          a: 'Self-hosted means your data stays with you and there is no licence fee for internal business use, but someone has to maintain the server. n8n Cloud has no server to maintain, but it is a monthly subscription. We recommend one or the other based on the number of workflows and how sensitive the data is.',
+        },
+        {
+          q: 'n8n, Zapier or Make?',
+          a: 'For a few simple connections, Zapier or Make are often enough and quicker to set up. n8n pays off when there are many runs, when data must not leave your infrastructure, or when a workflow needs logic the ready-made tools cannot handle.',
+        },
+      ],
+    },
+    {
       slug: 'ecommerce',
       path: 'ecommerce-content-automation',
       title: 'AI product descriptions for e-commerce',

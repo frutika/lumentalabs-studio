@@ -721,6 +721,78 @@ const de = {
       ],
     },
     {
+      slug: 'n8n',
+      path: 'n8n-automatisierung',
+      title: 'n8n-Automatisierung: Einrichtung und Workflows',
+      description: 'Self-hosted n8n auf Ihrem Server und n8n-Workflows nach Maß, mit Fehlerbehandlung und Überwachung. Wir betreiben n8n selbst, in Produktion.',
+      h1: 'n8n-Automatisierung',
+      lede: 'n8n auf Ihrem eigenen Server und Workflows, die ohne Aufsicht laufen: Sie verbinden die Apps, KI-Modelle und Daten, die Sie schon haben.',
+      intro: [
+        'n8n ist ein Open-Source-Werkzeug für Automatisierung. Es verbindet Apps, Datenbanken und KI-Modelle zu visuellen Workflows und lässt sich auf dem eigenen Server installieren, sodass Ihre Daten Ihre Infrastruktur nicht verlassen.',
+        'Ein an einem Nachmittag gebauter Workflow läuft, bis sich etwas ändert. Liefert eine API einen Fehler oder kommen Daten in unerwarteter Form, bleibt er still stehen. Deshalb bauen wir Workflows mit Fehlerbehandlung, einem Protokoll jedes Durchlaufs und einer Benachrichtigung, wenn etwas hängt.',
+        'Wir betreiben n8n selbst, self-hosted auf unserem eigenen Server: Workflows schreiben und veröffentlichen die Artikel im Blog dieser Website und verschicken die kostenlosen Leitfäden an alle, die sie anfordern.',
+      ],
+      gets: [
+        'n8n auf Ihrem Server oder in Ihrem n8n-Cloud-Konto, in Ihrem Eigentum',
+        'HTTPS und geschützter Zugang zum Editor',
+        'Regelmäßige Sicherung von Workflows und Daten',
+        'Workflows mit Fehlerbehandlung und Benachrichtigung, wenn etwas hängt',
+        'Eine Beschreibung jedes Workflows: was er tut, woher er liest und wohin er schreibt',
+      ],
+      notFor: 'Wenn ein fertiges Add-on in einem Werkzeug, das Sie schon nutzen, die Aufgabe erledigt, brauchen Sie kein n8n. Das sagen wir Ihnen vor dem Angebot.',
+      sections: [
+        {
+          h2: 'Wartung',
+          paragraphs: [
+            'n8n erscheint häufig in neuen Versionen, und die angebundenen Apps ändern ihre APIs. Ohne Wartung bleibt ein Workflow früher oder später stehen.',
+            'Updates, Überwachung und Fehlerbehebung gehören zu Hosting und Wartung, wie bei den anderen Systemen, die wir bauen.',
+          ],
+        },
+      ],
+      pricing: {
+        q: 'Was kostet n8n-Automatisierung?',
+        bands: [
+          {
+            price: 'ab 600 €',
+            name: 'n8n-Einrichtung',
+            body: 'Self-hosted n8n auf Ihrem Server, mit HTTPS, geschütztem Zugang und Sicherung. Bereit für die ersten Workflows.',
+            examples: [
+              'Ein Team, das n8n will, aber nicht die Serverarbeit',
+              'Umzug von n8n Cloud auf den eigenen Server',
+              'Daten, die Ihre Infrastruktur nicht verlassen dürfen',
+            ],
+            boundary: 'Server oder VPS werden separat bezahlt, meist 5 – 20 € im Monat.',
+          },
+          {
+            price: '1.500 – 3.500 €',
+            name: 'Workflow nach Maß',
+            body: 'Eine Aufgabe von Anfang bis Ende automatisiert, mit Fehlerbehandlung und einer Beschreibung, wie sie funktioniert.',
+            examples: [
+              'Formularanfragen ins CRM, mit automatischer Antwort',
+              'Produktbeschreibungen oder Beiträge von KI, mit Ihrer Freigabe',
+              'Shop-Bestellungen in die Buchhaltung oder an den Versanddienst',
+            ],
+            boundary: 'Umfasst die Automatisierung mehrere Prozesse oder eine eigene Oberfläche, ist es KI-Prozessautomatisierung.',
+          },
+        ],
+        min: 600,
+      },
+      faq: [
+        {
+          q: 'Was ist n8n?',
+          a: 'Ein Open-Source-Werkzeug für Automatisierung, das Apps, Datenbanken und KI-Modelle zu visuellen Workflows verbindet. Es läuft in n8n Cloud oder auf Ihrem eigenen Server.',
+        },
+        {
+          q: 'Self-hosted oder n8n Cloud?',
+          a: 'Self-hosted heißt: Die Daten bleiben bei Ihnen, und für die interne Nutzung im Unternehmen fällt keine Lizenzgebühr an, aber jemand muss den Server warten. n8n Cloud hat keinen Server zu warten, kostet aber monatlich. Wir empfehlen das eine oder andere nach Anzahl der Workflows und Sensibilität der Daten.',
+        },
+        {
+          q: 'n8n, Zapier oder Make?',
+          a: 'Für ein paar einfache Verbindungen reichen Zapier oder Make oft aus und sind schneller eingerichtet. n8n lohnt sich bei vielen Durchläufen, wenn Daten Ihre Infrastruktur nicht verlassen dürfen oder wenn ein Workflow Logik braucht, die fertige Werkzeuge nicht abbilden.',
+        },
+      ],
+    },
+    {
       slug: 'ecommerce',
       path: 'produktbeschreibungen-automatisieren',
       title: 'KI-Produktbeschreibungen für den Onlineshop',
