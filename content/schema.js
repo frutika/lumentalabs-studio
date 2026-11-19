@@ -31,7 +31,7 @@ export function organizationSchema(lang) {
     logo: `${site.url}/media/logo.png`,
     image: `${site.url}/media/hero.jpg`,
     // Only properties we actually operate. No invented profiles.
-    sameAs: [site.reelChannel, ...site.work.map((w) => w.href)].filter(Boolean),
+    sameAs: [site.social.googleBusiness, site.reelChannel, ...site.work.map((w) => w.href)].filter(Boolean),
   };
 }
 

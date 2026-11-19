@@ -1224,7 +1224,7 @@ const de = {
       problem:
         'Die kroatische Fiskalisierung 2.0 haben wir verfolgt, als noch niemand genau wusste, wie sie funktionieren würde und warum sie eingeführt wird. Beim genaueren Hinsehen fiel uns auf, was in den Ankündigungen fehlte: Die Pflicht zur E-Rechnung bedeutet nicht das Ende des Papiers. Ein kleines Unternehmen erhält weiterhin PDFs, fotografierte Belege, Scans und Barquittungen — nur jetzt zusätzlich zu E-Rechnungen. Zwei Welten, und kein Tool für beide.',
       built: [
-        'E-Rechnungen kommen automatisch über einen zertifizierten Zugangsdienst (ePoslovanje, doku.hr). Die Daten sind bereits strukturiert, daher fällt dafür keine KI-Verarbeitung an.',
+        'E-Rechnungen kommen automatisch über einen zertifizierten Zugangsdienst (ePoslovanje). Die Daten sind bereits strukturiert, daher fällt dafür keine KI-Verarbeitung an.',
         'Alles andere — PDF, Scan, Foto — liest die KI (Claude) und extrahiert Beträge, Fälligkeiten, IBAN und Steuernummer als strukturierte, prüfbare Daten.',
         'Eine Action Engine, die den nächsten Schritt vorschlägt — eine Zahlungserinnerung, eine Buchhaltungsaufgabe — und ihn erst verschickt, wenn ein Mensch zustimmt, mit echtem E-Mail-Versand hinter jeder freigegebenen Erinnerung',
         'KI-Kostenerfassung pro Aufruf von Anfang an eingebaut, damit das Produkt seine eigene Marge kennt, bevor der erste Kunde es tut',

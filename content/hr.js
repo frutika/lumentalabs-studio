@@ -1327,7 +1327,7 @@ const hr = {
       problem:
         'Fiskalizaciju 2.0 počeli smo pratiti dok još nitko nije točno znao kako će raditi ni zašto se uvodi. Kad smo zakopali dublje, uočili smo ono što se u najavama nije spominjalo: obavezan eRačun ne znači kraj papira. Mala tvrtka i dalje dobiva PDF-ove, fotografirane račune, skenove i gotovinske potvrde — samo sada uz eRačune. Dva svijeta, a nijedan alat za oba.',
       built: [
-        'eRačuni stižu automatski preko certificiranog informacijskog posrednika (ePoslovanje, doku.hr). Podaci su već strukturirani, pa se na njih ne troši AI obrada.',
+        'eRačuni stižu automatski preko certificiranog informacijskog posrednika (ePoslovanje). Podaci su već strukturirani, pa se na njih ne troši AI obrada.',
         'Sve ostalo — PDF, sken, fotografiju — čita AI (Claude) i izvlači iznose, rokove, IBAN i OIB u strukturirane, provjerljive podatke.',
         'Action Engine koji predlaže sljedeći korak — podsjetnik za plaćanje, knjigovodstveni zadatak — i šalje ga tek kad ga osoba odobri, uz pravi email iza svakog odobrenog podsjetnika',
         'Praćenje AI troška po pozivu ugrađeno od prvog dana, pa proizvod zna svoju maržu prije nego je sazna prvi kupac',
