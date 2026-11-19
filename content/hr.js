@@ -531,14 +531,15 @@ const hr = {
     {
       slug: 'websites',
       path: 'izrada-web-stranica',
-      title: 'Izrada web stranica i webshopova',
-      description: 'Izrada web stranica i webshopova koji se učitavaju odmah, rade na više jezika i spremni su za Google i AI pretraživače. Jasne cijene i popis onoga što ulazi.',
+      title: 'Izrada web stranica i webshopova, Zadar',
+      description: 'Izrada web stranica i webshopova iz Vira kod Zadra, za cijelu Hrvatsku. Brze, na više jezika i spremne za Google i AI pretraživače. Jasne cijene.',
       h1: 'Izrada web stranica i webshopova',
       lede: 'Stranice koje donose upite, a ne samo postoje. Brze na svakom zaslonu, na jeziku vaših kupaca i spremne za tražilice i AI asistente.',
       intro: [
         'Stranica koja se sporo učitava i izgleda kao sve ostale gubi posjetitelja prije nego što pročita što radite. Većina toga je tehnička stvar, i većina se da popraviti.',
         'Dizajniramo za vaš brend, a ne iz predloška, i gradimo tako da je stranica brza, čitljiva na mobitelu i pripremljena za Google. Pripremljena je i za AI asistente poput ChatGPT-a i Claudea, koji sve češće sami odgovore na pitanje umjesto da posjetitelja pošalju na rezultat pretrage.',
         'Ova stranica izgrađena je na isti način: bez kolačića za praćenje, na tri jezika i s tekstualnom verzijom svake stranice za AI alate.',
+        'Studio smo iz Vira kod Zadra. Radimo za klijente u Zadru i Zadarskoj županiji, u ostatku Hrvatske i u inozemstvu.',
       ],
       gets: [
         'Dizajn prilagođen vašem vizualnom identitetu, ne gotov predložak',
@@ -813,6 +814,78 @@ const hr = {
         {
           q: 'Koja je razlika između integracije i automatizacije?',
           a: 'Integracija povezuje dva sustava da razmjenjuju podatke. Automatizacija preuzima cijeli zadatak koji netko radi ručno — često uključuje integraciju, ali i pravila, odluke i obavijesti.',
+        },
+      ],
+    },
+    {
+      slug: 'n8n',
+      path: 'n8n-automatizacija',
+      title: 'n8n automatizacija: postavljanje i workflowi',
+      description: 'Postavljanje self-hosted n8n-a na vaš server i izrada n8n workflowa po mjeri, s obradom grešaka i nadzorom. n8n koristimo i sami, u produkciji.',
+      h1: 'n8n automatizacija',
+      lede: 'n8n na vašem serveru i workflowi koji rade bez nadzora: povezuju aplikacije, AI modele i podatke koje već imate.',
+      intro: [
+        'n8n je alat otvorenog koda za automatizaciju. Aplikacije, baze i AI modele povezuje u vizualne radne tokove (workflowe), a može se instalirati na vlastiti server, pa podaci ne izlaze iz vaše infrastrukture.',
+        'Workflow složen za popodne radi dok se ništa ne promijeni. Kad API vrati grešku ili podatak stigne u neočekivanom obliku, tiho stane. Zato gradimo workflowe s obradom grešaka, zapisom svakog izvršavanja i obavijesti kad nešto zapne.',
+        'n8n koristimo i sami, self-hosted na vlastitom serveru: workflowi pišu i objavljuju članke na blogu ove stranice i šalju besplatne vodiče onima koji ih zatraže.',
+      ],
+      gets: [
+        'n8n na vašem serveru ili u vašem n8n Cloud računu, u vašem vlasništvu',
+        'HTTPS i zaštićen pristup sučelju',
+        'Redovitu sigurnosnu kopiju workflowa i podataka',
+        'Workflowe s obradom grešaka i obavijesti kad nešto zapne',
+        'Opis svakog workflowa: što radi, odakle čita i kamo piše',
+      ],
+      notFor: 'Ako posao već rješava gotov dodatak u alatu koji koristite, n8n vam ne treba. Reći ćemo vam to prije ponude.',
+      sections: [
+        {
+          h2: 'Održavanje',
+          paragraphs: [
+            'n8n izlazi u novoj verziji često, a aplikacije s kojima se povezuje mijenjaju svoje API-je. Bez održavanja workflow prije ili kasnije stane.',
+            'Nadogradnje, nadzor i popravke nudimo kroz tehničko održavanje i podršku, kao i za ostale sustave koje gradimo.',
+          ],
+        },
+      ],
+      pricing: {
+        q: 'Koliko košta n8n automatizacija?',
+        bands: [
+          {
+            price: 'od 600 €',
+            name: 'Postavljanje n8n-a',
+            body: 'Self-hosted n8n na vašem serveru, s HTTPS-om, zaštićenim pristupom i sigurnosnom kopijom. Spreman za prve workflowe.',
+            examples: [
+              'Tim koji želi n8n, ali ne i brigu o serveru',
+              'Prelazak s n8n Clouda na vlastiti server',
+              'Podaci koji ne smiju izlaziti iz vaše infrastrukture',
+            ],
+            boundary: 'Server ili VPS plaća se zasebno, obično 5 – 20 € mjesečno.',
+          },
+          {
+            price: '1.500 – 3.500 €',
+            name: 'Workflow po mjeri',
+            body: 'Jedan zadatak automatiziran od početka do kraja, s obradom grešaka i opisom kako radi.',
+            examples: [
+              'Upiti iz forme u CRM, uz automatski odgovor',
+              'Opisi proizvoda ili objave koje piše AI, uz vaše odobrenje',
+              'Narudžbe iz webshopa u knjigovodstvo ili dostavnu službu',
+            ],
+            boundary: 'Kad automatizacija obuhvaća više procesa ili vlastito sučelje, riječ je o AI automatizaciji poslovnih procesa.',
+          },
+        ],
+        min: 600,
+      },
+      faq: [
+        {
+          q: 'Što je n8n?',
+          a: 'Alat za automatizaciju otvorenog koda koji povezuje aplikacije, baze i AI modele u vizualne workflowe. Može raditi u n8n Cloudu ili na vašem vlastitom serveru.',
+        },
+        {
+          q: 'Self-hosted ili n8n Cloud?',
+          a: 'Self-hosted znači da podaci ostaju kod vas i da za interne potrebe tvrtke ne plaćate licencu, ali netko mora održavati server. n8n Cloud nema servera za održavanje, ali se plaća mjesečno. Preporučit ćemo jedno od toga prema broju workflowa i osjetljivosti podataka.',
+        },
+        {
+          q: 'n8n, Zapier ili Make?',
+          a: 'Za nekoliko jednostavnih veza Zapier ili Make često su dovoljni i brže se postave. n8n se isplati kad je izvršavanja puno, kad podaci ne smiju izlaziti iz vaše infrastrukture ili kad workflow treba logiku koju gotovi alati ne podnose.',
         },
       ],
     },

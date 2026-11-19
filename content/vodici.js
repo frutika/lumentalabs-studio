@@ -421,7 +421,7 @@ Vrati SAMO ispravan JSON, bez dodatnog teksta.`,
       cta: 'Otvori Lumenta AI',
       href: 'https://lumenta.shop',
     },
-    related: 'ai',
+    related: 'n8n',
   },
   {
     slug: 'ai-korisnicka-podrska-rag',
@@ -597,7 +597,7 @@ Pitanje kupca: {{ $json["poruka"] }}`,
         ['Spor odgovor', 'Prevelik broj dohvaćenih odlomaka — ograničite na tri do pet najrelevantnijih.'],
       ],
     },
-    related: 'ai',
+    related: 'n8n',
   },
 ];
 

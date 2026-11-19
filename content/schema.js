@@ -17,6 +17,11 @@ export function organizationSchema(lang) {
     ...(site.telephone ? { telephone: site.telephone } : {}),
     address: { '@type': 'PostalAddress', ...legal.postal },
     taxID: legal.oib,
+    // Vir is in Zadarska županija; clients come from there and the rest of Croatia.
+    areaServed: [
+      { '@type': 'AdministrativeArea', name: 'Zadarska županija' },
+      { '@type': 'Country', name: 'Hrvatska' },
+    ],
     // The studio is one person, and the site says so on /about and /security.
     founder: { '@type': 'Person', name: site.founder, sameAs: [site.social.linkedin] },
     contactPoint: {
