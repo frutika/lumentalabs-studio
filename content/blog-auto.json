@@ -1,5 +1,161 @@
 [
   {
+    "slug": "koji-posao-automatizirati-prvi",
+    "services": [
+      "ai",
+      "integrations"
+    ],
+    "lang": "hr",
+    "cover": "guide",
+    "title": "Koji posao automatizirati prvi: kako odabrati proces koji se isplati",
+    "description": "Kako u maloj tvrtki odabrati prvi proces za automatizaciju: popis zadataka, kriteriji dobrog kandidata, izračun uštede i znakovi da još niste spremni.",
+    "date": "2026-11-26",
+    "tags": [
+      "automatizacija",
+      "AI",
+      "mala poduzeća"
+    ],
+    "excerpt": "Zadatak koji vas najviše živcira nije nužno onaj koji prvi treba automatizirati. Evo kako odabrati proces koji će stvarno osloboditi vrijeme.",
+    "body": [
+      {
+        "p": "Kad vlasnik male tvrtke odluči da je vrijeme za automatizaciju, prvi poriv obično je krenuti od onoga što najviše smeta. To je razumljivo, ali nije uvijek pametno. Zadatak koji najviše živcira nije nužno onaj koji oduzima najviše vremena, a ni onaj koji se najlakše prepusti stroju."
+      },
+      {
+        "p": "Prvi automatizirani proces ima dvostruku ulogu. Treba osloboditi stvarno vrijeme, ali vam treba i pokazati kako automatizacija izgleda u vašoj tvrtki: koliko traje dogovor, što pođe po zlu i tko je zadužen kad nešto zapne. Ako prvi pokušaj ne uspije, teško ćete se odlučiti za drugi."
+      },
+      {
+        "p": "Ovaj vodič prolazi kroz postupak koji možete odraditi sami, u bilježnici ili tablici, prije nego što s bilo kim razgovarate o alatu ili ponudi."
+      },
+      {
+        "h2": "Prvi korak: tjedan dana bilježite ponavljajuće zadatke"
+      },
+      {
+        "p": "Prije nego što birate, trebate popis. Najbolje ga je složiti tako da tjedan ili dva svatko u timu zapisuje zadatke koji se ponavljaju, a ne po sjećanju na jednom sastanku. Sjećanje favorizira ono što je neugodno, a zanemaruje sitne poslove od nekoliko minuta koji se rade više puta dnevno. Za svaki zadatak zapišite:"
+      },
+      {
+        "ul": [
+          "Što se točno radi, jednom rečenicom.",
+          "Koliko često: dnevno, tjedno ili mjesečno.",
+          "Koliko otprilike traje jedno izvršavanje.",
+          "Odakle dolaze podaci i kamo idu.",
+          "Što se dogodi kad netko pogriješi."
+        ]
+      },
+      {
+        "p": "Tipični kandidati u malim tvrtkama su prepisivanje narudžbi iz webshopa u knjigovodstvo, ručno slaganje izvještaja koji svaki mjesec izgleda isto, razvrstavanje upita iz inboxa ili prepisivanje podataka s računa. Vaš popis može izgledati drukčije, i to je u redu."
+      },
+      {
+        "h2": "Pet znakova dobrog kandidata"
+      },
+      {
+        "p": "Kad imate popis, provucite svaku stavku kroz nekoliko pitanja. Proces koji zadovoljava većinu njih dobar je prvi izbor."
+      },
+      {
+        "ul": [
+          "Ponavlja se često i u istom obliku, a ne jednom u kvartalu.",
+          "Pravila se mogu zapisati: ako je ovo, onda ono.",
+          "Podaci već postoje u digitalnom obliku, u sustavu, e-mailu ili datoteci.",
+          "Pogreška se može uočiti i ispraviti prije nego što stigne do kupca.",
+          "Ušteda se može izmjeriti u satima, a ne samo osjetiti."
+        ]
+      },
+      {
+        "p": "Posljednja točka je najvažnija. Ako ne znate koliko vremena zadatak sada oduzima, nećete moći reći ni je li automatizacija uspjela. Tada rasprava o isplativosti postaje stvar dojma, a dojam se lako promijeni čim prvi put nešto zapne."
+      },
+      {
+        "h2": "Kako izračunati isplati li se"
+      },
+      {
+        "p": "Za grubu procjenu ne treba vam ništa složeno. Pomnožite trajanje jednog izvršavanja s brojem izvršavanja tjedno, a zatim s brojem radnih tjedana u godini. Dodajte vrijeme koje odlazi na ispravljanje grešaka koje taj posao proizvodi, jer se ono najčešće nigdje ne vidi."
+      },
+      {
+        "p": "Dobivene sate pretvorite u novac prema trošku rada osobe koja posao obavlja. Taj iznos usporedite s cijenom izrade, ali i s troškom održavanja. Automatizacija nije jednokratna kupnja: aplikacije s kojima se povezuje mijenjaju se, a proces koji nitko ne nadzire prije ili kasnije stane."
+      },
+      {
+        "p": "Ne računajte samo sate. Neki procesi vrijede više zbog onoga što sprječavaju: zaboravljene uplate, pogrešno upisane zalihe ili upit na koji nitko nije odgovorio. To je teže izraziti brojem, ali vrijedi zapisati uz izračun, jer će vam pomoći kad budete birali između dva kandidata sličnog opsega."
+      },
+      {
+        "h2": "Kada proces još nije spreman"
+      },
+      {
+        "p": "Najčešća pogreška nije loš izbor alata, nego automatizacija procesa koji ni ljudi ne rade dvaput na isti način."
+      },
+      {
+        "quote": "Automatizacija kaosa daje brži kaos."
+      },
+      {
+        "ul": [
+          "Proces se mijenja svaki mjesec, pa bi ga trebalo stalno iznova postavljati.",
+          "Svaki zaposlenik ga radi drukčije i nitko ne zna koja je verzija prava.",
+          "Odluka traži prosudbu koju je teško opisati pravilima, a pogreška je skupa.",
+          "Postoji gotov dodatak koji dva sustava već povezuje, pa ne treba ništa graditi.",
+          "Zadatak se radi toliko rijetko da izrada nikad ne bi vratila uloženo."
+        ]
+      },
+      {
+        "p": "U prvom i drugom slučaju posao počinje prije bilo kakvog alata: zapišite kako se proces treba odvijati i držite ga se nekoliko tjedana. Ako se pokaže stabilnim, tek je tada pravi kandidat. Ako postoji gotov dodatak, uključite njega i potražite sljedeću stavku na popisu."
+      },
+      {
+        "h2": "Pravila, integracija ili AI: o kakvom se poslu radi"
+      },
+      {
+        "p": "Kad odaberete proces, korisno je znati kojoj vrsti pripada, jer o tome ovise i alat i cijena. Automatizacija je zadatak koji radi po pravilima. Integracija su dva sustava koja sama razmjenjuju podatke. AI ulazi tamo gdje treba čitati ili pisati tekst."
+      },
+      {
+        "p": "Mnogi procesi kombiniraju sve troje. Uzmimo razvrstavanje upita iz inboxa: e-mail se preuzima iz poštanskog sandučića, AI pročita sadržaj i predloži kategoriju i odgovor, a pravila odlučuju kome upit ide. Ako vaš proces uopće ne traži čitanje ili pisanje teksta, AI vam vjerojatno ne treba, a rješenje će biti jednostavnije i jeftinije."
+      },
+      {
+        "p": "Za nekoliko jednostavnih veza alati poput Zapiera ili Makea često su dovoljni i brzo se postave. Alat poput n8n-a isplati se kad je izvršavanja puno, kad podaci ne smiju izlaziti iz vaše infrastrukture ili kad workflow treba logiku koju gotovi alati ne podnose."
+      },
+      {
+        "h2": "Počnite s jednim procesom i izmjerite ga"
+      },
+      {
+        "p": "Kad je izbor napravljen, odolijte napasti da odmah automatizirate pet stvari. Jedan proces, odrađen od početka do kraja, naučit će vas više nego pet napola gotovih."
+      },
+      {
+        "ul": [
+          "Izmjerite koliko proces traje prije nego što išta mijenjate.",
+          "Unaprijed dogovorite koliku uštedu očekujete.",
+          "Neka alat radi unutar sučelja koje tim već koristi.",
+          "Tražite obradu grešaka i obavijest kad nešto zapne.",
+          "Gdje rezultat ide prema kupcu, odobrenje ostavite čovjeku."
+        ]
+      },
+      {
+        "p": "Nakon nekoliko tjedana usporedite stanje s početnim mjerenjem. Ako je ušteda stvarna, imate i argument i iskustvo za sljedeći proces. Ako nije, saznali ste to na jednom procesu, a ne na cijelom poslovanju."
+      },
+      {
+        "p": "U Lumenta Labsu automatizaciju radimo upravo tako: krećemo od konkretnog zadatka, uštedu sati dogovaramo prije nego što počnemo, a ako zadatak ne oslobađa mjerljivo vrijeme, reći ćemo vam da ga ne automatizirate. Jedan proces okvirno stoji 3.500 – 8.000 €, a n8n workflow po mjeri 1.500 – 3.500 €, bez PDV-a. Ako niste sigurni koji zadatak prvi, to je razgovor od pola sata i besplatan je."
+      },
+      {
+        "links": [
+          {
+            "text": "AI automatizacija poslovnih procesa",
+            "href": "/hr/services/ai-automatizacija-poslovanja",
+            "note": "Što ulazi u koji cjenovni raspon i kada automatizacija nije dobra ideja."
+          },
+          {
+            "text": "n8n automatizacija",
+            "href": "/hr/services/n8n-automatizacija",
+            "note": "Postavljanje n8n-a i workflowi s obradom grešaka."
+          },
+          {
+            "text": "Besplatni vodiči o automatizaciji",
+            "href": "/hr/vodici",
+            "note": "Tri automatizacije razložene korak po korak, da ih postavite sami."
+          },
+          {
+            "text": "Webshop i knjigovodstvo: treba li vam integracija",
+            "href": "/hr/blog/integracija-webshopa-i-knjigovodstva",
+            "note": "Detaljno o jednom od najčešćih kandidata za prvi proces."
+          }
+        ]
+      }
+    ],
+    "seoTitle": "Koji posao automatizirati prvi i kako to izračunati"
+  },
+  {
     "slug": "integracija-webshopa-i-knjigovodstva",
     "services": [
       "integrations",
