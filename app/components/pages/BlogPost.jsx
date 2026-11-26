@@ -113,7 +113,8 @@ function Block({ block }) {
   if (block.h2) return <h2>{block.h2}</h2>;
   // Where to go next, for posts that compare options: a reader who has just
   // picked one should not have to hunt for it. Internal paths get Link; full
-  // URLs leave the site and say so.
+  // URLs leave the site and say so. Partner (referral) links set sponsored: true
+  // so they carry rel="sponsored", and disclose it in their note.
   if (block.links) {
     return (
       <ul className="ticks">
@@ -122,7 +123,7 @@ function Block({ block }) {
             {l.href.startsWith('/') ? (
               <Link href={l.href}>{l.text}</Link>
             ) : (
-              <a href={l.href} target="_blank" rel="noopener noreferrer">
+              <a href={l.href} target="_blank" rel={l.sponsored ? 'sponsored noopener noreferrer' : 'noopener noreferrer'}>
                 {l.text} <span aria-hidden="true">↗</span>
               </a>
             )}
