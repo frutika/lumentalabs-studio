@@ -1,5 +1,134 @@
 [
   {
+    "slug": "kako-usporediti-ponude-za-izradu-web-stranice",
+    "services": [
+      "websites"
+    ],
+    "lang": "hr",
+    "cover": "guide",
+    "title": "Kako usporediti dvije ponude za izradu web stranice",
+    "description": "Dvije ponude za web stranicu rijetko opisuju isti posao. Popis pitanja o opsegu, skrivenim troškovima, vlasništvu, brzini i održavanju.",
+    "date": "2026-11-27",
+    "tags": [
+      "web stranice",
+      "ponude",
+      "cijene"
+    ],
+    "excerpt": "Dobili ste dvije ponude za web stranicu i jedna je nekoliko puta skuplja. Prije nego odaberete manji broj, provjerite opisuju li uopće isti posao.",
+    "body": [
+      {
+        "p": "Zatražili ste dvije ili tri ponude za novu web stranicu i dobili iznose koji se razlikuju nekoliko puta. Prvi refleks je pogledati zadnji redak i odabrati manji broj. Problem je što ponude rijetko opisuju isti posao. Jedna uključuje dizajn po mjeri i unos sadržaja, druga gotov predložak i praznu stranicu koju punite sami."
+      },
+      {
+        "p": "Razlika se obično vidi tek kasnije: kad stigne račun za hosting koji nitko nije spomenuo, kad trebate promijeniti tekst, a nemate pristup, ili kad se stranica na mobitelu sporo otvara i nitko se ne osjeća odgovornim."
+      },
+      {
+        "p": "Ovaj vodič je popis pitanja koja možete postaviti svakom izvođaču, bez obzira koga na kraju odaberete. Cilj nije pronaći najskuplju ili najjeftiniju ponudu, nego sve ponude dovesti na isti nazivnik."
+      },
+      {
+        "h2": "Prvo poravnajte opseg"
+      },
+      {
+        "p": "Prije usporedbe cijena provjerite opisuju li ponude istu stvar. Ako jedna govori samo o web stranici, a druga nabraja stavke, zamolite prvu da ih nabroji. Za svaku ponudu korisno je ispisati odgovore na ista pitanja:"
+      },
+      {
+        "ul": [
+          "Koliko stranica ulazi u cijenu i koje su to.",
+          "Na koliko jezika, i tko piše ili prevodi tekstove.",
+          "Je li dizajn rađen za vaš brend ili je prilagođen gotov predložak.",
+          "Tko unosi tekstove, slike i kontakt formu.",
+          "Koliko krugova izmjena je uključeno.",
+          "Kad se posao smatra gotovim i predanim."
+        ]
+      },
+      {
+        "p": "Ako jedna ponuda ima pet stranica na jednom jeziku, a druga deset na dva, iznosi vam ništa ne govore dok ih ne svedete na isti opseg. Često ćete otkriti da se velik dio razlike u cijeni objašnjava upravo time."
+      },
+      {
+        "h2": "Što nije u cijeni, a ipak ćete platiti"
+      },
+      {
+        "p": "Svaka web stranica ima troškove koji ne ulaze u samu izradu. To nije znak nepoštene ponude, ali jest znak nepotpune ako ih uopće ne spominje. Pitajte izričito za ove stavke:"
+      },
+      {
+        "ul": [
+          "Domena i hosting, koji se plaćaju svake godine, neovisno o izradi.",
+          "Pisanje tekstova: je li uključeno ili se očekuje da ih dostavite vi.",
+          "Fotografije: vaše, kupljene ili profesionalno snimljene.",
+          "Održavanje nakon predaje: nadogradnje, sigurnosne kopije i sitne izmjene.",
+          "PDV: je li iznos s porezom ili bez njega."
+        ]
+      },
+      {
+        "p": "Zadnja stavka zvuči sitno, ali može promijeniti poredak ponuda. Ako je jedan iznos bez PDV-a, a drugi s njim, uspoređujete različite brojeve. Zamolite oba izvođača da napišu iznos koji ćete stvarno platiti."
+      },
+      {
+        "h2": "Tko je vlasnik domene, sadržaja i pristupa"
+      },
+      {
+        "p": "Ovo se pitanje najčešće preskoči, a najviše boli kasnije. Domena bi trebala glasiti na vas ili vašu tvrtku, ne na izvođača. Isto vrijedi za račun kod pružatelja hostinga, za analitiku i za Google Search Console, ako ih koristite."
+      },
+      {
+        "p": "Pitajte i što dobivate na kraju projekta: pristupne podatke, mogućnost da sami mijenjate sadržaj i, ako je stranica rađena po mjeri, opis kako je složena. Ako se jednog dana razidete s izvođačem, netko drugi mora moći preuzeti posao bez da kreće ispočetka."
+      },
+      {
+        "h2": "Brzina, mobitel i tražilice nisu ukrasi"
+      },
+      {
+        "p": "Stranica koja se sporo učitava na mobitelu gubi posjetitelja prije nego što pročita što radite. Vrijedi pitati kako izvođač provjerava brzinu i prikaz na mobitelu, tabletu i računalu te hoćete li to moći provjeriti sami prije predaje."
+      },
+      {
+        "p": "Tehnička priprema za Google, poput naslova i opisa stranica, jasne strukture i ispravnih preusmjeravanja, trebala bi biti dio izrade, a ne zasebna usluga koju otkrijete poslije. Sve je važnije i kako stranicu čitaju AI asistenti poput ChatGPT-a, Claudea i Perplexityja, koji sve češće sami odgovore na pitanje umjesto da posjetitelja pošalju na rezultat pretrage. Pitajte izvođača što konkretno radi za to, na primjer nudi li sažetak stranice u obliku datoteke llms.txt ili čistu tekstualnu verziju sadržaja."
+      },
+      {
+        "p": "Pitajte i za kolačiće. Treba li vam doista praćenje posjetitelja ili je dovoljna jednostavna analitika? Tko piše pravila privatnosti i obavijest o kolačićima? Svaki alat za praćenje znači i više toga što morate objasniti posjetiteljima, pa neka to bude svjesna odluka, a ne zadana postavka."
+      },
+      {
+        "h2": "Što se događa nakon lansiranja"
+      },
+      {
+        "p": "Stranica nije gotova onog dana kad se objavi. Sustav treba nadogradnje, sigurnosne kopije netko mora raditi i provjeravati, a radno vrijeme ili cjenik netko mora promijeniti kad se promijene. Pitajte tko to radi, koliko košta i koliko se brzo izvođač javlja kad nešto prestane raditi."
+      },
+      {
+        "p": "Ako održavanje nije uključeno, to je sasvim u redu, ali tada morate znati tko ga radi. Najgori je scenarij stranica koju nitko ne održava, a svi misle da je za nju zadužen netko drugi."
+      },
+      {
+        "h2": "Kad je jeftinija ponuda ispravan izbor"
+      },
+      {
+        "p": "Skuplja ponuda nije automatski bolja. Ako vam stranica treba brzo, ima tek nekoliko stranica i ne očekujete od nje puno upita, graditelji stranica poput Wixa ili Squarespacea bit će brži i jeftiniji. Za lokal kojem trebaju jelovnik, adresa i broj telefona to je često dovoljno."
+      },
+      {
+        "quote": "Dobra usporedba ponuda ne pita koja je jeftinija, nego koja opisuje posao koji vam stvarno treba."
+      },
+      {
+        "p": "Izrada po mjeri ima smisla kad stranica treba donositi upite, kad prodajete na više jezika ili kad vam je važno da ne izgledate kao konkurencija. Tada usporedite odgovore na pitanja iznad i odaberite izvođača koji na njih odgovara jasno i pisano."
+      },
+      {
+        "p": "Ako vam treba mjerilo, na stranici o izradi web stranica Lumenta Labsa cijene su objavljene unaprijed: landing stranica od 900 €, poslovna stranica od 5 do 10 stranica 1.800 – 4.000 €, webshop od 3.500 €. Uz njih piše i što nije u cijeni: domena i hosting (otprilike 30 – 150 € godišnje), pisanje tekstova, profesionalno fotografiranje i mjesečno održavanje. Sve cijene su bez PDV-a, a studio trenutno nije u sustavu PDV-a, pa ga na računu nema. Možete ih koristiti i samo kao usporedbu za ponude koje već imate."
+      },
+      {
+        "links": [
+          {
+            "text": "Izrada web stranica i webshopova",
+            "href": "/hr/services/izrada-web-stranica",
+            "note": "Cijene po pojasu i popis onoga što ulazi u cijenu, a što ne."
+          },
+          {
+            "text": "Cijene nismo objavili zbog kupaca, nego zbog sebe",
+            "href": "/hr/blog/cijene-na-stranici",
+            "note": "Zašto su raspon i granice cijene na stranici, a ne tek u ponudi."
+          },
+          {
+            "text": "Kontakt",
+            "href": "/hr/contact",
+            "note": "Opišite što vam treba običnim riječima i dobit ćete odgovor u roku od 24 sata."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "slug": "koji-posao-automatizirati-prvi",
     "services": [
       "ai",
